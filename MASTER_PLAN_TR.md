@@ -12,14 +12,15 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.04 — DONE; kullanıcı kabulü ve PR #4 birleştirme onayı alındı. Uygulama kodu yok.
+> **Durum:** F00.05 — IN_PROGRESS; repo/PR politikası. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.04 — DONE; PR #4 birleştirme onayı alındı.
-> **Aktif dal:** `phase/F00.04-test-ci`. **Aktif PR:** [#4](https://github.com/Boydaksu/siteportal/pull/4) (açık, birleştirilmedi). **CI kanıt SHA:** `06b3e12fd122eeef24dbc748c956d79ff4ed85bb`.
-> **Son kontrol:** Yerel kalite/fixture/belge/envanter PASS; [gerçek CI](https://github.com/Boydaksu/siteportal/actions/runs/41666506494) SUCCESS (kanıt commit’i).
-> **Rapor:** [F00.04](docs/reports/F00.04.md). **Sonraki:** F00.05 — Repo ve PR politikası; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
-> **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık; Composer uyarısı raporlanıyor.
-> **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
+> **Son onaylanan alt faz:** F00.04 — DONE; PR #4 birleştirildi.
+> **Aktif dal:** `phase/F00.05-repo-policy`. **PR / commit / CI:** PENDING.
+> **Son kontrol:** F00.05 yerel kalite/TEST/belge/envanter ve rollback uygulanabilirliği PASS; CI bekleniyor.
+> **Rapor:** [F00.05](docs/reports/F00.05.md). **Sonraki:** F00.06 — Faz kapanış/kabul; NOT_STARTED, onay gerekir.
+> **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
+> **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
+> **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
 
 ## Proje
 SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO Analyzer** ilk bağımsız ürün modülüdür; hosting şirketi yazılımı değildir. Kullanıcılar URL girerek kanıtlanabilir teknik SEO analizi alır; daha derin analiz, hesap/alan adı doğrulama ve entegrasyonlarla gelişir.
@@ -169,27 +170,23 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
-- **Tarih:** 2026-11-03, Europe/Istanbul
-- **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), özel; varsayılan dal main
-- **Plan / ürün:** blueprint-0.1.0 / çalışan ürün sürümü yok
-- **Aktif ana faz / sürüm:** F00 / V0.0; ana faz kabulü yok
-- **Son onaylanan alt faz:** F00.04 — DONE
-- **Önceki PR:** [#3](https://github.com/Boydaksu/siteportal/pull/3), F00.03 kabulü + merge + F00.04 başlangıcı sorusuna “devam edelim” yanıtıyla onaylandı ve birleştirildi
-- **Main başlangıç / merge SHA:** `74c56bc9ddfa9471b168cf7908cbb49e07aca857`
-- **Aktif alt faz / durum:** F00.04 — Test ve CI iskeleti / DONE
-- **Aktif dal:** `phase/F00.04-test-ci`
-- **Aktif PR / kanıt commit:** [#4](https://github.com/Boydaksu/siteportal/pull/4) (açık, birleştirilmedi) / `06b3e12fd122eeef24dbc748c956d79ff4ed85bb`; sonraki teslim metadata commit’i PR head içinde olabilir
-- **Son rapor:** [F00.04](docs/reports/F00.04.md)
-- **Yerel kontroller:** PHP lint, PSR-12, PHPStan seviye 8, PHPUnit 3 TEST/74 assertion ve 4 olumsuz kalite kapısı TEST'i PASS. Son belge/envanter/araç, source/master ve 7 bağlantı TEST kontrolü PASS.
-- **CI:** SUCCESS — [run 41666506494](https://github.com/Boydaksu/siteportal/actions/runs/41666506494), job 126023140084; temiz checkout içerik commit’i. [Makine kanıtı](docs/reports/F00.04-ci.json). Sonraki metadata head CI durumu PR checks’te ayrıca izlenir.
-- **Uygulama testleri:** SSRF/DB/queue/ACL/UI/E2E N/A; uygulama yok
-- **Bağımlılık:** 3 kesin doğrudan/27 toplam dev paket; uygulama paketleri boş. İlk Composer audit exit=0, advisory/abandoned yok; kaynak kapsamı ve lisans kanıtları [raporda](docs/reports/F00.04-dependency-review.json).
-- **Aktif engeller:** Yok; temiz checkout CI başarı kriteri doğrulandı
-- **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı. Composer kök lisans uyarısı biliniyor; değer uydurulmadı.
-- **Sonraki tek alt faz:** F00.05 — Repo ve PR politikası; NOT_STARTED; kullanıcı başlangıç onayı verdi
-- **Bir sonraki işlem:** F00.04 kabul/merge ve F00.05 başlangıç onayı alındı; kabul kaydı commit’inin CI’sını doğrula, PR #4’ü birleştir, main’den F00.05 dalını aç.
+- **Tarih / repo:** 2026-11-03, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), main.
+- **Plan / ürün / ana faz:** blueprint-0.1.0; uygulama yok; F00 / V0.0 IN_PROGRESS, ana faz kabulü yok.
+- **Son onay:** F00.04 DONE; kullanıcı “evet onaylıyorum” ile kabul, PR #4 merge ve F00.05 başlangıcını onayladı.
+- **Önceki teslim:** [PR #4](https://github.com/Boydaksu/siteportal/pull/4) birleştirildi; merge `36a1f4b6c5b1d2ed9b2cf50b5e348950324d443d`. Kabul commit'i `23324dad1e3c7843f476fd73f7148dfa57070cfb`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41682655805) success.
+- **Aktif alt faz / durum:** F00.05 — Repo ve PR politikası / IN_PROGRESS.
+- **Dal:** `phase/F00.05-repo-policy`; başlangıç main SHA yukarıdaki merge'dir.
+- **Aktif PR / kanıt commit / CI:** PENDING.
+- **Rapor:** [F00.05](docs/reports/F00.05.md).
+- **Yerel sonuç:** PASS; PHP lint/PSR-12/PHPStan, 3 TEST/74 assertion, 4 olumsuz kapı, 7 link TEST, belge/envanter/mimari/toolchain/master ve ters patch kontrolü. CI bekleniyor.
+- **Uygulama testleri:** SSRF/DB/queue/ACL/UI/E2E N/A; uygulama yok. Yeni kullanıcı arayüz metni veya bağımlılık yok.
+- **Main koruması:** PROPOSED_NOT_APPLIED; gözlenen protected:false. Yönetim API 403; UI URL doğrulaması durdu, ayar değişmedi. Ayrı ayar onayı alınmadı. [Öneri](docs/operations/main-protection.proposal.json).
+- **Native secret scanning:** Etkinliği doğrulanmadı; yerel kalıp kontrolü tam/geçmiş taraması değildir.
+- **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
+- **Sonraki tek alt faz:** F00.06 NOT_STARTED; F00.05 kabul/merge/başlangıç onayı gelmeden başlamaz. F01 için ayrıca F00 ana faz kabulü gerekir.
+- **Bir sonraki işlem:** F00.05 kanıtlarını tamamla, PR/rapor sun, DUR.
 
-[TESTING](docs/process/TESTING.md) gerçek kapsam ve komutları gösterir. F00.03 Q-001–003 kararları onaylıdır; F00.04 teslim kabulü değildir. Eski raporlar tarihsel snapshot'tır; güncel durum bu dosya/JSON/aktif PR'dadır. Repo koruma ayarları ve üretim ortamı değiştirilmedi.
+Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
 
 
@@ -933,44 +930,34 @@ IP/email ve OAuth erişimleri amaçla sınırlı; aydınlatma, uygun hukuki teme
 <!-- KAYNAK BELGE: docs/operations/GITHUB.md -->
 ## BELGE: `docs/operations/GITHUB.md`
 
-# Boydaksu/siteportal GitHub çalışma stratejisi
+# GitHub çalışma ve inceleme politikası
 
-## Repo
-`https://github.com/Boydaksu/siteportal` — 2026-11-03 incelemesinde özel repo, `main`, çok kısa `README.md`. Bu tespit **o anın durumudur**; her faz öncesi yeniden `fetch` gerekir. Başka dosyalar ortaya çıktıysa dosyaları ezme ve merge otomatik yapma.
+## Güncel temel
+2026-11-03: özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), varsayılan dal main. F00.04 [PR #4](https://github.com/Boydaksu/siteportal/pull/4) kullanıcı onayıyla merge edildi; F00.05 başlangıç SHA `36a1f4b6c5b1d2ed9b2cf50b5e348950324d443d`. İlk envanterdeki kısa README tarihsel bilgidir. Her iş öncesi fetch, main/PR/dal ve çalışma ağacını yeniden kontrol et; mevcut işi ezme.
 
-## Branch / commit / PR
-- Her alt faz: `phase/F00.01-repo-inventory`, `phase/F01.03-ssrf`, `phase/F02.05-score` gibi tek dal.
-- Düzeltme: aynı PR dalına ek commit; kabul edilen fazın regresyonu `fix/F02.05-...`.
-- Commit örn. `feat(seo): F02.03 teknik denetim kuralları`.
-- PR başlığı `[F02.03] Teknik denetim kuralları`, ekinde görev, test, kaynak, screenshots, güvenlik, rollback, review checklist.
-- Her alt faz PR'ı `README/CURRENT_STATUS/project-status/CHANGELOG/docs/reports` değişikliklerini içerir.
-- Önerilen main koruma: PR ve test gereksinimi, 1 manuel onay, force-push kapalı. Bu repo ayarlarını değiştirmek ayrıca kullanıcı onayı gerektirir.
-- **Push etme yetkisi yoksa** gerçek commit SHA/PR uydurma. `BLOCKED` + patch veya dosya paketi bırak.
+## Dal ve PR
+- Tek alt faz: `phase/Fxx.yy-kisa-konu`; güncel kabul edilmiş main üzerinden açılır.
+- Aynı teslim düzeltmesi aynı PR'a ek commit; kabul edilmiş işte regresyon `fix/Fxx.yy-kisa-konu` ve ayrı PR.
+- Commit örneği `docs: F00.05 repo ve PR politikası`; PR başlığı `[F00.05] Repo ve PR politikası`.
+- [PR şablonu](.github/PULL_REQUEST_TEMPLATE.md), [alt faz](.github/ISSUE_TEMPLATE/alt-faz.md) ve [hata şablonu](.github/ISSUE_TEMPLATE/hata.md) kullanılır. Issue açmak zorunlu değil; yetkisiz bildirim/etiket/atama yapılmaz.
+- Draft PR'da eksik kanıt PENDING yazılır. İncelemeye açılırken gerçek sonuç, SHA ve CI linki eklenir.
+- İnceleme sırası: yetki/kapsam → diff/veri kaybı → güvenlik/bağımlılık → davranış/test/çeviri → geri alma → durum/devir.
+- Komut, beklenen ve gerçek sonuç ayrılır; N/A gerekçelendirilir. [Gizli bilgi kontrolü](docs/process/SECRETS.md) staging ve push öncesi yapılır.
 
-## README durum tutarlılığı
-`main` en son **kabul edilmiş ve merge edilmiş** aşamayı göstermeli; açık PR dalında `READY_FOR_REVIEW` bulunabilir. Kullanıcı onayı aldıktan sonra merge sırasında `main` durumu `DONE` olacak biçimde düzelt. 'Push edildi' ile 'kabul edildi' ayrımı JSON'da saklanmalı. README en üstte durum paneli olmalı.
+## Birleştirme kapısı
+Son PR head SHA'sının `PHP 8.4 and document checks` işi başarılı olmalı; önceki commit'in yeşil sonucu yeterli değildir. Main ilerlerse uyumluluğu yeniden değerlendir, çakışmaları incele ve yeni head CI'sını bekle. Force push kullanma. Kullanıcı kabul kaydı eklenen commit de yeniden CI'dan geçer.
 
-## Handoff kanıtları
-Her raporda repo SHA, branch, PR URL, CI status URL, gerçek test sonuçları, değişen dosyalar ve sıradaki tek subphase. PR birleştirilmeden üretime deploy yasak.
+Kullanıcı teslim kabulü, PR merge ve sonraki alt faz başlangıcını ayrı kaydet. GitHub review ile sohbet kabulü farklıdır. Merge sırasında beklenen head SHA kontrolü kullan; beklenmeyen değişiklikte dur. Mevcut merge commit stratejisi korunur; squash/rebase otomatik seçilmez. README/JSON main'de kabul edilmiş durumu, açık dalda teslim durumunu gösterir. Merge sonrasında gerçek SHA'yı doğrula. Üretim yetkisi bundan doğmaz.
 
-## İlk plan paketini aktarma
-Bu ZIP'i yerelde klasöre aç, projedeki dosyaları repo dizinine kopyala, **mevcut README'yi karşılaştırarak** birleştir. `git status` ve `git diff` kontrol et. İlk faz F00.01 kapsamında özel bir PR aç, onaydan önce merge etme. Gerekirse doküman dosyalarını `docs/` altında tutup SitePortal uygulamasıyla daha sonra entegre et.
+## Main koruması — uygulanmadı
+Main sorgusunda `protected:false` görüldü. Yönetim okuması bağlı entegrasyonda `403 Resource not accessible by integration` verdi. Hesabın admin/push bilgisi entegrasyona yönetim erişimi sağlamıyor. UI doğrulaması tarayıcı URL'si güvenle belirlenemediği için durdu; ayar değiştirilmedi.
 
-## Git işlemi örneği (kullanıcı onayı ve gerçek repo durumu teyidinden sonra)
-```bash
-git clone git@github.com:Boydaksu/siteportal.git
-cd siteportal
-git switch main && git pull --ff-only
-git switch -c phase/F00.01-repo-inventory
-# ZIP'deki belgeleri karşılaştırıp kopyala; var olan içeriği ezme.
-git status --short
-git diff --check
-git add README.md AGENTS.md START_HERE.md CURRENT_STATUS.md CHANGELOG.md project-status.json docs/ schemas/ locales/ .github/ .gitignore .env.example
-# Yalnız gerçekten mevcut dosyaları stage et.
-git commit -m "docs: F00.01 plan ve repo envanteri"
-git push -u origin phase/F00.01-repo-inventory
-# GitHub'da PR aç, inceleme bekle. Sonraki subphase'e GEÇME.
-```
+[Kesin ayar önerisi](docs/operations/main-protection.proposal.json): zorunlu PR, bir farklı yetkili inceleyenin onayı, yeni commit'te eski onayların düşmesi, strict/up-to-date CI, yorumların çözülmesi, yöneticilere de uygulama; force push ve silme kapalı. Merge commit korunacağı için linear history zorunlu değil.
+
+**Ayrı ayar onayı alınmadı; bu dosya canlı koruma değildir.** Bir inceleyen şartı tek kişilik çalışmayı kilitleyebilir; farklı inceleyen bulunmadan uygulanmaz. Sıfır inceleyen alternatifi ayrıca açık kararla seçilir. Uygulamadan önce özel repo plan desteği, yönetim kanalı, mevcut ruleset/korumalar ve check kaynağı doğrulanmalı; bilinmeyen kuralların üstüne yazılmamalı. [Resmî kaynaklar](docs/reference/REPOSITORY_SOURCES.md).
+
+## Hata ve geri dönüş
+Push/PR erişimi yoksa BLOCKED, yerel diff/patch ve gerçek hata bırak; SHA/PR uydurma. Yanlış merge için [geri alma PR'ı](docs/operations/ROLLBACK.md) hazırla. Reset/force push, geçmiş silme ve onaysız deployment yapma. Sızıntıda [olay adımları](docs/process/SECRETS.md) izlenir.
 
 
 
@@ -1319,7 +1306,7 @@ F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif a
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.03.md` + durum kayıtları.
 
 ### F00.04 — Test ve CI iskeleti
-**Uygulama durumu:** DONE; [F00.04 raporu](docs/reports/F00.04.md). F00.05 ve sonrası başlamadı.
+**Uygulama durumu:** DONE; [F00.04 raporu](docs/reports/F00.04.md). PR #4 kullanıcı onayıyla birleştirildi.
 **Hedef:** Test ve CI iskeleti.
 **Yapılacak işler:**
 1. PHP lint format static-analysis test harness.
@@ -1337,6 +1324,7 @@ F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif a
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.04.md` + durum kayıtları.
 
 ### F00.05 — Repo ve PR politikası
+**Uygulama durumu:** IN_PROGRESS; [F00.05 raporu](docs/reports/F00.05.md). Main koruması önerisi hazırlanır; canlı uygulama ayrı yetki/onay koşulludur.
 **Hedef:** Repo ve PR politikası.
 **Yapılacak işler:**
 1. Dallar PR şablonları issue template inceleme adımları.
@@ -2643,6 +2631,9 @@ Güncel durum: [CURRENT_STATUS](CURRENT_STATUS.md) ve [project-status.json](proj
 ## F00.04 test ve CI
 [Çalıştırma rehberi](docs/process/TESTING.md), [TEST kapsamı/fixture](tests/README.md), [CI workflow](.github/workflows/quality.yml), [birincil kaynaklar](docs/reference/TESTING_SOURCES.md), [bağımlılık incelemesi](docs/reports/F00.04-dependency-review.json) ve [F00.04 raporu](docs/reports/F00.04.md).
 
+## F00.05 repo politikası
+[GitHub/inceleme](docs/operations/GITHUB.md), [rollback](docs/operations/ROLLBACK.md), [gizli bilgi kontrolü](docs/process/SECRETS.md), [main önerisi](docs/operations/main-protection.proposal.json), [kaynaklar](docs/reference/REPOSITORY_SOURCES.md), [teslim raporu](docs/reports/F00.05.md).
+
 
 
 
@@ -3124,3 +3115,76 @@ Bu dizin yalnız F00.04 kalite/test altyapısıdır. Uygulama, crawler, gerçek 
 - [Olumsuz kalite kapısı testleri](scripts/test_quality_gates.py): ayrı geçici TEST dosyalarında bilerek bozuk sözdizimi, PSR-12 ihlali, yanlış return tipi ve yanlış assertion oluşturur; dört aracın sıfır dışı kod ve beklenen tanıyla reddetmesini doğrular. Bu beklenen reddetmeler CI arızası değildir.
 
 Koşullar ve komutlar: [TESTING](docs/process/TESTING.md). İleride gerçek uygulama birim/entegrasyon/güvenlik testleri ilgili fazın modülüne eklenir; bu üç fixture testi bütün platformun çalıştığı anlamına gelmez.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/operations/ROLLBACK.md -->
+## BELGE: `docs/operations/ROLLBACK.md`
+
+# Geri alma yönergesi
+
+## Karar ve kapsam
+Hatalı PR/merge SHA, sorun, hedef davranış, sonraki değişikliklere etki ve kullanıcı yetkisi kaydedilir. Acil durum otomatik merge veya üretim yetkisi değildir. F00.05 belge/şablon değiştirir; DB, migration ve üretim verisi yoktur.
+
+## Hazırlama
+1. Güncel main ve çalışma ağacını kontrol et; mevcut işi koru. `fix/Fxx.yy-revert-kisa-konu` dalını main'den aç.
+2. Hedef merge'in parent'larını ve ilk parent'ın merge öncesi main olduğunu `git show --no-patch --format=raw <MERGE_SHA>` ile doğrula. Yer tutucuyu gerçek SHA ile değiştir.
+3. Yalnız bu koşulda `git revert -m 1 <MERGE_SHA>` ile yeni revert commit'i hazırla. Tek parent için `git revert <COMMIT_SHA>` kullanılır. Körlemesine aralık geri alma. Çakışmada anlamı incele; emin değilsen dur. `git revert --abort` yalnız aktif revert'i iptal eder.
+4. Durum kayıtlarını gerçekliğe uyarla; tarihsel raporları koru. Master/manifest'i yeniden üret. Sonraki düzeltmeleri geri almanın etkisini değerlendir.
+5. Diff, ilgili regresyon/kalite/belge testleri ve yeni head CI'sını kontrol et. PR'a hedef, gerekçe, veri etkisi ve tekrar uygulama planı yaz.
+6. Açık kullanıcı merge onayından sonra beklenen head SHA ile birleştir; gerçek main SHA/CI'yı doğrula. Hatalı PR'a bağlantı ve sonuç ekle.
+
+Reset/force push veya geçmişten commit silme kullanılmaz. GitHub Revert de yeni PR oluşturur; çakışmada yerel hazırlık gerekebilir. [Resmî kaynaklar](docs/reference/REPOSITORY_SOURCES.md).
+
+## Doğrulama sınırı
+Belge geri dönüşü DB geri dönüşünün kanıtı değildir. Migration fazında yedek, restore denemesi, veri kaybı sınırı ve ayrı onay eklenir. Secret için revert anahtarı geçersiz kılmaz; [SECRETS](docs/process/SECRETS.md) izlenir.
+
+F00.05 kontrolü: baseline→çalışma ağacı patch'inin tersi `git apply --reverse --check` ile dosya değiştirmeden sınanır. Yeni main değişikliklerindeki çatışmayı veya canlı geri dönüşü garanti etmez. Bu fazda gerçek revert/merge yapılmaz.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/process/SECRETS.md -->
+## BELGE: `docs/process/SECRETS.md`
+
+# Gizli bilgi kontrol listesi
+
+## Staging öncesi
+- [ ] Yalnız gerekli proje dosyalarını ekle; .env, özel rapor, token, refresh token, müşteri verisi ve özel anahtar ekleme.
+- [ ] `git status --short` ve dosya listesini incele. Ignore dosyalarını veya credential store'u sır aramak için açma.
+- [ ] Örnekler boş yer tutucu veya açık DEMO/TEST verisidir; gerçek anahtardan türetilmez.
+
+## Commit ve push öncesi
+- [ ] `git diff --cached --name-only` ile eklenen dosyaları kontrol et; .env.example yalnız boş/örnek değer içerir.
+- [ ] Staged diff'i yerelde incele; şüpheli değeri çıktı, sohbet, issue veya rapora kopyalama. Maskeli dosya/konum/tür yeterlidir.
+- [ ] `python scripts/verify_inventory.py` çalıştır. GitHub/AWS/private-key kalıpları yalnız takip edilen çalışma dosyalarındadır; indeks/geçmiş/binary/entropi/tüm sağlayıcı taraması değildir. Araç kendi kalıpları nedeniyle kendi dosyasını hariç tutar.
+- [ ] İnceleme ile commit arasında değişiklik varsa yinele. Geçmiş sızıntı şüphesinde commit/PR/CI/artifact kapsamını yetkili kişiyle ayrıca değerlendir; çalışma ağacı PASS sonucunu geçmiş temizliği sayma.
+- [ ] CI logları, fixture ve ekleri de incele; erişim bilgisi/özel veri barındıran log yükleme.
+
+## GitHub hizmeti
+Native secret scanning/push protection bu fazda etkinleştirilmedi ve çalıştığı doğrulanmadı. Özel repo plan/ürün erişimi ayrıca kontrol edilir. Yerel sınırlı kontrolün geçmesi bu hizmetin aktif olduğu anlamına gelmez. Yönetim ayarı ayrıca açık onay gerektirir. [Resmî kapsam](docs/reference/REPOSITORY_SOURCES.md).
+
+## Şüpheli bulgu
+Push'u durdur; değeri yeniden yayımlamadan dosya/commit/kapsamı kaydet. Anahtar sahibine yetkili süreçle iptal/rotasyon yaptır; dış sağlayıcıya anahtarı deneyerek doğrulama isteği gönderme. İletişim yetkisi olmadan üçüncü kişilere mesaj gönderme. Revert veya dosyadan kaldırma anahtarı geçersiz kılmaz. Geçmiş temizliği ayrı etki analizi ve açık onay ister; force push otomatik yapılmaz. Yeni anahtar Git'e eklenmez. Sonuç maskeli raporlanır.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/reference/REPOSITORY_SOURCES.md -->
+## BELGE: `docs/reference/REPOSITORY_SOURCES.md`
+
+# Repo politikası birincil kaynakları
+
+Kontrol tarihi: 2026-11-03. Kaynak davranışı ve bu özel reponun etkin ayarı ayrıdır.
+
+- [GitHub protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches): özel repo plan erişimi, review/status checks, yönetici bypass ve force push/silme.
+- [GitHub secret scanning](https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning): hizmet kapsamı/erişimi ve sızıntıda iptal/rotasyon. Yerel regex eşdeğer hizmet değildir.
+- [GitHub reverting a pull request](https://docs.github.com/en/enterprise-cloud%40latest/pull-requests/how-tos/merge-and-close-pull-requests/reverting-a-pull-request): yeni revert PR ve olası çakışmalar.
+- [GitHub pull request merges](https://docs.github.com/en/pull-requests/reference/pull-request-merges): stratejilerin geçmişe etkisi; repo merge commit kullanır.

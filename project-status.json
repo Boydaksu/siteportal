@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T20:16:24+03:00",
+  "updated_at": "2026-11-03T20:20:11+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": null,
   "current_phase": "F00",
-  "current_subphase": "F00.04",
+  "current_subphase": "F00.05",
   "last_approved_phase": null,
   "last_approved_subphase": "F00.04",
-  "status": "DONE",
-  "branch": "phase/F00.04-test-ci",
-  "commit_sha": "06b3e12fd122eeef24dbc748c956d79ff4ed85bb",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/4",
-  "last_report": "docs/reports/F00.04.md",
+  "status": "IN_PROGRESS",
+  "branch": "phase/F00.05-repo-policy",
+  "commit_sha": null,
+  "pr_url": null,
+  "last_report": "docs/reports/F00.05.md",
   "blockers": [],
-  "next_action": "Onaylı PR #4 kabul kaydı commit’inin CI’sını doğrula, birleştir ve güncel main’den F00.05 dalını aç.",
+  "next_action": "Yalnız F00.05 repo/PR/rollback/secret kontrolü belgelerini ve doğrulamalarını tamamla; rapor/PR sun ve DUR.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -25,7 +25,7 @@
         "F00.02": "DONE",
         "F00.03": "DONE",
         "F00.04": "DONE",
-        "F00.05": "NOT_STARTED",
+        "F00.05": "IN_PROGRESS",
         "F00.06": "NOT_STARTED"
       }
     },
@@ -137,14 +137,14 @@
       }
     }
   },
-  "baseline_commit_sha": "74c56bc9ddfa9471b168cf7908cbb49e07aca857",
-  "next_subphase": "F00.05",
+  "baseline_commit_sha": "36a1f4b6c5b1d2ed9b2cf50b5e348950324d443d",
+  "next_subphase": "F00.06",
   "approval_required": true,
   "commit_sha_scope": "İlk temiz checkout CI tarafından doğrulanmış içerik commit’i; PR head sonraki sonuç/durum metadata commit’ini de içerebilir.",
-  "push_status": "SUCCESS",
-  "test_status": "PASS_LOCAL_AND_CI",
-  "ci_status": "SUCCESS",
-  "approval_received": true,
+  "push_status": "PENDING",
+  "test_status": "LOCAL_PASS_CI_PENDING",
+  "ci_status": "PENDING",
+  "approval_received": false,
   "approvals": {
     "F00.01": {
       "approved_at": "2026-11-03T16:30:43+03:00",
@@ -172,16 +172,18 @@
     }
   },
   "start_authorization": {
-    "subphase": "F00.04",
-    "authorized_at": "2026-11-03T18:26:10+03:00",
-    "reference": "F00.03 kabulü, PR #3 merge ve F00.04 başlangıcı sorusuna kullanıcı yanıtı: devam edelim"
+    "subphase": "F00.05",
+    "authorized_at": "2026-11-03T20:20:11+03:00",
+    "reference": "F00.04 kabulü, PR #4 merge ve F00.05 başlangıcı sorusuna kullanıcı yanıtı: evet onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F00.03",
+    "subphase": "F00.04",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/3",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/4",
     "merged": true,
-    "merge_sha": "74c56bc9ddfa9471b168cf7908cbb49e07aca857"
+    "merge_sha": "36a1f4b6c5b1d2ed9b2cf50b5e348950324d443d",
+    "approval_commit": "23324dad1e3c7843f476fd73f7148dfa57070cfb",
+    "approval_commit_ci_run": 41682655805
   },
   "open_questions": [
     "Q-004"
@@ -203,14 +205,12 @@
       "adr": "docs/adr/ADR-003-i18n.md"
     }
   },
-  "ci": {
-    "workflow": "SitePortal quality",
-    "evidence_commit": "06b3e12fd122eeef24dbc748c956d79ff4ed85bb",
-    "run_id": 41666506494,
-    "run_url": "https://github.com/Boydaksu/siteportal/actions/runs/41666506494",
-    "job_id": 126023140084,
-    "conclusion": "success",
-    "proof": "docs/reports/F00.04-ci.json",
-    "scope": "Clean checkout content commit. Sonraki teslim metadata commit’inin güncel CI durumu PR checks üzerinden ayrıca doğrulanır."
+  "branch_protection": {
+    "status": "PROPOSED_NOT_APPLIED",
+    "main_protected_observed": false,
+    "admin_read_result": "403 Resource not accessible by integration",
+    "ui_verification": "STOPPED_BROWSER_URL_NOT_VERIFIABLE",
+    "settings_approval_reference": null,
+    "proposal": "docs/operations/main-protection.proposal.json"
   }
 }

@@ -1,38 +1,28 @@
-# Boydaksu/siteportal GitHub çalışma stratejisi
+# GitHub çalışma ve inceleme politikası
 
-## Repo
-`https://github.com/Boydaksu/siteportal` — 2026-11-03 incelemesinde özel repo, `main`, çok kısa `README.md`. Bu tespit **o anın durumudur**; her faz öncesi yeniden `fetch` gerekir. Başka dosyalar ortaya çıktıysa dosyaları ezme ve merge otomatik yapma.
+## Güncel temel
+2026-11-03: özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), varsayılan dal main. F00.04 [PR #4](https://github.com/Boydaksu/siteportal/pull/4) kullanıcı onayıyla merge edildi; F00.05 başlangıç SHA `36a1f4b6c5b1d2ed9b2cf50b5e348950324d443d`. İlk envanterdeki kısa README tarihsel bilgidir. Her iş öncesi fetch, main/PR/dal ve çalışma ağacını yeniden kontrol et; mevcut işi ezme.
 
-## Branch / commit / PR
-- Her alt faz: `phase/F00.01-repo-inventory`, `phase/F01.03-ssrf`, `phase/F02.05-score` gibi tek dal.
-- Düzeltme: aynı PR dalına ek commit; kabul edilen fazın regresyonu `fix/F02.05-...`.
-- Commit örn. `feat(seo): F02.03 teknik denetim kuralları`.
-- PR başlığı `[F02.03] Teknik denetim kuralları`, ekinde görev, test, kaynak, screenshots, güvenlik, rollback, review checklist.
-- Her alt faz PR'ı `README/CURRENT_STATUS/project-status/CHANGELOG/docs/reports` değişikliklerini içerir.
-- Önerilen main koruma: PR ve test gereksinimi, 1 manuel onay, force-push kapalı. Bu repo ayarlarını değiştirmek ayrıca kullanıcı onayı gerektirir.
-- **Push etme yetkisi yoksa** gerçek commit SHA/PR uydurma. `BLOCKED` + patch veya dosya paketi bırak.
+## Dal ve PR
+- Tek alt faz: `phase/Fxx.yy-kisa-konu`; güncel kabul edilmiş main üzerinden açılır.
+- Aynı teslim düzeltmesi aynı PR'a ek commit; kabul edilmiş işte regresyon `fix/Fxx.yy-kisa-konu` ve ayrı PR.
+- Commit örneği `docs: F00.05 repo ve PR politikası`; PR başlığı `[F00.05] Repo ve PR politikası`.
+- [PR şablonu](../../.github/PULL_REQUEST_TEMPLATE.md), [alt faz](../../.github/ISSUE_TEMPLATE/alt-faz.md) ve [hata şablonu](../../.github/ISSUE_TEMPLATE/hata.md) kullanılır. Issue açmak zorunlu değil; yetkisiz bildirim/etiket/atama yapılmaz.
+- Draft PR'da eksik kanıt PENDING yazılır. İncelemeye açılırken gerçek sonuç, SHA ve CI linki eklenir.
+- İnceleme sırası: yetki/kapsam → diff/veri kaybı → güvenlik/bağımlılık → davranış/test/çeviri → geri alma → durum/devir.
+- Komut, beklenen ve gerçek sonuç ayrılır; N/A gerekçelendirilir. [Gizli bilgi kontrolü](../process/SECRETS.md) staging ve push öncesi yapılır.
 
-## README durum tutarlılığı
-`main` en son **kabul edilmiş ve merge edilmiş** aşamayı göstermeli; açık PR dalında `READY_FOR_REVIEW` bulunabilir. Kullanıcı onayı aldıktan sonra merge sırasında `main` durumu `DONE` olacak biçimde düzelt. 'Push edildi' ile 'kabul edildi' ayrımı JSON'da saklanmalı. README en üstte durum paneli olmalı.
+## Birleştirme kapısı
+Son PR head SHA'sının `PHP 8.4 and document checks` işi başarılı olmalı; önceki commit'in yeşil sonucu yeterli değildir. Main ilerlerse uyumluluğu yeniden değerlendir, çakışmaları incele ve yeni head CI'sını bekle. Force push kullanma. Kullanıcı kabul kaydı eklenen commit de yeniden CI'dan geçer.
 
-## Handoff kanıtları
-Her raporda repo SHA, branch, PR URL, CI status URL, gerçek test sonuçları, değişen dosyalar ve sıradaki tek subphase. PR birleştirilmeden üretime deploy yasak.
+Kullanıcı teslim kabulü, PR merge ve sonraki alt faz başlangıcını ayrı kaydet. GitHub review ile sohbet kabulü farklıdır. Merge sırasında beklenen head SHA kontrolü kullan; beklenmeyen değişiklikte dur. Mevcut merge commit stratejisi korunur; squash/rebase otomatik seçilmez. README/JSON main'de kabul edilmiş durumu, açık dalda teslim durumunu gösterir. Merge sonrasında gerçek SHA'yı doğrula. Üretim yetkisi bundan doğmaz.
 
-## İlk plan paketini aktarma
-Bu ZIP'i yerelde klasöre aç, projedeki dosyaları repo dizinine kopyala, **mevcut README'yi karşılaştırarak** birleştir. `git status` ve `git diff` kontrol et. İlk faz F00.01 kapsamında özel bir PR aç, onaydan önce merge etme. Gerekirse doküman dosyalarını `docs/` altında tutup SitePortal uygulamasıyla daha sonra entegre et.
+## Main koruması — uygulanmadı
+Main sorgusunda `protected:false` görüldü. Yönetim okuması bağlı entegrasyonda `403 Resource not accessible by integration` verdi. Hesabın admin/push bilgisi entegrasyona yönetim erişimi sağlamıyor. UI doğrulaması tarayıcı URL'si güvenle belirlenemediği için durdu; ayar değiştirilmedi.
 
-## Git işlemi örneği (kullanıcı onayı ve gerçek repo durumu teyidinden sonra)
-```bash
-git clone git@github.com:Boydaksu/siteportal.git
-cd siteportal
-git switch main && git pull --ff-only
-git switch -c phase/F00.01-repo-inventory
-# ZIP'deki belgeleri karşılaştırıp kopyala; var olan içeriği ezme.
-git status --short
-git diff --check
-git add README.md AGENTS.md START_HERE.md CURRENT_STATUS.md CHANGELOG.md project-status.json docs/ schemas/ locales/ .github/ .gitignore .env.example
-# Yalnız gerçekten mevcut dosyaları stage et.
-git commit -m "docs: F00.01 plan ve repo envanteri"
-git push -u origin phase/F00.01-repo-inventory
-# GitHub'da PR aç, inceleme bekle. Sonraki subphase'e GEÇME.
-```
+[Kesin ayar önerisi](main-protection.proposal.json): zorunlu PR, bir farklı yetkili inceleyenin onayı, yeni commit'te eski onayların düşmesi, strict/up-to-date CI, yorumların çözülmesi, yöneticilere de uygulama; force push ve silme kapalı. Merge commit korunacağı için linear history zorunlu değil.
+
+**Ayrı ayar onayı alınmadı; bu dosya canlı koruma değildir.** Bir inceleyen şartı tek kişilik çalışmayı kilitleyebilir; farklı inceleyen bulunmadan uygulanmaz. Sıfır inceleyen alternatifi ayrıca açık kararla seçilir. Uygulamadan önce özel repo plan desteği, yönetim kanalı, mevcut ruleset/korumalar ve check kaynağı doğrulanmalı; bilinmeyen kuralların üstüne yazılmamalı. [Resmî kaynaklar](../reference/REPOSITORY_SOURCES.md).
+
+## Hata ve geri dönüş
+Push/PR erişimi yoksa BLOCKED, yerel diff/patch ve gerçek hata bırak; SHA/PR uydurma. Yanlış merge için [geri alma PR'ı](ROLLBACK.md) hazırla. Reset/force push, geçmiş silme ve onaysız deployment yapma. Sızıntıda [olay adımları](../process/SECRETS.md) izlenir.

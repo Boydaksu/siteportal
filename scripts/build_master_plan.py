@@ -13,6 +13,7 @@ paths=['README.md','AGENTS.md','START_HERE.md','CURRENT_STATUS.md',
 'docs/process/WORKFLOW.md','docs/process/QA.md','docs/process/REPORT_TEMPLATE.md','docs/process/DECISIONS.md',
 'docs/roadmap/ROADMAP.md']+[f'docs/roadmap/F{i:02d}.md' for i in range(9)]+['docs/reference/SOURCES.md','docs/README.md','docs/process/MAINTENANCE.md','docs/process/OPEN_QUESTIONS.md','docs/adr/README.md','docs/adr/ADR-001-stack.md','docs/adr/ADR-003-i18n.md','docs/adr/ADR-006-contract-alignment.md','docs/architecture/MODULES.md','docs/architecture/THREAT_MODEL.md','docs/process/DEPENDENCIES.md','docs/reference/ARCHITECTURE_SOURCES.md']
 paths += ['docs/process/TESTING.md','docs/reference/TESTING_SOURCES.md','tests/README.md']
+paths += ['docs/operations/ROLLBACK.md','docs/process/SECRETS.md','docs/reference/REPOSITORY_SOURCES.md']
 sections=['# SITEPORTAL SEO ANALYZER — TEK DOSYALIK TÜRKÇE ANA ŞARTNAME','',
 '> Bu dosya ZIP içindeki modüler belgelerden üretilmiş **okunabilir kopyadır**. Değişikliklerin tek gerçek kaynağı ilgili ayrı belgelerdir. Son durum için `CURRENT_STATUS.md` ve GitHub main kontrol edilir.','',
 '> Oluşturma: `python3 scripts/build_master_plan.py`. İlk hazırlanma tarihi: 2026-11-03.','']

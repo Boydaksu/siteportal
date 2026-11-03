@@ -1,0 +1,402 @@
+F00.05 real local checks; terminal ANSI/trailing whitespace removed only.
+COMMAND: python scripts/check_quality.py
+EXIT: 0
+No syntax errors detected in C:\Users\alici\OneDrive\Desktop\PROJELER\Devam Ediyor\siteportal\tests\Unit\FixtureContractTest.php
+PASS: 1 proje PHP dosyas� lint kontrol�nden ge�ti; vendor/ignore edilen kopyalar kapsam d���.
+Time: 92ms; Memory: 8MB
+Note: Using configuration file C:\Users\alici\OneDrive\Desktop\PROJELER\Devam Ediyor\siteportal\phpstan.neon.
+
+ [OK] No errors
+
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.4.24
+Configuration: C:\Users\alici\OneDrive\Desktop\PROJELER\Devam Ediyor\siteportal\phpunit.xml
+
+...                                                                 3 / 3 (100%)
+
+Time: 00:00.004, Memory: 14.00 MB
+
+OK (3 tests, 74 assertions)
+test_formatter_rejects_non_psr12_input (__main__.QualityGateTests.test_formatter_rejects_non_psr12_input) ... ok
+test_php_lint_rejects_syntax_error (__main__.QualityGateTests.test_php_lint_rejects_syntax_error) ... ok
+test_static_analysis_rejects_incorrect_return_type (__main__.QualityGateTests.test_static_analysis_rejects_incorrect_return_type) ... ok
+test_test_runner_rejects_failed_assertion (__main__.QualityGateTests.test_test_runner_rejects_failed_assertion) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 4.655s
+
+OK
+PASS: PHP lint, PSR-12, PHPStan level 8, PHPUnit ve d�rt olumsuz kalite kap�s� TEST'i.
+
+COMMAND: python scripts/test_document_links.py
+EXIT: 0
+test_code_fences_do_not_create_links_or_headings (__main__.DocumentLinksTests.test_code_fences_do_not_create_links_or_headings) ... ok
+test_external_url_format_without_network_request (__main__.DocumentLinksTests.test_external_url_format_without_network_request) ... ok
+test_missing_file_is_rejected (__main__.DocumentLinksTests.test_missing_file_is_rejected) ... ok
+test_missing_fragment_is_rejected (__main__.DocumentLinksTests.test_missing_fragment_is_rejected) ... ok
+test_repository_escape_is_rejected (__main__.DocumentLinksTests.test_repository_escape_is_rejected) ... ok
+test_turkish_and_duplicate_heading_targets (__main__.DocumentLinksTests.test_turkish_and_duplicate_heading_targets) ... ok
+test_url_encoded_local_target (__main__.DocumentLinksTests.test_url_encoded_local_target) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.028s
+
+OK
+
+COMMAND: python scripts/verify_blueprint.py
+EXIT: 0
+PASS: 9 ana faz, 65 alt faz, 84 kural, 67 Markdown dosyas�; JSON ve i� ba�lant�lar ge�erli.
+NOT: Bu sonu� yaz�l�m�n implementasyon veya g�venlik testlerini ge�ti�ini g�stermez.
+Ba�lant� kontrol�: 675 hedef; yerel ba�l�klar ve MASTER dahil. D�� URL i�erik/eri�imi kontrol edilmedi.
+
+COMMAND: python scripts/verify_architecture.py
+EXIT: 0
+PASS: ADR referans� mevcut: stack_record
+PASS: ADR referans� mevcut: module_matrix
+PASS: ADR referans� mevcut: dependency_policy
+PASS: ADR referans� mevcut: dependency_inventory
+PASS: ADR referans� mevcut: threat_model
+PASS: Ba�lang�� ADR kimlikleri korundu
+PASS: �� s�zle�me fark� karar kayd�nda
+PASS: Q-001 ge�erli karar durumu
+PASS: Q-001 gerek�eli ADR mevcut
+PASS: Q-001 a��k kullan�c� onay� kay�tl�
+PASS: Q-002 ge�erli karar durumu
+PASS: Q-002 gerek�eli ADR mevcut
+PASS: Q-002 a��k kullan�c� onay� kay�tl�
+PASS: Q-003 ge�erli karar durumu
+PASS: Q-003 gerek�eli ADR mevcut
+PASS: Q-003 a��k kullan�c� onay� kay�tl�
+PASS: Ba��ml�l�k envanteri kaynak alt faz�n� ta��yor
+PASS: ADR kayd� uygulama geli�tirilmi� iddias� ta��m�yor
+PASS: Paket manifesti durumu ger�ek dosyalarla ayn�
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: myclabs/deep-copy
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: nikic/php-parser
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phar-io/manifest
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phar-io/version
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpstan/phpstan
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-code-coverage
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-file-iterator
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-invoker
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-text-template
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-timer
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/phpunit
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/cli-parser
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/comparator
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/complexity
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/diff
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/environment
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/exporter
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/global-state
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/lines-of-code
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/object-enumerator
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/object-reflector
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/recursion-context
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/type
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/version
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: squizlabs/php_codesniffer
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: staabm/side-effects-detector
+PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: theseer/tokenizer
+PASS: Geli�tirme envanteri ger�ek lock ile ayn�
+PASS: Uygulama paketi eklenmedi; ara�lar yaln�z dev kapsam�
+PASS: Planlanan platform i�in sahte resolved s�r�m yok
+PASS: Yerel test CLI do�rulama kapsam� deployment'tan ayr�lm��
+PASS: T01�T15 tehdit kimlikleri eksiksiz ve tekil
+PASS: Yedi g�ven s�n�r� kaydedildi
+PASS: Tehdit do�rulama kap�lar� ger�ek yol haritas�nda
+PASS: Kritik kontrol alanlar� ve uygulanmama durumu a��k
+PASS: �rnek yan�t DEMO olarak i�aretli
+PASS: DEMO bulguda mevcut �eman�n zorunlu alanlar� var
+PASS: DEMO rule_id: string
+PASS: DEMO rule_version: string
+PASS: DEMO status: ge�erli enum
+PASS: DEMO severity: ge�erli enum
+PASS: DEMO confidence: ge�erli enum
+PASS: DEMO evidence: array
+PASS: DEMO evidence: nesne listesi
+PASS: DEMO observed_at: string
+PASS: DEMO affected_urls: array
+PASS: DEMO data_source: string
+PASS: Q-001: tek data_source alan�
+PASS: Q-001: evidence nesne dizisi
+PASS: Q-002: crawler queue ad� analysis_jobs
+PASS: Q-002: DB/crawler ad� e�li�i
+PASS: Q-003: uygulanan �zelliklerde dil kapsam� a��k
+NOT: DEMO kontrol� zorunlu alan/type/enum e�li�idir; tam JSON Schema motoru, ger�ek API, CVE/lisans audit veya SSRF testi de�ildir.
+
+COMMAND: python scripts/verify_toolchain.py
+EXIT: 0
+PASS: Uygulama paketi yok; yaln�z PHP platform �art�
+PASS: Composer plugin kapal� ve HTTPS zorunlu
+PASS: Otomatik/root Composer script'i eklenmedi
+PASS: Q-004 i�in yetkisiz k�k lisans karar� al�nmad�
+PASS: B�t�n do�rudan/ge�i�li dev paketleri incelenmi� ve kay�tl�
+PASS: Kesin do�rudan s�r�m: phpunit/phpunit
+PASS: Kesin do�rudan s�r�m: phpstan/phpstan
+PASS: Kesin do�rudan s�r�m: squizlabs/php_codesniffer
+PASS: Lock/inceleme/envanter s�r�m e�li�i: myclabs/deep-copy
+PASS: Kilitli artifact reference: myclabs/deep-copy
+PASS: Lisans metadata e�li�i: myclabs/deep-copy
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: myclabs/deep-copy
+PASS: Lock/inceleme/envanter s�r�m e�li�i: nikic/php-parser
+PASS: Kilitli artifact reference: nikic/php-parser
+PASS: Lisans metadata e�li�i: nikic/php-parser
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: nikic/php-parser
+PASS: Lock/inceleme/envanter s�r�m e�li�i: phar-io/manifest
+PASS: Kilitli artifact reference: phar-io/manifest
+PASS: Lisans metadata e�li�i: phar-io/manifest
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phar-io/manifest
+PASS: Lock/inceleme/envanter s�r�m e�li�i: phar-io/version
+PASS: Kilitli artifact reference: phar-io/version
+PASS: Lisans metadata e�li�i: phar-io/version
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phar-io/version
+PASS: Lock/inceleme/envanter s�r�m e�li�i: phpstan/phpstan
+PASS: Kilitli artifact reference: phpstan/phpstan
+PASS: Lisans metadata e�li�i: phpstan/phpstan
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpstan/phpstan
+PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-code-coverage
+PASS: Kilitli artifact reference: phpunit/php-code-coverage
+PASS: Lisans metadata e�li�i: phpunit/php-code-coverage
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-code-coverage
+PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-file-iterator
+PASS: Kilitli artifact reference: phpunit/php-file-iterator
+PASS: Lisans metadata e�li�i: phpunit/php-file-iterator
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-file-iterator
+PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-invoker
+PASS: Kilitli artifact reference: phpunit/php-invoker
+PASS: Lisans metadata e�li�i: phpunit/php-invoker
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-invoker
+PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-text-template
+PASS: Kilitli artifact reference: phpunit/php-text-template
+PASS: Lisans metadata e�li�i: phpunit/php-text-template
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-text-template
+PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-timer
+PASS: Kilitli artifact reference: phpunit/php-timer
+PASS: Lisans metadata e�li�i: phpunit/php-timer
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-timer
+PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/phpunit
+PASS: Kilitli artifact reference: phpunit/phpunit
+PASS: Lisans metadata e�li�i: phpunit/phpunit
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/phpunit
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/cli-parser
+PASS: Kilitli artifact reference: sebastian/cli-parser
+PASS: Lisans metadata e�li�i: sebastian/cli-parser
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/cli-parser
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/comparator
+PASS: Kilitli artifact reference: sebastian/comparator
+PASS: Lisans metadata e�li�i: sebastian/comparator
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/comparator
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/complexity
+PASS: Kilitli artifact reference: sebastian/complexity
+PASS: Lisans metadata e�li�i: sebastian/complexity
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/complexity
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/diff
+PASS: Kilitli artifact reference: sebastian/diff
+PASS: Lisans metadata e�li�i: sebastian/diff
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/diff
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/environment
+PASS: Kilitli artifact reference: sebastian/environment
+PASS: Lisans metadata e�li�i: sebastian/environment
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/environment
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/exporter
+PASS: Kilitli artifact reference: sebastian/exporter
+PASS: Lisans metadata e�li�i: sebastian/exporter
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/exporter
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/global-state
+PASS: Kilitli artifact reference: sebastian/global-state
+PASS: Lisans metadata e�li�i: sebastian/global-state
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/global-state
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/lines-of-code
+PASS: Kilitli artifact reference: sebastian/lines-of-code
+PASS: Lisans metadata e�li�i: sebastian/lines-of-code
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/lines-of-code
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/object-enumerator
+PASS: Kilitli artifact reference: sebastian/object-enumerator
+PASS: Lisans metadata e�li�i: sebastian/object-enumerator
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/object-enumerator
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/object-reflector
+PASS: Kilitli artifact reference: sebastian/object-reflector
+PASS: Lisans metadata e�li�i: sebastian/object-reflector
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/object-reflector
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/recursion-context
+PASS: Kilitli artifact reference: sebastian/recursion-context
+PASS: Lisans metadata e�li�i: sebastian/recursion-context
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/recursion-context
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/type
+PASS: Kilitli artifact reference: sebastian/type
+PASS: Lisans metadata e�li�i: sebastian/type
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/type
+PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/version
+PASS: Kilitli artifact reference: sebastian/version
+PASS: Lisans metadata e�li�i: sebastian/version
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/version
+PASS: Lock/inceleme/envanter s�r�m e�li�i: squizlabs/php_codesniffer
+PASS: Kilitli artifact reference: squizlabs/php_codesniffer
+PASS: Lisans metadata e�li�i: squizlabs/php_codesniffer
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: squizlabs/php_codesniffer
+PASS: Lock/inceleme/envanter s�r�m e�li�i: staabm/side-effects-detector
+PASS: Kilitli artifact reference: staabm/side-effects-detector
+PASS: Lisans metadata e�li�i: staabm/side-effects-detector
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: staabm/side-effects-detector
+PASS: Lock/inceleme/envanter s�r�m e�li�i: theseer/tokenizer
+PASS: Kilitli artifact reference: theseer/tokenizer
+PASS: Lisans metadata e�li�i: theseer/tokenizer
+PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: theseer/tokenizer
+PASS: CI action s�r�m kayd� workflow ile ayn�
+PASS: Action'lar tam commit SHA ile sabit
+PASS: CI minimum token yetkisi; kal�c� credential ve privileged PR trigger yok
+NOT: Bu denetim g�ncel CVE veritaban�n� sorgulamaz; composer audit ayr� �al��t�r�l�r. Paketlenmi� PHAR i� bile�enleri ve hukuki uygunluk sertifikas� kapsam d���.
+
+COMMAND: python scripts/verify_inventory.py
+EXIT: 0
+PASS: Ba�lang�� paketi: 57 dosya kay�tl�
+PASS: SHA256 .env.example
+PASS: SHA256 .gitattributes
+PASS: SHA256 .github/ISSUE_TEMPLATE/alt-faz.md
+PASS: SHA256 .github/ISSUE_TEMPLATE/hata.md
+PASS: SHA256 .github/PULL_REQUEST_TEMPLATE.md
+PASS: SHA256 .github/workflows/quality.yml
+PASS: SHA256 .gitignore
+PASS: SHA256 AGENTS.md
+PASS: SHA256 BUNDLE_INFO.json
+PASS: SHA256 CHANGELOG.md
+PASS: SHA256 CURRENT_STATUS.md
+PASS: SHA256 MASTER_PLAN_TR.md
+PASS: SHA256 README.md
+PASS: SHA256 START_HERE.md
+PASS: SHA256 composer.json
+PASS: SHA256 composer.lock
+PASS: SHA256 docs/README.md
+PASS: SHA256 docs/adr/ADR-001-stack.md
+PASS: SHA256 docs/adr/ADR-003-i18n.md
+PASS: SHA256 docs/adr/ADR-006-contract-alignment.md
+PASS: SHA256 docs/adr/README.md
+PASS: SHA256 docs/adr/architecture-decisions.json
+PASS: SHA256 docs/architecture/API.md
+PASS: SHA256 docs/architecture/CRAWLER.md
+PASS: SHA256 docs/architecture/DATABASE.md
+PASS: SHA256 docs/architecture/I18N.md
+PASS: SHA256 docs/architecture/INTEGRATIONS.md
+PASS: SHA256 docs/architecture/MODULES.md
+PASS: SHA256 docs/architecture/OPERATIONS.md
+PASS: SHA256 docs/architecture/SECURITY.md
+PASS: SHA256 docs/architecture/SYSTEM.md
+PASS: SHA256 docs/architecture/THREAT_MODEL.md
+PASS: SHA256 docs/operations/GITHUB.md
+PASS: SHA256 docs/operations/PRIVACY.md
+PASS: SHA256 docs/operations/RELEASE.md
+PASS: SHA256 docs/operations/ROLLBACK.md
+PASS: SHA256 docs/operations/main-protection.proposal.json
+PASS: SHA256 docs/process/DECISIONS.md
+PASS: SHA256 docs/process/DEPENDENCIES.md
+PASS: SHA256 docs/process/MAINTENANCE.md
+PASS: SHA256 docs/process/OPEN_QUESTIONS.md
+PASS: SHA256 docs/process/QA.md
+PASS: SHA256 docs/process/REPORT_TEMPLATE.md
+PASS: SHA256 docs/process/SECRETS.md
+PASS: SHA256 docs/process/TESTING.md
+PASS: SHA256 docs/process/WORKFLOW.md
+PASS: SHA256 docs/process/dependencies.json
+PASS: SHA256 docs/reference/ARCHITECTURE_SOURCES.md
+PASS: SHA256 docs/reference/REPOSITORY_SOURCES.md
+PASS: SHA256 docs/reference/SOURCES.md
+PASS: SHA256 docs/reference/TESTING_SOURCES.md
+PASS: SHA256 docs/reports/F00.01-checks.txt
+PASS: SHA256 docs/reports/F00.01-inventory.json
+PASS: SHA256 docs/reports/F00.01-original-manifest.sha256
+PASS: SHA256 docs/reports/F00.01.md
+PASS: SHA256 docs/reports/F00.02-checks.txt
+PASS: SHA256 docs/reports/F00.02-handoff.md
+PASS: SHA256 docs/reports/F00.02.md
+PASS: SHA256 docs/reports/F00.03-checks.txt
+PASS: SHA256 docs/reports/F00.03.md
+PASS: SHA256 docs/reports/F00.04-checks.txt
+PASS: SHA256 docs/reports/F00.04-ci.json
+PASS: SHA256 docs/reports/F00.04-composer-audit.json
+PASS: SHA256 docs/reports/F00.04-composer-licenses.json
+PASS: SHA256 docs/reports/F00.04-dependency-review.json
+PASS: SHA256 docs/reports/F00.04.md
+PASS: SHA256 docs/reports/F00.05.md
+PASS: SHA256 docs/reports/README.md
+PASS: SHA256 docs/requirements/ERROR_STATES.md
+PASS: SHA256 docs/requirements/FEATURE_MATRIX.md
+PASS: SHA256 docs/requirements/PRIORITIES.md
+PASS: SHA256 docs/requirements/PRODUCT.md
+PASS: SHA256 docs/requirements/RULES.md
+PASS: SHA256 docs/requirements/SCORING.md
+PASS: SHA256 docs/requirements/UX.md
+PASS: SHA256 docs/requirements/rules-catalog.csv
+PASS: SHA256 docs/roadmap/F00.md
+PASS: SHA256 docs/roadmap/F01.md
+PASS: SHA256 docs/roadmap/F02.md
+PASS: SHA256 docs/roadmap/F03.md
+PASS: SHA256 docs/roadmap/F04.md
+PASS: SHA256 docs/roadmap/F05.md
+PASS: SHA256 docs/roadmap/F06.md
+PASS: SHA256 docs/roadmap/F07.md
+PASS: SHA256 docs/roadmap/F08.md
+PASS: SHA256 docs/roadmap/ROADMAP.md
+PASS: SHA256 examples/analysis-response.example.json
+PASS: SHA256 examples/finding.schema.json
+PASS: SHA256 examples/phase-report.example.md
+PASS: SHA256 locales/en-US.example.json
+PASS: SHA256 locales/tr-TR.example.json
+PASS: SHA256 phpcs.xml
+PASS: SHA256 phpstan.neon
+PASS: SHA256 phpunit.xml
+PASS: SHA256 project-status.json
+PASS: SHA256 schemas/openapi-draft.yaml
+PASS: SHA256 schemas/rule-registry.seed.json
+PASS: SHA256 scripts/build_master_plan.py
+PASS: SHA256 scripts/check_php.py
+PASS: SHA256 scripts/check_quality.py
+PASS: SHA256 scripts/document_links.py
+PASS: SHA256 scripts/php_cli.py
+PASS: SHA256 scripts/test_document_links.py
+PASS: SHA256 scripts/test_quality_gates.py
+PASS: SHA256 scripts/update_manifest.py
+PASS: SHA256 scripts/verify_architecture.py
+PASS: SHA256 scripts/verify_blueprint.py
+PASS: SHA256 scripts/verify_inventory.py
+PASS: SHA256 scripts/verify_toolchain.py
+PASS: SHA256 tests/Fixtures/unknown-analysis.json
+PASS: SHA256 tests/README.md
+PASS: SHA256 tests/Unit/FixtureContractTest.php
+PASS: Manifest b�t�n takip edilen dosyalar� kaps�yor
+PASS: Takip edilen b�t�n JSON dosyalar� ayr��t�r�l�yor
+PASS: BOM uyumlu CSV ile JSON: ayn� 84 kay�t
+PASS: F00 plan/JSON s�ras� ve tam kapsam�
+PASS: F01 plan/JSON s�ras� ve tam kapsam�
+PASS: F02 plan/JSON s�ras� ve tam kapsam�
+PASS: F03 plan/JSON s�ras� ve tam kapsam�
+PASS: F04 plan/JSON s�ras� ve tam kapsam�
+PASS: F05 plan/JSON s�ras� ve tam kapsam�
+PASS: F06 plan/JSON s�ras� ve tam kapsam�
+PASS: F07 plan/JSON s�ras� ve tam kapsam�
+PASS: F08 plan/JSON s�ras� ve tam kapsam�
+PASS: Toplam 65 alt faz
+PASS: Aktif alt faz ve �st durum e�le�iyor
+PASS: Aktif alt faz�n �ncekileri DONE
+PASS: Sonraki alt fazlar ba�lamad�
+PASS: Son onayl� alt faz DONE kay�tlar�yla tutarl�
+PASS: Her DONE i�in tarih ve kullan�c� onay kan�t� var
+PASS: TR/EN anahtar ve parametre e�li�i
+PASS: Ba�lang�� main dosyalar�ndan silinen yok
+PASS: S�n�rl� secret kal�p taramas�: bulgu yok (tam g�venlik denetimi de�ildir)
+PASS: Ger�ek .env dosyas� takip edilmiyor
+PASS: F00 PHP dosyalar� yaln�z TEST/kalite ara�lar� kapsam�nda; uygulama yok
+NOT: Bu kontroller PHP/DB/crawler birim, entegrasyon veya g�venlik testleri de�ildir.
+
+COMMAND: python scripts/build_master_plan.py --check
+EXIT: 0
+PASS: MASTER_PLAN_TR.md 54 kaynakla byte-for-byte g�ncel; dosya de�i�tirilmedi.
+
+COMMAND: git diff --check
+EXIT: 0
+
+COMMAND: git diff --cached --check
+EXIT: 0
+
+CHECK: reverse patch applicability, no mutation
+EXIT: 0

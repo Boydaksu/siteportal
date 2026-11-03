@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "repository": "Boydaksu/siteportal",
+  "branch": "main",
+  "status": "PROPOSED_NOT_APPLIED",
+  "observed_date": "2026-11-03",
+  "observed_main_protected": false,
+  "effective_admin_access": "DENIED_TO_CONNECTED_INTEGRATION",
+  "administration_api_result": "403 Resource not accessible by integration",
+  "ui_check_result": "Stopped: current browser URL could not be determined with enough confidence; no settings changed",
+  "settings_approval_reference": null,
+  "reviewer_warning": "One required approving review needs a different authorized reviewer; do not enable without confirming reviewer availability. Zero-review solo alternative needs explicit separate choice.",
+  "desired_configuration": {
+    "required_status_checks": {
+      "strict": true,
+      "contexts": [
+        "PHP 8.4 and document checks"
+      ]
+    },
+    "enforce_admins": true,
+    "required_pull_request_reviews": {
+      "dismiss_stale_reviews": true,
+      "required_approving_review_count": 1
+    },
+    "restrictions": null,
+    "required_linear_history": false,
+    "allow_force_pushes": false,
+    "allow_deletions": false,
+    "required_conversation_resolution": true
+  },
+  "application_conditions": [
+    "Explicit approval for this exact main configuration",
+    "Administrative access through authorized channel",
+    "Private repository plan supports protected branches",
+    "A separate eligible reviewer is available; otherwise explicitly review solo alternative",
+    "Verify actual current context/source and existing rules before applying; never overwrite unknown rules"
+  ]
+}
