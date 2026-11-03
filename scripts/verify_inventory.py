@@ -63,5 +63,5 @@ for name in tracked:
 check(not suspects, "Sınırlı secret kalıp taraması: bulgu yok (tam güvenlik denetimi değildir)")
 check(not any(name == ".env" or (Path(name).name.startswith(".env.") and Path(name).name != ".env.example") for name in tracked), "Gerçek .env dosyası takip edilmiyor")
 if status["current_phase"] == "F00":
-    check(not any(name.endswith(".php") for name in tracked), "F00 belge kapsamına PHP uygulama kodu eklenmedi")
+    check(all(name.startswith(("tests/", "scripts/")) for name in tracked if name.endswith(".php")), "F00 PHP dosyaları yalnız TEST/kalite araçları kapsamında; uygulama yok")
 print("NOT: Bu kontroller PHP/DB/crawler birim, entegrasyon veya güvenlik testleri değildir.")

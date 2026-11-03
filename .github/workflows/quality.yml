@@ -1,0 +1,65 @@
+name: SitePortal quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: PHP 8.4 and document checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      COMPOSER_HOME: ${{ github.workspace }}/.cache/composer-home
+      COMPOSER_CACHE_DIR: ${{ github.workspace }}/.cache/composer-cache
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Clean checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: PHP and Composer
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2 resolved 2026-11-03
+        with:
+          php-version: '8.4'
+          tools: composer:2.10.2
+          extensions: dom, filter, json, libxml, mbstring, phar, simplexml, tokenizer, xmlwriter
+          coverage: none
+
+      - name: Record actual tool versions
+        run: |
+          php --version
+          composer --version
+          python --version
+          git --version
+
+      - name: Validate manifest and install reviewed development tools
+        run: |
+          composer validate --no-check-publish --no-plugins --no-scripts
+          composer install --no-interaction --prefer-dist --no-plugins --no-scripts
+          composer check-platform-reqs --no-plugins --no-scripts
+          composer audit --locked --format=json --no-plugins --no-scripts
+
+      - name: PHP lint, format, static analysis and TEST harness
+        run: python scripts/check_quality.py
+
+      - name: Documents, fixtures, sources and inventory
+        run: |
+          python scripts/test_document_links.py
+          python scripts/verify_blueprint.py
+          python scripts/verify_architecture.py
+          python scripts/verify_toolchain.py
+          python scripts/verify_inventory.py
+          python scripts/build_master_plan.py --check
+          git diff --check
+          test -z "$(git status --porcelain)"

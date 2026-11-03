@@ -1,12 +1,12 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.03 — DONE; kullanıcı kabulü ve PR #3 birleştirme onayı alındı. Uygulama kodu yok.
+> **Durum:** F00.04 — DONE; kullanıcı kabulü ve PR #4 birleştirme onayı alındı. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.03 — DONE; PR #3 birleştirme onayı alındı.
-> **Aktif dal:** `phase/F00.03-architecture-policy`. **Aktif PR:** [#3](https://github.com/Boydaksu/siteportal/pull/3) (açık, birleştirilmedi). **Kanıt SHA:** `0e4206400f34bda67d0358ce1fc05b57dd7ae77d`.
-> **Son kontrol:** Belge/envanter/sözleşme kontrolleri, 7/7 bağlantı TEST ve master üretim eşliği PASS. CI yok; uygulama/CVE audit testleri N/A.
-> **Rapor:** [F00.03](docs/reports/F00.03.md). **Sonraki:** F00.04 — Test ve CI iskeleti; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
-> **Kararlar:** Q-001–003 ayrı kullanıcı onayıyla uzlaştırıldı; [ADR dizini](docs/adr/README.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık.
+> **Son onaylanan alt faz:** F00.04 — DONE; PR #4 birleştirme onayı alındı.
+> **Aktif dal:** `phase/F00.04-test-ci`. **Aktif PR:** [#4](https://github.com/Boydaksu/siteportal/pull/4) (açık, birleştirilmedi). **CI kanıt SHA:** `06b3e12fd122eeef24dbc748c956d79ff4ed85bb`.
+> **Son kontrol:** Yerel kalite/fixture/belge/envanter PASS; [gerçek CI](https://github.com/Boydaksu/siteportal/actions/runs/41666506494) SUCCESS (kanıt commit’i).
+> **Rapor:** [F00.04](docs/reports/F00.04.md). **Sonraki:** F00.05 — Repo ve PR politikası; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
+> **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık; Composer uyarısı raporlanıyor.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
 
 ## Proje
@@ -57,9 +57,12 @@ Her alt faz tesliminde: `README` durum satırı + `CURRENT_STATUS.md` + `project
 Depo çalışan uygulama değil, sürümlendirilmiş geliştirme şartnamesi ve devir kayıtları içerir. Uygulama F01'den itibaren üretilecek; kurulum adımları F01.02'de gerçek komutlarla doğrulanacak. Belge kontrolleri uygulamanın çalıştığı anlamına gelmez.
 
 ## Başlangıç paketi ve kayıtlar
-F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını tamamladı ve kabul edildi. F00.03 teknik kararları/sınırları belgeler; F00.04 ve sonraki işler başlamadı.
+F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını tamamladı ve kabul edildi. F00.03 teknik kararları/sınırları belgeledi ve kabul edildi. F00.04 yalnız test/CI araçlarını kurar; F00.05 ve sonrası başlamadı.
 
 `BUNDLE_INFO.json` orijinal paket üretim anını anlatır; canlı durum JSON'dadır. `FILE_MANIFEST.sha256` etkin dosyaları, [özgün manifest](docs/reports/F00.01-original-manifest.sha256) ilk paketi doğrular. Yerel `siteportal_seo_masterplan/` eski korunmuş kopyadır; etkin çalışma kök dizindedir.
 
 ## Mimari ve tedarik zinciri kayıtları
 [ADR dizini](docs/adr/README.md), [modül sınırları](docs/architecture/MODULES.md), [bağımlılık politikası](docs/process/DEPENDENCIES.md) ve [tehdit modeli](docs/architecture/THREAT_MODEL.md) uygulanacak sınırları açıklar; runtime veya güvenlik testi geçişi değildir.
+
+## Kalite ve test çalıştırma
+[TESTING](docs/process/TESTING.md) temiz checkout/kurulum, `python scripts/check_quality.py`, belge/envanter komutları ve gerçek test kapsamını açıklar. 27 paket yalnız geliştirme araçlarıdır; uygulama bağımlılığı yoktur. CI sonucu kendi commit/run kanıtıyla raporlanır; fixture testleri çalışan SEO ürünü iddiası değildir.

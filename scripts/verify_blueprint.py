@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Blueprint paketini haricî bağımlılık olmadan denetle. Çalışan ürünü test ETMEZ."""
 from pathlib import Path
-import json,csv,re,sys
+import json,csv,re,sys,subprocess
 from document_links import validate_documents
 root=Path(__file__).resolve().parents[1]
 errs=[]
@@ -39,7 +39,8 @@ try:
  assert all(r['reference'] in reference_ids for r in rules),'Rule source ID missing in SOURCES.md'
 except Exception as ex:errs.append(f'Rules invalid: {ex}')
 # Etkin belgelerde yerel dosya/başlık hedeflerini ve dış URL biçimini denetle.
-markdown_files=[p for p in root.rglob('*.md') if not any(part in {'.git','siteportal_seo_masterplan'} for part in p.relative_to(root).parts)]
+project_paths=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','-z'],cwd=root).decode('utf-8').split('\0')
+markdown_files=[root/p for p in sorted(set(project_paths)) if p.endswith('.md')]
 link_errors,link_count=validate_documents(root,markdown_files)
 errs.extend(link_errors)
 for e in errs: print('ERROR:',e)

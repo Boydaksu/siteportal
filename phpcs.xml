@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="SitePortal PSR-12">
+    <description>F00.04 TEST PHP dosyaları; uygulama henüz yok.</description>
+    <file>tests</file>
+    <arg name="extensions" value="php"/>
+    <arg name="encoding" value="utf-8"/>
+    <rule ref="PSR12"/>
+</ruleset>

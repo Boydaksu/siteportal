@@ -3,12 +3,12 @@
 Tarih: 2026-11-03. Durum: F00.03 kullanıcı teslim kabulüyle ACCEPTED (2026-11-03). Kaynak sınırları [AGENTS](../../AGENTS.md) ve [ADR-001](../adr/ADR-001-stack.md). Makine envanteri: [dependencies.json](dependencies.json).
 
 ## Mevcut gerçek durum
-Uygulama Composer/npm paketi yok; composer.json/lock, package.json/lock veya vendor/node_modules eklenmedi. PHP/MySQL/extension'lar planlanan platform gereksinimidir, “hiç dış yazılım yok” anlamına gelmez. Yerel PATH'te PHP ve Composer komutları bulundu; sürüm/extension uyumluluğu çalıştırılmadı. MySQL CLI PATH'te bulunmadı; bu, makinede MySQL kurulmadığını ispatlamaz. Mevcut belge kontrolleri Python standart kütüphanesi ve Git kullanır; Python doğrulama komutları uygulama runtime'ı değildir.
+F00.04, test/CI için 3 kesin doğrudan ve 27 toplam geçişli geliştirme paketini composer.json/lock ile ekledi; uygulama paketleri boştur. [TESTING](TESTING.md), [envanter](dependencies.json) ve [inceleme kanıtı](../reports/F00.04-dependency-review.json) kapsamı açıklar. Vendor ve araç önbelleği ignore edilir; PHP/MySQL deployment gereksinimleri hâlâ PLANNED'dır. Yerel PHP 8.4.24/Composer 2.10.2 ve test araçlarının extension gereksinimleri doğrulandı; uygulama/DB hazırlığı değildir. Python/Git belge araçları ayrıca kullanılır. İlk F00.03 paket/audit yokluğu eski raporda tarihsel olarak korunur.
 
 ## Paket ekleme kapısı
 Her doğrudan veya geçişli bağımlılık için kayıtta ad, amaç, ilgili alt faz, upstream/source URL, kesin resolved sürüm/reference, dağıtım bütünlük kaydı veya Git ref, lisans/SPDX ve notice yolu, bakım durumu, güvenlik kontrol tarihi/çıktısı, sahibi/onayı ve kaldırma alternatifi bulunur. İlk tercih PHP'nin mevcut kabiliyetidir; kritik güvenlik algoritması sırf bağımlılıktan kaçınmak için denetimsiz yeniden icat edilmez.
 
-Kayıt tamamlanmadan paket kurup çalıştırma. Yeni framework/servis/proprietary SDK mevcut planı değiştiriyorsa ayrıca kullanıcı onayı ve ADR gerekir. Transitive bağımlılıklar da incelenir; yalnız doğrudan paket sayısı güvenlik göstergesi değildir. Gerekli test araçları da ayrı dev-tool kapsamıyla aynı sürüm/lisans/güvenlik kapısından geçer; F00.04'ün test araçları burada kurulmaz.
+Kayıt tamamlanmadan paket kurup çalıştırma. Yeni framework/servis/proprietary SDK mevcut planı değiştiriyorsa ayrıca kullanıcı onayı ve ADR gerekir. Transitive bağımlılıklar da incelenir; yalnız doğrudan paket sayısı güvenlik göstergesi değildir. Gerekli test araçları da ayrı dev-tool kapsamıyla aynı sürüm/lisans/güvenlik kapısından geçer; F00.04 test araçları kendi dev kapsamı, lisans/lock/audit kanıtıyla eklenmiştir.
 
 ## Sürüm ve tekrarlanabilirlik
 - Uygulama doğrudan paketleri AGENTS gereği kesin sürümle seçilir; `*`, `dev-main`, yüzen branch veya `latest` ile teslim yapılmaz. Geçişli sürümler commit edilen Composer lock içinde çözülür. Kod incelemesi manifest ve lock diff'ini birlikte kapsar.
@@ -25,7 +25,7 @@ Yeni veya değişen lock için advisory/abandoned/malware sinyalleri, upstream b
 SPDX etiketi, gerçek LICENSE/NOTICE metni, sürüm ve doğrudan/geçişli dağıtım yükümlülükleri birlikte incelenir. MIT/BSD/Apache etiketleri otomatik onay değildir; notice/patent/redistribution koşulları okunur. Copyleft, ticari, çift veya belirsiz lisans durumunda işletmeci değerlendirmesi gerekir; uygunluğu varsayarak ekleme yapılmaz. Bu teknik süreç hukukî uygunluk görüşü değildir. Kök projeye LICENSE dosyası uydurulmaz; ürünün dağıtım lisansı yayın öncesi işletmeci tarafından seçilir. PHP/MySQL gibi platformların kullanım/dağıtım koşulları uygulama paketlerinden ayrı kaydedilir.
 
 ## Gelecek fazda uygulanacak kontrol örnekleri
-Aşağıdaki komutlar [Composer CLI belgesinden](https://getcomposer.org/doc/03-cli.md) kontrol edilen prosedür örnekleridir; **bu alt fazda çalıştırılmadı**. Manifest/lock henüz yoktur. Kullanılacak Composer sürümünde bayraklar yeniden doğrulanır.
+Aşağıdaki komutlar [Composer CLI belgesinden](https://getcomposer.org/doc/03-cli.md) kontrol edilen prosedür örnekleridir; F00.03 sırasında yalnız prosedür örneğiydi. F00.04 içinde manifest/lock eklendi, audit/lisans/platform komutları çalıştırıldı; güncel komut ve Q-004 kök lisans uyarısının sınırı [TESTING](TESTING.md) içindedir. Kullanılacak Composer sürümünde bayraklar yeniden doğrulanır.
 
 ```text
 composer validate --strict

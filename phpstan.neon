@@ -1,0 +1,8 @@
+parameters:
+    level: 8
+    phpVersion: 80400
+    paths:
+        - tests/Unit
+    tmpDir: .phpstan-cache
+    bootstrapFiles:
+        - vendor/autoload.php

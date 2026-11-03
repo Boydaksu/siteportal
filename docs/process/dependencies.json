@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "updated_date": "2026-11-03",
-  "phase": "F00.03",
+  "phase": "F00.04",
   "policy_status": "ACCEPTED",
   "policy_document": "docs/process/DEPENDENCIES.md",
   "application_packages": [],
-  "application_manifests_present": false,
+  "application_manifests_present": true,
   "platform_requirements": [
     {
       "name": "php",
@@ -35,7 +35,10 @@
     "php_command_on_path": true,
     "composer_command_on_path": true,
     "mysql_command_on_path": false,
-    "runtime_versions_or_extensions_tested": false
+    "runtime_versions_or_extensions_tested": true,
+    "php_version": "8.4.24",
+    "composer_version": "2.10.2",
+    "scope": "Local test CLI only, not application or database readiness"
   },
   "package_record_required_fields": [
     "name",
@@ -55,8 +58,573 @@
   ],
   "project_distribution_license": "UNDECIDED",
   "notes": [
-    "Uygulama paketi yok; platform ve belge araçları bundan ayrıdır.",
-    "Resolved runtime sürümleri gerçek ortamın kurulduğu F01 alt fazında kaydedilecek.",
-    "Composer audit ve lisans komutları manifest/lock olmadığı için çalıştırılmadı."
+    "Uygulama paketleri boş; 27 geliştirme paketi ayrı kayıtlı.",
+    "Platform PLANNED bilgisi deployment sürümü değildir; yerel test CLI bilgisi ayrı tutulur.",
+    "Composer audit 27 kilitli geliştirme paketi için exit=0; paketlenmiş PHAR iç bağımlılıkları bu envanterin sınırıdır.",
+    "Kök proje lisansı Q-004 seçilmedi; composer validate license warning raporlanır."
+  ],
+  "development_packages": [
+    {
+      "name": "myclabs/deep-copy",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/myclabs/DeepCopy.git",
+      "resolved_version": "1.14.0",
+      "reference_or_integrity": "8680aa248f8e07bc8fb43f56f0f5fc77a0c96aae",
+      "license_spdx": [
+        "MIT"
+      ],
+      "license_notice_paths": [
+        "vendor/myclabs/deep-copy/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "nikic/php-parser",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/nikic/PHP-Parser.git",
+      "resolved_version": "v5.9.0",
+      "reference_or_integrity": "9e33da9553fe7786f0962b35f4e4ecf01be89def",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/nikic/php-parser/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "phar-io/manifest",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/phar-io/manifest.git",
+      "resolved_version": "2.0.4",
+      "reference_or_integrity": "54750ef60c58e43759730615a392c31c80e23176",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/phar-io/manifest/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "phar-io/version",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/phar-io/version.git",
+      "resolved_version": "3.2.1",
+      "reference_or_integrity": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/phar-io/version/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "phpstan/phpstan",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/phpstan/phpstan-src",
+      "resolved_version": "2.3.5",
+      "reference_or_integrity": "645a1bd6bead15fc1b8474137467961d0fa30a79",
+      "license_spdx": [
+        "MIT"
+      ],
+      "license_notice_paths": [
+        "vendor/phpstan/phpstan/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "phpunit/php-code-coverage",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+      "resolved_version": "12.5.8",
+      "reference_or_integrity": "7440368d94738d54f2c1de24dbd3871793bbb0dd",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/phpunit/php-code-coverage/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "phpunit/php-file-iterator",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/php-file-iterator.git",
+      "resolved_version": "6.0.2",
+      "reference_or_integrity": "a248d1640ab059b075f53a2ef0f9856e864e06b5",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/phpunit/php-file-iterator/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "phpunit/php-invoker",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/php-invoker.git",
+      "resolved_version": "6.0.0",
+      "reference_or_integrity": "12b54e689b07a25a9b41e57736dfab6ec9ae5406",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/phpunit/php-invoker/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "phpunit/php-text-template",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/php-text-template.git",
+      "resolved_version": "5.0.1",
+      "reference_or_integrity": "babab73b7ef9fae406f2eb3ee11323a61caa63d5",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/phpunit/php-text-template/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "phpunit/php-timer",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/php-timer.git",
+      "resolved_version": "8.0.0",
+      "reference_or_integrity": "f258ce36aa457f3aa3339f9ed4c81fc66dc8c2cc",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/phpunit/php-timer/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "phpunit/phpunit",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/phpunit.git",
+      "resolved_version": "12.5.43",
+      "reference_or_integrity": "1d5a4a3c98fa1ca3a51402c74b66c2c8df85e0bb",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/phpunit/phpunit/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/cli-parser",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/cli-parser.git",
+      "resolved_version": "4.2.1",
+      "reference_or_integrity": "7d05781b13f7dec9043a629a21d086ed74582a15",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/cli-parser/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/comparator",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/comparator.git",
+      "resolved_version": "7.1.8",
+      "reference_or_integrity": "7c65c1e79836812819705b473a90c12399542485",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/comparator/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/complexity",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/complexity.git",
+      "resolved_version": "5.0.0",
+      "reference_or_integrity": "bad4316aba5303d0221f43f8cee37eb58d384bbb",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/complexity/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/diff",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/diff.git",
+      "resolved_version": "7.0.1",
+      "reference_or_integrity": "cd4cabe39f8a4e8ee6818ba99f10a05561ea4ad6",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/diff/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/environment",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/environment.git",
+      "resolved_version": "8.1.2",
+      "reference_or_integrity": "9d32c685773823b1983e256ae4ecd48a10d6e439",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/environment/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/exporter",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/exporter.git",
+      "resolved_version": "7.0.3",
+      "reference_or_integrity": "c5e21b5de653ce0a769fb36f5cdfcb5e7a32cf23",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/exporter/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/global-state",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/global-state.git",
+      "resolved_version": "8.0.3",
+      "reference_or_integrity": "b164d3274d6537ab462591c5755f76a8f5b1aae9",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/global-state/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/lines-of-code",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/lines-of-code.git",
+      "resolved_version": "4.0.1",
+      "reference_or_integrity": "d543b8ef219dcd8da262cbb958639a96bedba10e",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/lines-of-code/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/object-enumerator",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/object-enumerator.git",
+      "resolved_version": "7.0.0",
+      "reference_or_integrity": "1effe8e9b8e068e9ae228e542d5d11b5d16db894",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/object-enumerator/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/object-reflector",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/object-reflector.git",
+      "resolved_version": "5.0.0",
+      "reference_or_integrity": "4bfa827c969c98be1e527abd576533293c634f6a",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/object-reflector/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/recursion-context",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/recursion-context.git",
+      "resolved_version": "7.0.1",
+      "reference_or_integrity": "0b01998a7d5b1f122911a66bebcb8d46f0c82d8c",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/recursion-context/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/type",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/type.git",
+      "resolved_version": "6.0.4",
+      "reference_or_integrity": "82ff822c2edc46724be9f7411d3163021f602773",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/type/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "sebastian/version",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/sebastianbergmann/version.git",
+      "resolved_version": "6.0.1",
+      "reference_or_integrity": "9e935a16187e14f39b0e79910dabd614972cdb26",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/sebastian/version/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "squizlabs/php_codesniffer",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
+      "resolved_version": "4.0.4",
+      "reference_or_integrity": "bbdc3d0532623e21838b7041a4364383a8126f96",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/squizlabs/php_codesniffer/licence.txt"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "staabm/side-effects-detector",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/staabm/side-effects-detector.git",
+      "resolved_version": "1.0.5",
+      "reference_or_integrity": "d8334211a140ce329c13726d4a715adbddd0a163",
+      "license_spdx": [
+        "MIT"
+      ],
+      "license_notice_paths": [
+        "vendor/staabm/side-effects-detector/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    },
+    {
+      "name": "theseer/tokenizer",
+      "purpose": "F00.04 PHP quality/test development tooling (including transitive dependencies)",
+      "phase": "F00.04",
+      "source_url": "https://github.com/theseer/tokenizer.git",
+      "resolved_version": "2.0.1",
+      "reference_or_integrity": "7989e43bf381af0eac72e4f0ca5bcbfa81658be4",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "license_notice_paths": [
+        "vendor/theseer/tokenizer/LICENSE"
+      ],
+      "maintenance_status": "Resolved stable release; Composer audit reports no abandoned packages",
+      "security_checked_at": "2026-11-03T18:28:53+03:00",
+      "security_evidence": "docs/reports/F00.04-dependency-review.json",
+      "owner": "SitePortal / Codex development-tool review",
+      "approval_reference": "Authorized F00.04 test/CI tooling; Codex reviewed upstream archive LICENSE and audit before install/execution",
+      "removal_alternative": "Remove test tool and dependent checks explicitly; never silently skip quality gate"
+    }
+  ],
+  "ci_actions": [
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "reference": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "license_spdx": "MIT",
+      "source_url": "https://github.com/actions/checkout",
+      "license_url": "https://github.com/actions/checkout/blob/3d3c42e5aac5ba805825da76410c181273ba90b1/LICENSE",
+      "scope": "CI-only; contents:read, persist-credentials:false",
+      "review_status": "UPSTREAM_SOURCE_LICENSE_AND_PIN_REVIEWED"
+    },
+    {
+      "name": "shivammathur/setup-php",
+      "version": "v2 (resolved 2026-11-03)",
+      "reference": "eb7c497e18156a6bbabfef1d3a82760b9eda3962",
+      "license_spdx": "MIT",
+      "source_url": "https://github.com/shivammathur/setup-php",
+      "license_url": "https://github.com/shivammathur/setup-php/blob/eb7c497e18156a6bbabfef1d3a82760b9eda3962/LICENSE",
+      "scope": "CI-only; install PHP 8.4 and Composer 2.10.2, coverage:none",
+      "review_status": "UPSTREAM_SOURCE_LICENSE_AND_PIN_REVIEWED"
+    }
   ]
 }

@@ -32,17 +32,23 @@ for name, decision in questions.items():
     else:
         check(decision["approval_reference"] is None, f"{name} öneri kabul edilmiş gösterilmedi")
 
-check(inventory["phase"] == "F00.03", "Bağımlılık envanteri kaynak alt fazını taşıyor")
+check(inventory["phase"] in {"F00.03", "F00.04"}, "Bağımlılık envanteri kaynak alt fazını taşıyor")
 check(not records["implementation_started"], "ADR kaydı uygulama geliştirilmiş iddiası taşımıyor")
 manifests = [root / name for name in ["composer.json", "composer.lock", "package.json", "package-lock.json", "yarn.lock", "pnpm-lock.yaml"]]
 check(inventory["application_manifests_present"] == any(p.exists() for p in manifests), "Paket manifesti durumu gerçek dosyalarla aynı")
 required = set(inventory["package_record_required_fields"])
-for package in inventory["application_packages"]:
+managed = inventory["application_packages"] + inventory.get("development_packages", [])
+for package in managed:
     check(required <= package.keys() and all(package.get(k) for k in required), f"Paket sürüm/lisans/güvenlik/onay kaydı tam: {package.get('name')}")
-if not inventory["application_packages"]:
+if not managed:
     check(not any(p.exists() for p in manifests), "Yeni uygulama framework/paketi veya lock eklenmedi")
+elif (root / "composer.lock").exists():
+    lock = json.loads(read("composer.lock"))
+    check({p["name"]: p["version"] for p in lock["packages-dev"]} == {p["name"]: p["resolved_version"] for p in inventory.get("development_packages", [])}, "Geliştirme envanteri gerçek lock ile aynı")
+    check(not lock["packages"] and not inventory["application_packages"], "Uygulama paketi eklenmedi; araçlar yalnız dev kapsamı")
 check(all(p["resolved_version"] is None and p["status"] == "PLANNED" for p in inventory["platform_requirements"]), "Planlanan platform için sahte resolved sürüm yok")
-check(not inventory["toolchain_observation"]["runtime_versions_or_extensions_tested"], "Runtime uyumluluğu test edilmiş gösterilmedi")
+if inventory["toolchain_observation"]["runtime_versions_or_extensions_tested"]:
+    check(bool(inventory["toolchain_observation"].get("scope")), "Yerel test CLI doğrulama kapsamı deployment'tan ayrılmış")
 
 model = read(records["threat_model"])
 rows = re.findall(r"^\| (T\d{2}) /[^\n]+", model, re.M)

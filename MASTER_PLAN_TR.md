@@ -12,13 +12,13 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.03 — DONE; kullanıcı kabulü ve PR #3 birleştirme onayı alındı. Uygulama kodu yok.
+> **Durum:** F00.04 — DONE; kullanıcı kabulü ve PR #4 birleştirme onayı alındı. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.03 — DONE; PR #3 birleştirme onayı alındı.
-> **Aktif dal:** `phase/F00.03-architecture-policy`. **Aktif PR:** [#3](https://github.com/Boydaksu/siteportal/pull/3) (açık, birleştirilmedi). **Kanıt SHA:** `0e4206400f34bda67d0358ce1fc05b57dd7ae77d`.
-> **Son kontrol:** Belge/envanter/sözleşme kontrolleri, 7/7 bağlantı TEST ve master üretim eşliği PASS. CI yok; uygulama/CVE audit testleri N/A.
-> **Rapor:** [F00.03](docs/reports/F00.03.md). **Sonraki:** F00.04 — Test ve CI iskeleti; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
-> **Kararlar:** Q-001–003 ayrı kullanıcı onayıyla uzlaştırıldı; [ADR dizini](docs/adr/README.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık.
+> **Son onaylanan alt faz:** F00.04 — DONE; PR #4 birleştirme onayı alındı.
+> **Aktif dal:** `phase/F00.04-test-ci`. **Aktif PR:** [#4](https://github.com/Boydaksu/siteportal/pull/4) (açık, birleştirilmedi). **CI kanıt SHA:** `06b3e12fd122eeef24dbc748c956d79ff4ed85bb`.
+> **Son kontrol:** Yerel kalite/fixture/belge/envanter PASS; [gerçek CI](https://github.com/Boydaksu/siteportal/actions/runs/41666506494) SUCCESS (kanıt commit’i).
+> **Rapor:** [F00.04](docs/reports/F00.04.md). **Sonraki:** F00.05 — Repo ve PR politikası; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
+> **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık; Composer uyarısı raporlanıyor.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
 
 ## Proje
@@ -69,12 +69,15 @@ Her alt faz tesliminde: `README` durum satırı + `CURRENT_STATUS.md` + `project
 Depo çalışan uygulama değil, sürümlendirilmiş geliştirme şartnamesi ve devir kayıtları içerir. Uygulama F01'den itibaren üretilecek; kurulum adımları F01.02'de gerçek komutlarla doğrulanacak. Belge kontrolleri uygulamanın çalıştığı anlamına gelmez.
 
 ## Başlangıç paketi ve kayıtlar
-F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını tamamladı ve kabul edildi. F00.03 teknik kararları/sınırları belgeler; F00.04 ve sonraki işler başlamadı.
+F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını tamamladı ve kabul edildi. F00.03 teknik kararları/sınırları belgeledi ve kabul edildi. F00.04 yalnız test/CI araçlarını kurar; F00.05 ve sonrası başlamadı.
 
 `BUNDLE_INFO.json` orijinal paket üretim anını anlatır; canlı durum JSON'dadır. `FILE_MANIFEST.sha256` etkin dosyaları, [özgün manifest](docs/reports/F00.01-original-manifest.sha256) ilk paketi doğrular. Yerel `siteportal_seo_masterplan/` eski korunmuş kopyadır; etkin çalışma kök dizindedir.
 
 ## Mimari ve tedarik zinciri kayıtları
 [ADR dizini](docs/adr/README.md), [modül sınırları](docs/architecture/MODULES.md), [bağımlılık politikası](docs/process/DEPENDENCIES.md) ve [tehdit modeli](docs/architecture/THREAT_MODEL.md) uygulanacak sınırları açıklar; runtime veya güvenlik testi geçişi değildir.
+
+## Kalite ve test çalıştırma
+[TESTING](docs/process/TESTING.md) temiz checkout/kurulum, `python scripts/check_quality.py`, belge/envanter komutları ve gerçek test kapsamını açıklar. 27 paket yalnız geliştirme araçlarıdır; uygulama bağımlılığı yoktur. CI sonucu kendi commit/run kanıtıyla raporlanır; fixture testleri çalışan SEO ürünü iddiası değildir.
 
 
 
@@ -170,22 +173,23 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), özel; varsayılan dal main
 - **Plan / ürün:** blueprint-0.1.0 / çalışan ürün sürümü yok
 - **Aktif ana faz / sürüm:** F00 / V0.0; ana faz kabulü yok
-- **Son onaylanan alt faz:** F00.03 — DONE
-- **Önceki PR:** [#2](https://github.com/Boydaksu/siteportal/pull/2), F00.02 kabulü + merge + F00.03 başlangıcı sorusuna “devam edelim” yanıtıyla onaylandı ve birleştirildi
-- **Main başlangıç / merge SHA:** `8ed972e5e74806ea62f5dd50e7f7953570472e4c`
-- **Aktif alt faz / durum:** F00.03 — İlk ADR ve bağımlılık politikası / DONE
-- **Aktif dal:** `phase/F00.03-architecture-policy`
-- **Aktif PR / kanıt commit:** [#3](https://github.com/Boydaksu/siteportal/pull/3) (açık, birleştirilmedi) / `0e4206400f34bda67d0358ce1fc05b57dd7ae77d`; son teslim metadata commit’i PR head içinde olabilir
-- **Son rapor:** [F00.03](docs/reports/F00.03.md)
-- **Kontroller:** ADR/sözleşme ve belge/envanter kontrolleri PASS; 7/7 bağlantı TEST, Python syntax, master byte eşliği ve boşluk kontrolü PASS; [gerçek log](docs/reports/F00.03-checks.txt)
-- **CI / uygulama testleri:** NOT_CONFIGURED / N/A; PHP/DB/crawler uygulaması yok
-- **Aktif engeller:** Yok
-- **Ayrı onaylanan kararlar:** Q-001 data_source/evidence dizisi, Q-002 analysis_jobs, Q-003 her uygulanan özellikte tam tr/en; kullanıcı “Üç öneriyi de onaylıyorum” dedi. [ADR kayıtları](docs/adr/README.md)
-- **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md), proje dağıtım lisansı; yayın öncesi işletmeci seçimi gerekir. Prod ortamı/saklama/provider kararları ilgili sonraki fazlarda kalır.
-- **Sonraki tek alt faz:** F00.04 — Test ve CI iskeleti; NOT_STARTED; kullanıcı başlangıç onayı verdi
-- **Bir sonraki işlem:** F00.03 kabul/merge ve F00.04 başlangıç onayı alındı; onaylı PR #3’ü birleştir, main’den F00.04 dalını aç.
+- **Son onaylanan alt faz:** F00.04 — DONE
+- **Önceki PR:** [#3](https://github.com/Boydaksu/siteportal/pull/3), F00.03 kabulü + merge + F00.04 başlangıcı sorusuna “devam edelim” yanıtıyla onaylandı ve birleştirildi
+- **Main başlangıç / merge SHA:** `74c56bc9ddfa9471b168cf7908cbb49e07aca857`
+- **Aktif alt faz / durum:** F00.04 — Test ve CI iskeleti / DONE
+- **Aktif dal:** `phase/F00.04-test-ci`
+- **Aktif PR / kanıt commit:** [#4](https://github.com/Boydaksu/siteportal/pull/4) (açık, birleştirilmedi) / `06b3e12fd122eeef24dbc748c956d79ff4ed85bb`; sonraki teslim metadata commit’i PR head içinde olabilir
+- **Son rapor:** [F00.04](docs/reports/F00.04.md)
+- **Yerel kontroller:** PHP lint, PSR-12, PHPStan seviye 8, PHPUnit 3 TEST/74 assertion ve 4 olumsuz kalite kapısı TEST'i PASS. Son belge/envanter/araç, source/master ve 7 bağlantı TEST kontrolü PASS.
+- **CI:** SUCCESS — [run 41666506494](https://github.com/Boydaksu/siteportal/actions/runs/41666506494), job 126023140084; temiz checkout içerik commit’i. [Makine kanıtı](docs/reports/F00.04-ci.json). Sonraki metadata head CI durumu PR checks’te ayrıca izlenir.
+- **Uygulama testleri:** SSRF/DB/queue/ACL/UI/E2E N/A; uygulama yok
+- **Bağımlılık:** 3 kesin doğrudan/27 toplam dev paket; uygulama paketleri boş. İlk Composer audit exit=0, advisory/abandoned yok; kaynak kapsamı ve lisans kanıtları [raporda](docs/reports/F00.04-dependency-review.json).
+- **Aktif engeller:** Yok; temiz checkout CI başarı kriteri doğrulandı
+- **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı. Composer kök lisans uyarısı biliniyor; değer uydurulmadı.
+- **Sonraki tek alt faz:** F00.05 — Repo ve PR politikası; NOT_STARTED; kullanıcı başlangıç onayı verdi
+- **Bir sonraki işlem:** F00.04 kabul/merge ve F00.05 başlangıç onayı alındı; kabul kaydı commit’inin CI’sını doğrula, PR #4’ü birleştir, main’den F00.05 dalını aç.
 
-Karar onayı F00.03 teslim kabulü değildir; PR birleştirmesi ve sonraki alt faz ayrıca onay gerektirir. Eski raporlar ve devir testi snapshot'ları tarihsel kayıttır; güncel durumu bu dosya/JSON/aktif PR gösterir. [Bakım standardı](docs/process/MAINTENANCE.md).
+[TESTING](docs/process/TESTING.md) gerçek kapsam ve komutları gösterir. F00.03 Q-001–003 kararları onaylıdır; F00.04 teslim kabulü değildir. Eski raporlar tarihsel snapshot'tır; güncel durum bu dosya/JSON/aktif PR'dadır. Repo koruma ayarları ve üretim ortamı değiştirilmedi.
 
 
 
@@ -1097,6 +1101,9 @@ Yeni AI'a **yalnız repo ve ZIP** verildiğinde okuyup şu beş soruyu yanıtlay
 ## Faz kapanış / regresyon
 Sürümün bütün kabul kriterleri; önceki sürümlerin kritik regression suite'i; güvenlik risk değerlendirmesi; gerçek demo veya açık blocker; migration rollback; depolama ve API quota; source freshness; KVKK/retention; geri alma planı. Ana faz onayı olmadan sonraki sürüme geçilmez.
 
+## F00.04 gerçek iskelet
+[TESTING](docs/process/TESTING.md) komutları, [TEST fixtures](tests/README.md) ve [CI workflow](.github/workflows/quality.yml) kurulmuştur. Kalite kapılarının olumlu ve beklenen başarısızlık senaryoları çalıştırılır. Bu, yukarıdaki gelecekteki uygulama güvenlik/DB/E2E testlerinin tamamlandığı anlamına gelmez; gerçek sonuç/CI linki [F00.04 raporunda](docs/reports/F00.04.md) tutulur.
+
 
 
 
@@ -1235,7 +1242,7 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 **P0:** SSRF, robots, güvenli istek, queue, yetki, doğruluk, temel UI. **P1:** Site mimarisi, CWV, schema, GSC doğrulanmış kullanıcı. **P2:** AI/ajans/white-label/ücretli hesap. **Şimdilik gereksiz:** Kubernetes, mikroservis ağı, herkes için headless Chrome, backlink scraping, Google sırası tahmin modeli, otomatik SEO düzeltme, zorunlu llms.txt.
 
 ## Aktif F00 teslimi
-F00.01 ve F00.02 kullanıcı kabulüyle DONE; PR #1/#2 birleştirildi. Aktif alt faz F00.03; durum [JSON](project-status.json), kanıt [F00.03 raporu](docs/reports/F00.03.md) içindedir. F00.04 ve sonrası NOT_STARTED.
+F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif alt faz F00.04; durum [JSON](project-status.json), kanıt [F00.04 raporu](docs/reports/F00.04.md) içindedir. F00.05 ve sonrası NOT_STARTED.
 
 
 
@@ -1294,7 +1301,7 @@ F00.01 ve F00.02 kullanıcı kabulüyle DONE; PR #1/#2 birleştirildi. Aktif alt
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.02.md` + durum kayıtları.
 
 ### F00.03 — İlk ADR ve bağımlılık politikası
-**Uygulama durumu:** DONE; [F00.03 raporu](docs/reports/F00.03.md). F00.04 ve sonrası başlamadı.
+**Uygulama durumu:** DONE; [F00.03 raporu](docs/reports/F00.03.md). Kullanıcı kabulü ve PR #3 birleştirmesi kayıtlı.
 **Hedef:** İlk ADR ve bağımlılık politikası.
 **Yapılacak işler:**
 1. PHP/DB/JS teknik sınırlarını ADR ile kaydet.
@@ -1312,6 +1319,7 @@ F00.01 ve F00.02 kullanıcı kabulüyle DONE; PR #1/#2 birleştirildi. Aktif alt
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.03.md` + durum kayıtları.
 
 ### F00.04 — Test ve CI iskeleti
+**Uygulama durumu:** DONE; [F00.04 raporu](docs/reports/F00.04.md). F00.05 ve sonrası başlamadı.
 **Hedef:** Test ve CI iskeleti.
 **Yapılacak işler:**
 1. PHP lint format static-analysis test harness.
@@ -1319,12 +1327,12 @@ F00.01 ve F00.02 kullanıcı kabulüyle DONE; PR #1/#2 birleştirildi. Aktif alt
 3. örnek fixture.
 
 **Kabul/kanıt:**
-- [ ] Temiz checkout üzerinde CI yeşil.
-- [ ] çalıştırılabilir test komutları belgelenmiş.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Temiz checkout üzerinde CI yeşil.
+- [x] çalıştırılabilir test komutları belgelenmiş.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.04.md` + durum kayıtları.
 
@@ -2632,6 +2640,9 @@ Güncel durum: [CURRENT_STATUS](CURRENT_STATUS.md) ve [project-status.json](proj
 ## F00.03 teknik kayıtlar
 [ADR dizini](docs/adr/README.md), [modül sınırları](docs/architecture/MODULES.md), [bağımlılık politikası](docs/process/DEPENDENCIES.md), [bağımlılık envanteri](docs/process/dependencies.json), [tehdit modeli](docs/architecture/THREAT_MODEL.md) ve [kontrol edilen teknik kaynaklar](docs/reference/ARCHITECTURE_SOURCES.md). Karar önerisi/onayı, implementasyon ve faz teslim kabulü ayrı durumlardır.
 
+## F00.04 test ve CI
+[Çalıştırma rehberi](docs/process/TESTING.md), [TEST kapsamı/fixture](tests/README.md), [CI workflow](.github/workflows/quality.yml), [birincil kaynaklar](docs/reference/TESTING_SOURCES.md), [bağımlılık incelemesi](docs/reports/F00.04-dependency-review.json) ve [F00.04 raporu](docs/reports/F00.04.md).
+
 
 
 
@@ -2698,6 +2709,9 @@ F00.02 için sohbet geçmişi paylaşılmayan ayrı ajana yalnız etkin repo yol
 
 ## Mimari ve bağımlılık kaydı bakımı
 [ADR dizini](docs/adr/README.md), [karar JSON](docs/adr/architecture-decisions.json), [bağımlılık politikası](docs/process/DEPENDENCIES.md) ve [envanter](docs/process/dependencies.json) birlikte güncellenir. Ayrı karar onayı, aktif alt fazın teslim kabulü yerine geçmez. F00.03 belge/sözleşme doğrulaması `python scripts/verify_architecture.py` ile yapılır; DEMO zorunlu alan/type/enum kontrolü tam JSON Schema motoru veya gerçek API testi değildir. Paket eklendiğinde politika gereği gerçek lock/lisans/audit kanıtı gerekir; boş envanter audit geçişi sayılmaz.
+
+## Test/CI sonrası belge teslimi
+F00.04 ile [TESTING](docs/process/TESTING.md) ve `python scripts/check_quality.py` ortak kalite akışı eklendi. Belge doğrulayıcı Git dosya listesini kullanır; vendor/önbellek/eski paket kopyası taranmaz. Manifesti her son log/durum değişikliğinden sonra yenile ve commit’e hazırla; gerçek CI sonucu olmadan CI başarılı yazma. CI günlüğü/commit bilgisi kendi HEAD hash’ini dosyaya yazma döngüsü yaratmamak için ayrı kanıt commit’i olarak kaydedilebilir; son commit’in gerçek CI durumu da kullanıcı raporunda doğrulanır.
 
 
 
@@ -2956,12 +2970,12 @@ Bu alt faz belge kapsamındadır. T01–T15 runtime kontrolleri çalıştırılm
 Tarih: 2026-11-03. Durum: F00.03 kullanıcı teslim kabulüyle ACCEPTED (2026-11-03). Kaynak sınırları [AGENTS](AGENTS.md) ve [ADR-001](docs/adr/ADR-001-stack.md). Makine envanteri: [dependencies.json](docs/process/dependencies.json).
 
 ## Mevcut gerçek durum
-Uygulama Composer/npm paketi yok; composer.json/lock, package.json/lock veya vendor/node_modules eklenmedi. PHP/MySQL/extension'lar planlanan platform gereksinimidir, “hiç dış yazılım yok” anlamına gelmez. Yerel PATH'te PHP ve Composer komutları bulundu; sürüm/extension uyumluluğu çalıştırılmadı. MySQL CLI PATH'te bulunmadı; bu, makinede MySQL kurulmadığını ispatlamaz. Mevcut belge kontrolleri Python standart kütüphanesi ve Git kullanır; Python doğrulama komutları uygulama runtime'ı değildir.
+F00.04, test/CI için 3 kesin doğrudan ve 27 toplam geçişli geliştirme paketini composer.json/lock ile ekledi; uygulama paketleri boştur. [TESTING](docs/process/TESTING.md), [envanter](docs/process/dependencies.json) ve [inceleme kanıtı](docs/reports/F00.04-dependency-review.json) kapsamı açıklar. Vendor ve araç önbelleği ignore edilir; PHP/MySQL deployment gereksinimleri hâlâ PLANNED'dır. Yerel PHP 8.4.24/Composer 2.10.2 ve test araçlarının extension gereksinimleri doğrulandı; uygulama/DB hazırlığı değildir. Python/Git belge araçları ayrıca kullanılır. İlk F00.03 paket/audit yokluğu eski raporda tarihsel olarak korunur.
 
 ## Paket ekleme kapısı
 Her doğrudan veya geçişli bağımlılık için kayıtta ad, amaç, ilgili alt faz, upstream/source URL, kesin resolved sürüm/reference, dağıtım bütünlük kaydı veya Git ref, lisans/SPDX ve notice yolu, bakım durumu, güvenlik kontrol tarihi/çıktısı, sahibi/onayı ve kaldırma alternatifi bulunur. İlk tercih PHP'nin mevcut kabiliyetidir; kritik güvenlik algoritması sırf bağımlılıktan kaçınmak için denetimsiz yeniden icat edilmez.
 
-Kayıt tamamlanmadan paket kurup çalıştırma. Yeni framework/servis/proprietary SDK mevcut planı değiştiriyorsa ayrıca kullanıcı onayı ve ADR gerekir. Transitive bağımlılıklar da incelenir; yalnız doğrudan paket sayısı güvenlik göstergesi değildir. Gerekli test araçları da ayrı dev-tool kapsamıyla aynı sürüm/lisans/güvenlik kapısından geçer; F00.04'ün test araçları burada kurulmaz.
+Kayıt tamamlanmadan paket kurup çalıştırma. Yeni framework/servis/proprietary SDK mevcut planı değiştiriyorsa ayrıca kullanıcı onayı ve ADR gerekir. Transitive bağımlılıklar da incelenir; yalnız doğrudan paket sayısı güvenlik göstergesi değildir. Gerekli test araçları da ayrı dev-tool kapsamıyla aynı sürüm/lisans/güvenlik kapısından geçer; F00.04 test araçları kendi dev kapsamı, lisans/lock/audit kanıtıyla eklenmiştir.
 
 ## Sürüm ve tekrarlanabilirlik
 - Uygulama doğrudan paketleri AGENTS gereği kesin sürümle seçilir; `*`, `dev-main`, yüzen branch veya `latest` ile teslim yapılmaz. Geçişli sürümler commit edilen Composer lock içinde çözülür. Kod incelemesi manifest ve lock diff'ini birlikte kapsar.
@@ -2978,7 +2992,7 @@ Yeni veya değişen lock için advisory/abandoned/malware sinyalleri, upstream b
 SPDX etiketi, gerçek LICENSE/NOTICE metni, sürüm ve doğrudan/geçişli dağıtım yükümlülükleri birlikte incelenir. MIT/BSD/Apache etiketleri otomatik onay değildir; notice/patent/redistribution koşulları okunur. Copyleft, ticari, çift veya belirsiz lisans durumunda işletmeci değerlendirmesi gerekir; uygunluğu varsayarak ekleme yapılmaz. Bu teknik süreç hukukî uygunluk görüşü değildir. Kök projeye LICENSE dosyası uydurulmaz; ürünün dağıtım lisansı yayın öncesi işletmeci tarafından seçilir. PHP/MySQL gibi platformların kullanım/dağıtım koşulları uygulama paketlerinden ayrı kaydedilir.
 
 ## Gelecek fazda uygulanacak kontrol örnekleri
-Aşağıdaki komutlar [Composer CLI belgesinden](https://getcomposer.org/doc/03-cli.md) kontrol edilen prosedür örnekleridir; **bu alt fazda çalıştırılmadı**. Manifest/lock henüz yoktur. Kullanılacak Composer sürümünde bayraklar yeniden doğrulanır.
+Aşağıdaki komutlar [Composer CLI belgesinden](https://getcomposer.org/doc/03-cli.md) kontrol edilen prosedür örnekleridir; F00.03 sırasında yalnız prosedür örneğiydi. F00.04 içinde manifest/lock eklendi, audit/lisans/platform komutları çalıştırıldı; güncel komut ve Q-004 kök lisans uyarısının sınırı [TESTING](docs/process/TESTING.md) içindedir. Kullanılacak Composer sürümünde bayraklar yeniden doğrulanır.
 
 ```text
 composer validate --strict
@@ -3015,3 +3029,98 @@ Kontrol tarihi: 2026-11-03 (Europe/Istanbul). Aşağıdaki birincil sayfalar bu 
 | A7 | [OWASP SSRF prevention](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html) | URL/host/IP/DNS/yönlendirme ve uygulama+ağ katmanı önlemleri; gerçek SSRF TEST'i çalıştırılmadı |
 
 Mevcut planın kaynakları: [SYSTEM](docs/architecture/SYSTEM.md), [SECURITY](docs/architecture/SECURITY.md), [CRAWLER](docs/architecture/CRAWLER.md), [DATABASE](docs/architecture/DATABASE.md), [AGENTS](AGENTS.md), [F00 şartnamesi](docs/roadmap/F00.md). Haricî sayfaların tamamı kopyalanmadı; kararları destekleyen kısa notlar saklandı. Sürüm, lisans, paket veya yayında değişiklik olduğunda ilgili kaynak yeniden kontrol edilir.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/process/TESTING.md -->
+## BELGE: `docs/process/TESTING.md`
+
+# F00.04 — Test ve CI çalıştırma rehberi
+
+## Kapsam ve önkoşullar
+Yalnız test/kalite iskeleti kuruludur; PHP uygulama çekirdeği, DB, crawler, UI veya migration yoktur. PHP 8.4+, Git, Python 3.10+ ve Composer 2.10.2 gerekir. Yerelde doğrulanan CLI: PHP 8.4.24 ve Composer 2.10.2; Python 3.13.15. PHP test eklentileri: dom, filter, json, libxml, mbstring, phar, simplexml, tokenizer, xmlwriter. Uygulamanın curl/intl/pdo_mysql gibi bütün platform gereksinimlerinin hazır olduğu iddia edilmez.
+
+## Temiz checkout ve kurulum
+Onaylı çalışma dalında/checkout'ta, kök dizinde:
+
+```text
+composer validate --no-check-publish --no-plugins --no-scripts
+composer install --no-interaction --prefer-dist --no-plugins --no-scripts
+composer check-platform-reqs --no-plugins --no-scripts
+composer audit --locked --format=json --no-plugins --no-scripts
+```
+
+Doğrudan dev araçları kesin sürümlüdür: PHPUnit 12.5.43, PHPStan 2.3.5, PHP_CodeSniffer 4.0.4. Toplam 27 doğrudan/geçişli dev paket lock ve [envanterde](docs/process/dependencies.json) bulunur; uygulama paketleri boştur. Kurulum, plugin/root script çalıştırmadan lock'tan yapılır. Production deploy veya update komutu değildir.
+
+**Bilinen uyarı:** Kök proje lisansı Q-004 seçilmediğinden Composer validate “No license specified” uyarısı verir. Bu yüzden doğrulama publish denetimi olmadan çalıştırılır; gerçek schema/lock hatalarının başarısız çıkışı korunur. Lisans uydurulmaz, bu uyarı raporlanır; dağıtım öncesi lisans seçilip strict publish denetimi yapılmalıdır. Paketlerin kendi LICENSE/NOTICE metinleri ayrıca kontrol edildi ve vendor içinde korunur.
+
+## Yerel ve CI kalite komutları
+
+```text
+python scripts/check_quality.py
+python scripts/test_document_links.py
+python scripts/verify_blueprint.py
+python scripts/verify_architecture.py
+python scripts/verify_toolchain.py
+python scripts/verify_inventory.py
+python scripts/build_master_plan.py --check
+git diff --check
+```
+
+`check_quality` aynı sırayla gerçek php -l, PHP_CodeSniffer PSR-12, PHPStan seviye 8, PHPUnit ve dört olumsuz kalite kapısı testini çalıştırır. Kapsam yalnız [tests](tests/README.md); analiz edilen uygulama henüz yoktur. Lint boş kapsamda başarı saymaz; Git'in takip ettiği/yeni ignore edilmemiş PHP dosyalarını denetler. Vendor ve korunmuş eski plan kopyası kapsam dışıdır. Windows PHP .cmd başlatıcısı sabit bir sorguyla gerçek PHP executable/ini yoluna çözülür; dosya adları shell komutuna eklenmez. Gerekirse `SITEPORTAL_PHP_BINARY` ile native PHP yolu belirtilebilir.
+
+`build_master_plan.py --check` dosyayı değiştirmeden kaynaklarla byte eşliğini denetler. Manifest üretimi test komutu değildir; belge değiştirirken [MAINTENANCE](docs/process/MAINTENANCE.md) sırasıyla önce master'ı üret, yeni dosyaları hazırla, manifesti yenile. CI dosyaları yeniden üreterek hatayı gizlemez ve son çalışma ağacının temizliğini kontrol eder.
+
+Biçim düzeltme gerekirse yalnız yerelde `php vendor/bin/phpcbf --standard=phpcs.xml` kullanılabilir; otomatik değişiklikleri incele ve kalite komutlarını tekrar çalıştır. CI yalnız kontrol eder.
+
+## CI ve yetki sınırı
+[quality.yml](.github/workflows/quality.yml) PR ve main push olaylarında temiz Ubuntu 24.04 checkout'ı kullanır. PHP 8.4 dalının kurulan gerçek yama sürümü job logunda kaydedilir; Composer 2.10.2 ve araç paketleri lock ile sabittir. Runner imajı/indirilen PHP yamaları zamanla değişebilir; bu uygulama deployment pin'i veya tüm ortamın bit düzeyinde tekrarlanabilirliği iddiası değildir.
+
+Action'lar tam commit SHA ile sabittir: actions/checkout v7.0.1 ve shivammathur/setup-php v2'nin 2026-11-03 tarihinde çözülmüş commit'i. İki action'ın MIT lisansı ve kaynak referansı [envanterde](docs/process/dependencies.json). Token yalnız contents:read; checkout credential'ı kalıcı tutulmaz. pull_request_target, deploy, secrets aktarımı, write token veya self-hosted runner kullanılmaz. Timeout 15 dakika; aynı ref'in eski işi iptal edilir. Repo koruma/PR politikası F00.05'tir, burada ayar değiştirilmez.
+
+## Sonuçları yorumlama
+Yeşil CI yalnız belirtilen kalite ve fixture/belge kontrollerinin geçtiğini gösterir. PHPStan seviye 8 veya fixture testleri SSRF, ACL, queue yarışı, DB rollback, UI/E2E, coverage yüzdesi ya da production hazırlığı kanıtı değildir. Coverage sürücüsü kapalıdır; sahte coverage yüzdesi verilmez.
+
+[Bağımlılık incelemesi](docs/reports/F00.04-dependency-review.json) 27 indirilen dev paketinin lisans dosya hash/kaynaklarını ve ilk advisory sonucunu kaydeder; [Composer lisans çıktısı](docs/reports/F00.04-composer-licenses.json) ayrı kanıttır. Paketlenmiş PHAR iç bileşenleri ve tam kod/hukuk denetimi kapsam dışıdır. Canlı audit CI'da yeniden çalışır; ağ/veri kaynağı hatasında başarı varsayılmaz. Son gerçek yerel/CI kanıtı [F00.04 raporunda](docs/reports/F00.04.md) tutulur.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/reference/TESTING_SOURCES.md -->
+## BELGE: `docs/reference/TESTING_SOURCES.md`
+
+# F00.04 — Test/CI birincil kaynakları
+
+Kontrol tarihi 2026-11-03. Bu aşamada ilgili sayfalar ve kilitli upstream metadata/License dosyaları okundu; tam kod veya hukuk denetimi iddiası değildir.
+
+- [PHPUnit 12.5 kurulumu](https://docs.phpunit.de/en/12.5/installation.html): PHP/extension gereksinimleri ve test aracı kapsamı.
+- [PHPStan başlangıç](https://phpstan.org/user-guide/getting-started): yalnız projenin kendi kodunda statik analiz.
+- [PHP_CodeSniffer upstream](https://github.com/PHPCSStandards/PHP_CodeSniffer): tokenize edilen dosyalarda kod standardı; bu teslimde PSR-12.
+- [GitHub Actions secure use](https://docs.github.com/en/actions/reference/security/secure-use): minimum token yetkisi, tam SHA ile action sabitleme ve güvenilmeyen PR sınırı.
+- [checkout v7.0.1](https://github.com/actions/checkout/tree/3d3c42e5aac5ba805825da76410c181273ba90b1), [MIT LICENSE](https://github.com/actions/checkout/blob/3d3c42e5aac5ba805825da76410c181273ba90b1/LICENSE).
+- [setup-php sabit kaynak](https://github.com/shivammathur/setup-php/tree/eb7c497e18156a6bbabfef1d3a82760b9eda3962), [MIT LICENSE](https://github.com/shivammathur/setup-php/blob/eb7c497e18156a6bbabfef1d3a82760b9eda3962/LICENSE).
+
+Packagist resmî paket metadatası ve composer.lock ile 3 doğrudan/27 toplam dev paket çözüldü; lisans dosyaları paketler kurulup çalıştırılmadan önce indirilen arşivlerden okundu. 3 MIT ve 24 BSD-3-Clause kayıt var. Copyright/koşullar/disclaimer ve BSD endorsement sınırı korunur; vendor ve tool paketleri repo kaynağına eklenmez. [İnceleme kayıtları](docs/reports/F00.04-dependency-review.json) kesin dist reference, arşiv/License SHA256 ve kaynak URL'lerini içerir.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: tests/README.md -->
+## BELGE: `tests/README.md`
+
+# TEST harness ve fixture kapsamı
+
+Bu dizin yalnız F00.04 kalite/test altyapısıdır. Uygulama, crawler, gerçek API, SSRF bariyeri veya DB henüz yoktur. Hiçbir test dış siteye istek göndermez.
+
+- [FixtureContractTest.php](tests/Unit/FixtureContractTest.php): onaylı Finding alan/kanıt biçimi, UNKNOWN durumunda sahte puan/kanıt olmaması ve tr/en anahtar-parametre eşliği. Kaynakları [DEMO örnek](examples/analysis-response.example.json), [şema](examples/finding.schema.json), [UNKNOWN TEST fixture](tests/Fixtures/unknown-analysis.json) ve locale örnekleridir. Tam JSON Schema motoru veya gerçek skor algoritması testi değildir.
+- [unknown-analysis.json](tests/Fixtures/unknown-analysis.json): `_demo:true` ve `test-fixture` kaynağıyla açıkça işaretlenmiştir; gerçek tarama değildir.
+- [Olumsuz kalite kapısı testleri](scripts/test_quality_gates.py): ayrı geçici TEST dosyalarında bilerek bozuk sözdizimi, PSR-12 ihlali, yanlış return tipi ve yanlış assertion oluşturur; dört aracın sıfır dışı kod ve beklenen tanıyla reddetmesini doğrular. Bu beklenen reddetmeler CI arızası değildir.
+
+Koşullar ve komutlar: [TESTING](docs/process/TESTING.md). İleride gerçek uygulama birim/entegrasyon/güvenlik testleri ilgili fazın modülüne eklenir; bu üç fixture testi bütün platformun çalıştığı anlamına gelmez.

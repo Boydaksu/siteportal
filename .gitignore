@@ -20,3 +20,9 @@ coverage/
 # Orijinal açılmış plan paketi yerelde korunur; etkin belgeler depo kökündedir.
 /siteportal_seo_masterplan/
 __pycache__/
+
+# F00.04 araç önbelleği ve geçici TEST çıktıları
+/.cache/
+/.phpstan-cache/
+/.phpunit.result.cache
+/.quality-probe-*/

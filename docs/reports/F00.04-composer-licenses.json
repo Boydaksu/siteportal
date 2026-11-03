@@ -1,0 +1,169 @@
+{
+    "name": "boydaksu/siteportal",
+    "version": "dev-main 74c56bc",
+    "license": [],
+    "dependencies": {
+        "myclabs/deep-copy": {
+            "version": "1.14.0",
+            "license": [
+                "MIT"
+            ]
+        },
+        "nikic/php-parser": {
+            "version": "v5.9.0",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "phar-io/manifest": {
+            "version": "2.0.4",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "phar-io/version": {
+            "version": "3.2.1",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "phpstan/phpstan": {
+            "version": "2.3.5",
+            "license": [
+                "MIT"
+            ]
+        },
+        "phpunit/php-code-coverage": {
+            "version": "12.5.8",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "phpunit/php-file-iterator": {
+            "version": "6.0.2",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "phpunit/php-invoker": {
+            "version": "6.0.0",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "phpunit/php-text-template": {
+            "version": "5.0.1",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "phpunit/php-timer": {
+            "version": "8.0.0",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "phpunit/phpunit": {
+            "version": "12.5.43",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/cli-parser": {
+            "version": "4.2.1",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/comparator": {
+            "version": "7.1.8",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/complexity": {
+            "version": "5.0.0",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/diff": {
+            "version": "7.0.1",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/environment": {
+            "version": "8.1.2",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/exporter": {
+            "version": "7.0.3",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/global-state": {
+            "version": "8.0.3",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/lines-of-code": {
+            "version": "4.0.1",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/object-enumerator": {
+            "version": "7.0.0",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/object-reflector": {
+            "version": "5.0.0",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/recursion-context": {
+            "version": "7.0.1",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/type": {
+            "version": "6.0.4",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "sebastian/version": {
+            "version": "6.0.1",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "squizlabs/php_codesniffer": {
+            "version": "4.0.4",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        },
+        "staabm/side-effects-detector": {
+            "version": "1.0.5",
+            "license": [
+                "MIT"
+            ]
+        },
+        "theseer/tokenizer": {
+            "version": "2.0.1",
+            "license": [
+                "BSD-3-Clause"
+            ]
+        }
+    }
+}

@@ -1,0 +1,933 @@
+{
+  "checked_date": "2026-11-03",
+  "phase": "F00.04",
+  "scope": "27 dev-only package archives inspected before install/execution",
+  "package_count": 27,
+  "security_audit": {
+    "command": "composer audit --locked --format=json --no-plugins --no-scripts",
+    "exit_code": 0,
+    "advisories": [],
+    "abandoned": []
+  },
+  "license_summary": {
+    "MIT": 3,
+    "BSD-3-Clause": 24
+  },
+  "reviewer": "Codex, authorized F00.04 development-tool scope; not an audit of bundled PHAR internals",
+  "packages": [
+    {
+      "name": "myclabs/deep-copy",
+      "version": "1.14.0",
+      "license_spdx": [
+        "MIT"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/myclabs/DeepCopy.git",
+        "reference": "8680aa248f8e07bc8fb43f56f0f5fc77a0c96aae"
+      },
+      "upstream_source": "https://github.com/myclabs/DeepCopy.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8680aa248f8e07bc8fb43f56f0f5fc77a0c96aae",
+        "reference": "8680aa248f8e07bc8fb43f56f0f5fc77a0c96aae",
+        "shasum": ""
+      },
+      "archive_sha256": "56bd5cff0d8ac15818301fcc26712dfeffef322d2120bb4f4d67dca8089e6380",
+      "license_files": [
+        {
+          "archive_path": "myclabs-DeepCopy-8680aa2/LICENSE",
+          "installed_path": "vendor/myclabs/deep-copy/LICENSE",
+          "sha256": "90007d13610253dfbbe382190c336b50718f8344d5bff230d0580282fb16a7d6",
+          "bytes": 1077,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "nikic/php-parser",
+      "version": "v5.9.0",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/nikic/PHP-Parser.git",
+        "reference": "9e33da9553fe7786f0962b35f4e4ecf01be89def"
+      },
+      "upstream_source": "https://github.com/nikic/PHP-Parser.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/9e33da9553fe7786f0962b35f4e4ecf01be89def",
+        "reference": "9e33da9553fe7786f0962b35f4e4ecf01be89def",
+        "shasum": ""
+      },
+      "archive_sha256": "c307260c466a105f12460f1866dc3600938ef4f7f8665e86f0d743a544848846",
+      "license_files": [
+        {
+          "archive_path": "nikic-PHP-Parser-9e33da9/LICENSE",
+          "installed_path": "vendor/nikic/php-parser/LICENSE",
+          "sha256": "dd859e107fac9f87a4413ab8c3c96f0f1611a17f596a2db562a5a4f4904c1e97",
+          "bytes": 1520,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "phar-io/manifest",
+      "version": "2.0.4",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/phar-io/manifest.git",
+        "reference": "54750ef60c58e43759730615a392c31c80e23176"
+      },
+      "upstream_source": "https://github.com/phar-io/manifest.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/phar-io/manifest/zipball/54750ef60c58e43759730615a392c31c80e23176",
+        "reference": "54750ef60c58e43759730615a392c31c80e23176",
+        "shasum": ""
+      },
+      "archive_sha256": "b4368b44d24c60a0561e1e1284daa8743dfb2fd78dafeaec84849b264f045a75",
+      "license_files": [
+        {
+          "archive_path": "phar-io-manifest-54750ef/LICENSE",
+          "installed_path": "vendor/phar-io/manifest/LICENSE",
+          "sha256": "c882c8ea59ec1a1fdaa12ba56e5464be82c09f6924ed8a04883cec3b5c0126a1",
+          "bytes": 1632,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "phar-io/version",
+      "version": "3.2.1",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/phar-io/version.git",
+        "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74"
+      },
+      "upstream_source": "https://github.com/phar-io/version.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/phar-io/version/zipball/4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+        "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+        "shasum": ""
+      },
+      "archive_sha256": "4f6f4fab8bfeac95934cec75be23743e38b6d864876f52dcdd5b54e003fcab55",
+      "license_files": [
+        {
+          "archive_path": "phar-io-version-4f7fd78/LICENSE",
+          "installed_path": "vendor/phar-io/version/LICENSE",
+          "sha256": "f24078e519642d911ca010cd683f68ba4cb6ceeef35ce40b479da1ab9ab73427",
+          "bytes": 1574,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "phpstan/phpstan",
+      "version": "2.3.5",
+      "license_spdx": [
+        "MIT"
+      ],
+      "source": null,
+      "upstream_source": "https://github.com/phpstan/phpstan-src",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/phpstan/phpstan/zipball/645a1bd6bead15fc1b8474137467961d0fa30a79",
+        "reference": "645a1bd6bead15fc1b8474137467961d0fa30a79",
+        "shasum": ""
+      },
+      "archive_sha256": "73bc6031c7b94ad39cc180654c4bf36792f20715db950d9fdcc3dadad60f74f3",
+      "license_files": [
+        {
+          "archive_path": "phpstan-phpstan-645a1bd/LICENSE",
+          "installed_path": "vendor/phpstan/phpstan/LICENSE",
+          "sha256": "f9e4f43eb1c32f7c4f5bcdb0860de5ba71712c3c1547eeb0d1e4b3c43313ec81",
+          "bytes": 1105,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "phpunit/php-code-coverage",
+      "version": "12.5.8",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+        "reference": "7440368d94738d54f2c1de24dbd3871793bbb0dd"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/php-code-coverage.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/7440368d94738d54f2c1de24dbd3871793bbb0dd",
+        "reference": "7440368d94738d54f2c1de24dbd3871793bbb0dd",
+        "shasum": ""
+      },
+      "archive_sha256": "9275a73d52a1c5ef32d2f4b02fa1cf449bb067731a0cc5711d21475be0a2feb9",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-php-code-coverage-7440368/LICENSE",
+          "installed_path": "vendor/phpunit/php-code-coverage/LICENSE",
+          "sha256": "45e50b328bedfa6a1106f257f421ede537e392c98c47d00291c7cd662ea02d9b",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "phpunit/php-file-iterator",
+      "version": "6.0.2",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
+        "reference": "a248d1640ab059b075f53a2ef0f9856e864e06b5"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/php-file-iterator.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/a248d1640ab059b075f53a2ef0f9856e864e06b5",
+        "reference": "a248d1640ab059b075f53a2ef0f9856e864e06b5",
+        "shasum": ""
+      },
+      "archive_sha256": "9aee244d9e54c796475a1f93ea309448fe8df73c8dcb8cb3096ce9f45525b155",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-php-file-iterator-a248d16/LICENSE",
+          "installed_path": "vendor/phpunit/php-file-iterator/LICENSE",
+          "sha256": "45e50b328bedfa6a1106f257f421ede537e392c98c47d00291c7cd662ea02d9b",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "phpunit/php-invoker",
+      "version": "6.0.0",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/php-invoker.git",
+        "reference": "12b54e689b07a25a9b41e57736dfab6ec9ae5406"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/php-invoker.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/php-invoker/zipball/12b54e689b07a25a9b41e57736dfab6ec9ae5406",
+        "reference": "12b54e689b07a25a9b41e57736dfab6ec9ae5406",
+        "shasum": ""
+      },
+      "archive_sha256": "ae7b79930eede6270ffcff312fa782520a8e37873b0bd4c0a10b7396fe1aeb10",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-php-invoker-12b54e6/LICENSE",
+          "installed_path": "vendor/phpunit/php-invoker/LICENSE",
+          "sha256": "781184dbfd950e2361eac195f0677f8de995e77dcf2c28b275f1b88305766365",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "phpunit/php-text-template",
+      "version": "5.0.1",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/php-text-template.git",
+        "reference": "babab73b7ef9fae406f2eb3ee11323a61caa63d5"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/php-text-template.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/php-text-template/zipball/babab73b7ef9fae406f2eb3ee11323a61caa63d5",
+        "reference": "babab73b7ef9fae406f2eb3ee11323a61caa63d5",
+        "shasum": ""
+      },
+      "archive_sha256": "3af1ad153f464999ec028d5c1841b3f7ab163f5754ba1f3fbb210c7c3f1aeabf",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-php-text-template-babab73/LICENSE",
+          "installed_path": "vendor/phpunit/php-text-template/LICENSE",
+          "sha256": "45e50b328bedfa6a1106f257f421ede537e392c98c47d00291c7cd662ea02d9b",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "phpunit/php-timer",
+      "version": "8.0.0",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/php-timer.git",
+        "reference": "f258ce36aa457f3aa3339f9ed4c81fc66dc8c2cc"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/php-timer.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/f258ce36aa457f3aa3339f9ed4c81fc66dc8c2cc",
+        "reference": "f258ce36aa457f3aa3339f9ed4c81fc66dc8c2cc",
+        "shasum": ""
+      },
+      "archive_sha256": "d74e75de7ba9a8ff1e3779ac46253190efb051145a93deb7d88c4453cfe82ef6",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-php-timer-f258ce3/LICENSE",
+          "installed_path": "vendor/phpunit/php-timer/LICENSE",
+          "sha256": "a7d02dc8a24a343c7f3226b58e0a6749cdf426b9f008a1df2e437bd89d7c6943",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "phpunit/phpunit",
+      "version": "12.5.43",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/phpunit.git",
+        "reference": "1d5a4a3c98fa1ca3a51402c74b66c2c8df85e0bb"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/phpunit.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1d5a4a3c98fa1ca3a51402c74b66c2c8df85e0bb",
+        "reference": "1d5a4a3c98fa1ca3a51402c74b66c2c8df85e0bb",
+        "shasum": ""
+      },
+      "archive_sha256": "8fe1f9ba2298c7adbabec627ed0c1967c9605d6b4f7ffe14a0b7a53023db0818",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-phpunit-1d5a4a3/LICENSE",
+          "installed_path": "vendor/phpunit/phpunit/LICENSE",
+          "sha256": "5aa383bf44a3951bb4a2214c740a96e7795e473e1a0abc8d5812e6a3c1dbfc1e",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/cli-parser",
+      "version": "4.2.1",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/cli-parser.git",
+        "reference": "7d05781b13f7dec9043a629a21d086ed74582a15"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/cli-parser.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/cli-parser/zipball/7d05781b13f7dec9043a629a21d086ed74582a15",
+        "reference": "7d05781b13f7dec9043a629a21d086ed74582a15",
+        "shasum": ""
+      },
+      "archive_sha256": "2b22108c4c0fef57209bf7d285db27d059356c695fa718e9a237e646dbeeaa6b",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-cli-parser-7d05781/LICENSE",
+          "installed_path": "vendor/sebastian/cli-parser/LICENSE",
+          "sha256": "759a5f7f752db78d04d43ec73bf6c0ee4bbec2f8f64596bd95419c17af9f3ed4",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/comparator",
+      "version": "7.1.8",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/comparator.git",
+        "reference": "7c65c1e79836812819705b473a90c12399542485"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/comparator.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/7c65c1e79836812819705b473a90c12399542485",
+        "reference": "7c65c1e79836812819705b473a90c12399542485",
+        "shasum": ""
+      },
+      "archive_sha256": "86841e308bb2a2fcdba30b86e9027576d0a57fdbe96863cec9ee0a5c14e8ea3a",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-comparator-7c65c1e/LICENSE",
+          "installed_path": "vendor/sebastian/comparator/LICENSE",
+          "sha256": "c1b7b5b9bee26266f6d958a8b31b08cdddbf0aec34cc42b12f8b175f93b2dc4f",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/complexity",
+      "version": "5.0.0",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/complexity.git",
+        "reference": "bad4316aba5303d0221f43f8cee37eb58d384bbb"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/complexity.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/complexity/zipball/bad4316aba5303d0221f43f8cee37eb58d384bbb",
+        "reference": "bad4316aba5303d0221f43f8cee37eb58d384bbb",
+        "shasum": ""
+      },
+      "archive_sha256": "16dfbb06ea7137cab56a35ab417e2b0db532d91e406572fd5456e0567f41fca4",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-complexity-bad4316/LICENSE",
+          "installed_path": "vendor/sebastian/complexity/LICENSE",
+          "sha256": "f3b7f57c47d30a716d39846c5cd5482d01437d30b2eb1a97dc7df0d926af5c5f",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/diff",
+      "version": "7.0.1",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/diff.git",
+        "reference": "cd4cabe39f8a4e8ee6818ba99f10a05561ea4ad6"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/diff.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/cd4cabe39f8a4e8ee6818ba99f10a05561ea4ad6",
+        "reference": "cd4cabe39f8a4e8ee6818ba99f10a05561ea4ad6",
+        "shasum": ""
+      },
+      "archive_sha256": "425ea46a59dda488a0fca06c98d2c321761dd344b232913e8a865b1be30386bd",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-diff-cd4cabe/LICENSE",
+          "installed_path": "vendor/sebastian/diff/LICENSE",
+          "sha256": "c1b7b5b9bee26266f6d958a8b31b08cdddbf0aec34cc42b12f8b175f93b2dc4f",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/environment",
+      "version": "8.1.2",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/environment.git",
+        "reference": "9d32c685773823b1983e256ae4ecd48a10d6e439"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/environment.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/9d32c685773823b1983e256ae4ecd48a10d6e439",
+        "reference": "9d32c685773823b1983e256ae4ecd48a10d6e439",
+        "shasum": ""
+      },
+      "archive_sha256": "1684e7b30ffaf77f405ccb27703839abb16880e476ed7024006ed9c339dc9d0a",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-environment-9d32c68/LICENSE",
+          "installed_path": "vendor/sebastian/environment/LICENSE",
+          "sha256": "772a3b8c4e5846485ad60fe7759156408ef00b6d837358716380ee438f6c11a3",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/exporter",
+      "version": "7.0.3",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/exporter.git",
+        "reference": "c5e21b5de653ce0a769fb36f5cdfcb5e7a32cf23"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/exporter.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/c5e21b5de653ce0a769fb36f5cdfcb5e7a32cf23",
+        "reference": "c5e21b5de653ce0a769fb36f5cdfcb5e7a32cf23",
+        "shasum": ""
+      },
+      "archive_sha256": "c207456be013cfe14d890896cb0a15290ca07d39c9ea7794b9154574e8bda84f",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-exporter-c5e21b5/LICENSE",
+          "installed_path": "vendor/sebastian/exporter/LICENSE",
+          "sha256": "c1b7b5b9bee26266f6d958a8b31b08cdddbf0aec34cc42b12f8b175f93b2dc4f",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/global-state",
+      "version": "8.0.3",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/global-state.git",
+        "reference": "b164d3274d6537ab462591c5755f76a8f5b1aae9"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/global-state.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/b164d3274d6537ab462591c5755f76a8f5b1aae9",
+        "reference": "b164d3274d6537ab462591c5755f76a8f5b1aae9",
+        "shasum": ""
+      },
+      "archive_sha256": "1965cc5dc7f865815d1e17e42e34a750ec0c8dbdc2650a284b237d12ad225019",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-global-state-b164d32/LICENSE",
+          "installed_path": "vendor/sebastian/global-state/LICENSE",
+          "sha256": "5aa383bf44a3951bb4a2214c740a96e7795e473e1a0abc8d5812e6a3c1dbfc1e",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/lines-of-code",
+      "version": "4.0.1",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/lines-of-code.git",
+        "reference": "d543b8ef219dcd8da262cbb958639a96bedba10e"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/lines-of-code.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/lines-of-code/zipball/d543b8ef219dcd8da262cbb958639a96bedba10e",
+        "reference": "d543b8ef219dcd8da262cbb958639a96bedba10e",
+        "shasum": ""
+      },
+      "archive_sha256": "9dfad7a8811c332c387130bc09f29f3c489dfa07e562e7fa61ae1aecb778bf11",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-lines-of-code-d543b8e/LICENSE",
+          "installed_path": "vendor/sebastian/lines-of-code/LICENSE",
+          "sha256": "759a5f7f752db78d04d43ec73bf6c0ee4bbec2f8f64596bd95419c17af9f3ed4",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/object-enumerator",
+      "version": "7.0.0",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/object-enumerator.git",
+        "reference": "1effe8e9b8e068e9ae228e542d5d11b5d16db894"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/object-enumerator.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/1effe8e9b8e068e9ae228e542d5d11b5d16db894",
+        "reference": "1effe8e9b8e068e9ae228e542d5d11b5d16db894",
+        "shasum": ""
+      },
+      "archive_sha256": "333401d87207e65ba744ac35caee2af443ebe6d29d274a71dc96a6a5fa754a5b",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-object-enumerator-1effe8e/LICENSE",
+          "installed_path": "vendor/sebastian/object-enumerator/LICENSE",
+          "sha256": "b4b44781733a8c15776a738f8dbe599f867e98c2dd9e0b4e766fa6f7cf72fce2",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/object-reflector",
+      "version": "5.0.0",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/object-reflector.git",
+        "reference": "4bfa827c969c98be1e527abd576533293c634f6a"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/object-reflector.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/object-reflector/zipball/4bfa827c969c98be1e527abd576533293c634f6a",
+        "reference": "4bfa827c969c98be1e527abd576533293c634f6a",
+        "shasum": ""
+      },
+      "archive_sha256": "1756e28a0bbd0835ab20bbe0ed642cf97dd15c4268977347ea70976359e2b192",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-object-reflector-4bfa827/LICENSE",
+          "installed_path": "vendor/sebastian/object-reflector/LICENSE",
+          "sha256": "9000f616c81278b859f8b7b7016f54480149b0b0ad819c9c2119c40514f40ba7",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/recursion-context",
+      "version": "7.0.1",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/recursion-context.git",
+        "reference": "0b01998a7d5b1f122911a66bebcb8d46f0c82d8c"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/recursion-context.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/0b01998a7d5b1f122911a66bebcb8d46f0c82d8c",
+        "reference": "0b01998a7d5b1f122911a66bebcb8d46f0c82d8c",
+        "shasum": ""
+      },
+      "archive_sha256": "3c6202ef78a9c4e5c5ecbdee442e9ecfda5a5e03201f807930851827c7514f1e",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-recursion-context-0b01998/LICENSE",
+          "installed_path": "vendor/sebastian/recursion-context/LICENSE",
+          "sha256": "bd6164746a2e92bf9fb581f8c691901019004e8c40d558eb01de1a535ccb5508",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/type",
+      "version": "6.0.4",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/type.git",
+        "reference": "82ff822c2edc46724be9f7411d3163021f602773"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/type.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/82ff822c2edc46724be9f7411d3163021f602773",
+        "reference": "82ff822c2edc46724be9f7411d3163021f602773",
+        "shasum": ""
+      },
+      "archive_sha256": "301c822219ed505cd1e38dbdbb095e22f1a4aae8cf00de06856481a037b1c664",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-type-82ff822/LICENSE",
+          "installed_path": "vendor/sebastian/type/LICENSE",
+          "sha256": "923961ef4cae167a3569487ae6957f578b29bcd1e6c477092cb2a68c25ebdf11",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "sebastian/version",
+      "version": "6.0.1",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/sebastianbergmann/version.git",
+        "reference": "9e935a16187e14f39b0e79910dabd614972cdb26"
+      },
+      "upstream_source": "https://github.com/sebastianbergmann/version.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/9e935a16187e14f39b0e79910dabd614972cdb26",
+        "reference": "9e935a16187e14f39b0e79910dabd614972cdb26",
+        "shasum": ""
+      },
+      "archive_sha256": "476663cc7690258c55b81e7f3c145d657ba3591761412541e1b8df7bfb22e7fe",
+      "license_files": [
+        {
+          "archive_path": "sebastianbergmann-version-9e935a1/LICENSE",
+          "installed_path": "vendor/sebastian/version/LICENSE",
+          "sha256": "b288407b327ef0e297678bbc8dac11a66230f596180a031659622e09d92b1d0e",
+          "bytes": 1531,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "squizlabs/php_codesniffer",
+      "version": "4.0.4",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
+        "reference": "bbdc3d0532623e21838b7041a4364383a8126f96"
+      },
+      "upstream_source": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/bbdc3d0532623e21838b7041a4364383a8126f96",
+        "reference": "bbdc3d0532623e21838b7041a4364383a8126f96",
+        "shasum": ""
+      },
+      "archive_sha256": "c740ffe729faabd73f307cd17b0764576da4cc2e25bf073aa01e421af35dcba5",
+      "license_files": [
+        {
+          "archive_path": "PHPCSStandards-PHP_CodeSniffer-bbdc3d0/licence.txt",
+          "installed_path": "vendor/squizlabs/php_codesniffer/licence.txt",
+          "sha256": "ad489e425c9a48b9fe97b8c11dd5f422606aa72e7726a438cd01ebee22d8ba80",
+          "bytes": 1592,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "staabm/side-effects-detector",
+      "version": "1.0.5",
+      "license_spdx": [
+        "MIT"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/staabm/side-effects-detector.git",
+        "reference": "d8334211a140ce329c13726d4a715adbddd0a163"
+      },
+      "upstream_source": "https://github.com/staabm/side-effects-detector.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/staabm/side-effects-detector/zipball/d8334211a140ce329c13726d4a715adbddd0a163",
+        "reference": "d8334211a140ce329c13726d4a715adbddd0a163",
+        "shasum": ""
+      },
+      "archive_sha256": "90d82ccadb62ce54331fc8d9f10bd0ed53011411d48451f9b0ccbecb9ffb7b12",
+      "license_files": [
+        {
+          "archive_path": "staabm-side-effects-detector-d833421/LICENSE",
+          "installed_path": "vendor/staabm/side-effects-detector/LICENSE",
+          "sha256": "23d428232751fbfd032b47195b3d2a60342d0cf0cdb6e2f474a6b19733e63d75",
+          "bytes": 1069,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    },
+    {
+      "name": "theseer/tokenizer",
+      "version": "2.0.1",
+      "license_spdx": [
+        "BSD-3-Clause"
+      ],
+      "source": {
+        "type": "git",
+        "url": "https://github.com/theseer/tokenizer.git",
+        "reference": "7989e43bf381af0eac72e4f0ca5bcbfa81658be4"
+      },
+      "upstream_source": "https://github.com/theseer/tokenizer.git",
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/theseer/tokenizer/zipball/7989e43bf381af0eac72e4f0ca5bcbfa81658be4",
+        "reference": "7989e43bf381af0eac72e4f0ca5bcbfa81658be4",
+        "shasum": ""
+      },
+      "archive_sha256": "97cd673fdcf90b2f151bc6a21c71a595f55b70e6d48308ed968b7a6952d719b4",
+      "license_files": [
+        {
+          "archive_path": "theseer-tokenizer-7989e43/LICENSE",
+          "installed_path": "vendor/theseer/tokenizer/LICENSE",
+          "sha256": "2820584a513c2547c81656abe330f414b4b395994d552f4c5e13c3d6e9279a90",
+          "bytes": 1532,
+          "license_text_read": true
+        }
+      ],
+      "review_status": "REVIEWED_DEV_ONLY",
+      "license_obligations": [
+        "Retain copyright, license conditions and disclaimer",
+        "BSD-3-Clause: no endorsement without permission"
+      ]
+    }
+  ]
+}
