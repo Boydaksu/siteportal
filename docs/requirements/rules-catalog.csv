@@ -1,0 +1,85 @@
+﻿id,rule_version,category,first_version,severity_default,condition,reference,kind,status_model
+TECH_HTTP_STATUS,1.0,technical,V1.0,high,Ana URL HTTP 4xx/5xx; gerçek status chain saklanır,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_REDIRECT_CHAIN,1.0,technical,V1.0,medium,3xx hop sayısı ve yönlendirme zinciri,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_REDIRECT_LOOP,1.0,technical,V1.0,high,Tekrarlanan Location veya max hop,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_HTTPS,1.0,technical,V1.0,medium,HTTP erişimi ve HTTPS redirect / TLS erişimi,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_HTTPS_DOWNGRADE,1.0,technical,V1.0,high,HTTPS sayfa HTTP hedefine düşüyor,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_ROBOTS_DISALLOW,1.0,technical,V1.0,high,User-agent politikası ve hedef disallow,S3,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_ROBOTS_UNAVAILABLE,1.0,technical,V1.0,medium,Robots fetch status farklılıkları UNKNOWN ile ele alınır,S3,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_META_NOINDEX,1.0,technical,V1.0,high,Meta robots noindex gözlemi,S3,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_X_ROBOTS_NOINDEX,1.0,technical,V1.0,high,HTTP X-Robots-Tag noindex gözlemi,S3,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_ROBOTS_NOINDEX_CONFLICT,1.0,technical,V1.0,high,Disallow ve noindex birlikte; erişim engeli nedeniyle noindex görünmeyebilir,S3,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_CANONICAL_MISSING,1.0,technical,V1.0,info,Canonical yok; Google zorunlu kılmıyor,S2,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_CANONICAL_EMPTY,1.0,technical,V1.0,medium,Canonical href boş veya geçersiz,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_CANONICAL_MULTI_CONFLICT,1.0,technical,V1.0,high,Birden çok çelişkili canonical,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_CANONICAL_TARGET_4XX,1.0,technical,V1.0,high,Canonical hedefi GET ile 404/410 doğrulanmış,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_CANONICAL_REDIRECT,1.0,technical,V1.0,medium,Canonical hedefi redirect; nihai hedef kaydı,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_CANONICAL_OUT_OF_SCOPE,1.0,technical,V1.0,medium,"Canonical başka host; kesin hata değil, kontrollü uyarı",S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_SOFT_404_SUSPECT,1.0,technical,V1.0,medium,200 yanıt fakat hata mesajı/boş içerik benzerliği; sezgisel,S1,heuristic,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_INDEXABILITY_INFERENCE,1.0,technical,V1.0,info,"Teknik sinyallere göre indekslenebilir görünüyor, Google durumu değil",S1,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_SITEMAP_MISSING,1.0,technical,V1.0,info,Sitemap keşfedilemedi; zorunlu değil,S4,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_SITEMAP_STATUS,1.0,technical,V1.0,medium,Sitemap 4xx/5xx veya geçersiz içerik,S4,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_SITEMAP_LIMIT,1.0,technical,V1.1,medium,50k URL/50MB aşımı,S4,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_SITEMAP_URL_CONFLICT,1.0,technical,V1.1,medium,Sitemap URL noindex/redirect/canonical ile çelişiyor,S4,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_SITEMAP_NESTED,1.0,technical,V1.1,medium,Index recursion/cycle/depth cap,S4,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_JS_CONTENT_DELTA,1.0,technical,V1.2,medium,Kaynak HTML ve render HTML ana içerik farkı,S5,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+TECH_JS_BLOCKED_RESOURCES,1.0,technical,V1.2,medium,Önemli JS/CSS robots engel ihtimali,S5,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_TITLE_MISSING,1.0,onpage,V1.0,medium,HTML title yok veya boş,S6,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_TITLE_GENERIC,1.0,onpage,V1.0,low,Genel/tek kelimelik title; heuristic,S6,heuristic,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_TITLE_DUPLICATE,1.0,onpage,V1.1,medium,Taranan URL'lerde aynı title,S6,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_TITLE_TRUNCATION_RISK,1.0,onpage,V1.0,low,"Piksel genişliği tahmini, kesin karakter üst sınırı değil",S6,heuristic,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_META_DESC_MISSING,1.0,onpage,V1.0,low,Meta açıklama yok; Google snippet'i içerikten oluşturabilir,S6,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_META_DESC_DUPLICATE,1.0,onpage,V1.1,medium,Aynı description örnek sayfalarda,S6,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_META_DESC_RELEVANCE,1.0,onpage,V2.1,low,Sayfa ile açıklamanın anlam uyumu sezgisi,S6,heuristic,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_H1_EMPTY,1.0,onpage,V1.0,low,H1 yok; zorunlu tek-H1 kuralı değil,S6,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_HEADING_HIERARCHY,1.0,onpage,V1.0,low,Başlık sıralama atlamaları; bağlamsal,S6,heuristic,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_HTML_LANG,1.0,onpage,V1.0,info,HTML lang yok; Google dilini yalnız bu etikete göre belirlemez,S6,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_CHARSET,1.0,onpage,V1.0,medium,"Charset, meta ve HTTP çakışması",S6,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_OG_METADATA,1.0,onpage,V1.0,info,OG title/image eksikliği sosyal paylaşım önerisi,S6,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ONPAGE_META_KEYWORDS,1.0,onpage,V1.0,info,Meta keywords bilgi amaçlı; Google puanına etkisiz,S6,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+LINK_BROKEN_INTERNAL,1.0,links,V1.1,medium,İç href hedefinde doğrulanmış 4xx,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+LINK_REDIRECT_INTERNAL,1.0,links,V1.1,low,İç link redirect'e gidiyor,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+LINK_ANCHOR_EMPTY,1.0,links,V1.0,low,Anlamlı bağlantı metni yok; icon aria label olabilir,S6,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+LINK_DEPTH_HIGH,1.0,links,V1.1,medium,Önemli sayfa derinliği sayfaya ve site tipine göre,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+LINK_ORPHAN_SUSPECT,1.0,links,V1.1,low,Sitemap'te var fakat örnek crawl grafında görülmedi; kesin değil,S4,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+LINK_PARAM_EXPLOSION,1.0,links,V1.1,medium,Çok sayıda query kombinasyonu,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+LINK_REL_NOFOLLOW,1.0,links,V1.0,info,Nofollow gözlemi; otomatik hata değil,S1,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+LINK_EXTERNAL_BROKEN,1.0,links,V1.1,low,Dış link kontrolü opt-in ve sıkı limitli,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+CWV_LCP,1.0,performance,V1.2,medium,Field P75 <=2.5s iyi; 2.5-4 gelişim; >4 zayıf,S7,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+CWV_INP,1.0,performance,V1.2,medium,Field P75 <=200ms iyi; 200-500 gelişim; >500 zayıf,S7,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+CWV_CLS,1.0,performance,V1.2,medium,Field P75 <=0.1 iyi; 0.1-0.25 gelişim; >0.25 zayıf,S7,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+PERF_LAB_LCP,1.0,performance,V1.2,medium,"Lighthouse lab LCP, saha verisiyle birleştirilmez",S8,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+PERF_RENDER_BLOCKING,1.0,performance,V1.2,low,Lighthouse kaynak blokaj önerileri,S8,heuristic,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+PERF_IMAGE_LCP,1.0,performance,V1.2,medium,"LCP görseli büyük, öncelik veya boyut",S8,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+PERF_CACHE_HINTS,1.0,performance,V1.2,low,Cache-Control ve etag tavsiyeleri,S8,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+PERF_TTFB,1.0,performance,V1.2,low,Laboratuvar ve alan bilgisi ayrı kaydedilir,S8,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+SCHEMA_INVALID_JSONLD,1.0,schema,V1.2,medium,JSON-LD parse error,S9,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+SCHEMA_INVALID_CONTEXT,1.0,schema,V1.2,medium,Bozuk @context/@type,S9,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+SCHEMA_REQUIRED_FOR_TYPE,1.0,schema,V1.2,medium,Google desteklediği türde zorunlu alan eksik,S9,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+SCHEMA_VISIBLE_MISMATCH,1.0,schema,V1.2,medium,Yapılandırılmış veri ve görünür içerik çelişkisi,S9,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+SCHEMA_NO_RICH_TYPE,1.0,schema,V1.2,info,"Rich-result türü yok, tüm sayfalar için gerekmez",S9,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+SCHEMA_MULTIPLE_CONFLICT,1.0,schema,V1.2,low,Aynı entity için çelişen alanlar,S9,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+MOBILE_VIEWPORT,1.0,mobile,V1.2,medium,Mobil viewport eksik,S10,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+MOBILE_OVERFLOW,1.0,mobile,V1.2,medium,Render ile doğrulanan yatay taşma,S10,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+A11Y_IMAGE_ALT,1.0,accessibility,V1.2,low,Anlamlı görselde alt yok; dekoratif boş alt uygundur,S10,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+A11Y_FORM_LABEL,1.0,accessibility,V1.2,medium,Form öğesinde erişilebilir etiket eksik,S10,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+A11Y_CONTRAST,1.0,accessibility,V1.2,low,Otomatik ölçülebilen kontrast; tam WCAG değil,S10,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+HREFLANG_CODE,1.0,international,V2.1,medium,Geçersiz hreflang language/region,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+HREFLANG_RECIPROCAL,1.0,international,V2.1,medium,Karşılıklı hreflang eksik,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+HREFLANG_CANONICAL,1.0,international,V2.1,medium,Hreflang ve canonical dil sürümü çakışması,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ECOM_PRODUCT_SCHEMA,1.0,ecommerce,V2.1,medium,Ürün sayfasında uygun Product/Offer alanları; bloga uygulanmaz,S9,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ECOM_VARIANT_URL,1.0,ecommerce,V2.1,medium,Ürün varyantları duplicate/canonical çakışması,S2,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+ECOM_FACET_URLS,1.0,ecommerce,V2.1,medium,Filtre parametreleri crawl explosion ve canonical,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+LOCAL_BUSINESS_ENTITY,1.0,local,V2.1,low,Yerel işletmede adres/iletişim schema ve görünür tutarlılık,S9,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+CONTENT_MAIN_TEXT,1.0,content,V2.1,low,Ana içerik yeterince anlaşılır mı; heuristic,S11,heuristic,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+CONTENT_NEAR_DUPLICATE,1.0,content,V2.1,low,Taranan sayfalar arasında yüksek benzerlik; bağlamsal,S11,heuristic,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+CONTENT_UNVERIFIABLE,1.0,content,V2.1,info,Kaynakların eksikliği ve yazar bilgisi yalnız öneri,S11,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+AI_READINESS_INDEXABLE,1.0,ai,V2.1,info,Google AI için temel arama gereksinimleri,S12,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+AI_READINESS_TEXT,1.0,ai,V2.1,low,Önemli içerik metinsel erişilebilir mi,S12,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+AI_READINESS_LLMS_TXT,1.0,ai,V2.1,info,"llms.txt varlığı opsiyonel, yokluğu puan düşürmez",S12,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+AI_READINESS_CITATIONS,1.0,ai,V2.1,low,"Bilgi kaynağı/atıf ve özgün katkı önerisi, garanti değil",S12,heuristic,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+SEC_TLS_CERT,1.0,site-health,V1.0,medium,TLS sertifika geçerli mi; SEO kategorisi olmayan site sağlık kontrolü,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+SEC_MIXED_CONTENT,1.0,site-health,V1.2,low,HTTPS sayfada HTTP alt kaynaklar; render kontrollü,S1,measured,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+SEC_SECURITY_HEADERS,1.0,site-health,V1.2,info,"Security headers genel site sağlığı, SEO sıralama puanı değil",S13,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+GSC_CLICK_PERFORMANCE,1.0,search-console,V2.0,info,Yetkili GSC clicks impressions CTR position; teknik denetim puanı dışı,S14,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE
+GSC_INDEX_INSPECTION,1.0,search-console,V2.0,info,Yetkili indexed status; canlı indeksleme testi değil,S15,informational,PASS/WARN/FAIL/UNKNOWN/NOT_APPLICABLE

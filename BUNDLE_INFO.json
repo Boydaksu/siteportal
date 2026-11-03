@@ -1,0 +1,13 @@
+{
+  "title": "SitePortal SEO Analyzer — Turkish-first AI development blueprint",
+  "blueprint_version": "0.1.0",
+  "created_at": "2026-11-03",
+  "repository": "Boydaksu/siteportal",
+  "repository_url": "https://github.com/Boydaksu/siteportal",
+  "phase_count": 9,
+  "subphase_count": 65,
+  "seo_rule_count": 84,
+  "implementation_status": "NOT_STARTED",
+  "github_pushed": false,
+  "description": "Uygulanabilir teknik ve ürün şartnamesi; çalışan uygulama değildir. Her alt faz ve ana faz sonrasında zorunlu review-stop."
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "blueprint_version": "0.1.0",
+  "updated_at": "2026-11-03T16:21:21+03:00",
+  "repository": "Boydaksu/siteportal",
+  "default_branch": "main",
+  "product_version": null,
+  "current_phase": "F00",
+  "current_subphase": "F00.01",
+  "last_approved_phase": null,
+  "last_approved_subphase": null,
+  "status": "IN_PROGRESS",
+  "branch": "phase/F00.01-repo-inventory",
+  "commit_sha": null,
+  "pr_url": null,
+  "last_report": "docs/reports/F00.01.md",
+  "blockers": [],
+  "next_action": "F00.01 doğrulama ve GitHub teslimini bitir; kullanıcı onayı bekle. F00.02 başlamadı.",
+  "phases": {
+    "F00": {
+      "version": "V0.0",
+      "status": "IN_PROGRESS",
+      "subphases": {
+        "F00.01": "IN_PROGRESS",
+        "F00.02": "NOT_STARTED",
+        "F00.03": "NOT_STARTED",
+        "F00.04": "NOT_STARTED",
+        "F00.05": "NOT_STARTED",
+        "F00.06": "NOT_STARTED"
+      }
+    },
+    "F01": {
+      "version": "V0.1",
+      "status": "NOT_STARTED",
+      "subphases": {
+        "F01.01": "NOT_STARTED",
+        "F01.02": "NOT_STARTED",
+        "F01.03": "NOT_STARTED",
+        "F01.04": "NOT_STARTED",
+        "F01.05": "NOT_STARTED",
+        "F01.06": "NOT_STARTED",
+        "F01.07": "NOT_STARTED"
+      }
+    },
+    "F02": {
+      "version": "V1.0",
+      "status": "NOT_STARTED",
+      "subphases": {
+        "F02.01": "NOT_STARTED",
+        "F02.02": "NOT_STARTED",
+        "F02.03": "NOT_STARTED",
+        "F02.04": "NOT_STARTED",
+        "F02.05": "NOT_STARTED",
+        "F02.06": "NOT_STARTED",
+        "F02.07": "NOT_STARTED",
+        "F02.08": "NOT_STARTED"
+      }
+    },
+    "F03": {
+      "version": "V1.1",
+      "status": "NOT_STARTED",
+      "subphases": {
+        "F03.01": "NOT_STARTED",
+        "F03.02": "NOT_STARTED",
+        "F03.03": "NOT_STARTED",
+        "F03.04": "NOT_STARTED",
+        "F03.05": "NOT_STARTED",
+        "F03.06": "NOT_STARTED",
+        "F03.07": "NOT_STARTED"
+      }
+    },
+    "F04": {
+      "version": "V1.2",
+      "status": "NOT_STARTED",
+      "subphases": {
+        "F04.01": "NOT_STARTED",
+        "F04.02": "NOT_STARTED",
+        "F04.03": "NOT_STARTED",
+        "F04.04": "NOT_STARTED",
+        "F04.05": "NOT_STARTED",
+        "F04.06": "NOT_STARTED",
+        "F04.07": "NOT_STARTED"
+      }
+    },
+    "F05": {
+      "version": "V2.0",
+      "status": "NOT_STARTED",
+      "subphases": {
+        "F05.01": "NOT_STARTED",
+        "F05.02": "NOT_STARTED",
+        "F05.03": "NOT_STARTED",
+        "F05.04": "NOT_STARTED",
+        "F05.05": "NOT_STARTED",
+        "F05.06": "NOT_STARTED",
+        "F05.07": "NOT_STARTED",
+        "F05.08": "NOT_STARTED"
+      }
+    },
+    "F06": {
+      "version": "V2.1",
+      "status": "NOT_STARTED",
+      "subphases": {
+        "F06.01": "NOT_STARTED",
+        "F06.02": "NOT_STARTED",
+        "F06.03": "NOT_STARTED",
+        "F06.04": "NOT_STARTED",
+        "F06.05": "NOT_STARTED",
+        "F06.06": "NOT_STARTED",
+        "F06.07": "NOT_STARTED"
+      }
+    },
+    "F07": {
+      "version": "V3.0",
+      "status": "NOT_STARTED",
+      "subphases": {
+        "F07.01": "NOT_STARTED",
+        "F07.02": "NOT_STARTED",
+        "F07.03": "NOT_STARTED",
+        "F07.04": "NOT_STARTED",
+        "F07.05": "NOT_STARTED",
+        "F07.06": "NOT_STARTED",
+        "F07.07": "NOT_STARTED",
+        "F07.08": "NOT_STARTED"
+      }
+    },
+    "F08": {
+      "version": "V4.0",
+      "status": "NOT_STARTED",
+      "subphases": {
+        "F08.01": "NOT_STARTED",
+        "F08.02": "NOT_STARTED",
+        "F08.03": "NOT_STARTED",
+        "F08.04": "NOT_STARTED",
+        "F08.05": "NOT_STARTED",
+        "F08.06": "NOT_STARTED",
+        "F08.07": "NOT_STARTED"
+      }
+    }
+  },
+  "baseline_commit_sha": "cb885fd3aae4fcacea3618be77115c387baf61a9",
+  "next_subphase": "F00.02",
+  "approval_required": true
+}
