@@ -1,11 +1,11 @@
-F00.03 — 2026-11-03 Europe/Istanbul
-Belge/sözleşme kapsamı; runtime, gerçek API, CVE/lisans audit veya SSRF testi değildir. Q-001–003 ayrı kullanıcı onayı alındı.
+F00.03 SON TESLİM — 2026-11-03 Europe/Istanbul
+Sadece belge/sözleşme/örnek kontrolleri. Q-001–003 için ayrı kullanıcı onayı kayıtlı. Bu alt fazda başarısız kontrol yok.
 
 $ python scripts/verify_blueprint.py
 exit=0
 PASS: 9 ana faz, 65 alt faz, 84 kural, 58 Markdown dosyası; JSON ve iç bağlantılar geçerli.
 NOT: Bu sonuç yazılımın implementasyon veya güvenlik testlerini geçtiğini göstermez.
-Bağlantı kontrolü: 516 hedef; yerel başlıklar ve MASTER dahil. Dış URL içerik/erişimi kontrol edilmedi.
+Bağlantı kontrolü: 524 hedef; yerel başlıklar ve MASTER dahil. Dış URL içerik/erişimi kontrol edilmedi.
 
 $ python scripts/test_document_links.py
 exit=0
@@ -18,7 +18,7 @@ test_turkish_and_duplicate_heading_targets (__main__.DocumentLinksTests.test_tur
 test_url_encoded_local_target (__main__.DocumentLinksTests.test_url_encoded_local_target) ... ok
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.045s
+Ran 7 tests in 0.052s
 
 OK
 
@@ -181,9 +181,8 @@ PASS: Q-002: DB/crawler adı eşliği
 PASS: Q-003: uygulanan özelliklerde dil kapsamı açık
 NOT: DEMO kontrolü zorunlu alan/type/enum eşliğidir; tam JSON Schema motoru, gerçek API, CVE/lisans audit veya SSRF testi değildir.
 
-PASS: Python syntax compile; MASTER 48 kaynaktan byte-for-byte eşit.
+PASS: tüm Python scriptleri syntax compile; MASTER 48 kaynaktan byte-for-byte eşit.
 
-$ git diff --cached --check
-exit=0
+PASS: README/CURRENT_STATUS/rapor/JSON durum eşliği; F00.02 DONE, F00.03 kullanıcı kabulü bekliyor, F00.04 NOT_STARTED; üç karar ayrı onaylı.
 
-N/A: PHP/DB/queue/crawler/ACL/UI testleri ve Composer audit/licenses/check-platform-reqs; uygulama/paket manifesti yok. CI NOT_CONFIGURED. PHP/Composer sürüm veya extension uyumluluğu test edilmedi.
+N/A: PHP/DB/queue/crawler/ACL/UI/runtime ve Composer audit/licenses/check-platform-reqs. Uygulama veya paket manifesti yok; PHP sürüm/extension uyumluluğu çalıştırılmadı. CI NOT_CONFIGURED.

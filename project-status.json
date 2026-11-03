@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T16:54:56+03:00",
+  "updated_at": "2026-11-03T17:11:03+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": null,
@@ -9,13 +9,13 @@
   "current_subphase": "F00.03",
   "last_approved_phase": null,
   "last_approved_subphase": "F00.02",
-  "status": "IN_PROGRESS",
+  "status": "READY_FOR_REVIEW",
   "branch": "phase/F00.03-architecture-policy",
-  "commit_sha": null,
-  "pr_url": null,
+  "commit_sha": "0e4206400f34bda67d0358ce1fc05b57dd7ae77d",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/3",
   "last_report": "docs/reports/F00.03.md",
   "blockers": [],
-  "next_action": "Yalnız F00.03 ADR, modül/bağımlılık politikası ve tehdit modelini hazırla, doğrula, PR/rapor sun ve DUR.",
+  "next_action": "DUR: F00.03 teslim kabulünü, PR #3 birleştirme iznini ve F00.04 için açık başlangıç onayını bekle.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -23,7 +23,7 @@
       "subphases": {
         "F00.01": "DONE",
         "F00.02": "DONE",
-        "F00.03": "IN_PROGRESS",
+        "F00.03": "READY_FOR_REVIEW",
         "F00.04": "NOT_STARTED",
         "F00.05": "NOT_STARTED",
         "F00.06": "NOT_STARTED"
@@ -141,7 +141,7 @@
   "next_subphase": "F00.04",
   "approval_required": true,
   "commit_sha_scope": "Bu alt fazın doğrulanmış içerik commit’i; sonraki teslim metadata commit’i PR head içinde olabilir.",
-  "push_status": "PENDING",
+  "push_status": "SUCCESS",
   "test_status": "PASS_DOCUMENT_ARCHITECTURE_INVENTORY_CHECKS",
   "ci_status": "NOT_CONFIGURED",
   "approval_received": false,
