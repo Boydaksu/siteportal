@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-04T01:17:00+03:00",
+  "updated_at": "2026-11-04T01:25:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "0.1.0-dev",
   "current_phase": "F01",
   "current_subphase": "F01.04",
   "last_approved_phase": "F00",
-  "last_approved_subphase": "F01.03",
-  "status": "READY_FOR_REVIEW",
+  "last_approved_subphase": "F01.04",
+  "status": "DONE",
   "branch": "phase/F01.04-http-client-robots",
-  "commit_sha": "b57336afad41f44ce5bbdde2455a610a9d4100f3",
+  "commit_sha": "95e2ed53e9043be83e97067dd45324f34c5262d8",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/10",
   "last_report": "docs/reports/F01.04.md",
   "blockers": [],
-  "next_action": "Kullanıcının F01.04 teslim kabulü ve açık onayı bekleniyor; onay gelmeden F01.05'e geçilmez (DUR).",
+  "next_action": "F01.04 kabul edildi, PR #10 main dalına birleştirilecek ve F01.05 başlatılacaktır.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -36,7 +36,7 @@
         "F01.01": "DONE",
         "F01.02": "DONE",
         "F01.03": "DONE",
-        "F01.04": "READY_FOR_REVIEW",
+        "F01.04": "DONE",
         "F01.05": "NOT_STARTED",
         "F01.06": "NOT_STARTED",
         "F01.07": "NOT_STARTED"
@@ -199,12 +199,18 @@
       "approval_reference": "2026-11-04: Kullanıcı F01.03 teslim kabulü + PR #9 merge + F01.04 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-04: Kullanıcı F01.03 teslim kabulü + PR #9 merge + F01.04 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F01.04": {
+      "approved_at": "2026-11-04T01:24:00+03:00",
+      "approval_reference": "2026-11-04: Kullanıcı F01.04 teslim kabulü + PR #10 merge + F01.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-04: Kullanıcı F01.04 teslim kabulü + PR #10 merge + F01.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F01.04",
-    "authorized_at": "2026-11-04T00:56:00+03:00",
-    "reference": "F01.03 kabulü, PR #9 merge ve F01.04 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F01.05",
+    "authorized_at": "2026-11-04T01:24:00+03:00",
+    "reference": "F01.04 kabulü, PR #10 merge ve F01.05 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
     "subphase": "F01.03",
@@ -244,9 +250,9 @@
     "proposal": "docs/operations/main-protection.proposal.json"
   },
   "ci": {
-    "run_id": 41725872996,
-    "url": "https://github.com/Boydaksu/siteportal/actions/runs/41725872996",
-    "commit_sha": "8c6ac3e9447432f8eeea0ce41a7776472d733e8b",
+    "run_id": 41730270573,
+    "url": "https://github.com/Boydaksu/siteportal/actions/runs/41730270573",
+    "commit_sha": "95e2ed53e9043be83e97067dd45324f34c5262d8",
     "status": "completed",
     "conclusion": "success"
   }

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F01.04 kabulü
+- Kullanıcı “onaylıyorum” ile F01.04 teslimi, PR #10 birleştirmesi ve F01.05 başlangıcını onayladı; kabul kaydı main dalına birleştirilecek.
+
 ## 2026-11-04 | F01.04 | READY_FOR_REVIEW
 - Güvenli dış ağ istemcisi (`app/Core/Http/SafeHttpClient.php`), sözleşmesi (`app/Core/Http/HttpClientInterface.php`) ve HTTP yanıt nesnesi (`app/Core/Http/HttpResponse.php`) geliştirildi.
 - DNS Pinning (`CURLOPT_RESOLVE`), `CURLOPT_FOLLOWLOCATION => false` ile manuel yönlendirme sekmesi ve döngü denetimi (`RedirectValidator`), her sekmede iç IP pivot engeli uygulandı.
