@@ -1,0 +1,414 @@
+=== 1. PHP LINT (check_php.py) ===
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Controllers/HealthController.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Controllers/HomeController.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Controllers/StaticFileController.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/App.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Config.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Crawler/Exceptions/RobotsDisallowedException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Crawler/Exceptions/RobotsException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Crawler/Exceptions/RobotsUnavailableException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Crawler/MemoryRobotsCache.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Crawler/PoliteCrawlerPolicy.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Crawler/RobotsCacheInterface.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Crawler/RobotsManager.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Crawler/RobotsParser.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/Connection.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/MigrationInterface.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/MigrationRunner.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/SeederInterface.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/SeederRunner.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/ErrorHandler.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/BodyTooLargeException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/HttpException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/HttpRateLimitedException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/HttpServerException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/HttpTimeoutException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Http/HttpClientInterface.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Http/HttpResponse.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Http/SafeHttpClient.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/I18n.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Request.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Response.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Router.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/DnsResolverInterface.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/BlockedUrlException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/DnsResolutionException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/InvalidUrlException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/RedirectException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/SecurityException.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/IpValidator.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/PinnedTarget.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/RedirectValidator.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/SystemDnsResolver.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/UrlSecurityPolicy.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Security/UrlValidator.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/View.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/bin/migrate.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/config/app.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/config/crawler.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/config/database.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/config/security.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/database/migrations/0001_create_core_tables.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/database/seeders/0001_RuleRegistrySeeder.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/database/seeders/0002_DevelopmentFixtureSeeder.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/public/index.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/lang/en-US/messages.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/lang/tr-TR/messages.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/views/errors/404.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/views/errors/500.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/views/home.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/views/layout.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Fixtures/MockDnsResolver.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Fixtures/SsrfVectors.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Integration/Crawler/CrawlerIntegrationTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Integration/Database/CliMigrateTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Integration/HttpServerTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Integration/Security/SecurityIntegrationTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/ConfigTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/ErrorHandlerTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/I18nTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/RequestResponseTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/RouterTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Crawler/RobotsManagerTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Crawler/RobotsParserTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Database/ConnectionTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Database/MigrationRunnerTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Database/SeederTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/FixtureContractTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Http/HttpResponseTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Http/SafeHttpClientTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Security/DnsPinningTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Security/IpValidatorTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Security/RedirectValidatorTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Security/UrlValidatorTest.php
+PASS: 82 proje PHP dosyası lint kontrolünden geçti; vendor/ignore edilen kopyalar kapsam dışı.
+
+=== 2. PHPCS (PSR-12) ===
+Time: 515ms; Memory: 10MB
+PHPCS: PASS
+
+=== 3. PHPSTAN (Level 8) ===
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+/Users/dbasgan/Desktop/siteportal/app/Controllers/HealthController.php
+/Users/dbasgan/Desktop/siteportal/app/Controllers/HomeController.php
+/Users/dbasgan/Desktop/siteportal/app/Controllers/StaticFileController.php
+/Users/dbasgan/Desktop/siteportal/app/Core/App.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Config.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Crawler/Exceptions/RobotsDisallowedException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Crawler/Exceptions/RobotsException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Crawler/Exceptions/RobotsUnavailableException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Crawler/MemoryRobotsCache.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Crawler/PoliteCrawlerPolicy.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Crawler/RobotsCacheInterface.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Crawler/RobotsManager.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Crawler/RobotsParser.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Database/Connection.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Database/MigrationInterface.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Database/MigrationRunner.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Database/SeederInterface.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Database/SeederRunner.php
+/Users/dbasgan/Desktop/siteportal/app/Core/ErrorHandler.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/BodyTooLargeException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/HttpException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/HttpRateLimitedException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/HttpServerException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Http/Exceptions/HttpTimeoutException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Http/HttpClientInterface.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Http/HttpResponse.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Http/SafeHttpClient.php
+/Users/dbasgan/Desktop/siteportal/app/Core/I18n.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Request.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Response.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Router.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/DnsResolverInterface.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/BlockedUrlException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/DnsResolutionException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/InvalidUrlException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/RedirectException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/Exceptions/SecurityException.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/IpValidator.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/PinnedTarget.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/RedirectValidator.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/SystemDnsResolver.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/UrlSecurityPolicy.php
+/Users/dbasgan/Desktop/siteportal/app/Core/Security/UrlValidator.php
+/Users/dbasgan/Desktop/siteportal/app/Core/View.php
+/Users/dbasgan/Desktop/siteportal/bin/migrate.php
+/Users/dbasgan/Desktop/siteportal/database/migrations/0001_create_core_tables.php
+/Users/dbasgan/Desktop/siteportal/database/seeders/0001_RuleRegistrySeeder.php
+/Users/dbasgan/Desktop/siteportal/database/seeders/0002_DevelopmentFixtureSeeder.php
+/Users/dbasgan/Desktop/siteportal/public/index.php
+/Users/dbasgan/Desktop/siteportal/tests/Fixtures/MockDnsResolver.php
+/Users/dbasgan/Desktop/siteportal/tests/Fixtures/SsrfVectors.php
+/Users/dbasgan/Desktop/siteportal/tests/Integration/Crawler/CrawlerIntegrationTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Integration/Database/CliMigrateTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Integration/HttpServerTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Integration/Security/SecurityIntegrationTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Core/ConfigTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Core/ErrorHandlerTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Core/I18nTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Core/RequestResponseTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Core/RouterTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Crawler/RobotsManagerTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Crawler/RobotsParserTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Database/ConnectionTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Database/MigrationRunnerTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Database/SeederTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/FixtureContractTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Http/HttpResponseTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Http/SafeHttpClientTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Security/DnsPinningTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Security/IpValidatorTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Security/RedirectValidatorTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/Security/UrlValidatorTest.php
+Running PHPStan\Rules\Comparison\ConstantConditionInTraitRule on the collected data
+Running PHPStan\Rules\Comparison\FunctionCallConstantConditionRule on the collected data
+Running PHPStan\Rules\Traits\NotAnalysedTraitRule on the collected data
+Running PHPStan\Rules\DeadCode\CallToConstructorStatementWithoutImpurePointsRule on the collected data
+Running PHPStan\Rules\DeadCode\CallToFunctionStatementWithoutImpurePointsRule on the collected data
+Running PHPStan\Rules\DeadCode\CallToMethodStatementWithoutImpurePointsRule on the collected data
+Running PHPStan\Rules\DeadCode\CallToStaticMethodStatementWithoutImpurePointsRule on the collected data
+Running PHPStan\Rules\Methods\MethodCallWithPossiblyRenamedNamedArgumentRule on the collected data
+
+ [OK] No errors                                                                 
+
+
+=== 4. PHPUNIT ===
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.4.20
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+
+...............................................................  63 / 121 ( 52%)
+............................................[36;1mS[0m.........[36;1mS[0m...      121 / 121 (100%)
+
+Time: 00:01.837, Memory: 18.00 MB
+
+[30;42mOK, but some tests were skipped![0m
+[30;42mTests: 121[0m[30;42m, Assertions: 704[0m[30;42m, Skipped: 2[0m[30;42m.[0m
+
+=== 5. QUALITY GATES (test_quality_gates.py) ===
+test_formatter_rejects_non_psr12_input (__main__.QualityGateTests) ... ok
+test_php_lint_rejects_syntax_error (__main__.QualityGateTests) ... ok
+test_static_analysis_rejects_incorrect_return_type (__main__.QualityGateTests) ... ok
+test_test_runner_rejects_failed_assertion (__main__.QualityGateTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.627s
+
+OK
+
+=== 6. DOCUMENT LINKS (test_document_links.py) ===
+test_code_fences_do_not_create_links_or_headings (__main__.DocumentLinksTests) ... ok
+test_external_url_format_without_network_request (__main__.DocumentLinksTests) ... ok
+test_missing_file_is_rejected (__main__.DocumentLinksTests) ... ok
+test_missing_fragment_is_rejected (__main__.DocumentLinksTests) ... ok
+test_repository_escape_is_rejected (__main__.DocumentLinksTests) ... ok
+test_turkish_and_duplicate_heading_targets (__main__.DocumentLinksTests) ... ok
+test_url_encoded_local_target (__main__.DocumentLinksTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.006s
+
+OK
+
+=== 7. BLUEPRINT VERIFICATION (verify_blueprint.py) ===
+PASS: 9 ana faz, 65 alt faz, 84 kural, 73 Markdown dosyası; JSON ve iç bağlantılar geçerli.
+NOT: Bu sonuç yazılımın implementasyon veya güvenlik testlerini geçtiğini göstermez.
+Bağlantı kontrolü: 788 hedef; yerel başlıklar ve MASTER dahil. Dış URL içerik/erişimi kontrol edilmedi.
+
+=== 8. ARCHITECTURE VERIFICATION (verify_architecture.py) ===
+PASS: ADR referansı mevcut: stack_record
+PASS: ADR referansı mevcut: module_matrix
+PASS: ADR referansı mevcut: dependency_policy
+PASS: ADR referansı mevcut: dependency_inventory
+PASS: ADR referansı mevcut: threat_model
+PASS: Başlangıç ADR kimlikleri korundu
+PASS: Üç sözleşme farkı karar kaydında
+PASS: Q-001 geçerli karar durumu
+PASS: Q-001 gerekçeli ADR mevcut
+PASS: Q-001 açık kullanıcı onayı kayıtlı
+PASS: Q-002 geçerli karar durumu
+PASS: Q-002 gerekçeli ADR mevcut
+PASS: Q-002 açık kullanıcı onayı kayıtlı
+PASS: Q-003 geçerli karar durumu
+PASS: Q-003 gerekçeli ADR mevcut
+PASS: Q-003 açık kullanıcı onayı kayıtlı
+PASS: Bağımlılık envanteri kaynak alt fazını taşıyor
+PASS: ADR kaydı uygulama geliştirilmiş iddiası taşımıyor
+PASS: Paket manifesti durumu gerçek dosyalarla aynı
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: myclabs/deep-copy
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: nikic/php-parser
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phar-io/manifest
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phar-io/version
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpstan/phpstan
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-code-coverage
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-file-iterator
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-invoker
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-text-template
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-timer
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/phpunit
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/cli-parser
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/comparator
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/complexity
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/diff
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/environment
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/exporter
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/global-state
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/lines-of-code
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/object-enumerator
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/object-reflector
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/recursion-context
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/type
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/version
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: squizlabs/php_codesniffer
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: staabm/side-effects-detector
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: theseer/tokenizer
+PASS: Geliştirme envanteri gerçek lock ile aynı
+PASS: Uygulama paketi eklenmedi; araçlar yalnız dev kapsamı
+PASS: Planlanan platform için sahte resolved sürüm yok
+PASS: Yerel test CLI doğrulama kapsamı deployment'tan ayrılmış
+PASS: T01–T15 tehdit kimlikleri eksiksiz ve tekil
+PASS: Yedi güven sınırı kaydedildi
+PASS: Tehdit doğrulama kapıları gerçek yol haritasında
+PASS: Kritik kontrol alanları ve uygulanmama durumu açık
+PASS: Örnek yanıt DEMO olarak işaretli
+PASS: DEMO bulguda mevcut şemanın zorunlu alanları var
+PASS: DEMO rule_id: string
+PASS: DEMO rule_version: string
+PASS: DEMO status: geçerli enum
+PASS: DEMO severity: geçerli enum
+PASS: DEMO confidence: geçerli enum
+PASS: DEMO evidence: array
+PASS: DEMO evidence: nesne listesi
+PASS: DEMO observed_at: string
+PASS: DEMO affected_urls: array
+PASS: DEMO data_source: string
+PASS: Q-001: tek data_source alanı
+PASS: Q-001: evidence nesne dizisi
+PASS: Q-002: crawler queue adı analysis_jobs
+PASS: Q-002: DB/crawler adı eşliği
+PASS: Q-003: uygulanan özelliklerde dil kapsamı açık
+NOT: DEMO kontrolü zorunlu alan/type/enum eşliğidir; tam JSON Schema motoru, gerçek API, CVE/lisans audit veya SSRF testi değildir.
+
+=== 9. TOOLCHAIN VERIFICATION (verify_toolchain.py) ===
+PASS: Uygulama paketi yok; yalnız PHP platform şartı
+PASS: Composer plugin kapalı ve HTTPS zorunlu
+PASS: Otomatik/root Composer script'i eklenmedi
+PASS: Q-004 için yetkisiz kök lisans kararı alınmadı
+PASS: Bütün doğrudan/geçişli dev paketleri incelenmiş ve kayıtlı
+PASS: Kesin doğrudan sürüm: phpunit/phpunit
+PASS: Kesin doğrudan sürüm: phpstan/phpstan
+PASS: Kesin doğrudan sürüm: squizlabs/php_codesniffer
+PASS: Lock/inceleme/envanter sürüm eşliği: myclabs/deep-copy
+PASS: Kilitli artifact reference: myclabs/deep-copy
+PASS: Lisans metadata eşliği: myclabs/deep-copy
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: myclabs/deep-copy
+PASS: Lock/inceleme/envanter sürüm eşliği: nikic/php-parser
+PASS: Kilitli artifact reference: nikic/php-parser
+PASS: Lisans metadata eşliği: nikic/php-parser
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: nikic/php-parser
+PASS: Lock/inceleme/envanter sürüm eşliği: phar-io/manifest
+PASS: Kilitli artifact reference: phar-io/manifest
+PASS: Lisans metadata eşliği: phar-io/manifest
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phar-io/manifest
+PASS: Lock/inceleme/envanter sürüm eşliği: phar-io/version
+PASS: Kilitli artifact reference: phar-io/version
+PASS: Lisans metadata eşliği: phar-io/version
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phar-io/version
+PASS: Lock/inceleme/envanter sürüm eşliği: phpstan/phpstan
+PASS: Kilitli artifact reference: phpstan/phpstan
+PASS: Lisans metadata eşliği: phpstan/phpstan
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpstan/phpstan
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-code-coverage
+PASS: Kilitli artifact reference: phpunit/php-code-coverage
+PASS: Lisans metadata eşliği: phpunit/php-code-coverage
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-code-coverage
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-file-iterator
+PASS: Kilitli artifact reference: phpunit/php-file-iterator
+PASS: Lisans metadata eşliği: phpunit/php-file-iterator
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-file-iterator
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-invoker
+PASS: Kilitli artifact reference: phpunit/php-invoker
+PASS: Lisans metadata eşliği: phpunit/php-invoker
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-invoker
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-text-template
+PASS: Kilitli artifact reference: phpunit/php-text-template
+PASS: Lisans metadata eşliği: phpunit/php-text-template
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-text-template
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-timer
+PASS: Kilitli artifact reference: phpunit/php-timer
+PASS: Lisans metadata eşliği: phpunit/php-timer
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-timer
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/phpunit
+PASS: Kilitli artifact reference: phpunit/phpunit
+PASS: Lisans metadata eşliği: phpunit/phpunit
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/phpunit
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/cli-parser
+PASS: Kilitli artifact reference: sebastian/cli-parser
+PASS: Lisans metadata eşliği: sebastian/cli-parser
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/cli-parser
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/comparator
+PASS: Kilitli artifact reference: sebastian/comparator
+PASS: Lisans metadata eşliği: sebastian/comparator
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/comparator
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/complexity
+PASS: Kilitli artifact reference: sebastian/complexity
+PASS: Lisans metadata eşliği: sebastian/complexity
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/complexity
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/diff
+PASS: Kilitli artifact reference: sebastian/diff
+PASS: Lisans metadata eşliği: sebastian/diff
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/diff
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/environment
+PASS: Kilitli artifact reference: sebastian/environment
+PASS: Lisans metadata eşliği: sebastian/environment
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/environment
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/exporter
+PASS: Kilitli artifact reference: sebastian/exporter
+PASS: Lisans metadata eşliği: sebastian/exporter
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/exporter
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/global-state
+PASS: Kilitli artifact reference: sebastian/global-state
+PASS: Lisans metadata eşliği: sebastian/global-state
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/global-state
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/lines-of-code
+PASS: Kilitli artifact reference: sebastian/lines-of-code
+PASS: Lisans metadata eşliği: sebastian/lines-of-code
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/lines-of-code
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/object-enumerator
+PASS: Kilitli artifact reference: sebastian/object-enumerator
+PASS: Lisans metadata eşliği: sebastian/object-enumerator
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/object-enumerator
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/object-reflector
+PASS: Kilitli artifact reference: sebastian/object-reflector
+PASS: Lisans metadata eşliği: sebastian/object-reflector
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/object-reflector
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/recursion-context
+PASS: Kilitli artifact reference: sebastian/recursion-context
+PASS: Lisans metadata eşliği: sebastian/recursion-context
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/recursion-context
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/type
+PASS: Kilitli artifact reference: sebastian/type
+PASS: Lisans metadata eşliği: sebastian/type
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/type
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/version
+PASS: Kilitli artifact reference: sebastian/version
+PASS: Lisans metadata eşliği: sebastian/version
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/version
+PASS: Lock/inceleme/envanter sürüm eşliği: squizlabs/php_codesniffer
+PASS: Kilitli artifact reference: squizlabs/php_codesniffer
+PASS: Lisans metadata eşliği: squizlabs/php_codesniffer
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: squizlabs/php_codesniffer
+PASS: Lock/inceleme/envanter sürüm eşliği: staabm/side-effects-detector
+PASS: Kilitli artifact reference: staabm/side-effects-detector
+PASS: Lisans metadata eşliği: staabm/side-effects-detector
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: staabm/side-effects-detector
+PASS: Lock/inceleme/envanter sürüm eşliği: theseer/tokenizer
+PASS: Kilitli artifact reference: theseer/tokenizer
+PASS: Lisans metadata eşliği: theseer/tokenizer
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: theseer/tokenizer
+PASS: CI action sürüm kaydı workflow ile aynı
+PASS: Action'lar tam commit SHA ile sabit
+PASS: CI minimum token yetkisi; kalıcı credential ve privileged PR trigger yok
+NOT: Bu denetim güncel CVE veritabanını sorgulamaz; composer audit ayrı çalıştırılır. Paketlenmiş PHAR iç bileşenleri ve hukuki uygunluk sertifikası kapsam dışı.
