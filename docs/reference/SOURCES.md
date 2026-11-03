@@ -1,6 +1,6 @@
 # Resmî referans envanteri (2026-11-03 itibarıyla)
 
-Bu bağlantılar yol haritası ve kural kataloğu için **birincil/otoritatif kaynak** olarak kontrol edilmiştir. Dış dokümanların içeriği değişebilir; AI ajanı bir SEO kuralını kodlamadan önce ilgili güncel sayfayı yeniden okumalı, kanıt tarihi ve gerekirse kural sürümünü güncellemelidir. S1-S15 kural kataloğundaki `reference` alanıdır.
+Bu envanter başlangıç plan paketinden alınan **birincil/otoritatif kaynak** adaylarını ve paketteki uygulama notlarını korur. Paket hazırlanırken yapıldığı belirtilen kontrol bu teslimin yeniden doğrulaması değildir. F00.02 yalnız belge bağlantılarının biçimini ve yerel referans düzenini denetler; dış sayfaların erişimi/içeriği bu aşamada yeniden kontrol edilmedi. Dış dokümanların içeriği değişebilir; AI ajanı bir SEO kuralını kodlamadan önce ilgili güncel sayfayı yeniden okumalı, kanıt tarihi ve gerekirse kural sürümünü güncellemelidir. S1-S15 kural kataloğundaki `reference` alanıdır.
 
 | ID | Kaynak | Resmî URL | Uygulama kararı |
 |---|---|---|---|
@@ -40,3 +40,6 @@ Bu bağlantılar yol haritası ve kural kataloğu için **birincil/otoritatif ka
 3. Ürün önerisi değişirse kural sürümünü artır, fixture ve scores'ı güncelle, ADR ekle.
 4. Arama motorunun özel sıralama sistemi, indeksleme garantisi veya AI yanıtı kesin olarak bildirilmez.
 5. İleri sürümlerde 6 ayda bir kaynak tazelik taraması ve değişiklik raporu yapılır.
+
+## Bakım bağlantıları
+Kural uygulamadan önceki [referans disiplini](#referans-kullanım-disiplini) geçerlidir. [Belge haritası](../README.md), [bakım rehberi](../process/MAINTENANCE.md) ve [kural CSV](../requirements/rules-catalog.csv) kaynak kimliklerini birlikte izler.

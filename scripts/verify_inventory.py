@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""F00.01 belge/envanter kontrolleri; çalışan ürün güvenlik testi değildir."""
+"""Belge/envanter ve faz kaydı kontrolleri; ürün güvenlik testi değildir."""
 from pathlib import Path
 import csv
 import hashlib
@@ -39,10 +39,15 @@ for phase, data in status["phases"].items():
     headings = re.findall(r"^### (F\d{2}\.\d{2}) —", (root / f"docs/roadmap/{phase}.md").read_text(encoding="utf-8"), re.M)
     check(headings == list(data["subphases"]), f"{phase} plan/JSON sırası ve tam kapsamı")
 check(sum(len(v["subphases"]) for v in status["phases"].values()) == 65, "Toplam 65 alt faz")
-check(status["current_subphase"] == "F00.01" and status["last_approved_subphase"] in {None, "F00.01"}, "Aktif alt faz F00.01; onay kaydı izinli durumda")
-check(all(value == "NOT_STARTED" for data in status["phases"].values() for key, value in data["subphases"].items() if key != "F00.01"), "Sonraki 64 alt faz başlamadı")
-if status["last_approved_subphase"] == "F00.01":
-    check(bool(status.get("approved_at") and status.get("approval_reference")), "F00.01 kullanıcı kabul kanıtı kayıtlı")
+subphases = [(key, value) for data in status["phases"].values() for key, value in data["subphases"].items()]
+names = [key for key, _ in subphases]
+active_index = names.index(status["current_subphase"])
+check(status["status"] == dict(subphases)[status["current_subphase"]], "Aktif alt faz ve üst durum eşleşiyor")
+check(all(value == "DONE" for _, value in subphases[:active_index]), "Aktif alt fazın öncekileri DONE")
+check(all(value == "NOT_STARTED" for _, value in subphases[active_index + 1:]), "Sonraki alt fazlar başlamadı")
+approved = [key for key, value in subphases if value == "DONE"]
+check(status["last_approved_subphase"] == (approved[-1] if approved else None), "Son onaylı alt faz DONE kayıtlarıyla tutarlı")
+check(all(status.get("approvals", {}).get(key, {}).get("approved_at") and status["approvals"][key].get("approval_reference") for key in approved), "Her DONE için tarih ve kullanıcı onay kanıtı var")
 tr = json.loads((root / "locales/tr-TR.example.json").read_text(encoding="utf-8"))
 en = json.loads((root / "locales/en-US.example.json").read_text(encoding="utf-8"))
 check(tr.keys() == en.keys() and all(re.findall(r"\{\w+\}", tr[k]) == re.findall(r"\{\w+\}", en[k]) for k in tr), "TR/EN anahtar ve parametre eşliği")
@@ -57,5 +62,6 @@ for name in tracked:
         suspects.append(name)
 check(not suspects, "Sınırlı secret kalıp taraması: bulgu yok (tam güvenlik denetimi değildir)")
 check(not any(name == ".env" or (Path(name).name.startswith(".env.") and Path(name).name != ".env.example") for name in tracked), "Gerçek .env dosyası takip edilmiyor")
-check(not any(name.endswith(".php") for name in tracked), "F00.01 kapsamında PHP uygulama kodu eklenmedi")
-print("NOT: PHP/DB/crawler birim, entegrasyon ve güvenlik testleri uygulanamaz; uygulama yok.")
+if status["current_phase"] == "F00":
+    check(not any(name.endswith(".php") for name in tracked), "F00 belge kapsamına PHP uygulama kodu eklenmedi")
+print("NOT: Bu kontroller PHP/DB/crawler birim, entegrasyon veya güvenlik testleri değildir.")

@@ -12,24 +12,20 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.01 — DONE; kullanıcı kabulü ve PR #1 birleştirme onayı alındı. Uygulama kodu yok.
-> **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.01. **Son hazırlanan alt faz:** F00.01. **Sonraki:** F00.02, başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
-> **Dal:** `phase/F00.01-repo-inventory`. **PR:** [#1](https://github.com/Boydaksu/siteportal/pull/1). **Kanıt commit:** `611ad26740e4d2d984f56810f924726cc8496827` (PR ayrıca teslim metadata commit’i içerir).
-> **Kontrol:** 9/65 faz, 84 kural, 44 Markdown; manifest, CSV/JSON, TR/EN ve belge kontrolleri PASS. CI yok.
-> **Rapor:** [F00.01](docs/reports/F00.01.md). **Durum kaydı:** [project-status.json](project-status.json).
-> Başlangıç README içeriği `# siteportal` idi; başlık ve özgün içerik Git geçmişinde ve envanterde korunur.
+> **Durum:** F00.02 — IN_PROGRESS; belge sözleşmesi ve devir doğrulaması. Uygulama kodu yok.
+> **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
+> **Son onaylanan alt faz:** F00.01 — DONE; [PR #1](https://github.com/Boydaksu/siteportal/pull/1) kullanıcı onayıyla birleştirildi.
+> **Aktif dal:** `phase/F00.02-docs-contract`. **Aktif PR / kanıt SHA:** Henüz oluşturulmadı.
+> **Son kontrol:** F00.01 belge/envanter kontrolleri PASS; F00.02 kontrolleri sürüyor. CI yok; uygulama testleri N/A.
+> **Rapor:** [F00.02](docs/reports/F00.02.md). **Sonraki:** F00.03 — İlk ADR ve bağımlılık politikası; henüz onaylanmadı, başlamadı.
+> **Açık kararlar:** [Q-001–003](docs/process/OPEN_QUESTIONS.md). Aktif işi durduran teknik engel yok.
+> **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
 
 ## Proje
 SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO Analyzer** ilk bağımsız ürün modülüdür; hosting şirketi yazılımı değildir. Kullanıcılar URL girerek kanıtlanabilir teknik SEO analizi alır; daha derin analiz, hesap/alan adı doğrulama ve entegrasyonlarla gelişir.
 
 ## Başka bir yapay zekâ bu depoyu devralıyorsa
-1. **Önce** [AGENTS.md](AGENTS.md), [START_HERE.md](START_HERE.md) ve [CURRENT_STATUS.md](CURRENT_STATUS.md) dosyalarını oku.
-2. [docs/roadmap/ROADMAP.md](docs/roadmap/ROADMAP.md) ve [docs/process/WORKFLOW.md](docs/process/WORKFLOW.md) içinde sıradaki alt fazı bul.
-3. **Sadece bir alt faz** gerçekleştir; testleri çalıştır, kanıtları kaydet, değişiklikleri ilgili GitHub dalına gönder ve **DUR**.
-4. Kullanıcı açıkça onaylamadan sonraki alt faza geçme, PR birleştirme, üretime çıkma, mevcut sistemleri silme.
-5. Bitirirken bu README üstündeki son durum satırını; `CURRENT_STATUS.md`, `project-status.json`, `CHANGELOG.md`, `docs/reports/` içindeki raporu ve ilgili faz işaretlerini güncelle.
-6. Eksik yetki/anahtar/erişim durumunda uydurma başarı raporu yazma: `BLOCKED` olarak kaydet.
+[Sabit okuma sırasını](START_HERE.md#sabit-okuma-sırası) izle. Güncel durum [CURRENT_STATUS](CURRENT_STATUS.md) ve [project-status.json](project-status.json) içindedir. Aynı bilgiyi GitHub main/aktif PR ile karşılaştır. Yalnız izin verilen tek alt fazı gerçekleştir; [iş akışı](docs/process/WORKFLOW.md) gereği raporla ve DUR. Kullanıcı kabulü, PR merge ve yeni alt faz başlangıcı ayrı kaydedilir.
 
 ## Sürüm / faz tablosu
 | Faz | Hedef sürüm | Konu | Başlangıç durumu |
@@ -70,12 +66,12 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 Her alt faz tesliminde: `README` durum satırı + `CURRENT_STATUS.md` + `project-status.json` + `CHANGELOG.md` + `docs/reports/Fxx.xx.md` + commit SHA/PR adresi güncellenecek. Ana faz sonunda ayrıca `docs/reports/Fxx-PHASE-SUMMARY.md` ve kabul kararı hazırlanacak.
 
 ## Çalıştırma durumu
-Bu ZIP **çalışan uygulama değil, sürümlendirilmiş uygulama şartnamesi ve yapay zekâ devir paketidir**. Çalıştırılabilir uygulama F01'den itibaren parça parça üretilecek. Kurulum adımları F01.02'de gerçek komutlarla doğrulanıp eklenecek. Şu anda çalışma veya test geçişi iddia edilmez.
+Depo çalışan uygulama değil, sürümlendirilmiş geliştirme şartnamesi ve devir kayıtları içerir. Uygulama F01'den itibaren üretilecek; kurulum adımları F01.02'de gerçek komutlarla doğrulanacak. Belge kontrolleri uygulamanın çalıştığı anlamına gelmez.
 
-## F00.01 başlangıç kaydı
-Mevcut plan paketi `docs/operations/GITHUB.md` içindeki ilk paket aktarımı talimatıyla bu PR'a alınmıştır. F00.02'nin belge standardizasyonu ve sıfır bağlamlı devir testi yapılmadı. F00.02 ve sonraki işler NOT_STARTED.
+## Başlangıç paketi ve kayıtlar
+F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını düzenler. F00.03 ve sonraki işler başlamadı.
 
-`BUNDLE_INFO.json` orijinal paketin üretim anını anlatır; güncel push/onay durumu `project-status.json` içindedir. `FILE_MANIFEST.sha256` etkin dosyaları, `docs/reports/F00.01-original-manifest.sha256` orijinal paket özetlerini taşır. Yereldeki `siteportal_seo_masterplan/` özgün kopyadır; etkin çalışma kök dizindedir.
+`BUNDLE_INFO.json` orijinal paket üretim anını anlatır; canlı durum JSON'dadır. `FILE_MANIFEST.sha256` etkin dosyaları, [özgün manifest](docs/reports/F00.01-original-manifest.sha256) ilk paketi doğrular. Yerel `siteportal_seo_masterplan/` eski korunmuş kopyadır; etkin çalışma kök dizindedir.
 
 
 
@@ -88,7 +84,7 @@ Mevcut plan paketi `docs/operations/GITHUB.md` içindeki ilk paket aktarımı ta
 # AGENTS.md — SitePortal geliştirme ajanı bağlayıcı sözleşmesi
 
 ## Başlamadan önce
-Bu dosya tüm AI kod ajanları için en üst proje iş akışı sözleşmesidir. Önce `README.md`, `START_HERE.md`, `CURRENT_STATUS.md`, `project-status.json`, `docs/roadmap/ROADMAP.md`, sıradaki `docs/roadmap/Fxx.md` ve `docs/process/WORKFLOW.md` dosyalarını oku. Kullanıcının bu sohbet içinde verdiği en yeni talimatlar önceliklidir. Çelişkiyi tespit et ve değişiklik için açık onay iste; sessizce değiştirme.
+Bu dosya tüm AI kod ajanları için bağlayıcı proje sözleşmesidir. Sabit okuma sırası [START_HERE](START_HERE.md#sabit-okuma-sırası) içindedir: README → AGENTS → CURRENT_STATUS ve JSON → yol haritası/aktif faz/iş akışı → son rapor ve açık kararlar → ilgili mimari/kaynaklar. Aktif fazı dosyaya sabitleme; [project-status.json](project-status.json) kaydından bul. Kullanıcının en yeni açık talimatı önceliklidir. Mimari/sözleşme çelişkisini kaydet; önemli kararı sessizce değiştirme. [Belge haritası](docs/README.md), [bakım standardı](docs/process/MAINTENANCE.md) ve [açık sorular](docs/process/OPEN_QUESTIONS.md) devrin parçasıdır.
 
 ## Misyon
 `Boydaksu/siteportal` deposunda modüler SitePortal web-utilities çatısı altında Türkçe öncelikli, çoklu dil destekli, kaynak ve kanıt gösteren SEO denetimi geliştir. İlk hedef güvenli ve kaliteli V1.0; sonra sürüm sıralamasını izle. Hosting işini bu projeye karıştırma.
@@ -121,7 +117,7 @@ Bu dosya tüm AI kod ajanları için en üst proje iş akışı sözleşmesidir.
 İlgili alt fazın tüm `Acceptance Criteria` maddeleri kanıtla geçtiyse `READY_FOR_REVIEW`; kullanıcı kabulünden sonra `DONE`. Bir veya daha fazla kritik kriter başarısızsa `BLOCKED` veya `IN_REVIEW`; asla `DONE` deme.
 
 ## Devir için sabit okuma sırası
-`README.md` → `CURRENT_STATUS.md` → `project-status.json` → `docs/roadmap/ROADMAP.md` → `docs/roadmap/Fxx.md` → `docs/reports/` son rapor → `CHANGELOG.md` → `docs/architecture/` → `docs/reference/SOURCES.md`.
+[START_HERE](START_HERE.md#sabit-okuma-sırası) tek okuma sırasıdır. GitHub main son kabul/birleştirme durumunu, aktif PR kendi teslimini gösterir. `next_subphase` otomatik başlama izni değildir; faz başlangıcı, teslim kabulü ve PR merge izinlerini ayrı kaydet.
 
 
 
@@ -131,22 +127,31 @@ Bu dosya tüm AI kod ajanları için en üst proje iş akışı sözleşmesidir.
 <!-- KAYNAK BELGE: START_HERE.md -->
 ## BELGE: `START_HERE.md`
 
-# Başlangıç Talimatı — yeni AI'ya aynen verilebilir
+# SitePortal — Buradan başla
 
-Bu klasör `Boydaksu/siteportal` için hazırlanan SEO Analiz Platformu **ana şartnamesi**dir. **Sana düşen görev tüm sürümleri tek seferde kodlamak değil**, en son kabul edilen fazı tespit edip sıradaki **bir alt fazı** eksiksiz uygulamaktır.
+Bu depo, Türkçe öncelikli SEO Analyzer için geliştirme sözleşmesi ve planları içerir. Çalışan uygulama henüz yoktur. Güncel durumun kaynağı [project-status.json](project-status.json) ve [CURRENT_STATUS](CURRENT_STATUS.md) dosyalarıdır.
 
-1. `AGENTS.md` ve `README.md` oku; kurallara uy.
-2. `CURRENT_STATUS.md`, `project-status.json` ve GitHub `main`/açık PR'larını karşılaştır. Uyuşmazlık varsa raporla, rastgele düzenleme yapma.
-3. Sıradaki `Fxx.yy` alt fazını `docs/roadmap/Fxx.md` dosyasında bul.
-4. Alt fazın amacı, kod/doküman dosyaları, testler, kabul koşulları, kapsam dışı maddelerini iş planı olarak açıkla.
-5. Yalnızca bu alt fazı geliştir, test et; değişiklikleri GitHub dalına gönder, gerekli raporu yaz.
-6. `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, faz raporu ve gerektiğinde mimari karar kaydını güncelle.
-7. **Kullanıcıya Türkçe sonuç raporu sun ve DUR.** Kullanıcı açık onay vermeden diğer faza geçme, PR birleştirme veya üretime dağıtma.
+## Sabit okuma sırası
+1. [README](README.md): ilk 15 satırdaki durum paneli.
+2. [AGENTS](AGENTS.md): bağlayıcı sınırlar ve onay kuralları.
+3. [CURRENT_STATUS](CURRENT_STATUS.md) ve [project-status.json](project-status.json): son kabul, aktif iş, dal, PR, test ve açık engeller.
+4. [Yol haritası](docs/roadmap/ROADMAP.md), JSON'daki aktif fazın belgesi ve [iş akışı](docs/process/WORKFLOW.md).
+5. JSON'daki `last_report`, [rapor dizini](docs/reports/README.md), [CHANGELOG](CHANGELOG.md) ve [açık kararlar](docs/process/OPEN_QUESTIONS.md).
+6. İşin gerektirdiği [ürün/mimari belgeleri](docs/README.md) ve [resmî kaynak envanteri](docs/reference/SOURCES.md).
 
-Herhangi bir alt faz yeni bir servise, ücretli API'ye veya kimlik bilgisine gereksinim duyarsa, ücretsiz alternatifle güvenli kısmi teslim yap veya `BLOCKED` raporla. Uydurma anahtar veya API yanıtı kullanma. Güvenlik ve veri mahremiyeti teslimin ayrılmaz şartıdır.
+## Devralma kontrolü
+- `git status --short`, `git branch --show-current`, `git log -1 --oneline` ile yerel durumu gör. Kullanıcının dosyalarını koru.
+- Yetkili bağlantıyla GitHub `main` ve aktif PR'ı kontrol et; yalnız dosyalardaki eski SHA'ya güvenme.
+- `status=READY_FOR_REVIEW` ise mevcut teslim için kullanıcı kabulünü bekle. `DONE` kullanıcı kabulüdür; `previous_delivery.merged` birleştirmeyi ayrıca izler.
+- Başlangıç izni, alt faz kabulü, PR birleştirme ve üretim dağıtımı ayrı yetkilerdir. Kabul olsa bile PR merge için ayrı açık onay gerekir.
+- `next_subphase`, başlama izni değildir. Aktif iş bitmeden veya yeni açık onay gelmeden sonraki alt faza geçme.
 
-## İlk çalıştırma
-Şu an başlangıç durumu `F00.01` (repo envanteri ve belgelerin başlangıç kaydı). İçerik planı uygulanmadan önce mevcut GitHub deposuyla dosya bazında karşılaştırılmalı. Bu ZIP'in hazırlanması F00'ın uygulandığı anlamına gelmez.
+## Çalışma ve doğrulama
+Etkin belgeler depo kökündedir. `siteportal_seo_masterplan/` varsa korunmuş yerel paket kopyasıdır; yeniden depoya kopyalama veya güncel durum kaynağı olarak kullanma. ZIP'in bulunmaması repo üzerinden devralmayı engellemez; özgün dosya envanteri raporlardadır.
+
+[Bakım rehberi](docs/process/MAINTENANCE.md) komutların sırasını, manifesti ve ana şartnamenin üretilmesini açıklar. Belge kontrolleri çalışan uygulama testi değildir. Erişim veya gerekli test yoksa gerçek engeli raporla; başarı uydurma.
+
+Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → durum/rapor/PR kaydını güncelle → Türkçe rapor sun → **DUR**. Yeni ajan yalnız repo ile son kabulü, aktif PR'ı, test sonucunu, sonraki tek alt fazı ve açık engelleri yanıtlayabilmelidir.
 
 
 
@@ -159,23 +164,24 @@ Herhangi bir alt faz yeni bir servise, ücretli API'ye veya kimlik bilgisine ger
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
 - **Tarih:** 2026-11-03, Europe/Istanbul
-- **Repo:** https://github.com/Boydaksu/siteportal — özel; varsayılan dal `main`
-- **Plan paket sürümü:** `blueprint-0.1.0`
-- **Aktif sürüm / ana faz:** V0.0 / F00; çalışan ürün sürümü yok
-- **Son onaylanan ana faz / alt faz:** Yok / F00.01
-- **Şu anki alt faz:** F00.01 — Mevcut repo envanteri
-- **Durum:** DONE
-- **Başlangıç main SHA:** `cb885fd3aae4fcacea3618be77115c387baf61a9` (Initial commit)
-- **Aktif dal:** `phase/F00.01-repo-inventory`
-- **Kanıt commit / PR:** `611ad26740e4d2d984f56810f924726cc8496827` / https://github.com/Boydaksu/siteportal/pull/1; PR head ayrıca teslim metadata commit’ini içerir.
-- **Son rapor:** [F00.01](docs/reports/F00.01.md)
-- **Kontroller:** Belge/envanter, 9/65 faz, 84 kural, 44 Markdown, SHA256, TR/EN, Python sözdizimi ve boşluk kontrolü PASS; uygulama testleri N/A, CI yok.
-- **Açık engel:** Teknik engel yok; F00.01 kabul edildi ve PR #1 için ayrı birleştirme onayı alındı.
-- **Açık taslak farkları:** API bulgu alanları ve kanıt biçimi, queue tablo adı, en-US tamamlanma takvimi; raporda kayıtlı, değiştirilmedi.
-- **Bir sonraki işlem:** Onaylı PR #1’i birleştir; main’den F00.02 dalı aç.
-- **Sonraki alt faz:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir; NOT_STARTED; kullanıcı başlangıç onayı verdi.
+- **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), özel; varsayılan dal `main`
+- **Plan / ürün:** blueprint-0.1.0 / çalışan ürün sürümü yok
+- **Aktif ana faz / sürüm:** F00 / V0.0; ana faz kabulü henüz yok
+- **Son onaylanan alt faz:** F00.01 — DONE; kabul: “devam edelim”
+- **Önceki PR:** [#1](https://github.com/Boydaksu/siteportal/pull/1), ayrı “Evet, PR #1’i birleştir” onayıyla birleştirildi
+- **Main başlangıç / merge SHA:** `09716d298587dc29ea5d9092127a65d0f24a4c07`
+- **Aktif alt faz / durum:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir / IN_PROGRESS
+- **Aktif dal:** `phase/F00.02-docs-contract`
+- **Aktif PR / kanıt commit:** Henüz oluşturulmadı; F00.01 PR'ı aktif PR değildir
+- **Son rapor:** [F00.02](docs/reports/F00.02.md)
+- **Test:** F00.02 belge/bağlantı/envanter ve sıfır bağlamlı devir doğrulaması sürüyor
+- **CI / uygulama testleri:** NOT_CONFIGURED / N/A; uygulama yok
+- **Aktif engeller:** Yok
+- **Açık kararlar:** [Q-001, Q-002, Q-003](docs/process/OPEN_QUESTIONS.md); API bulgu biçimi, queue tablo adı, en-US takvimi; değiştirilmedi
+- **Sonraki tek alt faz:** F00.03 — İlk ADR ve bağımlılık politikası; NOT_STARTED, başlangıç onayı alınmadı
+- **Bir sonraki işlem:** Yalnız F00.02'yi doğrula, PR/rapor hazırla ve kullanıcı kabulü için DUR. PR #2 henüz varsayılmamalı.
 
-Etkin belgeler depo kökündedir; yerelde `siteportal_seo_masterplan/` ilk paketin korunmuş kopyasıdır. `BUNDLE_INFO.json` paket üretim anına aittir. Kullanıcı “devam edelim” ile F00.01 kabulü ve F00.02 başlangıcını onayladı; “Evet, PR #1’i birleştir” ile ayrıca birleştirme onayı verdi. Bu kayıt yazılırken merge henüz yapılmadı; deploy yapılmadı.
+Durum alanlarının anlamı ve komutlar: [bakım rehberi](docs/process/MAINTENANCE.md). Etkin kayıtlar köktedir; `siteportal_seo_masterplan/` ve BUNDLE_INFO üretim anına aittir. F00.02 başlangıç izni teslim kabulü değildir. PR #1 dışındaki birleştirmeler için yeni açık onay gerekir.
 
 
 
@@ -1025,6 +1031,9 @@ Yeni AI'a **yalnız repo ve ZIP** verildiğinde okuyup şu beş soruyu yanıtlay
 ## README güncelleme normu
 İlk 15 satırda tarih, son kabul edilen Fxx.yy, aktif Fxx.yy, durum, PR, SHA, son test özeti ve takip eden görev anlaşılır olmalı. Uzun raporlar `docs/reports` içinde, README bağlantılarla kısa kalır. `project-status.json` makine tarafından parse edilebilir olmalı.
 
+## Belge bakımı ve açık kayıtlar
+[START_HERE](START_HERE.md#sabit-okuma-sırası) tek okuma sırasını, [MAINTENANCE](docs/process/MAINTENANCE.md) durum alanları/komut/manifest standardını tanımlar. [OPEN_QUESTIONS](docs/process/OPEN_QUESTIONS.md) mimari karar bekleyen farkları korur. Başlangıç yetkisi, teslim kabulü, PR merge ve dağıtım yetkisi ayrı kaydedilir. Devir testi sohbet geçmişi aktarılmayan ayrı ajanla yapılır; yalnız repo yolu verilir, beş soruya cevap için beklenen sonuçlar paylaşılmaz. ZIP yoksa korunmuş envanter kullanılır ve eksik arşiv raporlanır.
+
 
 
 
@@ -1152,6 +1161,9 @@ Ek: sürüm hedefleri gerçekleşti mi, önceki sürüm regresyonu, güvenlik, d
 ## Yeni ADR formatı
 `ADR-NNN: problem → seçenekler → karar → neden → güvenlik/maliyet etkisi → geri dönüş → kullanıcı onayı → değiştirilecek faz`. Riskli/geri dönüşsüz kararlarda önce kullanıcı onayı; sessiz değiştirme yapılmaz.
 
+## Açık sözleşme farkları
+F00.01 bulguları [OPEN_QUESTIONS](docs/process/OPEN_QUESTIONS.md) içinde izlenir. F00.02 bunları görünür kılar; yeni ADR veya çözüm üretmez.
+
 
 
 
@@ -1198,6 +1210,9 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 ## Önceliklendirme
 **P0:** SSRF, robots, güvenli istek, queue, yetki, doğruluk, temel UI. **P1:** Site mimarisi, CWV, schema, GSC doğrulanmış kullanıcı. **P2:** AI/ajans/white-label/ücretli hesap. **Şimdilik gereksiz:** Kubernetes, mikroservis ağı, herkes için headless Chrome, backlink scraping, Google sırası tahmin modeli, otomatik SEO düzeltme, zorunlu llms.txt.
 
+## Aktif F00 teslimi
+F00.01 kullanıcı kabulüyle DONE ve PR #1 birleştirildi. Aktif alt faz F00.02; durum [JSON](project-status.json), kanıt [F00.02 raporu](docs/reports/F00.02.md) içindedir. F00.03 ve sonrası NOT_STARTED.
+
 
 
 
@@ -1219,7 +1234,7 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 ## Alt fazlar
 
 ### F00.01 — Mevcut repo envanteri
-**Uygulama durumu:** DONE; [envanter raporu](docs/reports/F00.01.md). Sonraki alt fazlar başlamadı.
+**Uygulama durumu:** DONE; [envanter raporu](docs/reports/F00.01.md). Kullanıcı kabulü ve PR #1 birleştirmesi kayıtlı.
 **Hedef:** Mevcut repo envanteri.
 **Yapılacak işler:**
 1. GitHub main ve izinleri oku.
@@ -1237,6 +1252,7 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.01.md` + durum kayıtları.
 
 ### F00.02 — Belgeleri ve faz sözleşmesini yerleştir
+**Uygulama durumu:** IN_PROGRESS; [F00.02 raporu](docs/reports/F00.02.md). F00.03 ve sonrası başlamadı.
 **Hedef:** Belgeleri ve faz sözleşmesini yerleştir.
 **Yapılacak işler:**
 1. README AGENTS START_HERE CURRENT_STATUS roadmap ve kaynakları ekle.
@@ -2515,7 +2531,7 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 
 # Resmî referans envanteri (2026-11-03 itibarıyla)
 
-Bu bağlantılar yol haritası ve kural kataloğu için **birincil/otoritatif kaynak** olarak kontrol edilmiştir. Dış dokümanların içeriği değişebilir; AI ajanı bir SEO kuralını kodlamadan önce ilgili güncel sayfayı yeniden okumalı, kanıt tarihi ve gerekirse kural sürümünü güncellemelidir. S1-S15 kural kataloğundaki `reference` alanıdır.
+Bu envanter başlangıç plan paketinden alınan **birincil/otoritatif kaynak** adaylarını ve paketteki uygulama notlarını korur. Paket hazırlanırken yapıldığı belirtilen kontrol bu teslimin yeniden doğrulaması değildir. F00.02 yalnız belge bağlantılarının biçimini ve yerel referans düzenini denetler; dış sayfaların erişimi/içeriği bu aşamada yeniden kontrol edilmedi. Dış dokümanların içeriği değişebilir; AI ajanı bir SEO kuralını kodlamadan önce ilgili güncel sayfayı yeniden okumalı, kanıt tarihi ve gerekirse kural sürümünü güncellemelidir. S1-S15 kural kataloğundaki `reference` alanıdır.
 
 | ID | Kaynak | Resmî URL | Uygulama kararı |
 |---|---|---|---|
@@ -2555,3 +2571,118 @@ Bu bağlantılar yol haritası ve kural kataloğu için **birincil/otoritatif ka
 3. Ürün önerisi değişirse kural sürümünü artır, fixture ve scores'ı güncelle, ADR ekle.
 4. Arama motorunun özel sıralama sistemi, indeksleme garantisi veya AI yanıtı kesin olarak bildirilmez.
 5. İleri sürümlerde 6 ayda bir kaynak tazelik taraması ve değişiklik raporu yapılır.
+
+## Bakım bağlantıları
+Kural uygulamadan önceki [referans disiplini](docs/reference/SOURCES.md#referans-kullanım-disiplini) geçerlidir. [Belge haritası](docs/README.md), [bakım rehberi](docs/process/MAINTENANCE.md) ve [kural CSV](docs/requirements/rules-catalog.csv) kaynak kimliklerini birlikte izler.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/README.md -->
+## BELGE: `docs/README.md`
+
+# Belge haritası
+
+Güncel durum: [CURRENT_STATUS](CURRENT_STATUS.md) ve [project-status.json](project-status.json). Başlangıç: [START_HERE](START_HERE.md). Bağlayıcı sınırlar: [AGENTS](AGENTS.md).
+
+| Alan | Belgeler | Amaç |
+|---|---|---|
+| Fazlar | [Yol haritası](docs/roadmap/ROADMAP.md), [F00](docs/roadmap/F00.md), [F01](docs/roadmap/F01.md), [F02](docs/roadmap/F02.md), [F03](docs/roadmap/F03.md), [F04](docs/roadmap/F04.md), [F05](docs/roadmap/F05.md), [F06](docs/roadmap/F06.md), [F07](docs/roadmap/F07.md), [F08](docs/roadmap/F08.md) | Sıra, bağımlılık ve kabul kriterleri |
+| Ürün | [Kapsam](docs/requirements/PRODUCT.md), [özellik matrisi](docs/requirements/FEATURE_MATRIX.md), [öncelikler](docs/requirements/PRIORITIES.md), [UX](docs/requirements/UX.md), [hatalar](docs/requirements/ERROR_STATES.md) | Planlanan davranış; tamamlanmış ürün iddiası değil |
+| SEO | [Kurallar](docs/requirements/RULES.md), [CSV katalog](docs/requirements/rules-catalog.csv), [skorlama](docs/requirements/SCORING.md), [referanslar](docs/reference/SOURCES.md) | Kaynak, kanıt, uygulanabilirlik ve UNKNOWN |
+| Mimari | [Sistem](docs/architecture/SYSTEM.md), [crawler](docs/architecture/CRAWLER.md), [güvenlik](docs/architecture/SECURITY.md), [DB](docs/architecture/DATABASE.md), [API](docs/architecture/API.md), [i18n](docs/architecture/I18N.md), [entegrasyon](docs/architecture/INTEGRATIONS.md), [operasyon](docs/architecture/OPERATIONS.md) | Başlangıç taslakları ve sınırlar |
+| Süreç | [İş akışı](docs/process/WORKFLOW.md), [bakım](docs/process/MAINTENANCE.md), [QA](docs/process/QA.md), [rapor şablonu](docs/process/REPORT_TEMPLATE.md), [kararlar](docs/process/DECISIONS.md), [açık sorular](docs/process/OPEN_QUESTIONS.md) | Tek alt faz, kalite, devir ve onay |
+| GitHub/yayın | [GitHub](docs/operations/GITHUB.md), [gizlilik](docs/operations/PRIVACY.md), [sürüm](docs/operations/RELEASE.md) | Repo, veri yaşam döngüsü ve yayın kapıları |
+| Kanıt | [Rapor dizini](docs/reports/README.md), [CHANGELOG](CHANGELOG.md) | Gerçek iş, komut çıktısı, commit, PR ve kabul |
+| Örnekler | [OpenAPI](schemas/openapi-draft.yaml), [kural seed](schemas/rule-registry.seed.json), [bulgu şeması](examples/finding.schema.json), [DEMO yanıt](examples/analysis-response.example.json), [DEMO rapor](examples/phase-report.example.md) | Taslak/örnek; gerçek analiz kanıtı değil |
+| Çeviri | [tr-TR](locales/tr-TR.example.json), [en-US](locales/en-US.example.json) | Örnek anahtarlar; çeviri motoru henüz yok |
+
+[MASTER_PLAN_TR](MASTER_PLAN_TR.md) kaynak belgelerden üretilen okunabilir kopyadır. Kaynağı düzenle, sonra yeniden üret; master dosyasını tek başına değiştirme.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/process/MAINTENANCE.md -->
+## BELGE: `docs/process/MAINTENANCE.md`
+
+# Türkçe belge bakım ve teslim rehberi
+
+## Durumun tek kaynağı
+[project-status.json](project-status.json) makine kaydıdır. [CURRENT_STATUS](CURRENT_STATUS.md) ve [README](README.md) aynı gerçek durumu kısa Türkçe metinle gösterir. [START_HERE](START_HERE.md) kalıcı okuma sırasıdır; içine eskimeye açık aktif alt faz numarası gömme.
+
+| Alan | Anlam |
+|---|---|
+| `current_phase`, `current_subphase`, `status` | Üzerinde çalışılan veya kabul bekleyen tek alt faz |
+| `last_approved_phase`, `last_approved_subphase` | Açık kullanıcı kabulü; ana faz kabulü ayrı |
+| `approvals` | Her DONE için `approved_at` ve `approval_reference`; varsa ayrı merge izni |
+| `start_authorization` | Yalnız belirtilen alt faza başlama izni; teslim kabulü değildir |
+| `branch`, `pr_url`, `commit_sha` | Gerçek GitHub teslimi; `commit_sha_scope` kanıt commit'ini açıklar |
+| `previous_delivery` | Önceki kabul edilmiş PR ve gerçek merge SHA |
+| `last_report`, `test_status`, `ci_status` | Son rapor, ilgili test ve CI'nin gerçek durumu |
+| `blockers`, `open_questions` | Aktif iş engelleri ile sonraki geliştirmeye ait açık kararlar |
+| `next_subphase`, `next_action` | Sonraki aday iş ve izin kapısı; otomatik başlama yetkisi değil |
+
+Yeni alt fazda eski `commit_sha`/`pr_url` kopyalama; oluşturulana kadar null yaz. Kabul edilmemiş teslim `READY_FOR_REVIEW` kalır. `DONE`, push/merge ile otomatik oluşmaz. Geçmiş raporlar tarihsel kanıttır; sonraki kabul/merge gelişmelerini tarihli ek kayıtla belirt.
+
+## Belge değişikliği sırası
+1. [İş akışı](docs/process/WORKFLOW.md), aktif plan ve [açık kararları](docs/process/OPEN_QUESTIONS.md) oku. Kapsam dışında mimari karar alma.
+2. Kaynakları UTF-8, LF ve göreli Markdown bağlantılarıyla düzenle. Sözleşme anahtarları gerektiğinde İngilizce kalır; bakım açıklamaları Türkçedir.
+3. README ilk 15 satırı, CURRENT_STATUS, JSON, CHANGELOG, faz durumu ve `docs/reports/Fxx.yy.md` kaydını birlikte güncelle.
+4. Ana şartnameyi üret:
+
+```text
+python scripts/build_master_plan.py
+```
+
+5. Yalnız ilgili dosyaları Git'e hazırla (`git add <ilgili yollar>`). Sonra manifesti takip edilen dosyaların mevcut byte'larından üret:
+
+```text
+python scripts/update_manifest.py
+```
+
+6. Belge ve envanter kontrollerini çalıştır; gerçek çıktıları rapora bağla:
+
+```text
+python scripts/verify_blueprint.py
+python scripts/test_document_links.py
+python scripts/verify_inventory.py
+git diff --cached --check
+```
+
+`verify_blueprint` yerel dosya ve başlık bağlantılarını (MASTER dahil), faz kayıtlarını ve JSON örneklerini denetler. Dış URL biçimini kontrol eder; internetten sayfa erişimi veya içerik onayı vermez. `verify_inventory` manifest, CSV/registry, onay sırası, TR/EN ve sınırlı secret kalıplarını denetler. İkisi de uygulama/SSRF testi değildir. CI F00.04 kapsamındadır.
+
+7. Log/rapor değişirse manifesti yeniden üret, kontrolleri tekrar çalıştır ve dosyaları tekrar hazırla. Logu kendi kontrolü sırasında üzerine yazma: çıktıyı geçici dosyada yakala, son logu kaydet, manifesti yenile, son kontrolü tekrar çalıştır.
+8. Commit ve push yap; gerçek PR URL'sini ve ilk kanıt commit'ini kaydet. Dosya kendi son commit SHA'sını içeremez: `commit_sha` doğrulanmış içerik commit'idir; daha yeni metadata commit'i PR head'de olabilir. Son SHA kullanıcı raporunda ve PR açıklamasında verilir.
+9. [Şablonla](docs/process/REPORT_TEMPLATE.md) Türkçe rapor sun ve **DUR**. Kullanıcı kabulü, merge ve sonraki alt faz iznini ayrı kaydet.
+
+## Devir testi
+F00.02 için sohbet geçmişi paylaşılmayan ayrı ajana yalnız etkin repo yolu verilir. Ajan [iş akışındaki](docs/process/WORKFLOW.md) beş soruyu dosya/alan kanıtıyla yanıtlar. Beklenen cevaplar görev metnine eklenmez. Gerçek yanıt, incelenen commit/dosya durumu ve sonuç rapora kaydedilir. Belirsizlik varsa düzelt ve yeniden denetle. ZIP yoksa bunu açıkça belirt; korunmuş manifest/envanter kullanılır.
+
+## Korunacaklar
+`BUNDLE_INFO.json` ile F00.01 özgün manifest/envanter üretim anına aittir. Etkin `FILE_MANIFEST.sha256` her teslimde yenilenir. `siteportal_seo_masterplan/` eski yerel pakettir; güncel kaynak değildir. Gerçek `.env`, token ve özel veri ekleme. SEO kuralı kodlanmadan dış referansı yeniden oku ve kontrol tarihini kaydet. [Açık sorular](docs/process/OPEN_QUESTIONS.md) kullanıcı kararı olmadan kapatılmaz.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/process/OPEN_QUESTIONS.md -->
+## BELGE: `docs/process/OPEN_QUESTIONS.md`
+
+# Açık sözleşme soruları
+
+Bu kayıt F00.01 envanterindeki farkları görünür tutar; mimari karar vermez. `blockers` aktif işi durduran sorunlardır. Aşağıdakiler F00.02 belge düzenlemesini engellemez; belirtilen uygulama başlamadan kullanıcıyla karara bağlanmalıdır.
+
+| ID | Durum | Fark / kanıt | Karar kapısı |
+|---|---|---|---|
+| Q-001 | OPEN | [API](docs/architecture/API.md) `data_source` ve `evidence[]`; [bulgu şeması](examples/finding.schema.json) `source` ve nesne `evidence` kullanıyor | API/kural implementasyonundan önce tek Finding sözleşmesi; F00.03'te ele alınacak |
+| Q-002 | OPEN | [Crawler](docs/architecture/CRAWLER.md) `jobs`; [veritabanı](docs/architecture/DATABASE.md) `analysis_jobs` diyor | Migration/queue kodundan önce tablo adı; F00.03'te ele alınacak |
+| Q-003 | OPEN | [AGENTS](AGENTS.md) tr/en tamamlanmasını, [I18N](docs/architecture/I18N.md) minimum fallback'i, [F08](docs/roadmap/F08.md) tam kapsamı tarif ediyor | İlk UI yazılmadan sürüm bazında en-US kapsamı; F00.03'te ele alınacak |
+
+İlk paket aktarımı/yerleştirme örtüşmesi durum ayrımıyla açıklanmıştır: F00.01 paketi envantere aldı; F00.02 rehber, bakım, bağlantı ve devir doğrulamasını yürütür. Sonraki fazların kapsamı değişmez.
+
+Yeni karar gerektiğinde [DECISIONS](docs/process/DECISIONS.md) formatını kullan; kullanıcı onayı, gerekçe, güvenlik/maliyet etkisi, ilgili faz ve geri dönüşü kaydet. F00.03 başlamadan çözüm varsayma.

@@ -1,7 +1,7 @@
 # AGENTS.md — SitePortal geliştirme ajanı bağlayıcı sözleşmesi
 
 ## Başlamadan önce
-Bu dosya tüm AI kod ajanları için en üst proje iş akışı sözleşmesidir. Önce `README.md`, `START_HERE.md`, `CURRENT_STATUS.md`, `project-status.json`, `docs/roadmap/ROADMAP.md`, sıradaki `docs/roadmap/Fxx.md` ve `docs/process/WORKFLOW.md` dosyalarını oku. Kullanıcının bu sohbet içinde verdiği en yeni talimatlar önceliklidir. Çelişkiyi tespit et ve değişiklik için açık onay iste; sessizce değiştirme.
+Bu dosya tüm AI kod ajanları için bağlayıcı proje sözleşmesidir. Sabit okuma sırası [START_HERE](START_HERE.md#sabit-okuma-sırası) içindedir: README → AGENTS → CURRENT_STATUS ve JSON → yol haritası/aktif faz/iş akışı → son rapor ve açık kararlar → ilgili mimari/kaynaklar. Aktif fazı dosyaya sabitleme; [project-status.json](project-status.json) kaydından bul. Kullanıcının en yeni açık talimatı önceliklidir. Mimari/sözleşme çelişkisini kaydet; önemli kararı sessizce değiştirme. [Belge haritası](docs/README.md), [bakım standardı](docs/process/MAINTENANCE.md) ve [açık sorular](docs/process/OPEN_QUESTIONS.md) devrin parçasıdır.
 
 ## Misyon
 `Boydaksu/siteportal` deposunda modüler SitePortal web-utilities çatısı altında Türkçe öncelikli, çoklu dil destekli, kaynak ve kanıt gösteren SEO denetimi geliştir. İlk hedef güvenli ve kaliteli V1.0; sonra sürüm sıralamasını izle. Hosting işini bu projeye karıştırma.
@@ -34,4 +34,4 @@ Bu dosya tüm AI kod ajanları için en üst proje iş akışı sözleşmesidir.
 İlgili alt fazın tüm `Acceptance Criteria` maddeleri kanıtla geçtiyse `READY_FOR_REVIEW`; kullanıcı kabulünden sonra `DONE`. Bir veya daha fazla kritik kriter başarısızsa `BLOCKED` veya `IN_REVIEW`; asla `DONE` deme.
 
 ## Devir için sabit okuma sırası
-`README.md` → `CURRENT_STATUS.md` → `project-status.json` → `docs/roadmap/ROADMAP.md` → `docs/roadmap/Fxx.md` → `docs/reports/` son rapor → `CHANGELOG.md` → `docs/architecture/` → `docs/reference/SOURCES.md`.
+[START_HERE](START_HERE.md#sabit-okuma-sırası) tek okuma sırasıdır. GitHub main son kabul/birleştirme durumunu, aktif PR kendi teslimini gösterir. `next_subphase` otomatik başlama izni değildir; faz başlangıcı, teslim kabulü ve PR merge izinlerini ayrı kaydet.

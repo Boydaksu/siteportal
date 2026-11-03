@@ -1,23 +1,19 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.01 — DONE; kullanıcı kabulü ve PR #1 birleştirme onayı alındı. Uygulama kodu yok.
-> **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.01. **Son hazırlanan alt faz:** F00.01. **Sonraki:** F00.02, başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
-> **Dal:** `phase/F00.01-repo-inventory`. **PR:** [#1](https://github.com/Boydaksu/siteportal/pull/1). **Kanıt commit:** `611ad26740e4d2d984f56810f924726cc8496827` (PR ayrıca teslim metadata commit’i içerir).
-> **Kontrol:** 9/65 faz, 84 kural, 44 Markdown; manifest, CSV/JSON, TR/EN ve belge kontrolleri PASS. CI yok.
-> **Rapor:** [F00.01](docs/reports/F00.01.md). **Durum kaydı:** [project-status.json](project-status.json).
-> Başlangıç README içeriği `# siteportal` idi; başlık ve özgün içerik Git geçmişinde ve envanterde korunur.
+> **Durum:** F00.02 — IN_PROGRESS; belge sözleşmesi ve devir doğrulaması. Uygulama kodu yok.
+> **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
+> **Son onaylanan alt faz:** F00.01 — DONE; [PR #1](https://github.com/Boydaksu/siteportal/pull/1) kullanıcı onayıyla birleştirildi.
+> **Aktif dal:** `phase/F00.02-docs-contract`. **Aktif PR / kanıt SHA:** Henüz oluşturulmadı.
+> **Son kontrol:** F00.01 belge/envanter kontrolleri PASS; F00.02 kontrolleri sürüyor. CI yok; uygulama testleri N/A.
+> **Rapor:** [F00.02](docs/reports/F00.02.md). **Sonraki:** F00.03 — İlk ADR ve bağımlılık politikası; henüz onaylanmadı, başlamadı.
+> **Açık kararlar:** [Q-001–003](docs/process/OPEN_QUESTIONS.md). Aktif işi durduran teknik engel yok.
+> **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
 
 ## Proje
 SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO Analyzer** ilk bağımsız ürün modülüdür; hosting şirketi yazılımı değildir. Kullanıcılar URL girerek kanıtlanabilir teknik SEO analizi alır; daha derin analiz, hesap/alan adı doğrulama ve entegrasyonlarla gelişir.
 
 ## Başka bir yapay zekâ bu depoyu devralıyorsa
-1. **Önce** [AGENTS.md](AGENTS.md), [START_HERE.md](START_HERE.md) ve [CURRENT_STATUS.md](CURRENT_STATUS.md) dosyalarını oku.
-2. [docs/roadmap/ROADMAP.md](docs/roadmap/ROADMAP.md) ve [docs/process/WORKFLOW.md](docs/process/WORKFLOW.md) içinde sıradaki alt fazı bul.
-3. **Sadece bir alt faz** gerçekleştir; testleri çalıştır, kanıtları kaydet, değişiklikleri ilgili GitHub dalına gönder ve **DUR**.
-4. Kullanıcı açıkça onaylamadan sonraki alt faza geçme, PR birleştirme, üretime çıkma, mevcut sistemleri silme.
-5. Bitirirken bu README üstündeki son durum satırını; `CURRENT_STATUS.md`, `project-status.json`, `CHANGELOG.md`, `docs/reports/` içindeki raporu ve ilgili faz işaretlerini güncelle.
-6. Eksik yetki/anahtar/erişim durumunda uydurma başarı raporu yazma: `BLOCKED` olarak kaydet.
+[Sabit okuma sırasını](START_HERE.md#sabit-okuma-sırası) izle. Güncel durum [CURRENT_STATUS](CURRENT_STATUS.md) ve [project-status.json](project-status.json) içindedir. Aynı bilgiyi GitHub main/aktif PR ile karşılaştır. Yalnız izin verilen tek alt fazı gerçekleştir; [iş akışı](docs/process/WORKFLOW.md) gereği raporla ve DUR. Kullanıcı kabulü, PR merge ve yeni alt faz başlangıcı ayrı kaydedilir.
 
 ## Sürüm / faz tablosu
 | Faz | Hedef sürüm | Konu | Başlangıç durumu |
@@ -58,9 +54,9 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 Her alt faz tesliminde: `README` durum satırı + `CURRENT_STATUS.md` + `project-status.json` + `CHANGELOG.md` + `docs/reports/Fxx.xx.md` + commit SHA/PR adresi güncellenecek. Ana faz sonunda ayrıca `docs/reports/Fxx-PHASE-SUMMARY.md` ve kabul kararı hazırlanacak.
 
 ## Çalıştırma durumu
-Bu ZIP **çalışan uygulama değil, sürümlendirilmiş uygulama şartnamesi ve yapay zekâ devir paketidir**. Çalıştırılabilir uygulama F01'den itibaren parça parça üretilecek. Kurulum adımları F01.02'de gerçek komutlarla doğrulanıp eklenecek. Şu anda çalışma veya test geçişi iddia edilmez.
+Depo çalışan uygulama değil, sürümlendirilmiş geliştirme şartnamesi ve devir kayıtları içerir. Uygulama F01'den itibaren üretilecek; kurulum adımları F01.02'de gerçek komutlarla doğrulanacak. Belge kontrolleri uygulamanın çalıştığı anlamına gelmez.
 
-## F00.01 başlangıç kaydı
-Mevcut plan paketi `docs/operations/GITHUB.md` içindeki ilk paket aktarımı talimatıyla bu PR'a alınmıştır. F00.02'nin belge standardizasyonu ve sıfır bağlamlı devir testi yapılmadı. F00.02 ve sonraki işler NOT_STARTED.
+## Başlangıç paketi ve kayıtlar
+F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını düzenler. F00.03 ve sonraki işler başlamadı.
 
-`BUNDLE_INFO.json` orijinal paketin üretim anını anlatır; güncel push/onay durumu `project-status.json` içindedir. `FILE_MANIFEST.sha256` etkin dosyaları, `docs/reports/F00.01-original-manifest.sha256` orijinal paket özetlerini taşır. Yereldeki `siteportal_seo_masterplan/` özgün kopyadır; etkin çalışma kök dizindedir.
+`BUNDLE_INFO.json` orijinal paket üretim anını anlatır; canlı durum JSON'dadır. `FILE_MANIFEST.sha256` etkin dosyaları, [özgün manifest](docs/reports/F00.01-original-manifest.sha256) ilk paketi doğrular. Yerel `siteportal_seo_masterplan/` eski korunmuş kopyadır; etkin çalışma kök dizindedir.
