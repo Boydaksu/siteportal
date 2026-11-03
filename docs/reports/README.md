@@ -12,6 +12,7 @@
 | F01.01 | [Proje çalışma iskeleti](F01.01.md) | DONE; kullanıcı kabulü ve birleştirilmiş [PR #7](https://github.com/Boydaksu/siteportal/pull/7) |
 | F01.02 | [Kurulum ve migration motoru](F01.02.md) | DONE; kullanıcı kabulü ve birleştirilmiş [PR #8](https://github.com/Boydaksu/siteportal/pull/8) |
 | F01.03 | [URL doğrulama ve SSRF koruması](F01.03.md) | DONE; kullanıcı kabulü ve birleştirilmiş [PR #9](https://github.com/Boydaksu/siteportal/pull/9) |
-| F01.04 | [HTTP istemcisi ve robots uyumu](F01.04.md) | READY_FOR_REVIEW; kullanıcı kabulü ve açık onayı bekleniyor |
+| F01.04 | [HTTP istemcisi ve robots uyumu](F01.04.md) | DONE; kullanıcı kabulü ve birleştirilmiş [PR #10](https://github.com/Boydaksu/siteportal/pull/10) |
+| F01.05 | [DB queue ve worker scheduler](F01.05.md) | READY_FOR_REVIEW; kullanıcı kabulü ve açık onayı bekleniyor |
 
 Her alt fazda `Fxx.yy.md`, ana faz kapanışında `Fxx-PHASE-SUMMARY.md` oluştur. [Rapor şablonu](../process/REPORT_TEMPLATE.md) ve [bakım rehberi](../process/MAINTENANCE.md) kullanılır. [Özgün paket envanteri](F00.01-inventory.json), [özgün manifest](F00.01-original-manifest.sha256) ve [F00.01 kontrol çıktıları](F00.01-checks.txt) tarihsel kanıttır; sonraki test başarısını temsil etmez. Aktif teslimin gerçek sonuçlarını kendi raporunda tut. Kullanıcıya Türkçe rapor sun ve DUR.

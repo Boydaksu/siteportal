@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-04 | F01.05 | READY_FOR_REVIEW
+- Veritabanı kuyruk ve zamanlayıcı motoru (`app/Core/Queue/DatabaseQueue.php`), kuyruk sözleşmesi (`app/Core/Queue/QueueInterface.php`) ve iş veri nesnesi (`app/Core/Queue/Job.php`) geliştirildi.
+- Çift yönlü migration (`database/migrations/0002_enhance_analysis_jobs.php`) ile `analysis_jobs` tablosuna `priority`, `last_error` alanları ve indeksler eklendi.
+- MySQL 8+ `FOR UPDATE SKIP LOCKED` ve SQLite işlem kilidi (immediate transaction) ile atomik claim uygulandı; iki worker'ın aynı işi alması kesin olarak engellendi.
+- `idempotency_key` ile mükerrer iş eklemeleri önlendi (idempotent push).
+- Üstel geri çekilme ve rastgele dalgalanma motoru (`app/Core/Queue/BackoffCalculator.php`) ile thundering herd korumalı yeniden deneme (bounded retries, attempts >= max_attempts durumunda failed/dead-letter) hayata geçirildi.
+- İş kiralama (lease) ve heartbeat altyapısı kuruldu; süresi dolmuş veya çöken worker işleri için watchdog kurtarma mekanizması (`recoverStaleLeases()`) geliştirildi.
+- CLI worker daemon servisi (`app/Core/Queue/Worker.php`, `bin/worker.php`) ve crontab periyodik tetikleyicisi (`app/Core/Queue/WorkerScheduler.php`, `bin/scheduler.php`) yazıldı.
+- İki dilli hata mesajları (`tr-TR` ve `en-US`) eşitlendi; eş zamanlılık, yarış durumu, çökme kurtarması ve CLI process testlerini içeren 26 yeni test ile toplam 147 test ve 991 assertion başarıyla doğrulandı.
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F01.06'ya geçilmez (DUR).
+
 ## 2026-11-04 | F01.04 kabulü
 - Kullanıcı “onaylıyorum” ile F01.04 teslimi, PR #10 birleştirmesi ve F01.05 başlangıcını onayladı; kabul kaydı main dalına birleştirilecek.
 
