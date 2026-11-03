@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-03 | F01.01 kabulü
+- Kullanıcı “devam edelim” ile F01.01 teslimi, PR #7 birleştirmesi ve F01.02 başlangıcını onayladı; kabul kaydı CI’dan sonra birleştirilecek.
+
 ## 2026-11-03 | F01.01 | READY_FOR_REVIEW
 - PHP 8.4 tabanlı modüler monolit çalışma iskeleti (`app/Core`, `app/Controllers`, `public`, `config`, `resources`) kuruldu; haricî framework yükü olmadan PSR-4 otopaketi bağlandı.
 - Front Controller (`public/index.php`), Request-ID takibi (`X-Request-Id` ve Correlation ID), dot-notasyonlu Config loader (`app/Core/Config.php`), ErrorHandler (`app/Core/ErrorHandler.php`), View motoru (`app/Core/View.php`), Router (`app/Core/Router.php`) ve iki dilli I18n çeviri altyapısı (`app/Core/I18n.php`) geliştirildi.
