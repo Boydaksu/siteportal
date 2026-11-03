@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-11-04 | F01.04 kabulü
+- Kullanıcı “onaylıyorum” ile F01.04 teslimi, PR #10 birleştirmesi ve F01.05 başlangıcını onayladı; kabul kaydı main dalına birleştirilecek.
+
+## 2026-11-04 | F01.04 | READY_FOR_REVIEW
+- Güvenli dış ağ istemcisi (`app/Core/Http/SafeHttpClient.php`), sözleşmesi (`app/Core/Http/HttpClientInterface.php`) ve HTTP yanıt nesnesi (`app/Core/Http/HttpResponse.php`) geliştirildi.
+- DNS Pinning (`CURLOPT_RESOLVE`), `CURLOPT_FOLLOWLOCATION => false` ile manuel yönlendirme sekmesi ve döngü denetimi (`RedirectValidator`), her sekmede iç IP pivot engeli uygulandı.
+- Gzip/açma bombası koruması geliştirildi; `CURLOPT_WRITEFUNCTION` içerisinde chunk bazlı decompress sayacı ile `max_decompressed_bytes` (8MB) aşımında bağlantı derhal kesildi (`BodyTooLargeException`, `BODY_TOO_LARGE`).
+- Ham gövde indirme boyutu sınırı (`max_response_bytes`, 2MB) ve `Content-Length` koruması eklendi.
+- Nazik tarayıcı kimliği (`config/crawler.php`, `app/Core/Crawler/PoliteCrawlerPolicy.php`) ve istek başlıkları (`User-Agent: SitePortalBot/0.1`, `Accept`, `Accept-Encoding`, `Accept-Language`) tanımlandı.
+- RFC 9309 Robots Exclusion Protocol uyumlu robots parser (`app/Core/Crawler/RobotsParser.php`) yazıldı; `User-agent` gruplaması, özel bot önceliği, prefix/wildcard `*`/end anchor `$` yol eşleşmesi, en uzun kural ve eşitlikte Allow önceliği uygulandı.
+- Origin bazlı bellek robots önbelleği (`app/Core/Crawler/MemoryRobotsCache.php`) ve robots yöneticisi (`app/Core/Crawler/RobotsManager.php`) geliştirildi; 404 conditional grant, 5xx/ağ hatası fail-closed kuralı (`RobotsUnavailableException`), `assertCanCrawl()` engel denetimi, sitemap ve crawl-delay tespiti sağlandı.
+- Hız sınırlaması (HTTP 429) ve sunucu hataları (HTTP 5xx) için RFC 7231 `Retry-After` (saniye ve HTTP-date) çözümü ve `HttpRateLimitedException` entegre edildi.
+- İki dilli hata anahtarları (`tr-TR` ve `en-US`) tanımlandı; birim ve entegrasyon testleriyle toplam 121 test, 704 assertion ve Seviye 8 PHPStan ile doğrulandı.
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F01.05'e geçilmez (DUR).
+
 ## 2026-11-04 | F01.03 kabulü
 - Kullanıcı “onaylıyorum” ile F01.03 teslimi, PR #9 birleştirmesi ve F01.04 başlangıcını onayladı; kabul kaydı CI sonrasında main dalına birleştirilecek.
 
