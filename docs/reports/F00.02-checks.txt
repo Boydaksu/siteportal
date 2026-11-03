@@ -1,11 +1,11 @@
-F00.02 — 2026-11-03 Europe/Istanbul; Python 3.13.15, Git 2.55 Windows
-İlk bağlantı TEST denemesi: sistem temp izin hatası; repo içi TEST diziniyle düzeltildi. İlk devir testi: FAIL, eski bağlantı sayısı ve eşzamanlı değişiklik; düzeltme ayrıntısı F00.02-handoff.md.
+F00.02 SON TESLİM — 2026-11-03 Europe/Istanbul
+Python 3.13.15; Git 2.55 Windows. İlk bağlantı TEST temp izin hatası düzeltildi. İlk devir denemesi FAIL; ikinci sıfır bağlamlı devir PASS. Ayrıntı ve incelenen sabit SHA: F00.02-handoff.md.
 
 $ python scripts/verify_blueprint.py
 exit=0
 PASS: 9 ana faz, 65 alt faz, 84 kural, 49 Markdown dosyası; JSON ve iç bağlantılar geçerli.
 NOT: Bu sonuç yazılımın implementasyon veya güvenlik testlerini geçtiğini göstermez.
-Bağlantı kontrolü: 300 hedef; yerel başlıklar ve MASTER dahil. Dış URL içerik/erişimi kontrol edilmedi.
+Bağlantı kontrolü: 302 hedef; yerel başlıklar ve MASTER dahil. Dış URL içerik/erişimi kontrol edilmedi.
 
 $ python scripts/test_document_links.py
 exit=0
@@ -18,7 +18,7 @@ test_turkish_and_duplicate_heading_targets (__main__.DocumentLinksTests.test_tur
 test_url_encoded_local_target (__main__.DocumentLinksTests.test_url_encoded_local_target) ... ok
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.035s
+Ran 7 tests in 0.037s
 
 OK
 
@@ -123,5 +123,4 @@ NOT: Bu kontroller PHP/DB/crawler birim, entegrasyon veya güvenlik testleri de�
 
 PASS: Python syntax; MASTER 40 kaynaktan byte-for-byte eşit.
 
-$ git diff --cached --check
-exit=0
+PASS: README/CURRENT_STATUS/rapor/JSON aktif durum eşliği; F00.01 DONE; F00.02 onay bekliyor; F00.03 NOT_STARTED.

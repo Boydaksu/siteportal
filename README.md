@@ -1,10 +1,10 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.02 — IN_PROGRESS; belge sözleşmesi ve devir doğrulaması. Uygulama kodu yok.
+> **Durum:** F00.02 — READY_FOR_REVIEW; belge ve devir kontrolleri geçti, kullanıcı kabulü bekleniyor. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
 > **Son onaylanan alt faz:** F00.01 — DONE; [PR #1](https://github.com/Boydaksu/siteportal/pull/1) kullanıcı onayıyla birleştirildi.
-> **Aktif dal:** `phase/F00.02-docs-contract`. **Aktif PR:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (taslak). **Kanıt SHA:** `e34d2b02de76b61a057c438d92365e0847673a7d`.
-> **Son kontrol:** F00.02 belge/envanter ve 7 TEST PASS; ayrı ajan devir testi bekleniyor. CI yok; uygulama testleri N/A.
+> **Aktif dal:** `phase/F00.02-docs-contract`. **Aktif PR:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (açık, birleştirilmedi). **Devir kanıtı SHA:** `5bf77121efb203393d8e61eb7fbfa6f7e700f2e9`.
+> **Son kontrol:** Belge/envanter, 7/7 TEST ve sıfır bağlamlı devir PASS. CI yok; uygulama testleri N/A.
 > **Rapor:** [F00.02](docs/reports/F00.02.md). **Sonraki:** F00.03 — İlk ADR ve bağımlılık politikası; henüz onaylanmadı, başlamadı.
 > **Açık kararlar:** [Q-001–003](docs/process/OPEN_QUESTIONS.md). Aktif işi durduran teknik engel yok.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
