@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-03 | F01.02 kabulü
+- Kullanıcı “onaylıyorum” ile F01.02 teslimi, PR #8 birleştirmesi ve F01.03 başlangıcını onayladı; kabul kaydı CI’dan sonra birleştirilecek.
+
 ## 2026-11-03 | F01.02 | READY_FOR_REVIEW
 - MySQL 8+ / SQLite PDO veritabanı bağlantı katmanı (`app/Core/Database/Connection.php`) ve prepared statement sorgu sarmalayıcısı geliştirildi.
 - Çift yönlü (reversible) migration motoru (`app/Core/Database/MigrationRunner.php`) ve çekirdek veritabanı şeması (`database/migrations/0001_create_core_tables.php`) yazıldı; `users`, `sites`, `rules`, `analyses`, `analysis_jobs` (Q-002 kuyruk tablosu), `pages` ve `findings` tabloları tanımlandı.
