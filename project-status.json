@@ -1,32 +1,32 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T22:55:00+03:00",
+  "updated_at": "2026-11-03T23:03:05+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": null,
   "current_phase": "F00",
   "current_subphase": "F00.06",
-  "last_approved_phase": null,
-  "last_approved_subphase": "F00.05",
-  "status": "READY_FOR_REVIEW",
+  "last_approved_phase": "F00",
+  "last_approved_subphase": "F00.06",
+  "status": "DONE",
   "branch": "phase/F00.06-phase-closure",
   "commit_sha": "411643464e08b16d6bf660978ecec79d6f0472e5",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/6",
   "last_report": "docs/reports/F00.06.md",
   "blockers": [],
-  "next_action": "DUR: F00.06 alt faz kabulü, PR #6 merge ve F00 ana faz kapanış onayını bekle; F01 başlamadı.",
+  "next_action": "Onaylı PR #6 kabul kaydı commit’inin CI’sını doğrula, birleştir ve güncel main’den F01.01 dalını aç.",
   "phases": {
     "F00": {
       "version": "V0.0",
-      "status": "IN_PROGRESS",
+      "status": "DONE",
       "subphases": {
         "F00.01": "DONE",
         "F00.02": "DONE",
         "F00.03": "DONE",
         "F00.04": "DONE",
         "F00.05": "DONE",
-        "F00.06": "READY_FOR_REVIEW"
+        "F00.06": "DONE"
       }
     },
     "F01": {
@@ -144,7 +144,7 @@
   "push_status": "SUCCESS",
   "test_status": "PASS_LOCAL_AND_CI",
   "ci_status": "SUCCESS",
-  "approval_received": false,
+  "approval_received": true,
   "approvals": {
     "F00.01": {
       "approved_at": "2026-11-03T16:30:43+03:00",
@@ -175,6 +175,12 @@
       "approval_reference": "2026-11-03: Kullanıcı F00.05 teslim kabulü + PR #5 merge + F00.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-03: Kullanıcı F00.05 teslim kabulü + PR #5 merge + F00.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F00.06": {
+      "approved_at": "2026-11-03T23:03:05+03:00",
+      "approval_reference": "2026-11-03: Kullanıcı F00.06 teslim kabulü + PR #6 merge + F00 ana faz kapanış onayı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-03: Kullanıcı F00.06 teslim kabulü + PR #6 merge + F00 ana faz kapanış onayı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {

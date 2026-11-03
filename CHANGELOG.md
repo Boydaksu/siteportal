@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-03 | F00.06 kabulü ve F00 ana faz kapanışı
+- Kullanıcı “onaylıyorum” ile F00.06 teslimi, PR #6 birleştirmesi ve F00 ana faz kapanışını onayladı; F01 ana fazına geçiş izni alındı.
+
 ## 2026-11-03 | F00.06 | READY_FOR_REVIEW
 - Onaylı PR #5 birleştirildi; merge SHA `411643464e08b16d6bf660978ecec79d6f0472e5`; güncel main üzerinden F00.06 faz kapanış dalı açıldı.
 - F00.01'den F00.05'e tüm alt faz kanıtları, test sonuçları ve onayları derlendi; F00 ana faz kapanış özeti (`F00-PHASE-SUMMARY.md`) hazırlandı.

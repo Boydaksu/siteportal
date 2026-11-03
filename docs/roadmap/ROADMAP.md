@@ -4,7 +4,7 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 
 | Faz | Sürüm | Amaç | Alt faz sayısı | Durum |
 |---|---|---|---:|---|
-| [F00](./F00.md) | V0.0 | Sözleşme, repo ve standartlar | 6 | IN_PROGRESS |
+| [F00](./F00.md) | V0.0 | Sözleşme, repo ve standartlar | 6 | DONE |
 | [F01](./F01.md) | V0.1 | Güvenli çekirdek ve worker | 7 | NOT_STARTED |
 | [F02](./F02.md) | V1.0 | Üyeliksiz tek sayfa SEO analizi | 8 | NOT_STARTED |
 | [F03](./F03.md) | V1.1 | Site çapında kontrollü tarama | 7 | NOT_STARTED |
@@ -36,5 +36,5 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 ## Önceliklendirme
 **P0:** SSRF, robots, güvenli istek, queue, yetki, doğruluk, temel UI. **P1:** Site mimarisi, CWV, schema, GSC doğrulanmış kullanıcı. **P2:** AI/ajans/white-label/ücretli hesap. **Şimdilik gereksiz:** Kubernetes, mikroservis ağı, herkes için headless Chrome, backlink scraping, Google sırası tahmin modeli, otomatik SEO düzeltme, zorunlu llms.txt.
 
-## Aktif F00 teslimi
-F00.01–F00.05 kullanıcı kabulüyle DONE; PR #1–#5 birleştirildi. Aktif alt faz F00.06; durum [JSON](../../project-status.json), kanıt [F00.06 raporu](../reports/F00.06.md) ve [F00 ana faz özeti](../reports/F00-PHASE-SUMMARY.md) içindedir. F01 başlamadı.
+## Aktif teslim
+F00 ana fazı (F00.01–F00.06) kullanıcı kabulüyle DONE; F00 kapatıldı. Sıradaki ana faz F01 (V0.1: Güvenli çekirdek ve worker); durum [JSON](../../project-status.json) ve [F00 ana faz özeti](../reports/F00-PHASE-SUMMARY.md) içindedir.

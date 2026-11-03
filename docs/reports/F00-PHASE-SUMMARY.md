@@ -3,7 +3,7 @@
 > **Tarih:** 2026-11-03, Europe/Istanbul
 > **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal) (özel), varsayılan dal `main`
 > **Faz:** F00 — Sözleşme, repo ve standartlar (Hedef sürüm: V0.0)
-> **Durum:** READY_FOR_REVIEW (Tüm alt fazlar tamamlandı; F00 ana faz kabulü ve PR #6 merge bekleniyor)
+> **Durum:** DONE (Kullanıcı onayıyla F00 ana fazı kapatıldı; PR #6 birleştirilecek)
 
 ---
 
@@ -52,3 +52,8 @@ F00 ana fazı kapatıldıktan sonra başlanacak olan **F01** ana fazının ilk a
 * **F01.01 — Güvenli çekirdek ve bootstrap:** PHP 8.4 PSR-4 çekirdek yapısı, `src/` mimarisi, strict types disiplini ve konfigürasyon yükleyicisi.
 
 > **ÖNEMLİ KURAL:** F00 ana fazı için açık kullanıcı onayı alınmadan ve PR #6 birleştirilmeden F01 ana fazına GEÇİLEMEZ.
+
+---
+
+## 6. Kabul Kaydı — 2026-11-03
+2026-11-03: Kullanıcı F00.06 teslim kabulü + PR #6 merge + F00 ana faz kapanış onayı sorusuna “onaylıyorum” yanıtını verdi. F00 ana fazının tüm kabul kriterleri ve alt fazları eksiksiz onaylanmış ve başarıyla kapanmıştır. F01 ana fazına geçiş onaylanmıştır.
