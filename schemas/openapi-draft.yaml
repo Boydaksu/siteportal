@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: SitePortal SEO Analyzer API (taslak)
+  version: 1.0.0-draft
+  description: >
+    Bu doküman uygulama kodu değildir; ilgili alt fazlarda gerçek contract testleri ile kesinleştirilecektir.
+servers:
+  - url: https://example.com/api/v1
+paths:
+  /analyses:
+    post:
+      operationId: createAnalysis
+      summary: Yeni asenkron SEO analizi başlat
+      parameters:
+        - in: header
+          name: Idempotency-Key
+          required: false
+          schema: {type: string}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [url]
+              properties:
+                url: {type: string, format: uri}
+                mode: {type: string, enum: [quick, site, professional], default: quick}
+                language: {type: string, default: tr-TR}
+      responses:
+        '202':
+          description: Kuyruğa alındı
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisSummary'
+        '422': {description: URL doğrulama hatası}
+        '429': {description: Kota aşıldı}
+  /analyses/{id}:
+    get:
+      operationId: getAnalysis
+      summary: Analiz durumunu ve özetini oku
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: {type: string}
+      responses:
+        '200':
+          description: Analiz özeti
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisSummary'
+        '404': {description: Bulunamadı veya yetkisiz}
+components:
+  schemas:
+    AnalysisSummary:
+      type: object
+      required: [analysis_id, status]
+      properties:
+        analysis_id: {type: string}
+        status:
+          type: string
+          enum: [queued, validating, fetching, parsing, rules, finalizing, completed, partial, failed, cancelled]
+        status_url: {type: string}
+        limits:
+          type: object
+          properties:
+            max_pages: {type: integer, minimum: 1}

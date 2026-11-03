@@ -1,0 +1,15 @@
+{
+  "app.name": "SitePortal",
+  "seo.form.title": "Sitenizin SEO durumunu analiz edin",
+  "seo.form.url": "Web sitesi adresi",
+  "seo.form.submit": "SEO analizini başlat",
+  "seo.status.queued": "Analiz sıraya alındı",
+  "seo.status.completed": "Analiz tamamlandı",
+  "seo.status.partial": "Bazı kontroller tamamlanamadı",
+  "seo.status.unknown": "Ölçülemedi",
+  "seo.status.not_applicable": "Uygulanamaz",
+  "seo.rule.tech_canonical_target_error": "Canonical hedefi bulunamadı",
+  "seo.report.coverage": "{count} sayfa analiz edildi",
+  "seo.report.disclaimer": "Bu puan Google'ın resmi sıralama puanı değildir.",
+  "errors.url_blocked": "Bu adres güvenlik politikamız nedeniyle taranamıyor."
+}

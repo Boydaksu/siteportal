@@ -1,0 +1,15 @@
+{
+  "app.name": "SitePortal",
+  "seo.form.title": "Check your website's SEO health",
+  "seo.form.url": "Website address",
+  "seo.form.submit": "Start SEO analysis",
+  "seo.status.queued": "Analysis queued",
+  "seo.status.completed": "Analysis completed",
+  "seo.status.partial": "Some checks could not be completed",
+  "seo.status.unknown": "Not measured",
+  "seo.status.not_applicable": "Not applicable",
+  "seo.rule.tech_canonical_target_error": "Canonical target is unavailable",
+  "seo.report.coverage": "{count} pages analyzed",
+  "seo.report.disclaimer": "This score is not an official Google ranking score.",
+  "errors.url_blocked": "This address cannot be scanned under our security policy."
+}
