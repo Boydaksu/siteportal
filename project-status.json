@@ -1,27 +1,27 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T16:27:04+03:00",
+  "updated_at": "2026-11-03T16:30:43+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": null,
   "current_phase": "F00",
   "current_subphase": "F00.01",
   "last_approved_phase": null,
-  "last_approved_subphase": null,
-  "status": "READY_FOR_REVIEW",
+  "last_approved_subphase": "F00.01",
+  "status": "DONE",
   "branch": "phase/F00.01-repo-inventory",
   "commit_sha": "611ad26740e4d2d984f56810f924726cc8496827",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/1",
   "last_report": "docs/reports/F00.01.md",
   "blockers": [],
-  "next_action": "DUR: F00.01 kabulünü bekle; F00.02 için ayrıca açık onay al. PR merge ayrıca onay gerektirir.",
+  "next_action": "PR #1 için açık birleştirme onayı alındı; onay kaydını gönder, PR’ı birleştir, main’den yalnız F00.02 dalını aç.",
   "phases": {
     "F00": {
       "version": "V0.0",
       "status": "IN_PROGRESS",
       "subphases": {
-        "F00.01": "READY_FOR_REVIEW",
+        "F00.01": "DONE",
         "F00.02": "NOT_STARTED",
         "F00.03": "NOT_STARTED",
         "F00.04": "NOT_STARTED",
@@ -144,5 +144,15 @@
   "push_status": "SUCCESS",
   "test_status": "PASS_DOCUMENT_INVENTORY_CHECKS",
   "ci_status": "NOT_CONFIGURED",
-  "approval_received": false
+  "approval_received": true,
+  "approved_at": "2026-11-03T16:30:43+03:00",
+  "approval_reference": "Kullanıcı: “devam edelim” — F00.01 kabulü ve F00.02 başlangıç onayı; ardından “Evet, PR #1’i birleştir” — ayrı merge onayı.",
+  "approvals": {
+    "F00.01": {
+      "approved_at": "2026-11-03T16:30:43+03:00",
+      "approval_reference": "Kullanıcı mesajı: devam edelim",
+      "merge_approved": true,
+      "merge_approval_reference": "Kullanıcı yanıtı: Evet, PR #1’i birleştir"
+    }
+  }
 }

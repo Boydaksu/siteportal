@@ -12,9 +12,9 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.01 — READY_FOR_REVIEW; envanter teslimi hazır, kullanıcı kabulü bekleniyor. Uygulama kodu yok.
+> **Durum:** F00.01 — DONE; kullanıcı kabulü ve PR #1 birleştirme onayı alındı. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz:** F00 / V0.0.
-> **Son onaylanan alt faz:** YOK. **Son hazırlanan alt faz:** F00.01. **Sonraki:** F00.02, açık onay bekler.
+> **Son onaylanan alt faz:** F00.01. **Son hazırlanan alt faz:** F00.01. **Sonraki:** F00.02, başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
 > **Dal:** `phase/F00.01-repo-inventory`. **PR:** [#1](https://github.com/Boydaksu/siteportal/pull/1). **Kanıt commit:** `611ad26740e4d2d984f56810f924726cc8496827` (PR ayrıca teslim metadata commit’i içerir).
 > **Kontrol:** 9/65 faz, 84 kural, 44 Markdown; manifest, CSV/JSON, TR/EN ve belge kontrolleri PASS. CI yok.
 > **Rapor:** [F00.01](docs/reports/F00.01.md). **Durum kaydı:** [project-status.json](project-status.json).
@@ -162,20 +162,20 @@ Herhangi bir alt faz yeni bir servise, ücretli API'ye veya kimlik bilgisine ger
 - **Repo:** https://github.com/Boydaksu/siteportal — özel; varsayılan dal `main`
 - **Plan paket sürümü:** `blueprint-0.1.0`
 - **Aktif sürüm / ana faz:** V0.0 / F00; çalışan ürün sürümü yok
-- **Son onaylanan ana faz / alt faz:** Yok / Yok
+- **Son onaylanan ana faz / alt faz:** Yok / F00.01
 - **Şu anki alt faz:** F00.01 — Mevcut repo envanteri
-- **Durum:** READY_FOR_REVIEW
+- **Durum:** DONE
 - **Başlangıç main SHA:** `cb885fd3aae4fcacea3618be77115c387baf61a9` (Initial commit)
 - **Aktif dal:** `phase/F00.01-repo-inventory`
 - **Kanıt commit / PR:** `611ad26740e4d2d984f56810f924726cc8496827` / https://github.com/Boydaksu/siteportal/pull/1; PR head ayrıca teslim metadata commit’ini içerir.
 - **Son rapor:** [F00.01](docs/reports/F00.01.md)
 - **Kontroller:** Belge/envanter, 9/65 faz, 84 kural, 44 Markdown, SHA256, TR/EN, Python sözdizimi ve boşluk kontrolü PASS; uygulama testleri N/A, CI yok.
-- **Açık engel:** Teknik engel yok; kullanıcı incelemesi/kabulü bekleniyor.
+- **Açık engel:** Teknik engel yok; F00.01 kabul edildi ve PR #1 için ayrı birleştirme onayı alındı.
 - **Açık taslak farkları:** API bulgu alanları ve kanıt biçimi, queue tablo adı, en-US tamamlanma takvimi; raporda kayıtlı, değiştirilmedi.
-- **Bir sonraki işlem:** DUR. F00.01 kabulü ve F00.02 için açık onay bekle.
-- **Sonraki alt faz:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir; NOT_STARTED, açık kullanıcı onayı gerekli.
+- **Bir sonraki işlem:** Onaylı PR #1’i birleştir; main’den F00.02 dalı aç.
+- **Sonraki alt faz:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir; NOT_STARTED; kullanıcı başlangıç onayı verdi.
 
-Etkin belgeler depo kökündedir; yerelde `siteportal_seo_masterplan/` ilk paketin korunmuş kopyasıdır. `BUNDLE_INFO.json` paket üretim anına aittir. Kullanıcı onayı alınmadı; merge/deploy yapılmadı.
+Etkin belgeler depo kökündedir; yerelde `siteportal_seo_masterplan/` ilk paketin korunmuş kopyasıdır. `BUNDLE_INFO.json` paket üretim anına aittir. Kullanıcı “devam edelim” ile F00.01 kabulü ve F00.02 başlangıcını onayladı; “Evet, PR #1’i birleştir” ile ayrıca birleştirme onayı verdi. Bu kayıt yazılırken merge henüz yapılmadı; deploy yapılmadı.
 
 
 
@@ -1219,7 +1219,7 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 ## Alt fazlar
 
 ### F00.01 — Mevcut repo envanteri
-**Uygulama durumu:** READY_FOR_REVIEW; [envanter raporu](docs/reports/F00.01.md). Sonraki alt fazlar başlamadı.
+**Uygulama durumu:** DONE; [envanter raporu](docs/reports/F00.01.md). Sonraki alt fazlar başlamadı.
 **Hedef:** Mevcut repo envanteri.
 **Yapılacak işler:**
 1. GitHub main ve izinleri oku.
@@ -1232,7 +1232,7 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 - [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
 - [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
 - [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.01.md` + durum kayıtları.
 

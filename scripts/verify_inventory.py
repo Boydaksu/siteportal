@@ -39,8 +39,10 @@ for phase, data in status["phases"].items():
     headings = re.findall(r"^### (F\d{2}\.\d{2}) —", (root / f"docs/roadmap/{phase}.md").read_text(encoding="utf-8"), re.M)
     check(headings == list(data["subphases"]), f"{phase} plan/JSON sırası ve tam kapsamı")
 check(sum(len(v["subphases"]) for v in status["phases"].values()) == 65, "Toplam 65 alt faz")
-check(status["current_subphase"] == "F00.01" and status["last_approved_subphase"] is None, "Aktif alt faz F00.01; onay uydurulmadı")
+check(status["current_subphase"] == "F00.01" and status["last_approved_subphase"] in {None, "F00.01"}, "Aktif alt faz F00.01; onay kaydı izinli durumda")
 check(all(value == "NOT_STARTED" for data in status["phases"].values() for key, value in data["subphases"].items() if key != "F00.01"), "Sonraki 64 alt faz başlamadı")
+if status["last_approved_subphase"] == "F00.01":
+    check(bool(status.get("approved_at") and status.get("approval_reference")), "F00.01 kullanıcı kabul kanıtı kayıtlı")
 tr = json.loads((root / "locales/tr-TR.example.json").read_text(encoding="utf-8"))
 en = json.loads((root / "locales/en-US.example.json").read_text(encoding="utf-8"))
 check(tr.keys() == en.keys() and all(re.findall(r"\{\w+\}", tr[k]) == re.findall(r"\{\w+\}", en[k]) for k in tr), "TR/EN anahtar ve parametre eşliği")
