@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #10](https://github.com/Boydaksu/siteportal/pull/10) birleştirildi; merge `a07395218cabf9399134bf7798132246884326a3`. Kabul commit'i `2f2be5484aa697f2aa25b29b4ef52b662369408b`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41730270573) SUCCESS.
 - **Aktif alt faz / durum:** F01.05 — DB queue / worker scheduler / READY_FOR_REVIEW.
 - **Dal:** `phase/F01.05-db-queue-worker`; başlangıç main SHA `a07395218cabf9399134bf7798132246884326a3`.
-- **Aktif PR / kanıt commit:** [PR #11](https://github.com/Boydaksu/siteportal/pull/11); kanıt commit `67241ad91fe9ae5703cb0653665bc783083dbcb1`.
+- **Aktif PR / kanıt commit:** [PR #11](https://github.com/Boydaksu/siteportal/pull/11); kanıt commit `e09733ab7693a01beb700a590d3cb8ec057d8df4`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41735158387) SUCCESS.
 - **Rapor:** [F01.05](docs/reports/F01.05.md).
 - **Yerel sonuç:** PASS; PHP lint (99 dosya), PSR-12, PHPStan seviye 8, PHPUnit 147 test / 991 assertion PASS (2 skipped [MySQL opsiyonel, sandbox döngüsel ağ]), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
 - **Uygulama testleri:** DatabaseQueue atomik claim (MySQL SKIP LOCKED & SQLite locking), idempotent push, bounded retries ve backoff+jitter, lease ve heartbeat watchdog kurtarması, concurrency çakışmasızlık ve CLI worker/scheduler process testleri PASS.
