@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "subphase": "F00.05",
+  "commit_sha": "e7164369e45a6fbdd281250fcb8849a36bae7d25",
+  "scope": "First content commit; later delivery metadata head is verified separately in PR checks",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/5",
+  "run_id": 41684279984,
+  "url": "https://github.com/Boydaksu/siteportal/actions/runs/41684279984",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 126085765682,
+      "name": "PHP 8.4 and document checks",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 41684279984,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Clean checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "PHP and Composer",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Record actual tool versions",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Validate manifest and install reviewed development tools",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "PHP lint, format, static analysis and TEST harness",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Documents, fixtures, sources and inventory",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Post Clean checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15
+        }
+      ]
+    }
+  ],
+  "actual_environment": {
+    "php": "8.4.27",
+    "composer": "2.10.2",
+    "python": "3.12.3",
+    "git": "2.56.0"
+  },
+  "limitations": [
+    "Harness tests only; no application/DB/UI tests",
+    "Root distribution license Q-004 undecided; Composer warning retained",
+    "Branch protection and native secret scanning not enabled"
+  ],
+  "observations": [
+    "PHPUnit 3 tests / 74 assertions",
+    "Four negative quality gate probes pass",
+    "Seven document link tests pass",
+    "Final CI check confirms clean checkout worktree"
+  ]
+}

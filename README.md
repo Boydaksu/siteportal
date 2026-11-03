@@ -1,13 +1,14 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.04 — DONE; kullanıcı kabulü ve PR #4 birleştirme onayı alındı. Uygulama kodu yok.
+> **Durum:** F00.05 — DONE; repo/PR politikası. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.04 — DONE; PR #4 birleştirme onayı alındı.
-> **Aktif dal:** `phase/F00.04-test-ci`. **Aktif PR:** [#4](https://github.com/Boydaksu/siteportal/pull/4) (açık, birleştirilmedi). **CI kanıt SHA:** `06b3e12fd122eeef24dbc748c956d79ff4ed85bb`.
-> **Son kontrol:** Yerel kalite/fixture/belge/envanter PASS; [gerçek CI](https://github.com/Boydaksu/siteportal/actions/runs/41666506494) SUCCESS (kanıt commit’i).
-> **Rapor:** [F00.04](docs/reports/F00.04.md). **Sonraki:** F00.05 — Repo ve PR politikası; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
-> **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık; Composer uyarısı raporlanıyor.
-> **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
+> **Son onaylanan alt faz:** F00.05 — DONE; PR #5 onaylandı.
+> **Aktif dal:** `phase/F00.05-repo-policy`. **PR:** [#5](https://github.com/Boydaksu/siteportal/pull/5) (açık). **CI kanıt commit’i:** `e7164369e45a6fbdd281250fcb8849a36bae7d25`.
+> **Son kontrol:** F00.05 yerel kalite/TEST/belge/envanter ve rollback uygulanabilirliği PASS; [CI](https://github.com/Boydaksu/siteportal/actions/runs/41684279984) SUCCESS; son metadata head ayrıca doğrulanır.
+> **Rapor:** [F00.05](docs/reports/F00.05.md). **Sonraki:** F00.06 — Faz kapanış/kabul; onay alındı.
+> **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
+> **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
+> **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
 
 ## Proje
 SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO Analyzer** ilk bağımsız ürün modülüdür; hosting şirketi yazılımı değildir. Kullanıcılar URL girerek kanıtlanabilir teknik SEO analizi alır; daha derin analiz, hesap/alan adı doğrulama ve entegrasyonlarla gelişir.

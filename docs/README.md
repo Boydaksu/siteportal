@@ -21,3 +21,6 @@ Güncel durum: [CURRENT_STATUS](../CURRENT_STATUS.md) ve [project-status.json](.
 
 ## F00.04 test ve CI
 [Çalıştırma rehberi](process/TESTING.md), [TEST kapsamı/fixture](../tests/README.md), [CI workflow](../.github/workflows/quality.yml), [birincil kaynaklar](reference/TESTING_SOURCES.md), [bağımlılık incelemesi](reports/F00.04-dependency-review.json) ve [F00.04 raporu](reports/F00.04.md).
+
+## F00.05 repo politikası
+[GitHub/inceleme](operations/GITHUB.md), [rollback](operations/ROLLBACK.md), [gizli bilgi kontrolü](process/SECRETS.md), [main önerisi](operations/main-protection.proposal.json), [kaynaklar](reference/REPOSITORY_SOURCES.md), [teslim raporu](reports/F00.05.md).
