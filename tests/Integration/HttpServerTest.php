@@ -176,7 +176,7 @@ final class HttpServerTest extends TestCase
                 self::markTestSkipped('Loopback HTTP bağlantısı ortam kısıtı nedeniyle kurulamadı.');
             }
 
-            self::assertIsString($healthJson);
+            self::assertNotEmpty($healthJson);
             $decoded = json_decode($healthJson, true);
             self::assertIsArray($decoded);
             self::assertSame('ok', $decoded['status']);

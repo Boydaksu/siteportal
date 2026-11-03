@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #6](https://github.com/Boydaksu/siteportal/pull/6) birleştirildi; merge `d325218c1adee89524cdc21ae410d5d68af55850`.
 - **Aktif alt faz / durum:** F01.01 — Proje çalışma iskeleti / READY_FOR_REVIEW.
 - **Dal:** `phase/F01.01-work-scaffold`; başlangıç main SHA `d325218c1adee89524cdc21ae410d5d68af55850`.
-- **Aktif PR / kanıt commit:** İncelemeye sunuldu (PR açılacak).
+- **Aktif PR / kanıt commit:** [#7](https://github.com/Boydaksu/siteportal/pull/7) açık / `ddd6447146cee219265925330eafb463f3dcb7b9`.
 - **Rapor:** [F01.01](docs/reports/F01.01.md).
 - **Yerel sonuç:** PASS; PHP lint (26 dosya), PSR-12, PHPStan seviye 8, PHPUnit 36 test / 242 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
 - **Uygulama testleri:** Health JSON API, homepage HTML UI, robots.txt, sitemap.xml, 404, 405, 500 debug/production hata sayfası ve gerçek PHP sunucu HTTP testleri PASS.
