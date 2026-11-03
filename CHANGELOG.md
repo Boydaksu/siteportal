@@ -1,6 +1,6 @@
 # Changelog
 
-## 2026-11-03 | F00.05 | IN_PROGRESS
+## 2026-11-03 | F00.05 | READY_FOR_REVIEW
 - Onaylı PR #4 CI sonrasında birleştirildi; güncel main üzerinden repo politikası dalı açıldı.
 - PR/issue/inceleme ve geri alma yönergesi, secret kontrol listesi ve main koruma önerisi hazırlandı.
 - Main koruması uygulanmadı: entegrasyon yönetim erişimi 403, UI URL doğrulaması durdu. Ayrı ayar onayı yok.

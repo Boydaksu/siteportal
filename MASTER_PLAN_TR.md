@@ -12,11 +12,11 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.05 — IN_PROGRESS; repo/PR politikası. Uygulama kodu yok.
+> **Durum:** F00.05 — READY_FOR_REVIEW; repo/PR politikası. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
 > **Son onaylanan alt faz:** F00.04 — DONE; PR #4 birleştirildi.
-> **Aktif dal:** `phase/F00.05-repo-policy`. **PR / commit / CI:** PENDING.
-> **Son kontrol:** F00.05 yerel kalite/TEST/belge/envanter ve rollback uygulanabilirliği PASS; CI bekleniyor.
+> **Aktif dal:** `phase/F00.05-repo-policy`. **PR:** [#5](https://github.com/Boydaksu/siteportal/pull/5) (açık). **CI kanıt commit’i:** `e7164369e45a6fbdd281250fcb8849a36bae7d25`.
+> **Son kontrol:** F00.05 yerel kalite/TEST/belge/envanter ve rollback uygulanabilirliği PASS; [CI](https://github.com/Boydaksu/siteportal/actions/runs/41684279984) SUCCESS; son metadata head ayrıca doğrulanır.
 > **Rapor:** [F00.05](docs/reports/F00.05.md). **Sonraki:** F00.06 — Faz kapanış/kabul; NOT_STARTED, onay gerekir.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
@@ -174,17 +174,18 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Plan / ürün / ana faz:** blueprint-0.1.0; uygulama yok; F00 / V0.0 IN_PROGRESS, ana faz kabulü yok.
 - **Son onay:** F00.04 DONE; kullanıcı “evet onaylıyorum” ile kabul, PR #4 merge ve F00.05 başlangıcını onayladı.
 - **Önceki teslim:** [PR #4](https://github.com/Boydaksu/siteportal/pull/4) birleştirildi; merge `36a1f4b6c5b1d2ed9b2cf50b5e348950324d443d`. Kabul commit'i `23324dad1e3c7843f476fd73f7148dfa57070cfb`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41682655805) success.
-- **Aktif alt faz / durum:** F00.05 — Repo ve PR politikası / IN_PROGRESS.
+- **Aktif alt faz / durum:** F00.05 — Repo ve PR politikası / READY_FOR_REVIEW.
 - **Dal:** `phase/F00.05-repo-policy`; başlangıç main SHA yukarıdaki merge'dir.
-- **Aktif PR / kanıt commit / CI:** PENDING.
+- **Aktif PR / kanıt commit:** [#5](https://github.com/Boydaksu/siteportal/pull/5) açık / `e7164369e45a6fbdd281250fcb8849a36bae7d25`; sonraki metadata head ayrıca kontrol edilir.
+- **CI:** [Run 41684279984](https://github.com/Boydaksu/siteportal/actions/runs/41684279984) SUCCESS; [makine kanıtı](docs/reports/F00.05-ci.json).
 - **Rapor:** [F00.05](docs/reports/F00.05.md).
-- **Yerel sonuç:** PASS; PHP lint/PSR-12/PHPStan, 3 TEST/74 assertion, 4 olumsuz kapı, 7 link TEST, belge/envanter/mimari/toolchain/master ve ters patch kontrolü. CI bekleniyor.
+- **Yerel sonuç:** PASS; PHP lint/PSR-12/PHPStan, 3 TEST/74 assertion, 4 olumsuz kapı, 7 link TEST, belge/envanter/mimari/toolchain/master ve ters patch kontrolü. Temiz checkout CI success.
 - **Uygulama testleri:** SSRF/DB/queue/ACL/UI/E2E N/A; uygulama yok. Yeni kullanıcı arayüz metni veya bağımlılık yok.
 - **Main koruması:** PROPOSED_NOT_APPLIED; gözlenen protected:false. Yönetim API 403; UI URL doğrulaması durdu, ayar değişmedi. Ayrı ayar onayı alınmadı. [Öneri](docs/operations/main-protection.proposal.json).
 - **Native secret scanning:** Etkinliği doğrulanmadı; yerel kalıp kontrolü tam/geçmiş taraması değildir.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
 - **Sonraki tek alt faz:** F00.06 NOT_STARTED; F00.05 kabul/merge/başlangıç onayı gelmeden başlamaz. F01 için ayrıca F00 ana faz kabulü gerekir.
-- **Bir sonraki işlem:** F00.05 kanıtlarını tamamla, PR/rapor sun, DUR.
+- **Bir sonraki işlem:** F00.05 kullanıcı kabulü, PR #5 merge ve F00.06 başlangıç onayını bekle; DUR.
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -1324,7 +1325,7 @@ F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif a
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.04.md` + durum kayıtları.
 
 ### F00.05 — Repo ve PR politikası
-**Uygulama durumu:** IN_PROGRESS; [F00.05 raporu](docs/reports/F00.05.md). Main koruması önerisi hazırlanır; canlı uygulama ayrı yetki/onay koşulludur.
+**Uygulama durumu:** READY_FOR_REVIEW; [F00.05 raporu](docs/reports/F00.05.md). Main koruması önerisi hazırlanır; canlı uygulama ayrı yetki/onay koşulludur.
 **Hedef:** Repo ve PR politikası.
 **Yapılacak işler:**
 1. Dallar PR şablonları issue template inceleme adımları.
@@ -1332,12 +1333,12 @@ F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif a
 3. secret scanning kontrol listesi.
 
 **Kabul/kanıt:**
-- [ ] PR formatı ve rollback yönergesi geçerli.
-- [ ] main koruması yetki varsa ve kullanıcı onayıyla.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] PR formatı ve rollback yönergesi geçerli.
+- Koşullu main koruması: N/A — yönetim kanalı/ayrı ayar onayı yok; öneri hazır, UYGULANMADI. [Ayrıntı](docs/operations/GITHUB.md).
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.05.md` + durum kayıtları.
 

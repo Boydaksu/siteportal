@@ -40,217 +40,217 @@ test_turkish_and_duplicate_heading_targets (__main__.DocumentLinksTests.test_tur
 test_url_encoded_local_target (__main__.DocumentLinksTests.test_url_encoded_local_target) ... ok
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.028s
+Ran 7 tests in 0.043s
 
 OK
 
 COMMAND: python scripts/verify_blueprint.py
 EXIT: 0
-PASS: 9 ana faz, 65 alt faz, 84 kural, 67 Markdown dosyas�; JSON ve i� ba�lant�lar ge�erli.
-NOT: Bu sonu� yaz�l�m�n implementasyon veya g�venlik testlerini ge�ti�ini g�stermez.
-Ba�lant� kontrol�: 675 hedef; yerel ba�l�klar ve MASTER dahil. D�� URL i�erik/eri�imi kontrol edilmedi.
+PASS: 9 ana faz, 65 alt faz, 84 kural, 67 Markdown dosyası; JSON ve iç bağlantılar geçerli.
+NOT: Bu sonuç yazılımın implementasyon veya güvenlik testlerini geçtiğini göstermez.
+Bağlantı kontrolü: 676 hedef; yerel başlıklar ve MASTER dahil. Dış URL içerik/erişimi kontrol edilmedi.
 
 COMMAND: python scripts/verify_architecture.py
 EXIT: 0
-PASS: ADR referans� mevcut: stack_record
-PASS: ADR referans� mevcut: module_matrix
-PASS: ADR referans� mevcut: dependency_policy
-PASS: ADR referans� mevcut: dependency_inventory
-PASS: ADR referans� mevcut: threat_model
-PASS: Ba�lang�� ADR kimlikleri korundu
-PASS: �� s�zle�me fark� karar kayd�nda
-PASS: Q-001 ge�erli karar durumu
-PASS: Q-001 gerek�eli ADR mevcut
-PASS: Q-001 a��k kullan�c� onay� kay�tl�
-PASS: Q-002 ge�erli karar durumu
-PASS: Q-002 gerek�eli ADR mevcut
-PASS: Q-002 a��k kullan�c� onay� kay�tl�
-PASS: Q-003 ge�erli karar durumu
-PASS: Q-003 gerek�eli ADR mevcut
-PASS: Q-003 a��k kullan�c� onay� kay�tl�
-PASS: Ba��ml�l�k envanteri kaynak alt faz�n� ta��yor
-PASS: ADR kayd� uygulama geli�tirilmi� iddias� ta��m�yor
-PASS: Paket manifesti durumu ger�ek dosyalarla ayn�
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: myclabs/deep-copy
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: nikic/php-parser
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phar-io/manifest
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phar-io/version
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpstan/phpstan
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-code-coverage
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-file-iterator
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-invoker
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-text-template
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/php-timer
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: phpunit/phpunit
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/cli-parser
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/comparator
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/complexity
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/diff
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/environment
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/exporter
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/global-state
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/lines-of-code
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/object-enumerator
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/object-reflector
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/recursion-context
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/type
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: sebastian/version
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: squizlabs/php_codesniffer
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: staabm/side-effects-detector
-PASS: Paket s�r�m/lisans/g�venlik/onay kayd� tam: theseer/tokenizer
-PASS: Geli�tirme envanteri ger�ek lock ile ayn�
-PASS: Uygulama paketi eklenmedi; ara�lar yaln�z dev kapsam�
-PASS: Planlanan platform i�in sahte resolved s�r�m yok
-PASS: Yerel test CLI do�rulama kapsam� deployment'tan ayr�lm��
-PASS: T01�T15 tehdit kimlikleri eksiksiz ve tekil
-PASS: Yedi g�ven s�n�r� kaydedildi
-PASS: Tehdit do�rulama kap�lar� ger�ek yol haritas�nda
-PASS: Kritik kontrol alanlar� ve uygulanmama durumu a��k
-PASS: �rnek yan�t DEMO olarak i�aretli
-PASS: DEMO bulguda mevcut �eman�n zorunlu alanlar� var
+PASS: ADR referansı mevcut: stack_record
+PASS: ADR referansı mevcut: module_matrix
+PASS: ADR referansı mevcut: dependency_policy
+PASS: ADR referansı mevcut: dependency_inventory
+PASS: ADR referansı mevcut: threat_model
+PASS: Başlangıç ADR kimlikleri korundu
+PASS: Üç sözleşme farkı karar kaydında
+PASS: Q-001 geçerli karar durumu
+PASS: Q-001 gerekçeli ADR mevcut
+PASS: Q-001 açık kullanıcı onayı kayıtlı
+PASS: Q-002 geçerli karar durumu
+PASS: Q-002 gerekçeli ADR mevcut
+PASS: Q-002 açık kullanıcı onayı kayıtlı
+PASS: Q-003 geçerli karar durumu
+PASS: Q-003 gerekçeli ADR mevcut
+PASS: Q-003 açık kullanıcı onayı kayıtlı
+PASS: Bağımlılık envanteri kaynak alt fazını taşıyor
+PASS: ADR kaydı uygulama geliştirilmiş iddiası taşımıyor
+PASS: Paket manifesti durumu gerçek dosyalarla aynı
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: myclabs/deep-copy
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: nikic/php-parser
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phar-io/manifest
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phar-io/version
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpstan/phpstan
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-code-coverage
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-file-iterator
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-invoker
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-text-template
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-timer
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/phpunit
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/cli-parser
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/comparator
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/complexity
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/diff
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/environment
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/exporter
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/global-state
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/lines-of-code
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/object-enumerator
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/object-reflector
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/recursion-context
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/type
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/version
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: squizlabs/php_codesniffer
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: staabm/side-effects-detector
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: theseer/tokenizer
+PASS: Geliştirme envanteri gerçek lock ile aynı
+PASS: Uygulama paketi eklenmedi; araçlar yalnız dev kapsamı
+PASS: Planlanan platform için sahte resolved sürüm yok
+PASS: Yerel test CLI doğrulama kapsamı deployment'tan ayrılmış
+PASS: T01–T15 tehdit kimlikleri eksiksiz ve tekil
+PASS: Yedi güven sınırı kaydedildi
+PASS: Tehdit doğrulama kapıları gerçek yol haritasında
+PASS: Kritik kontrol alanları ve uygulanmama durumu açık
+PASS: Örnek yanıt DEMO olarak işaretli
+PASS: DEMO bulguda mevcut şemanın zorunlu alanları var
 PASS: DEMO rule_id: string
 PASS: DEMO rule_version: string
-PASS: DEMO status: ge�erli enum
-PASS: DEMO severity: ge�erli enum
-PASS: DEMO confidence: ge�erli enum
+PASS: DEMO status: geçerli enum
+PASS: DEMO severity: geçerli enum
+PASS: DEMO confidence: geçerli enum
 PASS: DEMO evidence: array
 PASS: DEMO evidence: nesne listesi
 PASS: DEMO observed_at: string
 PASS: DEMO affected_urls: array
 PASS: DEMO data_source: string
-PASS: Q-001: tek data_source alan�
+PASS: Q-001: tek data_source alanı
 PASS: Q-001: evidence nesne dizisi
-PASS: Q-002: crawler queue ad� analysis_jobs
-PASS: Q-002: DB/crawler ad� e�li�i
-PASS: Q-003: uygulanan �zelliklerde dil kapsam� a��k
-NOT: DEMO kontrol� zorunlu alan/type/enum e�li�idir; tam JSON Schema motoru, ger�ek API, CVE/lisans audit veya SSRF testi de�ildir.
+PASS: Q-002: crawler queue adı analysis_jobs
+PASS: Q-002: DB/crawler adı eşliği
+PASS: Q-003: uygulanan özelliklerde dil kapsamı açık
+NOT: DEMO kontrolü zorunlu alan/type/enum eşliğidir; tam JSON Schema motoru, gerçek API, CVE/lisans audit veya SSRF testi değildir.
 
 COMMAND: python scripts/verify_toolchain.py
 EXIT: 0
-PASS: Uygulama paketi yok; yaln�z PHP platform �art�
-PASS: Composer plugin kapal� ve HTTPS zorunlu
+PASS: Uygulama paketi yok; yalnız PHP platform şartı
+PASS: Composer plugin kapalı ve HTTPS zorunlu
 PASS: Otomatik/root Composer script'i eklenmedi
-PASS: Q-004 i�in yetkisiz k�k lisans karar� al�nmad�
-PASS: B�t�n do�rudan/ge�i�li dev paketleri incelenmi� ve kay�tl�
-PASS: Kesin do�rudan s�r�m: phpunit/phpunit
-PASS: Kesin do�rudan s�r�m: phpstan/phpstan
-PASS: Kesin do�rudan s�r�m: squizlabs/php_codesniffer
-PASS: Lock/inceleme/envanter s�r�m e�li�i: myclabs/deep-copy
+PASS: Q-004 için yetkisiz kök lisans kararı alınmadı
+PASS: Bütün doğrudan/geçişli dev paketleri incelenmiş ve kayıtlı
+PASS: Kesin doğrudan sürüm: phpunit/phpunit
+PASS: Kesin doğrudan sürüm: phpstan/phpstan
+PASS: Kesin doğrudan sürüm: squizlabs/php_codesniffer
+PASS: Lock/inceleme/envanter sürüm eşliği: myclabs/deep-copy
 PASS: Kilitli artifact reference: myclabs/deep-copy
-PASS: Lisans metadata e�li�i: myclabs/deep-copy
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: myclabs/deep-copy
-PASS: Lock/inceleme/envanter s�r�m e�li�i: nikic/php-parser
+PASS: Lisans metadata eşliği: myclabs/deep-copy
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: myclabs/deep-copy
+PASS: Lock/inceleme/envanter sürüm eşliği: nikic/php-parser
 PASS: Kilitli artifact reference: nikic/php-parser
-PASS: Lisans metadata e�li�i: nikic/php-parser
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: nikic/php-parser
-PASS: Lock/inceleme/envanter s�r�m e�li�i: phar-io/manifest
+PASS: Lisans metadata eşliği: nikic/php-parser
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: nikic/php-parser
+PASS: Lock/inceleme/envanter sürüm eşliği: phar-io/manifest
 PASS: Kilitli artifact reference: phar-io/manifest
-PASS: Lisans metadata e�li�i: phar-io/manifest
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phar-io/manifest
-PASS: Lock/inceleme/envanter s�r�m e�li�i: phar-io/version
+PASS: Lisans metadata eşliği: phar-io/manifest
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phar-io/manifest
+PASS: Lock/inceleme/envanter sürüm eşliği: phar-io/version
 PASS: Kilitli artifact reference: phar-io/version
-PASS: Lisans metadata e�li�i: phar-io/version
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phar-io/version
-PASS: Lock/inceleme/envanter s�r�m e�li�i: phpstan/phpstan
+PASS: Lisans metadata eşliği: phar-io/version
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phar-io/version
+PASS: Lock/inceleme/envanter sürüm eşliği: phpstan/phpstan
 PASS: Kilitli artifact reference: phpstan/phpstan
-PASS: Lisans metadata e�li�i: phpstan/phpstan
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpstan/phpstan
-PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-code-coverage
+PASS: Lisans metadata eşliği: phpstan/phpstan
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpstan/phpstan
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-code-coverage
 PASS: Kilitli artifact reference: phpunit/php-code-coverage
-PASS: Lisans metadata e�li�i: phpunit/php-code-coverage
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-code-coverage
-PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-file-iterator
+PASS: Lisans metadata eşliği: phpunit/php-code-coverage
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-code-coverage
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-file-iterator
 PASS: Kilitli artifact reference: phpunit/php-file-iterator
-PASS: Lisans metadata e�li�i: phpunit/php-file-iterator
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-file-iterator
-PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-invoker
+PASS: Lisans metadata eşliği: phpunit/php-file-iterator
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-file-iterator
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-invoker
 PASS: Kilitli artifact reference: phpunit/php-invoker
-PASS: Lisans metadata e�li�i: phpunit/php-invoker
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-invoker
-PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-text-template
+PASS: Lisans metadata eşliği: phpunit/php-invoker
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-invoker
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-text-template
 PASS: Kilitli artifact reference: phpunit/php-text-template
-PASS: Lisans metadata e�li�i: phpunit/php-text-template
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-text-template
-PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/php-timer
+PASS: Lisans metadata eşliği: phpunit/php-text-template
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-text-template
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-timer
 PASS: Kilitli artifact reference: phpunit/php-timer
-PASS: Lisans metadata e�li�i: phpunit/php-timer
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/php-timer
-PASS: Lock/inceleme/envanter s�r�m e�li�i: phpunit/phpunit
+PASS: Lisans metadata eşliği: phpunit/php-timer
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-timer
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/phpunit
 PASS: Kilitli artifact reference: phpunit/phpunit
-PASS: Lisans metadata e�li�i: phpunit/phpunit
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: phpunit/phpunit
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/cli-parser
+PASS: Lisans metadata eşliği: phpunit/phpunit
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/phpunit
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/cli-parser
 PASS: Kilitli artifact reference: sebastian/cli-parser
-PASS: Lisans metadata e�li�i: sebastian/cli-parser
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/cli-parser
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/comparator
+PASS: Lisans metadata eşliği: sebastian/cli-parser
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/cli-parser
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/comparator
 PASS: Kilitli artifact reference: sebastian/comparator
-PASS: Lisans metadata e�li�i: sebastian/comparator
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/comparator
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/complexity
+PASS: Lisans metadata eşliği: sebastian/comparator
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/comparator
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/complexity
 PASS: Kilitli artifact reference: sebastian/complexity
-PASS: Lisans metadata e�li�i: sebastian/complexity
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/complexity
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/diff
+PASS: Lisans metadata eşliği: sebastian/complexity
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/complexity
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/diff
 PASS: Kilitli artifact reference: sebastian/diff
-PASS: Lisans metadata e�li�i: sebastian/diff
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/diff
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/environment
+PASS: Lisans metadata eşliği: sebastian/diff
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/diff
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/environment
 PASS: Kilitli artifact reference: sebastian/environment
-PASS: Lisans metadata e�li�i: sebastian/environment
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/environment
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/exporter
+PASS: Lisans metadata eşliği: sebastian/environment
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/environment
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/exporter
 PASS: Kilitli artifact reference: sebastian/exporter
-PASS: Lisans metadata e�li�i: sebastian/exporter
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/exporter
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/global-state
+PASS: Lisans metadata eşliği: sebastian/exporter
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/exporter
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/global-state
 PASS: Kilitli artifact reference: sebastian/global-state
-PASS: Lisans metadata e�li�i: sebastian/global-state
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/global-state
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/lines-of-code
+PASS: Lisans metadata eşliği: sebastian/global-state
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/global-state
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/lines-of-code
 PASS: Kilitli artifact reference: sebastian/lines-of-code
-PASS: Lisans metadata e�li�i: sebastian/lines-of-code
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/lines-of-code
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/object-enumerator
+PASS: Lisans metadata eşliği: sebastian/lines-of-code
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/lines-of-code
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/object-enumerator
 PASS: Kilitli artifact reference: sebastian/object-enumerator
-PASS: Lisans metadata e�li�i: sebastian/object-enumerator
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/object-enumerator
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/object-reflector
+PASS: Lisans metadata eşliği: sebastian/object-enumerator
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/object-enumerator
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/object-reflector
 PASS: Kilitli artifact reference: sebastian/object-reflector
-PASS: Lisans metadata e�li�i: sebastian/object-reflector
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/object-reflector
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/recursion-context
+PASS: Lisans metadata eşliği: sebastian/object-reflector
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/object-reflector
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/recursion-context
 PASS: Kilitli artifact reference: sebastian/recursion-context
-PASS: Lisans metadata e�li�i: sebastian/recursion-context
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/recursion-context
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/type
+PASS: Lisans metadata eşliği: sebastian/recursion-context
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/recursion-context
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/type
 PASS: Kilitli artifact reference: sebastian/type
-PASS: Lisans metadata e�li�i: sebastian/type
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/type
-PASS: Lock/inceleme/envanter s�r�m e�li�i: sebastian/version
+PASS: Lisans metadata eşliği: sebastian/type
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/type
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/version
 PASS: Kilitli artifact reference: sebastian/version
-PASS: Lisans metadata e�li�i: sebastian/version
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: sebastian/version
-PASS: Lock/inceleme/envanter s�r�m e�li�i: squizlabs/php_codesniffer
+PASS: Lisans metadata eşliği: sebastian/version
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/version
+PASS: Lock/inceleme/envanter sürüm eşliği: squizlabs/php_codesniffer
 PASS: Kilitli artifact reference: squizlabs/php_codesniffer
-PASS: Lisans metadata e�li�i: squizlabs/php_codesniffer
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: squizlabs/php_codesniffer
-PASS: Lock/inceleme/envanter s�r�m e�li�i: staabm/side-effects-detector
+PASS: Lisans metadata eşliği: squizlabs/php_codesniffer
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: squizlabs/php_codesniffer
+PASS: Lock/inceleme/envanter sürüm eşliği: staabm/side-effects-detector
 PASS: Kilitli artifact reference: staabm/side-effects-detector
-PASS: Lisans metadata e�li�i: staabm/side-effects-detector
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: staabm/side-effects-detector
-PASS: Lock/inceleme/envanter s�r�m e�li�i: theseer/tokenizer
+PASS: Lisans metadata eşliği: staabm/side-effects-detector
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: staabm/side-effects-detector
+PASS: Lock/inceleme/envanter sürüm eşliği: theseer/tokenizer
 PASS: Kilitli artifact reference: theseer/tokenizer
-PASS: Lisans metadata e�li�i: theseer/tokenizer
-PASS: Kurulu LICENSE/NOTICE inceleme ile ayn�: theseer/tokenizer
-PASS: CI action s�r�m kayd� workflow ile ayn�
+PASS: Lisans metadata eşliği: theseer/tokenizer
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: theseer/tokenizer
+PASS: CI action sürüm kaydı workflow ile aynı
 PASS: Action'lar tam commit SHA ile sabit
-PASS: CI minimum token yetkisi; kal�c� credential ve privileged PR trigger yok
-NOT: Bu denetim g�ncel CVE veritaban�n� sorgulamaz; composer audit ayr� �al��t�r�l�r. Paketlenmi� PHAR i� bile�enleri ve hukuki uygunluk sertifikas� kapsam d���.
+PASS: CI minimum token yetkisi; kalıcı credential ve privileged PR trigger yok
+NOT: Bu denetim güncel CVE veritabanını sorgulamaz; composer audit ayrı çalıştırılır. Paketlenmiş PHAR iç bileşenleri ve hukuki uygunluk sertifikası kapsam dışı.
 
 COMMAND: python scripts/verify_inventory.py
 EXIT: 0
-PASS: Ba�lang�� paketi: 57 dosya kay�tl�
+PASS: Başlangıç paketi: 57 dosya kayıtlı
 PASS: SHA256 .env.example
 PASS: SHA256 .gitattributes
 PASS: SHA256 .github/ISSUE_TEMPLATE/alt-faz.md
@@ -317,6 +317,7 @@ PASS: SHA256 docs/reports/F00.04-composer-audit.json
 PASS: SHA256 docs/reports/F00.04-composer-licenses.json
 PASS: SHA256 docs/reports/F00.04-dependency-review.json
 PASS: SHA256 docs/reports/F00.04.md
+PASS: SHA256 docs/reports/F00.05-checks.txt
 PASS: SHA256 docs/reports/F00.05.md
 PASS: SHA256 docs/reports/README.md
 PASS: SHA256 docs/requirements/ERROR_STATES.md
@@ -363,40 +364,38 @@ PASS: SHA256 scripts/verify_toolchain.py
 PASS: SHA256 tests/Fixtures/unknown-analysis.json
 PASS: SHA256 tests/README.md
 PASS: SHA256 tests/Unit/FixtureContractTest.php
-PASS: Manifest b�t�n takip edilen dosyalar� kaps�yor
-PASS: Takip edilen b�t�n JSON dosyalar� ayr��t�r�l�yor
-PASS: BOM uyumlu CSV ile JSON: ayn� 84 kay�t
-PASS: F00 plan/JSON s�ras� ve tam kapsam�
-PASS: F01 plan/JSON s�ras� ve tam kapsam�
-PASS: F02 plan/JSON s�ras� ve tam kapsam�
-PASS: F03 plan/JSON s�ras� ve tam kapsam�
-PASS: F04 plan/JSON s�ras� ve tam kapsam�
-PASS: F05 plan/JSON s�ras� ve tam kapsam�
-PASS: F06 plan/JSON s�ras� ve tam kapsam�
-PASS: F07 plan/JSON s�ras� ve tam kapsam�
-PASS: F08 plan/JSON s�ras� ve tam kapsam�
+PASS: Manifest bütün takip edilen dosyaları kapsıyor
+PASS: Takip edilen bütün JSON dosyaları ayrıştırılıyor
+PASS: BOM uyumlu CSV ile JSON: aynı 84 kayıt
+PASS: F00 plan/JSON sırası ve tam kapsamı
+PASS: F01 plan/JSON sırası ve tam kapsamı
+PASS: F02 plan/JSON sırası ve tam kapsamı
+PASS: F03 plan/JSON sırası ve tam kapsamı
+PASS: F04 plan/JSON sırası ve tam kapsamı
+PASS: F05 plan/JSON sırası ve tam kapsamı
+PASS: F06 plan/JSON sırası ve tam kapsamı
+PASS: F07 plan/JSON sırası ve tam kapsamı
+PASS: F08 plan/JSON sırası ve tam kapsamı
 PASS: Toplam 65 alt faz
-PASS: Aktif alt faz ve �st durum e�le�iyor
-PASS: Aktif alt faz�n �ncekileri DONE
-PASS: Sonraki alt fazlar ba�lamad�
-PASS: Son onayl� alt faz DONE kay�tlar�yla tutarl�
-PASS: Her DONE i�in tarih ve kullan�c� onay kan�t� var
-PASS: TR/EN anahtar ve parametre e�li�i
-PASS: Ba�lang�� main dosyalar�ndan silinen yok
-PASS: S�n�rl� secret kal�p taramas�: bulgu yok (tam g�venlik denetimi de�ildir)
-PASS: Ger�ek .env dosyas� takip edilmiyor
-PASS: F00 PHP dosyalar� yaln�z TEST/kalite ara�lar� kapsam�nda; uygulama yok
-NOT: Bu kontroller PHP/DB/crawler birim, entegrasyon veya g�venlik testleri de�ildir.
+PASS: Aktif alt faz ve üst durum eşleşiyor
+PASS: Aktif alt fazın öncekileri DONE
+PASS: Sonraki alt fazlar başlamadı
+PASS: Son onaylı alt faz DONE kayıtlarıyla tutarlı
+PASS: Her DONE için tarih ve kullanıcı onay kanıtı var
+PASS: TR/EN anahtar ve parametre eşliği
+PASS: Başlangıç main dosyalarından silinen yok
+PASS: Sınırlı secret kalıp taraması: bulgu yok (tam güvenlik denetimi değildir)
+PASS: Gerçek .env dosyası takip edilmiyor
+PASS: F00 PHP dosyaları yalnız TEST/kalite araçları kapsamında; uygulama yok
+NOT: Bu kontroller PHP/DB/crawler birim, entegrasyon veya güvenlik testleri değildir.
 
 COMMAND: python scripts/build_master_plan.py --check
 EXIT: 0
-PASS: MASTER_PLAN_TR.md 54 kaynakla byte-for-byte g�ncel; dosya de�i�tirilmedi.
+PASS: MASTER_PLAN_TR.md 54 kaynakla byte-for-byte güncel; dosya değiştirilmedi.
 
 COMMAND: git diff --check
 EXIT: 0
-
 COMMAND: git diff --cached --check
 EXIT: 0
-
 CHECK: reverse patch applicability, no mutation
 EXIT: 0

@@ -9,13 +9,13 @@
   "current_subphase": "F00.05",
   "last_approved_phase": null,
   "last_approved_subphase": "F00.04",
-  "status": "IN_PROGRESS",
+  "status": "READY_FOR_REVIEW",
   "branch": "phase/F00.05-repo-policy",
-  "commit_sha": null,
-  "pr_url": null,
+  "commit_sha": "e7164369e45a6fbdd281250fcb8849a36bae7d25",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/5",
   "last_report": "docs/reports/F00.05.md",
   "blockers": [],
-  "next_action": "Yalnız F00.05 repo/PR/rollback/secret kontrolü belgelerini ve doğrulamalarını tamamla; rapor/PR sun ve DUR.",
+  "next_action": "DUR: F00.05 kullanıcı kabulü, PR #5 merge ve F00.06 başlangıç onayını bekle; main ayarı uygulanmadı.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -25,7 +25,7 @@
         "F00.02": "DONE",
         "F00.03": "DONE",
         "F00.04": "DONE",
-        "F00.05": "IN_PROGRESS",
+        "F00.05": "READY_FOR_REVIEW",
         "F00.06": "NOT_STARTED"
       }
     },
@@ -141,9 +141,9 @@
   "next_subphase": "F00.06",
   "approval_required": true,
   "commit_sha_scope": "İlk temiz checkout CI tarafından doğrulanmış içerik commit’i; PR head sonraki sonuç/durum metadata commit’ini de içerebilir.",
-  "push_status": "PENDING",
-  "test_status": "LOCAL_PASS_CI_PENDING",
-  "ci_status": "PENDING",
+  "push_status": "PUSHED",
+  "test_status": "PASS_LOCAL_AND_CI",
+  "ci_status": "SUCCESS",
   "approval_received": false,
   "approvals": {
     "F00.01": {
@@ -212,5 +212,13 @@
     "ui_verification": "STOPPED_BROWSER_URL_NOT_VERIFIABLE",
     "settings_approval_reference": null,
     "proposal": "docs/operations/main-protection.proposal.json"
+  },
+  "ci": {
+    "run_id": 41684279984,
+    "url": "https://github.com/Boydaksu/siteportal/actions/runs/41684279984",
+    "commit_sha": "e7164369e45a6fbdd281250fcb8849a36bae7d25",
+    "status": "completed",
+    "conclusion": "success",
+    "evidence": "docs/reports/F00.05-ci.json"
   }
 }
