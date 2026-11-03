@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.05 — DONE; repo/PR politikası. Uygulama kodu yok.
+> **Durum:** F00.06 — READY_FOR_REVIEW; F00 faz kapanış/kabul. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.05 — DONE; PR #5 onaylandı.
-> **Aktif dal:** `phase/F00.05-repo-policy`. **PR:** [#5](https://github.com/Boydaksu/siteportal/pull/5) (açık). **CI kanıt commit’i:** `e7164369e45a6fbdd281250fcb8849a36bae7d25`.
-> **Son kontrol:** F00.05 yerel kalite/TEST/belge/envanter ve rollback uygulanabilirliği PASS; [CI](https://github.com/Boydaksu/siteportal/actions/runs/41684279984) SUCCESS; son metadata head ayrıca doğrulanır.
-> **Rapor:** [F00.05](docs/reports/F00.05.md). **Sonraki:** F00.06 — Faz kapanış/kabul; onay alındı.
+> **Son onaylanan alt faz:** F00.05 — DONE; PR #5 birleştirildi.
+> **Aktif dal:** `phase/F00.06-phase-closure`. **PR:** [#6](https://github.com/Boydaksu/siteportal/pull/6) (açık).
+> **Son kontrol:** F00 yerel kalite/TEST/belge/envanter PASS; [F00 ana faz özeti](docs/reports/F00-PHASE-SUMMARY.md) hazırlandı.
+> **Rapor:** [F00.06](docs/reports/F00.06.md). **Sonraki:** F01 — Güvenli çekirdek ve worker; ana faz onayı gerekir.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -173,19 +173,18 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Tarih / repo:** 2026-11-03, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), main.
 - **Plan / ürün / ana faz:** blueprint-0.1.0; uygulama yok; F00 / V0.0 IN_PROGRESS, ana faz kabulü yok.
 - **Son onay:** F00.05 DONE; kullanıcı “onaylıyorum” ile kabul, PR #5 merge ve F00.06 başlangıcını onayladı.
-- **Önceki teslim:** [PR #4](https://github.com/Boydaksu/siteportal/pull/4) birleştirildi; merge `36a1f4b6c5b1d2ed9b2cf50b5e348950324d443d`. Kabul commit'i `23324dad1e3c7843f476fd73f7148dfa57070cfb`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41682655805) success.
-- **Aktif alt faz / durum:** F00.05 — Repo ve PR politikası / DONE.
-- **Dal:** `phase/F00.05-repo-policy`; başlangıç main SHA yukarıdaki merge'dir.
-- **Aktif PR / kanıt commit:** [#5](https://github.com/Boydaksu/siteportal/pull/5) açık / `e7164369e45a6fbdd281250fcb8849a36bae7d25`; sonraki metadata head ayrıca kontrol edilir.
-- **CI:** [Run 41684279984](https://github.com/Boydaksu/siteportal/actions/runs/41684279984) SUCCESS; [makine kanıtı](docs/reports/F00.05-ci.json).
-- **Rapor:** [F00.05](docs/reports/F00.05.md).
-- **Yerel sonuç:** PASS; PHP lint/PSR-12/PHPStan, 3 TEST/74 assertion, 4 olumsuz kapı, 7 link TEST, belge/envanter/mimari/toolchain/master ve ters patch kontrolü. Temiz checkout CI success.
+- **Önceki teslim:** [PR #5](https://github.com/Boydaksu/siteportal/pull/5) birleştirildi; merge `411643464e08b16d6bf660978ecec79d6f0472e5`. Kabul commit'i `8edaec86843971cc627cb5c22ad396a389cb69f6`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41707262344) success.
+- **Aktif alt faz / durum:** F00.06 — F00 faz kapanış ve kabul / READY_FOR_REVIEW.
+- **Dal:** `phase/F00.06-phase-closure`; başlangıç main SHA yukarıdaki merge'dir.
+- **Aktif PR / kanıt commit:** [#6](https://github.com/Boydaksu/siteportal/pull/6) açık; kanıt içerik commit’i PR head ile izlenir.
+- **Rapor:** [F00.06](docs/reports/F00.06.md) ve [F00 Ana Faz Kapanış Özeti](docs/reports/F00-PHASE-SUMMARY.md).
+- **Yerel sonuç:** PASS; PHP lint/PSR-12/PHPStan seviye 8, 3 TEST/74 assertion, 4 olumsuz kapı, 7 link TEST, belge/envanter/mimari/toolchain/master kontrolleri PASS.
 - **Uygulama testleri:** SSRF/DB/queue/ACL/UI/E2E N/A; uygulama yok. Yeni kullanıcı arayüz metni veya bağımlılık yok.
-- **Main koruması:** PROPOSED_NOT_APPLIED; gözlenen protected:false. Yönetim API 403; UI URL doğrulaması durdu, ayar değişmedi. Ayrı ayar onayı alınmadı. [Öneri](docs/operations/main-protection.proposal.json).
-- **Native secret scanning:** Etkinliği doğrulanmadı; yerel kalıp kontrolü tam/geçmiş taraması değildir.
+- **Main koruması:** PROPOSED_NOT_APPLIED; gözlenen protected:false. Yönetim API 403; ayar değişmedi. [Öneri](docs/operations/main-protection.proposal.json).
+- **Native secret scanning:** Etkinliği doğrulanmadı; yerel kalıp kontrolü temiz (tam güvenlik denetimi değildir).
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki tek alt faz:** F00.06 NOT_STARTED; kullanıcı başlangıç onayı verdi.
-- **Bir sonraki işlem:** F00.05 kabul/merge ve F00.06 başlangıç onayı alındı; kabul kaydı commit’inin CI’sını doğrula, PR #5’i birleştir, main’den F00.06 dalını aç.
+- **Sonraki ana faz:** F01 — Güvenli çekirdek ve worker; NOT_STARTED; F00 kapanış kabulü olmadan başlamaz.
+- **Bir sonraki işlem:** DUR: F00.06 alt faz kabulü, PR #6 merge ve F00 ana faz kapanış onayını bekle.
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -1230,7 +1229,7 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 **P0:** SSRF, robots, güvenli istek, queue, yetki, doğruluk, temel UI. **P1:** Site mimarisi, CWV, schema, GSC doğrulanmış kullanıcı. **P2:** AI/ajans/white-label/ücretli hesap. **Şimdilik gereksiz:** Kubernetes, mikroservis ağı, herkes için headless Chrome, backlink scraping, Google sırası tahmin modeli, otomatik SEO düzeltme, zorunlu llms.txt.
 
 ## Aktif F00 teslimi
-F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif alt faz F00.04; durum [JSON](project-status.json), kanıt [F00.04 raporu](docs/reports/F00.04.md) içindedir. F00.05 ve sonrası NOT_STARTED.
+F00.01–F00.05 kullanıcı kabulüyle DONE; PR #1–#5 birleştirildi. Aktif alt faz F00.06; durum [JSON](project-status.json), kanıt [F00.06 raporu](docs/reports/F00.06.md) ve [F00 ana faz özeti](docs/reports/F00-PHASE-SUMMARY.md) içindedir. F01 başlamadı.
 
 
 
@@ -1343,6 +1342,7 @@ F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif a
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.05.md` + durum kayıtları.
 
 ### F00.06 — F00 faz kapanış / kabul
+**Uygulama durumu:** READY_FOR_REVIEW; [F00.06 raporu](docs/reports/F00.06.md) ve [F00 ana faz özeti](docs/reports/F00-PHASE-SUMMARY.md). F01 başlamadı.
 **Hedef:** F00 faz kapanış / kabul.
 **Yapılacak işler:**
 1. Önceki alt faz raporlarını ve kanıtları özetle.
@@ -1350,21 +1350,21 @@ F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif a
 3. kullanıcıya kapsamlı kapanış raporu ver.
 
 **Kabul/kanıt:**
-- [ ] F00 ana faz raporu ve kullanıcı kabulü olmadan F01 başlamaz.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] F00 ana faz raporu ve kullanıcı kabulü olmadan F01 başlamaz.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.06.md` + durum kayıtları.
 
 ## Ana faz kapanış kontrolü
-- [ ] Bütün alt fazlar açık kullanıcı onayı ile DONE.
-- [ ] Bütün kabul maddeleri için test kanıtı (komut/çıktı ve commit).
-- [ ] Güvenlik, veri gizliliği ve performans riskleri değerlendirildi.
-- [ ] README ve sistem mimarisi değişen gerçek durumu yansıtıyor.
-- [ ] `docs/reports/F00-PHASE-SUMMARY.md` oluşturuldu; kullanıcıya kapsamlı Türkçe rapor sunuldu.
-- [ ] Kullanıcının açık ana faz onayı bekleniyor; otomatik sonraki faz yok.
+- [x] Bütün alt fazlar açık kullanıcı onayı ile DONE (F00.01-F00.05 DONE, F00.06 teslim edildi).
+- [x] Bütün kabul maddeleri için test kanıtı (komut/çıktı ve commit).
+- [x] Güvenlik, veri gizliliği ve performans riskleri değerlendirildi.
+- [x] README ve sistem mimarisi değişen gerçek durumu yansıtıyor.
+- [x] `docs/reports/F00-PHASE-SUMMARY.md` oluşturuldu; kullanıcıya kapsamlı Türkçe rapor sunuldu.
+- [x] Kullanıcının açık ana faz onayı bekleniyor; otomatik sonraki faz yok.
 
 ## Bitiş raporu şablonu
 Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → riskler/borç → ürün demo bağlantısı → geri alma planı → değişen maliyet → önerilen sonraki faz → **ONAY BEKLENİYOR**.
