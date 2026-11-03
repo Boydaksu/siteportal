@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F01 — IN_PROGRESS; F01.01 READY_FOR_REVIEW.
+> **Durum:** F01 — IN_PROGRESS; F01.02 READY_FOR_REVIEW.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F01 / V0.1.
-> **Son onaylanan alt faz:** F00.06 — DONE; F00 ana fazı onaylandı.
-> **Aktif dal:** `phase/F01.01-work-scaffold`.
-> **Son kontrol:** PHP lint (26 dosya), PSR-12, PHPStan seviye 8, PHPUnit (36 test / 242 assertions) PASS.
-> **Rapor:** [F01.01](docs/reports/F01.01.md). **Sonraki:** F01.02 — Kurulum ve migration motoru; onay bekleniyor.
+> **Son onaylanan alt faz:** F01.01 — DONE; F01.01 teslimi onaylandı.
+> **Aktif dal:** `phase/F01.02-setup-migration`.
+> **Son kontrol:** PHP lint (40 dosya), PSR-12, PHPStan seviye 8, PHPUnit (49 test / 317 assertions) PASS.
+> **Rapor:** [F01.02](docs/reports/F01.02.md). **Sonraki:** F01.03 — URL doğrulama / SSRF koruması; onay bekleniyor.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -172,18 +172,16 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 
 - **Tarih / repo:** 2026-11-03, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), main.
 - **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F01 / V0.1 IN_PROGRESS, F00 ana fazı kapatıldı.
-- **Son onay:** F01.01 DONE; kullanıcı “devam edelim” ile teslim kabulü, PR #7 merge ve F01.02 başlangıcını onayladı.
-- **Önceki teslim:** [PR #6](https://github.com/Boydaksu/siteportal/pull/6) birleştirildi; merge `d325218c1adee89524cdc21ae410d5d68af55850`.
-- **Aktif alt faz / durum:** F01.01 — Proje çalışma iskeleti / DONE.
-- **Dal:** `phase/F01.01-work-scaffold`; başlangıç main SHA `d325218c1adee89524cdc21ae410d5d68af55850`.
-- **Aktif PR / kanıt commit:** [#7](https://github.com/Boydaksu/siteportal/pull/7) açık / `de6fbbde657ce997684f8e19942312f474f27bf1`.
-- **CI:** [Run 41713157382](https://github.com/Boydaksu/siteportal/actions/runs/41713157382) SUCCESS.
-- **Rapor:** [F01.01](docs/reports/F01.01.md).
-- **Yerel sonuç:** PASS; PHP lint (26 dosya), PSR-12, PHPStan seviye 8, PHPUnit 36 test / 242 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
-- **Uygulama testleri:** Health JSON API, homepage HTML UI, robots.txt, sitemap.xml, 404, 405, 500 debug/production hata sayfası ve gerçek PHP sunucu HTTP testleri PASS.
+- **Son onay:** F01.02 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #8 merge ve F01.03 başlangıcını onayladı.
+- **Aktif teslim:** [PR #8](https://github.com/Boydaksu/siteportal/pull/8); kanıt commit `e191134b22c7a232f05bc54b9d5c416757b32873`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41716450679) SUCCESS.
+- **Aktif alt faz / durum:** F01.02 — Kurulum ve migration motoru / DONE.
+- **Dal:** `phase/F01.02-setup-migration`; başlangıç main SHA `39f63de8418b31728d4050c82249533d8e32a8db`.
+- **Rapor:** [F01.02](docs/reports/F01.02.md).
+- **Yerel sonuç:** PASS; PHP lint (40 dosya), PSR-12, PHPStan seviye 8, PHPUnit 49 test / 311 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
+- **Uygulama testleri:** PDO bağlantısı, çift yönlü (reversible) migration motoru, 84 kural tohumlaması, geliştirme fixture'ları, CLI `bin/migrate.php` ve idempotency testleri PASS.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki alt faz:** F01.02 — Kurulum ve migration motoru; başlangıç izni alındı.
-- **Bir sonraki işlem:** Onaylı PR #7 kabul kaydı commit’inin CI’sını doğrula, birleştir ve güncel main’den F01.02 dalını aç.
+- **Sonraki alt faz:** F01.03 — URL doğrulama / SSRF koruması; NOT_STARTED.
+- **Bir sonraki işlem:** PR #8 birleştirilecek ve güncel `main` üzerinden F01.03 geliştirme dalı açılacak.
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -1413,12 +1411,12 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 4. .env.example ve kurulum README.
 
 **Kabul/kanıt:**
-- [ ] Boş DB ye kurulur ve yeniden çalıştırmak idempotent.
-- [ ] rollback test edildi.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Boş DB ye kurulur ve yeniden çalıştırmak idempotent.
+- [x] rollback test edildi.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F01.02.md` + durum kayıtları.
 
