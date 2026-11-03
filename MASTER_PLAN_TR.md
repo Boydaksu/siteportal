@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #10](https://github.com/Boydaksu/siteportal/pull/10) birleştirildi; merge `a07395218cabf9399134bf7798132246884326a3`. Kabul commit'i `2f2be5484aa697f2aa25b29b4ef52b662369408b`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41730270573) SUCCESS.
 - **Aktif alt faz / durum:** F01.05 — DB queue / worker scheduler / READY_FOR_REVIEW.
 - **Dal:** `phase/F01.05-db-queue-worker`; başlangıç main SHA `a07395218cabf9399134bf7798132246884326a3`.
-- **Aktif PR / kanıt commit:** PR açılacak; yerel kanıt PASS.
+- **Aktif PR / kanıt commit:** [PR #11](https://github.com/Boydaksu/siteportal/pull/11); kanıt commit `67241ad91fe9ae5703cb0653665bc783083dbcb1`.
 - **Rapor:** [F01.05](docs/reports/F01.05.md).
 - **Yerel sonuç:** PASS; PHP lint (99 dosya), PSR-12, PHPStan seviye 8, PHPUnit 147 test / 991 assertion PASS (2 skipped [MySQL opsiyonel, sandbox döngüsel ağ]), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
 - **Uygulama testleri:** DatabaseQueue atomik claim (MySQL SKIP LOCKED & SQLite locking), idempotent push, bounded retries ve backoff+jitter, lease ve heartbeat watchdog kurtarması, concurrency çakışmasızlık ve CLI worker/scheduler process testleri PASS.
@@ -1465,13 +1465,13 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 2. CLI worker ve cron fallback.
 
 **Kabul/kanıt:**
-- [ ] İki worker aynı işi iki kere işlemez.
-- [ ] yarım iş güvenli toparlanır.
-- [ ] maksimum deneme durdurur.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] İki worker aynı işi iki kere işlemez.
+- [x] yarım iş güvenli toparlanır.
+- [x] maksimum deneme durdurur.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F01.05.md` + durum kayıtları.
 
