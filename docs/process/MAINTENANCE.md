@@ -49,7 +49,7 @@ git diff --cached --check
 9. [Şablonla](REPORT_TEMPLATE.md) Türkçe rapor sun ve **DUR**. Kullanıcı kabulü, merge ve sonraki alt faz iznini ayrı kaydet.
 
 ## Devir testi
-F00.02 için sohbet geçmişi paylaşılmayan ayrı ajana yalnız etkin repo yolu verilir. Ajan [iş akışındaki](WORKFLOW.md) beş soruyu dosya/alan kanıtıyla yanıtlar. Beklenen cevaplar görev metnine eklenmez. Gerçek yanıt, incelenen commit/dosya durumu ve sonuç rapora kaydedilir. Belirsizlik varsa düzelt ve yeniden denetle. ZIP yoksa bunu açıkça belirt; korunmuş manifest/envanter kullanılır.
+F00.02 için sohbet geçmişi paylaşılmayan ayrı ajana yalnız etkin repo yolu verilir. Ajan [iş akışındaki](WORKFLOW.md) beş soruyu dosya/alan kanıtıyla yanıtlar. Beklenen cevaplar görev metnine eklenmez. Gerçek yanıt, incelenen commit/dosya durumu ve sonuç rapora kaydedilir. Sayım gibi değişken sonuçları ayrı raporlara kopyalamak yerine gerçek komut günlüğüne bağla. Devir ajanı başlatılmadan önce commit/push yap; inceleme boyunca dosyaları değiştirme. Belirsizlik varsa düzelt ve yeni sabit kayıt üzerinde yeniden denetle. ZIP yoksa bunu açıkça belirt; korunmuş manifest/envanter kullanılır.
 
 ## Korunacaklar
 `BUNDLE_INFO.json` ile F00.01 özgün manifest/envanter üretim anına aittir. Etkin `FILE_MANIFEST.sha256` her teslimde yenilenir. `siteportal_seo_masterplan/` eski yerel pakettir; güncel kaynak değildir. Gerçek `.env`, token ve özel veri ekleme. SEO kuralı kodlanmadan dış referansı yeniden oku ve kontrol tarihini kaydet. [Açık sorular](OPEN_QUESTIONS.md) kullanıcı kararı olmadan kapatılmaz.

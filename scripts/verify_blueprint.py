@@ -5,7 +5,7 @@ import json,csv,re,sys
 from document_links import validate_documents
 root=Path(__file__).resolve().parents[1]
 errs=[]
-required=['README.md','AGENTS.md','START_HERE.md','CURRENT_STATUS.md','CHANGELOG.md','project-status.json','docs/roadmap/ROADMAP.md','docs/requirements/RULES.md','docs/reference/SOURCES.md']
+required=['README.md','AGENTS.md','START_HERE.md','CURRENT_STATUS.md','CHANGELOG.md','project-status.json','MASTER_PLAN_TR.md','docs/README.md','docs/process/MAINTENANCE.md','docs/process/OPEN_QUESTIONS.md','docs/roadmap/ROADMAP.md','docs/requirements/RULES.md','docs/reference/SOURCES.md']
 for p in required:
  if not (root/p).is_file(): errs.append(f'Missing {p}')
 try:
@@ -35,7 +35,8 @@ try:
  rules=json.loads((root/'schemas/rule-registry.seed.json').read_text(encoding='utf-8'))
  assert len(rules)>=80
  assert len({r['id'] for r in rules})==len(rules)
- assert all(r['reference'].startswith('S') for r in rules)
+ reference_ids=set(re.findall(r'^\| (S\d+) \|',(root/'docs/reference/SOURCES.md').read_text(encoding='utf-8'),re.M))
+ assert all(r['reference'] in reference_ids for r in rules),'Rule source ID missing in SOURCES.md'
 except Exception as ex:errs.append(f'Rules invalid: {ex}')
 # Etkin belgelerde yerel dosya/başlık hedeflerini ve dış URL biçimini denetle.
 markdown_files=[p for p in root.rglob('*.md') if not any(part in {'.git','siteportal_seo_masterplan'} for part in p.relative_to(root).parts)]

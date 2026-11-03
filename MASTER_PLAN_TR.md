@@ -174,7 +174,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Aktif dal:** `phase/F00.02-docs-contract`
 - **Aktif PR / kanıt commit:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (taslak) / `e34d2b02de76b61a057c438d92365e0847673a7d`; PR head teslim kayıtlarıyla ilerleyebilir
 - **Son rapor:** [F00.02](docs/reports/F00.02.md)
-- **Test:** Belge/bağlantı/envanter PASS, 7/7 bağlantı TEST senaryosu PASS; ayrı ajan devir doğrulaması bekleniyor
+- **Test:** Belge/bağlantı/envanter PASS, 7/7 bağlantı TEST senaryosu PASS; ilk ayrı ajan devir denemesi FAIL (eski sayım ve inceleme sırasında değişiklik); düzeltme sonrası tekrar bekleniyor
 - **CI / uygulama testleri:** NOT_CONFIGURED / N/A; uygulama yok
 - **Aktif engeller:** Yok
 - **Açık kararlar:** [Q-001, Q-002, Q-003](docs/process/OPEN_QUESTIONS.md); API bulgu biçimi, queue tablo adı, en-US takvimi; değiştirilmedi
@@ -2660,7 +2660,7 @@ git diff --cached --check
 9. [Şablonla](docs/process/REPORT_TEMPLATE.md) Türkçe rapor sun ve **DUR**. Kullanıcı kabulü, merge ve sonraki alt faz iznini ayrı kaydet.
 
 ## Devir testi
-F00.02 için sohbet geçmişi paylaşılmayan ayrı ajana yalnız etkin repo yolu verilir. Ajan [iş akışındaki](docs/process/WORKFLOW.md) beş soruyu dosya/alan kanıtıyla yanıtlar. Beklenen cevaplar görev metnine eklenmez. Gerçek yanıt, incelenen commit/dosya durumu ve sonuç rapora kaydedilir. Belirsizlik varsa düzelt ve yeniden denetle. ZIP yoksa bunu açıkça belirt; korunmuş manifest/envanter kullanılır.
+F00.02 için sohbet geçmişi paylaşılmayan ayrı ajana yalnız etkin repo yolu verilir. Ajan [iş akışındaki](docs/process/WORKFLOW.md) beş soruyu dosya/alan kanıtıyla yanıtlar. Beklenen cevaplar görev metnine eklenmez. Gerçek yanıt, incelenen commit/dosya durumu ve sonuç rapora kaydedilir. Sayım gibi değişken sonuçları ayrı raporlara kopyalamak yerine gerçek komut günlüğüne bağla. Devir ajanı başlatılmadan önce commit/push yap; inceleme boyunca dosyaları değiştirme. Belirsizlik varsa düzelt ve yeni sabit kayıt üzerinde yeniden denetle. ZIP yoksa bunu açıkça belirt; korunmuş manifest/envanter kullanılır.
 
 ## Korunacaklar
 `BUNDLE_INFO.json` ile F00.01 özgün manifest/envanter üretim anına aittir. Etkin `FILE_MANIFEST.sha256` her teslimde yenilenir. `siteportal_seo_masterplan/` eski yerel pakettir; güncel kaynak değildir. Gerçek `.env`, token ve özel veri ekleme. SEO kuralı kodlanmadan dış referansı yeniden oku ve kontrol tarihini kaydet. [Açık sorular](docs/process/OPEN_QUESTIONS.md) kullanıcı kararı olmadan kapatılmaz.

@@ -11,7 +11,7 @@
 - **Aktif dal:** `phase/F00.02-docs-contract`
 - **Aktif PR / kanıt commit:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (taslak) / `e34d2b02de76b61a057c438d92365e0847673a7d`; PR head teslim kayıtlarıyla ilerleyebilir
 - **Son rapor:** [F00.02](docs/reports/F00.02.md)
-- **Test:** Belge/bağlantı/envanter PASS, 7/7 bağlantı TEST senaryosu PASS; ayrı ajan devir doğrulaması bekleniyor
+- **Test:** Belge/bağlantı/envanter PASS, 7/7 bağlantı TEST senaryosu PASS; ilk ayrı ajan devir denemesi FAIL (eski sayım ve inceleme sırasında değişiklik); düzeltme sonrası tekrar bekleniyor
 - **CI / uygulama testleri:** NOT_CONFIGURED / N/A; uygulama yok
 - **Aktif engeller:** Yok
 - **Açık kararlar:** [Q-001, Q-002, Q-003](docs/process/OPEN_QUESTIONS.md); API bulgu biçimi, queue tablo adı, en-US takvimi; değiştirilmedi
