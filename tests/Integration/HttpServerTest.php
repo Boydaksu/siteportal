@@ -195,7 +195,7 @@ final class HttpServerTest extends TestCase
             if (is_resource($pipes[2])) {
                 fclose($pipes[2]);
             }
-            proc_terminate($process);
+            proc_terminate($process, 9);
             proc_close($process);
         }
     }
