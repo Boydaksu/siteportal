@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T17:11:03+03:00",
+  "updated_at": "2026-11-03T18:22:10+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": null,
   "current_phase": "F00",
   "current_subphase": "F00.03",
   "last_approved_phase": null,
-  "last_approved_subphase": "F00.02",
-  "status": "READY_FOR_REVIEW",
+  "last_approved_subphase": "F00.03",
+  "status": "DONE",
   "branch": "phase/F00.03-architecture-policy",
   "commit_sha": "0e4206400f34bda67d0358ce1fc05b57dd7ae77d",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/3",
   "last_report": "docs/reports/F00.03.md",
   "blockers": [],
-  "next_action": "DUR: F00.03 teslim kabulünü, PR #3 birleştirme iznini ve F00.04 için açık başlangıç onayını bekle.",
+  "next_action": "Onaylı PR #3’ü birleştir, güncel main’den yalnız F00.04 dalını aç.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -23,7 +23,7 @@
       "subphases": {
         "F00.01": "DONE",
         "F00.02": "DONE",
-        "F00.03": "READY_FOR_REVIEW",
+        "F00.03": "DONE",
         "F00.04": "NOT_STARTED",
         "F00.05": "NOT_STARTED",
         "F00.06": "NOT_STARTED"
@@ -144,7 +144,7 @@
   "push_status": "SUCCESS",
   "test_status": "PASS_DOCUMENT_ARCHITECTURE_INVENTORY_CHECKS",
   "ci_status": "NOT_CONFIGURED",
-  "approval_received": false,
+  "approval_received": true,
   "approvals": {
     "F00.01": {
       "approved_at": "2026-11-03T16:30:43+03:00",
@@ -157,6 +157,12 @@
       "approval_reference": "Kullanıcı, F00.02 teslim kabulü + PR #2 merge + F00.03 başlangıcı sorusuna “devam edelim” yanıtını verdi (2026-11-03).",
       "merge_approved": true,
       "merge_approval_reference": "Kullanıcı, F00.02 teslim kabulü + PR #2 merge + F00.03 başlangıcı sorusuna “devam edelim” yanıtını verdi (2026-11-03)."
+    },
+    "F00.03": {
+      "approved_at": "2026-11-03T18:22:10+03:00",
+      "approval_reference": "2026-11-03: Kullanıcı F00.03 teslim kabulü + PR #3 merge + F00.04 başlangıcı sorusuna “devam edelim” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-03: Kullanıcı F00.03 teslim kabulü + PR #3 merge + F00.04 başlangıcı sorusuna “devam edelim” yanıtını verdi."
     }
   },
   "start_authorization": {

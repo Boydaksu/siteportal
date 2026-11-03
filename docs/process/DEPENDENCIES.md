@@ -1,6 +1,6 @@
 # Bağımlılık, sürüm, lisans ve tedarik zinciri politikası
 
-Tarih: 2026-11-03. Durum: F00.03 için READY_FOR_REVIEW; kullanıcı teslim kabulü bekleniyor. Kaynak sınırları [AGENTS](../../AGENTS.md) ve [ADR-001](../adr/ADR-001-stack.md). Makine envanteri: [dependencies.json](dependencies.json).
+Tarih: 2026-11-03. Durum: F00.03 kullanıcı teslim kabulüyle ACCEPTED (2026-11-03). Kaynak sınırları [AGENTS](../../AGENTS.md) ve [ADR-001](../adr/ADR-001-stack.md). Makine envanteri: [dependencies.json](dependencies.json).
 
 ## Mevcut gerçek durum
 Uygulama Composer/npm paketi yok; composer.json/lock, package.json/lock veya vendor/node_modules eklenmedi. PHP/MySQL/extension'lar planlanan platform gereksinimidir, “hiç dış yazılım yok” anlamına gelmez. Yerel PATH'te PHP ve Composer komutları bulundu; sürüm/extension uyumluluğu çalıştırılmadı. MySQL CLI PATH'te bulunmadı; bu, makinede MySQL kurulmadığını ispatlamaz. Mevcut belge kontrolleri Python standart kütüphanesi ve Git kullanır; Python doğrulama komutları uygulama runtime'ı değildir.

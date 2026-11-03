@@ -2,7 +2,7 @@
   "schema_version": 1,
   "updated_date": "2026-11-03",
   "phase": "F00.03",
-  "policy_status": "READY_FOR_REVIEW",
+  "policy_status": "ACCEPTED",
   "policy_document": "docs/process/DEPENDENCIES.md",
   "application_packages": [],
   "application_manifests_present": false,

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-03 | F00.03 kabulü
+- Kullanıcı “devam edelim” ile F00.03 teslimi, PR #3 birleştirmesi ve F00.04 başlangıcını onayladı; bağımlılık politikası kabul kaydı güncellendi.
+
 ## 2026-11-03 | F00.03 | READY_FOR_REVIEW | PR #3
 - Onaylı F00.02 PR #2 birleştirildi; merge SHA `8ed972e5e74806ea62f5dd50e7f7953570472e4c`.
 - Güncel main'den F00.03 dalı açıldı; teknik ADR gerekçeleri, modül sınırları, bağımlılık/lisans/sürüm politikası ve başlangıç tehdit modeli hazırlandı.

@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.03 — READY_FOR_REVIEW; ADR, bağımlılık politikası ve tehdit modeli inceleme bekliyor. Uygulama kodu yok.
+> **Durum:** F00.03 — DONE; kullanıcı kabulü ve PR #3 birleştirme onayı alındı. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.02 — DONE; [PR #2](https://github.com/Boydaksu/siteportal/pull/2) kullanıcı onayıyla birleştirildi.
+> **Son onaylanan alt faz:** F00.03 — DONE; PR #3 birleştirme onayı alındı.
 > **Aktif dal:** `phase/F00.03-architecture-policy`. **Aktif PR:** [#3](https://github.com/Boydaksu/siteportal/pull/3) (açık, birleştirilmedi). **Kanıt SHA:** `0e4206400f34bda67d0358ce1fc05b57dd7ae77d`.
 > **Son kontrol:** Belge/envanter/sözleşme kontrolleri, 7/7 bağlantı TEST ve master üretim eşliği PASS. CI yok; uygulama/CVE audit testleri N/A.
-> **Rapor:** [F00.03](docs/reports/F00.03.md). **Sonraki:** F00.04 — Test ve CI iskeleti; onaylanmadı, başlamadı.
+> **Rapor:** [F00.03](docs/reports/F00.03.md). **Sonraki:** F00.04 — Test ve CI iskeleti; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
 > **Kararlar:** Q-001–003 ayrı kullanıcı onayıyla uzlaştırıldı; [ADR dizini](docs/adr/README.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
 
@@ -170,10 +170,10 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), özel; varsayılan dal main
 - **Plan / ürün:** blueprint-0.1.0 / çalışan ürün sürümü yok
 - **Aktif ana faz / sürüm:** F00 / V0.0; ana faz kabulü yok
-- **Son onaylanan alt faz:** F00.02 — DONE
+- **Son onaylanan alt faz:** F00.03 — DONE
 - **Önceki PR:** [#2](https://github.com/Boydaksu/siteportal/pull/2), F00.02 kabulü + merge + F00.03 başlangıcı sorusuna “devam edelim” yanıtıyla onaylandı ve birleştirildi
 - **Main başlangıç / merge SHA:** `8ed972e5e74806ea62f5dd50e7f7953570472e4c`
-- **Aktif alt faz / durum:** F00.03 — İlk ADR ve bağımlılık politikası / READY_FOR_REVIEW
+- **Aktif alt faz / durum:** F00.03 — İlk ADR ve bağımlılık politikası / DONE
 - **Aktif dal:** `phase/F00.03-architecture-policy`
 - **Aktif PR / kanıt commit:** [#3](https://github.com/Boydaksu/siteportal/pull/3) (açık, birleştirilmedi) / `0e4206400f34bda67d0358ce1fc05b57dd7ae77d`; son teslim metadata commit’i PR head içinde olabilir
 - **Son rapor:** [F00.03](docs/reports/F00.03.md)
@@ -182,8 +182,8 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Aktif engeller:** Yok
 - **Ayrı onaylanan kararlar:** Q-001 data_source/evidence dizisi, Q-002 analysis_jobs, Q-003 her uygulanan özellikte tam tr/en; kullanıcı “Üç öneriyi de onaylıyorum” dedi. [ADR kayıtları](docs/adr/README.md)
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md), proje dağıtım lisansı; yayın öncesi işletmeci seçimi gerekir. Prod ortamı/saklama/provider kararları ilgili sonraki fazlarda kalır.
-- **Sonraki tek alt faz:** F00.04 — Test ve CI iskeleti; NOT_STARTED, başlangıç onayı yok
-- **Bir sonraki işlem:** DUR. F00.03 teslim kabulü, PR #3 merge ve F00.04 başlangıcı için açık kullanıcı onayı bekle.
+- **Sonraki tek alt faz:** F00.04 — Test ve CI iskeleti; NOT_STARTED; kullanıcı başlangıç onayı verdi
+- **Bir sonraki işlem:** F00.03 kabul/merge ve F00.04 başlangıç onayı alındı; onaylı PR #3’ü birleştir, main’den F00.04 dalını aç.
 
 Karar onayı F00.03 teslim kabulü değildir; PR birleştirmesi ve sonraki alt faz ayrıca onay gerektirir. Eski raporlar ve devir testi snapshot'ları tarihsel kayıttır; güncel durumu bu dosya/JSON/aktif PR gösterir. [Bakım standardı](docs/process/MAINTENANCE.md).
 
@@ -1294,7 +1294,7 @@ F00.01 ve F00.02 kullanıcı kabulüyle DONE; PR #1/#2 birleştirildi. Aktif alt
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.02.md` + durum kayıtları.
 
 ### F00.03 — İlk ADR ve bağımlılık politikası
-**Uygulama durumu:** READY_FOR_REVIEW; [F00.03 raporu](docs/reports/F00.03.md). F00.04 ve sonrası başlamadı.
+**Uygulama durumu:** DONE; [F00.03 raporu](docs/reports/F00.03.md). F00.04 ve sonrası başlamadı.
 **Hedef:** İlk ADR ve bağımlılık politikası.
 **Yapılacak işler:**
 1. PHP/DB/JS teknik sınırlarını ADR ile kaydet.
@@ -1307,7 +1307,7 @@ F00.01 ve F00.02 kullanıcı kabulüyle DONE; PR #1/#2 birleştirildi. Aktif alt
 - [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
 - [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
 - [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.03.md` + durum kayıtları.
 
@@ -2953,7 +2953,7 @@ Bu alt faz belge kapsamındadır. T01–T15 runtime kontrolleri çalıştırılm
 
 # Bağımlılık, sürüm, lisans ve tedarik zinciri politikası
 
-Tarih: 2026-11-03. Durum: F00.03 için READY_FOR_REVIEW; kullanıcı teslim kabulü bekleniyor. Kaynak sınırları [AGENTS](AGENTS.md) ve [ADR-001](docs/adr/ADR-001-stack.md). Makine envanteri: [dependencies.json](docs/process/dependencies.json).
+Tarih: 2026-11-03. Durum: F00.03 kullanıcı teslim kabulüyle ACCEPTED (2026-11-03). Kaynak sınırları [AGENTS](AGENTS.md) ve [ADR-001](docs/adr/ADR-001-stack.md). Makine envanteri: [dependencies.json](docs/process/dependencies.json).
 
 ## Mevcut gerçek durum
 Uygulama Composer/npm paketi yok; composer.json/lock, package.json/lock veya vendor/node_modules eklenmedi. PHP/MySQL/extension'lar planlanan platform gereksinimidir, “hiç dış yazılım yok” anlamına gelmez. Yerel PATH'te PHP ve Composer komutları bulundu; sürüm/extension uyumluluğu çalıştırılmadı. MySQL CLI PATH'te bulunmadı; bu, makinede MySQL kurulmadığını ispatlamaz. Mevcut belge kontrolleri Python standart kütüphanesi ve Git kullanır; Python doğrulama komutları uygulama runtime'ı değildir.
