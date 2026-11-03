@@ -9,5 +9,6 @@
 | F00.05 | [Repo ve PR politikası](F00.05.md) | DONE; kullanıcı kabulü ve birleştirilmiş [PR #5](https://github.com/Boydaksu/siteportal/pull/5) |
 | F00.06 | [F00 faz kapanış ve kabul](F00.06.md) | DONE; kullanıcı kabulü ve PR #6 |
 | **F00 Özeti** | [F00 Ana Faz Kapanış Özeti](F00-PHASE-SUMMARY.md) | DONE; F00 ana fazı onaylandı |
+| F01.01 | [Proje çalışma iskeleti](F01.01.md) | READY_FOR_REVIEW; kullanıcı kabulü ve açık onayı bekleniyor |
 
 Her alt fazda `Fxx.yy.md`, ana faz kapanışında `Fxx-PHASE-SUMMARY.md` oluştur. [Rapor şablonu](../process/REPORT_TEMPLATE.md) ve [bakım rehberi](../process/MAINTENANCE.md) kullanılır. [Özgün paket envanteri](F00.01-inventory.json), [özgün manifest](F00.01-original-manifest.sha256) ve [F00.01 kontrol çıktıları](F00.01-checks.txt) tarihsel kanıttır; sonraki test başarısını temsil etmez. Aktif teslimin gerçek sonuçlarını kendi raporunda tut. Kullanıcıya Türkçe rapor sun ve DUR.

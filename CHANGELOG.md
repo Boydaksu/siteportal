@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-03 | F01.01 | READY_FOR_REVIEW
+- PHP 8.4 tabanlı modüler monolit çalışma iskeleti (`app/Core`, `app/Controllers`, `public`, `config`, `resources`) kuruldu; haricî framework yükü olmadan PSR-4 otopaketi bağlandı.
+- Front Controller (`public/index.php`), Request-ID takibi (`X-Request-Id` ve Correlation ID), dot-notasyonlu Config loader (`app/Core/Config.php`), ErrorHandler (`app/Core/ErrorHandler.php`), View motoru (`app/Core/View.php`), Router (`app/Core/Router.php`) ve iki dilli I18n çeviri altyapısı (`app/Core/I18n.php`) geliştirildi.
+- Health JSON API (`/health`), kullanıcı arayüzü ana sayfası (`/`), `robots.txt`, `sitemap.xml` ile güvenli 404 ve 500 hata sayfaları (`debug=false` durumunda sızıntısız genel hata; `debug=true` durumunda geliştirici detayları) hazırlandı.
+- Türkçe (`tr-TR`) ve İngilizce (`en-US`) metin anahtarları birebir ve yer tutucu parametreleri `{param}` kontrolüyle eksiksiz eşitlendi.
+- Birim ve entegrasyon testleri (`tests/Unit/Core`, `tests/Integration`) yazılarak toplam 36 test, 242 assertion ve gerçek PHP sunucu HTTP çağrıları ile doğrulandı.
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F01.02'ye geçilmez (DUR).
+
 ## 2026-11-03 | F00.06 kabulü ve F00 ana faz kapanışı
 - Kullanıcı “onaylıyorum” ile F00.06 teslimi, PR #6 birleştirmesi ve F00 ana faz kapanışını onayladı; F01 ana fazına geçiş izni alındı.
 

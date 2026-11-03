@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00 — DONE; F00 ana fazı kapandı. Uygulama kodu yok.
-> **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
+> **Durum:** F01 — IN_PROGRESS; F01.01 READY_FOR_REVIEW.
+> **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F01 / V0.1.
 > **Son onaylanan alt faz:** F00.06 — DONE; F00 ana fazı onaylandı.
-> **Aktif dal:** `phase/F00.06-phase-closure`. **PR:** [#6](https://github.com/Boydaksu/siteportal/pull/6) (açık). **CI kanıt commit’i:** `c0509607e797664bd9e0b859f9ca6cd02e1788ae`.
-> **Son kontrol:** F00 yerel kalite/TEST/belge/envanter PASS; [CI](https://github.com/Boydaksu/siteportal/actions/runs/41708624682) SUCCESS; [F00 ana faz özeti](docs/reports/F00-PHASE-SUMMARY.md) onaylandı.
-> **Rapor:** [F00.06](docs/reports/F00.06.md). **Sonraki:** F01.01 — Proje çalışma iskeleti; kullanıcı onayladı.
+> **Aktif dal:** `phase/F01.01-work-scaffold`.
+> **Son kontrol:** PHP lint (26 dosya), PSR-12, PHPStan seviye 8, PHPUnit (36 test / 242 assertions) PASS.
+> **Rapor:** [F01.01](docs/reports/F01.01.md). **Sonraki:** F01.02 — Kurulum ve migration motoru; onay bekleniyor.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -32,7 +32,7 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 | Faz | Hedef sürüm | Konu | Başlangıç durumu |
 |---|---|---|---|
 | F00 | V0.0 | Proje sözleşmesi, repo ve doğrulama altyapısı | DONE |
-| F01 | V0.1 | Güvenli PHP çekirdek ve tarama kuyruğu | BEKLİYOR |
+| F01 | V0.1 | Güvenli PHP çekirdek ve tarama kuyruğu | GELİŞTİRİLİYOR |
 | F02 | V1.0 | Üyeliksiz tek URL SEO analizi | BEKLİYOR |
 | F03 | V1.1 | Kontrollü çok sayfalı site taraması | BEKLİYOR |
 | F04 | V1.2 | Performans, yapılandırılmış veri, mobil | BEKLİYOR |
@@ -171,21 +171,18 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
 - **Tarih / repo:** 2026-11-03, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), main.
-- **Plan / ürün / ana faz:** blueprint-0.1.0; uygulama yok; F00 / V0.0 DONE, F00 ana fazı kapatıldı.
-- **Son onay:** F00.06 DONE ve F00 ana faz kabulü; kullanıcı “onaylıyorum” ile kabul, PR #6 merge ve F01 başlangıcını onayladı.
-- **Önceki teslim:** [PR #5](https://github.com/Boydaksu/siteportal/pull/5) birleştirildi; merge `411643464e08b16d6bf660978ecec79d6f0472e5`. Kabul commit'i `8edaec86843971cc627cb5c22ad396a389cb69f6`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41707262344) success.
-- **Aktif alt faz / durum:** F00.06 — F00 faz kapanış ve kabul / DONE.
-- **Dal:** `phase/F00.06-phase-closure`; başlangıç main SHA yukarıdaki merge'dir.
-- **Aktif PR / kanıt commit:** [#6](https://github.com/Boydaksu/siteportal/pull/6) açık / `c0509607e797664bd9e0b859f9ca6cd02e1788ae`; sonraki metadata head ayrıca kontrol edilir.
-- **CI:** [Run 41708624682](https://github.com/Boydaksu/siteportal/actions/runs/41708624682) SUCCESS.
-- **Rapor:** [F00.06](docs/reports/F00.06.md) ve [F00 Ana Faz Kapanış Özeti](docs/reports/F00-PHASE-SUMMARY.md).
-- **Yerel sonuç:** PASS; PHP lint/PSR-12/PHPStan seviye 8, 3 TEST/74 assertion, 4 olumsuz kapı, 7 link TEST, belge/envanter/mimari/toolchain/master kontrolleri PASS.
-- **Uygulama testleri:** SSRF/DB/queue/ACL/UI/E2E N/A; uygulama yok. Yeni kullanıcı arayüz metni veya bağımlılık yok.
-- **Main koruması:** PROPOSED_NOT_APPLIED; gözlenen protected:false. Yönetim API 403; ayar değişmedi. [Öneri](docs/operations/main-protection.proposal.json).
-- **Native secret scanning:** Etkinliği doğrulanmadı; yerel kalıp kontrolü temiz (tam güvenlik denetimi değildir).
+- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F01 / V0.1 IN_PROGRESS, F00 ana fazı kapatıldı.
+- **Son onay:** F00.06 DONE ve F00 ana faz kabulü; kullanıcı “onaylıyorum” ile kabul, PR #6 merge ve F01.01 başlangıcını onayladı.
+- **Önceki teslim:** [PR #6](https://github.com/Boydaksu/siteportal/pull/6) birleştirildi; merge `d325218c1adee89524cdc21ae410d5d68af55850`.
+- **Aktif alt faz / durum:** F01.01 — Proje çalışma iskeleti / READY_FOR_REVIEW.
+- **Dal:** `phase/F01.01-work-scaffold`; başlangıç main SHA `d325218c1adee89524cdc21ae410d5d68af55850`.
+- **Aktif PR / kanıt commit:** İncelemeye sunuldu (PR açılacak).
+- **Rapor:** [F01.01](docs/reports/F01.01.md).
+- **Yerel sonuç:** PASS; PHP lint (26 dosya), PSR-12, PHPStan seviye 8, PHPUnit 36 test / 242 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
+- **Uygulama testleri:** Health JSON API, homepage HTML UI, robots.txt, sitemap.xml, 404, 405, 500 debug/production hata sayfası ve gerçek PHP sunucu HTTP testleri PASS.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki ana faz:** F01 — Güvenli çekirdek ve worker; NOT_STARTED; kullanıcı F01.01 başlangıç onayı verdi.
-- **Bir sonraki işlem:** F00.06 kabul/merge ve F01.01 başlangıç onayı alındı; kabul kaydı commit’inin CI’sını doğrula, PR #6’yı birleştir, main’den F01.01 dalını aç.
+- **Sonraki alt faz:** F01.02 — Kurulum ve migration motoru; NOT_STARTED.
+- **Bir sonraki işlem:** Kullanıcının F01.01 teslim kabulü ve açık onayı bekleniyor; onay gelmeden F01.02'ye geçilmez (DUR).
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -1397,12 +1394,12 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 2. robots/sitemap ve 404/500 sayfaları.
 
 **Kabul/kanıt:**
-- [ ] PHP server ile health endpoint ve UI açılıyor.
-- [ ] debug kapalı güvenli hata sayfası.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] PHP server ile health endpoint ve UI açılıyor.
+- [x] debug kapalı güvenli hata sayfası.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F01.01.md` + durum kayıtları.
 

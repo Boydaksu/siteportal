@@ -1,6 +1,6 @@
 {
   "name": "boydaksu/siteportal",
-  "description": "SitePortal - F00.04 gelistirme kalite ve test araclari; uygulama henuz yok",
+  "description": "SitePortal - Guvenli cekirdek ve moduler web araclari platformu",
   "type": "project",
   "require": {
     "php": ">=8.4 <9.0"
@@ -9,6 +9,11 @@
     "phpunit/phpunit": "12.5.43",
     "phpstan/phpstan": "2.3.5",
     "squizlabs/php_codesniffer": "4.0.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "SitePortal\\": "app/"
+    }
   },
   "autoload-dev": {
     "psr-4": {
