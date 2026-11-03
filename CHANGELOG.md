@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-03 | F00.05 kabulü
+- Kullanıcı “onaylıyorum” ile F00.05 teslimi, PR #5 birleştirmesi ve F00.06 başlangıcını onayladı; kabul kaydı CI’dan sonra birleştirilecek.
+
 ## 2026-11-03 | F00.05 | READY_FOR_REVIEW
 - Onaylı PR #4 CI sonrasında birleştirildi; güncel main üzerinden repo politikası dalı açıldı.
 - PR/issue/inceleme ve geri alma yönergesi, secret kontrol listesi ve main koruma önerisi hazırlandı.

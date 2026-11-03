@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T20:20:11+03:00",
+  "updated_at": "2026-11-03T22:26:27+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": null,
   "current_phase": "F00",
   "current_subphase": "F00.05",
   "last_approved_phase": null,
-  "last_approved_subphase": "F00.04",
-  "status": "READY_FOR_REVIEW",
+  "last_approved_subphase": "F00.05",
+  "status": "DONE",
   "branch": "phase/F00.05-repo-policy",
   "commit_sha": "e7164369e45a6fbdd281250fcb8849a36bae7d25",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/5",
   "last_report": "docs/reports/F00.05.md",
   "blockers": [],
-  "next_action": "DUR: F00.05 kullanıcı kabulü, PR #5 merge ve F00.06 başlangıç onayını bekle; main ayarı uygulanmadı.",
+  "next_action": "Onaylı PR #5 kabul kaydı commit’inin CI’sını doğrula, birleştir ve güncel main’den F00.06 dalını aç.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -25,7 +25,7 @@
         "F00.02": "DONE",
         "F00.03": "DONE",
         "F00.04": "DONE",
-        "F00.05": "READY_FOR_REVIEW",
+        "F00.05": "DONE",
         "F00.06": "NOT_STARTED"
       }
     },
@@ -144,7 +144,7 @@
   "push_status": "PUSHED",
   "test_status": "PASS_LOCAL_AND_CI",
   "ci_status": "SUCCESS",
-  "approval_received": false,
+  "approval_received": true,
   "approvals": {
     "F00.01": {
       "approved_at": "2026-11-03T16:30:43+03:00",
@@ -169,6 +169,12 @@
       "approval_reference": "2026-11-03: Kullanıcı F00.04 teslim kabulü + PR #4 merge + F00.05 başlangıcı sorusuna “evet onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-03: Kullanıcı F00.04 teslim kabulü + PR #4 merge + F00.05 başlangıcı sorusuna “evet onaylıyorum” yanıtını verdi."
+    },
+    "F00.05": {
+      "approved_at": "2026-11-03T22:26:27+03:00",
+      "approval_reference": "2026-11-03: Kullanıcı F00.05 teslim kabulü + PR #5 merge + F00.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-03: Kullanıcı F00.05 teslim kabulü + PR #5 merge + F00.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {

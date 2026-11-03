@@ -1,11 +1,11 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.05 — READY_FOR_REVIEW; repo/PR politikası. Uygulama kodu yok.
+> **Durum:** F00.05 — DONE; repo/PR politikası. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.04 — DONE; PR #4 birleştirildi.
+> **Son onaylanan alt faz:** F00.05 — DONE; PR #5 onaylandı.
 > **Aktif dal:** `phase/F00.05-repo-policy`. **PR:** [#5](https://github.com/Boydaksu/siteportal/pull/5) (açık). **CI kanıt commit’i:** `e7164369e45a6fbdd281250fcb8849a36bae7d25`.
 > **Son kontrol:** F00.05 yerel kalite/TEST/belge/envanter ve rollback uygulanabilirliği PASS; [CI](https://github.com/Boydaksu/siteportal/actions/runs/41684279984) SUCCESS; son metadata head ayrıca doğrulanır.
-> **Rapor:** [F00.05](docs/reports/F00.05.md). **Sonraki:** F00.06 — Faz kapanış/kabul; NOT_STARTED, onay gerekir.
+> **Rapor:** [F00.05](docs/reports/F00.05.md). **Sonraki:** F00.06 — Faz kapanış/kabul; onay alındı.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
