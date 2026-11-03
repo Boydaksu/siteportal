@@ -2,6 +2,8 @@
 <ruleset name="SitePortal PSR-12">
     <description>SitePortal PSR-12 standardı.</description>
     <file>app</file>
+    <file>bin</file>
+    <file>database</file>
     <file>public</file>
     <file>tests</file>
     <arg name="extensions" value="php"/>

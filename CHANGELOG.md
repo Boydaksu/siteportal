@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-03 | F01.02 | READY_FOR_REVIEW
+- MySQL 8+ / SQLite PDO veritabanı bağlantı katmanı (`app/Core/Database/Connection.php`) ve prepared statement sorgu sarmalayıcısı geliştirildi.
+- Çift yönlü (reversible) migration motoru (`app/Core/Database/MigrationRunner.php`) ve çekirdek veritabanı şeması (`database/migrations/0001_create_core_tables.php`) yazıldı; `users`, `sites`, `rules`, `analyses`, `analysis_jobs` (Q-002 kuyruk tablosu), `pages` ve `findings` tabloları tanımlandı.
+- Geliştirme tohumlama motoru (`app/Core/Database/SeederRunner.php`), 84 kural tohumu (`database/seeders/0001_RuleRegistrySeeder.php`) ve örnek fixture'lar (`database/seeders/0002_DevelopmentFixtureSeeder.php`) uygulandı.
+- CLI migration ve seeder yönetim aracı (`bin/migrate.php`) ve kurulum dokümanı (`database/README.md`) eklendi.
+- Birim ve entegrasyon testleri (`tests/Unit/Database`, `tests/Integration/Database`) yazılarak boş veritabanına kurulum, idempotency, rollback, re-migration ve CLI komutları toplam 49 test / 317 assertion ile doğrulandı.
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F01.03'e geçilmez (DUR).
+
 ## 2026-11-03 | F01.01 kabulü
 - Kullanıcı “devam edelim” ile F01.01 teslimi, PR #7 birleştirmesi ve F01.02 başlangıcını onayladı; kabul kaydı CI’dan sonra birleştirilecek.
 

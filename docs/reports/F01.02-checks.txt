@@ -1,0 +1,397 @@
+=== SITEPORTAL F01.02 CHECK OUTPUTS ===
+Date: 2026-11-03 Europe/Istanbul
+
+--- COMMAND: composer validate ---
+Deprecation Notice: Constant E_STRICT is deprecated in phar:///Applications/ServBay/package/bin/composer/src/Composer/Util/Silencer.php:36
+Deprecation Notice: Constant E_STRICT is deprecated in phar:///Applications/ServBay/package/bin/composer/src/Composer/Util/Silencer.php:36
+Deprecation Notice: Composer\Pcre\Preg::replace(): Implicitly marking parameter $count as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/pcre/src/Preg.php:150
+Deprecation Notice: Composer\Pcre\Preg::replaceCallback(): Implicitly marking parameter $count as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/pcre/src/Preg.php:177
+Deprecation Notice: Composer\Pcre\Preg::replaceCallbackArray(): Implicitly marking parameter $count as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/pcre/src/Preg.php:207
+Deprecation Notice: JsonSchema\Constraints\BaseConstraint::__construct(): Implicitly marking parameter $factory as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/BaseConstraint.php:41
+Deprecation Notice: JsonSchema\Constraints\BaseConstraint::addError(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/BaseConstraint.php:46
+Deprecation Notice: JsonSchema\Constraints\BaseConstraint::addError(): Implicitly marking parameter $more as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/BaseConstraint.php:46
+Deprecation Notice: JsonSchema\Constraints\Factory::__construct(): Implicitly marking parameter $schemaStorage as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Factory.php:76
+Deprecation Notice: JsonSchema\Constraints\Factory::__construct(): Implicitly marking parameter $uriRetriever as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Factory.php:76
+Deprecation Notice: JsonSchema\Constraints\Constraint::incrementPath(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php:42
+Deprecation Notice: JsonSchema\Constraints\Constraint::checkArray(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php:68
+Deprecation Notice: JsonSchema\Constraints\Constraint::checkObject(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php:86
+Deprecation Notice: JsonSchema\Constraints\Constraint::checkType(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php:103
+Deprecation Notice: JsonSchema\Constraints\Constraint::checkUndefined(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php:119
+Deprecation Notice: JsonSchema\Constraints\Constraint::checkString(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php:136
+Deprecation Notice: JsonSchema\Constraints\Constraint::checkNumber(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php:152
+Deprecation Notice: JsonSchema\Constraints\Constraint::checkEnum(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php:168
+Deprecation Notice: JsonSchema\Constraints\Constraint::checkFormat(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/Constraint.php:184
+Deprecation Notice: JsonSchema\Constraints\ConstraintInterface::addError(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/ConstraintInterface.php:43
+Deprecation Notice: JsonSchema\Constraints\ConstraintInterface::addError(): Implicitly marking parameter $more as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/ConstraintInterface.php:43
+Deprecation Notice: JsonSchema\Constraints\ConstraintInterface::check(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/ConstraintInterface.php:64
+Deprecation Notice: JsonSchema\SchemaStorage::__construct(): Implicitly marking parameter $uriRetriever as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/SchemaStorage.php:19
+Deprecation Notice: JsonSchema\SchemaStorage::__construct(): Implicitly marking parameter $uriResolver as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/SchemaStorage.php:19
+Deprecation Notice: JsonSchema\Constraints\SchemaConstraint::check(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/SchemaConstraint.php:31
+Deprecation Notice: JsonSchema\Constraints\UndefinedConstraint::check(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/UndefinedConstraint.php:34
+Deprecation Notice: JsonSchema\Constraints\TypeConstraint::check(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/TypeConstraint.php:42
+Deprecation Notice: JsonSchema\Constraints\ObjectConstraint::check(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/ObjectConstraint.php:30
+Deprecation Notice: JsonSchema\Constraints\ObjectConstraint::validatePatternProperties(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/ObjectConstraint.php:54
+Deprecation Notice: JsonSchema\Constraints\ObjectConstraint::validateElement(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/ObjectConstraint.php:93
+Deprecation Notice: JsonSchema\Constraints\ObjectConstraint::validateProperties(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/ObjectConstraint.php:135
+Deprecation Notice: JsonSchema\Constraints\ObjectConstraint::validateMinMaxConstraint(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/ObjectConstraint.php:177
+Deprecation Notice: JsonSchema\Constraints\StringConstraint::check(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/StringConstraint.php:25
+Deprecation Notice: JsonSchema\Constraints\FormatConstraint::check(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/FormatConstraint.php:27
+Deprecation Notice: JsonSchema\Constraints\EnumConstraint::check(): Implicitly marking parameter $path as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/EnumConstraint.php:25
+Deprecation Notice: Constant E_STRICT is deprecated in phar:///Applications/ServBay/package/bin/composer/src/Composer/Util/Silencer.php:36
+Deprecation Notice: Constant E_STRICT is deprecated in phar:///Applications/ServBay/package/bin/composer/src/Composer/Util/Silencer.php:36
+Deprecation Notice: Composer\CaBundle\CaBundle::getSystemCaRootBundlePath(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/ca-bundle/src/CaBundle.php:67
+Deprecation Notice: Composer\CaBundle\CaBundle::validateCaFile(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/ca-bundle/src/CaBundle.php:161
+Deprecation Notice: Composer\CaBundle\CaBundle::caFileUsable(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/ca-bundle/src/CaBundle.php:341
+Deprecation Notice: Composer\CaBundle\CaBundle::caDirUsable(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/ca-bundle/src/CaBundle.php:354
+Deprecation Notice: Composer\CaBundle\CaBundle::isFile(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/ca-bundle/src/CaBundle.php:367
+Deprecation Notice: Composer\CaBundle\CaBundle::isDir(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/ca-bundle/src/CaBundle.php:382
+Deprecation Notice: Composer\CaBundle\CaBundle::isReadable(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/ca-bundle/src/CaBundle.php:397
+Deprecation Notice: Composer\CaBundle\CaBundle::glob(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/composer/ca-bundle/src/CaBundle.php:412
+Deprecation Notice: Composer\Util\Git::fetchRefOrSyncMirror(): Implicitly marking parameter $prettyVersion as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/src/Composer/Util/Git.php:301
+Deprecation Notice: React\Promise\Promise::__construct(): Implicitly marking parameter $canceller as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/react/promise/src/Promise.php:32
+Deprecation Notice: React\Promise\Promise::then(): Implicitly marking parameter $onFulfilled as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/react/promise/src/Promise.php:44
+Deprecation Notice: React\Promise\Promise::then(): Implicitly marking parameter $onRejected as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/react/promise/src/Promise.php:44
+Deprecation Notice: React\Promise\Promise::resolver(): Implicitly marking parameter $onFulfilled as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/react/promise/src/Promise.php:169
+Deprecation Notice: React\Promise\Promise::resolver(): Implicitly marking parameter $onRejected as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/react/promise/src/Promise.php:169
+Deprecation Notice: React\Promise\Internal\FulfilledPromise::then(): Implicitly marking parameter $onFulfilled as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/react/promise/src/Internal/FulfilledPromise.php:37
+Deprecation Notice: React\Promise\Internal\FulfilledPromise::then(): Implicitly marking parameter $onRejected as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/react/promise/src/Internal/FulfilledPromise.php:37
+Deprecation Notice: React\Promise\Internal\RejectedPromise::then(): Implicitly marking parameter $onFulfilled as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/react/promise/src/Internal/RejectedPromise.php:64
+Deprecation Notice: React\Promise\Internal\RejectedPromise::then(): Implicitly marking parameter $onRejected as nullable is deprecated, the explicit nullable type must be used instead in phar:///Applications/ServBay/package/bin/composer/vendor/react/promise/src/Internal/RejectedPromise.php:64
+Deprecation Notice: Constant E_STRICT is deprecated in phar:///Applications/ServBay/package/bin/composer/src/Composer/Util/Silencer.php:36
+Deprecation Notice: Constant E_STRICT is deprecated in phar:///Applications/ServBay/package/bin/composer/src/Composer/Util/Silencer.php:36
+./composer.json is valid, but with a few warnings
+See https://getcomposer.org/doc/04-schema.md for details on the schema
+# General warnings
+- No license specified, it is recommended to do so. For closed-source software you may use "proprietary" as license.
+Exit code: 0
+
+--- COMMAND: phpcs ---
+Time: 271ms; Memory: 8MB
+Exit code: 0
+
+--- COMMAND: phpstan ---
+[OK] No errors
+
+
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+Exit code: 0
+
+--- COMMAND: phpunit ---
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.4.20
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+
+.................................................                 49 / 49 (100%)
+
+Time: 00:01.571, Memory: 16.00 MB
+
+[30;42mOK (49 tests, 317 assertions)[0m
+Exit code: 0
+
+--- COMMAND: check_quality.py ---
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Controllers/HealthController.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Controllers/HomeController.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Controllers/StaticFileController.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/App.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Config.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/Connection.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/MigrationInterface.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/MigrationRunner.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/SeederInterface.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Database/SeederRunner.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/ErrorHandler.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/I18n.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Request.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Response.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/Router.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/app/Core/View.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/bin/migrate.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/config/app.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/config/database.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/database/migrations/0001_create_core_tables.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/database/seeders/0001_RuleRegistrySeeder.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/database/seeders/0002_DevelopmentFixtureSeeder.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/public/index.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/lang/en-US/messages.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/lang/tr-TR/messages.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/views/errors/404.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/views/errors/500.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/views/home.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/resources/views/layout.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Integration/Database/CliMigrateTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Integration/HttpServerTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/ConfigTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/ErrorHandlerTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/I18nTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/RequestResponseTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Core/RouterTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Database/ConnectionTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Database/MigrationRunnerTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/Database/SeederTest.php
+No syntax errors detected in /Users/dbasgan/Desktop/siteportal/tests/Unit/FixtureContractTest.php
+PASS: 40 proje PHP dosyası lint kontrolünden geçti; vendor/ignore edilen kopyalar kapsam dışı.
+
+ [OK] No errors
+
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.4.20
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+
+.................................................                 49 / 49 (100%)
+
+Time: 00:01.542, Memory: 16.00 MB
+
+[30;42mOK (49 tests, 317 assertions)[0m
+PASS: PHP lint, PSR-12, PHPStan level 8, PHPUnit ve dört olumsuz kalite kapısı TEST'i.
+
+Time: 233ms; Memory: 8MB
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+test_formatter_rejects_non_psr12_input (__main__.QualityGateTests) ... ok
+test_php_lint_rejects_syntax_error (__main__.QualityGateTests) ... ok
+test_static_analysis_rejects_incorrect_return_type (__main__.QualityGateTests) ... ok
+test_test_runner_rejects_failed_assertion (__main__.QualityGateTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.455s
+
+OK
+Exit code: 0
+
+--- COMMAND: test_document_links.py ---
+test_code_fences_do_not_create_links_or_headings (__main__.DocumentLinksTests) ... ok
+test_external_url_format_without_network_request (__main__.DocumentLinksTests) ... ok
+test_missing_file_is_rejected (__main__.DocumentLinksTests) ... ok
+test_missing_fragment_is_rejected (__main__.DocumentLinksTests) ... ok
+test_repository_escape_is_rejected (__main__.DocumentLinksTests) ... ok
+test_turkish_and_duplicate_heading_targets (__main__.DocumentLinksTests) ... ok
+test_url_encoded_local_target (__main__.DocumentLinksTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.006s
+
+OK
+Exit code: 0
+
+--- COMMAND: verify_blueprint.py ---
+ERROR: Phase status invalid:
+ERROR: docs/reports/F01.02.md -> F01.02-checks.txt: yerel hedef yok
+Exit code: 1
+
+--- COMMAND: verify_architecture.py ---
+PASS: ADR referansı mevcut: stack_record
+PASS: ADR referansı mevcut: module_matrix
+PASS: ADR referansı mevcut: dependency_policy
+PASS: ADR referansı mevcut: dependency_inventory
+PASS: ADR referansı mevcut: threat_model
+PASS: Başlangıç ADR kimlikleri korundu
+PASS: Üç sözleşme farkı karar kaydında
+PASS: Q-001 geçerli karar durumu
+PASS: Q-001 gerekçeli ADR mevcut
+PASS: Q-001 açık kullanıcı onayı kayıtlı
+PASS: Q-002 geçerli karar durumu
+PASS: Q-002 gerekçeli ADR mevcut
+PASS: Q-002 açık kullanıcı onayı kayıtlı
+PASS: Q-003 geçerli karar durumu
+PASS: Q-003 gerekçeli ADR mevcut
+PASS: Q-003 açık kullanıcı onayı kayıtlı
+PASS: Bağımlılık envanteri kaynak alt fazını taşıyor
+PASS: ADR kaydı uygulama geliştirilmiş iddiası taşımıyor
+PASS: Paket manifesti durumu gerçek dosyalarla aynı
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: myclabs/deep-copy
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: nikic/php-parser
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phar-io/manifest
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phar-io/version
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpstan/phpstan
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-code-coverage
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-file-iterator
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-invoker
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-text-template
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/php-timer
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: phpunit/phpunit
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/cli-parser
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/comparator
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/complexity
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/diff
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/environment
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/exporter
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/global-state
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/lines-of-code
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/object-enumerator
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/object-reflector
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/recursion-context
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/type
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: sebastian/version
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: squizlabs/php_codesniffer
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: staabm/side-effects-detector
+PASS: Paket sürüm/lisans/güvenlik/onay kaydı tam: theseer/tokenizer
+PASS: Geliştirme envanteri gerçek lock ile aynı
+PASS: Uygulama paketi eklenmedi; araçlar yalnız dev kapsamı
+PASS: Planlanan platform için sahte resolved sürüm yok
+PASS: Yerel test CLI doğrulama kapsamı deployment'tan ayrılmış
+PASS: T01–T15 tehdit kimlikleri eksiksiz ve tekil
+PASS: Yedi güven sınırı kaydedildi
+PASS: Tehdit doğrulama kapıları gerçek yol haritasında
+PASS: Kritik kontrol alanları ve uygulanmama durumu açık
+PASS: Örnek yanıt DEMO olarak işaretli
+PASS: DEMO bulguda mevcut şemanın zorunlu alanları var
+PASS: DEMO rule_id: string
+PASS: DEMO rule_version: string
+PASS: DEMO status: geçerli enum
+PASS: DEMO severity: geçerli enum
+PASS: DEMO confidence: geçerli enum
+PASS: DEMO evidence: array
+PASS: DEMO evidence: nesne listesi
+PASS: DEMO observed_at: string
+PASS: DEMO affected_urls: array
+PASS: DEMO data_source: string
+PASS: Q-001: tek data_source alanı
+PASS: Q-001: evidence nesne dizisi
+PASS: Q-002: crawler queue adı analysis_jobs
+PASS: Q-002: DB/crawler adı eşliği
+PASS: Q-003: uygulanan özelliklerde dil kapsamı açık
+NOT: DEMO kontrolü zorunlu alan/type/enum eşliğidir; tam JSON Schema motoru, gerçek API, CVE/lisans audit veya SSRF testi değildir.
+Exit code: 0
+
+--- COMMAND: verify_toolchain.py ---
+PASS: Uygulama paketi yok; yalnız PHP platform şartı
+PASS: Composer plugin kapalı ve HTTPS zorunlu
+PASS: Otomatik/root Composer script'i eklenmedi
+PASS: Q-004 için yetkisiz kök lisans kararı alınmadı
+PASS: Bütün doğrudan/geçişli dev paketleri incelenmiş ve kayıtlı
+PASS: Kesin doğrudan sürüm: phpunit/phpunit
+PASS: Kesin doğrudan sürüm: phpstan/phpstan
+PASS: Kesin doğrudan sürüm: squizlabs/php_codesniffer
+PASS: Lock/inceleme/envanter sürüm eşliği: myclabs/deep-copy
+PASS: Kilitli artifact reference: myclabs/deep-copy
+PASS: Lisans metadata eşliği: myclabs/deep-copy
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: myclabs/deep-copy
+PASS: Lock/inceleme/envanter sürüm eşliği: nikic/php-parser
+PASS: Kilitli artifact reference: nikic/php-parser
+PASS: Lisans metadata eşliği: nikic/php-parser
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: nikic/php-parser
+PASS: Lock/inceleme/envanter sürüm eşliği: phar-io/manifest
+PASS: Kilitli artifact reference: phar-io/manifest
+PASS: Lisans metadata eşliği: phar-io/manifest
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phar-io/manifest
+PASS: Lock/inceleme/envanter sürüm eşliği: phar-io/version
+PASS: Kilitli artifact reference: phar-io/version
+PASS: Lisans metadata eşliği: phar-io/version
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phar-io/version
+PASS: Lock/inceleme/envanter sürüm eşliği: phpstan/phpstan
+PASS: Kilitli artifact reference: phpstan/phpstan
+PASS: Lisans metadata eşliği: phpstan/phpstan
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpstan/phpstan
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-code-coverage
+PASS: Kilitli artifact reference: phpunit/php-code-coverage
+PASS: Lisans metadata eşliği: phpunit/php-code-coverage
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-code-coverage
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-file-iterator
+PASS: Kilitli artifact reference: phpunit/php-file-iterator
+PASS: Lisans metadata eşliği: phpunit/php-file-iterator
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-file-iterator
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-invoker
+PASS: Kilitli artifact reference: phpunit/php-invoker
+PASS: Lisans metadata eşliği: phpunit/php-invoker
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-invoker
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-text-template
+PASS: Kilitli artifact reference: phpunit/php-text-template
+PASS: Lisans metadata eşliği: phpunit/php-text-template
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-text-template
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/php-timer
+PASS: Kilitli artifact reference: phpunit/php-timer
+PASS: Lisans metadata eşliği: phpunit/php-timer
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/php-timer
+PASS: Lock/inceleme/envanter sürüm eşliği: phpunit/phpunit
+PASS: Kilitli artifact reference: phpunit/phpunit
+PASS: Lisans metadata eşliği: phpunit/phpunit
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: phpunit/phpunit
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/cli-parser
+PASS: Kilitli artifact reference: sebastian/cli-parser
+PASS: Lisans metadata eşliği: sebastian/cli-parser
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/cli-parser
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/comparator
+PASS: Kilitli artifact reference: sebastian/comparator
+PASS: Lisans metadata eşliği: sebastian/comparator
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/comparator
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/complexity
+PASS: Kilitli artifact reference: sebastian/complexity
+PASS: Lisans metadata eşliği: sebastian/complexity
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/complexity
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/diff
+PASS: Kilitli artifact reference: sebastian/diff
+PASS: Lisans metadata eşliği: sebastian/diff
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/diff
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/environment
+PASS: Kilitli artifact reference: sebastian/environment
+PASS: Lisans metadata eşliği: sebastian/environment
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/environment
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/exporter
+PASS: Kilitli artifact reference: sebastian/exporter
+PASS: Lisans metadata eşliği: sebastian/exporter
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/exporter
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/global-state
+PASS: Kilitli artifact reference: sebastian/global-state
+PASS: Lisans metadata eşliği: sebastian/global-state
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/global-state
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/lines-of-code
+PASS: Kilitli artifact reference: sebastian/lines-of-code
+PASS: Lisans metadata eşliği: sebastian/lines-of-code
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/lines-of-code
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/object-enumerator
+PASS: Kilitli artifact reference: sebastian/object-enumerator
+PASS: Lisans metadata eşliği: sebastian/object-enumerator
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/object-enumerator
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/object-reflector
+PASS: Kilitli artifact reference: sebastian/object-reflector
+PASS: Lisans metadata eşliği: sebastian/object-reflector
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/object-reflector
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/recursion-context
+PASS: Kilitli artifact reference: sebastian/recursion-context
+PASS: Lisans metadata eşliği: sebastian/recursion-context
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/recursion-context
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/type
+PASS: Kilitli artifact reference: sebastian/type
+PASS: Lisans metadata eşliği: sebastian/type
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/type
+PASS: Lock/inceleme/envanter sürüm eşliği: sebastian/version
+PASS: Kilitli artifact reference: sebastian/version
+PASS: Lisans metadata eşliği: sebastian/version
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: sebastian/version
+PASS: Lock/inceleme/envanter sürüm eşliği: squizlabs/php_codesniffer
+PASS: Kilitli artifact reference: squizlabs/php_codesniffer
+PASS: Lisans metadata eşliği: squizlabs/php_codesniffer
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: squizlabs/php_codesniffer
+PASS: Lock/inceleme/envanter sürüm eşliği: staabm/side-effects-detector
+PASS: Kilitli artifact reference: staabm/side-effects-detector
+PASS: Lisans metadata eşliği: staabm/side-effects-detector
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: staabm/side-effects-detector
+PASS: Lock/inceleme/envanter sürüm eşliği: theseer/tokenizer
+PASS: Kilitli artifact reference: theseer/tokenizer
+PASS: Lisans metadata eşliği: theseer/tokenizer
+PASS: Kurulu LICENSE/NOTICE inceleme ile aynı: theseer/tokenizer
+PASS: CI action sürüm kaydı workflow ile aynı
+PASS: Action'lar tam commit SHA ile sabit
+PASS: CI minimum token yetkisi; kalıcı credential ve privileged PR trigger yok
+NOT: Bu denetim güncel CVE veritabanını sorgulamaz; composer audit ayrı çalıştırılır. Paketlenmiş PHAR iç bileşenleri ve hukuki uygunluk sertifikası kapsam dışı.
+Exit code: 0
+
+--- COMMAND: verify_inventory.py ---
+PASS: Başlangıç paketi: 57 dosya kayıtlı
+PASS: SHA256 .env.example
+PASS: SHA256 .gitattributes
+PASS: SHA256 .github/ISSUE_TEMPLATE/alt-faz.md
+PASS: SHA256 .github/ISSUE_TEMPLATE/hata.md
+PASS: SHA256 .github/PULL_REQUEST_TEMPLATE.md
+PASS: SHA256 .github/workflows/quality.yml
+PASS: SHA256 .gitignore
+PASS: SHA256 AGENTS.md
+PASS: SHA256 BUNDLE_INFO.json
+
+FAIL: SHA256 CHANGELOG.md
+Exit code: 1
+
+--- COMMAND: build_master_plan.py --check ---
+PASS: MASTER_PLAN_TR.md 54 kaynakla byte-for-byte güncel; dosya değiştirilmedi.
+Exit code: 0
