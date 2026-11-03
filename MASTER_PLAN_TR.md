@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #7](https://github.com/Boydaksu/siteportal/pull/7) birleştirildi; merge `39f63de8418b31728d4050c82249533d8e32a8db`. Kabul commit'i `1da5bb77b1c5c5106c2902431111b1b1b4cd8b7d`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41713764555) SUCCESS.
 - **Aktif alt faz / durum:** F01.02 — Kurulum ve migration motoru / READY_FOR_REVIEW.
 - **Dal:** `phase/F01.02-setup-migration`; başlangıç main SHA `39f63de8418b31728d4050c82249533d8e32a8db`.
-- **Aktif PR / kanıt commit:** İncelemeye sunuldu (PR açılacak).
+- **Aktif PR / kanıt commit:** [PR #8](https://github.com/Boydaksu/siteportal/pull/8); kanıt commit `5e7f47442fe41b5b018b71465b881c757fa176c7`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41716027572) SUCCESS.
 - **Rapor:** [F01.02](docs/reports/F01.02.md).
 - **Yerel sonuç:** PASS; PHP lint (40 dosya), PSR-12, PHPStan seviye 8, PHPUnit 49 test / 317 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
 - **Uygulama testleri:** PDO bağlantısı, çift yönlü (reversible) migration motoru, 84 kural tohumlaması, geliştirme fixture'ları, CLI `bin/migrate.php` ve idempotency testleri PASS.
