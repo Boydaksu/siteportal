@@ -11,11 +11,11 @@
   "last_approved_subphase": "F00.01",
   "status": "IN_PROGRESS",
   "branch": "phase/F00.02-docs-contract",
-  "commit_sha": null,
-  "pr_url": null,
+  "commit_sha": "e34d2b02de76b61a057c438d92365e0847673a7d",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/2",
   "last_report": "docs/reports/F00.02.md",
   "blockers": [],
-  "next_action": "Yalnız F00.02 belge ve devir kontrollerini bitir, PR hazırla ve kullanıcı kabulü için DUR.",
+  "next_action": "F00.02 ayrı ajan devir testini ve son kayıtlarını tamamla; ardından kullanıcı kabulü için DUR. F00.03 başlama.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -141,7 +141,7 @@
   "next_subphase": "F00.03",
   "approval_required": true,
   "commit_sha_scope": "Bu alt fazın ilk doğrulanmış teslim commit’i; PR head sonraki teslim kayıtlarını da içerebilir.",
-  "push_status": "PENDING",
+  "push_status": "SUCCESS",
   "test_status": "PASS_DOCUMENT_CHECKS_HANDOFF_PENDING",
   "ci_status": "NOT_CONFIGURED",
   "approval_received": false,

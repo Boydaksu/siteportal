@@ -15,8 +15,8 @@
 > **Durum:** F00.02 — IN_PROGRESS; belge sözleşmesi ve devir doğrulaması. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
 > **Son onaylanan alt faz:** F00.01 — DONE; [PR #1](https://github.com/Boydaksu/siteportal/pull/1) kullanıcı onayıyla birleştirildi.
-> **Aktif dal:** `phase/F00.02-docs-contract`. **Aktif PR / kanıt SHA:** Henüz oluşturulmadı.
-> **Son kontrol:** F00.01 belge/envanter kontrolleri PASS; F00.02 kontrolleri sürüyor. CI yok; uygulama testleri N/A.
+> **Aktif dal:** `phase/F00.02-docs-contract`. **Aktif PR:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (taslak). **Kanıt SHA:** `e34d2b02de76b61a057c438d92365e0847673a7d`.
+> **Son kontrol:** F00.02 belge/envanter ve 7 TEST PASS; ayrı ajan devir testi bekleniyor. CI yok; uygulama testleri N/A.
 > **Rapor:** [F00.02](docs/reports/F00.02.md). **Sonraki:** F00.03 — İlk ADR ve bağımlılık politikası; henüz onaylanmadı, başlamadı.
 > **Açık kararlar:** [Q-001–003](docs/process/OPEN_QUESTIONS.md). Aktif işi durduran teknik engel yok.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
@@ -172,14 +172,14 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Main başlangıç / merge SHA:** `09716d298587dc29ea5d9092127a65d0f24a4c07`
 - **Aktif alt faz / durum:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir / IN_PROGRESS
 - **Aktif dal:** `phase/F00.02-docs-contract`
-- **Aktif PR / kanıt commit:** Henüz oluşturulmadı; F00.01 PR'ı aktif PR değildir
+- **Aktif PR / kanıt commit:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (taslak) / `e34d2b02de76b61a057c438d92365e0847673a7d`; PR head teslim kayıtlarıyla ilerleyebilir
 - **Son rapor:** [F00.02](docs/reports/F00.02.md)
-- **Test:** F00.02 belge/bağlantı/envanter ve sıfır bağlamlı devir doğrulaması sürüyor
+- **Test:** Belge/bağlantı/envanter PASS, 7/7 bağlantı TEST senaryosu PASS; ayrı ajan devir doğrulaması bekleniyor
 - **CI / uygulama testleri:** NOT_CONFIGURED / N/A; uygulama yok
 - **Aktif engeller:** Yok
 - **Açık kararlar:** [Q-001, Q-002, Q-003](docs/process/OPEN_QUESTIONS.md); API bulgu biçimi, queue tablo adı, en-US takvimi; değiştirilmedi
 - **Sonraki tek alt faz:** F00.03 — İlk ADR ve bağımlılık politikası; NOT_STARTED, başlangıç onayı alınmadı
-- **Bir sonraki işlem:** Yalnız F00.02'yi doğrula, PR/rapor hazırla ve kullanıcı kabulü için DUR. PR #2 henüz varsayılmamalı.
+- **Bir sonraki işlem:** F00.02 devir testini ve son teslim kaydını bitir; kullanıcı kabulü için DUR.
 
 Durum alanlarının anlamı ve komutlar: [bakım rehberi](docs/process/MAINTENANCE.md). Etkin kayıtlar köktedir; `siteportal_seo_masterplan/` ve BUNDLE_INFO üretim anına aittir. F00.02 başlangıç izni teslim kabulü değildir. PR #1 dışındaki birleştirmeler için yeni açık onay gerekir.
 
