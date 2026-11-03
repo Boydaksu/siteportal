@@ -40,3 +40,6 @@ Gerçek alan adı kesinleşmediyse `type` canonical link değiştirilebilir. Hat
 
 ## OpenAPI
 `sсhemas` altında taslak sözleşme bulunur; gerçek endpoint çıktıları implementasyonla güncellenip contract tests ile doğrulanacak. v1 yayınlandıktan sonra breaking changes yeni sürüm gerektirir.
+
+## Finding biçimi — F00.03 kullanıcı onaylı uzlaştırma
+Q-001 için [ADR-006](../adr/ADR-006-contract-alignment.md) onaylandı. API Finding alanı `data_source` string, `evidence` nesnelerden oluşan dizidir. Ölçüm yoksa boş dizi veya uygun UNKNOWN/N/A kullanılır; sahte kanıt üretilmez. [Bulgu şeması](../../examples/finding.schema.json) ve [DEMO yanıt](../../examples/analysis-response.example.json) aynı biçimi gösterir. Bu adlandırma provider adaptörünün source() metodu veya gerçek API implementasyonu değildir. Kanıt hâlâ güvenilmeyen veridir ve bağlama uygun escape/maskeleme gerektirir.

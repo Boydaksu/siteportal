@@ -26,7 +26,7 @@ Herkesin URL gönderebildiği sistem, siteye zarar vermeden, özel ağlara ulaş
 Sadece fragmentı kaldırmak güvenli genel varsayım. Path case, slash ve anlamlı query parametreleri rastgele normalize edilmez. `utm_*` gibi izleme parametrelerini ayrı heuristik olarak değerlendir; her silme kuralı yanlış eşleme testinden geçmeli. Canonical URL hint, otomatik crawl dedup ile aynı kavram değil.
 
 ## Queue modeli
-`jobs(id,type,analysis_id,payload_json,status,priority,attempts,max_attempts,available_at,leased_until,worker_id,idempotency_key,last_error,created_at,updated_at)`; transaction ile atomik claim, `leased_until` ile crash recover, exponential backoff+jitter, dead letter, job cancellation, heartbeat ve bounded retries. MySQL sürümünün `SKIP LOCKED` davranışı test edilmeden kullanılmaz.
+`analysis_jobs(id,type,analysis_id,payload_json,status,priority,attempts,max_attempts,available_at,leased_until,worker_id,idempotency_key,last_error,created_at,updated_at)`; transaction ile atomik claim, `leased_until` ile crash recover, exponential backoff+jitter, dead letter, job cancellation, heartbeat ve bounded retries. MySQL sürümünün `SKIP LOCKED` davranışı test edilmeden kullanılmaz.
 
 ## Dış istekler
 Google PageSpeed ve CrUX gibi provider entegrasyonları URL parametrelerini alabilir; bu servislerin döndürdüğü bilgiler kullanıcı taraması olarak ayrı kaynak. Provider hostları allowlist, API anahtarları yalnızca backend. Browser renderer egress sınırı, sandbox, CPU/memory, browser timeout ve istemsiz dosya erişimini engelleme zorunlu.
@@ -39,3 +39,6 @@ Google PageSpeed ve CrUX gibi provider entegrasyonları URL parametrelerini alab
 - API quota → entegrasyon bulgusu UNKNOWN, temel HTML sürer.
 - Sıra job crash → lease dolunca idempotent retry.
 - Çok büyük content → `BODY_LIMIT`, kontrol edilemeyen kurallar UNKNOWN.
+
+## F00.03 sözleşme onayı
+Q-002 kullanıcı onayıyla tek analiz queue tablo adı `analysis_jobs` olarak uzlaştırıldı; [ADR-006](../adr/ADR-006-contract-alignment.md) gerekçe ve geri dönüşü açıklar. Örnek modeldir, migration veya DB işlemi değildir.

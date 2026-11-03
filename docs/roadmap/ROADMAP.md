@@ -37,4 +37,4 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 **P0:** SSRF, robots, güvenli istek, queue, yetki, doğruluk, temel UI. **P1:** Site mimarisi, CWV, schema, GSC doğrulanmış kullanıcı. **P2:** AI/ajans/white-label/ücretli hesap. **Şimdilik gereksiz:** Kubernetes, mikroservis ağı, herkes için headless Chrome, backlink scraping, Google sırası tahmin modeli, otomatik SEO düzeltme, zorunlu llms.txt.
 
 ## Aktif F00 teslimi
-F00.01 kullanıcı kabulüyle DONE ve PR #1 birleştirildi. Aktif alt faz F00.02; durum [JSON](../../project-status.json), kanıt [F00.02 raporu](../reports/F00.02.md) içindedir. F00.03 ve sonrası NOT_STARTED.
+F00.01 ve F00.02 kullanıcı kabulüyle DONE; PR #1/#2 birleştirildi. Aktif alt faz F00.03; durum [JSON](../../project-status.json), kanıt [F00.03 raporu](../reports/F00.03.md) içindedir. F00.04 ve sonrası NOT_STARTED.

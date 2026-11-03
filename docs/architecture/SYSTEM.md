@@ -44,3 +44,6 @@ Dış bağımlılık için önce interface ve fixture, sonra implementasyon. DB 
 
 ## Teknik borç ilkesi
 Yeni servis sadece gözlemlenmiş ihtiyaç için. Redis, Kafka, Kubernetes, mikroservis ve sürekli Chrome yalnızca kabul edilmiş performans yük testiyle gerekçelendirilirse. Açık kaynak bağımlılık sürümü ve lisansını kaydet.
+
+## F00.03 gerekçe ve sınır kayıtları
+Mevcut teknik plan [ADR-001](../adr/ADR-001-stack.md) içinde seçenek/gerekçe/etki/geri dönüşle açılmıştır. [Modül matrisi](MODULES.md), [bağımlılık politikası](../process/DEPENDENCIES.md) ve [tehdit modeli](THREAT_MODEL.md) uygulanacak kabul sınırlarıdır; çalışan kod iddiası değildir.

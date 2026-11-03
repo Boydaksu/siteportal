@@ -33,3 +33,6 @@ OWASP SSRF Prevention Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheet
 
 ## Güvenlik politikası
 Bu araç aktif penetrasyon, port scanning, auth bypass, saldırı simülasyonu veya güvenlik açığı sömürüsü yapmaz. SEO dışı güvenlik başlıkları bilgilendirici ayrı raporlanır. P0 güvenlik açığı varsa kamuya açma ve fazı DONE sayma.
+
+## F00.03 tehdit ve tedarik zinciri kaydı
+[Varlıklar, güven sınırları ve T01–T15 matrisi](THREAT_MODEL.md) her riskin sorumlu modülünü, test fazını ve kalan riskini gösterir. [Bağımlılık politikası](../process/DEPENDENCIES.md) kesin sürüm/lock, lisans, advisory ve plugin/script kabul kapısını tanımlar. Bunlar plan kayıtlarıdır; runtime veya audit testleri henüz geçilmiş değildir.

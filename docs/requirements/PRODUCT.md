@@ -21,7 +21,7 @@ SitePortal birden çok araç barındırabilen, minimum bakım maliyetli web-util
 - Her sürüm azami maliyet, maksimum URL, süre, request byte, API çağrısı sınırlarını açıkça gösterir.
 
 ## 4. V1.0 kesin dahil (P0)
-Tek URL anonim tarama; URL doğrulama; robots/sitemap ilk kontrol; HTTP/canonical/meta/headings/images/links; rule engine; teknik puan + ölçüm kapsamı; açıklamalı kanıt, sınırlı cache, progress, kısa ömürlü özel rapor, HTTP API, temel admin, Türkçe UI, İngilizce çeviri şablonu, fail-closed SSRF, queue/worker/cron, test/CI ve dokümantasyon.
+Tek URL anonim tarama; URL doğrulama; robots/sitemap ilk kontrol; HTTP/canonical/meta/headings/images/links; rule engine; teknik puan + ölçüm kapsamı; açıklamalı kanıt, sınırlı cache, progress, kısa ömürlü özel rapor, HTTP API, temel admin, Türkçe UI, uygulanan özelliklerde tam İngilizce çeviri anahtarları, fail-closed SSRF, queue/worker/cron, test/CI ve dokümantasyon.
 
 ## 5. V1.0 kapsam dışı (sonraya)
 500+ URL crawl, gerçek GSC, otomatik indeksleme, backlink veritabanı, rakip analizi, sabit AI sıralama puanı, mevzuat sertifikasyonu, bütün sitelerde JS render, abonelik tahsilatı, ajans white-label.

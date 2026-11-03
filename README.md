@@ -1,12 +1,12 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.02 — DONE; kullanıcı kabulü ve PR #2 birleştirme onayı alındı. Uygulama kodu yok.
+> **Durum:** F00.03 — DONE; kullanıcı kabulü ve PR #3 birleştirme onayı alındı. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.02 — DONE; PR #2 birleştirme onayı alındı.
-> **Aktif dal:** `phase/F00.02-docs-contract`. **Aktif PR:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (açık, birleştirilmedi). **Devir kanıtı SHA:** `5bf77121efb203393d8e61eb7fbfa6f7e700f2e9`.
-> **Son kontrol:** Belge/envanter, 7/7 TEST ve sıfır bağlamlı devir PASS. CI yok; uygulama testleri N/A.
-> **Rapor:** [F00.02](docs/reports/F00.02.md). **Sonraki:** F00.03 — İlk ADR ve bağımlılık politikası; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
-> **Açık kararlar:** [Q-001–003](docs/process/OPEN_QUESTIONS.md). Aktif işi durduran teknik engel yok.
+> **Son onaylanan alt faz:** F00.03 — DONE; PR #3 birleştirme onayı alındı.
+> **Aktif dal:** `phase/F00.03-architecture-policy`. **Aktif PR:** [#3](https://github.com/Boydaksu/siteportal/pull/3) (açık, birleştirilmedi). **Kanıt SHA:** `0e4206400f34bda67d0358ce1fc05b57dd7ae77d`.
+> **Son kontrol:** Belge/envanter/sözleşme kontrolleri, 7/7 bağlantı TEST ve master üretim eşliği PASS. CI yok; uygulama/CVE audit testleri N/A.
+> **Rapor:** [F00.03](docs/reports/F00.03.md). **Sonraki:** F00.04 — Test ve CI iskeleti; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
+> **Kararlar:** Q-001–003 ayrı kullanıcı onayıyla uzlaştırıldı; [ADR dizini](docs/adr/README.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
 
 ## Proje
@@ -29,7 +29,7 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 | F08 | V4.0 | Ölçeklenebilirlik, yaygın çoklu dil ve olgunluk | BEKLİYOR |
 
 ## Tasarımın değişmez kuralları
-- **Türkçe önce, tüm kullanıcı metinleri çeviri anahtarlarından**; İngilizce temel desteği mimaride ilk günden.
+- **Türkçe önce, tüm kullanıcı metinleri çeviri anahtarlarından**; uygulanan kullanıcı metinlerinin İngilizce anahtarları kendi fazında tamamlanır.
 - **Modüler PHP 8.4+**, MySQL 8+, sunucuda render edilen HTML ve hafif JS; kalıcı daemon zorunlu değil. VPS ilk tercih. Browser render izole opsiyonel worker.
 - **Gerçek SEO verisi ile öneri ayrı tutulur.** Google'ın resmî bir 0-100 SEO sıralama puanı yoktur. Kendi puanımızın ağırlıkları açıkça açıklanır.
 - **SSRF koruması olmadan dış URL isteği yok.** Yönlendirme, DNS, IP, port, boyut ve hız kontrolü bütün HTTP yollarında geçerli.
@@ -57,6 +57,9 @@ Her alt faz tesliminde: `README` durum satırı + `CURRENT_STATUS.md` + `project
 Depo çalışan uygulama değil, sürümlendirilmiş geliştirme şartnamesi ve devir kayıtları içerir. Uygulama F01'den itibaren üretilecek; kurulum adımları F01.02'de gerçek komutlarla doğrulanacak. Belge kontrolleri uygulamanın çalıştığı anlamına gelmez.
 
 ## Başlangıç paketi ve kayıtlar
-F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını düzenler. F00.03 ve sonraki işler başlamadı.
+F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını tamamladı ve kabul edildi. F00.03 teknik kararları/sınırları belgeler; F00.04 ve sonraki işler başlamadı.
 
 `BUNDLE_INFO.json` orijinal paket üretim anını anlatır; canlı durum JSON'dadır. `FILE_MANIFEST.sha256` etkin dosyaları, [özgün manifest](docs/reports/F00.01-original-manifest.sha256) ilk paketi doğrular. Yerel `siteportal_seo_masterplan/` eski korunmuş kopyadır; etkin çalışma kök dizindedir.
+
+## Mimari ve tedarik zinciri kayıtları
+[ADR dizini](docs/adr/README.md), [modül sınırları](docs/architecture/MODULES.md), [bağımlılık politikası](docs/process/DEPENDENCIES.md) ve [tehdit modeli](docs/architecture/THREAT_MODEL.md) uygulanacak sınırları açıklar; runtime veya güvenlik testi geçişi değildir.

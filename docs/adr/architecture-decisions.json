@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "phase": "F00.03",
+  "baseline_adr_ids": [
+    "ADR-001",
+    "ADR-002",
+    "ADR-003",
+    "ADR-004",
+    "ADR-005"
+  ],
+  "stack_record": "docs/adr/ADR-001-stack.md",
+  "module_matrix": "docs/architecture/MODULES.md",
+  "dependency_policy": "docs/process/DEPENDENCIES.md",
+  "dependency_inventory": "docs/process/dependencies.json",
+  "threat_model": "docs/architecture/THREAT_MODEL.md",
+  "question_decisions": {
+    "Q-001": {
+      "status": "APPROVED",
+      "adr": "docs/adr/ADR-006-contract-alignment.md",
+      "proposal": "Finding: data_source string; evidence array of objects",
+      "approval_reference": "2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi.",
+      "approved_at": "2026-11-03T17:04:21+03:00"
+    },
+    "Q-002": {
+      "status": "APPROVED",
+      "adr": "docs/adr/ADR-006-contract-alignment.md",
+      "proposal": "Queue table: analysis_jobs",
+      "approval_reference": "2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi.",
+      "approved_at": "2026-11-03T17:04:21+03:00"
+    },
+    "Q-003": {
+      "status": "APPROVED",
+      "adr": "docs/adr/ADR-003-i18n.md",
+      "proposal": "Complete tr-TR/en-US keys for each implemented user-facing surface",
+      "approval_reference": "2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi.",
+      "approved_at": "2026-11-03T17:04:21+03:00"
+    }
+  },
+  "implementation_started": false
+}

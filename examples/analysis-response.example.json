@@ -7,18 +7,36 @@
   "observed_at": "2026-11-03T10:00:00Z",
   "ruleset_version": "1.0.0-demo",
   "scoring_version": "1.0.0-demo",
-  "coverage": {"discovered_urls": 1, "crawled_pages": 1, "max_pages": 1, "description": "Tek URL örnek analizi"},
-  "scores": {"technical": 78, "coverage_percent": 75, "official_google_score": false},
-  "findings": [{
-    "rule_id": "TECH_CANONICAL_TARGET_4XX",
-    "rule_version": "1.0",
-    "status": "FAIL",
-    "severity": "high",
-    "confidence": "high",
-    "source": "crawler",
-    "evidence": {"canonical": "https://example.com/missing/", "target_http_status": 404},
-    "affected_urls": ["https://example.com/"],
-    "observed_at": "2026-11-03T10:00:00Z",
-    "fix_key": "seo.fix.canonical_target"
-  }]
+  "coverage": {
+    "discovered_urls": 1,
+    "crawled_pages": 1,
+    "max_pages": 1,
+    "description": "Tek URL örnek analizi"
+  },
+  "scores": {
+    "technical": 78,
+    "coverage_percent": 75,
+    "official_google_score": false
+  },
+  "findings": [
+    {
+      "rule_id": "TECH_CANONICAL_TARGET_4XX",
+      "rule_version": "1.0",
+      "status": "FAIL",
+      "severity": "high",
+      "confidence": "high",
+      "evidence": [
+        {
+          "canonical": "https://example.com/missing/",
+          "target_http_status": 404
+        }
+      ],
+      "affected_urls": [
+        "https://example.com/"
+      ],
+      "observed_at": "2026-11-03T10:00:00Z",
+      "fix_key": "seo.fix.canonical_target",
+      "data_source": "crawler"
+    }
+  ]
 }

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "updated_date": "2026-11-03",
+  "phase": "F00.03",
+  "policy_status": "ACCEPTED",
+  "policy_document": "docs/process/DEPENDENCIES.md",
+  "application_packages": [],
+  "application_manifests_present": false,
+  "platform_requirements": [
+    {
+      "name": "php",
+      "constraint": ">=8.4",
+      "resolved_version": null,
+      "status": "PLANNED",
+      "license_review": "REQUIRED_BEFORE_DISTRIBUTION"
+    },
+    {
+      "name": "mysql",
+      "constraint": ">=8.0",
+      "resolved_version": null,
+      "status": "PLANNED",
+      "license_review": "REQUIRED_BEFORE_DISTRIBUTION"
+    }
+  ],
+  "php_extensions": [
+    "curl",
+    "dom",
+    "xml",
+    "mbstring",
+    "intl",
+    "openssl",
+    "pdo_mysql"
+  ],
+  "toolchain_observation": {
+    "php_command_on_path": true,
+    "composer_command_on_path": true,
+    "mysql_command_on_path": false,
+    "runtime_versions_or_extensions_tested": false
+  },
+  "package_record_required_fields": [
+    "name",
+    "purpose",
+    "phase",
+    "source_url",
+    "resolved_version",
+    "reference_or_integrity",
+    "license_spdx",
+    "license_notice_paths",
+    "maintenance_status",
+    "security_checked_at",
+    "security_evidence",
+    "owner",
+    "approval_reference",
+    "removal_alternative"
+  ],
+  "project_distribution_license": "UNDECIDED",
+  "notes": [
+    "Uygulama paketi yok; platform ve belge araçları bundan ayrıdır.",
+    "Resolved runtime sürümleri gerçek ortamın kurulduğu F01 alt fazında kaydedilecek.",
+    "Composer audit ve lisans komutları manifest/lock olmadığı için çalıştırılmadı."
+  ]
+}
