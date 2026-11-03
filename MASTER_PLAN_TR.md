@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.02 — READY_FOR_REVIEW; belge ve devir kontrolleri geçti, kullanıcı kabulü bekleniyor. Uygulama kodu yok.
+> **Durum:** F00.02 — DONE; kullanıcı kabulü ve PR #2 birleştirme onayı alındı. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.01 — DONE; [PR #1](https://github.com/Boydaksu/siteportal/pull/1) kullanıcı onayıyla birleştirildi.
+> **Son onaylanan alt faz:** F00.02 — DONE; PR #2 birleştirme onayı alındı.
 > **Aktif dal:** `phase/F00.02-docs-contract`. **Aktif PR:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (açık, birleştirilmedi). **Devir kanıtı SHA:** `5bf77121efb203393d8e61eb7fbfa6f7e700f2e9`.
 > **Son kontrol:** Belge/envanter, 7/7 TEST ve sıfır bağlamlı devir PASS. CI yok; uygulama testleri N/A.
-> **Rapor:** [F00.02](docs/reports/F00.02.md). **Sonraki:** F00.03 — İlk ADR ve bağımlılık politikası; henüz onaylanmadı, başlamadı.
+> **Rapor:** [F00.02](docs/reports/F00.02.md). **Sonraki:** F00.03 — İlk ADR ve bağımlılık politikası; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
 > **Açık kararlar:** [Q-001–003](docs/process/OPEN_QUESTIONS.md). Aktif işi durduran teknik engel yok.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
 
@@ -167,10 +167,10 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), özel; varsayılan dal `main`
 - **Plan / ürün:** blueprint-0.1.0 / çalışan ürün sürümü yok
 - **Aktif ana faz / sürüm:** F00 / V0.0; ana faz kabulü henüz yok
-- **Son onaylanan alt faz:** F00.01 — DONE; kabul: “devam edelim”
+- **Son onaylanan alt faz:** F00.02 — DONE; kabul ve PR #2 merge/onaylı F00.03 başlangıcı sorusuna “devam edelim” yanıtı
 - **Önceki PR:** [#1](https://github.com/Boydaksu/siteportal/pull/1), ayrı “Evet, PR #1’i birleştir” onayıyla birleştirildi
 - **Main başlangıç / merge SHA:** `09716d298587dc29ea5d9092127a65d0f24a4c07`
-- **Aktif alt faz / durum:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir / READY_FOR_REVIEW
+- **Aktif alt faz / durum:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir / DONE
 - **Aktif dal:** `phase/F00.02-docs-contract`
 - **Aktif PR / kanıt commit:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (açık, birleştirilmedi) / `5bf77121efb203393d8e61eb7fbfa6f7e700f2e9`; PR head teslim kayıtlarıyla ilerleyebilir
 - **Son rapor:** [F00.02](docs/reports/F00.02.md)
@@ -178,8 +178,8 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **CI / uygulama testleri:** NOT_CONFIGURED / N/A; uygulama yok
 - **Aktif engeller:** Yok
 - **Açık kararlar:** [Q-001, Q-002, Q-003](docs/process/OPEN_QUESTIONS.md); API bulgu biçimi, queue tablo adı, en-US takvimi; değiştirilmedi
-- **Sonraki tek alt faz:** F00.03 — İlk ADR ve bağımlılık politikası; NOT_STARTED, başlangıç onayı alınmadı
-- **Bir sonraki işlem:** DUR. F00.02 teslim kabulünü ve F00.03 için açık başlangıç onayını bekle. PR #2 merge ayrıca açık onay gerektirir.
+- **Sonraki tek alt faz:** F00.03 — İlk ADR ve bağımlılık politikası; NOT_STARTED; başlangıç onayı alındı
+- **Bir sonraki işlem:** Onaylı PR #2’yi birleştir, güncel main üzerinden F00.03 dalını aç.
 
 Durum alanlarının anlamı ve komutlar: [bakım rehberi](docs/process/MAINTENANCE.md). Etkin kayıtlar köktedir; `siteportal_seo_masterplan/` ve BUNDLE_INFO üretim anına aittir. F00.02 başlangıç izni teslim kabulü değildir. PR #1 dışındaki birleştirmeler için yeni açık onay gerekir.
 
@@ -1252,7 +1252,7 @@ F00.01 kullanıcı kabulüyle DONE ve PR #1 birleştirildi. Aktif alt faz F00.02
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.01.md` + durum kayıtları.
 
 ### F00.02 — Belgeleri ve faz sözleşmesini yerleştir
-**Uygulama durumu:** READY_FOR_REVIEW; [F00.02 raporu](docs/reports/F00.02.md). F00.03 ve sonrası başlamadı.
+**Uygulama durumu:** DONE; [F00.02 raporu](docs/reports/F00.02.md). F00.03 ve sonrası başlamadı.
 **Hedef:** Belgeleri ve faz sözleşmesini yerleştir.
 **Yapılacak işler:**
 1. README AGENTS START_HERE CURRENT_STATUS roadmap ve kaynakları ekle.
@@ -1265,7 +1265,7 @@ F00.01 kullanıcı kabulüyle DONE ve PR #1 birleştirildi. Aktif alt faz F00.02
 - [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
 - [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
 - [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.02.md` + durum kayıtları.
 

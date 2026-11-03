@@ -4,10 +4,10 @@
 - **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), özel; varsayılan dal `main`
 - **Plan / ürün:** blueprint-0.1.0 / çalışan ürün sürümü yok
 - **Aktif ana faz / sürüm:** F00 / V0.0; ana faz kabulü henüz yok
-- **Son onaylanan alt faz:** F00.01 — DONE; kabul: “devam edelim”
+- **Son onaylanan alt faz:** F00.02 — DONE; kabul ve PR #2 merge/onaylı F00.03 başlangıcı sorusuna “devam edelim” yanıtı
 - **Önceki PR:** [#1](https://github.com/Boydaksu/siteportal/pull/1), ayrı “Evet, PR #1’i birleştir” onayıyla birleştirildi
 - **Main başlangıç / merge SHA:** `09716d298587dc29ea5d9092127a65d0f24a4c07`
-- **Aktif alt faz / durum:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir / READY_FOR_REVIEW
+- **Aktif alt faz / durum:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir / DONE
 - **Aktif dal:** `phase/F00.02-docs-contract`
 - **Aktif PR / kanıt commit:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (açık, birleştirilmedi) / `5bf77121efb203393d8e61eb7fbfa6f7e700f2e9`; PR head teslim kayıtlarıyla ilerleyebilir
 - **Son rapor:** [F00.02](docs/reports/F00.02.md)
@@ -15,7 +15,7 @@
 - **CI / uygulama testleri:** NOT_CONFIGURED / N/A; uygulama yok
 - **Aktif engeller:** Yok
 - **Açık kararlar:** [Q-001, Q-002, Q-003](docs/process/OPEN_QUESTIONS.md); API bulgu biçimi, queue tablo adı, en-US takvimi; değiştirilmedi
-- **Sonraki tek alt faz:** F00.03 — İlk ADR ve bağımlılık politikası; NOT_STARTED, başlangıç onayı alınmadı
-- **Bir sonraki işlem:** DUR. F00.02 teslim kabulünü ve F00.03 için açık başlangıç onayını bekle. PR #2 merge ayrıca açık onay gerektirir.
+- **Sonraki tek alt faz:** F00.03 — İlk ADR ve bağımlılık politikası; NOT_STARTED; başlangıç onayı alındı
+- **Bir sonraki işlem:** Onaylı PR #2’yi birleştir, güncel main üzerinden F00.03 dalını aç.
 
 Durum alanlarının anlamı ve komutlar: [bakım rehberi](docs/process/MAINTENANCE.md). Etkin kayıtlar köktedir; `siteportal_seo_masterplan/` ve BUNDLE_INFO üretim anına aittir. F00.02 başlangıç izni teslim kabulü değildir. PR #1 dışındaki birleştirmeler için yeni açık onay gerekir.
