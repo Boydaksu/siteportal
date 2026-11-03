@@ -1,0 +1,126 @@
+F00.02 SON TESLİM — 2026-11-03 Europe/Istanbul
+Python 3.13.15; Git 2.55 Windows. İlk bağlantı TEST temp izin hatası düzeltildi. İlk devir denemesi FAIL; ikinci sıfır bağlamlı devir PASS. Ayrıntı ve incelenen sabit SHA: F00.02-handoff.md.
+
+$ python scripts/verify_blueprint.py
+exit=0
+PASS: 9 ana faz, 65 alt faz, 84 kural, 49 Markdown dosyası; JSON ve iç bağlantılar geçerli.
+NOT: Bu sonuç yazılımın implementasyon veya güvenlik testlerini geçtiğini göstermez.
+Bağlantı kontrolü: 302 hedef; yerel başlıklar ve MASTER dahil. Dış URL içerik/erişimi kontrol edilmedi.
+
+$ python scripts/test_document_links.py
+exit=0
+test_code_fences_do_not_create_links_or_headings (__main__.DocumentLinksTests.test_code_fences_do_not_create_links_or_headings) ... ok
+test_external_url_format_without_network_request (__main__.DocumentLinksTests.test_external_url_format_without_network_request) ... ok
+test_missing_file_is_rejected (__main__.DocumentLinksTests.test_missing_file_is_rejected) ... ok
+test_missing_fragment_is_rejected (__main__.DocumentLinksTests.test_missing_fragment_is_rejected) ... ok
+test_repository_escape_is_rejected (__main__.DocumentLinksTests.test_repository_escape_is_rejected) ... ok
+test_turkish_and_duplicate_heading_targets (__main__.DocumentLinksTests.test_turkish_and_duplicate_heading_targets) ... ok
+test_url_encoded_local_target (__main__.DocumentLinksTests.test_url_encoded_local_target) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.037s
+
+OK
+
+$ python scripts/verify_inventory.py
+exit=0
+PASS: Başlangıç paketi: 57 dosya kayıtlı
+PASS: SHA256 .env.example
+PASS: SHA256 .gitattributes
+PASS: SHA256 .github/ISSUE_TEMPLATE/alt-faz.md
+PASS: SHA256 .github/PULL_REQUEST_TEMPLATE.md
+PASS: SHA256 .gitignore
+PASS: SHA256 AGENTS.md
+PASS: SHA256 BUNDLE_INFO.json
+PASS: SHA256 CHANGELOG.md
+PASS: SHA256 CURRENT_STATUS.md
+PASS: SHA256 MASTER_PLAN_TR.md
+PASS: SHA256 README.md
+PASS: SHA256 START_HERE.md
+PASS: SHA256 docs/README.md
+PASS: SHA256 docs/architecture/API.md
+PASS: SHA256 docs/architecture/CRAWLER.md
+PASS: SHA256 docs/architecture/DATABASE.md
+PASS: SHA256 docs/architecture/I18N.md
+PASS: SHA256 docs/architecture/INTEGRATIONS.md
+PASS: SHA256 docs/architecture/OPERATIONS.md
+PASS: SHA256 docs/architecture/SECURITY.md
+PASS: SHA256 docs/architecture/SYSTEM.md
+PASS: SHA256 docs/operations/GITHUB.md
+PASS: SHA256 docs/operations/PRIVACY.md
+PASS: SHA256 docs/operations/RELEASE.md
+PASS: SHA256 docs/process/DECISIONS.md
+PASS: SHA256 docs/process/MAINTENANCE.md
+PASS: SHA256 docs/process/OPEN_QUESTIONS.md
+PASS: SHA256 docs/process/QA.md
+PASS: SHA256 docs/process/REPORT_TEMPLATE.md
+PASS: SHA256 docs/process/WORKFLOW.md
+PASS: SHA256 docs/reference/SOURCES.md
+PASS: SHA256 docs/reports/F00.01-checks.txt
+PASS: SHA256 docs/reports/F00.01-inventory.json
+PASS: SHA256 docs/reports/F00.01-original-manifest.sha256
+PASS: SHA256 docs/reports/F00.01.md
+PASS: SHA256 docs/reports/F00.02-checks.txt
+PASS: SHA256 docs/reports/F00.02-handoff.md
+PASS: SHA256 docs/reports/F00.02.md
+PASS: SHA256 docs/reports/README.md
+PASS: SHA256 docs/requirements/ERROR_STATES.md
+PASS: SHA256 docs/requirements/FEATURE_MATRIX.md
+PASS: SHA256 docs/requirements/PRIORITIES.md
+PASS: SHA256 docs/requirements/PRODUCT.md
+PASS: SHA256 docs/requirements/RULES.md
+PASS: SHA256 docs/requirements/SCORING.md
+PASS: SHA256 docs/requirements/UX.md
+PASS: SHA256 docs/requirements/rules-catalog.csv
+PASS: SHA256 docs/roadmap/F00.md
+PASS: SHA256 docs/roadmap/F01.md
+PASS: SHA256 docs/roadmap/F02.md
+PASS: SHA256 docs/roadmap/F03.md
+PASS: SHA256 docs/roadmap/F04.md
+PASS: SHA256 docs/roadmap/F05.md
+PASS: SHA256 docs/roadmap/F06.md
+PASS: SHA256 docs/roadmap/F07.md
+PASS: SHA256 docs/roadmap/F08.md
+PASS: SHA256 docs/roadmap/ROADMAP.md
+PASS: SHA256 examples/analysis-response.example.json
+PASS: SHA256 examples/finding.schema.json
+PASS: SHA256 examples/phase-report.example.md
+PASS: SHA256 locales/en-US.example.json
+PASS: SHA256 locales/tr-TR.example.json
+PASS: SHA256 project-status.json
+PASS: SHA256 schemas/openapi-draft.yaml
+PASS: SHA256 schemas/rule-registry.seed.json
+PASS: SHA256 scripts/build_master_plan.py
+PASS: SHA256 scripts/document_links.py
+PASS: SHA256 scripts/test_document_links.py
+PASS: SHA256 scripts/update_manifest.py
+PASS: SHA256 scripts/verify_blueprint.py
+PASS: SHA256 scripts/verify_inventory.py
+PASS: Manifest bütün takip edilen dosyaları kapsıyor
+PASS: Takip edilen bütün JSON dosyaları ayrıştırılıyor
+PASS: BOM uyumlu CSV ile JSON: aynı 84 kayıt
+PASS: F00 plan/JSON sırası ve tam kapsamı
+PASS: F01 plan/JSON sırası ve tam kapsamı
+PASS: F02 plan/JSON sırası ve tam kapsamı
+PASS: F03 plan/JSON sırası ve tam kapsamı
+PASS: F04 plan/JSON sırası ve tam kapsamı
+PASS: F05 plan/JSON sırası ve tam kapsamı
+PASS: F06 plan/JSON sırası ve tam kapsamı
+PASS: F07 plan/JSON sırası ve tam kapsamı
+PASS: F08 plan/JSON sırası ve tam kapsamı
+PASS: Toplam 65 alt faz
+PASS: Aktif alt faz ve üst durum eşleşiyor
+PASS: Aktif alt fazın öncekileri DONE
+PASS: Sonraki alt fazlar başlamadı
+PASS: Son onaylı alt faz DONE kayıtlarıyla tutarlı
+PASS: Her DONE için tarih ve kullanıcı onay kanıtı var
+PASS: TR/EN anahtar ve parametre eşliği
+PASS: Başlangıç main dosyalarından silinen yok
+PASS: Sınırlı secret kalıp taraması: bulgu yok (tam güvenlik denetimi değildir)
+PASS: Gerçek .env dosyası takip edilmiyor
+PASS: F00 belge kapsamına PHP uygulama kodu eklenmedi
+NOT: Bu kontroller PHP/DB/crawler birim, entegrasyon veya güvenlik testleri değildir.
+
+PASS: Python syntax; MASTER 40 kaynaktan byte-for-byte eşit.
+
+PASS: README/CURRENT_STATUS/rapor/JSON aktif durum eşliği; F00.01 DONE; F00.02 onay bekliyor; F00.03 NOT_STARTED.

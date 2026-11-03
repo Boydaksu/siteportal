@@ -28,3 +28,6 @@ Yeni AI'a **yalnız repo ve ZIP** verildiğinde okuyup şu beş soruyu yanıtlay
 
 ## README güncelleme normu
 İlk 15 satırda tarih, son kabul edilen Fxx.yy, aktif Fxx.yy, durum, PR, SHA, son test özeti ve takip eden görev anlaşılır olmalı. Uzun raporlar `docs/reports` içinde, README bağlantılarla kısa kalır. `project-status.json` makine tarafından parse edilebilir olmalı.
+
+## Belge bakımı ve açık kayıtlar
+[START_HERE](../../START_HERE.md#sabit-okuma-sırası) tek okuma sırasını, [MAINTENANCE](MAINTENANCE.md) durum alanları/komut/manifest standardını tanımlar. [OPEN_QUESTIONS](OPEN_QUESTIONS.md) mimari karar bekleyen farkları korur. Başlangıç yetkisi, teslim kabulü, PR merge ve dağıtım yetkisi ayrı kaydedilir. Devir testi sohbet geçmişi aktarılmayan ayrı ajanla yapılır; yalnız repo yolu verilir, beş soruya cevap için beklenen sonuçlar paylaşılmaz. ZIP yoksa korunmuş envanter kullanılır ve eksik arşiv raporlanır.

@@ -1,16 +1,25 @@
-# Başlangıç Talimatı — yeni AI'ya aynen verilebilir
+# SitePortal — Buradan başla
 
-Bu klasör `Boydaksu/siteportal` için hazırlanan SEO Analiz Platformu **ana şartnamesi**dir. **Sana düşen görev tüm sürümleri tek seferde kodlamak değil**, en son kabul edilen fazı tespit edip sıradaki **bir alt fazı** eksiksiz uygulamaktır.
+Bu depo, Türkçe öncelikli SEO Analyzer için geliştirme sözleşmesi ve planları içerir. Çalışan uygulama henüz yoktur. Güncel durumun kaynağı [project-status.json](project-status.json) ve [CURRENT_STATUS](CURRENT_STATUS.md) dosyalarıdır.
 
-1. `AGENTS.md` ve `README.md` oku; kurallara uy.
-2. `CURRENT_STATUS.md`, `project-status.json` ve GitHub `main`/açık PR'larını karşılaştır. Uyuşmazlık varsa raporla, rastgele düzenleme yapma.
-3. Sıradaki `Fxx.yy` alt fazını `docs/roadmap/Fxx.md` dosyasında bul.
-4. Alt fazın amacı, kod/doküman dosyaları, testler, kabul koşulları, kapsam dışı maddelerini iş planı olarak açıkla.
-5. Yalnızca bu alt fazı geliştir, test et; değişiklikleri GitHub dalına gönder, gerekli raporu yaz.
-6. `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, faz raporu ve gerektiğinde mimari karar kaydını güncelle.
-7. **Kullanıcıya Türkçe sonuç raporu sun ve DUR.** Kullanıcı açık onay vermeden diğer faza geçme, PR birleştirme veya üretime dağıtma.
+## Sabit okuma sırası
+1. [README](README.md): ilk 15 satırdaki durum paneli.
+2. [AGENTS](AGENTS.md): bağlayıcı sınırlar ve onay kuralları.
+3. [CURRENT_STATUS](CURRENT_STATUS.md) ve [project-status.json](project-status.json): son kabul, aktif iş, dal, PR, test ve açık engeller.
+4. [Yol haritası](docs/roadmap/ROADMAP.md), JSON'daki aktif fazın belgesi ve [iş akışı](docs/process/WORKFLOW.md).
+5. JSON'daki `last_report`, [rapor dizini](docs/reports/README.md), [CHANGELOG](CHANGELOG.md) ve [açık kararlar](docs/process/OPEN_QUESTIONS.md).
+6. İşin gerektirdiği [ürün/mimari belgeleri](docs/README.md) ve [resmî kaynak envanteri](docs/reference/SOURCES.md).
 
-Herhangi bir alt faz yeni bir servise, ücretli API'ye veya kimlik bilgisine gereksinim duyarsa, ücretsiz alternatifle güvenli kısmi teslim yap veya `BLOCKED` raporla. Uydurma anahtar veya API yanıtı kullanma. Güvenlik ve veri mahremiyeti teslimin ayrılmaz şartıdır.
+## Devralma kontrolü
+- `git status --short`, `git branch --show-current`, `git log -1 --oneline` ile yerel durumu gör. Kullanıcının dosyalarını koru.
+- Yetkili bağlantıyla GitHub `main` ve aktif PR'ı kontrol et; yalnız dosyalardaki eski SHA'ya güvenme.
+- `status=READY_FOR_REVIEW` ise mevcut teslim için kullanıcı kabulünü bekle. `DONE` kullanıcı kabulüdür; `previous_delivery.merged` birleştirmeyi ayrıca izler.
+- Başlangıç izni, alt faz kabulü, PR birleştirme ve üretim dağıtımı ayrı yetkilerdir. Kabul olsa bile PR merge için ayrı açık onay gerekir.
+- `next_subphase`, başlama izni değildir. Aktif iş bitmeden veya yeni açık onay gelmeden sonraki alt faza geçme.
 
-## İlk çalıştırma
-Şu an başlangıç durumu `F00.01` (repo envanteri ve belgelerin başlangıç kaydı). İçerik planı uygulanmadan önce mevcut GitHub deposuyla dosya bazında karşılaştırılmalı. Bu ZIP'in hazırlanması F00'ın uygulandığı anlamına gelmez.
+## Çalışma ve doğrulama
+Etkin belgeler depo kökündedir. `siteportal_seo_masterplan/` varsa korunmuş yerel paket kopyasıdır; yeniden depoya kopyalama veya güncel durum kaynağı olarak kullanma. ZIP'in bulunmaması repo üzerinden devralmayı engellemez; özgün dosya envanteri raporlardadır.
+
+[Bakım rehberi](docs/process/MAINTENANCE.md) komutların sırasını, manifesti ve ana şartnamenin üretilmesini açıklar. Belge kontrolleri çalışan uygulama testi değildir. Erişim veya gerekli test yoksa gerçek engeli raporla; başarı uydurma.
+
+Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → durum/rapor/PR kaydını güncelle → Türkçe rapor sun → **DUR**. Yeni ajan yalnız repo ile son kabulü, aktif PR'ı, test sonucunu, sonraki tek alt fazı ve açık engelleri yanıtlayabilmelidir.

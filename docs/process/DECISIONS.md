@@ -16,3 +16,6 @@
 
 ## Yeni ADR formatı
 `ADR-NNN: problem → seçenekler → karar → neden → güvenlik/maliyet etkisi → geri dönüş → kullanıcı onayı → değiştirilecek faz`. Riskli/geri dönüşsüz kararlarda önce kullanıcı onayı; sessiz değiştirme yapılmaz.
+
+## Açık sözleşme farkları
+F00.01 bulguları [OPEN_QUESTIONS](OPEN_QUESTIONS.md) içinde izlenir. F00.02 bunları görünür kılar; yeni ADR veya çözüm üretmez.
