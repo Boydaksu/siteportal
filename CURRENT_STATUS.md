@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #9](https://github.com/Boydaksu/siteportal/pull/9) birleştirildi; merge `aa31d3cd425bb355383095e3506dc6c162992d68`. Kabul commit'i `ba9063c19b06830732df378b8bc92d1a3c7dd500`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41725872996) SUCCESS.
 - **Aktif alt faz / durum:** F01.04 — HTTP istemcisi ve robots uyumu / READY_FOR_REVIEW.
 - **Dal:** `phase/F01.04-http-client-robots`; başlangıç main SHA `aa31d3cd425bb355383095e3506dc6c162992d68`.
-- **Aktif PR / kanıt commit:** PR açılıyor.
+- **Aktif PR / kanıt commit:** [PR #10](https://github.com/Boydaksu/siteportal/pull/10); kanıt commit `b57336afad41f44ce5bbdde2455a610a9d4100f3`.
 - **Rapor:** [F01.04](docs/reports/F01.04.md).
 - **Yerel sonuç:** PASS; PHP lint (82 dosya), PSR-12, PHPStan seviye 8, PHPUnit 121 test / 704 assertion PASS (2 skipped [MySQL opsiyonel, sandbox döngüsel ağ]), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
 - **Uygulama testleri:** SafeHttpClient DNS pinning (CURLOPT_RESOLVE), redirect hop ve loop doğrulaması, chunk bazlı decompress/gzip bomb sınırı, ham boyut sınırı, nazik User-Agent/crawler başlıkları, RFC 9309 robots parser, user-agent grupları ve önbellek, Retry-After ve 429/503 yavaşlatma, fail-closed robots denetimi PASS.
