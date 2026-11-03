@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-03 | F00.04 kabulü
+- Kullanıcı “evet onaylıyorum” ile F00.04 teslimi, PR #4 birleştirmesi ve F00.05 başlangıcını onayladı; kabul kaydı CI’dan sonra birleştirilecek.
+
 ## 2026-11-03 | F00.04 | READY_FOR_REVIEW | PR #4
 - Onaylı PR #3 birleştirildi; merge SHA `74c56bc9ddfa9471b168cf7908cbb49e07aca857`; güncel main'den F00.04 dalı açıldı.
 - PHPUnit 12.5.43, PHPStan 2.3.5, PHP_CodeSniffer 4.0.4 ve 27 toplam dev paket exact/lock, lisans ve advisory kaydıyla eklendi. Uygulama paketi yok.

@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.04 — READY_FOR_REVIEW; test ve gerçek temiz checkout CI geçti. Uygulama kodu yok.
+> **Durum:** F00.04 — DONE; kullanıcı kabulü ve PR #4 birleştirme onayı alındı. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.03 — DONE; [PR #3](https://github.com/Boydaksu/siteportal/pull/3) kullanıcı onayıyla birleştirildi.
+> **Son onaylanan alt faz:** F00.04 — DONE; PR #4 birleştirme onayı alındı.
 > **Aktif dal:** `phase/F00.04-test-ci`. **Aktif PR:** [#4](https://github.com/Boydaksu/siteportal/pull/4) (açık, birleştirilmedi). **CI kanıt SHA:** `06b3e12fd122eeef24dbc748c956d79ff4ed85bb`.
 > **Son kontrol:** Yerel kalite/fixture/belge/envanter PASS; [gerçek CI](https://github.com/Boydaksu/siteportal/actions/runs/41666506494) SUCCESS (kanıt commit’i).
-> **Rapor:** [F00.04](docs/reports/F00.04.md). **Sonraki:** F00.05 — Repo ve PR politikası; onaylanmadı, başlamadı.
+> **Rapor:** [F00.04](docs/reports/F00.04.md). **Sonraki:** F00.05 — Repo ve PR politikası; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık; Composer uyarısı raporlanıyor.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
 
@@ -173,10 +173,10 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), özel; varsayılan dal main
 - **Plan / ürün:** blueprint-0.1.0 / çalışan ürün sürümü yok
 - **Aktif ana faz / sürüm:** F00 / V0.0; ana faz kabulü yok
-- **Son onaylanan alt faz:** F00.03 — DONE
+- **Son onaylanan alt faz:** F00.04 — DONE
 - **Önceki PR:** [#3](https://github.com/Boydaksu/siteportal/pull/3), F00.03 kabulü + merge + F00.04 başlangıcı sorusuna “devam edelim” yanıtıyla onaylandı ve birleştirildi
 - **Main başlangıç / merge SHA:** `74c56bc9ddfa9471b168cf7908cbb49e07aca857`
-- **Aktif alt faz / durum:** F00.04 — Test ve CI iskeleti / READY_FOR_REVIEW
+- **Aktif alt faz / durum:** F00.04 — Test ve CI iskeleti / DONE
 - **Aktif dal:** `phase/F00.04-test-ci`
 - **Aktif PR / kanıt commit:** [#4](https://github.com/Boydaksu/siteportal/pull/4) (açık, birleştirilmedi) / `06b3e12fd122eeef24dbc748c956d79ff4ed85bb`; sonraki teslim metadata commit’i PR head içinde olabilir
 - **Son rapor:** [F00.04](docs/reports/F00.04.md)
@@ -186,8 +186,8 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Bağımlılık:** 3 kesin doğrudan/27 toplam dev paket; uygulama paketleri boş. İlk Composer audit exit=0, advisory/abandoned yok; kaynak kapsamı ve lisans kanıtları [raporda](docs/reports/F00.04-dependency-review.json).
 - **Aktif engeller:** Yok; temiz checkout CI başarı kriteri doğrulandı
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı. Composer kök lisans uyarısı biliniyor; değer uydurulmadı.
-- **Sonraki tek alt faz:** F00.05 — Repo ve PR politikası; NOT_STARTED, başlangıç onayı yok
-- **Bir sonraki işlem:** DUR. F00.04 kabulü, PR #4 merge ve F00.05 başlangıcı için açık kullanıcı onayı bekle.
+- **Sonraki tek alt faz:** F00.05 — Repo ve PR politikası; NOT_STARTED; kullanıcı başlangıç onayı verdi
+- **Bir sonraki işlem:** F00.04 kabul/merge ve F00.05 başlangıç onayı alındı; kabul kaydı commit’inin CI’sını doğrula, PR #4’ü birleştir, main’den F00.05 dalını aç.
 
 [TESTING](docs/process/TESTING.md) gerçek kapsam ve komutları gösterir. F00.03 Q-001–003 kararları onaylıdır; F00.04 teslim kabulü değildir. Eski raporlar tarihsel snapshot'tır; güncel durum bu dosya/JSON/aktif PR'dadır. Repo koruma ayarları ve üretim ortamı değiştirilmedi.
 
@@ -1319,7 +1319,7 @@ F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif a
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.03.md` + durum kayıtları.
 
 ### F00.04 — Test ve CI iskeleti
-**Uygulama durumu:** READY_FOR_REVIEW; [F00.04 raporu](docs/reports/F00.04.md). F00.05 ve sonrası başlamadı.
+**Uygulama durumu:** DONE; [F00.04 raporu](docs/reports/F00.04.md). F00.05 ve sonrası başlamadı.
 **Hedef:** Test ve CI iskeleti.
 **Yapılacak işler:**
 1. PHP lint format static-analysis test harness.
@@ -1332,7 +1332,7 @@ F00.01–F00.03 kullanıcı kabulüyle DONE; PR #1/#2/#3 birleştirildi. Aktif a
 - [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
 - [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
 - [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.04.md` + durum kayıtları.
 
