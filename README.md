@@ -1,11 +1,11 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.05 — DONE; repo/PR politikası. Uygulama kodu yok.
+> **Durum:** F00 — DONE; F00 ana fazı kapandı. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.05 — DONE; PR #5 onaylandı.
-> **Aktif dal:** `phase/F00.05-repo-policy`. **PR:** [#5](https://github.com/Boydaksu/siteportal/pull/5) (açık). **CI kanıt commit’i:** `e7164369e45a6fbdd281250fcb8849a36bae7d25`.
-> **Son kontrol:** F00.05 yerel kalite/TEST/belge/envanter ve rollback uygulanabilirliği PASS; [CI](https://github.com/Boydaksu/siteportal/actions/runs/41684279984) SUCCESS; son metadata head ayrıca doğrulanır.
-> **Rapor:** [F00.05](docs/reports/F00.05.md). **Sonraki:** F00.06 — Faz kapanış/kabul; onay alındı.
+> **Son onaylanan alt faz:** F00.06 — DONE; F00 ana fazı onaylandı.
+> **Aktif dal:** `phase/F00.06-phase-closure`. **PR:** [#6](https://github.com/Boydaksu/siteportal/pull/6) (açık). **CI kanıt commit’i:** `c0509607e797664bd9e0b859f9ca6cd02e1788ae`.
+> **Son kontrol:** F00 yerel kalite/TEST/belge/envanter PASS; [CI](https://github.com/Boydaksu/siteportal/actions/runs/41708624682) SUCCESS; [F00 ana faz özeti](docs/reports/F00-PHASE-SUMMARY.md) onaylandı.
+> **Rapor:** [F00.06](docs/reports/F00.06.md). **Sonraki:** F01.01 — Proje çalışma iskeleti; kullanıcı onayladı.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -19,7 +19,7 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 ## Sürüm / faz tablosu
 | Faz | Hedef sürüm | Konu | Başlangıç durumu |
 |---|---|---|---|
-| F00 | V0.0 | Proje sözleşmesi, repo ve doğrulama altyapısı | IN_PROGRESS |
+| F00 | V0.0 | Proje sözleşmesi, repo ve doğrulama altyapısı | DONE |
 | F01 | V0.1 | Güvenli PHP çekirdek ve tarama kuyruğu | BEKLİYOR |
 | F02 | V1.0 | Üyeliksiz tek URL SEO analizi | BEKLİYOR |
 | F03 | V1.1 | Kontrollü çok sayfalı site taraması | BEKLİYOR |
