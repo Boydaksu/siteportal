@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-04 | F01.03 | READY_FOR_REVIEW
+- Dış ağ güvenlik politikası (`app/Core/Security/UrlSecurityPolicy.php`) ve yapılandırması (`config/security.php`) geliştirildi; `http`/`https` şema kısıtı, 80/443 port kısıtı, engellenen TLD'ler ve RFC 1918/3927/loopback/cloud metadata/ULA/IPv4-mapped IPv6 CIDR blokları tanımlandı.
+- İkili `inet_pton` tabanlı yüksek performanslı IP doğrulayıcısı (`app/Core/Security/IpValidator.php`) ve `filter_var` canonical adres kontrolü eklendi; sekizlik, onluk tamsayı ve onaltılık IP atlatma girişimleri engellendi.
+- DNS çözümleme arayüzü (`app/Core/Security/DnsResolverInterface.php`), sistem çözümleyicisi (`app/Core/Security/SystemDnsResolver.php`) ve testler için `MockDnsResolver` yazıldı; tüm çözümlenen IP'lerin fail-closed denetimi uygulandı.
+- DNS Pinning motoru (`app/Core/Security/PinnedTarget.php`) geliştirildi; doğrulanan IP adresi sabitlenerek cURL `CURLOPT_RESOLVE` entegrasyonu sağlandı ve DNS Rebinding (TOCTOU) saldırıları önlendi.
+- HTTP yönlendirme doğrulayıcısı (`app/Core/Security/RedirectValidator.php`) yazılarak mutlak/göreli adres çözümlemesi (`/`, `//`, `?`, `../`), yönlendirme döngüsü tespiti, maksimum sekme sayısı kontrolü ve hedef URL'nin tam döngü yeniden doğrulaması (kamusal sunucudan iç ağa pivot engelleme) sağlandı.
+- Birim ve entegrasyon testleri (`tests/Unit/Security`, `tests/Integration/Security`) eklenerek toplam 82 test, 585 assertion ve PSR-12/PHPStan Seviye 8 ile tam doğrulama sağlandı.
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F01.04'e geçilmez (DUR).
+
 ## 2026-11-03 | F01.02 kabulü
 - Kullanıcı “onaylıyorum” ile F01.02 teslimi, PR #8 birleştirmesi ve F01.03 başlangıcını onayladı; kabul kaydı CI’dan sonra birleştirilecek.
 

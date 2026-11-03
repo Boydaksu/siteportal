@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T23:54:00+03:00",
+  "updated_at": "2026-11-04T00:51:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "0.1.0-dev",
   "current_phase": "F01",
-  "current_subphase": "F01.02",
+  "current_subphase": "F01.03",
   "last_approved_phase": "F00",
   "last_approved_subphase": "F01.02",
-  "status": "DONE",
-  "branch": "phase/F01.02-setup-migration",
-  "commit_sha": "e191134b22c7a232f05bc54b9d5c416757b32873",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/8",
-  "last_report": "docs/reports/F01.02.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F01.03-ssrf-protection",
+  "commit_sha": "e93038cabbb1e26c63890c501e07fd0776303540",
+  "pr_url": null,
+  "last_report": "docs/reports/F01.03.md",
   "blockers": [],
-  "next_action": "Onaylı PR #8 kabul kaydı commit’inin CI’sını doğrula, birleştir ve güncel main’den F01.03 dalını aç.",
+  "next_action": "Kullanıcının F01.03 teslim kabulü ve açık onayı bekleniyor; onay gelmeden F01.04'e geçilmez (DUR).",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -35,7 +35,7 @@
       "subphases": {
         "F01.01": "DONE",
         "F01.02": "DONE",
-        "F01.03": "NOT_STARTED",
+        "F01.03": "READY_FOR_REVIEW",
         "F01.04": "NOT_STARTED",
         "F01.05": "NOT_STARTED",
         "F01.06": "NOT_STARTED",
@@ -201,13 +201,13 @@
     "reference": "F01.02 kabulü, PR #8 merge ve F01.03 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F01.01",
+    "subphase": "F01.02",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/7",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/8",
     "merged": true,
-    "merge_sha": "39f63de8418b31728d4050c82249533d8e32a8db",
-    "approval_commit": "1da5bb77b1c5c5106c2902431111b1b1b4cd8b7d",
-    "approval_commit_ci_run": 41713764555
+    "merge_sha": "e93038cabbb1e26c63890c501e07fd0776303540",
+    "approval_commit": "190bb787493a3887c4f4a3900ca89b3f36a538d6",
+    "approval_commit_ci_run": 41717021276
   },
   "open_questions": [
     "Q-004"
