@@ -18,3 +18,6 @@ Güncel durum: [CURRENT_STATUS](../CURRENT_STATUS.md) ve [project-status.json](.
 
 ## F00.03 teknik kayıtlar
 [ADR dizini](adr/README.md), [modül sınırları](architecture/MODULES.md), [bağımlılık politikası](process/DEPENDENCIES.md), [bağımlılık envanteri](process/dependencies.json), [tehdit modeli](architecture/THREAT_MODEL.md) ve [kontrol edilen teknik kaynaklar](reference/ARCHITECTURE_SOURCES.md). Karar önerisi/onayı, implementasyon ve faz teslim kabulü ayrı durumlardır.
+
+## F00.04 test ve CI
+[Çalıştırma rehberi](process/TESTING.md), [TEST kapsamı/fixture](../tests/README.md), [CI workflow](../.github/workflows/quality.yml), [birincil kaynaklar](reference/TESTING_SOURCES.md), [bağımlılık incelemesi](reports/F00.04-dependency-review.json) ve [F00.04 raporu](reports/F00.04.md).

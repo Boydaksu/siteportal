@@ -1,0 +1,18 @@
+{
+  "_demo": true,
+  "analysis_id": "TEST_NO_DATA",
+  "status": "partial",
+  "scores": null,
+  "findings": [
+    {
+      "rule_id": "TECH_HTTP_STATUS",
+      "rule_version": "1.0-test",
+      "status": "UNKNOWN",
+      "severity": "info",
+      "confidence": "unknown",
+      "data_source": "test-fixture",
+      "evidence": [],
+      "observed_at": "2026-11-03T00:00:00Z"
+    }
+  ]
+}

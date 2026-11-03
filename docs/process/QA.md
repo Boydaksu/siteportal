@@ -30,3 +30,6 @@
 
 ## Faz kapanış / regresyon
 Sürümün bütün kabul kriterleri; önceki sürümlerin kritik regression suite'i; güvenlik risk değerlendirmesi; gerçek demo veya açık blocker; migration rollback; depolama ve API quota; source freshness; KVKK/retention; geri alma planı. Ana faz onayı olmadan sonraki sürüme geçilmez.
+
+## F00.04 gerçek iskelet
+[TESTING](TESTING.md) komutları, [TEST fixtures](../../tests/README.md) ve [CI workflow](../../.github/workflows/quality.yml) kurulmuştur. Kalite kapılarının olumlu ve beklenen başarısızlık senaryoları çalıştırılır. Bu, yukarıdaki gelecekteki uygulama güvenlik/DB/E2E testlerinin tamamlandığı anlamına gelmez; gerçek sonuç/CI linki [F00.04 raporunda](../reports/F00.04.md) tutulur.

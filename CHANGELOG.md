@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-03 | F00.04 | IN_PROGRESS
+- Onaylı PR #3 birleştirildi; merge SHA `74c56bc9ddfa9471b168cf7908cbb49e07aca857`; güncel main'den F00.04 dalı açıldı.
+- PHPUnit 12.5.43, PHPStan 2.3.5, PHP_CodeSniffer 4.0.4 ve 27 toplam dev paket exact/lock, lisans ve advisory kaydıyla eklendi. Uygulama paketi yok.
+- Yerel lint/PSR-12/statik analiz/3 fixture TEST (74 assertion) ve dört beklenen hata kapısı geçti. İlk Windows wrapper/dosya erişimi sorunu giderildi.
+- Tam SHA pinli, contents:read CI workflow ve temiz checkout komutları yazıldı; gerçek CI sonucu henüz bekleniyor.
+- TESTING, fixture/sınırlı kontrol kapsamı, lisans/audit kanıtı, envanter ve durum dosyaları güncellendi. F00.05 başlamadı.
+
 ## 2026-11-03 | F00.03 kabulü
 - Kullanıcı “devam edelim” ile F00.03 teslimi, PR #3 birleştirmesi ve F00.04 başlangıcını onayladı; bağımlılık politikası kabul kaydı güncellendi.
 
