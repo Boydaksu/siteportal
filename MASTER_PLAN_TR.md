@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #8](https://github.com/Boydaksu/siteportal/pull/8) birleştirildi; merge `e93038cabbb1e26c63890c501e07fd0776303540`. Kabul commit'i `190bb787493a3887c4f4a3900ca89b3f36a538d6`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41717021276) SUCCESS.
 - **Aktif alt faz / durum:** F01.03 — URL doğrulama / SSRF koruması / READY_FOR_REVIEW.
 - **Dal:** `phase/F01.03-ssrf-protection`; başlangıç main SHA `e93038cabbb1e26c63890c501e07fd0776303540`.
-- **Aktif PR / kanıt commit:** İncelemeye sunuldu (PR açılacak).
+- **Aktif PR / kanıt commit:** [PR #9](https://github.com/Boydaksu/siteportal/pull/9); kanıt commit `8c6ac3e9447432f8eeea0ce41a7776472d733e8b`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41725872996) SUCCESS.
 - **Rapor:** [F01.03](docs/reports/F01.03.md).
 - **Yerel sonuç:** PASS; PHP lint (60 dosya), PSR-12, PHPStan seviye 8, PHPUnit 82 test / 585 assertion PASS (1 skipped [MySQL opsiyonel]), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
 - **Uygulama testleri:** Allowlist şema/port, RFC 1918/RFC 3927/loopback/cloud metadata/ULA/IPv4-mapped IPv6 engelleri, DNS pinning (TOCTOU rebinding koruması), göreli/mutlak yönlendirme ve döngü denetimleri PASS.

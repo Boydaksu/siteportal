@@ -11,8 +11,8 @@
   "last_approved_subphase": "F01.02",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F01.03-ssrf-protection",
-  "commit_sha": "e93038cabbb1e26c63890c501e07fd0776303540",
-  "pr_url": null,
+  "commit_sha": "8c6ac3e9447432f8eeea0ce41a7776472d733e8b",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/9",
   "last_report": "docs/reports/F01.03.md",
   "blockers": [],
   "next_action": "Kullanıcının F01.03 teslim kabulü ve açık onayı bekleniyor; onay gelmeden F01.04'e geçilmez (DUR).",
@@ -238,9 +238,9 @@
     "proposal": "docs/operations/main-protection.proposal.json"
   },
   "ci": {
-    "run_id": 41716450679,
-    "url": "https://github.com/Boydaksu/siteportal/actions/runs/41716450679",
-    "commit_sha": "e191134b22c7a232f05bc54b9d5c416757b32873",
+    "run_id": 41725872996,
+    "url": "https://github.com/Boydaksu/siteportal/actions/runs/41725872996",
+    "commit_sha": "8c6ac3e9447432f8eeea0ce41a7776472d733e8b",
     "status": "completed",
     "conclusion": "success"
   }
