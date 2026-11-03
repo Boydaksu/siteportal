@@ -15,3 +15,6 @@ Güncel durum: [CURRENT_STATUS](../CURRENT_STATUS.md) ve [project-status.json](.
 | Çeviri | [tr-TR](../locales/tr-TR.example.json), [en-US](../locales/en-US.example.json) | Örnek anahtarlar; çeviri motoru henüz yok |
 
 [MASTER_PLAN_TR](../MASTER_PLAN_TR.md) kaynak belgelerden üretilen okunabilir kopyadır. Kaynağı düzenle, sonra yeniden üret; master dosyasını tek başına değiştirme.
+
+## F00.03 teknik kayıtlar
+[ADR dizini](adr/README.md), [modül sınırları](architecture/MODULES.md), [bağımlılık politikası](process/DEPENDENCIES.md), [bağımlılık envanteri](process/dependencies.json), [tehdit modeli](architecture/THREAT_MODEL.md) ve [kontrol edilen teknik kaynaklar](reference/ARCHITECTURE_SOURCES.md). Karar önerisi/onayı, implementasyon ve faz teslim kabulü ayrı durumlardır.

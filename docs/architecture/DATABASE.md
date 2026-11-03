@@ -40,3 +40,6 @@ Site 1→N Analyses; Analysis 1→N Pages/Jobs/Findings/Scores; Finding N↔N Pa
 
 ## Migrations
 `0001_core.sql` ... `NNNN_*`; her migration reversible strateji ve test ortamı örnekleri. Migration checksum, schema_version, dry-run/backup, idempotency korunur.
+
+## Queue adı
+F00.03 Q-002 onayıyla crawler ve bu model `analysis_jobs` adını kullanır; [ADR-006](../adr/ADR-006-contract-alignment.md). Somut migration alanları ve lock davranışı F01.02/F01.05 testleriyle kesinleşir.

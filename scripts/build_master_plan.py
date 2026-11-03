@@ -10,7 +10,7 @@ paths=['README.md','AGENTS.md','START_HERE.md','CURRENT_STATUS.md',
 'docs/architecture/SYSTEM.md','docs/architecture/CRAWLER.md','docs/architecture/SECURITY.md','docs/architecture/DATABASE.md','docs/architecture/API.md','docs/architecture/I18N.md','docs/architecture/INTEGRATIONS.md','docs/architecture/OPERATIONS.md',
 'docs/operations/GITHUB.md','docs/operations/PRIVACY.md','docs/operations/RELEASE.md',
 'docs/process/WORKFLOW.md','docs/process/QA.md','docs/process/REPORT_TEMPLATE.md','docs/process/DECISIONS.md',
-'docs/roadmap/ROADMAP.md']+[f'docs/roadmap/F{i:02d}.md' for i in range(9)]+['docs/reference/SOURCES.md','docs/README.md','docs/process/MAINTENANCE.md','docs/process/OPEN_QUESTIONS.md']
+'docs/roadmap/ROADMAP.md']+[f'docs/roadmap/F{i:02d}.md' for i in range(9)]+['docs/reference/SOURCES.md','docs/README.md','docs/process/MAINTENANCE.md','docs/process/OPEN_QUESTIONS.md','docs/adr/README.md','docs/adr/ADR-001-stack.md','docs/adr/ADR-003-i18n.md','docs/adr/ADR-006-contract-alignment.md','docs/architecture/MODULES.md','docs/architecture/THREAT_MODEL.md','docs/process/DEPENDENCIES.md','docs/reference/ARCHITECTURE_SOURCES.md']
 sections=['# SITEPORTAL SEO ANALYZER — TEK DOSYALIK TÜRKÇE ANA ŞARTNAME','',
 '> Bu dosya ZIP içindeki modüler belgelerden üretilmiş **okunabilir kopyadır**. Değişikliklerin tek gerçek kaynağı ilgili ayrı belgelerdir. Son durum için `CURRENT_STATUS.md` ve GitHub main kontrol edilir.','',
 '> Oluşturma: `python3 scripts/build_master_plan.py`. İlk hazırlanma tarihi: 2026-11-03.','']

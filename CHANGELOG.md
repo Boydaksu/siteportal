@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-03 | F00.03 | IN_PROGRESS
+- Onaylı F00.02 PR #2 birleştirildi; merge SHA `8ed972e5e74806ea62f5dd50e7f7953570472e4c`.
+- Güncel main'den F00.03 dalı açıldı; teknik ADR gerekçeleri, modül sınırları, bağımlılık/lisans/sürüm politikası ve başlangıç tehdit modeli hazırlandı.
+- Q-001–003 somut önerilerine ayrı “Üç öneriyi de onaylıyorum” onayı alındı. data_source/evidence dizisi, analysis_jobs ve her uygulanan özellikte tam tr/en kapsamı belge/örneklerde uzlaştırıldı.
+- Yeni paket, framework, PHP/DB uygulaması, migration veya CI kurulmadı. Proje dağıtım lisansı Q-004 olarak yayın öncesi açık kaldı.
+- Gerçek kontrol ve PR kanıtları F00.03 raporuna kaydedilecek; F00.04 başlamadı.
+
 ## 2026-11-03 | F00.02 kabulü
 - Kullanıcının “devam edelim” yanıtıyla F00.02 teslimi, PR #2 birleştirmesi ve F00.03 başlangıcı onaylandı.
 

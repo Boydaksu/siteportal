@@ -53,3 +53,6 @@ F00.02 için sohbet geçmişi paylaşılmayan ayrı ajana yalnız etkin repo yol
 
 ## Korunacaklar
 `BUNDLE_INFO.json` ile F00.01 özgün manifest/envanter üretim anına aittir. Etkin `FILE_MANIFEST.sha256` her teslimde yenilenir. `siteportal_seo_masterplan/` eski yerel pakettir; güncel kaynak değildir. Gerçek `.env`, token ve özel veri ekleme. SEO kuralı kodlanmadan dış referansı yeniden oku ve kontrol tarihini kaydet. [Açık sorular](OPEN_QUESTIONS.md) kullanıcı kararı olmadan kapatılmaz.
+
+## Mimari ve bağımlılık kaydı bakımı
+[ADR dizini](../adr/README.md), [karar JSON](../adr/architecture-decisions.json), [bağımlılık politikası](DEPENDENCIES.md) ve [envanter](dependencies.json) birlikte güncellenir. Ayrı karar onayı, aktif alt fazın teslim kabulü yerine geçmez. F00.03 belge/sözleşme doğrulaması `python scripts/verify_architecture.py` ile yapılır; DEMO zorunlu alan/type/enum kontrolü tam JSON Schema motoru veya gerçek API testi değildir. Paket eklendiğinde politika gereği gerçek lock/lisans/audit kanıtı gerekir; boş envanter audit geçişi sayılmaz.

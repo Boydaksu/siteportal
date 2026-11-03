@@ -12,13 +12,13 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.02 — DONE; kullanıcı kabulü ve PR #2 birleştirme onayı alındı. Uygulama kodu yok.
+> **Durum:** F00.03 — IN_PROGRESS; ADR, bağımlılık politikası ve tehdit modeli. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F00 / V0.0.
-> **Son onaylanan alt faz:** F00.02 — DONE; PR #2 birleştirme onayı alındı.
-> **Aktif dal:** `phase/F00.02-docs-contract`. **Aktif PR:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (açık, birleştirilmedi). **Devir kanıtı SHA:** `5bf77121efb203393d8e61eb7fbfa6f7e700f2e9`.
-> **Son kontrol:** Belge/envanter, 7/7 TEST ve sıfır bağlamlı devir PASS. CI yok; uygulama testleri N/A.
-> **Rapor:** [F00.02](docs/reports/F00.02.md). **Sonraki:** F00.03 — İlk ADR ve bağımlılık politikası; başlangıç onayı alındı; main senkronizasyonundan sonra başlayacak.
-> **Açık kararlar:** [Q-001–003](docs/process/OPEN_QUESTIONS.md). Aktif işi durduran teknik engel yok.
+> **Son onaylanan alt faz:** F00.02 — DONE; [PR #2](https://github.com/Boydaksu/siteportal/pull/2) kullanıcı onayıyla birleştirildi.
+> **Aktif dal:** `phase/F00.03-architecture-policy`. **Aktif PR / kanıt SHA:** Henüz oluşturulmadı.
+> **Son kontrol:** F00.03 belge/sözleşme kontrolleri sürüyor. CI yok; uygulama/CVE audit testleri N/A.
+> **Rapor:** [F00.03](docs/reports/F00.03.md). **Sonraki:** F00.04 — Test ve CI iskeleti; onaylanmadı, başlamadı.
+> **Kararlar:** Q-001–003 ayrı kullanıcı onayıyla uzlaştırıldı; [ADR dizini](docs/adr/README.md). [Q-004 dağıtım lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md) → [bakım rehberi](docs/process/MAINTENANCE.md).
 
 ## Proje
@@ -41,7 +41,7 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 | F08 | V4.0 | Ölçeklenebilirlik, yaygın çoklu dil ve olgunluk | BEKLİYOR |
 
 ## Tasarımın değişmez kuralları
-- **Türkçe önce, tüm kullanıcı metinleri çeviri anahtarlarından**; İngilizce temel desteği mimaride ilk günden.
+- **Türkçe önce, tüm kullanıcı metinleri çeviri anahtarlarından**; uygulanan kullanıcı metinlerinin İngilizce anahtarları kendi fazında tamamlanır.
 - **Modüler PHP 8.4+**, MySQL 8+, sunucuda render edilen HTML ve hafif JS; kalıcı daemon zorunlu değil. VPS ilk tercih. Browser render izole opsiyonel worker.
 - **Gerçek SEO verisi ile öneri ayrı tutulur.** Google'ın resmî bir 0-100 SEO sıralama puanı yoktur. Kendi puanımızın ağırlıkları açıkça açıklanır.
 - **SSRF koruması olmadan dış URL isteği yok.** Yönlendirme, DNS, IP, port, boyut ve hız kontrolü bütün HTTP yollarında geçerli.
@@ -69,9 +69,12 @@ Her alt faz tesliminde: `README` durum satırı + `CURRENT_STATUS.md` + `project
 Depo çalışan uygulama değil, sürümlendirilmiş geliştirme şartnamesi ve devir kayıtları içerir. Uygulama F01'den itibaren üretilecek; kurulum adımları F01.02'de gerçek komutlarla doğrulanacak. Belge kontrolleri uygulamanın çalıştığı anlamına gelmez.
 
 ## Başlangıç paketi ve kayıtlar
-F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını düzenler. F00.03 ve sonraki işler başlamadı.
+F00.01, ilk plan paketini envantere aldı; [rapor](docs/reports/F00.01.md) kullanıcı tarafından kabul edildi. F00.02 rehberleri, bakım standardını ve devir doğrulamasını tamamladı ve kabul edildi. F00.03 teknik kararları/sınırları belgeler; F00.04 ve sonraki işler başlamadı.
 
 `BUNDLE_INFO.json` orijinal paket üretim anını anlatır; canlı durum JSON'dadır. `FILE_MANIFEST.sha256` etkin dosyaları, [özgün manifest](docs/reports/F00.01-original-manifest.sha256) ilk paketi doğrular. Yerel `siteportal_seo_masterplan/` eski korunmuş kopyadır; etkin çalışma kök dizindedir.
+
+## Mimari ve tedarik zinciri kayıtları
+[ADR dizini](docs/adr/README.md), [modül sınırları](docs/architecture/MODULES.md), [bağımlılık politikası](docs/process/DEPENDENCIES.md) ve [tehdit modeli](docs/architecture/THREAT_MODEL.md) uygulanacak sınırları açıklar; runtime veya güvenlik testi geçişi değildir.
 
 
 
@@ -164,24 +167,25 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
 - **Tarih:** 2026-11-03, Europe/Istanbul
-- **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), özel; varsayılan dal `main`
+- **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), özel; varsayılan dal main
 - **Plan / ürün:** blueprint-0.1.0 / çalışan ürün sürümü yok
-- **Aktif ana faz / sürüm:** F00 / V0.0; ana faz kabulü henüz yok
-- **Son onaylanan alt faz:** F00.02 — DONE; kabul ve PR #2 merge/onaylı F00.03 başlangıcı sorusuna “devam edelim” yanıtı
-- **Önceki PR:** [#1](https://github.com/Boydaksu/siteportal/pull/1), ayrı “Evet, PR #1’i birleştir” onayıyla birleştirildi
-- **Main başlangıç / merge SHA:** `09716d298587dc29ea5d9092127a65d0f24a4c07`
-- **Aktif alt faz / durum:** F00.02 — Belgeleri ve faz sözleşmesini yerleştir / DONE
-- **Aktif dal:** `phase/F00.02-docs-contract`
-- **Aktif PR / kanıt commit:** [#2](https://github.com/Boydaksu/siteportal/pull/2) (açık, birleştirilmedi) / `5bf77121efb203393d8e61eb7fbfa6f7e700f2e9`; PR head teslim kayıtlarıyla ilerleyebilir
-- **Son rapor:** [F00.02](docs/reports/F00.02.md)
-- **Test:** Belge/bağlantı/envanter PASS, 7/7 bağlantı TEST senaryosu PASS; sıfır bağlamlı devir tekrarı PASS; ilk FAIL ve düzeltme kanıtı [devir kaydında](docs/reports/F00.02-handoff.md)
-- **CI / uygulama testleri:** NOT_CONFIGURED / N/A; uygulama yok
+- **Aktif ana faz / sürüm:** F00 / V0.0; ana faz kabulü yok
+- **Son onaylanan alt faz:** F00.02 — DONE
+- **Önceki PR:** [#2](https://github.com/Boydaksu/siteportal/pull/2), F00.02 kabulü + merge + F00.03 başlangıcı sorusuna “devam edelim” yanıtıyla onaylandı ve birleştirildi
+- **Main başlangıç / merge SHA:** `8ed972e5e74806ea62f5dd50e7f7953570472e4c`
+- **Aktif alt faz / durum:** F00.03 — İlk ADR ve bağımlılık politikası / IN_PROGRESS
+- **Aktif dal:** `phase/F00.03-architecture-policy`
+- **Aktif PR / kanıt commit:** Henüz oluşturulmadı
+- **Son rapor:** [F00.03](docs/reports/F00.03.md)
+- **Kontroller:** ADR/sözleşme ve belge/envanter kontrolleri sürüyor; son gerçek sonuçlar F00.03 raporunda kaydedilecek
+- **CI / uygulama testleri:** NOT_CONFIGURED / N/A; PHP/DB/crawler uygulaması yok
 - **Aktif engeller:** Yok
-- **Açık kararlar:** [Q-001, Q-002, Q-003](docs/process/OPEN_QUESTIONS.md); API bulgu biçimi, queue tablo adı, en-US takvimi; değiştirilmedi
-- **Sonraki tek alt faz:** F00.03 — İlk ADR ve bağımlılık politikası; NOT_STARTED; başlangıç onayı alındı
-- **Bir sonraki işlem:** Onaylı PR #2’yi birleştir, güncel main üzerinden F00.03 dalını aç.
+- **Ayrı onaylanan kararlar:** Q-001 data_source/evidence dizisi, Q-002 analysis_jobs, Q-003 her uygulanan özellikte tam tr/en; kullanıcı “Üç öneriyi de onaylıyorum” dedi. [ADR kayıtları](docs/adr/README.md)
+- **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md), proje dağıtım lisansı; yayın öncesi işletmeci seçimi gerekir. Prod ortamı/saklama/provider kararları ilgili sonraki fazlarda kalır.
+- **Sonraki tek alt faz:** F00.04 — Test ve CI iskeleti; NOT_STARTED, başlangıç onayı yok
+- **Bir sonraki işlem:** Yalnız F00.03'ü doğrula, PR/rapor sun ve DUR. F00.04 başlama.
 
-Durum alanlarının anlamı ve komutlar: [bakım rehberi](docs/process/MAINTENANCE.md). Etkin kayıtlar köktedir; `siteportal_seo_masterplan/` ve BUNDLE_INFO üretim anına aittir. F00.02 başlangıç izni teslim kabulü değildir. PR #1 dışındaki birleştirmeler için yeni açık onay gerekir.
+Karar onayı F00.03 teslim kabulü değildir; PR birleştirmesi ve sonraki alt faz ayrıca onay gerektirir. Eski raporlar ve devir testi snapshot'ları tarihsel kayıttır; güncel durumu bu dosya/JSON/aktif PR gösterir. [Bakım standardı](docs/process/MAINTENANCE.md).
 
 
 
@@ -214,7 +218,7 @@ SitePortal birden çok araç barındırabilen, minimum bakım maliyetli web-util
 - Her sürüm azami maliyet, maksimum URL, süre, request byte, API çağrısı sınırlarını açıkça gösterir.
 
 ## 4. V1.0 kesin dahil (P0)
-Tek URL anonim tarama; URL doğrulama; robots/sitemap ilk kontrol; HTTP/canonical/meta/headings/images/links; rule engine; teknik puan + ölçüm kapsamı; açıklamalı kanıt, sınırlı cache, progress, kısa ömürlü özel rapor, HTTP API, temel admin, Türkçe UI, İngilizce çeviri şablonu, fail-closed SSRF, queue/worker/cron, test/CI ve dokümantasyon.
+Tek URL anonim tarama; URL doğrulama; robots/sitemap ilk kontrol; HTTP/canonical/meta/headings/images/links; rule engine; teknik puan + ölçüm kapsamı; açıklamalı kanıt, sınırlı cache, progress, kısa ömürlü özel rapor, HTTP API, temel admin, Türkçe UI, uygulanan özelliklerde tam İngilizce çeviri anahtarları, fail-closed SSRF, queue/worker/cron, test/CI ve dokümantasyon.
 
 ## 5. V1.0 kapsam dışı (sonraya)
 500+ URL crawl, gerçek GSC, otomatik indeksleme, backlink veritabanı, rakip analizi, sabit AI sıralama puanı, mevzuat sertifikasyonu, bütün sitelerde JS render, abonelik tahsilatı, ajans white-label.
@@ -613,6 +617,9 @@ Dış bağımlılık için önce interface ve fixture, sonra implementasyon. DB 
 ## Teknik borç ilkesi
 Yeni servis sadece gözlemlenmiş ihtiyaç için. Redis, Kafka, Kubernetes, mikroservis ve sürekli Chrome yalnızca kabul edilmiş performans yük testiyle gerekçelendirilirse. Açık kaynak bağımlılık sürümü ve lisansını kaydet.
 
+## F00.03 gerekçe ve sınır kayıtları
+Mevcut teknik plan [ADR-001](docs/adr/ADR-001-stack.md) içinde seçenek/gerekçe/etki/geri dönüşle açılmıştır. [Modül matrisi](docs/architecture/MODULES.md), [bağımlılık politikası](docs/process/DEPENDENCIES.md) ve [tehdit modeli](docs/architecture/THREAT_MODEL.md) uygulanacak kabul sınırlarıdır; çalışan kod iddiası değildir.
+
 
 
 
@@ -649,7 +656,7 @@ Herkesin URL gönderebildiği sistem, siteye zarar vermeden, özel ağlara ulaş
 Sadece fragmentı kaldırmak güvenli genel varsayım. Path case, slash ve anlamlı query parametreleri rastgele normalize edilmez. `utm_*` gibi izleme parametrelerini ayrı heuristik olarak değerlendir; her silme kuralı yanlış eşleme testinden geçmeli. Canonical URL hint, otomatik crawl dedup ile aynı kavram değil.
 
 ## Queue modeli
-`jobs(id,type,analysis_id,payload_json,status,priority,attempts,max_attempts,available_at,leased_until,worker_id,idempotency_key,last_error,created_at,updated_at)`; transaction ile atomik claim, `leased_until` ile crash recover, exponential backoff+jitter, dead letter, job cancellation, heartbeat ve bounded retries. MySQL sürümünün `SKIP LOCKED` davranışı test edilmeden kullanılmaz.
+`analysis_jobs(id,type,analysis_id,payload_json,status,priority,attempts,max_attempts,available_at,leased_until,worker_id,idempotency_key,last_error,created_at,updated_at)`; transaction ile atomik claim, `leased_until` ile crash recover, exponential backoff+jitter, dead letter, job cancellation, heartbeat ve bounded retries. MySQL sürümünün `SKIP LOCKED` davranışı test edilmeden kullanılmaz.
 
 ## Dış istekler
 Google PageSpeed ve CrUX gibi provider entegrasyonları URL parametrelerini alabilir; bu servislerin döndürdüğü bilgiler kullanıcı taraması olarak ayrı kaynak. Provider hostları allowlist, API anahtarları yalnızca backend. Browser renderer egress sınırı, sandbox, CPU/memory, browser timeout ve istemsiz dosya erişimini engelleme zorunlu.
@@ -662,6 +669,9 @@ Google PageSpeed ve CrUX gibi provider entegrasyonları URL parametrelerini alab
 - API quota → entegrasyon bulgusu UNKNOWN, temel HTML sürer.
 - Sıra job crash → lease dolunca idempotent retry.
 - Çok büyük content → `BODY_LIMIT`, kontrol edilemeyen kurallar UNKNOWN.
+
+## F00.03 sözleşme onayı
+Q-002 kullanıcı onayıyla tek analiz queue tablo adı `analysis_jobs` olarak uzlaştırıldı; [ADR-006](docs/adr/ADR-006-contract-alignment.md) gerekçe ve geri dönüşü açıklar. Örnek modeldir, migration veya DB işlemi değildir.
 
 
 
@@ -706,6 +716,9 @@ OWASP SSRF Prevention Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheet
 
 ## Güvenlik politikası
 Bu araç aktif penetrasyon, port scanning, auth bypass, saldırı simülasyonu veya güvenlik açığı sömürüsü yapmaz. SEO dışı güvenlik başlıkları bilgilendirici ayrı raporlanır. P0 güvenlik açığı varsa kamuya açma ve fazı DONE sayma.
+
+## F00.03 tehdit ve tedarik zinciri kaydı
+[Varlıklar, güven sınırları ve T01–T15 matrisi](docs/architecture/THREAT_MODEL.md) her riskin sorumlu modülünü, test fazını ve kalan riskini gösterir. [Bağımlılık politikası](docs/process/DEPENDENCIES.md) kesin sürüm/lock, lisans, advisory ve plugin/script kabul kapısını tanımlar. Bunlar plan kayıtlarıdır; runtime veya audit testleri henüz geçilmiş değildir.
 
 
 
@@ -758,6 +771,9 @@ Site 1→N Analyses; Analysis 1→N Pages/Jobs/Findings/Scores; Finding N↔N Pa
 ## Migrations
 `0001_core.sql` ... `NNNN_*`; her migration reversible strateji ve test ortamı örnekleri. Migration checksum, schema_version, dry-run/backup, idempotency korunur.
 
+## Queue adı
+F00.03 Q-002 onayıyla crawler ve bu model `analysis_jobs` adını kullanır; [ADR-006](docs/adr/ADR-006-contract-alignment.md). Somut migration alanları ve lock davranışı F01.02/F01.05 testleriyle kesinleşir.
+
 
 
 
@@ -809,6 +825,9 @@ Gerçek alan adı kesinleşmediyse `type` canonical link değiştirilebilir. Hat
 ## OpenAPI
 `sсhemas` altında taslak sözleşme bulunur; gerçek endpoint çıktıları implementasyonla güncellenip contract tests ile doğrulanacak. v1 yayınlandıktan sonra breaking changes yeni sürüm gerektirir.
 
+## Finding biçimi — F00.03 kullanıcı onaylı uzlaştırma
+Q-001 için [ADR-006](docs/adr/ADR-006-contract-alignment.md) onaylandı. API Finding alanı `data_source` string, `evidence` nesnelerden oluşan dizidir. Ölçüm yoksa boş dizi veya uygun UNKNOWN/N/A kullanılır; sahte kanıt üretilmez. [Bulgu şeması](examples/finding.schema.json) ve [DEMO yanıt](examples/analysis-response.example.json) aynı biçimi gösterir. Bu adlandırma provider adaptörünün source() metodu veya gerçek API implementasyonu değildir. Kanıt hâlâ güvenilmeyen veridir ve bağlama uygun escape/maskeleme gerektirir.
+
 
 
 
@@ -820,7 +839,7 @@ Gerçek alan adı kesinleşmediyse `type` canonical link değiştirilebilir. Hat
 # Türkçe öncelikli çoklu dil tasarımı
 
 ## Değişmez kural
-**Mimari ilk fazdan çok dilli, ürün başlangıç dilinde Türkçe.** Kodun içinde görünen metin sabit yazılmaz. Locale keys `ui.scan.submit`, `seo.canonical.broken.title`, `errors.rate_limited` biçiminde. `tr-TR` tam, `en-US` minimum çalışan fallback. Diğer diller yeni locale paketiyle eklenebilir.
+**Mimari ilk fazdan çok dilli, ürün başlangıç dilinde Türkçe.** Kodun içinde görünen metin sabit yazılmaz. Locale keys `ui.scan.submit`, `seo.canonical.broken.title`, `errors.rate_limited` biçiminde. **her uygulanan özellik** için `tr-TR` ve `en-US` kullanıcı metinlerinin anahtar/parametre eşliği tamdır. Türkçe varsayılandır; henüz olmayan özellikler kendi fazında çevrilir. Fallback, bilerek eksik İngilizce metin teslim etme izni değildir. Diğer diller yeni locale paketiyle eklenebilir.
 
 ## Katmanlar
 - `LocaleResolver`: user setting > explicit language route/param > Accept-Language > tr-TR (ürün politikası); admin locale zorlaması yok.
@@ -832,11 +851,14 @@ Gerçek alan adı kesinleşmediyse `type` canonical link değiştirilebilir. Hat
 - `RTL`: ilk sürüm hedefi değil, CSS logical properties kullan ve yön değiştirme desteğini engelleme.
 
 ## Kalite kapıları
-- Her tr key'in en-US karşılığı veya explicit fallback değeri var; missing key warning CI'da hata.
+- Uygulanan kullanıcı metinlerinde her tr key'in en-US karşılığı var; eksik anahtar CI'da hata. Fallback beklenmeyen locale/çalışma hatası için korumadır, teslim standardını düşürmez.
 - Yer tutucu anahtarlar `{count}`/`{url}` iki dilde aynı; türlü/çoğullu kontrol.
 - URL/domen kullanıcı verisi çeviri içine yerleştirilirken escape.
 - Türkçe i/İ ve sorting/slug testleri. `lang` attribute ve accessibility labels tutarlı.
 - Dil değiştirme analiz sonucunu/skoru değiştirmez, yalnızca sunumu değiştirir.
+
+## Faz kapsamı onayı
+F00.03 Q-003 kullanıcı onayı [ADR-003](docs/adr/ADR-003-i18n.md) içinde kayıtlıdır. F08.03 o tarihe kadarki UI/kural/rapor/e-posta/PDF yüzeylerinin kapsam ve gelişmiş i18n/a11y regresyonunu kapatır; İngilizce başlangıcını F08’e ertelemez.
 
 
 
@@ -1144,7 +1166,7 @@ Ek: sürüm hedefleri gerçekleşti mi, önceki sürüm regresyonu, güvenlik, d
 
 # Architectural Decision Records (ADR) ve açık kararlar
 
-## Kabul edilen başlangıç kararları
+## Başlangıç belgelerinde kayıtlı kararlar
 - ADR-001: SitePortal modüler PHP monolit, framework az, MySQL + CLI cron, server-side HTML; veri tabanlı kuyruk, opsiyonel renderer.
 - ADR-002: SEO Analyzer genel SitePortal modülü; hosting işi değildir.
 - ADR-003: Türkçe öncelik, locale key zorunluluğu, en-US fallback.
@@ -1161,8 +1183,10 @@ Ek: sürüm hedefleri gerçekleşti mi, önceki sürüm regresyonu, güvenlik, d
 ## Yeni ADR formatı
 `ADR-NNN: problem → seçenekler → karar → neden → güvenlik/maliyet etkisi → geri dönüş → kullanıcı onayı → değiştirilecek faz`. Riskli/geri dönüşsüz kararlarda önce kullanıcı onayı; sessiz değiştirme yapılmaz.
 
-## Açık sözleşme farkları
-F00.01 bulguları [OPEN_QUESTIONS](docs/process/OPEN_QUESTIONS.md) içinde izlenir. F00.02 bunları görünür kılar; yeni ADR veya çözüm üretmez.
+## F00.03 somut karar kayıtları
+[ADR dizini](docs/adr/README.md), [ADR-001 teknik sınırlar](docs/adr/ADR-001-stack.md), [MODULES](docs/architecture/MODULES.md), [DEPENDENCIES](docs/process/DEPENDENCIES.md) ve [THREAT_MODEL](docs/architecture/THREAT_MODEL.md) gerekçe, alternatif, sorumluluk, güvenlik ve geri dönüşü kaydeder. Yeni framework/servis veya uygulama geliştirilmedi.
+
+Q-001/Q-002 için [ADR-006](docs/adr/ADR-006-contract-alignment.md), Q-003 için [ADR-003](docs/adr/ADR-003-i18n.md) somut önerileri kullanıcı tarafından “Üç öneriyi de onaylıyorum” yanıtıyla onaylandı; ilgili API/örnek/queue/i18n belgeleri bundan sonra uzlaştırıldı. Karar kabulü F00.03 teslim kabulü değildir. [Açık kayıtlar](docs/process/OPEN_QUESTIONS.md) ve [makine karar kaydı](docs/adr/architecture-decisions.json) birlikte tutulur.
 
 
 
@@ -1211,7 +1235,7 @@ Bu belge sürüm hedeflerini tanımlar. **Her Fxx.yy sonrasında ayrı commit+PR
 **P0:** SSRF, robots, güvenli istek, queue, yetki, doğruluk, temel UI. **P1:** Site mimarisi, CWV, schema, GSC doğrulanmış kullanıcı. **P2:** AI/ajans/white-label/ücretli hesap. **Şimdilik gereksiz:** Kubernetes, mikroservis ağı, herkes için headless Chrome, backlink scraping, Google sırası tahmin modeli, otomatik SEO düzeltme, zorunlu llms.txt.
 
 ## Aktif F00 teslimi
-F00.01 kullanıcı kabulüyle DONE ve PR #1 birleştirildi. Aktif alt faz F00.02; durum [JSON](project-status.json), kanıt [F00.02 raporu](docs/reports/F00.02.md) içindedir. F00.03 ve sonrası NOT_STARTED.
+F00.01 ve F00.02 kullanıcı kabulüyle DONE; PR #1/#2 birleştirildi. Aktif alt faz F00.03; durum [JSON](project-status.json), kanıt [F00.03 raporu](docs/reports/F00.03.md) içindedir. F00.04 ve sonrası NOT_STARTED.
 
 
 
@@ -1252,7 +1276,7 @@ F00.01 kullanıcı kabulüyle DONE ve PR #1 birleştirildi. Aktif alt faz F00.02
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.01.md` + durum kayıtları.
 
 ### F00.02 — Belgeleri ve faz sözleşmesini yerleştir
-**Uygulama durumu:** DONE; [F00.02 raporu](docs/reports/F00.02.md). F00.03 ve sonrası başlamadı.
+**Uygulama durumu:** DONE; [F00.02 raporu](docs/reports/F00.02.md). Kullanıcı kabulü ve PR #2 birleştirmesi kayıtlı.
 **Hedef:** Belgeleri ve faz sözleşmesini yerleştir.
 **Yapılacak işler:**
 1. README AGENTS START_HERE CURRENT_STATUS roadmap ve kaynakları ekle.
@@ -1270,6 +1294,7 @@ F00.01 kullanıcı kabulüyle DONE ve PR #1 birleştirildi. Aktif alt faz F00.02
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F00.02.md` + durum kayıtları.
 
 ### F00.03 — İlk ADR ve bağımlılık politikası
+**Uygulama durumu:** IN_PROGRESS; [F00.03 raporu](docs/reports/F00.03.md). F00.04 ve sonrası başlamadı.
 **Hedef:** İlk ADR ve bağımlılık politikası.
 **Yapılacak işler:**
 1. PHP/DB/JS teknik sınırlarını ADR ile kaydet.
@@ -2438,7 +2463,7 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 ### F08.03 — i18n tam kapsama ve a11y
 **Hedef:** i18n tam kapsama ve a11y.
 **Yapılacak işler:**
-1. tr-TR en-US tam UI/rule/report/email PDF.
+1. tr-TR/en-US için o tarihe kadarki bütün UI/rule/report/email/PDF yüzeylerinde tam kapsam ve regresyon denetimi. Her yeni uygulanan özellik kendi fazında iki dilde tamamlanır (F00.03 Q-003 onayı).
 2. ICU-like plural locale-aware time/numbers.
 3. RTL hazırlığı.
 
@@ -2575,6 +2600,9 @@ Bu envanter başlangıç plan paketinden alınan **birincil/otoritatif kaynak** 
 ## Bakım bağlantıları
 Kural uygulamadan önceki [referans disiplini](docs/reference/SOURCES.md#referans-kullanım-disiplini) geçerlidir. [Belge haritası](docs/README.md), [bakım rehberi](docs/process/MAINTENANCE.md) ve [kural CSV](docs/requirements/rules-catalog.csv) kaynak kimliklerini birlikte izler.
 
+## Teknik karar kaynakları
+F00.03 sırasında ayrıca kontrol edilen PHP/Composer/MySQL/OWASP sayfaları [ARCHITECTURE_SOURCES](docs/reference/ARCHITECTURE_SOURCES.md) içinde tarih ve kapsamıyla kayıtlıdır. Bu, SEO kural kaynakları S1–S15’in güncel içeriğinin tekrar onaylandığı anlamına gelmez.
+
 
 
 
@@ -2600,6 +2628,9 @@ Güncel durum: [CURRENT_STATUS](CURRENT_STATUS.md) ve [project-status.json](proj
 | Çeviri | [tr-TR](locales/tr-TR.example.json), [en-US](locales/en-US.example.json) | Örnek anahtarlar; çeviri motoru henüz yok |
 
 [MASTER_PLAN_TR](MASTER_PLAN_TR.md) kaynak belgelerden üretilen okunabilir kopyadır. Kaynağı düzenle, sonra yeniden üret; master dosyasını tek başına değiştirme.
+
+## F00.03 teknik kayıtlar
+[ADR dizini](docs/adr/README.md), [modül sınırları](docs/architecture/MODULES.md), [bağımlılık politikası](docs/process/DEPENDENCIES.md), [bağımlılık envanteri](docs/process/dependencies.json), [tehdit modeli](docs/architecture/THREAT_MODEL.md) ve [kontrol edilen teknik kaynaklar](docs/reference/ARCHITECTURE_SOURCES.md). Karar önerisi/onayı, implementasyon ve faz teslim kabulü ayrı durumlardır.
 
 
 
@@ -2665,6 +2696,9 @@ F00.02 için sohbet geçmişi paylaşılmayan ayrı ajana yalnız etkin repo yol
 ## Korunacaklar
 `BUNDLE_INFO.json` ile F00.01 özgün manifest/envanter üretim anına aittir. Etkin `FILE_MANIFEST.sha256` her teslimde yenilenir. `siteportal_seo_masterplan/` eski yerel pakettir; güncel kaynak değildir. Gerçek `.env`, token ve özel veri ekleme. SEO kuralı kodlanmadan dış referansı yeniden oku ve kontrol tarihini kaydet. [Açık sorular](docs/process/OPEN_QUESTIONS.md) kullanıcı kararı olmadan kapatılmaz.
 
+## Mimari ve bağımlılık kaydı bakımı
+[ADR dizini](docs/adr/README.md), [karar JSON](docs/adr/architecture-decisions.json), [bağımlılık politikası](docs/process/DEPENDENCIES.md) ve [envanter](docs/process/dependencies.json) birlikte güncellenir. Ayrı karar onayı, aktif alt fazın teslim kabulü yerine geçmez. F00.03 belge/sözleşme doğrulaması `python scripts/verify_architecture.py` ile yapılır; DEMO zorunlu alan/type/enum kontrolü tam JSON Schema motoru veya gerçek API testi değildir. Paket eklendiğinde politika gereği gerçek lock/lisans/audit kanıtı gerekir; boş envanter audit geçişi sayılmaz.
+
 
 
 
@@ -2675,14 +2709,309 @@ F00.02 için sohbet geçmişi paylaşılmayan ayrı ajana yalnız etkin repo yol
 
 # Açık sözleşme soruları
 
-Bu kayıt F00.01 envanterindeki farkları görünür tutar; mimari karar vermez. `blockers` aktif işi durduran sorunlardır. Aşağıdakiler F00.02 belge düzenlemesini engellemez; belirtilen uygulama başlamadan kullanıcıyla karara bağlanmalıdır.
+Bu kayıt F00.01 envanterindeki özgün farkları ve son kararlarını izler. Q-001–003 F00.03 içinde ayrı kullanıcı onayıyla RESOLVED oldu; aşağıdaki fark açıklamaları tarihsel bulgudur, güncel sözleşme onaylı ADR’dedir. `blockers` yalnız aktif işi durduran sorunlardır; Q-004 yayın öncesi açık karar olarak kalır.
 
 | ID | Durum | Fark / kanıt | Karar kapısı |
 |---|---|---|---|
-| Q-001 | OPEN | [API](docs/architecture/API.md) `data_source` ve `evidence[]`; [bulgu şeması](examples/finding.schema.json) `source` ve nesne `evidence` kullanıyor | API/kural implementasyonundan önce tek Finding sözleşmesi; F00.03'te ele alınacak |
-| Q-002 | OPEN | [Crawler](docs/architecture/CRAWLER.md) `jobs`; [veritabanı](docs/architecture/DATABASE.md) `analysis_jobs` diyor | Migration/queue kodundan önce tablo adı; F00.03'te ele alınacak |
-| Q-003 | OPEN | [AGENTS](AGENTS.md) tr/en tamamlanmasını, [I18N](docs/architecture/I18N.md) minimum fallback'i, [F08](docs/roadmap/F08.md) tam kapsamı tarif ediyor | İlk UI yazılmadan sürüm bazında en-US kapsamı; F00.03'te ele alınacak |
+| Q-001 | RESOLVED | [API](docs/architecture/API.md) `data_source` ve `evidence[]`; [bulgu şeması](examples/finding.schema.json) `source` ve nesne `evidence` kullanıyor | API/kural implementasyonundan önce tek Finding sözleşmesi; F00.03 ayrı kullanıcı onayıyla uzlaştırıldı; [ADR-006](docs/adr/ADR-006-contract-alignment.md) |
+| Q-002 | RESOLVED | [Crawler](docs/architecture/CRAWLER.md) `jobs`; [veritabanı](docs/architecture/DATABASE.md) `analysis_jobs` diyor | Migration/queue kodundan önce tablo adı; F00.03 ayrı kullanıcı onayıyla uzlaştırıldı; [ADR-006](docs/adr/ADR-006-contract-alignment.md) |
+| Q-003 | RESOLVED | [AGENTS](AGENTS.md) tr/en tamamlanmasını, [I18N](docs/architecture/I18N.md) minimum fallback'i, [F08](docs/roadmap/F08.md) tam kapsamı tarif ediyor | İlk UI yazılmadan sürüm bazında en-US kapsamı; F00.03 ayrı kullanıcı onayıyla uzlaştırıldı; [ADR-003](docs/adr/ADR-003-i18n.md) |
 
 İlk paket aktarımı/yerleştirme örtüşmesi durum ayrımıyla açıklanmıştır: F00.01 paketi envantere aldı; F00.02 rehber, bakım, bağlantı ve devir doğrulamasını yürütür. Sonraki fazların kapsamı değişmez.
 
-Yeni karar gerektiğinde [DECISIONS](docs/process/DECISIONS.md) formatını kullan; kullanıcı onayı, gerekçe, güvenlik/maliyet etkisi, ilgili faz ve geri dönüşü kaydet. F00.03 başlamadan çözüm varsayma.
+Yeni karar gerektiğinde [DECISIONS](docs/process/DECISIONS.md) formatını kullan; kullanıcı onayı, gerekçe, güvenlik/maliyet etkisi, ilgili faz ve geri dönüşü kaydet. Q-001–003 için 2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi. Onaylı kararlar ADR-003/006 içinde; özgün farklar bu tabloda tarihsel açıklama olarak korunur.
+
+## Dağıtım öncesi lisans kararı
+Q-004 — OPEN: Projenin kendi dağıtım lisansı belirlenmedi. [Bağımlılık politikası](docs/process/DEPENDENCIES.md) gereği LICENSE/NOTICE veya SPDX lisansı uydurulmaz; işletmeci kamuya dağıtımdan önce seçer. Bu, F00.03 belge hazırlığını engellemez.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/adr/README.md -->
+## BELGE: `docs/adr/README.md`
+
+# ADR dizini ve karar durumları
+
+F00.03, mevcut planın gerekçelerini kaydeder. Başlangıçtaki ADR kimlikleri korunur; var olan planı açıklamak yeni framework/servis ekleme izni değildir. `BASELINE_DOCUMENTED` mevcut planın kaydı, `PROPOSED` henüz onaylanmamış değişiklik, `APPROVED` ilgili somut öneri için açık kullanıcı onayı anlamına gelir. F00.03 tesliminin kabulü ayrıca beklenir.
+
+| ID | Konu | Kanıt / durum |
+|---|---|---|
+| ADR-001 | PHP/MySQL/JS teknik sınırları | [Gerekçe ve alternatifler](docs/adr/ADR-001-stack.md), BASELINE_DOCUMENTED |
+| ADR-002 | SEO Analyzer genel SitePortal modülü; hosting yazılımı değil | [Ürün sınırı](docs/requirements/PRODUCT.md), [modül matrisi](docs/architecture/MODULES.md); mevcut plan korunur |
+| ADR-003 | Türkçe öncelik ve locale keys; en-US kapsam takvimi | [Dil önerisi](docs/adr/ADR-003-i18n.md), Q-003 için APPROVED (ayrı kullanıcı onayı) |
+| ADR-004 | Güvenlik/doğruluk/kanıt ve onay kapıları | [SECURITY](docs/architecture/SECURITY.md), [THREAT_MODEL](docs/architecture/THREAT_MODEL.md), mevcut güvenlik sınırları korunur |
+| ADR-005 | Private rapor ve domain doğrulamasına bağlı derin tarama | [PRODUCT](docs/requirements/PRODUCT.md), [PRIVACY](docs/operations/PRIVACY.md), mevcut plan korunur |
+| ADR-006 | Finding alanları/kanıt biçimi ve queue adı | [Sözleşme önerisi](docs/adr/ADR-006-contract-alignment.md), Q-001/Q-002 için APPROVED (ayrı kullanıcı onayı) |
+
+Makine kaydı [architecture-decisions.json](docs/adr/architecture-decisions.json), açık işler [OPEN_QUESTIONS](docs/process/OPEN_QUESTIONS.md), lisans/sürüm kapısı [DEPENDENCIES](docs/process/DEPENDENCIES.md), kontrol edilmiş teknik referanslar [ARCHITECTURE_SOURCES](docs/reference/ARCHITECTURE_SOURCES.md). Yeni önemli kararda problem/seçenek/karar/gerekçe/güvenlik-maliyet/geri dönüş ve kullanıcı onayı birlikte kaydedilir. Onaysız öneri asıl sözleşmeye uygulanmaz.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/adr/ADR-001-stack.md -->
+## BELGE: `docs/adr/ADR-001-stack.md`
+
+# ADR-001 — PHP, veritabanı ve frontend teknik sınırları
+
+- Tarih: 2026-11-03, Europe/Istanbul.
+- Durum: BASELINE_DOCUMENTED; F00.03 teslim incelemesi bekleniyor.
+- Kapsam: Mevcut [SYSTEM](docs/architecture/SYSTEM.md), [OPERATIONS](docs/architecture/OPERATIONS.md) ve kullanıcı başlangıç talimatının gerekçeli kaydı; yeni framework veya çalışan sistem kararı değil.
+
+## Problem
+Türkçe öncelikli SEO Analyzer güvenli dış HTTP istekleri ve uzun süren analizler gerektirir. Düşük bakım maliyeti ve kademeli büyüme hedeflenir. Web isteğini uzun tarama boyunca açık tutmak veya kural motoruna ağ/DB yetkisi vermek sorumlulukları ve güvenlik kontrolünü dağıtır.
+
+## Seçenekler
+| Seçenek | Kazanç | Maliyet / değerlendirme |
+|---|---|---|
+| Modüler PHP monolit, PDO/MySQL, CLI/cron, SSR ve vanilla JS | Küçük işletim yüzeyi, tek repo, mevcut PHP hedefine uygunluk | Router/config/queue sınırları ve testleri proje tarafından açıkça kurulmalı; seçilen başlangıç planı |
+| Laravel/Symfony gibi tam framework | Hazır auth/router/queue araçları | Kullanıcının framework bağımsız mimari sınırına uymaz; onaysız eklenmez |
+| SPA/Node backend ve sürekli browser render | Zengin istemci deneyimi ve JS sayfa erişimi | Yeni runtime, paket ve işletim maliyeti; ilk ürün için gerekçelendirilmedi |
+| Mikroservis/Redis/Kafka/Kubernetes | Bağımsız ölçeklenme | Ölçülmüş darboğaz yok; daha fazla servis, secret ve operasyon yüzeyi |
+
+## Karar ve sınırlar
+- PHP **8.4+** modüler monolit korunur. Web giriş noktası yalnız `public/`; PHP-FPM web ve CLI worker ayrı yürütme yollarıdır. PSR-4 autoload Composer ile gerektiği fazda kurulabilir; bu aşamada composer.json/lock veya PHP dosyası üretilmez.
+- PHP sürüm numarası alt sınırdır; dağıtımda resmen desteklenen bir dal ve güncel yama gerekir. 2026-11-03 tarihli [PHP tablosunda](https://www.php.net/supported-versions.php) 8.4 aktif destek sonu 2026-12-31, güvenlik desteği sonu 2028-12-31 olarak listelenir. Sonraki uygulama fazında yeniden doğrulanır; bu rapor yerel PHP/extension uyumluluk testi değildir.
+- PDO + **MySQL 8+ / InnoDB** mevcut sınırdır. CLI/cron veritabanı kuyruğu; ağ çağrısı uzun transaction içinde yapılmaz. Kesin server/yama sürümü F01.02 ortam kaydında sabitlenir. [MySQL LTS modeli](https://dev.mysql.com/doc/refman/8.4/en/mysql-releases.html) doğrultusunda desteklenen LTS dalı değerlendirilir; 8.4 bir adaydır, burada kurulum veya sürüm yükseltme yapılmaz.
+- HTML sunucuda üretilir; vanilla JavaScript yalnız gerekli etkileşimi sağlar. Başlangıç için SPA, JS framework, npm build zinciri veya üçüncü taraf CDN script'i zorunlu değildir. Responsive CSS ve erişilebilir HTML korunur; kullanıcı metinleri çeviri anahtarlarından gelir.
+- Dış istekler yalnız SafeHttpClient üzerinden; entegrasyon adaptörü de bu ağ sınırını atlayamaz. Browser renderer ancak ilgili sonraki fazda, opsiyonel ve izole olarak değerlendirilir.
+- V1.0 genel erişimden önce güvenli fetch/robots/queue/rapor yetkisi ve kaynaklı bulgu gerekir. API veya DB örneği çalışan endpoint/migration değildir.
+
+## Gerekçe, etkiler ve alternatif maliyeti
+Mevcut planı uygulamak teknoloji değişimini ve servis sayısını düşük tutar; bu yaklaşım kendiliğinden güvenlik sağlamaz. Özel altyapının parser, SSRF, erişim, queue ve rollback testleri F01/F02 kabul kapılarıdır. Performans iddiası ancak ölçümle yapılır. [Modül matrisi](docs/architecture/MODULES.md), [bağımlılık politikası](docs/process/DEPENDENCIES.md) ve [tehdit modeli](docs/architecture/THREAT_MODEL.md) bu sınırların doğrulama planıdır.
+
+## Geri dönüş ve kullanıcı onayı
+Bu ADR mevcut planı açıklar; yeni servis kurmaz. Teknoloji veya kritik sınır değişirse yeni superseding ADR, alternatif/maliyet/güvenlik analizi ve açık kullanıcı onayı gerekir. İlgili kod oluşunca geri dönüş önce feature flag/önceki uygulama sürümü, DB için testli migration/backup planıdır; otomatik üretim işlemi yok. F00.03 teslim kabulü henüz alınmadı. Q-001–003 ayrı ADR-003/006 kayıtlarında açık kullanıcı onayıyla uzlaştırılmıştır; runtime sınırları burada genişletilmez.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/adr/ADR-003-i18n.md -->
+## BELGE: `docs/adr/ADR-003-i18n.md`
+
+# ADR-003 — Uygulanan özelliklerde Türkçe ve İngilizce kapsamı
+
+- Tarih: 2026-11-03. Durum: APPROVED; Q-003 için açık kullanıcı onayı alındı.
+- Kaynak: [AGENTS](AGENTS.md), [I18N](docs/architecture/I18N.md), [F08](docs/roadmap/F08.md).
+
+## Problem
+AGENTS tr/en metinlerinin tamamını isterken I18N başlangıçta minimum en-US fallback, F08.03 tam kapsama der. Bu fark ilk arayüzde eksik İngilizceyi normalleştirebilir.
+
+## Seçenekler
+1. İlk üründe yalnız Türkçe, İngilizceyi F08'e bırakmak: başlangıçtaki çoklu dil ve AGENTS şartıyla çelişir.
+2. Henüz olmayan bütün gelecek özellikleri şimdiden çevirmek: gereksiz kapsam ve sahte tamamlanma riski.
+3. **Öneri:** Her fazda gerçekten uygulanan bütün kullanıcı metinleri için tr-TR/en-US anahtar ve parametre eşliği; Türkçe varsayılan. Gelecek özelliklerin çevirisi o özelliğin fazında. F08.03 o zamanki ürünün bütün yüzeylerinde kapsam/regresyon ve gelişmiş i18n/a11y kapanışı.
+
+## Onaylanan karar
+Üçüncü seçenek. Dil/route çözümü ve çeviri fallback mekanizması korunur; fallback, bilerek eksik en-US metni teslim etme izni değildir. Hata, kural, UI, rapor, e-posta/PDF dahil o fazda mevcut yüzeyler çevrilir. Henüz uygulama yoktur; bu ADR çeviri motoru kodlamaz.
+
+## Etki ve geri dönüş
+İlk gerçek UI fazlarında çeviri/test işi artar; karşılığında eksik anahtar kullanıcıya sızmaz. Skor veya analiz sonucu dil değişiminden etkilenmez. Bu onayla I18N, PRODUCT ve F08 açıklamaları aynı kapsamı söyleyecek şekilde güncellendi; önceki taslak Git geçmişinde korunur. Geri alınacaksa ayrı karar ve ilgili metinlerin birlikte geri dönüşü gerekir. F00.03 başlangıç izni bu önerinin kabulü sayılmaz.
+
+## Kullanıcı onayı
+ALINDI. 2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi. Bu karar onayı F00.03 teslim kabulü değildir.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/adr/ADR-006-contract-alignment.md -->
+## BELGE: `docs/adr/ADR-006-contract-alignment.md`
+
+# ADR-006 — Finding biçimi ve queue tablo adını uzlaştırma
+
+- Tarih: 2026-11-03. Durum: APPROVED; Q-001 ve Q-002 için açık kullanıcı onayı alındı.
+- Kaynaklar: [API](docs/architecture/API.md), [bulgu şeması](examples/finding.schema.json), [DEMO yanıt](examples/analysis-response.example.json), [CRAWLER](docs/architecture/CRAWLER.md), [DATABASE](docs/architecture/DATABASE.md).
+
+## Problem
+API `data_source`/`evidence[]`, örnekler `source`/nesne `evidence` kullanır. Crawler `jobs`, DB planı `analysis_jobs` der. Uygulama başlamadan tek sözleşme gerekir.
+
+## Seçenekler ve öneriler
+| Soru | Alternatifler | Öneri ve gerekçe |
+|---|---|---|
+| Q-001 | API'yi source/tek nesneye çevirmek; çift alias taşımak; örnekleri API biçimine getirmek | **data_source + nesnelerden oluşan evidence dizisi.** Ürün veri kaynağı adını ve bir bulguda birden çok kanıtı tutarlı kılar; henüz canlı API olmadığı için alias/geçiş kodu gerektirmez. |
+| Q-002 | DB'yi jobs diye adlandırmak; ayrı jobs/analysis_jobs tablosu eklemek; crawler adını düzeltmek | **analysis_jobs** tek analiz kuyruk tablosu adı. DB planı korunur, SEO modülünün iş kaydı genel platform işlerinden ayrılır. Yeni tablo veya migration eklenmez. |
+
+## Onayla uygulanan somut sözleşme
+- `examples/finding.schema.json`: zorunlu `source` alanı `data_source` olarak güncellendi; `evidence` type=array, items type=object. UNKNOWN veya ölçüm yok durumunda boş dizi mümkün; sahte kanıt üretilmez.
+- `examples/analysis-response.example.json`: `_demo:true` korunarak `source` anahtarı `data_source` olarak güncellendi; mevcut kanıt nesnesi tek elemanlı diziye alındı. Başka gerçek tarama iddiası yok.
+- API belgesinde alanların anlamı ve örneğe referans açıklandı. İleride haricî provider adaptörünün `source()` metodu veya DB kaynağı otomatik yeniden adlandırılmayacak; bu karar API Finding alanıyla sınırlı.
+- CRAWLER belgesindeki queue örneği `analysis_jobs(...)` diye adlandırıldı; lifecycle alanları korundu. DATABASE aynı adı kullanmaya devam edecek. SQL/PHP/DB işlemi yok.
+
+## Güvenlik, maliyet ve geri dönüş
+Kanıt dizisindeki her nesne güvenilmeyen içeriktir; ham HTML render edilmez, kapsam/saklama/maskeleme sınırları korunur. Şema uzlaşması XSS veya SSRF korumasının yerine geçmez. Yeni paket/servis maliyeti yok. Taslaklar Git revert ile döndürülebilir; canlı veri/istemci henüz yoktur. İleride yayınlanmış API değişikliği sürüm ve migration kararı ister.
+
+## Kullanıcı onayı
+ALINDI. 2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi. API/örnek ve queue belgeleri bu onaydan sonra güncellendi. Karar onayı F00.03 teslim kabulü veya uygulama kodlama izni değildir.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/architecture/MODULES.md -->
+## BELGE: `docs/architecture/MODULES.md`
+
+# Modül sınırları ve veri akışı
+
+Bu belge [ADR-001](docs/adr/ADR-001-stack.md) ve mevcut [SYSTEM](docs/architecture/SYSTEM.md) katmanlarını açıklar; dizin veya PHP sınıfı oluşturmaz. Somut interface imzaları ilgili F01/F02 alt fazlarında testlerle kesinleşir.
+
+## İzinli bağımlılık yönü
+`HTTP/CLI girişleri → Application kullanım senaryoları → Domain sözleşmeleri`. Infrastructure, Domain/Application sözleşmelerini uygular; yalnız bootstrap/composition noktası somut adaptörleri bağlar. Domain, HTTP framework'ü/PDO/provider/browser detaylarına bağımlı olmaz. Eşdeğer bağımlılık yönü korunmadan yeni katman atlanmaz.
+
+| Sınır / konum | Sorumluluk | İzinli bağımlılık | Yapmaması gereken |
+|---|---|---|---|
+| public / Controllers | HTTP girdisi, auth/CSRF/rate kararı, kullanım senaryosu çağrısı ve doğru HTTP cevabı | Core Request/Response, Application | Doğrudan dış HTTP, SQL, puan veya parser işi |
+| app/Core | Config, router, hata/request-id, DB bağlantı altyapısı, logging, auth/i18n temelleri | PHP platformu, denetlenmiş küçük yardımcılar | SEO kuralı, crawler domain mantığı veya müşteri rapor verisi bilmek |
+| SeoAnalyzer/Domain | Analysis, PageSnapshot, Finding, Rule ve değer nesneleri; durum/geçerlilik kuralları | Dilin temel tipleri ve kendi sözleşmeleri | Ağ, PDO, dosya sistemine serbest erişim, locale'e göre skor değiştirme |
+| SeoAnalyzer/Application | CreateAnalysis, ScanPage, ReadReport gibi iş akışı ve yetkili kullanım senaryoları | Domain ve açık repository/queue/fetch sözleşmeleri | Provider payload'ını UI'ya sızdırmak, kontrol sınırını atlamak |
+| SeoAnalyzer/Infrastructure | SafeHttpClient, robots/sitemap/parser, PDO repository, DB queue/cache adaptörleri | Domain/Application sözleşmeleri; en az ayrıcalıklı I/O | Redirect/DNS/byte/robots kontrollerini devre dışı bırakmak |
+| SeoAnalyzer/Rules | Uygulanabilirlik, normalize kanıt, deterministik PASS/WARN/FAIL/UNKNOWN/N/A | Snapshot ve kural bağlamı | HTTP/DB çağrısı; ölçülmeyene skor cezası; kapsam dışı site-geneli kesinlik |
+| SeoAnalyzer/Integrations | PSI/CrUX/GSC payload normalizasyonu, provider kota/cache/hata eşlemesi | Yetkili secret erişimi, ortak güvenli HTTP, provider allowlist | Token'ı controller/UI/loga vermek, serbest provider URL'si kullanmak |
+| Views / resources/lang | Escaped sunum, çeviri anahtarları, a11y ve locale biçimleme | Yetkili salt okunur rapor modeli, translator | Ham hedef HTML, SQL/fetch, bulgu üretimi veya gizli anahtar |
+| app/Shared | Birden fazla gerçek modülün ihtiyaç duyduğu kanıtlanmış ortak sözleşmeler | Core ve genel tipler | SEO iç kurallarını erken “genel framework” haline getirmek |
+| bin worker/scheduler | Sınırlı süreli lease/claim, iptal/retry/dead-letter ve kapanış | Application iş akışı, minimum DB/ağ yetkisi | Web session taklidi, sınırsız döngü veya sınırsız retry |
+
+## Başlıca akışlar ve sahiplik
+1. Kullanıcı URL'si güvenilmeyen veri olarak kalır; analiz kaydı ve queue işlemi yetki/kota/idempotency kontrolünden geçer. Ağ çağrısı queue transaction'ı dışında yapılır.
+2. Worker SafeHttpClient/robots üzerinden aldığı sınırlı veriden PageSnapshot üretir. Kural motoru yalnız snapshot/ölçüm bağlamını değerlendirir. Ek ölçüm gerekiyorsa yeni ağ yolu açılmaz; Application bütçeli güvenli adaptörü çağırır.
+3. Finding kaynak/tarih/kapsam/kanıt taşır. ReportBuilder erişim kontrolünü geçmiş salt okunur modeli UI/API'ye verir. Skor, sponsor/plan/locale veya LLM tarafından değiştirilmez.
+4. Veritabanı yazma sahibi repository/Application akışıdır. Tenant/owner yetkisi yalnız controller'da değil kullanım senaryosu ve veri erişim sınırında da kontrol edilir. Public ID tek başına yetki değildir.
+5. Yeni SitePortal aracı ileride ayrı Modules altına gelir; SeoAnalyzer iç tablolarına veya kural sınıflarına doğrudan bağlanmaz. API/queue olay sözleşmesi gerekiyorsa ayrıca belgelenir; şu an event bus veya mikroservis eklenmez.
+
+## Değişiklik ve doğrulama kapıları
+Bu matris kod sınırının kabul hedefidir, uygulanmış mimari testi değildir. F01.01 bootstrap/i18n; F01.03–04 tek HTTP çıkışı/robots; F01.05 queue; F01.06 auth/kota/log; F02.03–05 kural/score sözleşmesi testleri sınırları doğrular. Yeni I/O adaptörü güvenlik incelemesi, bağımlılık kaydı ve [tehdit modeli](docs/architecture/THREAT_MODEL.md) güncellemesi ister. Q-001–003 için [onaylı ADR kayıtları](docs/adr/README.md) bağlayıcıdır; kalan [açık kayıtlar](docs/process/OPEN_QUESTIONS.md) varsayımla kapatılmaz.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/architecture/THREAT_MODEL.md -->
+## BELGE: `docs/architecture/THREAT_MODEL.md`
+
+# Başlangıç tehdit modeli ve güven sınırları
+
+Tarih: 2026-11-03. Durum: DESIGN_REVIEW; kontroller planlanmıştır, implementasyon veya pentest geçişi değildir. Kaynaklar: [SECURITY](docs/architecture/SECURITY.md), [CRAWLER](docs/architecture/CRAWLER.md), [API](docs/architecture/API.md), [MODULES](docs/architecture/MODULES.md), [OWASP threat modeling](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) ve [OWASP SSRF](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html). Yaklaşım OWASP'ın sistem/veri akışı/güven sınırı/tehdit/önlem/yeniden inceleme yapısını kullanır; STRIDE başlıkları düşünme yardımıdır, güvenlik sertifikası değildir.
+
+## Varlıklar, aktörler ve varsayımlar
+Korunacaklar: özel rapor ve sahiplik bilgisi; kullanıcı/tenant verisi; kimlik/session/OAuth/API anahtarları; worker/DB/egress kaynakları; kanıt, kaynak ve skor bütünlüğü; maliyet bütçesi ve audit kayıtları. Aktörler: anonim URL gönderen, yetkili site sahibi/ajans üyesi, kötü niyetli hedef site veya DNS/provider cevabı, hesabı ele geçirilmiş kullanıcı/admin, paket sağlayıcısı. Hedef sayfa/HTTP/HTML/XML/JSON-LD, URL/redirect/DNS, provider payload'ı ve kullanıcı kanıt parametreleri güvenilmeyen veridir.
+
+Henüz production/domain/provider hesabı yok. Tek VPS, private DB ve minimum yetkili ayrı web/worker süreçleri tasarım varsayımıdır; ortam doğrulaması değildir. Gerçek deployment yeni veri akışı/sınır eklerse model ve kontroller güncellenir.
+
+## Güven sınırları ve akış
+```text
+TB1 Internet/kullanıcı -> HTTPS giriş/API -> auth/kota/idempotency -> Application
+TB2 Application -> yetkili repository/DB queue -> sınırlı CLI worker
+TB3 Worker/Integration -> SafeHttpClient + robots + egress -> hedef Internet/DNS/provider
+TB4 Güvenilmeyen hedef içerik -> byte/parser sınırı -> normalize snapshot -> Rules/Score
+TB5 Rapor deposu -> owner/tenant/süreli paylaşım kontrolü -> escaped UI/API/export
+TB6 CI/paket kaynağı -> lisans/audit/lock incelemesi -> testli build -> onaylı yayın
+TB7 Gelecek izole browser / OAuth / LLM -> ayrı egress, veri ve secret sınırı (şimdilik kapalı)
+```
+DB'nin Internet'e açık olmaması hedeflenir; TB2'nin varlığı yetki denetimini kaldırmaz. Provider allowlist veya DNS kontrolü tek başına güvenlik garantisi değildir; bağlanılan IP, redirect ve TLS doğrulaması da gerekir. Renderer alt kaynakları dahil bütün egress sınırı korunur.
+
+## Tehdit ve kabul matrisi
+STRIDE: S=kimlik taklidi, T=veri değiştirme, R=inkâr/izlenebilirlik, I=bilgi ifşası, D=hizmet engeli, E=yetki yükseltme. P0 kamuya açılmayı engelleyen, P1 ilgili sonraki özelliğin yayını öncesi giderilmesi gereken önceliktir; sayısal risk puanı veya giderilmiş açık iddiası değildir. Öncelik ilgili işlevin yayın kapısına aittir; henüz olmayan gelecek özellikler kapalı kalır ve V1 kapsamına taşınmaz.
+
+| ID / tür / öncelik | Giriş, varlık ve kötüye kullanım | Planlanan önlem / sorumlu sınır | Doğrulama ve faz kapısı | Kalan risk / şimdi durum |
+|---|---|---|---|---|
+| T01 / I,E / P0 | TB3 kullanıcı URL/redirect/DNS ile private, loopback veya metadata erişimi | SafeHttpClient: şema/port/userinfo/IP/CNAME kontrolü, DNS pin, her hop yeniden kontrol, TLS, egress deny | F01.03–04 kontrollü IPv4/IPv6/rebinding/public→private fixture matrisi; gerçek iç ağa saldırı yok | Parser farkı ve değişen ağlar; NOT_IMPLEMENTED |
+| T02 / D / P0 | TB1/3 tarama flood, crawl trap, provider maliyeti | Application/worker: guest/site/global kota, per-host=1, süre/bytes/depth/redirect cap, backoff/Retry-After, iptal | F01.04–06 ve F03.05; 429/503 ve bütçe/iptal TEST senaryoları | Dağıtık abuse ve hedef tepkisi; NOT_IMPLEMENTED |
+| T03 / T,D,I / P0 | TB4 XXE, sıkıştırma/XML bombası, bozuk HTML/JSON-LD | Parser dış entity/network kapalı, sıkıştırılmış/açılmış boyut ve süre sınırı, toleranslı parse, ham içerik saklama yok | F01.04, F02.02, F03.02; malformed/oversize/XXE TEST girdileri | Yeni format/parser açığı; NOT_IMPLEMENTED |
+| T04 / I,E / P0 | TB5 IDOR, tahmin edilen ID veya tenant karışmasıyla özel rapor erişimi | Application/repository owner/tenant ACL; süreli paylaşım hash/expiry/revoke; noindex yalnız ek görünürlük önlemi | F02.07, F05.01/07, F07.03/05 guest/owner/tenant/expired-token izin matrisi | Ele geçirilmiş yetkili hesap; NOT_IMPLEMENTED |
+| T05 / T,I / P0 | TB4/5 kötü niyetli HTML/URL/metin ile XSS, CSV veya log injection | View/export/logger bağlama uygun escaping, CSV formül koruması, maskeleme/uzunluk sınırı | F01.06, F02.06, F03.06 ve PDF fazı; saldırgan TEST kanıt/metinleri | Yanlış escape bağlamı; NOT_IMPLEMENTED |
+| T06 / S,E / P0 | TB1 state-changing istek/oturum ele geçirme | Core CSRF, güvenli session cookie, auth throttling, password hash, admin minimum yetki | F01.06/F05.01; token/session/CSRF ve auth rate TEST | Phishing/cihaz ele geçirme; NOT_IMPLEMENTED |
+| T07 / T,D / P0 | TB2 aynı job iki worker tarafından işlenir; lease/retry fırtınası | Queue atomik claim/transaction, lease, idempotency, bounded retry/dead-letter; ağ transaction dışında | F01.05 iki worker/race/crash/lease expiry TEST, MySQL gerçek sürümünde lock davranışı | Clock/DB kesintisi; NOT_IMPLEMENTED |
+| T08 / T,E / P0 | TB1/2 URL/parametre SQL veya shell girdisine dönüşür | PDO prepared statement, allowlist query alanları, kullanıcı verisiyle shell komutu kurmama | F01.02/06 ve API fazı injection TEST'leri | Yeni sorgu/komut yolu; NOT_IMPLEMENTED |
+| T09 / I,R / P0 | TB2/5 log/backup/export veya repo ile secret/PII sızıntısı | Secret env/store, log redaction, webroot dışı storage, minimum saklama/yetki, private rapor | F01.06, F02.07, F05 OAuth/export; log/retention/delete/backup erişim TEST | Operatör/backup yetkisi ve gerçek hukuki süreler açık; NOT_IMPLEMENTED |
+| T10 / S,I,E / P1 | TB7 OAuth state/scope/token veya domain doğrulama tekrar kullanımı | State+PKCE, scope minimumu, şifreli refresh token, challenge hash/expiry/host kontrolü, revoke | F05.02–05; replay/state/scope/revoke/ACL TEST | Provider hesabı ve consent hatası; ilgili özellik kapalı |
+| T11 / T,R / P0 | TB4/5 kanıt yokken başarı/0 puan, lab-field karışması veya sahte indeks garantisi | Domain rule_version/source/time/scope, UNKNOWN/N/A, deterministik skor, provider lab-field ayrımı | F02.03–05/F04.01–03; no-data/outage/score fixture ve source review | Kaynak değişimi/false positive; NOT_IMPLEMENTED |
+| T12 / T,E,I / P0 | TB6 kötü niyetli veya terk edilmiş paket/plugin/build script | Kesin sürüm+lock, lisans/advisory incelemesi, plugin/script izni, least privilege, gizli anahtar içermeyen test | Her yeni bağımlılık PR'ı ve F00.04 CI tasarımı; envanter/lock/source diff | Sıfır gün/upstream hesabı ele geçirme; paket henüz yok |
+| T13 / I,E,D / P1 | TB7 browser alt kaynağı SSRF veya renderer kaçışı | Ayrı kullanıcı/izole worker, private egress deny, dosya/CPU/RAM/zaman sınırı, default kapalı | F04.06 renderer açık/kapalı ve alt kaynak/private ağ TEST | Browser sıfır gün; renderer kapalı |
+| T14 / T,I,D / P1 | TB7 hedef içerikle LLM prompt injection, PII/maliyet sızıntısı, uydurma bulgu | Opt-in/default kapalı, minimum veri ve evidence-only açıklama, bütçe, skor üretimine yetki yok | F06.02/07 adversarial TEST/eval, AI kapalı tam temel işlev | Model değişkenliği; LLM kapalı |
+| T15 / R,T / P0 | TB1/2/6 kritik işlemin izi yok veya audit log silinebilir | Request-id, maskeli actor/action/outcome/time; minimum ayrı yetki, retention ve operasyon gözden geçirme | F01.06/F05.08; izlenebilirlik, redaction, yetki ve hata TEST | Gerçek retention/admin politikası açık; NOT_IMPLEMENTED |
+
+## Gözden geçirme ve risk kabulü
+Her yeni dış istek yolu, export, auth/tenant, paket, browser veya provider için etkilenen TB/T-ID ve test fazı PR'a yazılır. Güvenlik testleri yalnız yetkili yerel/sentetik fixture ortamındadır. P0 giderilmeden ilgili ürün kamuya açılmaz; ölçülmemiş kontrol başarılı sayılmaz. Bir tehdit satırının belgede bulunması riskin giderildiği anlamına gelmez. İstisna gerekiyorsa kullanıcı kararı, sorumlu, telafi, süre ve yeniden kontrol kaydı gerekir; private ağ/ACL bariyerleri zayıflatılmaz.
+
+Bu alt faz belge kapsamındadır. T01–T15 runtime kontrolleri çalıştırılmadı; gerçek testler matristeki fazlarda uygulanacak. Mevcut sınırlı secret ve belge kontrolleri yalnız repo teslimini değerlendirir. Prod alan adı, saklama süreleri, e-posta, admin/MFA, provider ve deployment ayarları ilgili faz/yayın öncesi açık kararlardır.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/process/DEPENDENCIES.md -->
+## BELGE: `docs/process/DEPENDENCIES.md`
+
+# Bağımlılık, sürüm, lisans ve tedarik zinciri politikası
+
+Tarih: 2026-11-03. Durum: F00.03 için READY_FOR_REVIEW; kullanıcı teslim kabulü bekleniyor. Kaynak sınırları [AGENTS](AGENTS.md) ve [ADR-001](docs/adr/ADR-001-stack.md). Makine envanteri: [dependencies.json](docs/process/dependencies.json).
+
+## Mevcut gerçek durum
+Uygulama Composer/npm paketi yok; composer.json/lock, package.json/lock veya vendor/node_modules eklenmedi. PHP/MySQL/extension'lar planlanan platform gereksinimidir, “hiç dış yazılım yok” anlamına gelmez. Yerel PATH'te PHP ve Composer komutları bulundu; sürüm/extension uyumluluğu çalıştırılmadı. MySQL CLI PATH'te bulunmadı; bu, makinede MySQL kurulmadığını ispatlamaz. Mevcut belge kontrolleri Python standart kütüphanesi ve Git kullanır; Python doğrulama komutları uygulama runtime'ı değildir.
+
+## Paket ekleme kapısı
+Her doğrudan veya geçişli bağımlılık için kayıtta ad, amaç, ilgili alt faz, upstream/source URL, kesin resolved sürüm/reference, dağıtım bütünlük kaydı veya Git ref, lisans/SPDX ve notice yolu, bakım durumu, güvenlik kontrol tarihi/çıktısı, sahibi/onayı ve kaldırma alternatifi bulunur. İlk tercih PHP'nin mevcut kabiliyetidir; kritik güvenlik algoritması sırf bağımlılıktan kaçınmak için denetimsiz yeniden icat edilmez.
+
+Kayıt tamamlanmadan paket kurup çalıştırma. Yeni framework/servis/proprietary SDK mevcut planı değiştiriyorsa ayrıca kullanıcı onayı ve ADR gerekir. Transitive bağımlılıklar da incelenir; yalnız doğrudan paket sayısı güvenlik göstergesi değildir. Gerekli test araçları da ayrı dev-tool kapsamıyla aynı sürüm/lisans/güvenlik kapısından geçer; F00.04'ün test araçları burada kurulmaz.
+
+## Sürüm ve tekrarlanabilirlik
+- Uygulama doğrudan paketleri AGENTS gereği kesin sürümle seçilir; `*`, `dev-main`, yüzen branch veya `latest` ile teslim yapılmaz. Geçişli sürümler commit edilen Composer lock içinde çözülür. Kod incelemesi manifest ve lock diff'ini birlikte kapsar.
+- [Composer resmî rehberi](https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control) lock dosyasının aynı kesin sürümleri kullandırdığını açıklar. Deployment mevcut lock'tan install yapar; production'da update/dependency çözümlemesi çalıştırılmaz.
+- Platform alt sınırı kesin yama sabitlemesi değildir. PHP/MySQL/Composer/işletim sistemi ve extension sürümleri gerçek ortam kurulduğunda F01 ortam kaydında tutulur; resmî destek ve güvenlik yamaları yayın öncesi yeniden kontrol edilir. Sahte resolved sürüm yazılmaz.
+- Gereksiz frontend paket yöneticisi veya CDN script zinciri eklenmez. İleride zorunlu olursa kendi lock/integrity/lisans kaydı ve aynı kontrol kapıları gerekir.
+
+## Güvenlik ve paket çalıştırma
+Composer plugin'leri varsayılan kapalı (`allow-plugins: false`); yalnız ayrı incelenmiş açık allowlist kararıyla değişir. [Resmî config](https://getcomposer.org/doc/06-config.md#allow-plugins) plugin'lerin Composer sırasında kod çalıştırabildiğini belirtir. Paket ve root script'leri güvenilmeyen kod kabul edilir; bilinmeyen paketi sırları olan oturumda çalıştırma. Bir plugin'i kapatmak bütün bağımlılık kodunu güvenli yapmaz.
+
+Yeni veya değişen lock için advisory/abandoned/malware sinyalleri, upstream bakım durumu ve lisans envanteri incelenir. Doğrulanmış kritik/yüksek etkili açık veya zararlı paket release blocker'dır. Yetkisiz audit ignore/skip yapılmaz. Veri kaynağı erişilemezse “açık yok” denmez; kontrol UNKNOWN ve ekleme/release engelli kalır. Açıklanmış, erişilemez olduğu kanıtlanan istisna gerekiyorsa etki, telafi, sorumlu, son kullanma tarihi ve ayrı kullanıcı onayı kaydedilir; SSRF/ACL sınırı istisnayla gevşetilmez.
+
+## Lisans kabul kapısı
+SPDX etiketi, gerçek LICENSE/NOTICE metni, sürüm ve doğrudan/geçişli dağıtım yükümlülükleri birlikte incelenir. MIT/BSD/Apache etiketleri otomatik onay değildir; notice/patent/redistribution koşulları okunur. Copyleft, ticari, çift veya belirsiz lisans durumunda işletmeci değerlendirmesi gerekir; uygunluğu varsayarak ekleme yapılmaz. Bu teknik süreç hukukî uygunluk görüşü değildir. Kök projeye LICENSE dosyası uydurulmaz; ürünün dağıtım lisansı yayın öncesi işletmeci tarafından seçilir. PHP/MySQL gibi platformların kullanım/dağıtım koşulları uygulama paketlerinden ayrı kaydedilir.
+
+## Gelecek fazda uygulanacak kontrol örnekleri
+Aşağıdaki komutlar [Composer CLI belgesinden](https://getcomposer.org/doc/03-cli.md) kontrol edilen prosedür örnekleridir; **bu alt fazda çalıştırılmadı**. Manifest/lock henüz yoktur. Kullanılacak Composer sürümünde bayraklar yeniden doğrulanır.
+
+```text
+composer validate --strict
+composer audit --locked --format=json
+composer licenses --locked --format=json
+composer check-platform-reqs
+```
+
+Audit başarılı çıkış kodu tek başına kapsamı ispatlamaz; çıktıdaki taranan paket/kaynak ve tarih rapora yazılır. Lisans komutu hukukî uygunluk kararı vermez. CI kapılarının kurulumu F00.04'tür; bu dosya yalnız politikadır.
+
+## Güncelleme ve geri alma
+Hedefli update ayrı alt faz/fix PR'ında yapılır: gerekçe → upstream farkı/lisans/advisory → manifest+lock+envanter → ilgili regresyon/güvenlik testleri → kullanıcı review. Geri alma eski manifest/lock ve testli artifact'tır; veri formatı etkilenirse ayrı migration/backup stratejisi gerekir. Paket kaldırılırken kalan transitive bağımlılıklar ve script/config/notice kayıtları da kontrol edilir. Üretimde otomatik downgrade veya yıkıcı işlem yapılmaz.
+
+
+
+
+---
+
+<!-- KAYNAK BELGE: docs/reference/ARCHITECTURE_SOURCES.md -->
+## BELGE: `docs/reference/ARCHITECTURE_SOURCES.md`
+
+# F00.03 — Teknik karar kaynaklarının kontrol kaydı
+
+Kontrol tarihi: 2026-11-03 (Europe/Istanbul). Aşağıdaki birincil sayfalar bu alt fazda internet üzerinden açılıp ilgili bölümleri okundu. Bu kontrol uygulama, lisans uygunluğu, runtime kurulumu veya security audit geçişi değildir. SEO kural kaynağı S1–S15 [ayrı envanterde](docs/reference/SOURCES.md) kalır.
+
+| ID | Okunan birincil kaynak | Kontrol edilen konu / sınır |
+|---|---|---|
+| A1 | [PHP supported versions](https://www.php.net/supported-versions.php) | 8.4 için aktif/güvenlik destek tarihleri; gerçek ortam kurulurken yeniden kontrol gerekir |
+| A2 | [Composer basic usage](https://getcomposer.org/doc/01-basic-usage.md) | Uygulamanın lock dosyasını commit etmesi ve install'ın kesin kilitli sürümleri kullanması |
+| A3 | [Composer config](https://getcomposer.org/doc/06-config.md) | allow-plugins=false ve plugin yürütme sınırı; yeni config alanları yerel sürüm uyumluluğu varsayılarak kullanılmaz |
+| A4 | [Composer CLI](https://getcomposer.org/doc/03-cli.md) | validate, audit/--locked, licenses/--locked/--format ve check-platform-reqs; komutlar manifest/lock olmadığından bu aşamada çalıştırılmadı |
+| A5 | [MySQL LTS ve Innovation](https://dev.mysql.com/doc/refman/8.4/en/mysql-releases.html) | Desteklenen LTS seçimini değerlendirme; kesin runtime/yama sürümü veya veri tabanı uyumluluğu burada onaylanmadı |
+| A6 | [OWASP threat modeling](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) | Varlık/veri akışı/güven sınırı/tehdit/önlem ve yeniden değerlendirme yaklaşımı |
+| A7 | [OWASP SSRF prevention](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html) | URL/host/IP/DNS/yönlendirme ve uygulama+ağ katmanı önlemleri; gerçek SSRF TEST'i çalıştırılmadı |
+
+Mevcut planın kaynakları: [SYSTEM](docs/architecture/SYSTEM.md), [SECURITY](docs/architecture/SECURITY.md), [CRAWLER](docs/architecture/CRAWLER.md), [DATABASE](docs/architecture/DATABASE.md), [AGENTS](AGENTS.md), [F00 şartnamesi](docs/roadmap/F00.md). Haricî sayfaların tamamı kopyalanmadı; kararları destekleyen kısa notlar saklandı. Sürüm, lisans, paket veya yayında değişiklik olduğunda ilgili kaynak yeniden kontrol edilir.

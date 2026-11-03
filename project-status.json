@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T16:50:37+03:00",
+  "updated_at": "2026-11-03T16:54:56+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": null,
   "current_phase": "F00",
-  "current_subphase": "F00.02",
+  "current_subphase": "F00.03",
   "last_approved_phase": null,
   "last_approved_subphase": "F00.02",
-  "status": "DONE",
-  "branch": "phase/F00.02-docs-contract",
-  "commit_sha": "5bf77121efb203393d8e61eb7fbfa6f7e700f2e9",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/2",
-  "last_report": "docs/reports/F00.02.md",
+  "status": "IN_PROGRESS",
+  "branch": "phase/F00.03-architecture-policy",
+  "commit_sha": null,
+  "pr_url": null,
+  "last_report": "docs/reports/F00.03.md",
   "blockers": [],
-  "next_action": "Onaylı PR #2’yi birleştir, güncel main’den F00.03 dalını aç.",
+  "next_action": "Yalnız F00.03 ADR, modül/bağımlılık politikası ve tehdit modelini hazırla, doğrula, PR/rapor sun ve DUR.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -23,7 +23,7 @@
       "subphases": {
         "F00.01": "DONE",
         "F00.02": "DONE",
-        "F00.03": "NOT_STARTED",
+        "F00.03": "IN_PROGRESS",
         "F00.04": "NOT_STARTED",
         "F00.05": "NOT_STARTED",
         "F00.06": "NOT_STARTED"
@@ -137,14 +137,14 @@
       }
     }
   },
-  "baseline_commit_sha": "09716d298587dc29ea5d9092127a65d0f24a4c07",
-  "next_subphase": "F00.03",
+  "baseline_commit_sha": "8ed972e5e74806ea62f5dd50e7f7953570472e4c",
+  "next_subphase": "F00.04",
   "approval_required": true,
-  "commit_sha_scope": "Sıfır bağlamlı devir testinde incelenen sabit commit; PR head sonraki sonuç/durum metadata commit’ini de içerir.",
-  "push_status": "SUCCESS",
-  "test_status": "PASS_DOCUMENT_INVENTORY_HANDOFF_CHECKS",
+  "commit_sha_scope": "Bu alt fazın doğrulanmış içerik commit’i; sonraki teslim metadata commit’i PR head içinde olabilir.",
+  "push_status": "PENDING",
+  "test_status": "PASS_DOCUMENT_ARCHITECTURE_INVENTORY_CHECKS",
   "ci_status": "NOT_CONFIGURED",
-  "approval_received": true,
+  "approval_received": false,
   "approvals": {
     "F00.01": {
       "approved_at": "2026-11-03T16:30:43+03:00",
@@ -160,30 +160,35 @@
     }
   },
   "start_authorization": {
-    "subphase": "F00.02",
-    "authorized_at": "2026-11-03T16:32:29+03:00",
-    "reference": "Kullanıcı mesajı: devam edelim"
+    "subphase": "F00.03",
+    "authorized_at": "2026-11-03T16:54:56+03:00",
+    "reference": "F00.02 kabulü, PR #2 merge ve F00.03 başlangıcı sorusuna kullanıcı yanıtı: devam edelim"
   },
   "previous_delivery": {
-    "subphase": "F00.01",
+    "subphase": "F00.02",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/1",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/2",
     "merged": true,
-    "merge_sha": "09716d298587dc29ea5d9092127a65d0f24a4c07"
+    "merge_sha": "8ed972e5e74806ea62f5dd50e7f7953570472e4c"
   },
   "open_questions": [
-    "Q-001",
-    "Q-002",
-    "Q-003"
+    "Q-004"
   ],
-  "handoff_test": {
-    "status": "PASS",
-    "report": "docs/reports/F00.02-handoff.md",
-    "first_attempt": "FAIL_STALE_LINK_COUNT_AND_CHANGED_WORKTREE",
-    "agent": "/root/handoff_retest",
-    "examined_sha": "5bf77121efb203393d8e61eb7fbfa6f7e700f2e9",
-    "worktree_start": "CLEAN",
-    "worktree_end": "CLEAN",
-    "questions_answered": 5
+  "decision_approvals": {
+    "Q-001": {
+      "approved_at": "2026-11-03T17:04:21+03:00",
+      "approval_reference": "2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi.",
+      "adr": "docs/adr/ADR-006-contract-alignment.md"
+    },
+    "Q-002": {
+      "approved_at": "2026-11-03T17:04:21+03:00",
+      "approval_reference": "2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi.",
+      "adr": "docs/adr/ADR-006-contract-alignment.md"
+    },
+    "Q-003": {
+      "approved_at": "2026-11-03T17:04:21+03:00",
+      "approval_reference": "2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi.",
+      "adr": "docs/adr/ADR-003-i18n.md"
+    }
   }
 }

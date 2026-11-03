@@ -43,3 +43,6 @@ Bu envanter başlangıç plan paketinden alınan **birincil/otoritatif kaynak** 
 
 ## Bakım bağlantıları
 Kural uygulamadan önceki [referans disiplini](#referans-kullanım-disiplini) geçerlidir. [Belge haritası](../README.md), [bakım rehberi](../process/MAINTENANCE.md) ve [kural CSV](../requirements/rules-catalog.csv) kaynak kimliklerini birlikte izler.
+
+## Teknik karar kaynakları
+F00.03 sırasında ayrıca kontrol edilen PHP/Composer/MySQL/OWASP sayfaları [ARCHITECTURE_SOURCES](ARCHITECTURE_SOURCES.md) içinde tarih ve kapsamıyla kayıtlıdır. Bu, SEO kural kaynakları S1–S15’in güncel içeriğinin tekrar onaylandığı anlamına gelmez.
