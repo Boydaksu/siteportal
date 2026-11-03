@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T16:21:21+03:00",
+  "updated_at": "2026-11-03T16:27:04+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": null,
@@ -9,19 +9,19 @@
   "current_subphase": "F00.01",
   "last_approved_phase": null,
   "last_approved_subphase": null,
-  "status": "IN_PROGRESS",
+  "status": "READY_FOR_REVIEW",
   "branch": "phase/F00.01-repo-inventory",
-  "commit_sha": null,
-  "pr_url": null,
+  "commit_sha": "611ad26740e4d2d984f56810f924726cc8496827",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/1",
   "last_report": "docs/reports/F00.01.md",
   "blockers": [],
-  "next_action": "F00.01 doğrulama ve GitHub teslimini bitir; kullanıcı onayı bekle. F00.02 başlamadı.",
+  "next_action": "DUR: F00.01 kabulünü bekle; F00.02 için ayrıca açık onay al. PR merge ayrıca onay gerektirir.",
   "phases": {
     "F00": {
       "version": "V0.0",
       "status": "IN_PROGRESS",
       "subphases": {
-        "F00.01": "IN_PROGRESS",
+        "F00.01": "READY_FOR_REVIEW",
         "F00.02": "NOT_STARTED",
         "F00.03": "NOT_STARTED",
         "F00.04": "NOT_STARTED",
@@ -139,5 +139,10 @@
   },
   "baseline_commit_sha": "cb885fd3aae4fcacea3618be77115c387baf61a9",
   "next_subphase": "F00.02",
-  "approval_required": true
+  "approval_required": true,
+  "commit_sha_scope": "İlk envanter ve test kanıtı commit’i; PR head sonraki teslim metadata commit’ini de içerir.",
+  "push_status": "SUCCESS",
+  "test_status": "PASS_DOCUMENT_INVENTORY_CHECKS",
+  "ci_status": "NOT_CONFIGURED",
+  "approval_received": false
 }

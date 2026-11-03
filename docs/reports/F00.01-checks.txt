@@ -1,9 +1,9 @@
-$ scripts/verify_blueprint.py
+$ python scripts/verify_blueprint.py
 exit=0
 PASS: 9 ana faz, 65 alt faz, 84 kural, 44 Markdown dosyası; JSON ve iç bağlantılar geçerli.
 NOT: Bu sonuç yazılımın implementasyon veya güvenlik testlerini geçtiğini göstermez.
 
-$ scripts/verify_inventory.py
+$ python scripts/verify_inventory.py
 exit=0
 PASS: Başlangıç paketi: 57 dosya kayıtlı
 PASS: SHA256 .env.example
@@ -90,9 +90,7 @@ PASS: Gerçek .env dosyası takip edilmiyor
 PASS: F00.01 kapsamında PHP uygulama kodu eklenmedi
 NOT: PHP/DB/crawler birim, entegrasyon ve güvenlik testleri uygulanamaz; uygulama yok.
 
+PASS: Python script syntax compile; MASTER_PLAN byte-for-byte rebuild.
 $ git diff --cached --check
-exit=0
-
-PASS: bütün Python scriptleri syntax compile kontrolünden geçti.
-
-PASS: MASTER_PLAN byte-for-byte yeniden üretim eşliği.
+İlk içerik commit’inde exit=0; teslim metadata commit’inden önce tekrar çalıştırılır.
+Uygulama testleri: N/A. CI: NOT_CONFIGURED.

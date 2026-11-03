@@ -1,10 +1,10 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F00.01 — IN_PROGRESS; başlangıç envanteri ve teslim doğrulaması. Uygulama kodu yok.
+> **Durum:** F00.01 — READY_FOR_REVIEW; envanter teslimi hazır, kullanıcı kabulü bekleniyor. Uygulama kodu yok.
 > **Tarih:** 2026-11-03 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz:** F00 / V0.0.
 > **Son onaylanan alt faz:** YOK. **Son hazırlanan alt faz:** F00.01. **Sonraki:** F00.02, açık onay bekler.
-> **Dal:** `phase/F00.01-repo-inventory`. **PR/SHA:** GitHub teslimi henüz tamamlanmadı.
-> **Kontrol:** Başlangıç paket doğrulaması geçti; teslim kontrolleri raporda kaydedilecek.
+> **Dal:** `phase/F00.01-repo-inventory`. **PR:** [#1](https://github.com/Boydaksu/siteportal/pull/1). **Kanıt commit:** `611ad26740e4d2d984f56810f924726cc8496827` (PR ayrıca teslim metadata commit’i içerir).
+> **Kontrol:** 9/65 faz, 84 kural, 44 Markdown; manifest, CSV/JSON, TR/EN ve belge kontrolleri PASS. CI yok.
 > **Rapor:** [F00.01](docs/reports/F00.01.md). **Durum kaydı:** [project-status.json](project-status.json).
 > Başlangıç README içeriği `# siteportal` idi; başlık ve özgün içerik Git geçmişinde ve envanterde korunur.
 
