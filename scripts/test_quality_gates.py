@@ -33,7 +33,7 @@ class QualityGateTests(unittest.TestCase):
         self.rejected("format.php", "<?php function TEST_format(){return 1;}\n", ["vendor/bin/phpcs", "--standard=PSR12"], "ERROR")
 
     def test_static_analysis_rejects_incorrect_return_type(self):
-        self.rejected("return.php", "<?php\ndeclare(strict_types=1);\nfunction TEST_return(): int { return 'TEST'; }\n", ["vendor/bin/phpstan", "analyse", "--no-progress", "--error-format=raw"], "should return int but returns string")
+        self.rejected("return.php", "<?php\ndeclare(strict_types=1);\nfunction TEST_return(): int { return 'TEST'; }\n", ["vendor/bin/phpstan", "analyse", "--no-progress", "--debug", "--error-format=raw"], "should return int but returns string")
 
     def test_test_runner_rejects_failed_assertion(self):
         code = "<?php\nfinal class ExpectedFailureTest extends \\PHPUnit\\Framework\\TestCase { public function testExpectedFailure(): void { self::assertSame(1, 2); } }\n"

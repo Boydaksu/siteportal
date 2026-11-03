@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F01.03 kabulü
+- Kullanıcı “onaylıyorum” ile F01.03 teslimi, PR #9 birleştirmesi ve F01.04 başlangıcını onayladı; kabul kaydı CI sonrasında main dalına birleştirilecek.
+
 ## 2026-11-04 | F01.03 | READY_FOR_REVIEW
 - Dış ağ güvenlik politikası (`app/Core/Security/UrlSecurityPolicy.php`) ve yapılandırması (`config/security.php`) geliştirildi; `http`/`https` şema kısıtı, 80/443 port kısıtı, engellenen TLD'ler ve RFC 1918/3927/loopback/cloud metadata/ULA/IPv4-mapped IPv6 CIDR blokları tanımlandı.
 - İkili `inet_pton` tabanlı yüksek performanslı IP doğrulayıcısı (`app/Core/Security/IpValidator.php`) ve `filter_var` canonical adres kontrolü eklendi; sekizlik, onluk tamsayı ve onaltılık IP atlatma girişimleri engellendi.
