@@ -2,8 +2,11 @@
 <phpunit bootstrap="vendor/autoload.php" colors="true" cacheDirectory=".phpunit.cache"
          failOnRisky="true" failOnWarning="true" failOnDeprecation="true" failOnEmptyTestSuite="true">
     <testsuites>
-        <testsuite name="TEST fixture contracts">
+        <testsuite name="Unit">
             <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Integration">
+            <directory>tests/Integration</directory>
         </testsuite>
     </testsuites>
 </phpunit>

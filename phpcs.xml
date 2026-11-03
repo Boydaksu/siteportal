@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="SitePortal PSR-12">
-    <description>F00.04 TEST PHP dosyaları; uygulama henüz yok.</description>
+    <description>SitePortal PSR-12 standardı.</description>
+    <file>app</file>
+    <file>public</file>
     <file>tests</file>
     <arg name="extensions" value="php"/>
     <arg name="encoding" value="utf-8"/>
