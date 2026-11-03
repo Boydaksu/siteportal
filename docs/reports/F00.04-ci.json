@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-11-03",
+  "scope": "First clean-checkout content commit; later delivery metadata commits are checked separately on PR",
+  "commit_sha": "06b3e12fd122eeef24dbc748c956d79ff4ed85bb",
+  "run_id": 41666506494,
+  "run_url": "https://github.com/Boydaksu/siteportal/actions/runs/41666506494",
+  "event": "pull_request",
+  "run_attempt": 1,
+  "status": "completed",
+  "conclusion": "success",
+  "created_at": "2026-11-03T15:41:33Z",
+  "completed_at": "2026-11-03T15:41:55Z",
+  "job": {
+    "id": 126023140084,
+    "name": "PHP 8.4 and document checks",
+    "conclusion": "success",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1
+      },
+      {
+        "name": "Clean checkout",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2
+      },
+      {
+        "name": "PHP and Composer",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3
+      },
+      {
+        "name": "Record actual tool versions",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4
+      },
+      {
+        "name": "Validate manifest and install reviewed development tools",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5
+      },
+      {
+        "name": "PHP lint, format, static analysis and TEST harness",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6
+      },
+      {
+        "name": "Documents, fixtures, sources and inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7
+      },
+      {
+        "name": "Post Clean checkout",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 14
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 15
+      }
+    ]
+  },
+  "actual_toolchain": {
+    "php": "8.4.27",
+    "composer": "2.10.2",
+    "python": "3.12.3",
+    "git": "2.56.0"
+  },
+  "test_evidence": {
+    "phpunit": "3 tests, 74 assertions",
+    "negative_quality_gates": "4 tests",
+    "document_links": "7 tests",
+    "composer_audit": "advisories=[], abandoned=[]; successful audit step",
+    "clean_worktree": "Last CI step checked git status --porcelain and completed successfully"
+  },
+  "known_warning": "Root license not specified (Q-004); recorded, not silently licensed.",
+  "limits": [
+    "No application SSRF/ACL/DB/queue/UI/E2E or coverage claim",
+    "Composer audit covers lock packages, not all bundled PHAR internals"
+  ]
+}

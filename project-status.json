@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-03T18:26:10+03:00",
+  "updated_at": "2026-11-03T18:45:52+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": null,
@@ -9,13 +9,13 @@
   "current_subphase": "F00.04",
   "last_approved_phase": null,
   "last_approved_subphase": "F00.03",
-  "status": "IN_PROGRESS",
+  "status": "READY_FOR_REVIEW",
   "branch": "phase/F00.04-test-ci",
-  "commit_sha": null,
-  "pr_url": null,
+  "commit_sha": "06b3e12fd122eeef24dbc748c956d79ff4ed85bb",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/4",
   "last_report": "docs/reports/F00.04.md",
   "blockers": [],
-  "next_action": "Yalnız F00.04 test/CI iskeletini kur, yerel ve gerçek temiz checkout CI sonuçlarını doğrula, PR/rapor sun ve DUR.",
+  "next_action": "DUR: F00.04 teslim kabulünü, PR #4 birleştirme iznini ve F00.05 için açık başlangıç onayını bekle.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -24,7 +24,7 @@
         "F00.01": "DONE",
         "F00.02": "DONE",
         "F00.03": "DONE",
-        "F00.04": "IN_PROGRESS",
+        "F00.04": "READY_FOR_REVIEW",
         "F00.05": "NOT_STARTED",
         "F00.06": "NOT_STARTED"
       }
@@ -140,10 +140,10 @@
   "baseline_commit_sha": "74c56bc9ddfa9471b168cf7908cbb49e07aca857",
   "next_subphase": "F00.05",
   "approval_required": true,
-  "commit_sha_scope": "Bu alt fazın doğrulanmış içerik commit’i; sonraki teslim metadata commit’i PR head içinde olabilir.",
-  "push_status": "PENDING",
-  "test_status": "PASS_LOCAL_PENDING_CI",
-  "ci_status": "PENDING",
+  "commit_sha_scope": "İlk temiz checkout CI tarafından doğrulanmış içerik commit’i; PR head sonraki sonuç/durum metadata commit’ini de içerebilir.",
+  "push_status": "SUCCESS",
+  "test_status": "PASS_LOCAL_AND_CI",
+  "ci_status": "SUCCESS",
   "approval_received": false,
   "approvals": {
     "F00.01": {
@@ -196,5 +196,15 @@
       "approval_reference": "2026-11-03: Kullanıcı somut Q-001/Q-002/Q-003 önerilerine “Üç öneriyi de onaylıyorum” yanıtını verdi.",
       "adr": "docs/adr/ADR-003-i18n.md"
     }
+  },
+  "ci": {
+    "workflow": "SitePortal quality",
+    "evidence_commit": "06b3e12fd122eeef24dbc748c956d79ff4ed85bb",
+    "run_id": 41666506494,
+    "run_url": "https://github.com/Boydaksu/siteportal/actions/runs/41666506494",
+    "job_id": 126023140084,
+    "conclusion": "success",
+    "proof": "docs/reports/F00.04-ci.json",
+    "scope": "Clean checkout content commit. Sonraki teslim metadata commit’inin güncel CI durumu PR checks üzerinden ayrıca doğrulanır."
   }
 }
