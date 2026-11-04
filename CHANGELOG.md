@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F01.06 kabulü
+- Kullanıcı “onaylıyorum” ile F01.06 teslimi, PR #12 birleştirmesi ve F01.07 başlangıcını onayladı; kabul kaydı main dalına birleştirildi.
+
 ## 2026-11-04 | F01.06 | READY_FOR_REVIEW
 - Gözlemlenebilirlik, log maskeleme ve metrik motoru (`app/Core/Observability/LogMasker.php`, `Logger.php`, `LoggerInterface.php`, `MetricsCollector.php`) geliştirildi.
 - `LogMasker` ile şifreler, token'lar, Bearer/Basic auth, URL içi kimlik bilgileri, query parametreleri, PEM özel anahtarlar ve kredi kartları hem log mesajlarında hem de iç içe context dizilerinde otomatik olarak maskelendi (`[REDACTED]`); sıfır sır sızıntısı güvenceye alındı.
