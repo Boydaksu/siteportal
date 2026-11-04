@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F01.07 ve F01 Ana Faz Kapanış Kabulü
+- Kullanıcı “onaylıyorum” ile F01.07 alt faz teslimi, PR #13 birleştirmesi ve F01 (V0.1: Güvenli çekirdek ve worker) ana fazının resmen başarıyla kapatılmasını onayladı; kabul kaydı main dalına birleştirildi. F02.01 başlatılacaktır.
+
 ## 2026-11-04 | F01.07 | READY_FOR_REVIEW
 - F01 Güvenlik Testi ve Ana Faz Kapanışı (`docs/reports/F01.07.md`, `docs/reports/F01-PHASE-SUMMARY.md`) tamamlandı.
 - Kapsamlı SSRF savunma matrisi entegrasyon testi (`tests/Integration/Security/SsrfMatrixTest.php`, 10 test, 186 assertion) eklendi; 34 bloklu IP, 6 genel IP, 19 bloklu URL ve 27 atlatma vektörünün tamamı, ayrıca yönlendirmelerde DNS rebinding ve loop ataklarının cURL çalıştırılmadan engellendiği kanıtlandı.

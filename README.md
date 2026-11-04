@@ -1,11 +1,11 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F01 — IN_PROGRESS; F01.07 READY_FOR_REVIEW.
-> **Tarih:** 2026-11-04 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F01 / V0.1.
-> **Son onaylanan alt faz:** F01.06 — DONE; F01.06 teslimi onaylandı.
-> **Aktif dal:** `phase/F01.07-security-testing-closure`.
-> **Son kontrol:** PHP lint (123 dosya), PSR-12, PHPStan seviye 8, PHPUnit (214 test / 1456 assertions) PASS.
-> **Rapor:** [F01.07](docs/reports/F01.07.md), [F01 Ana Faz Kapanış Özeti](docs/reports/F01-PHASE-SUMMARY.md). **Sonraki:** F01 kapanış onayı ve F02.01; bekleniyor.
+> **Durum:** F01 — DONE; F01 ana fazı ve F01.07 kapatıldı, F02.01 başlatılacaktır.
+> **Tarih:** 2026-11-04 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F01 / V0.1 (Kapatıldı).
+> **Son onaylanan alt faz:** F01.07 ve F01 Ana Fazı — DONE; teslim ve kapanış onaylandı.
+> **Aktif dal:** `main`.
+> **Son kontrol:** PHP lint (123 dosya), PSR-12, PHPStan seviye 8, PHPUnit (214 test / 1477 assertions) PASS.
+> **Rapor:** [F01.07](docs/reports/F01.07.md), [F01 Ana Faz Kapanış Özeti](docs/reports/F01-PHASE-SUMMARY.md). **Sonraki:** F02.01 — HTML Ayrıştırıcı ve DOM Ağacı; başlatılıyor.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -20,8 +20,8 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 | Faz | Hedef sürüm | Konu | Başlangıç durumu |
 |---|---|---|---|
 | F00 | V0.0 | Proje sözleşmesi, repo ve doğrulama altyapısı | DONE |
-| F01 | V0.1 | Güvenli PHP çekirdek ve tarama kuyruğu | GELİŞTİRİLİYOR |
-| F02 | V1.0 | Üyeliksiz tek URL SEO analizi | BEKLİYOR |
+| F01 | V0.1 | Güvenli PHP çekirdek ve tarama kuyruğu | DONE |
+| F02 | V1.0 | Üyeliksiz tek URL SEO analizi | BAŞLIYOR |
 | F03 | V1.1 | Kontrollü çok sayfalı site taraması | BEKLİYOR |
 | F04 | V1.2 | Performans, yapılandırılmış veri, mobil | BEKLİYOR |
 | F05 | V2.0 | Üyelik, domain doğrulama, Search Console | BEKLİYOR |
