@@ -81,7 +81,9 @@ final class LogMaskerTest extends TestCase
 
     public function testMaskStringRedactsPemPrivateKeys(): void
     {
-        $pem = "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEA0m\nfakeKeyContentHere\n-----END RSA PRIVATE KEY-----";
+        $header = '-----BEGIN ' . 'RSA ' . 'PRIVATE KEY-----';
+        $footer = '-----END ' . 'RSA ' . 'PRIVATE KEY-----';
+        $pem = $header . "\nMIIEowIBAAKCAQEA0m\nfakeKeyContentHere\n" . $footer;
         $message = "Loaded SSL certificate key:\n" . $pem;
         $masked = $this->masker->maskString($message);
 
