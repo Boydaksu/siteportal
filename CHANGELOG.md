@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F02.06 kabulü
+- Kullanıcı “onaylıyorum” ile F02.06 teslimi, PR #19 birleştirmesi ve F02.07 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.07 (Anonim paylaşım ve yaşam süresi) başlatılacaktır.
+
 ## 2026-11-04 | F02.06 | READY_FOR_REVIEW
 - Rapor UI ve Çözüm Önerisi (`docs/reports/F02.06.md`) tamamlandı.
 - Rapor Sunum Katmanı `ReportPresenter` (`app/SeoAnalyzer/Presentation/ReportPresenter.php`) geliştirildi; bulguları kategorilere ayırma, durum/önem sınıfları ve rozetleri atama, eyleme dönüştürülebilir çözüm önerileri (`remediation`) ve kod parçacıkları (`code_snippet`) bağlama işlevleri eklendi.
