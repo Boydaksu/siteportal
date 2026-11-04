@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F01 — DONE; F01 ana fazı ve F01.07 kapatıldı, F02.01 başlatılacaktır.
-> **Tarih:** 2026-11-04 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F01 / V0.1 (Kapatıldı).
+> **Durum:** F02.01 — READY_FOR_REVIEW; URL formu ve analiz yaşam döngüsü tamamlandı, kullanıcı onayı bekleniyor.
+> **Tarih:** 2026-11-04 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F02 / V1.0 (IN_PROGRESS).
 > **Son onaylanan alt faz:** F01.07 ve F01 Ana Fazı — DONE; teslim ve kapanış onaylandı.
-> **Aktif dal:** `main`.
-> **Son kontrol:** PHP lint (123 dosya), PSR-12, PHPStan seviye 8, PHPUnit (214 test / 1477 assertions) PASS.
-> **Rapor:** [F01.07](docs/reports/F01.07.md), [F01 Ana Faz Kapanış Özeti](docs/reports/F01-PHASE-SUMMARY.md). **Sonraki:** F02.01 — HTML Ayrıştırıcı ve DOM Ağacı; başlatılıyor.
+> **Aktif dal:** `phase/F02.01-url-form-analysis-lifecycle`.
+> **Son kontrol:** PHP lint (131 dosya), PSR-12, PHPStan seviye 8, PHPUnit (237 test / 1630 assertions) PASS.
+> **Rapor:** [F02.01](docs/reports/F02.01.md). **Sonraki:** F02.02 — HTML parser ve metadata; BEKLİYOR (DUR).
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -170,19 +170,19 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
-- **Tarih / repo:** 2026-11-04, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), main.
-- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F01 / V0.1 DONE, F00 ve F01 ana fazları başarıyla kapatıldı.
+- **Tarih / repo:** 2026-11-04, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `phase/F02.01-url-form-analysis-lifecycle`.
+- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F02 / V1.0 IN_PROGRESS (F00 ve F01 ana fazları DONE).
 - **Son onay:** F01.07 ve F01 Ana Fazı DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #13 merge ve F01 ana faz kapanışını onayladı.
 - **Önceki teslim:** [PR #13](https://github.com/Boydaksu/siteportal/pull/13) birleştirildi; merge `99a19171ad20a970bba9c434b08ea8a5b18a3ace`.
-- **Aktif alt faz / durum:** F01.07 — F01 güvenlik testi ve kapanış / DONE.
-- **Dal:** `main`.
-- **Aktif PR / kanıt commit:** [PR #13](https://github.com/Boydaksu/siteportal/pull/13); merge `99a19171ad20a970bba9c434b08ea8a5b18a3ace`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41800581765) SUCCESS.
-- **Rapor:** [F01.07](docs/reports/F01.07.md), [F01 Ana Faz Kapanış Özeti](docs/reports/F01-PHASE-SUMMARY.md).
-- **Yerel sonuç:** PASS; PHP lint (123 dosya), PSR-12, PHPStan seviye 8, PHPUnit 214 test / 1477 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
-- **Uygulama testleri:** SSRF savunma matrisi (34 IP, 19 URL, 27 atlatma vektörü ve DNS rebinding koruması), kuyruk yarış ve çift işleme önleme (20 paralel iş, 0 çakışma), transaction rollback sıfır yetim veri, kiracılar arası izolasyon, brute-force IP kilidi, session fixation engeli, cross-session CSRF koruması, /health ve /health?detailed=1 alt sistem kontrolleri, CLI operasyon rehberi.
+- **Aktif alt faz / durum:** F02.01 — URL formu ve analiz yaşam döngüsü / READY_FOR_REVIEW.
+- **Dal:** `phase/F02.01-url-form-analysis-lifecycle`.
+- **Aktif PR / kanıt commit:** PR açılacak; CI kontrolü bekleniyor.
+- **Rapor:** [F02.01](docs/reports/F02.01.md).
+- **Yerel sonuç:** PASS; PHP lint (131 dosya), PSR-12, PHPStan seviye 8, PHPUnit 237 test / 1630 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari kontrolleri PASS.
+- **Uygulama testleri:** Responsive URL formu (masaüstü/mobil), CSRF korumalı AJAX ve normal form gönderimi, HTTP 202 Accepted asenkron analiz oluşturma, REST API (/api/v1/analyses, /status, /progress), strictly sunucu/DB durumundan türetilen 4 aşamalı canlı takip (sahte timer YOK), ARIA erişilebilirlik (role="progressbar"), anonim kullanıcı IP kota kilitlemesi (5 istek / 600s, HTTP 429 Retry-After), SSRF koruması ve URL normalizasyonu.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki ana faz / alt faz:** F02 — V1.0: Üyeliksiz tek URL SEO analizi / F02.01 — HTML Ayrıştırıcı ve DOM Ağacı; NOT_STARTED.
-- **Bir sonraki işlem:** F01.07 ve F01 ana fazı kapatıldı; PR #13 main dalına birleştirildi. F02.01 için çalışma dalı açılacak ve geliştirme başlatılacaktır.
+- **Sonraki ana faz / alt faz:** F02.02 — HTML parser ve metadata; NOT_STARTED.
+- **Bir sonraki işlem:** Kullanıcı F02.01 teslim raporunu inceleyecek; açık onay verirse PR merge edilecek ve F02.02'ye geçilecektir (DUR).
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -1545,13 +1545,13 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 3. polling ve gerçek progress.
 
 **Kabul/kanıt:**
-- [ ] Mobil/masaüstü form çalışıyor.
-- [ ] sahte yüzdelik yok.
-- [ ] anonim limitler aktif.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Mobil/masaüstü form çalışıyor.
+- [x] sahte yüzdelik yok.
+- [x] anonim limitler aktif.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F02.01.md` + durum kayıtları.
 
