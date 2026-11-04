@@ -1561,12 +1561,12 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 1. DOMDocument/DOMXPath UTF-8 meta title description headings lang canonical directives og image ve link extraction.
 
 **Kabul/kanıt:**
-- [ ] Bozuk/eksik HTML fixture da parser çökmüyor.
-- [ ] normalize edilmiş alanlar doğru.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Bozuk/eksik HTML fixture da parser çökmüyor.
+- [x] normalize edilmiş alanlar doğru.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F02.02.md` + durum kayıtları.
 

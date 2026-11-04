@@ -3,15 +3,14 @@
 - **Tarih / repo:** 2026-11-04, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `main`.
 - **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F02 / V1.0 IN_PROGRESS (F00 ve F01 ana fazları DONE).
 - **Son onay:** F02.01 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #14 merge ve F02.02 başlangıcını onayladı.
-- **Önceki teslim:** [PR #14](https://github.com/Boydaksu/siteportal/pull/14) birleştirildi; merge `1bb0a6f5767fbaace7a42a9d2f691b1c20f60255`.
-- **Aktif alt faz / durum:** F02.01 — URL formu ve analiz yaşam döngüsü / DONE.
-- **Dal:** `main`.
-- **Aktif PR / kanıt commit:** [PR #14](https://github.com/Boydaksu/siteportal/pull/14); merge `1bb0a6f5767fbaace7a42a9d2f691b1c20f60255`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41809068886) SUCCESS.
-- **Rapor:** [F02.01](docs/reports/F02.01.md).
-- **Yerel sonuç:** PASS; PHP lint (131 dosya), PSR-12, PHPStan seviye 8, PHPUnit 237 test / 1651 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari kontrolleri PASS.
-- **Uygulama testleri:** Responsive URL formu (masaüstü/mobil), CSRF korumalı AJAX ve normal form gönderimi, HTTP 202 Accepted asenkron analiz oluşturma, REST API (/api/v1/analyses, /status, /progress), strictly sunucu/DB durumundan türetilen 4 aşamalı canlı takip (sahte timer YOK), ARIA erişilebilirlik (role="progressbar"), anonim kullanıcı IP kota kilitlemesi (5 istek / 600s, HTTP 429 Retry-After), SSRF koruması ve URL normalizasyonu.
+- **Aktif alt faz / durum:** F02.02 — HTML parser ve metadata / READY_FOR_REVIEW.
+- **Dal:** `phase/F02.02-html-parser-metadata`.
+- **Aktif PR / kanıt commit:** PR açılacak; [CI doğrulaması](docs/reports/F02.02-checks.txt) SUCCESS.
+- **Rapor:** [F02.02](docs/reports/F02.02.md).
+- **Yerel sonuç:** PASS; PHP lint (138 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 252 test / 1804 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
+- **Uygulama testleri:** `HtmlParser` motoru (DOMDocument/DOMXPath, LIBXML_NONET XXE kalkanı, 5MB DoS koruması, UTF-8/ISO-8859-9 Türkçe karakter desteği, tek geçişli meta/OG/Twitter çıkarımı, WCAG boş alt `alt=""` dekoratif vs `alt === null` eksik alt metni ayrımı, RFC 3986 göreceli URL çözümü, iç/dış bağlantı tespiti, nofollow tespiti, script/style filtreli kelime ve karakter sayımı, HTML5 etiket hata filtresi ve biçimsiz HTML'de sıfır çökme garantisi).
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki ana faz / alt faz:** F02.02 — HTML parser ve metadata; BAŞLATILIYOR.
-- **Bir sonraki işlem:** F02.01 kapatıldı ve PR #14 main dalına birleştirildi. F02.02 için çalışma dalı açılacak ve geliştirme başlatılacaktır.
+- **Sonraki alt faz:** F02.03 — Teknik SEO kuralları; BEKLİYOR.
+- **Bir sonraki işlem:** F02.02 kullanıcı teslim kabulü ve PR onayı bekleniyor; açık onay olmadan F02.03'e geçilmez (DUR).
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.

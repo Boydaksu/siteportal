@@ -1,6 +1,22 @@
 # Changelog
 
-## 2026-11-04 | F02.01 kabulü
+## 2026-11-04 | F02.02 | READY_FOR_REVIEW
+- HTML Parser ve Metadata Motoru (`docs/reports/F02.02.md`) tamamlandı.
+- `HtmlParserInterface` ve `HtmlParser` (`app/Core/Parser/HtmlParser.php`) geliştirildi; `DOMDocument` ve `DOMXPath` ile HTML belgelerinden sayfa başlığı, meta açıklaması, başlık hiyerarşisi (H1-H6), sayfa dili, kanonik bağlantılar, Open Graph ve Twitter Card meta verileri, görsel ve bağlantı listeleri çıkarıldı.
+- Tip güvenli ve değişmez (immutable) veri yapısı `ParsedDocument` (`app/Core/Parser/ParsedDocument.php`) oluşturuldu (`title`, `metaDescription`, `canonical`, `headings`, `robotsDirectives`, `openGraph`, `twitterCards`, `images`, `links`, `charset`, `textLength`, `wordCount`, `parseTimeMs`, `isMalformed`, `toArray()`).
+- T03 tehdit koruması: `LIBXML_NONET` bayrağı ile XXE ve dış varlık yükleme saldırıları (`file:///`, `http://169.254.169.254`) kesin olarak engellendi.
+- DoS ve bellek koruması: Varsayılan 5 MB azami HTML gövde sınırı ve `HtmlTooLargeException` eklendi.
+- Türkçe karakter ve UTF-8 tam uyumluluğu sağlandı; ISO-8859-9 ve Windows-1254 karakter kümeleri UTF-8'e normalize edildi, libxml ayrıştırmasında `<?xml encoding="UTF-8">` öneki ve meta charset eşlemesiyle Türkçe karakterlerin (`ş, ğ, ı, ö, ü, ç, İ, Ğ, Ü, Ş, Ö, Ç`) sıfır bozulma ile korunması garanti altına alındı.
+- Tek geçişli (single-pass) meta çıkarımı ile description, robots, googlebot, og:* ve twitter:* etiketleri tek döngüde ayrıştırıldı.
+- WCAG standartlarına uygun eksik alt tespiti uygulandı; boş `alt=""` dekoratif görsel olarak geçerli kabul edildi ve eksik sayılmadı, yalnızca `alt === null` eksik alt metni olarak işaretlendi.
+- RFC 3986 göreceli URL çözücü (`resolveUrl`) geliştirildi; kök-göreli, protokol-göreli (`//`), dizin-göreli (`../`), sorgu dizgeli (`?query`), çapalı (`#hash`) bağlantılar ve `<base href="...">` etiketi standartlara uygun çözümlendi.
+- İç/dış bağlantı ayrımı ve `rel="nofollow"` tespiti tamamlandı.
+- Görünmeyen içerik (`<script>`, `<style>`, `<noscript>`, `<template>`, `<svg>`, `<canvas>`) metin sayımından elendi; Unicode uyumlu kelime ve karakter sayımı yapıldı.
+- HTML5 semantik etiketlerine (`header`, `nav`, `main`, `section`, `footer`) ait libxml HTML4 uyarıları filtrelenerek yalnızca gerçek sözdizimi hatalarında `isMalformed = true` işaretlenmesi sağlandı; bozuk HTML'de sıfır çökme toleransı kanıtlandı.
+- Zengin test fixture'ları (`tests/Fixtures/HtmlFixtures.php`) ve 15 yeni birim testi (`tests/Unit/Parser/HtmlParserTest.php`, 153 assertion) eklendi.
+- CsrfTest flaky rastlantısal token arızası giderildi (`tests/Unit/Security/CsrfTest.php`).
+- Toplam 252 test, 1804 assertion ile %100 PSR-12, PHPStan Level 8 ve sıfır sır sızıntısı sağlandı.
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F02.03'e geçilmez (DUR).
 - Kullanıcı “onaylıyorum” ile F02.01 teslimi, PR #14 birleştirmesi ve F02.02 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.02 (HTML parser ve metadata) başlatılacaktır.
 
 ## 2026-11-04 | F02.01 | READY_FOR_REVIEW
