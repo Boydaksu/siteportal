@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-04T01:52:00+03:00",
+  "updated_at": "2026-11-04T10:02:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "0.1.0-dev",
   "current_phase": "F01",
   "current_subphase": "F01.05",
   "last_approved_phase": "F00",
-  "last_approved_subphase": "F01.04",
-  "status": "READY_FOR_REVIEW",
+  "last_approved_subphase": "F01.05",
+  "status": "DONE",
   "branch": "phase/F01.05-db-queue-worker",
   "commit_sha": "3024ab945ebf15645844b46335a4a659d69eb5a3",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/11",
   "last_report": "docs/reports/F01.05.md",
   "blockers": [],
-  "next_action": "Kullanıcının F01.05 teslim kabulü ve açık onayı bekleniyor; onay gelmeden F01.06'ya geçilmez (DUR).",
+  "next_action": "F01.05 kabul edildi, PR #11 main dalına birleştirilecek ve F01.06 başlatılacaktır.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -37,7 +37,7 @@
         "F01.02": "DONE",
         "F01.03": "DONE",
         "F01.04": "DONE",
-        "F01.05": "READY_FOR_REVIEW",
+        "F01.05": "DONE",
         "F01.06": "NOT_STARTED",
         "F01.07": "NOT_STARTED"
       }
@@ -205,12 +205,18 @@
       "approval_reference": "2026-11-04: Kullanıcı F01.04 teslim kabulü + PR #10 merge + F01.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-04: Kullanıcı F01.04 teslim kabulü + PR #10 merge + F01.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F01.05": {
+      "approved_at": "2026-11-04T10:01:20+03:00",
+      "approval_reference": "2026-11-04: Kullanıcı F01.05 teslim kabulü + PR #11 merge + F01.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-04: Kullanıcı F01.05 teslim kabulü + PR #11 merge + F01.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F01.05",
-    "authorized_at": "2026-11-04T01:24:00+03:00",
-    "reference": "F01.04 kabulü, PR #10 merge ve F01.05 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F01.06",
+    "authorized_at": "2026-11-04T10:01:20+03:00",
+    "reference": "F01.05 kabulü, PR #11 merge ve F01.06 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
     "subphase": "F01.04",

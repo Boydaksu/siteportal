@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F01.05 kabulü
+- Kullanıcı “onaylıyorum” ile F01.05 teslimi, PR #11 birleştirmesi ve F01.06 başlangıcını onayladı; kabul kaydı main dalına birleştirilecek.
+
 ## 2026-11-04 | F01.05 | READY_FOR_REVIEW
 - Veritabanı kuyruk ve zamanlayıcı motoru (`app/Core/Queue/DatabaseQueue.php`), kuyruk sözleşmesi (`app/Core/Queue/QueueInterface.php`) ve iş veri nesnesi (`app/Core/Queue/Job.php`) geliştirildi.
 - Çift yönlü migration (`database/migrations/0002_enhance_analysis_jobs.php`) ile `analysis_jobs` tablosuna `priority`, `last_error` alanları ve indeksler eklendi.
