@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F03.02 kabulü
+- Kullanıcı “onaylıyorum” ile F03.02 teslimi, PR #23 birleştirmesi ve F03.03 başlangıcını onayladı; PR #23 main dalına birleştirildi (`54f9bc81fde308ea601711043e534ac566268601`). F03.03 (İç link grafiği ve derinlik) başlatılacaktır.
+
 ## 2026-11-04 | F03.02 | READY_FOR_REVIEW
 - Sitemap Index ve XML Güvenliği (`docs/reports/F03.02.md`) tamamlandı.
 - `SitemapXmlParser` (`app/Core/Crawler/Sitemap/SitemapXmlParser.php`) geliştirildi:
