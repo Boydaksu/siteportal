@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-04T10:02:00+03:00",
+  "updated_at": "2026-11-04T10:30:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "0.1.0-dev",
   "current_phase": "F01",
-  "current_subphase": "F01.05",
+  "current_subphase": "F01.06",
   "last_approved_phase": "F00",
   "last_approved_subphase": "F01.05",
-  "status": "DONE",
-  "branch": "phase/F01.05-db-queue-worker",
-  "commit_sha": "3024ab945ebf15645844b46335a4a659d69eb5a3",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/11",
-  "last_report": "docs/reports/F01.05.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F01.06-observability-quotas-auth",
+  "commit_sha": "67645e6ff0b814756ae6811d391963d967724937",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/12",
+  "last_report": "docs/reports/F01.06.md",
   "blockers": [],
-  "next_action": "F01.05 kabul edildi, PR #11 main dalına birleştirilecek ve F01.06 başlatılacaktır.",
+  "next_action": "F01.06 tamamlandı, kullanıcı onayı bekleniyor. Onay sonrası PR #12 main dalına birleştirilecek ve F01.07 başlatılacaktır.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -38,7 +38,7 @@
         "F01.03": "DONE",
         "F01.04": "DONE",
         "F01.05": "DONE",
-        "F01.06": "NOT_STARTED",
+        "F01.06": "READY_FOR_REVIEW",
         "F01.07": "NOT_STARTED"
       }
     },

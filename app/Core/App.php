@@ -73,10 +73,15 @@ final class App
         $this->i18n->setLocale($request->getLocale());
 
         try {
-            return $this->router->dispatch($request);
+            $response = $this->router->dispatch($request);
         } catch (Throwable $e) {
-            return $this->errorHandler->renderExceptionResponse($e, $request);
+            $response = $this->errorHandler->renderExceptionResponse($e, $request);
         }
+
+        $response->withRequestId($request->getRequestId());
+        $response->withCorrelationId($request->getCorrelationId());
+
+        return $response;
     }
 
     public function run(): void

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-11-04 | F01.06 | READY_FOR_REVIEW
+- Gözlemlenebilirlik, log maskeleme ve metrik motoru (`app/Core/Observability/LogMasker.php`, `Logger.php`, `LoggerInterface.php`, `MetricsCollector.php`) geliştirildi.
+- `LogMasker` ile şifreler, token'lar, Bearer/Basic auth, URL içi kimlik bilgileri, query parametreleri, PEM özel anahtarlar ve kredi kartları hem log mesajlarında hem de iç içe context dizilerinde otomatik olarak maskelendi (`[REDACTED]`); sıfır sır sızıntısı güvenceye alındı.
+- `Request` ve `Response` katmanına `X-Correlation-Id` zinciri eklendi; tüm istek ve hatalar correlation ID ve request ID ile eşleştirildi.
+- `MetricsCollector` ile Prometheus uyumlu sayaç (counter), gösterge (gauge) ve süre (timing/histogram) takibi sağlandı.
+- Hız sınırlama ve API throttling motoru (`app/Core/Security/RateLimiter.php`) sliding window algoritması, bellek ve SQLite/MySQL `rate_limits` tablosu desteği ve `availableIn()` ile RFC 7231 `Retry-After` hesaplamasıyla hayata geçirildi.
+- Tarama ve analiz kaynak bütçesi (`app/Core/Security/RequestBudget.php`) ile analiz başına azami istek, azami bayt ve host başına azami istek kotaları denetim altına alındı.
+- Güvenli oturum motoru (`app/Core/Security/Session.php`) ile `HttpOnly`, `SameSite: Lax/Strict`, `Secure` bayrakları, hareketsizlik zaman aşımı ve oturum sabitleme (fixation) koruması (`regenerate`) geliştirildi.
+- Kriptografik CSRF koruması (`app/Core/Security/Csrf.php`) 256-bit rastgele token ve zamanlama saldırılarına dayanıklı `hash_equals` ile tamamlandı.
+- Yönetici kimlik doğrulama servisi (`app/Core/Auth/AdminAuth.php`) ile `users` tablosundaki admin kullanıcılar için `password_verify` doğrulaması, kaba kuvvet (brute-force) kilitlemesi ve güvenli oturum açma sağlandı.
+- Çift yönlü migration (`database/migrations/0003_add_user_role.php`) ile `users` tablosuna `role` kolonu ve `rate_limits` tablosu eklendi; `0002_DevelopmentFixtureSeeder.php` güncellendi.
+- `tr-TR` ve `en-US` dillerinde yeni hata ve oturum mesajları tanımlandı.
+- 48 yeni test eklenerek toplam 195 test ve 1231 assertion ile %100 PSR-12 ve PHPStan Level 8 uyumluluğu sağlandı.
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F01.07'ye geçilmez (DUR).
+
 ## 2026-11-04 | F01.05 kabulü
 - Kullanıcı “onaylıyorum” ile F01.05 teslimi, PR #11 birleştirmesi ve F01.06 başlangıcını onayladı; kabul kaydı main dalına birleştirilecek.
 

@@ -6,6 +6,7 @@ namespace SitePortal\Database\Seeders;
 
 use SitePortal\Core\Database\Connection;
 use SitePortal\Core\Database\SeederInterface;
+use Throwable;
 
 final class DevelopmentFixtureSeeder implements SeederInterface
 {
@@ -19,16 +20,45 @@ final class DevelopmentFixtureSeeder implements SeederInterface
         // 1. Seed sample user
         $userCheck = $db->fetch('SELECT id FROM users WHERE email = :email', ['email' => 'admin@siteportal.local']);
         if ($userCheck === null) {
-            $db->query(
-                'INSERT INTO users (email, password_hash, locale, status) VALUES (:email, :hash, :locale, :status)',
-                [
-                    'email' => 'admin@siteportal.local',
-                    // DEMO/TEST bcrypt hash
-                    'hash' => '$2y$12$e80V6dF97c2Jqm9Nl1L6/OaF/Dk5U3h2G4T5y6H7J8K9L0M1N2O3P',
-                    'locale' => 'tr-TR',
-                    'status' => 'active',
-                ]
-            );
+            $hasRole = false;
+            try {
+                $db->query('SELECT role FROM users LIMIT 1');
+                $hasRole = true;
+            } catch (Throwable) {
+                // column not yet present
+            }
+
+            if ($hasRole) {
+                $db->query(
+                    'INSERT INTO users (email, password_hash, locale, status, role) ' .
+                    'VALUES (:email, :hash, :locale, :status, :role)',
+                    [
+                        'email' => 'admin@siteportal.local',
+                        // DEMO/TEST bcrypt hash
+                        'hash' => '$2y$12$e80V6dF97c2Jqm9Nl1L6/OaF/Dk5U3h2G4T5y6H7J8K9L0M1N2O3P',
+                        'locale' => 'tr-TR',
+                        'status' => 'active',
+                        'role' => 'admin',
+                    ]
+                );
+            } else {
+                $db->query(
+                    'INSERT INTO users (email, password_hash, locale, status) VALUES (:email, :hash, :locale, :status)',
+                    [
+                        'email' => 'admin@siteportal.local',
+                        // DEMO/TEST bcrypt hash
+                        'hash' => '$2y$12$e80V6dF97c2Jqm9Nl1L6/OaF/Dk5U3h2G4T5y6H7J8K9L0M1N2O3P',
+                        'locale' => 'tr-TR',
+                        'status' => 'active',
+                    ]
+                );
+            }
+        } else {
+            try {
+                $db->execute("UPDATE users SET role = 'admin' WHERE email = 'admin@siteportal.local'");
+            } catch (Throwable) {
+                // Ignore if role column does not exist
+            }
         }
 
         // 2. Seed sample site

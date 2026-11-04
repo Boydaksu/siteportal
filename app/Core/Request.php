@@ -21,6 +21,7 @@ final class Request
 
     private string $body;
     private string $requestId;
+    private string $correlationId;
     private string $locale;
 
     /**
@@ -36,7 +37,8 @@ final class Request
         array $postData = [],
         string $body = '',
         ?string $requestId = null,
-        ?string $locale = null
+        ?string $locale = null,
+        ?string $correlationId = null
     ) {
         $this->method = strtoupper($method);
         $this->uri = $uri;
@@ -46,6 +48,7 @@ final class Request
         $this->postData = $postData;
         $this->body = $body;
         $this->requestId = $this->resolveRequestId($requestId);
+        $this->correlationId = $this->resolveCorrelationId($correlationId);
         $this->locale = $locale ?? $this->resolveLocale();
     }
 
@@ -101,9 +104,11 @@ final class Request
         array $headers = [],
         string $body = '',
         array $queryParams = [],
-        array $postData = []
+        array $postData = [],
+        ?string $requestId = null,
+        ?string $correlationId = null
     ): self {
-        return new self($method, $uri, $headers, $queryParams, $postData, $body);
+        return new self($method, $uri, $headers, $queryParams, $postData, $body, $requestId, null, $correlationId);
     }
 
     public function getMethod(): string
@@ -170,6 +175,11 @@ final class Request
         return $this->requestId;
     }
 
+    public function getCorrelationId(): string
+    {
+        return $this->correlationId;
+    }
+
     public function getLocale(): string
     {
         return $this->locale;
@@ -217,6 +227,20 @@ final class Request
         }
 
         return 'req_' . bin2hex(random_bytes(16));
+    }
+
+    private function resolveCorrelationId(?string $correlationId): string
+    {
+        if ($correlationId !== null && preg_match('/^[A-Za-z0-9\-_]{8,64}$/', $correlationId) === 1) {
+            return $correlationId;
+        }
+
+        $headerId = $this->getHeader('x-correlation-id');
+        if ($headerId !== null && preg_match('/^[A-Za-z0-9\-_]{8,64}$/', $headerId) === 1) {
+            return $headerId;
+        }
+
+        return 'corr_' . bin2hex(random_bytes(16));
     }
 
     private function resolveLocale(): string
