@@ -15,6 +15,11 @@ use SitePortal\Core\Security\Exceptions\InvalidUrlException;
 use SitePortal\Core\Security\PinnedTarget;
 use SitePortal\Core\Security\RateLimiter;
 use SitePortal\Core\Security\UrlValidator;
+use SitePortal\SeoAnalyzer\Domain\Confidence;
+use SitePortal\SeoAnalyzer\Domain\Finding;
+use SitePortal\SeoAnalyzer\Domain\FindingSeverity;
+use SitePortal\SeoAnalyzer\Domain\FindingStatus;
+use SitePortal\SeoAnalyzer\Scoring\AuditScore;
 
 final class AnalysisLifecycleService
 {
@@ -210,6 +215,8 @@ final class AnalysisLifecycleService
         $row = $this->db->fetch(
             "SELECT id, public_id, site_id, user_id, mode, status, target_url,
                     progress_percent, ruleset_version, scoring_version, scope_count,
+                    score_overall, score_technical, score_onpage, score_links, score_accessibility,
+                    coverage_percent, score_breakdown_json,
                     error_code, error_message, started_at, completed_at, created_at
              FROM analyses WHERE public_id = :public_id LIMIT 1",
             ['public_id' => $publicId]
@@ -226,6 +233,8 @@ final class AnalysisLifecycleService
         $row = $this->db->fetch(
             "SELECT id, public_id, site_id, user_id, mode, status, target_url,
                     progress_percent, ruleset_version, scoring_version, scope_count,
+                    score_overall, score_technical, score_onpage, score_links, score_accessibility,
+                    coverage_percent, score_breakdown_json,
                     error_code, error_message, started_at, completed_at, created_at
              FROM analyses WHERE id = :id LIMIT 1",
             ['id' => $id]
@@ -370,6 +379,243 @@ final class AnalysisLifecycleService
         }
 
         $this->db->execute($sql, $params);
+    }
+
+    /**
+     * @param list<Finding> $findings
+     */
+    public function saveFindings(int $analysisId, array $findings): void
+    {
+        $this->db->beginTransaction();
+        try {
+            // Önceki bulguları temizle (idempotent yeniden hesaplama)
+            $this->db->execute('DELETE FROM findings WHERE analysis_id = :id', ['id' => $analysisId]);
+
+            $sql = 'INSERT INTO findings (
+                analysis_id, rule_id, rule_version, status, severity,
+                confidence, data_source, evidence_json, affected_urls_json, observed_at
+            ) VALUES (
+                :analysis_id, :rule_id, :rule_version, :status, :severity,
+                :confidence, :data_source, :evidence_json, :affected_urls_json, :observed_at
+            )';
+
+            foreach ($findings as $f) {
+                $this->db->execute($sql, [
+                    'analysis_id' => $analysisId,
+                    'rule_id' => $f->getRuleId(),
+                    'rule_version' => $f->getRuleVersion(),
+                    'status' => $f->getStatus()->value,
+                    'severity' => $f->getSeverity()->value,
+                    'confidence' => $f->getConfidence()->value,
+                    'data_source' => $f->getDataSource(),
+                    'evidence_json' => json_encode(
+                        $f->getEvidence(),
+                        JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+                    ),
+                    'affected_urls_json' => json_encode(
+                        $f->getAffectedUrls(),
+                        JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+                    ),
+                    'observed_at' => $f->getObservedAt(),
+                ]);
+            }
+
+            $this->db->commit();
+        } catch (\Throwable $e) {
+            $this->db->rollBack();
+            throw $e;
+        }
+    }
+
+    /**
+     * @return list<Finding>
+     */
+    public function getFindings(int|string $analysisIdOrPublicId): array
+    {
+        $analysisId = $this->resolveAnalysisId($analysisIdOrPublicId);
+        if ($analysisId === null) {
+            return [];
+        }
+
+        $rows = $this->db->fetchAll(
+            'SELECT rule_id, rule_version, status, severity, confidence,
+                    data_source, evidence_json, affected_urls_json, observed_at
+             FROM findings
+             WHERE analysis_id = :analysis_id
+             ORDER BY id ASC',
+            ['analysis_id' => $analysisId]
+        );
+
+        $findings = [];
+        foreach ($rows as $row) {
+            /** @var array<string, mixed> $row */
+            $statusVal = (string) ($row['status'] ?? 'UNKNOWN');
+            $severityVal = (string) ($row['severity'] ?? 'INFO');
+            $confidenceVal = (string) ($row['confidence'] ?? 'HIGH');
+
+            $status = FindingStatus::tryFrom($statusVal) ?? FindingStatus::UNKNOWN;
+            $severity = FindingSeverity::tryFrom($severityVal) ?? FindingSeverity::INFO;
+            $confidence = Confidence::tryFrom($confidenceVal) ?? Confidence::HIGH;
+
+            /** @var list<array<string, mixed>> $evidence */
+            $evidence = [];
+            if (!empty($row['evidence_json'])) {
+                $decoded = json_decode((string) $row['evidence_json'], true);
+                if (is_array($decoded)) {
+                    /** @var list<array<string, mixed>> $decoded */
+                    $evidence = $decoded;
+                }
+            }
+
+            /** @var list<string> $affectedUrls */
+            $affectedUrls = [];
+            if (!empty($row['affected_urls_json'])) {
+                $decodedUrls = json_decode((string) $row['affected_urls_json'], true);
+                if (is_array($decodedUrls)) {
+                    /** @var list<string> $decodedUrls */
+                    $affectedUrls = $decodedUrls;
+                }
+            }
+
+            $ruleId = (string) $row['rule_id'];
+            $fixKey = "rules.{$ruleId}.fix";
+
+            $findings[] = new Finding(
+                ruleId: $ruleId,
+                ruleVersion: (string) ($row['rule_version'] ?? '1.0.0'),
+                status: $status,
+                severity: $severity,
+                confidence: $confidence,
+                dataSource: (string) ($row['data_source'] ?? 'crawler'),
+                evidence: $evidence,
+                observedAt: (string) ($row['observed_at'] ?? gmdate('Y-m-d\TH:i:s\Z')),
+                affectedUrls: $affectedUrls,
+                fixKey: $fixKey
+            );
+        }
+
+        return $findings;
+    }
+
+    public function saveScore(int|string $analysisIdOrPublicId, AuditScore $score): void
+    {
+        $analysisId = $this->resolveAnalysisId($analysisIdOrPublicId);
+        if ($analysisId === null) {
+            return;
+        }
+
+        $scores = $score->getCategoryScores();
+        $breakdownJson = json_encode([
+            'category_breakdown' => $score->getCategoryBreakdown(),
+            'status_counts' => $score->getStatusCounts(),
+            'coverage' => $score->getCoverage(),
+            'is_scorable' => $score->isScorable(),
+            'disclaimer' => $score->getDisclaimer(),
+            'scoring_version' => $score->getScoringVersion(),
+            'rule_set_version' => $score->getRuleSetVersion(),
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+
+        $sql = 'UPDATE analyses SET
+            score_overall = :score_overall,
+            score_technical = :score_technical,
+            score_onpage = :score_onpage,
+            score_links = :score_links,
+            score_accessibility = :score_accessibility,
+            coverage_percent = :coverage_percent,
+            score_breakdown_json = :score_breakdown_json
+            WHERE id = :id';
+
+        $this->db->execute($sql, [
+            'id' => $analysisId,
+            'score_overall' => $score->getOverallScore(),
+            'score_technical' => $scores['technical'] ?? null,
+            'score_onpage' => $scores['onpage'] ?? null,
+            'score_links' => $scores['links'] ?? null,
+            'score_accessibility' => $scores['accessibility'] ?? null,
+            'coverage_percent' => (int) round($score->getCoverage() * 100),
+            'score_breakdown_json' => $breakdownJson,
+        ]);
+    }
+
+    public function getScore(int|string $analysisIdOrPublicId): ?AuditScore
+    {
+        $analysisId = $this->resolveAnalysisId($analysisIdOrPublicId);
+        if ($analysisId === null) {
+            return null;
+        }
+
+        $row = $this->db->fetch(
+            'SELECT score_overall, score_technical, score_onpage, score_links, score_accessibility,
+                    coverage_percent, score_breakdown_json
+             FROM analyses WHERE id = :id LIMIT 1',
+            ['id' => $analysisId]
+        );
+
+        if (!$row || empty($row['score_breakdown_json'])) {
+            return null;
+        }
+
+        $breakdown = json_decode((string) $row['score_breakdown_json'], true);
+        if (!is_array($breakdown)) {
+            return null;
+        }
+
+        /** @var array<string, ?int> $catScores */
+        $catScores = [
+            'technical' => isset($row['score_technical']) ? (int) $row['score_technical'] : null,
+            'onpage' => isset($row['score_onpage']) ? (int) $row['score_onpage'] : null,
+            'links' => isset($row['score_links']) ? (int) $row['score_links'] : null,
+            'accessibility' => isset($row['score_accessibility']) ? (int) $row['score_accessibility'] : null,
+        ];
+
+        /** @var array<string, array{score: ?int, measured_weight: float, total_category_weight: float, pass_count: int, warn_count: int, fail_count: int, unknown_count: int, na_count: int}> $categoryBreakdown */
+        $categoryBreakdown = $breakdown['category_breakdown'] ?? [];
+
+        /** @var array{PASS: int, WARN: int, FAIL: int, UNKNOWN: int, NOT_APPLICABLE: int} $statusCounts */
+        $statusCounts = $breakdown['status_counts'] ?? [
+            'PASS' => 0,
+            'WARN' => 0,
+            'FAIL' => 0,
+            'UNKNOWN' => 0,
+            'NOT_APPLICABLE' => 0,
+        ];
+
+        $totalFindings = array_sum($statusCounts);
+        $overallScore = isset($row['score_overall']) ? (int) $row['score_overall'] : null;
+        $coverage = isset($breakdown['coverage'])
+            ? (float) $breakdown['coverage']
+            : ((int) $row['coverage_percent']) / 100.0;
+        $isScorable = (bool) ($breakdown['is_scorable'] ?? ($overallScore !== null));
+        $disclaimer = (string) ($breakdown['disclaimer'] ?? AuditScore::DEFAULT_DISCLAIMER);
+        $scoringVersion = (string) ($breakdown['scoring_version'] ?? AuditScore::SCORING_VERSION);
+        $ruleSetVersion = (string) ($breakdown['rule_set_version'] ?? AuditScore::RULE_SET_VERSION);
+
+        return new AuditScore(
+            overallScore: $overallScore,
+            categoryScores: $catScores,
+            categoryBreakdown: $categoryBreakdown,
+            coverage: $coverage,
+            isScorable: $isScorable,
+            statusCounts: $statusCounts,
+            totalFindings: $totalFindings,
+            scoringVersion: $scoringVersion,
+            ruleSetVersion: $ruleSetVersion,
+            disclaimer: $disclaimer
+        );
+    }
+
+    private function resolveAnalysisId(int|string $analysisIdOrPublicId): ?int
+    {
+        if (is_int($analysisIdOrPublicId) || ctype_digit((string) $analysisIdOrPublicId)) {
+            return (int) $analysisIdOrPublicId;
+        }
+
+        $row = $this->db->fetch(
+            'SELECT id FROM analyses WHERE public_id = :public_id LIMIT 1',
+            ['public_id' => (string) $analysisIdOrPublicId]
+        );
+
+        return $row && isset($row['id']) ? (int) $row['id'] : null;
     }
 
     private function resolveSiteId(string $origin, ?int $userId): int
