@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F02.02 kabulü
+- Kullanıcı “onaylıyorum” ile F02.02 teslimi, PR #15 birleştirmesi ve F02.03 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.03 (Teknik SEO kuralları) başlatılacaktır.
+
 ## 2026-11-04 | F02.02 | READY_FOR_REVIEW
 - HTML Parser ve Metadata Motoru (`docs/reports/F02.02.md`) tamamlandı.
 - `HtmlParserInterface` ve `HtmlParser` (`app/Core/Parser/HtmlParser.php`) geliştirildi; `DOMDocument` ve `DOMXPath` ile HTML belgelerinden sayfa başlığı, meta açıklaması, başlık hiyerarşisi (H1-H6), sayfa dili, kanonik bağlantılar, Open Graph ve Twitter Card meta verileri, görsel ve bağlantı listeleri çıkarıldı.

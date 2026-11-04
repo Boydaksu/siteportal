@@ -1,11 +1,11 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F02.02 — READY_FOR_REVIEW; F02.02 tamamlandı, kullanıcı teslim kabulü ve PR incelemesi bekleniyor.
+> **Durum:** F02.02 — DONE; F02.02 teslimi ve PR #15 kabul edildi, F02.03 başlatılacaktır.
 > **Tarih:** 2026-11-04 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F02 / V1.0 (IN_PROGRESS).
-> **Son onaylanan alt faz:** F02.01 — DONE; teslim ve PR #14 merge onaylandı.
-> **Aktif dal:** `phase/F02.02-html-parser-metadata`.
+> **Son onaylanan alt faz:** F02.02 — DONE; teslim ve PR #15 merge onaylandı.
+> **Aktif dal:** `main`.
 > **Son kontrol:** PHP lint (138 dosya), PSR-12, PHPStan seviye 8, PHPUnit (252 test / 1804 assertions) PASS.
-> **Rapor:** [F02.02](docs/reports/F02.02.md). **Sonraki:** F02.03 — Teknik SEO kuralları; bekliyor.
+> **Rapor:** [F02.02](docs/reports/F02.02.md). **Sonraki:** F02.03 — Teknik SEO kuralları; başlatılıyor.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
