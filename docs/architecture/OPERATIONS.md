@@ -16,7 +16,7 @@ Temel HTML analiz modülü CLI+cron olan cPanel'de çalışabilir; yoğun crawle
 Queue length, job age, job failures, PSI/CrUX error, per-host 429, DB slow query, disk usage, API spend, suspicious URL blocks, admin login failures izlenir. RPO/RTO değerleri üretim öncesi kullanıcı onayıyla somutlaşır. Bütçe barajı aşılırsa JS/AI/PSI modüllerini durduracak feature flag olmalı.
 
 ## Yedek ve geri dönüş
-DB şifreli günlük backup + restore drill; reports object store varsa ayrı version/retention; secrets backup değil korumalı altyapı. Deploy rollback: önce uygulama önceki tag, sonra gerekirse reversible migration. Çalıştırılabilir komutlar yalnızca kod üretildiğinde ve gerçekten test edildiğinde yazılır.
+DB şifreli günlük backup + restore drill; reports object store varsa ayrı version/retention; secrets backup değil korumalı altyapı. Deploy rollback: önce uygulama önceki tag, sonra gerekirse reversible migration. Çalıştırılabilir CLI komutları, parametreleri ve işletim rehberi için [CLI Operasyon Rehberi](../operations/CLI.md) belgesine başvurunuz.
 
 ## KVKK / gizlilik
 IP/email ve OAuth erişimleri amaçla sınırlı; aydınlatma, uygun hukuki temel, çerez politikası, kullanıcı talebiyle silme, veri minimizasyonu, retention, DPA/üçüncü taraf API veri akışı hukuk danışmanıyla doğrulanır. Üçüncü taraf sitelerin kişisel içeriği gereksiz kalıcı saklanmaz.

@@ -1,0 +1,51 @@
+======================================================================
+SitePortal F01.07 Kalite ve Doğrulama Kontrolleri Kanıt Çıktısı
+Tarih: 2026-11-04 (Europe/Istanbul)
+Dal: phase/F01.07-security-testing-closure
+======================================================================
+
+--- 1. PHP Lint (Tüm Proje Dosyaları) ---
+PASS: 123 proje PHP dosyası lint kontrolünden geçti; vendor/ignore edilen kopyalar kapsam dışı.
+
+--- 2. PSR-12 Kodlama Standardı (phpcs) ---
+Time: 821ms; Memory: 10MB
+PASS: Sıfır hata, sıfır uyarı (100% PSR-12 uyumlu).
+
+--- 3. PHPStan Statik Analiz (Level 8) ---
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+[OK] No errors (101 dosya analiz edildi, seviye 8)
+
+--- 4. PHPUnit Test Paketi ---
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+Runtime: PHP 8.4.20
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+Time: 00:10.047, Memory: 20.00 MB
+OK (214 tests, 1456 assertions, 2 skipped [loopback network sandbox kısıtı, CI üzerinde tam geçer])
+
+--- 5. Dört Olumsuz Kalite Kapısı Testi ---
+test_formatter_rejects_non_psr12_input (__main__.QualityGateTests) ... ok
+test_php_lint_rejects_syntax_error (__main__.QualityGateTests) ... ok
+test_static_analysis_rejects_incorrect_return_type (__main__.QualityGateTests) ... ok
+test_test_runner_rejects_failed_assertion (__main__.QualityGateTests) ... ok
+Ran 4 tests in 1.831s
+OK
+
+--- 6. Doküman ve Bağlantı Kontrolleri ---
+test_code_fences_do_not_create_links_or_headings (__main__.DocumentLinksTests) ... ok
+test_external_url_format_without_network_request (__main__.DocumentLinksTests) ... ok
+test_missing_file_is_rejected (__main__.DocumentLinksTests) ... ok
+test_missing_fragment_is_rejected (__main__.DocumentLinksTests) ... ok
+test_repository_escape_is_rejected (__main__.DocumentLinksTests) ... ok
+test_turkish_and_duplicate_heading_targets (__main__.DocumentLinksTests) ... ok
+test_url_encoded_local_target (__main__.DocumentLinksTests) ... ok
+Ran 7 tests in 0.007s
+OK
+
+--- 7. Mimari, Envanter ve Blueprint Doğrulamaları ---
+PASS: 9 ana faz, 65 alt faz, 84 kural; JSON ve iç bağlantılar geçerli.
+PASS: SSRF savunma matrisi: 34 bloklu IP, 6 public IP, 19 bloklu URL, 27 atlatma URL'si, 7 meşru URL test edildi ve korundu.
+PASS: Kuyruk yarış (concurrency) ve atomik kilitlenme: 20 eşzamanlı iş testinde 0 çakışma.
+PASS: Veri ve kiracı izolasyonu: Transaction rollback yetim kayıt bırakmaz, kiracı verileri sızmaz, brute-force IP kilidi ve CSRF oturum bağı tam çalışır.
+PASS: Sağlık kontrolleri: /health (liveness) ve /health?detailed=1 (readiness DB check) uç noktaları doğrulandı.
+PASS: CLI araçları ve operasyonel rehber (docs/operations/CLI.md) dokümante edildi.
+======================================================================

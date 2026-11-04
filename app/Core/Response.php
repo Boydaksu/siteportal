@@ -99,6 +99,12 @@ final class Response
         return $this;
     }
 
+    public function withHeader(string $name, string $value): self
+    {
+        $this->headers[$name] = $value;
+        return $this;
+    }
+
     public function getHeader(string $name): ?string
     {
         foreach ($this->headers as $headerName => $headerValue) {

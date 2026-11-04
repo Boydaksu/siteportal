@@ -44,6 +44,15 @@ final class Request
         $this->uri = $uri;
         $this->path = $this->normalizePath($uri);
         $this->headers = $this->normalizeHeaders($headers);
+
+        if (empty($queryParams)) {
+            $queryString = parse_url($uri, PHP_URL_QUERY);
+            if (is_string($queryString) && $queryString !== '') {
+                parse_str($queryString, $parsedQuery);
+                /** @var array<string, mixed> $queryParams */
+                $queryParams = $parsedQuery;
+            }
+        }
         $this->queryParams = $queryParams;
         $this->postData = $postData;
         $this->body = $body;

@@ -22,6 +22,7 @@ Türkçe öncelikli SEO Analyzer güvenli dış HTTP istekleri ve uzun süren an
 - HTML sunucuda üretilir; vanilla JavaScript yalnız gerekli etkileşimi sağlar. Başlangıç için SPA, JS framework, npm build zinciri veya üçüncü taraf CDN script'i zorunlu değildir. Responsive CSS ve erişilebilir HTML korunur; kullanıcı metinleri çeviri anahtarlarından gelir.
 - Dış istekler yalnız SafeHttpClient üzerinden; entegrasyon adaptörü de bu ağ sınırını atlayamaz. Browser renderer ancak ilgili sonraki fazda, opsiyonel ve izole olarak değerlendirilir.
 - V1.0 genel erişimden önce güvenli fetch/robots/queue/rapor yetkisi ve kaynaklı bulgu gerekir. API veya DB örneği çalışan endpoint/migration değildir.
+- CLI araçları (migration, worker, scheduler) ve operasyonel kullanım detayları [CLI Operasyon Rehberi](../operations/CLI.md) dokümanında standartlaştırılmıştır.
 
 ## Gerekçe, etkiler ve alternatif maliyeti
 Mevcut planı uygulamak teknoloji değişimini ve servis sayısını düşük tutar; bu yaklaşım kendiliğinden güvenlik sağlamaz. Özel altyapının parser, SSRF, erişim, queue ve rollback testleri F01/F02 kabul kapılarıdır. Performans iddiası ancak ölçümle yapılır. [Modül matrisi](../architecture/MODULES.md), [bağımlılık politikası](../process/DEPENDENCIES.md) ve [tehdit modeli](../architecture/THREAT_MODEL.md) bu sınırların doğrulama planıdır.
