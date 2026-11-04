@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F02.07 kabulü
+- Kullanıcı “onaylıyorum” ile F02.07 teslimi, PR #20 birleştirmesi ve F02.08 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.08 (V1.0 uçtan uca ve kapanış) başlatılacaktır.
+
 ## 2026-11-04 | F02.07 | READY_FOR_REVIEW
 - Anonim Paylaşım ve Yaşam Süresi (`docs/reports/F02.07.md`) tamamlandı.
 - `analyses` tablosuna `visibility`, `share_token`, `share_token_expires_at`, `expires_at` ve `is_revoked` sütunları ile arama/temizlik indekslerini ekleyen veritabanı migration'ı (`database/migrations/0006_add_sharing_and_lifecycle_to_analyses.php`) oluşturuldu.
