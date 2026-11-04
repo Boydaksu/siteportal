@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #15](https://github.com/Boydaksu/siteportal/pull/15) birleştirildi.
 - **Aktif alt faz / durum:** F02.03 — Teknik SEO kuralları / READY_FOR_REVIEW.
 - **Dal:** `phase/F02.03-technical-seo-rules`.
-- **Aktif PR / kanıt commit:** PR açılacak; yerel dal `phase/F02.03-technical-seo-rules`.
+- **Aktif PR / kanıt commit:** [PR #16](https://github.com/Boydaksu/siteportal/pull/16); commit `510d45c5c0f8878bd5b1f05f5bba17e70644a460`.
 - **Rapor:** [F02.03](docs/reports/F02.03.md).
 - **Yerel sonuç:** PASS; PHP lint (170 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 279 test / 2020 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** Kural ve bulgu sözleşmesi (`FindingStatus`, `FindingSeverity`, `Confidence`, `Finding`, `PageSnapshot`, `RuleInterface`, `RuleRegistry`), 19 kritik teknik SEO kuralı (`HttpStatusRule`, `RedirectChainRule`, `RedirectLoopRule`, `HttpsRule`, `HttpsDowngradeRule`, `RobotsDisallowRule`, `RobotsUnavailableRule`, `MetaNoindexRule`, `XRobotsNoindexRule`, `RobotsNoindexConflictRule`, `CanonicalMissingRule`, `CanonicalEmptyRule`, `CanonicalMultiConflictRule`, `CanonicalRedirectRule`, `CanonicalOutOfScopeRule`, `Soft404SuspectRule`, `IndexabilityInferenceRule`, `SitemapMissingRule`, `SitemapStatusRule`), `TechnicalRuleFactory`, `tr-TR` ve `en-US` kural fix i18n anahtarları, Q-001 `data_source` ve `evidence` nesne dizisi uyumluluğu, Google sıralama iddiası taşımayan teknik sinyal sentezi ve sıfır harici I/O izolasyonu.
