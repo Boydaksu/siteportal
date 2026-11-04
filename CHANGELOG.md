@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F02.01 kabulü
+- Kullanıcı “onaylıyorum” ile F02.01 teslimi, PR #14 birleştirmesi ve F02.02 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.02 (HTML parser ve metadata) başlatılacaktır.
+
 ## 2026-11-04 | F02.01 | READY_FOR_REVIEW
 - URL Formu ve Analiz Yaşam Döngüsü (`docs/reports/F02.01.md`) tamamlandı.
 - Responsive, modern ve erişilebilir (ARIA) ana sayfa URL analiz formu (`resources/views/home.php`) geliştirildi; istemci ve sunucu tarafı doğrulama, CSRF kalkanı, progressive enhancement desteği ve loading spinner entegre edildi.

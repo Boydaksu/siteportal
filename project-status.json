@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-04T12:22:00+03:00",
+  "updated_at": "2026-11-04T12:42:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "0.1.0-dev",
   "current_phase": "F02",
   "current_subphase": "F02.01",
   "last_approved_phase": "F01",
-  "last_approved_subphase": "F01.07",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F02.01-url-form-analysis-lifecycle",
-  "commit_sha": "f44cbba378fd3732024ccf29d388cb6ca15da03a",
+  "last_approved_subphase": "F02.01",
+  "status": "DONE",
+  "branch": "main",
+  "commit_sha": "1bb0a6f5767fbaace7a42a9d2f691b1c20f60255",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/14",
   "last_report": "docs/reports/F02.01.md",
   "blockers": [],
-  "next_action": "F02.01 tamamlandı ve incelemeye hazır (READY_FOR_REVIEW). Kullanıcı onayı bekleniyor.",
+  "next_action": "F02.01 kabul edildi ve PR #14 main dalına birleştirildi. Sıradaki alt faz F02.02 (HTML parser ve metadata) başlatılacaktır.",
   "next_subphase": "F02.02",
   "phases": {
     "F00": {
@@ -47,7 +47,7 @@
       "version": "V1.0",
       "status": "IN_PROGRESS",
       "subphases": {
-        "F02.01": "READY_FOR_REVIEW",
+        "F02.01": "DONE",
         "F02.02": "NOT_STARTED",
         "F02.03": "NOT_STARTED",
         "F02.04": "NOT_STARTED",
@@ -224,21 +224,27 @@
       "approval_reference": "2026-11-04: Kullanıcı F01.07 alt faz teslimi + PR #13 merge + F01 ana faz kapanış onayı sorusuna “onaylıyorum” yanıtını verdi. F01.07 ve F01 ana fazı başarıyla kapatıldı; F02 başlatılacaktır.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-04: Kullanıcı F01.07 alt faz teslimi + PR #13 merge + F01 ana faz kapanış onayı sorusuna “onaylıyorum” yanıtını verdi. F01.07 ve F01 ana fazı başarıyla kapatıldı; F02 başlatılacaktır."
+    },
+    "F02.01": {
+      "approved_at": "2026-11-04T12:40:48+03:00",
+      "approval_reference": "2026-11-04: Kullanıcı F02.01 teslim kabulü + PR #14 merge + F02.02 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-04: Kullanıcı F02.01 teslim kabulü + PR #14 merge + F02.02 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F02.01",
-    "authorized_at": "2026-11-04T11:51:05+03:00",
-    "reference": "F01 ana faz kapanışı ve F02 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F02.02",
+    "authorized_at": "2026-11-04T12:40:48+03:00",
+    "reference": "F02.01 teslim kabulü ve F02.02 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F01.06",
+    "subphase": "F02.01",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/12",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/14",
     "merged": true,
-    "merge_sha": "a651144288cc542228e710c9331a19e0ce885970",
-    "approval_commit": "6f84767222472d8cf4b6da154ee42fa41249b437",
-    "approval_commit_ci_run": 41795446193
+    "merge_sha": "1bb0a6f5767fbaace7a42a9d2f691b1c20f60255",
+    "approval_commit": null,
+    "approval_commit_ci_run": 41809068886
   },
   "open_questions": [
     "Q-004"

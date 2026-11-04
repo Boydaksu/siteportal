@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F02.01 — READY_FOR_REVIEW; URL formu ve analiz yaşam döngüsü tamamlandı, kullanıcı onayı bekleniyor.
+> **Durum:** F02.01 — DONE; F02.01 teslimi ve PR #14 kabul edildi, F02.02 başlatılacaktır.
 > **Tarih:** 2026-11-04 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F02 / V1.0 (IN_PROGRESS).
-> **Son onaylanan alt faz:** F01.07 ve F01 Ana Fazı — DONE; teslim ve kapanış onaylandı.
-> **Aktif dal:** `phase/F02.01-url-form-analysis-lifecycle`.
-> **Son kontrol:** PHP lint (131 dosya), PSR-12, PHPStan seviye 8, PHPUnit (237 test / 1630 assertions) PASS.
-> **Rapor:** [F02.01](docs/reports/F02.01.md). **Sonraki:** F02.02 — HTML parser ve metadata; BEKLİYOR (DUR).
+> **Son onaylanan alt faz:** F02.01 — DONE; teslim ve PR #14 merge onaylandı.
+> **Aktif dal:** `main`.
+> **Son kontrol:** PHP lint (131 dosya), PSR-12, PHPStan seviye 8, PHPUnit (237 test / 1651 assertions) PASS.
+> **Rapor:** [F02.01](docs/reports/F02.01.md). **Sonraki:** F02.02 — HTML parser ve metadata; başlatılıyor.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -170,19 +170,19 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
-- **Tarih / repo:** 2026-11-04, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `phase/F02.01-url-form-analysis-lifecycle`.
+- **Tarih / repo:** 2026-11-04, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `main`.
 - **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F02 / V1.0 IN_PROGRESS (F00 ve F01 ana fazları DONE).
-- **Son onay:** F01.07 ve F01 Ana Fazı DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #13 merge ve F01 ana faz kapanışını onayladı.
-- **Önceki teslim:** [PR #13](https://github.com/Boydaksu/siteportal/pull/13) birleştirildi; merge `99a19171ad20a970bba9c434b08ea8a5b18a3ace`.
-- **Aktif alt faz / durum:** F02.01 — URL formu ve analiz yaşam döngüsü / READY_FOR_REVIEW.
-- **Dal:** `phase/F02.01-url-form-analysis-lifecycle`.
-- **Aktif PR / kanıt commit:** [PR #14](https://github.com/Boydaksu/siteportal/pull/14); commit `f44cbba`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41808846463) SUCCESS.
+- **Son onay:** F02.01 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #14 merge ve F02.02 başlangıcını onayladı.
+- **Önceki teslim:** [PR #14](https://github.com/Boydaksu/siteportal/pull/14) birleştirildi; merge `1bb0a6f5767fbaace7a42a9d2f691b1c20f60255`.
+- **Aktif alt faz / durum:** F02.01 — URL formu ve analiz yaşam döngüsü / DONE.
+- **Dal:** `main`.
+- **Aktif PR / kanıt commit:** [PR #14](https://github.com/Boydaksu/siteportal/pull/14); merge `1bb0a6f5767fbaace7a42a9d2f691b1c20f60255`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41809068886) SUCCESS.
 - **Rapor:** [F02.01](docs/reports/F02.01.md).
-- **Yerel sonuç:** PASS; PHP lint (131 dosya), PSR-12, PHPStan seviye 8, PHPUnit 237 test / 1630 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari kontrolleri PASS.
+- **Yerel sonuç:** PASS; PHP lint (131 dosya), PSR-12, PHPStan seviye 8, PHPUnit 237 test / 1651 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari kontrolleri PASS.
 - **Uygulama testleri:** Responsive URL formu (masaüstü/mobil), CSRF korumalı AJAX ve normal form gönderimi, HTTP 202 Accepted asenkron analiz oluşturma, REST API (/api/v1/analyses, /status, /progress), strictly sunucu/DB durumundan türetilen 4 aşamalı canlı takip (sahte timer YOK), ARIA erişilebilirlik (role="progressbar"), anonim kullanıcı IP kota kilitlemesi (5 istek / 600s, HTTP 429 Retry-After), SSRF koruması ve URL normalizasyonu.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki ana faz / alt faz:** F02.02 — HTML parser ve metadata; NOT_STARTED.
-- **Bir sonraki işlem:** Kullanıcı F02.01 teslim raporunu inceleyecek; açık onay verirse PR merge edilecek ve F02.02'ye geçilecektir (DUR).
+- **Sonraki ana faz / alt faz:** F02.02 — HTML parser ve metadata; BAŞLATILIYOR.
+- **Bir sonraki işlem:** F02.01 kapatıldı ve PR #14 main dalına birleştirildi. F02.02 için çalışma dalı açılacak ve geliştirme başlatılacaktır.
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
