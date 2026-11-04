@@ -92,6 +92,11 @@ try {
         }
     });
 
+    // Tek sayfa SEO analiz işleyicisi
+    $lifecycleService = new \SitePortal\Core\Analysis\AnalysisLifecycleService($db, config: $config);
+    $auditHandler = new \SitePortal\Core\Analysis\SinglePageAuditJobHandler($lifecycleService, config: $config);
+    $worker->registerHandler('single_page_audit', $auditHandler);
+
     $worker->onEvent(function (string $event, Job $job): void {
         $timestamp = date('Y-m-d H:i:s');
         $msg = "[{$timestamp}] [{$event}] Job #{$job->getId()} "

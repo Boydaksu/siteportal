@@ -89,7 +89,7 @@ final class ScoringEngine implements ScoringEngineInterface
             $naCount = 0;
 
             foreach ($catFindings as $f) {
-                $sevWeight = $this->getSeverityWeight($f->getSeverity());
+                $sevWeight = $this->resolveSeverityWeight($f);
                 $status = $f->getStatus();
 
                 if ($sevWeight > 0.0) {
@@ -208,6 +208,23 @@ final class ScoringEngine implements ScoringEngineInterface
         }
 
         return 'technical';
+    }
+
+    private function resolveSeverityWeight(Finding $finding): float
+    {
+        if ($this->registry !== null && $this->registry->has($finding->getRuleId())) {
+            $rule = $this->registry->get($finding->getRuleId());
+            if ($rule !== null) {
+                return $this->getSeverityWeight($rule->getDefaultSeverity());
+            }
+        }
+
+        $sev = $finding->getSeverity();
+        if ($sev === FindingSeverity::INFO && $finding->getStatus() === FindingStatus::PASS) {
+            return 1.0;
+        }
+
+        return $this->getSeverityWeight($sev);
     }
 
     private function getSeverityWeight(FindingSeverity $severity): float
