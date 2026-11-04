@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-04 | F02.08 kabulü ve F02 Ana Faz Kapanışı
+- Kullanıcı “onaylıyorum” ile F02.08 teslimini, PR #21 birleştirmesini ve F02 (V1.0: Üyeliksiz tek sayfa SEO analizi) ana faz kapanışını onayladı; PR #21 başarıyla main dalına birleştirildi (`73c35318a3eac96ffd6b83fcac48e4a232662ada`).
+- V1.0 sürümü (32 kural, asenkron tarama pipeline'ı, deterministik skorlama, anonim güvenli paylaşım, noindex ve TTL yaşam döngüsü) tamamlandı.
+- F03 (V1.1: Kullanıcı hesabı, geçmiş ve site yönetimi) ana fazı ve F03.01 alt fazının başlatılması için kullanıcı onayı bekleniyor.
+
 ## 2026-11-04 | F02.08 | READY_FOR_REVIEW
 - V1.0 Uçtan Uca ve Kapanış (`docs/reports/F02.08.md`) ile F02 Ana Faz Kapanış Özeti (`docs/reports/F02-PHASE-SUMMARY.md`) tamamlandı.
 - `SinglePageAuditJobHandler` (`app/Core/Analysis/SinglePageAuditJobHandler.php`) boru hattı (pipeline) geliştirildi:
