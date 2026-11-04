@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F02.05 kabulü
+- Kullanıcı “onaylıyorum” ile F02.05 teslimi, PR #18 birleştirmesi ve F02.06 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.06 (Rapor UI ve çözüm önerisi) başlatılacaktır.
+
 ## 2026-11-04 | F02.05 | READY_FOR_REVIEW
 - Kural Kayıt Sistemi ve Skorlama Motoru (`docs/reports/F02.05.md`) tamamlandı.
 - Birleşik kural kayıt fabrikası `V1RuleRegistryFactory` (`app/SeoAnalyzer/Engine/V1RuleRegistryFactory.php`) geliştirildi; 19 Teknik SEO kuralı ve 13 On-Page SEO kuralı (toplam 32 kural) tek bir kayıt defterinde (`RuleRegistryInterface`) birleştirildi.
