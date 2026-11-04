@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #21](https://github.com/Boydaksu/siteportal/pull/21) birleştirildi (`73c35318a3eac96ffd6b83fcac48e4a232662ada`).
 - **Aktif alt faz / durum:** F03.01 — URL frontier ve normalize keşif / READY_FOR_REVIEW.
 - **Dal:** `phase/F03.01-url-frontier`.
-- **Aktif PR / kanıt commit:** PR açılıyor; CI bekleniyor.
+- **Aktif PR / kanıt commit:** [PR #22](https://github.com/Boydaksu/siteportal/pull/22); CI bekleniyor.
 - **Rapor:** [F03.01](docs/reports/F03.01.md).
 - **Yerel sonuç:** PASS; PHP lint (221 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 398 test / 2854 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** `UrlNormalizer` RFC 3986 kanonizasyonu, fragment temizliği, deterministik query sıralama (`ksort`), izleme parametresi filtresi; `RegistrableDomainParser` çok parçalı ccTLD eTLD+1 tespiti; `CrawlScopePolicy` exact host, subdomain ve path prefix sınırları; `MemoryUrlFrontier` ve `DatabaseUrlFrontier` (`pages` tablosu) dedup ve yaşam döngüsü doğrulaması.
