@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #23](https://github.com/Boydaksu/siteportal/pull/23) birleştirildi (`54f9bc81fde308ea601711043e534ac566268601`).
 - **Aktif alt faz / durum:** F03.03 — İç link grafiği ve derinlik / READY_FOR_REVIEW.
 - **Dal:** `phase/F03.03-link-graph-depth`.
-- **Aktif PR / kanıt commit:** [PR #24](https://github.com/Boydaksu/siteportal/pull/24) / `7bdd4e699be31859784d6b605f31fa588434ea30`.
+- **Aktif PR / kanıt commit:** [PR #24](https://github.com/Boydaksu/siteportal/pull/24) / `ff92b06e3f87530deacfa6d26562dbf252e99ed7`.
 - **Rapor:** Hazırlandı (`docs/reports/F03.03.md`).
 - **Yerel sonuç:** PASS; PHP lint (243 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 424 test / 2930 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** F03.03 tamamlandı (LinkEdge, LinkGraph in-memory çizge, LinkExtractor bağıl URL ve nofollow çözümleme, BfsCrawlPrioritizer bütçe ve BFS önceliklendirme, DatabaseLinkGraphRepository ve 0007 migrasyonu). Dış domainlerin kuyruğa girmemesi ve kırık link tespiti fixture testleriyle doğrulandı.

@@ -11,7 +11,7 @@
   "last_approved_subphase": "F03.02",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F03.03-link-graph-depth",
-  "commit_sha": "7bdd4e699be31859784d6b605f31fa588434ea30",
+  "commit_sha": "ff92b06e3f87530deacfa6d26562dbf252e99ed7",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/24",
   "last_report": "docs/reports/F03.03.md",
   "blockers": [],
