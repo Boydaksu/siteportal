@@ -79,4 +79,37 @@ return [
         'fe80::/10',          // Link-Local Unicast (RFC 4291)
         'ff00::/8',           // Multicast (RFC 4291)
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Hız Sınırlandırma (API Rate Limiting & Throttling)
+    |--------------------------------------------------------------------------
+    */
+    'rate_limit' => [
+        'enabled' => true,
+        'max_attempts' => (int) ($_ENV['RATE_LIMIT_MAX_ATTEMPTS'] ?? 60),
+        'decay_seconds' => (int) ($_ENV['RATE_LIMIT_DECAY_SECONDS'] ?? 60),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | İstek ve Tarama Bütçesi (Request Budget)
+    |--------------------------------------------------------------------------
+    */
+    'request_budget' => [
+        'max_requests_per_analysis' => (int) ($_ENV['BUDGET_MAX_REQUESTS'] ?? 100),
+        'max_bytes_per_analysis' => (int) ($_ENV['BUDGET_MAX_BYTES'] ?? 52428800), // 50MB
+        'max_requests_per_host' => (int) ($_ENV['BUDGET_MAX_HOST_REQUESTS'] ?? 20),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | CSRF Koruması
+    |--------------------------------------------------------------------------
+    */
+    'csrf' => [
+        'token_name' => '_csrf',
+        'header_name' => 'X-CSRF-Token',
+        'lifetime_seconds' => (int) ($_ENV['CSRF_LIFETIME'] ?? 7200), // 2 saat
+    ],
 ];

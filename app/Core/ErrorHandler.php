@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SitePortal\Core;
 
 use ErrorException;
+use SitePortal\Core\Observability\LoggerInterface;
 use Throwable;
 
 final class ErrorHandler
@@ -12,13 +13,24 @@ final class ErrorHandler
     private bool $debug;
     private View $view;
     private I18n $i18n;
+    private ?LoggerInterface $logger;
     private ?Request $currentRequest = null;
 
-    public function __construct(bool $debug = false, ?View $view = null, ?I18n $i18n = null)
-    {
+    public function __construct(
+        bool $debug = false,
+        ?View $view = null,
+        ?I18n $i18n = null,
+        ?LoggerInterface $logger = null
+    ) {
         $this->debug = $debug;
         $this->view = $view ?? new View();
         $this->i18n = $i18n ?? I18n::getInstance();
+        $this->logger = $logger;
+    }
+
+    public function setLogger(LoggerInterface $logger): void
+    {
+        $this->logger = $logger;
     }
 
     public function setCurrentRequest(Request $request): void
@@ -47,7 +59,6 @@ final class ErrorHandler
     public function handleException(Throwable $throwable): void
     {
         $request = $this->currentRequest ?? Request::fromGlobals();
-        $this->logException($throwable, $request->getRequestId());
 
         while (ob_get_level() > 0) {
             ob_end_clean();
@@ -75,6 +86,8 @@ final class ErrorHandler
     public function renderExceptionResponse(Throwable $throwable, Request $request): Response
     {
         $requestId = $request->getRequestId();
+        $this->logException($throwable, $requestId, $request);
+
         $locale = $request->getLocale();
         $this->i18n->setLocale($locale);
 
@@ -107,7 +120,9 @@ final class ErrorHandler
         }
 
         $response = Response::html($html, 500);
-        return $response->withRequestId($requestId);
+        return $response
+            ->withRequestId($requestId)
+            ->withCorrelationId($request->getCorrelationId());
     }
 
     public function setDebug(bool $debug): void
@@ -120,8 +135,23 @@ final class ErrorHandler
         return $this->debug;
     }
 
-    private function logException(Throwable $throwable, string $requestId): void
+    private function logException(Throwable $throwable, string $requestId, ?Request $request = null): void
     {
+        $current = $request ?? $this->currentRequest;
+        $correlationId = $current?->getCorrelationId();
+
+        if ($this->logger !== null) {
+            $this->logger->error($throwable->getMessage(), [
+                'exception' => get_class($throwable),
+                'file' => $throwable->getFile(),
+                'line' => $throwable->getLine(),
+                'request_id' => $requestId,
+                'correlation_id' => $correlationId,
+                'trace' => $this->debug ? $throwable->getTraceAsString() : null,
+            ]);
+            return;
+        }
+
         $message = sprintf(
             '[%s] Exception: %s in %s:%d (Request-ID: %s)',
             date('Y-m-d H:i:s'),

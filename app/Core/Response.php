@@ -115,6 +115,12 @@ final class Response
         return $this;
     }
 
+    public function withCorrelationId(string $correlationId): self
+    {
+        $this->headers['X-Correlation-Id'] = $correlationId;
+        return $this;
+    }
+
     public function getBody(): string
     {
         return $this->body;

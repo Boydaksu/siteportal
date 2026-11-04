@@ -59,4 +59,11 @@ return [
     'errors.request_id_label' => 'Tracking Code (Request ID)',
     'errors.back_to_home' => 'Back to Home',
     'errors.debug_details' => 'Error Details (Development Only)',
+    'errors.rate_limited' => 'Too many requests. Please try again in :seconds seconds.',
+    'errors.csrf_invalid' => 'CSRF verification failed. Please refresh the form and try again.',
+    'errors.auth_invalid' => 'Invalid email address or password.',
+    'errors.auth_throttled' => 'Too many failed login attempts. Please try again in :seconds seconds.',
+    'errors.budget_exceeded' => 'Crawl and analysis resource budget exceeded (:reason).',
+    'auth.login_success' => 'Admin signed in successfully.',
+    'auth.logout_success' => 'Session terminated successfully.',
 ];

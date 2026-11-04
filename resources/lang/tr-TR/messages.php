@@ -59,4 +59,11 @@ return [
     'errors.request_id_label' => 'Takip Kodu (Request ID)',
     'errors.back_to_home' => 'Ana Sayfaya Dön',
     'errors.debug_details' => 'Hata Ayrıntıları (Yalnızca Geliştirme Ortamı)',
+    'errors.rate_limited' => 'İstek sınırı aşıldı. Lütfen :seconds saniye sonra tekrar deneyiniz.',
+    'errors.csrf_invalid' => 'Güvenlik doğrulaması (CSRF) başarısız oldu. Lütfen formu yenileyip tekrar deneyiniz.',
+    'errors.auth_invalid' => 'Geçersiz e-posta adresi veya şifre.',
+    'errors.auth_throttled' => 'Çok fazla hatalı giriş denemesi yapıldı. Lütfen :seconds saniye sonra tekrar deneyiniz.',
+    'errors.budget_exceeded' => 'Tarama ve analiz kaynak bütçesi aşıldı (:reason).',
+    'auth.login_success' => 'Yönetici girişi başarıyla gerçekleştirildi.',
+    'auth.logout_success' => 'Oturum başarıyla sonlandırıldı.',
 ];
