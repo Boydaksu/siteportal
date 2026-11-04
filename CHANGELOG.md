@@ -1,6 +1,26 @@
 # Changelog
 
-## 2026-11-04 | F02.06 kabulü
+## 2026-11-04 | F02.07 | READY_FOR_REVIEW
+- Anonim Paylaşım ve Yaşam Süresi (`docs/reports/F02.07.md`) tamamlandı.
+- `analyses` tablosuna `visibility`, `share_token`, `share_token_expires_at`, `expires_at` ve `is_revoked` sütunları ile arama/temizlik indekslerini ekleyen veritabanı migration'ı (`database/migrations/0006_add_sharing_and_lifecycle_to_analyses.php`) oluşturuldu.
+- `AnalysisSharingService` (`app/Core/Analysis/AnalysisSharingService.php`) servisi geliştirildi:
+  - Kriptografik rastgele 32-byte hex (64 karakter) tahmin edilemez paylaşım token üretimi ve URL inşası.
+  - Paylaşım tokenı iptal mekanizması (`revokeShareToken`, `is_revoked = 1`, `share_token = NULL`).
+  - Görünürlük modu yönetimi (`public`, `unlisted`, `private`).
+  - T04 IDOR kalkanı ve erişim denetimi (`canAccess`): TTL aşımı, özel rapor gizliliği ve `hash_equals` ile güvenli token doğrulaması.
+- `AnalysisLifecycleService` (`app/Core/Analysis/AnalysisLifecycleService.php`) güncellendi:
+  - Yeni analiz oluşturulurken `visibility: 'unlisted'` ve varsayılan 7 günlük TTL (`expires_at: NOW + 7 gün`) atandı.
+  - `pruneExpired(?string $beforeDate): int` metodu ile süresi dolmuş analizlerin bulguları, sayfaları ve kuyruk işleriyle birlikte atomik silinmesi sağlandı.
+- CLI / cron budama betiği `bin/prune.php` oluşturuldu (`--dry-run` bayrağı destekli).
+- `AnalysisController` (`app/Controllers/AnalysisController.php`) kontrolcüsüne:
+  - Yetkisiz private erişimde HTTP 403 Forbidden, süresi dolmuş analizlerde HTTP 410 Gone yanıtları.
+  - Arama motoru kalkanı: `X-Robots-Tag: noindex, nofollow, noarchive`, `Cache-Control: private, no-cache, no-store, must-revalidate` ve `Pragma: no-cache` başlıkları.
+  - Paylaşım API endpoint'leri (`POST /api/v1/analyses/{id}/share`, `DELETE /api/v1/analyses/{id}/share`, `POST /api/v1/analyses/{id}/visibility`).
+- Kullanıcı arayüzüne (`resources/views/analysis/report.php`) güvenlik ve gizlilik rozeti (`noindex / noarchive`), kalan saklama süresi göstergesi ve tek tıkla bağlantı kopyalama modalı eklendi.
+- Özel HTTP 403 (`resources/views/errors/403.php`) ve HTTP 410 (`resources/views/errors/410.php`) hata sayfaları oluşturuldu.
+- `tr-TR` ve `en-US` dil dosyalarına 403/410 hata iletileri, paylaşım modal metinleri, noindex rozetleri ve TTL süre bildirimleri eklendi.
+- Kapsamlı birim ve entegrasyon testleri (2 yeni test dosyası, 16 test, 73 assertion) eklendi (`AnalysisSharingServiceTest`, `SharingAndLifecycleIntegrationTest`). Toplam test sayısı 357 test, 2635 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F02.08'e geçilmez (DUR).
 - Kullanıcı “onaylıyorum” ile F02.06 teslimi, PR #19 birleştirmesi ve F02.07 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.07 (Anonim paylaşım ve yaşam süresi) başlatılacaktır.
 
 ## 2026-11-04 | F02.06 | READY_FOR_REVIEW

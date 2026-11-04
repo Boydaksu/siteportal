@@ -49,6 +49,10 @@ use SitePortal\SeoAnalyzer\Scoring\AuditScore;
 $publicId = (string) ($analysis['public_id'] ?? '');
 $targetUrl = (string) ($analysis['target_url'] ?? '');
 $completedAt = (string) ($analysis['completed_at'] ?? $analysis['created_at'] ?? '');
+$visibility = (string) ($analysis['visibility'] ?? 'unlisted');
+$expiresAt = (string) ($analysis['expires_at'] ?? '');
+$shareToken = (string) ($analysis['share_token'] ?? '');
+$isRevoked = !empty($analysis['is_revoked']);
 
 $scoreColor = '#94a3b8';
 if ($overall_score !== null) {
@@ -73,10 +77,37 @@ if ($overall_score !== null) {
             <a href="/analysis/<?= View::escape($publicId) ?>" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.35rem;">
                 ℹ️ <?= View::escape($i18n->t('report.back_to_progress', [], $locale)) ?>
             </a>
+            <span class="badge" title="<?= View::escape($i18n->t('report.noindex_tooltip', [], $locale)) ?>" style="background-color: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.4); color: #f59e0b; font-size: 0.75rem;">
+                🛡️ noindex
+            </span>
         </div>
-        <button type="button" onclick="window.print()" class="btn" style="background-color: var(--surface-hover); color: var(--text); padding: 0.4rem 0.9rem; font-size: 0.85rem;">
-            🖨️ <?= View::escape($i18n->t('report.print', [], $locale)) ?>
-        </button>
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <button type="button" id="copy-share-btn" class="btn" style="background-color: rgba(56, 189, 248, 0.15); border: 1px solid var(--primary); color: var(--primary); padding: 0.4rem 0.9rem; font-size: 0.85rem;">
+                🔗 <?= View::escape($i18n->t('report.share_btn', [], $locale)) ?>
+            </button>
+            <button type="button" onclick="window.print()" class="btn" style="background-color: var(--surface-hover); color: var(--text); padding: 0.4rem 0.9rem; font-size: 0.85rem;">
+                🖨️ <?= View::escape($i18n->t('report.print', [], $locale)) ?>
+            </button>
+        </div>
+    </div>
+
+    <!-- Paylaşım Bildirimi / URL Kopyalama Kutusu (Gizlenebilir) -->
+    <div id="share-notification-box" style="display: none; background-color: var(--surface); border: 1px solid var(--primary); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: var(--primary); font-size: 0.9rem;">
+                🔗 <?= View::escape($i18n->t('report.share_title', [], $locale)) ?>
+            </strong>
+            <button type="button" onclick="document.getElementById('share-notification-box').style.display='none'" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.1rem;">&times;</button>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <input type="text" id="share-url-input" readonly value="<?= View::escape($_SERVER['HTTP_HOST'] ?? 'siteportal.net') ?>/analysis/<?= View::escape($publicId) ?>/report<?= $shareToken !== '' ? '?token=' . View::escape($shareToken) : '' ?>" style="flex: 1; background-color: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; font-family: monospace;">
+            <button type="button" id="copy-share-url-action" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                <?= View::escape($i18n->t('report.copy_btn', [], $locale)) ?>
+            </button>
+        </div>
+        <small style="display: block; margin-top: 0.5rem; color: var(--text-muted); font-size: 0.75rem;">
+            <?= View::escape($expiresAt !== '' ? $i18n->t('report.retention_until', ['date' => $expiresAt], $locale) : '') ?>
+        </small>
     </div>
 
     <!-- Rapor Başlık Kartı -->
@@ -455,6 +486,33 @@ if ($overall_score !== null) {
         severitySelect.addEventListener('change', function() {
             currentSeverity = severitySelect.value || 'all';
             applyFilters();
+        });
+    }
+
+    // Paylaşım butonu ve URL kopyalama
+    var copyShareBtn = document.getElementById('copy-share-btn');
+    var shareBox = document.getElementById('share-notification-box');
+    var shareInput = document.getElementById('share-url-input');
+    var copyAction = document.getElementById('copy-share-url-action');
+
+    if (copyShareBtn && shareBox) {
+        copyShareBtn.addEventListener('click', function() {
+            shareBox.style.display = shareBox.style.display === 'none' ? 'block' : 'none';
+        });
+    }
+
+    if (copyAction && shareInput) {
+        copyAction.addEventListener('click', function() {
+            shareInput.select();
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(shareInput.value);
+            } else {
+                document.execCommand('copy');
+            }
+            copyAction.textContent = '✓';
+            setTimeout(function() {
+                copyAction.textContent = 'Kopyala';
+            }, 2000);
         });
     }
 })();

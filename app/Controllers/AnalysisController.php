@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SitePortal\Controllers;
 
 use SitePortal\Core\Analysis\AnalysisLifecycleService;
+use SitePortal\Core\Analysis\AnalysisSharingService;
 use SitePortal\Core\Analysis\Exceptions\AnalysisRateLimitedException;
 use SitePortal\Core\Config;
 use SitePortal\Core\Database\Connection;
@@ -23,6 +24,7 @@ use Throwable;
 final class AnalysisController
 {
     private AnalysisLifecycleService $lifecycleService;
+    private AnalysisSharingService $sharingService;
     private Config $config;
     private I18n $i18n;
     private View $view;
@@ -31,6 +33,7 @@ final class AnalysisController
 
     public function __construct(
         ?AnalysisLifecycleService $lifecycleService = null,
+        ?AnalysisSharingService $sharingService = null,
         ?Config $config = null,
         ?I18n $i18n = null,
         ?View $view = null,
@@ -43,7 +46,22 @@ final class AnalysisController
         $this->session = $session ?? new Session();
         $this->csrf = $csrf ?? new Csrf($this->session);
 
-        if ($lifecycleService === null) {
+        if ($lifecycleService !== null && $sharingService !== null) {
+            $this->lifecycleService = $lifecycleService;
+            $this->sharingService = $sharingService;
+        } elseif ($lifecycleService !== null) {
+            $this->lifecycleService = $lifecycleService;
+            $this->sharingService = new AnalysisSharingService(
+                $lifecycleService->getConnection(),
+                config: $this->config
+            );
+        } elseif ($sharingService !== null) {
+            $this->sharingService = $sharingService;
+            $this->lifecycleService = new AnalysisLifecycleService(
+                $sharingService->getConnection(),
+                config: $this->config
+            );
+        } else {
             /** @var string $driver */
             $driver = (string) $this->config->get('database.default', 'mysql');
             /** @var array{
@@ -59,8 +77,7 @@ final class AnalysisController
             $connConfig = (array) $this->config->get("database.connections.{$driver}", []);
             $db = Connection::create($connConfig);
             $this->lifecycleService = new AnalysisLifecycleService($db, config: $this->config);
-        } else {
-            $this->lifecycleService = $lifecycleService;
+            $this->sharingService = new AnalysisSharingService($db, config: $this->config);
         }
     }
 
@@ -340,6 +357,47 @@ final class AnalysisController
             return Response::text('', 302, ['Location' => "/analysis/{$publicId}"]);
         }
 
+        $userId = is_numeric($this->session->get('user_id')) ? (int) $this->session->get('user_id') : null;
+        $token = (string) ($request->getQuery('token') ?? '');
+
+        // 1. Yaşam Süresi Kontrolü (TTL - 410 Gone)
+        if ($this->sharingService->isExpired($analysis)) {
+            $locale = $request->getLocale();
+            $this->i18n->setLocale($locale);
+            $html = $this->view->renderWithLayout('errors/410', [
+                'requestId' => $request->getRequestId(),
+                'locale' => $locale,
+                'i18n' => $this->i18n,
+                'title' => $this->i18n->t('errors.report_expired_title', [], $locale),
+                'description' => $this->i18n->t('errors.report_expired_desc', [], $locale),
+                'requestIdLabel' => $this->i18n->t('errors.request_id_label', [], $locale),
+                'backToHomeLabel' => $this->i18n->t('errors.back_to_home', [], $locale),
+            ]);
+            return Response::html($html, 410)
+                ->withHeader('X-Robots-Tag', 'noindex, nofollow, noarchive')
+                ->withHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+                ->withHeader('Pragma', 'no-cache');
+        }
+
+        // 2. Yetki ve Paylaşım Kontrolü (T04 IDOR Kalkanı - 403 Forbidden)
+        if (!$this->sharingService->canAccess($analysis, $userId, $token !== '' ? $token : null)) {
+            $locale = $request->getLocale();
+            $this->i18n->setLocale($locale);
+            $html = $this->view->renderWithLayout('errors/403', [
+                'requestId' => $request->getRequestId(),
+                'locale' => $locale,
+                'i18n' => $this->i18n,
+                'title' => $this->i18n->t('errors.forbidden_title', [], $locale),
+                'description' => $this->i18n->t('errors.forbidden_desc', [], $locale),
+                'requestIdLabel' => $this->i18n->t('errors.request_id_label', [], $locale),
+                'backToHomeLabel' => $this->i18n->t('errors.back_to_home', [], $locale),
+            ]);
+            return Response::html($html, 403)
+                ->withHeader('X-Robots-Tag', 'noindex, nofollow, noarchive')
+                ->withHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+                ->withHeader('Pragma', 'no-cache');
+        }
+
         $locale = $request->getLocale();
         $this->i18n->setLocale($locale);
 
@@ -356,9 +414,17 @@ final class AnalysisController
         $viewData['version'] = (string) $this->config->get('app.version', '1.0.0');
         $viewData['requestId'] = $request->getRequestId();
         $viewData['i18n'] = $this->i18n;
+        $viewData['metaRobots'] = 'noindex, nofollow, noarchive';
+        $viewData['shareToken'] = $analysis['share_token'] ?? null;
+        $viewData['visibility'] = $analysis['visibility'] ?? 'unlisted';
+        $viewData['expiresAt'] = $analysis['expires_at'] ?? null;
+        $viewData['isRevoked'] = !empty($analysis['is_revoked']);
 
         $html = $this->view->renderWithLayout('analysis/report', $viewData);
-        return Response::html($html, 200);
+        return Response::html($html, 200)
+            ->withHeader('X-Robots-Tag', 'noindex, nofollow, noarchive')
+            ->withHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+            ->withHeader('Pragma', 'no-cache');
     }
 
     /**
@@ -380,6 +446,33 @@ final class AnalysisController
             );
         }
 
+        $userId = is_numeric($this->session->get('user_id')) ? (int) $this->session->get('user_id') : null;
+        $token = (string) ($request->getQuery('token') ?? '');
+
+        // TTL Kontrolü
+        if ($this->sharingService->isExpired($analysis)) {
+            return $this->problemJson(
+                status: 410,
+                title: 'Raporun saklama süresi doldu',
+                code: 'REPORT_EXPIRED',
+                detail: 'Bu analizin saklama süresi (TTL) sona ermiştir.',
+                requestId: $request->getRequestId()
+            )->withHeader('X-Robots-Tag', 'noindex, nofollow, noarchive')
+             ->withHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+        }
+
+        // Yetki Kontrolü
+        if (!$this->sharingService->canAccess($analysis, $userId, $token !== '' ? $token : null)) {
+            return $this->problemJson(
+                status: 403,
+                title: 'Erişim engellendi',
+                code: 'ACCESS_DENIED',
+                detail: 'Bu rapor gizlidir veya sağlanan paylaşım belirteci geçersizdir.',
+                requestId: $request->getRequestId()
+            )->withHeader('X-Robots-Tag', 'noindex, nofollow, noarchive')
+             ->withHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+        }
+
         $locale = $request->getLocale();
         $findings = $this->lifecycleService->getFindings($publicId);
         $score = $this->lifecycleService->getScore($publicId);
@@ -393,12 +486,117 @@ final class AnalysisController
             'analysis_id' => $analysis['public_id'],
             'target_url' => $analysis['target_url'],
             'status' => $analysis['status'],
+            'visibility' => $analysis['visibility'] ?? 'unlisted',
+            'share_token' => $analysis['share_token'] ?? null,
+            'share_token_expires_at' => $analysis['share_token_expires_at'] ?? null,
+            'expires_at' => $analysis['expires_at'] ?? null,
+            'is_revoked' => !empty($analysis['is_revoked']),
             'completed_at' => $analysis['completed_at'],
             'score' => $score->toArray(),
             'findings' => $presenter->formatFindings($findings, $locale),
         ];
 
-        return Response::json($data, 200);
+        return Response::json($data, 200)
+            ->withHeader('X-Robots-Tag', 'noindex, nofollow, noarchive')
+            ->withHeader('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+            ->withHeader('Pragma', 'no-cache');
+    }
+
+    /**
+     * POST /api/v1/analyses/{id}/share
+     * Kriptografik tahmin edilemez paylaşım tokenı oluşturur.
+     */
+    public function createShareTokenApi(Request $request): Response
+    {
+        $publicId = (string) $request->getRouteParam('id');
+        $analysis = $this->lifecycleService->getAnalysis($publicId);
+
+        if ($analysis === null) {
+            return $this->problemJson(
+                status: 404,
+                title: 'Analiz bulunamadı',
+                code: 'ANALYSIS_NOT_FOUND',
+                detail: "'{$publicId}' kimlikli analiz kaydı bulunamadı.",
+                requestId: $request->getRequestId()
+            );
+        }
+
+        $userId = is_numeric($this->session->get('user_id')) ? (int) $this->session->get('user_id') : null;
+        $input = $this->extractInput($request);
+        $ttlHours = isset($input['ttl_hours']) && is_numeric($input['ttl_hours']) ? (int) $input['ttl_hours'] : null;
+
+        try {
+            $share = $this->sharingService->generateShareToken($publicId, $ttlHours, $userId);
+            return Response::json([
+                'analysis_id' => $publicId,
+                'share_token' => $share['share_token'],
+                'expires_at' => $share['expires_at'],
+                'share_url' => $share['share_url'],
+            ], 200);
+        } catch (\Throwable $e) {
+            return $this->problemJson(
+                status: 403,
+                title: 'Paylaşım bağlantısı oluşturulamadı',
+                code: 'SHARE_CREATE_FAILED',
+                detail: $e->getMessage(),
+                requestId: $request->getRequestId()
+            );
+        }
+    }
+
+    /**
+     * DELETE /api/v1/analyses/{id}/share
+     * Paylaşım tokenını derhal iptal eder (revoke).
+     */
+    public function revokeShareTokenApi(Request $request): Response
+    {
+        $publicId = (string) $request->getRouteParam('id');
+        $userId = is_numeric($this->session->get('user_id')) ? (int) $this->session->get('user_id') : null;
+
+        $revoked = $this->sharingService->revokeShareToken($publicId, $userId);
+        if (!$revoked) {
+            return $this->problemJson(
+                status: 403,
+                title: 'İptal işlemi başarısız',
+                code: 'SHARE_REVOKE_FAILED',
+                detail: 'Paylaşım bağlantısı iptal edilemedi veya yetkiniz yok.',
+                requestId: $request->getRequestId()
+            );
+        }
+
+        return Response::json([
+            'analysis_id' => $publicId,
+            'is_revoked' => true,
+            'message' => 'Paylaşım bağlantısı başarıyla iptal edildi.',
+        ], 200);
+    }
+
+    /**
+     * POST /api/v1/analyses/{id}/visibility
+     * Analiz gizlilik modunu ayarlar ('public', 'unlisted', 'private').
+     */
+    public function setVisibilityApi(Request $request): Response
+    {
+        $publicId = (string) $request->getRouteParam('id');
+        $userId = is_numeric($this->session->get('user_id')) ? (int) $this->session->get('user_id') : null;
+        $input = $this->extractInput($request);
+        $visibility = (string) ($input['visibility'] ?? '');
+
+        $success = $this->sharingService->setVisibility($publicId, $visibility, $userId);
+        if (!$success) {
+            return $this->problemJson(
+                status: 422,
+                title: 'Geçersiz görünürlük modu veya yetkisiz işlem',
+                code: 'VISIBILITY_CHANGE_FAILED',
+                detail: 'Görünürlük modu değiştirilemedi.',
+                requestId: $request->getRequestId()
+            );
+        }
+
+        return Response::json([
+            'analysis_id' => $publicId,
+            'visibility' => $visibility,
+        ], 200);
     }
 
     /**

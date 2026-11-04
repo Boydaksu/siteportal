@@ -31,6 +31,22 @@ final class Router
     /**
      * @param callable|array{class-string, string} $handler
      */
+    public function delete(string $path, callable|array $handler): void
+    {
+        $this->add('DELETE', $path, $handler);
+    }
+
+    /**
+     * @param callable|array{class-string, string} $handler
+     */
+    public function put(string $path, callable|array $handler): void
+    {
+        $this->add('PUT', $path, $handler);
+    }
+
+    /**
+     * @param callable|array{class-string, string} $handler
+     */
     public function add(string $method, string $path, callable|array $handler): void
     {
         $upperMethod = strtoupper($method);
