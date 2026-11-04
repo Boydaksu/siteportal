@@ -11,11 +11,11 @@
   "last_approved_subphase": "F02.03",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F02.04-on-page-rules",
-  "commit_sha": null,
-  "pr_url": null,
+  "commit_sha": "749d6501a3577319fa39b07106fe6cf4ff843a85",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/17",
   "last_report": "docs/reports/F02.04.md",
   "blockers": [],
-  "next_action": "F02.04 teslimi için PR açılacak, kontroller ve kabul kriterleri kullanıcıya sunularak açık onay beklenecektir.",
+  "next_action": "F02.04 PR #17 incelemeye hazır; CI ve kabul kriterleri kontrolleri kullanıcı onayına sunuldu.",
   "next_subphase": "F02.05",
   "phases": {
     "F00": {
