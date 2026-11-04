@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-04 | F02.05 | READY_FOR_REVIEW
+- Kural Kayıt Sistemi ve Skorlama Motoru (`docs/reports/F02.05.md`) tamamlandı.
+- Birleşik kural kayıt fabrikası `V1RuleRegistryFactory` (`app/SeoAnalyzer/Engine/V1RuleRegistryFactory.php`) geliştirildi; 19 Teknik SEO kuralı ve 13 On-Page SEO kuralı (toplam 32 kural) tek bir kayıt defterinde (`RuleRegistryInterface`) birleştirildi.
+- Denetim motoru arayüzü `AuditEngineInterface` ve denetim motoru `AuditEngine` (`app/SeoAnalyzer/Engine/AuditEngine.php`) geliştirildi; sayfa snapshot'ı üzerinde tüm kuralların sıfır harici I/O ile deterministik icrası sağlandı.
+- `SCORING.md` ilkeleri ve formüllerine tam uyumlu deterministik `ScoringEngineInterface` ve `ScoringEngine` (`app/SeoAnalyzer/Scoring/ScoringEngine.php`) geliştirildi:
+  - Durum katsayıları: PASS = 1.0, WARN = 0.6, FAIL = 0.0.
+  - Kabul kriteri: **UNKNOWN ve NOT_APPLICABLE asla sıfır sayılmaz**, ölçülen paydaya dahil edilmez.
+  - Önem ağırlıkları: CRITICAL = 10, HIGH = 5, MEDIUM = 3, LOW = 1, INFO = 0.
+  - V1.0 kategori normalizasyonu: Ölçülmeyen kategoriler (CWV, mobil, structured data) yok sayılır; global puan ölçülen kategoriler (`technical` %40, `onpage` %30, `links` %20, `accessibility` %10) arasında normalize edilir.
+  - Sıfır puan güvenlik bariyeri: Kapsam (%20) altında kaldığında sahte sıfır puan üretilmez (`isScorable: false`, `overallScore: null`).
+- Değişmez skor veri nesnesi `AuditScore` (`app/SeoAnalyzer/Scoring/AuditScore.php`) oluşturuldu.
+- Kapsamlı birim ve snapshot testleri (1 yeni test dosyası, 12 test, 170 assertion) eklendi (`ScoringEngineTest`). Toplam test sayısı 328 test, 2425 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F02.06'ya geçilmez (DUR).
+
 ## 2026-11-04 | F02.04 kabulü
 - Kullanıcı “onaylıyorum” ile F02.04 teslimi, PR #17 birleştirmesi ve F02.05 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.05 (Kural kayıt sistemi ve skorlama) başlatılacaktır.
 
