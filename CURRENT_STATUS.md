@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #17](https://github.com/Boydaksu/siteportal/pull/17) birleştirildi (`9b3580ac40b8cdecb5e01b61da5e7e643d9ff871`).
 - **Aktif alt faz / durum:** F02.05 — Kural kayıt sistemi ve skorlama / READY_FOR_REVIEW.
 - **Dal:** `phase/F02.05-rule-registry-scoring`.
-- **Aktif PR / kanıt commit:** Açılacak PR (#18).
+- **Aktif PR / kanıt commit:** [PR #18](https://github.com/Boydaksu/siteportal/pull/18); kanıt commit `19f5ebb`.
 - **Rapor:** [F02.05](docs/reports/F02.05.md).
 - **Yerel sonuç:** PASS; PHP lint (192 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 328 test / 2425 assertion PASS (%100), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** Birleşik kural fabrikası `V1RuleRegistryFactory` (32 kural), `AuditEngineInterface` ve `AuditEngine`, deterministik `ScoringEngineInterface` ve `ScoringEngine`, değişmez `AuditScore` veri nesnesi, UNKNOWN/N/A durumlarının sıfır sayılmaması ve paydaya katılmaması matematiksel doğrulaması, Profil A (Mükemmel), Profil B (Kusurlu) ve Profil C (Kısmi/Bilinmeyen) snapshot testleri, asgari %20 kapsam güvenlik bariyeri, V1.0 kategori normalizasyonu.

@@ -11,11 +11,11 @@
   "last_approved_subphase": "F02.04",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F02.05-rule-registry-scoring",
-  "commit_sha": null,
-  "pr_url": null,
+  "commit_sha": "19f5ebbc30cb85b037d0c3ebc9c4883395b28d7b",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/18",
   "last_report": "docs/reports/F02.05.md",
   "blockers": [],
-  "next_action": "F02.05 teslimi için PR açılacak, kontroller ve kabul kriterleri kullanıcıya sunularak açık onay beklenecektir.",
+  "next_action": "F02.05 PR #18 incelemeye hazır; CI ve kabul kriterleri kontrolleri kullanıcı onayına sunuldu.",
   "next_subphase": "F02.06",
   "phases": {
     "F00": {
