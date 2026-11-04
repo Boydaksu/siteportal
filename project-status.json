@@ -11,7 +11,7 @@
   "last_approved_subphase": "F02.03",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F02.04-on-page-rules",
-  "commit_sha": "749d6501a3577319fa39b07106fe6cf4ff843a85",
+  "commit_sha": "9c25a81e3a9c7d41f71587399cfb9fbe54256428",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/17",
   "last_report": "docs/reports/F02.04.md",
   "blockers": [],
@@ -287,9 +287,9 @@
     "proposal": "docs/operations/main-protection.proposal.json"
   },
   "ci": {
-    "run_id": 41795446193,
-    "url": "https://github.com/Boydaksu/siteportal/actions/runs/41795446193",
-    "commit_sha": "78da4584e0c3886be500a89725f164746f3a61ba",
+    "run_id": 41827536948,
+    "url": "https://github.com/Boydaksu/siteportal/actions/runs/41827536948",
+    "commit_sha": "9c25a81e3a9c7d41f71587399cfb9fbe54256428",
     "status": "completed",
     "conclusion": "success"
   }
