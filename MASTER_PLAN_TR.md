@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #13](https://github.com/Boydaksu/siteportal/pull/13) birleştirildi; merge `99a19171ad20a970bba9c434b08ea8a5b18a3ace`.
 - **Aktif alt faz / durum:** F02.01 — URL formu ve analiz yaşam döngüsü / READY_FOR_REVIEW.
 - **Dal:** `phase/F02.01-url-form-analysis-lifecycle`.
-- **Aktif PR / kanıt commit:** PR açılacak; CI kontrolü bekleniyor.
+- **Aktif PR / kanıt commit:** [PR #14](https://github.com/Boydaksu/siteportal/pull/14); commit `f44cbba`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41808846463) SUCCESS.
 - **Rapor:** [F02.01](docs/reports/F02.01.md).
 - **Yerel sonuç:** PASS; PHP lint (131 dosya), PSR-12, PHPStan seviye 8, PHPUnit 237 test / 1630 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari kontrolleri PASS.
 - **Uygulama testleri:** Responsive URL formu (masaüstü/mobil), CSRF korumalı AJAX ve normal form gönderimi, HTTP 202 Accepted asenkron analiz oluşturma, REST API (/api/v1/analyses, /status, /progress), strictly sunucu/DB durumundan türetilen 4 aşamalı canlı takip (sahte timer YOK), ARIA erişilebilirlik (role="progressbar"), anonim kullanıcı IP kota kilitlemesi (5 istek / 600s, HTTP 429 Retry-After), SSRF koruması ve URL normalizasyonu.
