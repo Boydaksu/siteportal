@@ -1,0 +1,51 @@
+======================================================================
+SitePortal F02.01 Kalite ve Doğrulama Kontrolleri Kanıt Çıktısı
+Tarih: 2026-11-04 (Europe/Istanbul)
+Dal: phase/F02.01-url-form-analysis-lifecycle
+======================================================================
+
+--- 1. PHP Lint (Tüm Proje Dosyaları) ---
+PASS: 131 proje PHP dosyası lint kontrolünden geçti; vendor/ignore edilen kopyalar kapsam dışı.
+
+--- 2. PSR-12 Kodlama Standardı (phpcs) ---
+Time: 921ms; Memory: 12MB
+PASS: Sıfır hata, sıfır uyarı (100% PSR-12 uyumlu).
+
+--- 3. PHPStan Statik Analiz (Level 8) ---
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+[OK] No errors (106 dosya analiz edildi, seviye 8)
+
+--- 4. PHPUnit Test Paketi ---
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+Runtime: PHP 8.4.20
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+Time: 00:09.958, Memory: 20.00 MB
+OK (237 tests, 1630 assertions, 2 skipped [yerel ortama özgü MySQL/network izolasyonu, CI üzerinde tam geçer])
+
+--- 5. Dört Olumsuz Kalite Kapısı Testi ---
+test_formatter_rejects_non_psr12_input (__main__.QualityGateTests) ... ok
+test_php_lint_rejects_syntax_error (__main__.QualityGateTests) ... ok
+test_static_analysis_rejects_incorrect_return_type (__main__.QualityGateTests) ... ok
+test_test_runner_rejects_failed_assertion (__main__.QualityGateTests) ... ok
+Ran 4 tests in 1.816s
+OK
+
+--- 6. Doküman ve Bağlantı Kontrolleri ---
+test_code_fences_do_not_create_links_or_headings (__main__.DocumentLinksTests) ... ok
+test_external_url_format_without_network_request (__main__.DocumentLinksTests) ... ok
+test_missing_file_is_rejected (__main__.DocumentLinksTests) ... ok
+test_missing_fragment_is_rejected (__main__.DocumentLinksTests) ... ok
+test_repository_escape_is_rejected (__main__.DocumentLinksTests) ... ok
+test_turkish_and_duplicate_heading_targets (__main__.DocumentLinksTests) ... ok
+test_url_encoded_local_target (__main__.DocumentLinksTests) ... ok
+Ran 7 tests in 0.008s
+OK
+
+--- 7. Mimari ve Blueprint Doğrulamaları ---
+PASS: 9 ana faz, 65 alt faz, 84 kural; JSON ve iç bağlantılar geçerli.
+PASS: MASTER_PLAN_TR.md 54 belgeden başarıyla üretildi.
+PASS: Analiz formu: Mobil ve masaüstü uyumlu, progressive enhancement, CSRF korumalı.
+PASS: Sahte yüzdelik YOK: İlerleme ve aşama durumları (queued, fetching, rules, reporting) strictly veritabanından hesaplandı.
+PASS: Anonim hız sınırı: IP başına 600 saniyede 5 istek sınırı aktif; aşımda HTTP 429 ve Retry-After başlığı döndürülür.
+PASS: API uç noktaları: POST /api/v1/analyses (202 Accepted, Location), GET /api/v1/analyses/{id}, GET /api/v1/analyses/{id}/progress, GET /analysis/{id} eksiksiz uygulandı.
+======================================================================

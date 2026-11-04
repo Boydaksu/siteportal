@@ -20,7 +20,7 @@ class QualityGateTests(unittest.TestCase):
 
     def rejected(self, filename, content, arguments, diagnostic):
         target = self.probe / filename
-        target.write_text(content, encoding="utf-8", newline="\n")
+        target.write_text(content, encoding="utf-8")
         result = subprocess.run(self.php + arguments + [str(target)], cwd=root, capture_output=True, text=True, encoding="utf-8")
         output = result.stdout + result.stderr
         self.assertNotEqual(0, result.returncode, output)

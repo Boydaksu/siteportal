@@ -38,5 +38,5 @@ if '--check' in sys.argv:
   raise SystemExit('FAIL: MASTER_PLAN_TR.md kaynaklarla güncel değil; build_master_plan.py ile üret.')
  print('PASS: MASTER_PLAN_TR.md',len(paths),'kaynakla byte-for-byte güncel; dosya değiştirilmedi.')
 else:
- (root/'MASTER_PLAN_TR.md').write_text(generated,encoding='utf-8',newline='\n')
+ (root/'MASTER_PLAN_TR.md').write_text(generated,encoding='utf-8')
  print('MASTER_PLAN_TR.md generated from',len(paths),'documents')

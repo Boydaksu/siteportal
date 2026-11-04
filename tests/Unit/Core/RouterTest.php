@@ -78,4 +78,32 @@ final class RouterTest extends TestCase
         self::assertSame(404, $response->getStatusCode());
         self::assertStringContainsString('sayfa bulunamadi', $response->getBody());
     }
+
+    public function testDispatchesParameterizedRouteAndExtractsParameters(): void
+    {
+        $this->router->get('/items/{id}', function (Request $req): Response {
+            $id = $req->getRouteParam('id');
+            return Response::json(['item_id' => $id]);
+        });
+
+        $this->router->get('/items/{id}/details', function (Request $req): Response {
+            $id = $req->getRouteParam('id');
+            return Response::json(['item_id' => $id, 'details' => true]);
+        });
+
+        $request1 = Request::create('GET', '/items/item_123');
+        $response1 = $this->router->dispatch($request1);
+        self::assertSame(200, $response1->getStatusCode());
+        self::assertStringContainsString('"item_id": "item_123"', $response1->getBody());
+
+        $request2 = Request::create('GET', '/items/item_123/details');
+        $response2 = $this->router->dispatch($request2);
+        self::assertSame(200, $response2->getStatusCode());
+        self::assertStringContainsString('"details": true', $response2->getBody());
+
+        // 405 for parameterized route
+        $requestPost = Request::create('POST', '/items/item_123');
+        $responsePost = $this->router->dispatch($requestPost);
+        self::assertSame(405, $responsePost->getStatusCode());
+    }
 }

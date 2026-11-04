@@ -41,11 +41,13 @@ final class ObservabilityIntegrationTest extends TestCase
         $runner = new MigrationRunner($this->db);
         $status = $runner->status();
 
-        self::assertCount(3, $status);
+        self::assertCount(4, $status);
         self::assertTrue($status[0]['applied']);
         self::assertTrue($status[1]['applied']);
         self::assertTrue($status[2]['applied']);
+        self::assertTrue($status[3]['applied']);
         self::assertSame('0003_add_user_role', $status[2]['migration']);
+        self::assertSame('0004_enhance_analyses_table', $status[3]['migration']);
 
         // Check users table has role column
         $admin = $this->db->fetch('SELECT email, role FROM users WHERE email = :email', [

@@ -48,17 +48,51 @@ final class Router
         $method = $request->getMethod();
         $path = $request->getPath();
 
-        // 1. Direct match
+        // 1. Doğrudan (tam) rota eşleşmesi
         if (isset($this->routes[$method][$path])) {
             $response = $this->executeHandler($this->routes[$method][$path], $request);
             return $response->withRequestId($request->getRequestId());
         }
 
-        // 2. Check if route exists for other HTTP methods (405 Method Not Allowed)
+        // 2. Parametrik rota eşleşmesi (/api/v1/analyses/{id})
+        if (isset($this->routes[$method])) {
+            foreach ($this->routes[$method] as $routePath => $handler) {
+                if (str_contains($routePath, '{')) {
+                    $pattern = preg_replace('/\{([a-zA-Z0-9_]+)\}/', '(?P<$1>[^/]+)', $routePath);
+                    if ($pattern !== null && preg_match('#^' . $pattern . '$#', $path, $matches) === 1) {
+                        /** @var array<string, string> $params */
+                        $params = [];
+                        foreach ($matches as $k => $v) {
+                            if (is_string($k)) {
+                                $params[$k] = (string) $v;
+                            }
+                        }
+                        $requestWithParams = $request->withRouteParams($params);
+                        $response = $this->executeHandler($handler, $requestWithParams);
+                        return $response->withRequestId($request->getRequestId());
+                    }
+                }
+            }
+        }
+
+        // 3. Diğer HTTP metotlarında rota var mı kontrolü (405 Method Not Allowed)
         $allowedMethods = [];
         foreach ($this->routes as $routeMethod => $paths) {
-            if ($routeMethod !== $method && isset($paths[$path])) {
+            if ($routeMethod === $method) {
+                continue;
+            }
+            if (isset($paths[$path])) {
                 $allowedMethods[] = $routeMethod;
+                continue;
+            }
+            foreach ($paths as $routePath => $h) {
+                if (str_contains($routePath, '{')) {
+                    $pattern = preg_replace('/\{([a-zA-Z0-9_]+)\}/', '(?P<$1>[^/]+)', $routePath);
+                    if ($pattern !== null && preg_match('#^' . $pattern . '$#', $path) === 1) {
+                        $allowedMethods[] = $routeMethod;
+                        break;
+                    }
+                }
             }
         }
 
@@ -71,7 +105,7 @@ final class Router
             return $response->withRequestId($request->getRequestId());
         }
 
-        // 3. Not Found (404)
+        // 4. Bulunamadı (404 Not Found)
         if ($this->notFoundHandler !== null) {
             $handler = $this->notFoundHandler;
             $response = $handler($request);

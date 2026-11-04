@@ -19,6 +19,9 @@ final class Request
     /** @var array<string, mixed> */
     private array $postData;
 
+    /** @var array<string, string> */
+    private array $routeParams = [];
+
     private string $body;
     private string $requestId;
     private string $correlationId;
@@ -172,6 +175,27 @@ final class Request
     public function getPost(string $key, mixed $default = null): mixed
     {
         return $this->postData[$key] ?? $default;
+    }
+
+    /** @return array<string, string> */
+    public function getRouteParams(): array
+    {
+        return $this->routeParams;
+    }
+
+    public function getRouteParam(string $key, ?string $default = null): ?string
+    {
+        return $this->routeParams[$key] ?? $default;
+    }
+
+    /**
+     * @param array<string, string> $params
+     */
+    public function withRouteParams(array $params): self
+    {
+        $clone = clone $this;
+        $clone->routeParams = $params;
+        return $clone;
     }
 
     public function getBody(): string

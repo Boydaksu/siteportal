@@ -41,7 +41,9 @@ final class Response
         $encoded = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         $body = $encoded !== false ? $encoded : '{}';
 
-        $headers['Content-Type'] = 'application/json; charset=UTF-8';
+        if (!isset($headers['Content-Type']) && !isset($headers['content-type'])) {
+            $headers['Content-Type'] = 'application/json; charset=UTF-8';
+        }
 
         return new self($body, $statusCode, $headers);
     }
