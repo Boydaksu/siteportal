@@ -98,9 +98,11 @@ final class App
         $this->router->get('/', [HomeController::class, 'index']);
         $this->router->post('/analyze', [AnalysisController::class, 'createWeb']);
         $this->router->get('/analysis/{id}', [AnalysisController::class, 'viewProgress']);
+        $this->router->get('/analysis/{id}/report', [AnalysisController::class, 'viewReport']);
         $this->router->post('/api/v1/analyses', [AnalysisController::class, 'createApi']);
         $this->router->get('/api/v1/analyses/{id}', [AnalysisController::class, 'statusApi']);
         $this->router->get('/api/v1/analyses/{id}/progress', [AnalysisController::class, 'progressApi']);
+        $this->router->get('/api/v1/analyses/{id}/report', [AnalysisController::class, 'reportApi']);
         $this->router->get('/health', [HealthController::class, 'health']);
         $this->router->get('/robots.txt', [StaticFileController::class, 'robots']);
         $this->router->get('/sitemap.xml', [StaticFileController::class, 'sitemap']);

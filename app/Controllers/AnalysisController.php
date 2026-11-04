@@ -16,6 +16,8 @@ use SitePortal\Core\Security\Exceptions\BlockedUrlException;
 use SitePortal\Core\Security\Exceptions\InvalidUrlException;
 use SitePortal\Core\Security\Session;
 use SitePortal\Core\View;
+use SitePortal\SeoAnalyzer\Presentation\ReportPresenter;
+use SitePortal\SeoAnalyzer\Scoring\ScoringEngine;
 use Throwable;
 
 final class AnalysisController
@@ -307,6 +309,96 @@ final class AnalysisController
         ]);
 
         return Response::html($html, 200);
+    }
+
+    /**
+     * GET /analysis/{id}/report
+     * Tamamlanmış SEO denetim raporu HTML sayfası.
+     */
+    public function viewReport(Request $request): Response
+    {
+        $publicId = (string) $request->getRouteParam('id');
+        $analysis = $this->lifecycleService->getAnalysis($publicId);
+
+        if ($analysis === null) {
+            $locale = $request->getLocale();
+            $this->i18n->setLocale($locale);
+            $html = $this->view->renderWithLayout('errors/404', [
+                'requestId' => $request->getRequestId(),
+                'locale' => $locale,
+                'i18n' => $this->i18n,
+                'title' => $this->i18n->t('errors.not_found_title', [], $locale),
+                'description' => $this->i18n->t('errors.not_found_desc', [], $locale),
+                'requestIdLabel' => $this->i18n->t('errors.request_id_label', [], $locale),
+                'backToHomeLabel' => $this->i18n->t('errors.back_to_home', [], $locale),
+            ]);
+            return Response::html($html, 404);
+        }
+
+        // Henüz tamamlanmamışsa progress ekranına yönlendir
+        if ($analysis['status'] !== AnalysisLifecycleService::STATUS_COMPLETED) {
+            return Response::text('', 302, ['Location' => "/analysis/{$publicId}"]);
+        }
+
+        $locale = $request->getLocale();
+        $this->i18n->setLocale($locale);
+
+        $findings = $this->lifecycleService->getFindings($publicId);
+        $score = $this->lifecycleService->getScore($publicId);
+        if ($score === null) {
+            $scoringEngine = new ScoringEngine();
+            $score = $scoringEngine->calculate($findings);
+        }
+
+        $presenter = new ReportPresenter($this->i18n);
+        $viewData = $presenter->prepareReportViewData($score, $findings, $analysis, $locale);
+        $viewData['app'] = (string) $this->config->get('app.name', 'SitePortal');
+        $viewData['version'] = (string) $this->config->get('app.version', '1.0.0');
+        $viewData['requestId'] = $request->getRequestId();
+        $viewData['i18n'] = $this->i18n;
+
+        $html = $this->view->renderWithLayout('analysis/report', $viewData);
+        return Response::html($html, 200);
+    }
+
+    /**
+     * GET /api/v1/analyses/{id}/report
+     * Tamamlanmış SEO denetim raporu JSON API çıktısı.
+     */
+    public function reportApi(Request $request): Response
+    {
+        $publicId = (string) $request->getRouteParam('id');
+        $analysis = $this->lifecycleService->getAnalysis($publicId);
+
+        if ($analysis === null) {
+            return $this->problemJson(
+                status: 404,
+                title: 'Analiz bulunamadı',
+                code: 'ANALYSIS_NOT_FOUND',
+                detail: "'{$publicId}' kimlikli analiz kaydı bulunamadı.",
+                requestId: $request->getRequestId()
+            );
+        }
+
+        $locale = $request->getLocale();
+        $findings = $this->lifecycleService->getFindings($publicId);
+        $score = $this->lifecycleService->getScore($publicId);
+        if ($score === null) {
+            $scoringEngine = new ScoringEngine();
+            $score = $scoringEngine->calculate($findings);
+        }
+
+        $presenter = new ReportPresenter($this->i18n);
+        $data = [
+            'analysis_id' => $analysis['public_id'],
+            'target_url' => $analysis['target_url'],
+            'status' => $analysis['status'],
+            'completed_at' => $analysis['completed_at'],
+            'score' => $score->toArray(),
+            'findings' => $presenter->formatFindings($findings, $locale),
+        ];
+
+        return Response::json($data, 200);
     }
 
     /**

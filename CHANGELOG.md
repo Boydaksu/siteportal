@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-11-04 | F02.06 | READY_FOR_REVIEW
+- Rapor UI ve Çözüm Önerisi (`docs/reports/F02.06.md`) tamamlandı.
+- Rapor Sunum Katmanı `ReportPresenter` (`app/SeoAnalyzer/Presentation/ReportPresenter.php`) geliştirildi; bulguları kategorilere ayırma, durum/önem sınıfları ve rozetleri atama, eyleme dönüştürülebilir çözüm önerileri (`remediation`) ve kod parçacıkları (`code_snippet`) bağlama işlevleri eklendi.
+- `analyses` tablosuna genel skor, kategori skorları, kapsam oranı ve skor dökümünü ekleyen veritabanı migration'ı (`database/migrations/0005_add_scores_to_analyses.php`) oluşturuldu.
+- `AnalysisLifecycleService` (`app/Core/Analysis/AnalysisLifecycleService.php`) servisine `saveFindings`, `getFindings`, `saveScore` ve `getScore` metotları eklenerek denetim bulgularının ve skorunun kalıcı depolanması sağlandı.
+- `AnalysisController` (`app/Controllers/AnalysisController.php`) kontrolcüsüne HTML rapor görünümü (`viewReport`, GET `/analysis/{id}/report`) ve JSON rapor API endpoint'i (`reportApi`, GET `/api/v1/analyses/{id}/report`) eklendi. Tamamlanmamış analizlerin rapor sayfasına erişimi engellendi (302 ile canlı ilerleme ekranına yönlendirme).
+- Modern ve erişilebilir Rapor Görünümü (`resources/views/analysis/report.php`) geliştirildi:
+  - Hero genel skor kartı (0-100), renk kodlaması, kapsam yüzdesi ve yasal feragatname.
+  - 4 kategori skor kartı (Teknik SEO, On-Page SEO, Bağlantılar, Erişilebilirlik).
+  - İstemci tarafı hızlı filtreleme ve ARIA sekmeleri (Kategori sekmeleri, Durum butonları, Severity dropdown).
+  - Kaynak, tespit zamanı, etkilenen URL listesi, kanıt detayları (`<details>`), çözüm önerisi ve örnek kod parçası içeren bulgu kartları.
+  - **%100 Güvenli HTML Escaping (Fail-Closed XSS koruması)** `View::escape` ile uygulandı.
+- `tr-TR` ve `en-US` dil dosyalarına rapor başlıkları, özet sayaçları, sekme ve filtre etiketleri, feragatname ve buton metinleri eklendi.
+- Kapsamlı birim ve entegrasyon testleri (2 yeni test dosyası, 13 test, 87 assertion) eklendi (`ReportPresenterTest`, `ReportUiTest`). Toplam test sayısı 341 test, 2551 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F02.07'ye geçilmez (DUR).
+
 ## 2026-11-04 | F02.05 kabulü
 - Kullanıcı “onaylıyorum” ile F02.05 teslimi, PR #18 birleştirmesi ve F02.06 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.06 (Rapor UI ve çözüm önerisi) başlatılacaktır.
 

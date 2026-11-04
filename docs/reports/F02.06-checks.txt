@@ -1,0 +1,42 @@
+=== PHP LINT (check_php.py) ===
+PASS: 197 proje PHP dosyası lint kontrolünden geçti; vendor/ignore edilen kopyalar kapsam dışı.
+
+=== PHPCS (PSR-12) ===
+vendor/bin/phpcs
+Time: 1.61 secs; Memory: 14MB
+FOUND 0 ERRORS AND 0 WARNINGS
+
+=== PHPSTAN (Level 8) ===
+vendor/bin/phpstan analyse --no-progress --memory-limit=512M
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+[OK] No errors
+
+=== PHPUNIT (tests/Unit/SeoAnalyzer/Presentation/ReportPresenterTest.php & tests/Integration/Analysis/ReportUiTest.php) ===
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+Runtime:       PHP 8.4.20
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+.............                                                     13 / 13 (100%)
+Time: 00:00.022, Memory: 16.00 MB
+OK (13 tests, 87 assertions)
+
+=== FULL PHPUNIT TEST SUITE ===
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+Runtime:       PHP 8.4.20
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+...............................................................  63 / 341 ( 18%)
+............................................................... 126 / 341 ( 36%)
+............................................................... 189 / 341 ( 55%)
+............................................................... 252 / 341 ( 73%)
+..............................................S................. 315 / 341 ( 92%)
+..........................                                      341 / 341 (100%)
+Time: 00:10.093, Memory: 22.00 MB
+OK, but some tests were skipped!
+Tests: 341, Assertions: 2551, Skipped: 2.
+
+=== QUALITY GATES (scripts/test_quality_gates.py) ===
+Ran 4 tests in 1.846s
+OK
+
+=== DOCUMENT LINKS (scripts/test_document_links.py) ===
+Ran 7 tests in 0.007s
+OK
