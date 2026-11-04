@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #16](https://github.com/Boydaksu/siteportal/pull/16) birleştirildi (`c2047a3a66b5ea873b1f03ba8277d0f8b830af05`).
 - **Aktif alt faz / durum:** F02.04 — On-page kuralları / READY_FOR_REVIEW.
 - **Dal:** `phase/F02.04-on-page-rules`.
-- **Aktif PR / kanıt commit:** [PR #17](https://github.com/Boydaksu/siteportal/pull/17); [CI Run 41827536948](https://github.com/Boydaksu/siteportal/actions/runs/41827536948) SUCCESS; kanıt commit `9c25a81`.
+- **Aktif PR / kanıt commit:** [PR #17](https://github.com/Boydaksu/siteportal/pull/17); [CI Run 41827790176](https://github.com/Boydaksu/siteportal/actions/runs/41827790176) SUCCESS; kanıt commit `5cd0cb0`.
 - **Rapor:** [F02.04](docs/reports/F02.04.md).
 - **Yerel sonuç:** PASS; PHP lint (185 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 316 test / 2255 assertion PASS (%100), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** 13 On-Page SEO kuralı (`TitleMissingRule`, `TitleGenericRule`, `TitleTruncationRiskRule`, `MetaDescriptionMissingRule`, `H1EmptyRule`, `HeadingHierarchyRule`, `HtmlLangRule`, `CharsetRule`, `OgMetadataRule`, `MetaKeywordsRule`, `AnchorEmptyRule`, `RelNofollowRule`, `ImageAltRule`), `OnPageRuleFactory`, `tr-TR` ve `en-US` kural fix i18n anahtarları, mutlak title/h1 cezası uygulanmadığının doğrulanması, WCAG standartlarında `alt=""` dekoratif görsel uyumluluğu, Q-001 `data_source` ve `evidence` nesne dizisi sözleşme uyumu.

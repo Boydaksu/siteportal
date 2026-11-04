@@ -11,11 +11,11 @@
   "last_approved_subphase": "F02.03",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F02.04-on-page-rules",
-  "commit_sha": "9c25a81e3a9c7d41f71587399cfb9fbe54256428",
+  "commit_sha": "5cd0cb003b5f7eb0a1ea3bc0a66d039aa7d3326d",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/17",
   "last_report": "docs/reports/F02.04.md",
   "blockers": [],
-  "next_action": "F02.04 PR #17 incelemeye hazır; CI ve kabul kriterleri kontrolleri kullanıcı onayına sunuldu.",
+  "next_action": "F02.04 PR #17 incelemeye hazır; CI Run 41827790176 ve kabul kriterleri kontrolleri kullanıcı onayına sunuldu.",
   "next_subphase": "F02.05",
   "phases": {
     "F00": {
@@ -287,9 +287,9 @@
     "proposal": "docs/operations/main-protection.proposal.json"
   },
   "ci": {
-    "run_id": 41827536948,
-    "url": "https://github.com/Boydaksu/siteportal/actions/runs/41827536948",
-    "commit_sha": "9c25a81e3a9c7d41f71587399cfb9fbe54256428",
+    "run_id": 41827790176,
+    "url": "https://github.com/Boydaksu/siteportal/actions/runs/41827790176",
+    "commit_sha": "5cd0cb003b5f7eb0a1ea3bc0a66d039aa7d3326d",
     "status": "completed",
     "conclusion": "success"
   }
