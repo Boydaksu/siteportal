@@ -4,14 +4,14 @@
 - **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F02 / V1.0 IN_PROGRESS (F00 ve F01 ana fazları DONE).
 - **Son onay:** F02.02 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #15 merge ve F02.03 başlangıcını onayladı.
 - **Önceki teslim:** [PR #15](https://github.com/Boydaksu/siteportal/pull/15) birleştirildi.
-- **Aktif alt faz / durum:** F02.02 — HTML parser ve metadata / DONE.
-- **Dal:** `main`.
-- **Aktif PR / kanıt commit:** [PR #15](https://github.com/Boydaksu/siteportal/pull/15); [CI](https://github.com/Boydaksu/siteportal/actions/runs/41817067906) SUCCESS.
-- **Rapor:** [F02.02](docs/reports/F02.02.md).
-- **Yerel sonuç:** PASS; PHP lint (138 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 252 test / 1804 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
-- **Uygulama testleri:** `HtmlParser` motoru (DOMDocument/DOMXPath, LIBXML_NONET XXE kalkanı, 5MB DoS koruması, UTF-8/ISO-8859-9 Türkçe karakter desteği, tek geçişli meta/OG/Twitter çıkarımı, WCAG boş alt `alt=""` dekoratif vs `alt === null` eksik alt metni ayrımı, RFC 3986 göreceli URL çözümü, iç/dış bağlantı tespiti, nofollow tespiti, script/style filtreli kelime ve karakter sayımı, HTML5 etiket hata filtresi ve biçimsiz HTML'de sıfır çökme garantisi).
+- **Aktif alt faz / durum:** F02.03 — Teknik SEO kuralları / READY_FOR_REVIEW.
+- **Dal:** `phase/F02.03-technical-seo-rules`.
+- **Aktif PR / kanıt commit:** [PR #16](https://github.com/Boydaksu/siteportal/pull/16); commit `510d45c5c0f8878bd5b1f05f5bba17e70644a460`.
+- **Rapor:** [F02.03](docs/reports/F02.03.md).
+- **Yerel sonuç:** PASS; PHP lint (170 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 279 test / 2020 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
+- **Uygulama testleri:** Kural ve bulgu sözleşmesi (`FindingStatus`, `FindingSeverity`, `Confidence`, `Finding`, `PageSnapshot`, `RuleInterface`, `RuleRegistry`), 19 kritik teknik SEO kuralı (`HttpStatusRule`, `RedirectChainRule`, `RedirectLoopRule`, `HttpsRule`, `HttpsDowngradeRule`, `RobotsDisallowRule`, `RobotsUnavailableRule`, `MetaNoindexRule`, `XRobotsNoindexRule`, `RobotsNoindexConflictRule`, `CanonicalMissingRule`, `CanonicalEmptyRule`, `CanonicalMultiConflictRule`, `CanonicalRedirectRule`, `CanonicalOutOfScopeRule`, `Soft404SuspectRule`, `IndexabilityInferenceRule`, `SitemapMissingRule`, `SitemapStatusRule`), `TechnicalRuleFactory`, `tr-TR` ve `en-US` kural fix i18n anahtarları, Q-001 `data_source` ve `evidence` nesne dizisi uyumluluğu, Google sıralama iddiası taşımayan teknik sinyal sentezi ve sıfır harici I/O izolasyonu.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki alt faz:** F02.03 — Teknik SEO kuralları; BAŞLATILIYOR.
-- **Bir sonraki işlem:** F02.02 kapatıldı ve PR #15 main dalına birleştirildi. F02.03 için çalışma dalı açılacak ve geliştirme başlatılacaktır.
+- **Sonraki alt faz:** F02.04 — On-page kuralları; BEKLİYOR.
+- **Bir sonraki işlem:** F02.03 kullanıcı teslim kabulü ve PR onayı bekleniyor; açık onay olmadan F02.04'e geçilmez (DUR).
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.

@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-11-04 | F02.03 | READY_FOR_REVIEW
+- Teknik SEO Kuralları Motoru (`docs/reports/F02.03.md`) tamamlandı.
+- Kural ve bulgu sözleşmesi geliştirildi: `FindingStatus`, `FindingSeverity`, `Confidence` enum sınıfları ve `Finding` (`app/SeoAnalyzer/Domain/Finding.php`) immutable değer nesnesi oluşturuldu (`examples/finding.schema.json` ve Q-001 uyumlu: `data_source` string ve `evidence` nesneler dizisi).
+- Değişmez analiz bağlamı nesnesi `PageSnapshot` (`app/SeoAnalyzer/Domain/PageSnapshot.php`) ve `RuleInterface` sözleşmesi (`app/SeoAnalyzer/Domain/RuleInterface.php`) geliştirildi. Kuralların herhangi bir harici I/O (ağ/DB/dosya) yapması engellendi.
+- Kural kayıt defteri `RuleRegistry` (`app/SeoAnalyzer/Domain/RuleRegistry.php`) ve `RuleRegistryInterface` oluşturuldu.
+- 19 kritik teknik SEO kuralı (`app/SeoAnalyzer/Rules/Technical/`) geliştirildi:
+  - `HttpStatusRule` (`TECH_HTTP_STATUS`): HTTP 200 (PASS), 3xx (WARN), 4xx (FAIL HIGH), 5xx (FAIL CRITICAL), yanıtsız (UNKNOWN).
+  - `RedirectChainRule` (`TECH_REDIRECT_CHAIN`): 0-1 yönlendirme (PASS), 2 adım (WARN), 3+ adım aşırı zincir (FAIL).
+  - `RedirectLoopRule` (`TECH_REDIRECT_LOOP`): Yönlendirme döngüsü veya max hops aşımı tespiti (FAIL/PASS).
+  - `HttpsRule` (`TECH_HTTPS`): HTTPS protokolü ve karma içerik (mixed content) tespiti (PASS/WARN/FAIL).
+  - `HttpsDowngradeRule` (`TECH_HTTPS_DOWNGRADE`): HTTPS'ten HTTP'ye güvensiz düşüş tespiti (FAIL/PASS/NOT_APPLICABLE).
+  - `RobotsDisallowRule` (`TECH_ROBOTS_DISALLOW`): robots.txt tarama engeli denetimi (WARN/PASS/UNKNOWN).
+  - `RobotsUnavailableRule` (`TECH_ROBOTS_UNAVAILABLE`): robots.txt 5xx sunucu hatasında Google standartlarında tarama durdurma tespiti (UNKNOWN/PASS).
+  - `MetaNoindexRule` (`TECH_META_NOINDEX`): HTML meta robots `noindex` veya `none` yönergesi tespiti (WARN/PASS/UNKNOWN).
+  - `XRobotsNoindexRule` (`TECH_X_ROBOTS_NOINDEX`): HTTP yanıt başlığında `X-Robots-Tag: noindex` veya `none` tespiti (WARN/PASS/UNKNOWN).
+  - `RobotsNoindexConflictRule` (`TECH_ROBOTS_NOINDEX_CONFLICT`): robots.txt engeli nedeniyle HTML noindex yönergesinin görülememe çelişkisinin tespiti (FAIL/PASS).
+  - `CanonicalMissingRule` (`TECH_CANONICAL_MISSING`): Kanonik bağlantı eksikliği tespiti (WARN info/PASS/UNKNOWN).
+  - `CanonicalEmptyRule` (`TECH_CANONICAL_EMPTY`): Boş veya geçersiz canonical href tespiti (FAIL/PASS/NOT_APPLICABLE).
+  - `CanonicalMultiConflictRule` (`TECH_CANONICAL_MULTI_CONFLICT`): HTML ve HTTP Link başlıklarında birden fazla çelişkili kanonik URL tespiti (FAIL/PASS).
+  - `CanonicalRedirectRule` (`TECH_CANONICAL_REDIRECT`): Kanonik URL'in yönlendirilen eski bir adrese işaret etmesi tespiti (WARN/PASS/NOT_APPLICABLE).
+  - `CanonicalOutOfScopeRule` (`TECH_CANONICAL_OUT_OF_SCOPE`): Cross-domain canonical tespiti (WARN/PASS/NOT_APPLICABLE).
+  - `Soft404SuspectRule` (`TECH_SOFT_404_SUSPECT`): HTTP 200 yanıtı fakat hata mesajı veya zayıf içerik tespiti (WARN heuristic/PASS/NOT_APPLICABLE).
+  - `IndexabilityInferenceRule` (`TECH_INDEXABILITY_INFERENCE`): Teknik sinyallere göre indekslenebilirlik sentezi (PASS/WARN/UNKNOWN; Google sıralama garantisi iddiası içermez).
+  - `SitemapMissingRule` (`TECH_SITEMAP_MISSING`): `/sitemap.xml` veya robots.txt içinde sitemap bulunamaması tespiti (WARN info/PASS/UNKNOWN).
+  - `SitemapStatusRule` (`TECH_SITEMAP_STATUS`): Keşfedilen sitemap dosyalarının 4xx/5xx hata durumu tespiti (FAIL/PASS/NOT_APPLICABLE/UNKNOWN).
+- Kural fabrikası `TechnicalRuleFactory` (`app/SeoAnalyzer/Rules/TechnicalRuleFactory.php`) oluşturuldu.
+- `tr-TR` ve `en-US` dil dosyalarına 19 kural için çözüm önerisi (`rules.TECH_*.fix`) anahtarları eklendi.
+- Kapsamlı birim testleri (4 yeni test dosyası, 27 yeni test, 216 yeni assertion) eklendi (`FindingTest`, `PageSnapshotTest`, `RuleRegistryTest`, `TechnicalRulesTest`).
+- Toplam test sayısı 279 teste, assertion sayısı 2020'ye ulaştı; %100 PSR-12, PHPStan Level 8 ve sıfır sır sızıntısı korundu.
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F02.04'e geçilmez (DUR).
+
 ## 2026-11-04 | F02.02 kabulü
 - Kullanıcı “onaylıyorum” ile F02.02 teslimi, PR #15 birleştirmesi ve F02.03 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.03 (Teknik SEO kuralları) başlatılacaktır.
 
