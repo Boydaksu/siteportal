@@ -172,17 +172,17 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 
 - **Tarih / repo:** 2026-11-04, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), main.
 - **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F01 / V0.1 IN_PROGRESS, F00 ana fazı kapatıldı.
-- **Son onay:** F01.04 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #10 merge ve F01.05 başlangıcını onayladı.
-- **Önceki teslim:** [PR #9](https://github.com/Boydaksu/siteportal/pull/9) birleştirildi; merge `aa31d3cd425bb355383095e3506dc6c162992d68`. Kabul commit'i `ba9063c19b06830732df378b8bc92d1a3c7dd500`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41725872996) SUCCESS.
-- **Aktif alt faz / durum:** F01.04 — HTTP istemcisi ve robots uyumu / DONE.
-- **Dal:** `phase/F01.04-http-client-robots`; başlangıç main SHA `aa31d3cd425bb355383095e3506dc6c162992d68`.
-- **Aktif PR / kanıt commit:** [PR #10](https://github.com/Boydaksu/siteportal/pull/10); kanıt commit `95e2ed53e9043be83e97067dd45324f34c5262d8`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41730270573) SUCCESS.
-- **Rapor:** [F01.04](docs/reports/F01.04.md).
-- **Yerel sonuç:** PASS; PHP lint (82 dosya), PSR-12, PHPStan seviye 8, PHPUnit 121 test / 704 assertion PASS (2 skipped [MySQL opsiyonel, sandbox döngüsel ağ]), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
-- **Uygulama testleri:** SafeHttpClient DNS pinning (CURLOPT_RESOLVE), redirect hop ve loop doğrulaması, chunk bazlı decompress/gzip bomb sınırı, ham boyut sınırı, nazik User-Agent/crawler başlıkları, RFC 9309 robots parser, user-agent grupları ve önbellek, Retry-After ve 429/503 yavaşlatma, fail-closed robots denetimi PASS.
+- **Son onay:** F01.05 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #11 merge ve F01.06 başlangıcını onayladı.
+- **Önceki teslim:** [PR #10](https://github.com/Boydaksu/siteportal/pull/10) birleştirildi; merge `a07395218cabf9399134bf7798132246884326a3`. Kabul commit'i `2f2be5484aa697f2aa25b29b4ef52b662369408b`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41730270573) SUCCESS.
+- **Aktif alt faz / durum:** F01.05 — DB queue / worker scheduler / DONE.
+- **Dal:** `phase/F01.05-db-queue-worker`; başlangıç main SHA `a07395218cabf9399134bf7798132246884326a3`.
+- **Aktif PR / kanıt commit:** [PR #11](https://github.com/Boydaksu/siteportal/pull/11); kanıt commit `3024ab945ebf15645844b46335a4a659d69eb5a3`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41735408217) SUCCESS.
+- **Rapor:** [F01.05](docs/reports/F01.05.md).
+- **Yerel sonuç:** PASS; PHP lint (99 dosya), PSR-12, PHPStan seviye 8, PHPUnit 147 test / 991 assertion PASS (2 skipped [MySQL opsiyonel, sandbox döngüsel ağ]), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
+- **Uygulama testleri:** DatabaseQueue atomik claim (MySQL SKIP LOCKED & SQLite locking), idempotent push, bounded retries ve backoff+jitter, lease ve heartbeat watchdog kurtarması, concurrency çakışmasızlık ve CLI worker/scheduler process testleri PASS.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki alt faz:** F01.05 — DB queue / worker scheduler; NOT_STARTED.
-- **Bir sonraki işlem:** F01.04 kabul edildi, PR #10 main dalına birleştirilecek ve F01.05 başlatılacaktır.
+- **Sonraki alt faz:** F01.06 — Gözlemlenebilirlik, kotalar, oturum; NOT_STARTED.
+- **Bir sonraki işlem:** F01.05 kabul edildi, PR #11 main dalına birleştirilecek ve F01.06 başlatılacaktır.
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -1465,13 +1465,13 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 2. CLI worker ve cron fallback.
 
 **Kabul/kanıt:**
-- [ ] İki worker aynı işi iki kere işlemez.
-- [ ] yarım iş güvenli toparlanır.
-- [ ] maksimum deneme durdurur.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] İki worker aynı işi iki kere işlemez.
+- [x] yarım iş güvenli toparlanır.
+- [x] maksimum deneme durdurur.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F01.05.md` + durum kayıtları.
 
