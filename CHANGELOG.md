@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-11-04 | F02.01 | READY_FOR_REVIEW
+- URL Formu ve Analiz Yaşam Döngüsü (`docs/reports/F02.01.md`) tamamlandı.
+- Responsive, modern ve erişilebilir (ARIA) ana sayfa URL analiz formu (`resources/views/home.php`) geliştirildi; istemci ve sunucu tarafı doğrulama, CSRF kalkanı, progressive enhancement desteği ve loading spinner entegre edildi.
+- Çift yönlü migration (`database/migrations/0004_enhance_analyses_table.php`) ile `analyses` tablosuna `target_url`, `progress_percent`, `error_code`, `error_message` alanları ve indeks eklendi.
+- Analiz yaşam döngüsü motoru (`app/Core/Analysis/AnalysisLifecycleService.php`) geliştirildi; URL SSRF doğrulaması (fail-closed), idempotency anahtarı yönetimi, `sites` ilişkisi kurma, `analyses` kaydı oluşturma ve `analysis_jobs` kuyruğuna asenkron iş ekleme tamamlandı.
+- Sahte yüzdelik (fake timer) kesinlikle kullanılmadı; ilerleme yüzdesi ve aşama durumları (`queued`, `fetching`, `rules`, `reporting`) doğrudan veritabanı durumundan hesaplandı.
+- Anonim kullanıcı analiz kotaları (`config/analysis.php`) uygulandı (IP başına 600 saniyede azami 5 analiz; aşımda `AnalysisRateLimitedException`, HTTP 429 ve `Retry-After` başlığı).
+- REST API uç noktaları (`app/Controllers/AnalysisController.php`) eklendi:
+  - `POST /api/v1/analyses`: Asenkron analiz başlatır (HTTP 202 Accepted ve `Location` başlığı).
+  - `GET /api/v1/analyses/{id}`: Analiz özet durumunu döndürür (HTTP 200).
+  - `GET /api/v1/analyses/{id}/progress`: Gerçek aşamaları ve veritabanı kaynaklı ilerlemeyi döndürür.
+  - `POST /analyze`: Web form gönderimi (HTML redirect veya AJAX 202).
+  - `GET /analysis/{id}`: Canlı analiz ilerleme sayfası (`resources/views/analysis/progress.php`).
+- İstemci tarafı canlı takip scripti (`public/js/analysis.js`) eklendi; yapay timer olmadan sunucudan 1.5 saniyede bir polling yaparak ARIA progress bar ve aşama ikonlarını günceller.
+- Özel router parametrik rota desteği (`{param}` sözdizimi, `getRouteParam`) `app/Core/Router.php` ve `app/Core/Request.php` içerisine eklendi.
+- `tr-TR` ve `en-US` dil dosyalarına 18 yeni analiz ve aşama çevirisi eklendi.
+- 22 yeni birim ve entegrasyon testi eklendi (`tests/Unit/Analysis/AnalysisLifecycleTest.php`, `tests/Integration/Analysis/AnalysisApiTest.php`); toplam 237 test ve 1630 assertion ile %100 PSR-12, PHPStan Level 8 ve sıfır sır sızıntısı sağlandı.
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F02.02'ye geçilmez (DUR).
+
 ## 2026-11-04 | F01.07 ve F01 Ana Faz Kapanış Kabulü
 - Kullanıcı “onaylıyorum” ile F01.07 alt faz teslimi, PR #13 birleştirmesi ve F01 (V0.1: Güvenli çekirdek ve worker) ana fazının resmen başarıyla kapatılmasını onayladı; kabul kaydı main dalına birleştirildi. F02.01 başlatılacaktır.
 

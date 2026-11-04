@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SitePortal\Core;
 
+use SitePortal\Controllers\AnalysisController;
 use SitePortal\Controllers\HealthController;
 use SitePortal\Controllers\HomeController;
 use SitePortal\Controllers\StaticFileController;
@@ -95,6 +96,11 @@ final class App
     private function registerRoutes(): void
     {
         $this->router->get('/', [HomeController::class, 'index']);
+        $this->router->post('/analyze', [AnalysisController::class, 'createWeb']);
+        $this->router->get('/analysis/{id}', [AnalysisController::class, 'viewProgress']);
+        $this->router->post('/api/v1/analyses', [AnalysisController::class, 'createApi']);
+        $this->router->get('/api/v1/analyses/{id}', [AnalysisController::class, 'statusApi']);
+        $this->router->get('/api/v1/analyses/{id}/progress', [AnalysisController::class, 'progressApi']);
         $this->router->get('/health', [HealthController::class, 'health']);
         $this->router->get('/robots.txt', [StaticFileController::class, 'robots']);
         $this->router->get('/sitemap.xml', [StaticFileController::class, 'sitemap']);
