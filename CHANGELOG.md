@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F02.03 kabulü
+- Kullanıcı “onaylıyorum” ile F02.03 teslimi, PR #16 birleştirmesi ve F02.04 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.04 (On-page kuralları) başlatılacaktır.
+
 ## 2026-11-04 | F02.03 | READY_FOR_REVIEW
 - Teknik SEO Kuralları Motoru (`docs/reports/F02.03.md`) tamamlandı.
 - Kural ve bulgu sözleşmesi geliştirildi: `FindingStatus`, `FindingSeverity`, `Confidence` enum sınıfları ve `Finding` (`app/SeoAnalyzer/Domain/Finding.php`) immutable değer nesnesi oluşturuldu (`examples/finding.schema.json` ve Q-001 uyumlu: `data_source` string ve `evidence` nesneler dizisi).
