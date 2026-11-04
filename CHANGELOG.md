@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-04 | F03.01 | READY_FOR_REVIEW
+- URL Frontier ve Normalize Keşif (`docs/reports/F03.01.md`) tamamlandı.
+- `UrlNormalizer` (`app/Core/Crawler/Normalizer/UrlNormalizer.php`) geliştirildi:
+  - RFC 3986 nokta segmenti çözümü, fragment temizleme, şema/host küçük harfe çevirme, standart portları kaldırma.
+  - Anlamlı query parametrelerini koruma ve deterministik alfabetik anahtar sıralama (`ksort`).
+  - İzleme parametrelerini (`utm_*`, `fbclid`, `gclid` vb.) opsiyonel temizleme.
+  - Tekilleştirme için 64 karakter SHA-256 hash (`normalized_url_hash`) üretimi.
+- `RegistrableDomainParser` (`app/Core/Crawler/Scope/RegistrableDomainParser.php`) eTLD+1 motoru geliştirildi; `.com.tr`, `.org.tr`, `.co.uk`, `.com.au` gibi çok parçalı alan adlarını sıfır harici bağımlılıkla doğru çözümler.
+- `CrawlScopePolicy` (`app/Core/Crawler/Scope/CrawlScopePolicy.php`) ve `ScopeMode` (`EXACT_HOST`, `SUBDOMAINS`, `PATH_PREFIX`) geliştirildi; dış domain sızıntılarını ve protokol uyumsuzluklarını engeller.
+- `FrontierState`, `FrontierItem` ve `FrontierEnqueueResult` modelleri oluşturuldu (`DISCOVERED`, `QUEUED`, `PROCESSING`, `CRAWLED`, `FAILED`, `SKIPPED`).
+- `MemoryUrlFrontier` ve `DatabaseUrlFrontier` (`pages` tablosu destekli transactional frontier) geliştirildi.
+- Kapsamlı birim ve entegrasyon testleri (5 yeni test dosyası, 35 test, 161 assertion) eklendi. Toplam test sayısı 398 test, 2854 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F03.02'ye geçilmez (DUR).
+
 ## 2026-11-04 | F02.08 kabulü ve F02 Ana Faz Kapanışı
 - Kullanıcı “onaylıyorum” ile F02.08 teslimini, PR #21 birleştirmesini ve F02 (V1.0: Üyeliksiz tek sayfa SEO analizi) ana faz kapanışını onayladı; PR #21 başarıyla main dalına birleştirildi (`73c35318a3eac96ffd6b83fcac48e4a232662ada`).
 - V1.0 sürümü (32 kural, asenkron tarama pipeline'ı, deterministik skorlama, anonim güvenli paylaşım, noindex ve TTL yaşam döngüsü) tamamlandı.
