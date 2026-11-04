@@ -1,0 +1,49 @@
+=== F02.02 Quality & Verification Checks ===
+Tarih: 2026-11-04T13:15:00+03:00
+Dal: phase/F02.02-html-parser-metadata
+
+1. PHP Syntax Lint (scripts/check_php.py)
+PASS: 138 proje PHP dosyası lint kontrolünden geçti; vendor/ignore edilen kopyalar kapsam dışı.
+
+2. PSR-12 Code Style (./vendor/bin/phpcs app/ tests/)
+PASS: Time: 1.03 secs; Memory: 12MB. 0 errors, 0 warnings.
+
+3. Static Analysis (./vendor/bin/phpstan analyse -l 8 app tests)
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+113/113 [============================] 100%
+[OK] No errors
+
+4. Unit & Integration Tests (./vendor/bin/phpunit)
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+Tests: 252, Assertions: 1804, Skipped: 0.
+OK (252 tests, 1804 assertions)
+
+5. HtmlParser Unit Tests (./vendor/bin/phpunit tests/Unit/Parser/HtmlParserTest.php)
+Tests: 15, Assertions: 153.
+OK (15 tests, 153 assertions)
+
+6. Negative Quality Gate Tests (scripts/test_quality_gates.py)
+test_formatter_rejects_non_psr12_input (__main__.QualityGateTests) ... ok
+test_php_lint_rejects_syntax_error (__main__.QualityGateTests) ... ok
+test_static_analysis_rejects_incorrect_return_type (__main__.QualityGateTests) ... ok
+test_test_runner_rejects_failed_assertion (__main__.QualityGateTests) ... ok
+Ran 4 tests in 1.392s. OK.
+
+7. Document Links Verification (scripts/test_document_links.py)
+Ran 7 tests in 0.007s. OK.
+
+8. Toolchain & Dependencies (scripts/verify_toolchain.py)
+PASS: 0 uygulama paketi, 3 dev bağımlılığı kesin kilitli, lisanslar uyumlu, CI pinleri tam.
+
+9. Architecture & ADR Verification (scripts/verify_architecture.py)
+PASS: ADR referansları, Q-001/Q-002/Q-003 kararları, T01-T15 tehdit modeli tam ve uyumlu.
+
+10. Blueprint Verification (scripts/verify_blueprint.py)
+PASS: 9 ana faz, 65 alt faz, 84 kural, 80 Markdown dosyası; JSON ve iç bağlantılar geçerli.
+
+11. Inventory & Secrets Verification (scripts/verify_inventory.py)
+PASS: 269 dosya SHA-256 doğrulandı, secret bulunmadı.
+
+12. Master Plan Synchronization (scripts/build_master_plan.py --check)
+PASS: MASTER_PLAN_TR.md 54 kaynakla byte-for-byte güncel.

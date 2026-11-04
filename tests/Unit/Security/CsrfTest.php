@@ -44,7 +44,8 @@ final class CsrfTest extends TestCase
         self::assertFalse($this->csrf->validateToken(null));
         self::assertFalse($this->csrf->validateToken(''));
         self::assertFalse($this->csrf->validateToken('invalid_token_value'));
-        self::assertFalse($this->csrf->validateToken(substr($token, 0, -1) . '0'));
+        $tampered = substr($token, 0, -1) . ($token[-1] === '0' ? '1' : '0');
+        self::assertFalse($this->csrf->validateToken($tampered));
     }
 
     public function testRefreshTokenCreatesDifferentToken(): void
