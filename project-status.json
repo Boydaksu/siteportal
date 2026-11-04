@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-04T17:05:00+03:00",
+  "updated_at": "2026-11-04T17:28:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.0.0",
-  "current_phase": "F02",
-  "current_subphase": "F02.08",
+  "current_phase": "F03",
+  "current_subphase": "F03.01",
   "last_approved_phase": "F02",
   "last_approved_subphase": "F02.08",
-  "status": "DONE",
-  "branch": "main",
-  "commit_sha": "73c35318a3eac96ffd6b83fcac48e4a232662ada",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/21",
-  "last_report": "docs/reports/F02-PHASE-SUMMARY.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F03.01-url-frontier",
+  "commit_sha": "f7e7ad54a205d8bc1b29a28e833ea507ea7cefa9",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/22",
+  "last_report": "docs/reports/F03.01.md",
   "blockers": [],
-  "next_action": "F02 (V1.0) ana fazı başarıyla kapatıldı. F03 (V1.1: Kullanıcı hesabı, geçmiş ve site yönetimi) ana fazı ve F03.01 alt fazının başlatılması için kullanıcı onayı bekleniyor.",
-  "next_subphase": "F03.01",
+  "next_action": "F03.01 tamamlandı ve onaya sunuldu. Kullanıcı onayı alındığında PR merge edilecek ve F03.02 başlatılacaktır.",
+  "next_subphase": "F03.02",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -59,9 +59,9 @@
     },
     "F03": {
       "version": "V1.1",
-      "status": "NOT_STARTED",
+      "status": "IN_PROGRESS",
       "subphases": {
-        "F03.01": "NOT_STARTED",
+        "F03.01": "READY_FOR_REVIEW",
         "F03.02": "NOT_STARTED",
         "F03.03": "NOT_STARTED",
         "F03.04": "NOT_STARTED",
@@ -275,9 +275,9 @@
     }
   },
   "start_authorization": {
-    "subphase": "F02.08",
-    "authorized_at": "2026-11-04T16:33:45+03:00",
-    "reference": "F02.07 teslim kabulü ve F02.08 başlangıcı sorusuna kullanıcı yanıtı: onaylıyprum"
+    "subphase": "F03.01",
+    "authorized_at": "2026-11-04T17:08:16+03:00",
+    "reference": "F02 ana faz kapanışı ve F03.01 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
     "subphase": "F02.08",
