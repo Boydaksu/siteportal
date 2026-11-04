@@ -1,0 +1,29 @@
+=== PHP Syntax Lint ===
+PASS: 170 proje PHP dosyasi lint kontrolunden gecti; vendor/ignore edilen kopyalar kapsam disi.
+
+=== PSR-12 / PHPCS ===
+vendor/bin/phpcs
+Time: 1.35 secs; Memory: 14MB
+FOUND 0 ERRORS AND 0 WARNINGS
+
+=== PHPStan Level 8 ===
+vendor/bin/phpstan analyse --no-progress --memory-limit=512M
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+[OK] No errors
+
+=== PHPUnit 12.5.43 ===
+Runtime: PHP 8.4.20
+OK, but some tests were skipped!
+Tests: 279, Assertions: 2020, Skipped: 2.
+
+=== Quality Gates ===
+test_formatter_rejects_non_psr12_input (__main__.QualityGateTests) ... ok
+test_php_lint_rejects_syntax_error (__main__.QualityGateTests) ... ok
+test_static_analysis_rejects_incorrect_return_type (__main__.QualityGateTests) ... ok
+test_test_runner_rejects_failed_assertion (__main__.QualityGateTests) ... ok
+Ran 4 tests in 1.918s
+OK
+
+=== Document Links ===
+Ran 7 tests in 0.007s
+OK

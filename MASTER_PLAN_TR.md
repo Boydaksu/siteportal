@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F02.02 — DONE; F02.02 teslimi ve PR #15 kabul edildi, F02.03 başlatılacaktır.
+> **Durum:** F02.03 — READY_FOR_REVIEW; F02.03 tamamlandı, kullanıcı teslim kabulü ve PR incelemesi bekleniyor.
 > **Tarih:** 2026-11-04 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F02 / V1.0 (IN_PROGRESS).
 > **Son onaylanan alt faz:** F02.02 — DONE; teslim ve PR #15 merge onaylandı.
-> **Aktif dal:** `main`.
-> **Son kontrol:** PHP lint (138 dosya), PSR-12, PHPStan seviye 8, PHPUnit (252 test / 1804 assertions) PASS.
-> **Rapor:** [F02.02](docs/reports/F02.02.md). **Sonraki:** F02.03 — Teknik SEO kuralları; başlatılıyor.
+> **Aktif dal:** `phase/F02.03-technical-seo-rules`.
+> **Son kontrol:** PHP lint (170 dosya), PSR-12, PHPStan seviye 8, PHPUnit (279 test / 2020 assertions) PASS.
+> **Rapor:** [F02.03](docs/reports/F02.03.md). **Sonraki:** F02.04 — On-page kuralları; bekliyor.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -174,15 +174,15 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F02 / V1.0 IN_PROGRESS (F00 ve F01 ana fazları DONE).
 - **Son onay:** F02.02 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #15 merge ve F02.03 başlangıcını onayladı.
 - **Önceki teslim:** [PR #15](https://github.com/Boydaksu/siteportal/pull/15) birleştirildi.
-- **Aktif alt faz / durum:** F02.02 — HTML parser ve metadata / DONE.
-- **Dal:** `main`.
-- **Aktif PR / kanıt commit:** [PR #15](https://github.com/Boydaksu/siteportal/pull/15); [CI](https://github.com/Boydaksu/siteportal/actions/runs/41817067906) SUCCESS.
-- **Rapor:** [F02.02](docs/reports/F02.02.md).
-- **Yerel sonuç:** PASS; PHP lint (138 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 252 test / 1804 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
-- **Uygulama testleri:** `HtmlParser` motoru (DOMDocument/DOMXPath, LIBXML_NONET XXE kalkanı, 5MB DoS koruması, UTF-8/ISO-8859-9 Türkçe karakter desteği, tek geçişli meta/OG/Twitter çıkarımı, WCAG boş alt `alt=""` dekoratif vs `alt === null` eksik alt metni ayrımı, RFC 3986 göreceli URL çözümü, iç/dış bağlantı tespiti, nofollow tespiti, script/style filtreli kelime ve karakter sayımı, HTML5 etiket hata filtresi ve biçimsiz HTML'de sıfır çökme garantisi).
+- **Aktif alt faz / durum:** F02.03 — Teknik SEO kuralları / READY_FOR_REVIEW.
+- **Dal:** `phase/F02.03-technical-seo-rules`.
+- **Aktif PR / kanıt commit:** PR açılacak; yerel dal `phase/F02.03-technical-seo-rules`.
+- **Rapor:** [F02.03](docs/reports/F02.03.md).
+- **Yerel sonuç:** PASS; PHP lint (170 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 279 test / 2020 assertion PASS, 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
+- **Uygulama testleri:** Kural ve bulgu sözleşmesi (`FindingStatus`, `FindingSeverity`, `Confidence`, `Finding`, `PageSnapshot`, `RuleInterface`, `RuleRegistry`), 19 kritik teknik SEO kuralı (`HttpStatusRule`, `RedirectChainRule`, `RedirectLoopRule`, `HttpsRule`, `HttpsDowngradeRule`, `RobotsDisallowRule`, `RobotsUnavailableRule`, `MetaNoindexRule`, `XRobotsNoindexRule`, `RobotsNoindexConflictRule`, `CanonicalMissingRule`, `CanonicalEmptyRule`, `CanonicalMultiConflictRule`, `CanonicalRedirectRule`, `CanonicalOutOfScopeRule`, `Soft404SuspectRule`, `IndexabilityInferenceRule`, `SitemapMissingRule`, `SitemapStatusRule`), `TechnicalRuleFactory`, `tr-TR` ve `en-US` kural fix i18n anahtarları, Q-001 `data_source` ve `evidence` nesne dizisi uyumluluğu, Google sıralama iddiası taşımayan teknik sinyal sentezi ve sıfır harici I/O izolasyonu.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki alt faz:** F02.03 — Teknik SEO kuralları; BAŞLATILIYOR.
-- **Bir sonraki işlem:** F02.02 kapatıldı ve PR #15 main dalına birleştirildi. F02.03 için çalışma dalı açılacak ve geliştirme başlatılacaktır.
+- **Sonraki alt faz:** F02.04 — On-page kuralları; BEKLİYOR.
+- **Bir sonraki işlem:** F02.03 kullanıcı teslim kabulü ve PR onayı bekleniyor; açık onay olmadan F02.04'e geçilmez (DUR).
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -1577,11 +1577,11 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 2. ilk kritik kurallar.
 
 **Kabul/kanıt:**
-- [ ] Her bulgunun observed/evidence source ve rule_version bilgisi var.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Her bulgunun observed/evidence source ve rule_version bilgisi var.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F02.03.md` + durum kayıtları.
 
