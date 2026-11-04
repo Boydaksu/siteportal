@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-04T16:34:00+03:00",
+  "updated_at": "2026-11-04T16:56:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "0.1.0-dev",
   "current_phase": "F02",
-  "current_subphase": "F02.07",
+  "current_subphase": "F02.08",
   "last_approved_phase": "F01",
   "last_approved_subphase": "F02.07",
-  "status": "DONE",
-  "branch": "main",
-  "commit_sha": "280fb86909e0fab1845601c623d6df3489f1f622",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/20",
-  "last_report": "docs/reports/F02.07.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F02.08-e2e-v1-closure",
+  "commit_sha": "1894c60009a824d7ef178804e91a948deb5698b9",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/21",
+  "last_report": "docs/reports/F02.08.md",
   "blockers": [],
-  "next_action": "F02.07 kabul edildi ve PR #20 main dalına birleştirildi. Sıradaki alt faz F02.08 (V1.0 uçtan uca ve kapanış) başlatılacaktır.",
-  "next_subphase": "F02.08",
+  "next_action": "F02.08 ve F02 ana faz kapanış raporu tamamlandı ve onaya sunuldu. Kullanıcı onayı alındığında PR #21 merge edilecek, F02 ana fazı kapatılacak ve F03 başlatılacaktır.",
+  "next_subphase": "F03.01",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -54,7 +54,7 @@
         "F02.05": "DONE",
         "F02.06": "DONE",
         "F02.07": "DONE",
-        "F02.08": "NOT_STARTED"
+        "F02.08": "READY_FOR_REVIEW"
       }
     },
     "F03": {

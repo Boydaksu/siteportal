@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-04 | F02.08 | READY_FOR_REVIEW
+- V1.0 Uçtan Uca ve Kapanış (`docs/reports/F02.08.md`) ile F02 Ana Faz Kapanış Özeti (`docs/reports/F02-PHASE-SUMMARY.md`) tamamlandı.
+- `SinglePageAuditJobHandler` (`app/Core/Analysis/SinglePageAuditJobHandler.php`) boru hattı (pipeline) geliştirildi:
+  - Analiz işini kuyruktan alıp aşama ilerlemesini atomik güncelleme (crawling %25 -> analyzing %60 -> completed %100).
+  - Güvenli HTTP taraması, `HtmlParser` ile belge ayrıştırma ve I/O'suz `PageSnapshot` inşası.
+  - `AuditEngine` (32 V1 kuralı) ve `ScoringEngine` deterministik icrası.
+  - Bulguları (`findings`) ve skorları (`analyses`) atomik veritabanı işlemlerinde kalıcı depolama.
+  - DNS çözümlenememesi (`DNS_ERROR`), zaman aşımı (`TIMEOUT`), SSRF engeli (`SSRF_BLOCKED`), sunucu hatası (`SERVER_ERROR`) ve dış kesintilerde fail-safe hata yönetimi.
+- `bin/worker.php` ve `bin/scheduler.php` araçlarına `single_page_audit` iş tipi bağlandı.
+- `ScoringEngine` (`app/SeoAnalyzer/Scoring/ScoringEngine.php`) güncellendi; başarılı (`PASS`) kuralların orijinal kural önemi katsayısı (`rule->getDefaultSeverity()`) baz alınarak kategori skorlarına ve ölçülen ağırlığa tam etki etmesi sağlandı (`resolveSeverityWeight`).
+- `report.php` arayüzüne yatay kaydırılabilir sekmeler (`overflow-x-auto`) eklenerek mobil uyum güçlendirildi.
+- Kapsamlı uçtan uca entegrasyon testleri (1 yeni test dosyası, 6 test, 58 assertion) eklendi (`V1EndToEndAuditTest`). Toplam test sayısı 363 test, 2693 assertion (%100 PASS).
+- F02 Ana Faz Kapanış Raporu (`docs/reports/F02-PHASE-SUMMARY.md`) oluşturuldu; kullanıcı teslim kabulü ve açık ana faz kapanış onayı bekleniyor (DUR).
+
 ## 2026-11-04 | F02.07 kabulü
 - Kullanıcı “onaylıyorum” ile F02.07 teslimi, PR #20 birleştirmesi ve F02.08 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.08 (V1.0 uçtan uca ve kapanış) başlatılacaktır.
 

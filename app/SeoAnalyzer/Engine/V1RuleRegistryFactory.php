@@ -22,4 +22,9 @@ final class V1RuleRegistryFactory
 
         return new RuleRegistry(array_values(array_merge($technicalRules, $onPageRules)));
     }
+
+    public static function create(): RuleRegistryInterface
+    {
+        return self::createRegistry();
+    }
 }

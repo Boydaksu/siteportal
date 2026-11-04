@@ -82,6 +82,11 @@ try {
         }
     });
 
+    // Tek sayfa SEO analiz işleyicisi
+    $lifecycleService = new \SitePortal\Core\Analysis\AnalysisLifecycleService($db, config: $config);
+    $auditHandler = new \SitePortal\Core\Analysis\SinglePageAuditJobHandler($lifecycleService, config: $config);
+    $scheduler->registerHandler('single_page_audit', $auditHandler);
+
     $result = $scheduler->run(
         maxJobs: $maxJobs,
         timeLimitSeconds: $timeLimit,

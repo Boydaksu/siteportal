@@ -191,7 +191,7 @@ if ($overall_score !== null) {
     <!-- Filtreleme ve Sekmeler -->
     <div style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
         <!-- Kategori Sekmeleri -->
-        <div role="tablist" style="display: flex; gap: 0.5rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">
+        <div role="tablist" class="overflow-x-auto" style="display: flex; gap: 0.5rem; flex-wrap: nowrap; overflow-x: auto; max-width: 100%; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">
             <button type="button" class="category-tab active" data-category="all" role="tab" aria-selected="true" style="background: none; border: none; padding: 0.5rem 1rem; font-weight: 600; color: var(--primary); border-bottom: 2px solid var(--primary); cursor: pointer;">
                 <?= View::escape($i18n->t('report.tab_all', [], $locale)) ?>
             </button>
