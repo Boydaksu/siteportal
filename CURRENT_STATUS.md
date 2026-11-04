@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #11](https://github.com/Boydaksu/siteportal/pull/11) birleştirildi; merge `8303f57e130f85f1a07ccbc8b437901e4ede7447`. Kabul commit'i `737ed9f5ae422bb9dfbaec3ea897a44fbc764506`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41735642860) SUCCESS.
 - **Aktif alt faz / durum:** F01.06 — Gözlemlenebilirlik, kotalar, oturum / READY_FOR_REVIEW.
 - **Dal:** `phase/F01.06-observability-quotas-auth`; başlangıç main SHA `8303f57e130f85f1a07ccbc8b437901e4ede7447`.
-- **Aktif PR / kanıt commit:** PR açılacak; [PR #12](https://github.com/Boydaksu/siteportal/pull/12).
+- **Aktif PR / kanıt commit:** [PR #12](https://github.com/Boydaksu/siteportal/pull/12); kanıt commit `67645e6ff0b814756ae6811d391963d967724937`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41795059208) SUCCESS.
 - **Rapor:** [F01.06](docs/reports/F01.06.md).
 - **Yerel sonuç:** PASS; PHP lint (120 dosya), PSR-12, PHPStan seviye 8, PHPUnit 195 test / 1231 assertion PASS (2 skipped [MySQL opsiyonel, sandbox döngüsel ağ]), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
 - **Uygulama testleri:** LogMasker secret redaksiyonu (şifre, Bearer/Basic auth, URL içi sırlar, query param sırlar, PEM anahtarlar, kredi kartları), correlation ID & request ID zinciri, MetricsCollector (Prometheus uyumlu), RateLimiter (sliding window + Retry-After), RequestBudget (istek ve bayt kotaları), Csrf (kriptografik 256-bit token ve timing-safe doğrulama), Session (HttpOnly, SameSite, Secure, fixasyon önleme), AdminAuth (brute-force kilitleme, güvenli oturum).
