@@ -58,6 +58,11 @@ final class AnalysisLifecycleService
         $this->anonymousDecaySeconds = (int) $this->config->get('analysis.anonymous_decay_seconds', 600);
     }
 
+    public function getConnection(): Connection
+    {
+        return $this->db;
+    }
+
     /**
      * URL doğrulaması, anonim kota kontrolü, site ilişkilendirmesi, analiz kaydı ve kuyruk oluşturma.
      *
@@ -134,6 +139,9 @@ final class AnalysisLifecycleService
         // 5. Analiz kaydını oluştur
         $publicId = 'anl_' . bin2hex(random_bytes(12));
         $now = date('Y-m-d H:i:s');
+        $ttlDays = (int) $this->config->get('analysis.anonymous_ttl_days', 7);
+        $expiresAt = date('Y-m-d H:i:s', time() + ($ttlDays * 86400));
+        $visibility = (string) $this->config->get('analysis.default_visibility', 'unlisted');
 
         $this->db->beginTransaction();
         try {
@@ -141,10 +149,11 @@ final class AnalysisLifecycleService
                 "INSERT INTO analyses (
                     public_id, site_id, user_id, mode, status, target_url,
                     progress_percent, ruleset_version, scoring_version, scope_count,
-                    created_at
+                    visibility, expires_at, created_at
                 ) VALUES (
                     :public_id, :site_id, :user_id, :mode, :status, :target_url,
-                    5, '1.0.0', '1.0.0', 1, :created_at
+                    5, '1.0.0', '1.0.0', 1,
+                    :visibility, :expires_at, :created_at
                 )",
                 [
                     'public_id' => $publicId,
@@ -153,6 +162,8 @@ final class AnalysisLifecycleService
                     'mode' => $mode,
                     'status' => self::STATUS_PENDING,
                     'target_url' => $normalizedUrl,
+                    'visibility' => $visibility,
+                    'expires_at' => $expiresAt,
                     'created_at' => $now,
                 ]
             );
@@ -215,6 +226,7 @@ final class AnalysisLifecycleService
         $row = $this->db->fetch(
             "SELECT id, public_id, site_id, user_id, mode, status, target_url,
                     progress_percent, ruleset_version, scoring_version, scope_count,
+                    visibility, share_token, share_token_expires_at, expires_at, is_revoked,
                     score_overall, score_technical, score_onpage, score_links, score_accessibility,
                     coverage_percent, score_breakdown_json,
                     error_code, error_message, started_at, completed_at, created_at
@@ -233,6 +245,7 @@ final class AnalysisLifecycleService
         $row = $this->db->fetch(
             "SELECT id, public_id, site_id, user_id, mode, status, target_url,
                     progress_percent, ruleset_version, scoring_version, scope_count,
+                    visibility, share_token, share_token_expires_at, expires_at, is_revoked,
                     score_overall, score_technical, score_onpage, score_links, score_accessibility,
                     coverage_percent, score_breakdown_json,
                     error_code, error_message, started_at, completed_at, created_at
@@ -602,6 +615,56 @@ final class AnalysisLifecycleService
             ruleSetVersion: $ruleSetVersion,
             disclaimer: $disclaimer
         );
+    }
+
+    /**
+     * Süresi dolmuş (expires_at < :now) analizleri ve bunlara bağlı tüm verileri siler (TTL temizlik işi).
+     *
+     * @param string|null $beforeDate İsteğe bağlı özel tarih eşiği (varsayılan: şu an)
+     * @return int Silinen analiz sayısı
+     */
+    public function pruneExpired(?string $beforeDate = null): int
+    {
+        $threshold = $beforeDate ?? date('Y-m-d H:i:s');
+
+        $rows = $this->db->fetchAll(
+            'SELECT id, public_id FROM analyses WHERE expires_at IS NOT NULL AND expires_at < :threshold',
+            ['threshold' => $threshold]
+        );
+
+        if (empty($rows)) {
+            return 0;
+        }
+
+        $deletedCount = 0;
+        $this->db->beginTransaction();
+        try {
+            foreach ($rows as $row) {
+                /** @var array<string, mixed> $row */
+                $id = (int) $row['id'];
+                $publicId = (string) $row['public_id'];
+
+                $this->db->execute('DELETE FROM findings WHERE analysis_id = :id', ['id' => $id]);
+                $this->db->execute('DELETE FROM pages WHERE analysis_id = :id', ['id' => $id]);
+                $this->db->execute('DELETE FROM analysis_jobs WHERE analysis_id = :id', ['id' => $id]);
+                $this->db->execute('DELETE FROM analyses WHERE id = :id', ['id' => $id]);
+
+                $deletedCount++;
+                if ($this->logger !== null) {
+                    $this->logger->info('Süresi dolmuş analiz temizlendi (TTL pruned)', [
+                        'analysis_id' => $id,
+                        'public_id' => $publicId,
+                    ]);
+                }
+            }
+
+            $this->db->commit();
+        } catch (\Throwable $e) {
+            $this->db->rollBack();
+            throw $e;
+        }
+
+        return $deletedCount;
     }
 
     private function resolveAnalysisId(int|string $analysisIdOrPublicId): ?int

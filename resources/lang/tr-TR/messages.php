@@ -156,4 +156,15 @@ return [
     'report.findings_count' => ':count Denetim Kuralı',
     'report.issues_count' => ':count Sorun',
     'report.passed_count' => ':count Başarılı',
+
+    // F02.07 — Anonim paylaşım ve yaşam süresi
+    'errors.forbidden_title' => 'Erişim Engellendi (403)',
+    'errors.forbidden_desc' => 'Bu rapora erişim yetkiniz bulunmamaktadır veya rapor gizlidir.',
+    'errors.report_expired_title' => 'Raporun Süresi Doldu (410)',
+    'errors.report_expired_desc' => 'Bu analizin saklama süresi (TTL) sona ermiş ve veriler sistemden temizlenmiştir.',
+    'report.noindex_tooltip' => 'Bu rapor arama motorları indeksine kapalıdır (noindex).',
+    'report.share_btn' => 'Paylaş',
+    'report.share_title' => 'Rapor Paylaşım Bağlantısı',
+    'report.copy_btn' => 'Kopyala',
+    'report.retention_until' => 'Saklama süresi: :date tarihine kadar geçerlidir.',
 ];

@@ -19,6 +19,9 @@ $reqId = $requestId ?? '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php if (!empty($metaRobots)): ?>
+        <meta name="robots" content="<?= View::escape($metaRobots) ?>">
+    <?php endif; ?>
     <title><?= View::escape($appName) ?></title>
     <style>
         :root {

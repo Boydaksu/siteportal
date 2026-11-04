@@ -156,4 +156,15 @@ return [
     'report.findings_count' => ':count Audit Rules',
     'report.issues_count' => ':count Issues',
     'report.passed_count' => ':count Passed',
+
+    // F02.07 — Anonymous sharing and lifecycle
+    'errors.forbidden_title' => 'Access Forbidden (403)',
+    'errors.forbidden_desc' => 'You do not have permission to access this report or it is marked private.',
+    'errors.report_expired_title' => 'Report Expired (410)',
+    'errors.report_expired_desc' => 'The retention period (TTL) for this analysis has expired and data has been purged.',
+    'report.noindex_tooltip' => 'This report is excluded from search engine indexing (noindex).',
+    'report.share_btn' => 'Share',
+    'report.share_title' => 'Report Sharing Link',
+    'report.copy_btn' => 'Copy',
+    'report.retention_until' => 'Retention policy: valid until :date.',
 ];

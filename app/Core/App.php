@@ -103,6 +103,9 @@ final class App
         $this->router->get('/api/v1/analyses/{id}', [AnalysisController::class, 'statusApi']);
         $this->router->get('/api/v1/analyses/{id}/progress', [AnalysisController::class, 'progressApi']);
         $this->router->get('/api/v1/analyses/{id}/report', [AnalysisController::class, 'reportApi']);
+        $this->router->post('/api/v1/analyses/{id}/share', [AnalysisController::class, 'createShareTokenApi']);
+        $this->router->delete('/api/v1/analyses/{id}/share', [AnalysisController::class, 'revokeShareTokenApi']);
+        $this->router->post('/api/v1/analyses/{id}/visibility', [AnalysisController::class, 'setVisibilityApi']);
         $this->router->get('/health', [HealthController::class, 'health']);
         $this->router->get('/robots.txt', [StaticFileController::class, 'robots']);
         $this->router->get('/sitemap.xml', [StaticFileController::class, 'sitemap']);
