@@ -103,4 +103,18 @@ return [
     'rules.TECH_INDEXABILITY_INFERENCE.fix' => 'Sayfanın teknik olarak indekslenmesini engelleyen HTTP hata kodlarını, robots.txt ve noindex kısıtlamalarını giderin.',
     'rules.TECH_SITEMAP_MISSING.fix' => "Siteniz için bir sitemap.xml haritası oluşturun ve robots.txt dosyanızda 'Sitemap:' yönergesiyle bildirin.",
     'rules.TECH_SITEMAP_STATUS.fix' => 'Sitemap dosyanızın sunucudan HTTP 200 OK ile erişilebilir ve geçerli XML formatında olduğundan emin olun.',
+
+    // F02.04 — On-Page kuralları çözüm önerileri
+    'rules.ONPAGE_TITLE_MISSING.fix' => "Sayfanın <head> bölümüne sayfa içeriğini ve markanızı özetleyen özgün bir <title> etiketi ekleyin.",
+    'rules.ONPAGE_TITLE_GENERIC.fix' => "Genel ve belirsiz başlıklar yerine sayfa içeriğini, ürün veya hizmeti net olarak tanımlayan özgün başlıklar tercih edin.",
+    'rules.ONPAGE_TITLE_TRUNCATION_RISK.fix' => "Başlığın en önemli anahtar kelimelerini ilk 50-60 karakter içine yerleştirerek SERP sonuçlarında kesilmeyi önleyin.",
+    'rules.ONPAGE_META_DESC_MISSING.fix' => "Sayfa konusunu özetleyen ve arama sonuçlarında tıklanma oranını artıracak 120-160 karakterlik bir meta description ekleyin.",
+    'rules.ONPAGE_H1_EMPTY.fix' => "Sayfa içeriğinin ana temasını belirten anlamlı ve dolu en az bir <h1> başlığı ekleyin.",
+    'rules.ONPAGE_HEADING_HIERARCHY.fix' => "Başlık etiketlerini (h1, h2, h3...) seviye atlamadan mantıksal bir anlamsal hiyerarşi içinde sıralayın.",
+    'rules.ONPAGE_HTML_LANG.fix' => "Ekran okuyucuların ve arama motorlarının doğru dili belirleyebilmesi için <html lang=\"tr\"> niteliğini tanımlayın.",
+    'rules.ONPAGE_CHARSET.fix' => "Türkçe karakterlerin ve uluslararası metinlerin bozulmadan görüntülenmesi için <meta charset=\"utf-8\"> kullanın.",
+    'rules.ONPAGE_OG_METADATA.fix' => "Sosyal medya ve mesajlaşma platformlarında zengin önizleme sağlamak için og:title, og:image ve og:description etiketlerini ekleyin.",
+    'rules.LINK_ANCHOR_EMPTY.fix' => "Bağlantılara kullanıcının ve arama motorunun hedef sayfayı anlamasını sağlayacak açıklayıcı çapa metni veya title niteliği ekleyin.",
+    'rules.LINK_REL_NOFOLLOW.fix' => "Site içi bağlantılarda rel=\"nofollow\" yerine doğrudan takip edilebilir bağlantılar kullanarak iç PageRank akışını koruyun.",
+    'rules.A11Y_IMAGE_ALT.fix' => "Görsellere içeriğini ve işlevini açıklayan alt metinler ekleyin; yalnızca süsleme amaçlı görsellerde boş alt=\"\" kullanın.",
 ];

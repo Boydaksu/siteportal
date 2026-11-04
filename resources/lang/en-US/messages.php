@@ -103,4 +103,18 @@ return [
     'rules.TECH_INDEXABILITY_INFERENCE.fix' => 'Resolve HTTP error statuses, robots.txt blocks, and noindex directives preventing search engines from indexing the page.',
     'rules.TECH_SITEMAP_MISSING.fix' => "Generate a sitemap.xml file for your website and declare its location in robots.txt using the 'Sitemap:' directive.",
     'rules.TECH_SITEMAP_STATUS.fix' => 'Ensure your sitemap is accessible with an HTTP 200 OK status code and formatted in valid XML syntax.',
+
+    // F02.04 — On-Page rules remediation advice
+    'rules.ONPAGE_TITLE_MISSING.fix' => 'Add a descriptive and unique <title> tag in the <head> section that accurately summarizes the page topic.',
+    'rules.ONPAGE_TITLE_GENERIC.fix' => 'Replace generic placeholder titles with specific keywords that reflect the unique topic of the page.',
+    'rules.ONPAGE_TITLE_TRUNCATION_RISK.fix' => 'Place primary keywords within the first 50-60 characters to reduce the risk of SERP snippet truncation.',
+    'rules.ONPAGE_META_DESC_MISSING.fix' => 'Add an engaging 120-160 character meta description that summarizes page content and improves click-through rate.',
+    'rules.ONPAGE_H1_EMPTY.fix' => 'Include at least one meaningful and non-empty <h1> heading summarizing the main theme of the page content.',
+    'rules.ONPAGE_HEADING_HIERARCHY.fix' => 'Structure heading tags (h1 through h6) in a logical descending hierarchy without skipping intermediate levels.',
+    'rules.ONPAGE_HTML_LANG.fix' => 'Specify a valid language code on the <html> element (e.g. <html lang="en">) for screen readers and search engines.',
+    'rules.ONPAGE_CHARSET.fix' => 'Ensure proper character encoding by declaring <meta charset="utf-8"> early in the document head.',
+    'rules.ONPAGE_OG_METADATA.fix' => 'Provide og:title, og:image, and og:description Open Graph tags to optimize link previews across social networks.',
+    'rules.LINK_ANCHOR_EMPTY.fix' => 'Add clear and descriptive anchor text or title attributes to links so users and crawlers understand the destination.',
+    'rules.LINK_REL_NOFOLLOW.fix' => 'Avoid using rel="nofollow" on internal navigation links so link equity flows efficiently throughout your site.',
+    'rules.A11Y_IMAGE_ALT.fix' => 'Add descriptive alt text to images for accessibility and image search; use empty alt="" only for purely decorative elements.',
 ];

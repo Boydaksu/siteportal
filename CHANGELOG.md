@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-11-04 | F02.04 | READY_FOR_REVIEW
+- On-Page SEO Kuralları Motoru (`docs/reports/F02.04.md`) tamamlandı.
+- 13 kritik On-Page SEO kuralı (`app/SeoAnalyzer/Rules/OnPage/`) geliştirildi:
+  - `TitleMissingRule` (`ONPAGE_TITLE_MISSING`): `<title>` etiketi eksik veya boşluk durumları tespiti (FAIL/PASS/UNKNOWN).
+  - `TitleGenericRule` (`ONPAGE_TITLE_GENERIC`): "Home", "Ana Sayfa", "Untitled", "Default page" gibi jenerik başlıklar tespiti (WARN/PASS/NOT_APPLICABLE/UNKNOWN).
+  - `TitleTruncationRiskRule` (`ONPAGE_TITLE_TRUNCATION_RISK`): Başlık > 60 karakter SERP kesilme riski tespiti; **mutlak ceza uygulanmaz, yalnızca görünüm uyarısı (WARN low) verilir** (WARN/PASS/NOT_APPLICABLE/UNKNOWN).
+  - `MetaDescriptionMissingRule` (`ONPAGE_META_DESC_MISSING`): Meta açıklama eksikliği tespiti (WARN/PASS/UNKNOWN).
+  - `H1EmptyRule` (`ONPAGE_H1_EMPTY`): Sayfada geçerli en az bir H1 başlığı bulunmaması tespiti; **HTML5 standardında birden fazla H1 geçerli kabul edilir, mutlak ceza verilmez** (WARN/PASS/UNKNOWN).
+  - `HeadingHierarchyRule` (`ONPAGE_HEADING_HIERARCHY`): Başlık seviyesi atlamaları örn. H1 -> H3 tespiti (WARN/PASS/NOT_APPLICABLE/UNKNOWN).
+  - `HtmlLangRule` (`ONPAGE_HTML_LANG`): `<html lang="...">` dil etiketi eksikliği tespiti (WARN/PASS/UNKNOWN).
+  - `CharsetRule` (`ONPAGE_CHARSET`): Karakter seti eksikliği veya HTTP ve HTML meta charset çakışması tespiti (WARN/PASS/UNKNOWN).
+  - `OgMetadataRule` (`ONPAGE_OG_METADATA`): Sosyal medya Open Graph (og:title, og:image) etiketleri eksikliği tespiti (WARN/PASS/UNKNOWN).
+  - `MetaKeywordsRule` (`ONPAGE_META_KEYWORDS`): Google tarafından meta keywords etiketinin dikkate alınmadığı bilgisi (PASS info/UNKNOWN).
+  - `AnchorEmptyRule` (`LINK_ANCHOR_EMPTY`): Boş metinli bağlantıların tespiti (WARN/PASS/NOT_APPLICABLE/UNKNOWN).
+  - `RelNofollowRule` (`LINK_REL_NOFOLLOW`): Dahili (iç) bağlantılarda nofollow kullanımı tespiti (WARN/PASS/NOT_APPLICABLE/UNKNOWN).
+  - `ImageAltRule` (`A11Y_IMAGE_ALT`): Sayfadaki görsellerin alt metinleri kontrolü; **WCAG standardına göre `alt=""` boş metin dekoratif görsel kabul edilir ve eksik sayılmaz, yalnızca `alt === null` eksik sayılır** (WARN/PASS/NOT_APPLICABLE/UNKNOWN).
+- Kural fabrikası `OnPageRuleFactory` (`app/SeoAnalyzer/Rules/OnPageRuleFactory.php`) oluşturuldu.
+- `tr-TR` ve `en-US` dil dosyalarına 13 On-Page kuralı için çözüm önerisi (`rules.ONPAGE_*.fix`, `rules.LINK_*.fix`, `rules.A11Y_*.fix`) anahtarları eklendi.
+- Kapsamlı birim testleri (1 yeni test dosyası, 37 test, 223 assertion) eklendi (`OnPageRulesTest`). Toplam test sayısı 316 test, 2255 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F02.05'e geçilmez (DUR).
+
 ## 2026-11-04 | F02.03 kabulü
 - Kullanıcı “onaylıyorum” ile F02.03 teslimi, PR #16 birleştirmesi ve F02.04 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.04 (On-page kuralları) başlatılacaktır.
 
