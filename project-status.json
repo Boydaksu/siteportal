@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-04T17:28:00+03:00",
+  "updated_at": "2026-11-04T17:35:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.0.0",
   "current_phase": "F03",
-  "current_subphase": "F03.01",
+  "current_subphase": "F03.02",
   "last_approved_phase": "F02",
-  "last_approved_subphase": "F02.08",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F03.01-url-frontier",
-  "commit_sha": "f7e7ad54a205d8bc1b29a28e833ea507ea7cefa9",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/22",
-  "last_report": "docs/reports/F03.01.md",
+  "last_approved_subphase": "F03.01",
+  "status": "IN_PROGRESS",
+  "branch": "phase/F03.02-sitemap-xml",
+  "commit_sha": "e98989378693b8d599d298a6046f801fd55e3af7",
+  "pr_url": null,
+  "last_report": "docs/reports/F03.02.md",
   "blockers": [],
-  "next_action": "F03.01 tamamlandı ve onaya sunuldu. Kullanıcı onayı alındığında PR merge edilecek ve F03.02 başlatılacaktır.",
-  "next_subphase": "F03.02",
+  "next_action": "F03.02 sitemap index, robots keşfi ve güvenli akışlı XML ayrıştırma geliştirilmektedir.",
+  "next_subphase": "F03.03",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -61,8 +61,8 @@
       "version": "V1.1",
       "status": "IN_PROGRESS",
       "subphases": {
-        "F03.01": "READY_FOR_REVIEW",
-        "F03.02": "NOT_STARTED",
+        "F03.01": "DONE",
+        "F03.02": "IN_PROGRESS",
         "F03.03": "NOT_STARTED",
         "F03.04": "NOT_STARTED",
         "F03.05": "NOT_STARTED",
@@ -272,19 +272,25 @@
       "approval_reference": "2026-11-04: Kullanıcı F02.08 teslim kabulü + PR #21 merge + F02 Ana Faz Kapanışı sorusuna “onaylıyprum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-04: Kullanıcı F02.08 teslim kabulü + PR #21 merge + F02 Ana Faz Kapanışı sorusuna “onaylıyprum” yanıtını verdi."
+    },
+    "F03.01": {
+      "approved_at": "2026-11-04T17:34:29+03:00",
+      "approval_reference": "2026-11-04: Kullanıcı F03.01 teslim kabulü + PR #22 merge + F03.02 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-04: Kullanıcı F03.01 teslim kabulü + PR #22 merge + F03.02 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F03.01",
-    "authorized_at": "2026-11-04T17:08:16+03:00",
-    "reference": "F02 ana faz kapanışı ve F03.01 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F03.02",
+    "authorized_at": "2026-11-04T17:34:29+03:00",
+    "reference": "F03.01 teslim kabulü ve F03.02 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F02.08",
+    "subphase": "F03.01",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/21",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/22",
     "merged": true,
-    "merge_sha": "73c35318a3eac96ffd6b83fcac48e4a232662ada",
+    "merge_sha": "e98989378693b8d599d298a6046f801fd55e3af7",
     "approval_commit": null,
     "approval_commit_ci_run": null
   },

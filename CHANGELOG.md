@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F03.01 kabulü
+- Kullanıcı “onaylıyorum” ile F03.01 teslimi, PR #22 birleştirmesi ve F03.02 başlangıcını onayladı; PR #22 main dalına birleştirildi (`e98989378693b8d599d298a6046f801fd55e3af7`). F03.02 (Sitemap index ve XML güvenliği) başlatılacaktır.
+
 ## 2026-11-04 | F03.01 | READY_FOR_REVIEW
 - URL Frontier ve Normalize Keşif (`docs/reports/F03.01.md`) tamamlandı.
 - `UrlNormalizer` (`app/Core/Crawler/Normalizer/UrlNormalizer.php`) geliştirildi:
