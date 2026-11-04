@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-11-04 | F03.02 | READY_FOR_REVIEW
+- Sitemap Index ve XML Güvenliği (`docs/reports/F03.02.md`) tamamlandı.
+- `SitemapXmlParser` (`app/Core/Crawler/Sitemap/SitemapXmlParser.php`) geliştirildi:
+  - `XMLReader` ile akışlı (streaming) okuma ($O(1)$ bellek tüketimi).
+  - GZIP sıkıştırılmış sitemap dosyalarının otomatik tespiti ve açılması (`gzdecode`).
+  - XXE ve DTD enjeksiyon koruması (`LIBXML_NONET`, `LOADDTD = false`, `<!DOCTYPE` / `<!ENTITY` tespiti).
+  - XML Bomb / Billion laughs saldırı kalkanı.
+  - 50.000 URL (`MAX_URLS = 50000`) ve 50 MB (`MAX_BYTES = 52428800`) standart sitemap sınırları.
+  - Bozuk / tanımsız kök etiketlerinde güvenli hata yönetimi (`MalformedSitemapException`).
+- `SitemapDiscoveryService` (`app/Core/Crawler/Sitemap/SitemapDiscoveryService.php`) geliştirildi:
+  - `robots.txt` (`RobotsParser`) direktiflerinden ve standart bilinen yollardan (`/sitemap.xml`, `/sitemap_index.xml`) sitemap keşfi.
+  - Sınır denetimi: Dış domainlere (off-domain) işaret eden sitemap bağlantılarının elenmesi (`CrawlScopePolicy`).
+  - `sitemapindex` içindeki alt sitemap'lerin özyinelemeli (recursive) çözümlenmesi ve iç içe derinlik sınırı (`maxIndexDepth = 2`) ile döngü kalkanı.
+  - Keşfedilen sitemap URL'lerinin `feedFrontier` ile doğrudan tarama kuyruğuna aktarılması.
+- Kapsamlı birim testleri (2 yeni test dosyası, 13 test, 42 assertion) eklendi. Toplam test sayısı 411 test, 2896 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F03.03'e geçilmez (DUR).
+
 ## 2026-11-04 | F03.01 kabulü
 - Kullanıcı “onaylıyorum” ile F03.01 teslimi, PR #22 birleştirmesi ve F03.02 başlangıcını onayladı; PR #22 main dalına birleştirildi (`e98989378693b8d599d298a6046f801fd55e3af7`). F03.02 (Sitemap index ve XML güvenliği) başlatılacaktır.
 

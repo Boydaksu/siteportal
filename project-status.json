@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-04T17:35:00+03:00",
+  "updated_at": "2026-11-04T18:05:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.0.0",
@@ -9,13 +9,13 @@
   "current_subphase": "F03.02",
   "last_approved_phase": "F02",
   "last_approved_subphase": "F03.01",
-  "status": "IN_PROGRESS",
+  "status": "READY_FOR_REVIEW",
   "branch": "phase/F03.02-sitemap-xml",
-  "commit_sha": "e98989378693b8d599d298a6046f801fd55e3af7",
+  "commit_sha": "fc17eab",
   "pr_url": null,
   "last_report": "docs/reports/F03.02.md",
   "blockers": [],
-  "next_action": "F03.02 sitemap index, robots keşfi ve güvenli akışlı XML ayrıştırma geliştirilmektedir.",
+  "next_action": "F03.02 tamamlandı ve onaya sunuldu. Kullanıcı onayı alındığında PR merge edilecek ve F03.03 başlatılacaktır.",
   "next_subphase": "F03.03",
   "phases": {
     "F00": {
@@ -62,7 +62,7 @@
       "status": "IN_PROGRESS",
       "subphases": {
         "F03.01": "DONE",
-        "F03.02": "IN_PROGRESS",
+        "F03.02": "READY_FOR_REVIEW",
         "F03.03": "NOT_STARTED",
         "F03.04": "NOT_STARTED",
         "F03.05": "NOT_STARTED",
