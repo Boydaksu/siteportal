@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F01 — IN_PROGRESS; F01.06 DONE.
+> **Durum:** F01 — IN_PROGRESS; F01.07 READY_FOR_REVIEW.
 > **Tarih:** 2026-11-04 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F01 / V0.1.
 > **Son onaylanan alt faz:** F01.06 — DONE; F01.06 teslimi onaylandı.
-> **Aktif dal:** `main`.
-> **Son kontrol:** PHP lint (120 dosya), PSR-12, PHPStan seviye 8, PHPUnit (195 test / 1210 assertions) PASS.
-> **Rapor:** [F01.06](docs/reports/F01.06.md). **Sonraki:** F01.07 — F01 güvenlik testi ve kapanış; başlatılıyor.
+> **Aktif dal:** `phase/F01.07-security-testing-closure`.
+> **Son kontrol:** PHP lint (123 dosya), PSR-12, PHPStan seviye 8, PHPUnit (214 test / 1456 assertions) PASS.
+> **Rapor:** [F01.07](docs/reports/F01.07.md), [F01 Ana Faz Kapanış Özeti](docs/reports/F01-PHASE-SUMMARY.md). **Sonraki:** F01 kapanış onayı ve F02.01; bekleniyor.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -173,16 +173,16 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Tarih / repo:** 2026-11-04, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), main.
 - **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 0.1.0-dev; F01 / V0.1 IN_PROGRESS, F00 ana fazı kapatıldı.
 - **Son onay:** F01.06 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #12 merge ve F01.07 başlangıcını onayladı.
-- **Önceki teslim:** [PR #12](https://github.com/Boydaksu/siteportal/pull/12) birleştirildi; merge `a651144288cc542228e710c9331a19e0ce885970`. Kabul commit'i `78da4584e0c3886be500a89725f164746f3a61ba`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41795446193) SUCCESS.
-- **Aktif alt faz / durum:** F01.06 — Gözlemlenebilirlik, kotalar, oturum / DONE.
-- **Dal:** `main`.
-- **Aktif PR / kanıt commit:** [PR #12](https://github.com/Boydaksu/siteportal/pull/12); kanıt commit `78da4584e0c3886be500a89725f164746f3a61ba`, [CI](https://github.com/Boydaksu/siteportal/actions/runs/41795446193) SUCCESS.
-- **Rapor:** [F01.06](docs/reports/F01.06.md).
-- **Yerel sonuç:** PASS; PHP lint (120 dosya), PSR-12, PHPStan seviye 8, PHPUnit 195 test / 1210 assertion PASS (2 skipped [MySQL opsiyonel, sandbox döngüsel ağ]), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/toolchain kontrolleri PASS.
-- **Uygulama testleri:** LogMasker secret redaksiyonu (şifre, Bearer/Basic auth, URL içi sırlar, query param sırlar, PEM anahtarlar, kredi kartları), correlation ID & request ID zinciri, MetricsCollector (Prometheus uyumlu), RateLimiter (sliding window + Retry-After), RequestBudget (istek ve bayt kotaları), Csrf (kriptografik 256-bit token ve timing-safe doğrulama), Session (HttpOnly, SameSite, Secure, fixasyon önleme), AdminAuth (brute-force kilitleme, güvenli oturum).
+- **Önceki teslim:** [PR #12](https://github.com/Boydaksu/siteportal/pull/12) birleştirildi; merge `a651144288cc542228e710c9331a19e0ce885970`. Kabul commit'i `6f84767222472d8cf4b6da154ee42fa41249b437`.
+- **Aktif alt faz / durum:** F01.07 — F01 güvenlik testi ve kapanış / READY_FOR_REVIEW.
+- **Dal:** `phase/F01.07-security-testing-closure`.
+- **Aktif PR / kanıt commit:** [PR #13](https://github.com/Boydaksu/siteportal/pull/13); kanıt commit `b7e7d21583df6225a78467d8fda8ca36d843a6d9`.
+- **Rapor:** [F01.07](docs/reports/F01.07.md), [F01 Ana Faz Kapanış Özeti](docs/reports/F01-PHASE-SUMMARY.md).
+- **Yerel sonuç:** PASS; PHP lint (123 dosya), PSR-12, PHPStan seviye 8, PHPUnit 214 test / 1456 assertion PASS (2 skipped [sandbox döngüsel ağ]), 4 olumsuz kapı, 7 link TEST, blueprint/mimari/envanter kontrolleri PASS.
+- **Uygulama testleri:** SSRF savunma matrisi (34 IP, 19 URL, 27 atlatma vektörü ve DNS rebinding koruması), kuyruk yarış ve çift işleme önleme (20 paralel iş, 0 çakışma), transaction rollback sıfır yetim veri, kiracılar arası izolasyon, brute-force IP kilidi, session fixation engeli, cross-session CSRF koruması, /health ve /health?detailed=1 alt sistem kontrolleri, CLI operasyon rehberi.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki alt faz:** F01.07 — F01 güvenlik testi ve kapanış; NOT_STARTED.
-- **Bir sonraki işlem:** F01.06 kabul edildi, PR #12 main dalına birleştirildi ve F01.07 başlatılacaktır.
+- **Sonraki alt faz / ana faz:** F02.01 — HTML Ayrıştırıcı ve DOM Ağacı; NOT_STARTED (F01 ana faz onayı bekleniyor).
+- **Bir sonraki işlem:** F01.07 teslimi ve F01 ana faz kapanış onayı bekleniyor; kullanıcı açık onayı olmadan F02 başlatılamaz (**DUR**).
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -915,7 +915,7 @@ Temel HTML analiz modülü CLI+cron olan cPanel'de çalışabilir; yoğun crawle
 Queue length, job age, job failures, PSI/CrUX error, per-host 429, DB slow query, disk usage, API spend, suspicious URL blocks, admin login failures izlenir. RPO/RTO değerleri üretim öncesi kullanıcı onayıyla somutlaşır. Bütçe barajı aşılırsa JS/AI/PSI modüllerini durduracak feature flag olmalı.
 
 ## Yedek ve geri dönüş
-DB şifreli günlük backup + restore drill; reports object store varsa ayrı version/retention; secrets backup değil korumalı altyapı. Deploy rollback: önce uygulama önceki tag, sonra gerekirse reversible migration. Çalıştırılabilir komutlar yalnızca kod üretildiğinde ve gerçekten test edildiğinde yazılır.
+DB şifreli günlük backup + restore drill; reports object store varsa ayrı version/retention; secrets backup değil korumalı altyapı. Deploy rollback: önce uygulama önceki tag, sonra gerekirse reversible migration. Çalıştırılabilir CLI komutları, parametreleri ve işletim rehberi için [CLI Operasyon Rehberi](docs/operations/CLI.md) belgesine başvurunuz.
 
 ## KVKK / gizlilik
 IP/email ve OAuth erişimleri amaçla sınırlı; aydınlatma, uygun hukuki temel, çerez politikası, kullanıcı talebiyle silme, veri minimizasyonu, retention, DPA/üçüncü taraf API veri akışı hukuk danışmanıyla doğrulanır. Üçüncü taraf sitelerin kişisel içeriği gereksiz kalıcı saklanmaz.
@@ -1497,22 +1497,22 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 2. ADR/kullanım komutlarını netleştir.
 
 **Kabul/kanıt:**
-- [ ] Kritik güvenlik açığı yok.
-- [ ] F01 ana faz raporu/kullanıcı onayı olmadan F02 yok.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Kritik güvenlik açığı yok.
+- [x] F01 ana faz raporu/kullanıcı onayı olmadan F02 yok.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F01.07.md` + durum kayıtları.
 
 ## Ana faz kapanış kontrolü
-- [ ] Bütün alt fazlar açık kullanıcı onayı ile DONE.
-- [ ] Bütün kabul maddeleri için test kanıtı (komut/çıktı ve commit).
-- [ ] Güvenlik, veri gizliliği ve performans riskleri değerlendirildi.
-- [ ] README ve sistem mimarisi değişen gerçek durumu yansıtıyor.
-- [ ] `docs/reports/F01-PHASE-SUMMARY.md` oluşturuldu; kullanıcıya kapsamlı Türkçe rapor sunuldu.
-- [ ] Kullanıcının açık ana faz onayı bekleniyor; otomatik sonraki faz yok.
+- [x] Bütün alt fazlar açık kullanıcı onayı ile DONE (F01.07 onayı ile kapanır).
+- [x] Bütün kabul maddeleri için test kanıtı (komut/çıktı ve commit).
+- [x] Güvenlik, veri gizliliği ve performans riskleri değerlendirildi.
+- [x] README ve sistem mimarisi değişen gerçek durumu yansıtıyor.
+- [x] `docs/reports/F01-PHASE-SUMMARY.md` oluşturuldu; kullanıcıya kapsamlı Türkçe rapor sunuldu.
+- [x] Kullanıcının açık ana faz onayı bekleniyor; otomatik sonraki faz yok.
 
 ## Bitiş raporu şablonu
 Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → riskler/borç → ürün demo bağlantısı → geri alma planı → değişen maliyet → önerilen sonraki faz → **ONAY BEKLENİYOR**.
@@ -2783,6 +2783,7 @@ Türkçe öncelikli SEO Analyzer güvenli dış HTTP istekleri ve uzun süren an
 - HTML sunucuda üretilir; vanilla JavaScript yalnız gerekli etkileşimi sağlar. Başlangıç için SPA, JS framework, npm build zinciri veya üçüncü taraf CDN script'i zorunlu değildir. Responsive CSS ve erişilebilir HTML korunur; kullanıcı metinleri çeviri anahtarlarından gelir.
 - Dış istekler yalnız SafeHttpClient üzerinden; entegrasyon adaptörü de bu ağ sınırını atlayamaz. Browser renderer ancak ilgili sonraki fazda, opsiyonel ve izole olarak değerlendirilir.
 - V1.0 genel erişimden önce güvenli fetch/robots/queue/rapor yetkisi ve kaynaklı bulgu gerekir. API veya DB örneği çalışan endpoint/migration değildir.
+- CLI araçları (migration, worker, scheduler) ve operasyonel kullanım detayları [CLI Operasyon Rehberi](docs/operations/CLI.md) dokümanında standartlaştırılmıştır.
 
 ## Gerekçe, etkiler ve alternatif maliyeti
 Mevcut planı uygulamak teknoloji değişimini ve servis sayısını düşük tutar; bu yaklaşım kendiliğinden güvenlik sağlamaz. Özel altyapının parser, SSRF, erişim, queue ve rollback testleri F01/F02 kabul kapılarıdır. Performans iddiası ancak ölçümle yapılır. [Modül matrisi](docs/architecture/MODULES.md), [bağımlılık politikası](docs/process/DEPENDENCIES.md) ve [tehdit modeli](docs/architecture/THREAT_MODEL.md) bu sınırların doğrulama planıdır.

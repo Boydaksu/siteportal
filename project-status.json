@@ -6,16 +6,16 @@
   "default_branch": "main",
   "product_version": "0.1.0-dev",
   "current_phase": "F01",
-  "current_subphase": "F01.06",
+  "current_subphase": "F01.07",
   "last_approved_phase": "F00",
   "last_approved_subphase": "F01.06",
-  "status": "DONE",
-  "branch": "main",
-  "commit_sha": "a651144288cc542228e710c9331a19e0ce885970",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/12",
-  "last_report": "docs/reports/F01.06.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F01.07-security-testing-closure",
+  "commit_sha": "b7e7d21583df6225a78467d8fda8ca36d843a6d9",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/13",
+  "last_report": "docs/reports/F01.07.md",
   "blockers": [],
-  "next_action": "F01.06 kabul edildi, PR #12 main dalına birleştirildi ve F01.07 başlatılacaktır.",
+  "next_action": "F01.07 alt fazı ve F01 ana faz kapanış raporu (docs/reports/F01-PHASE-SUMMARY.md) hazırlandı. Kullanıcının açık onayı beklenmektedir.",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -39,7 +39,7 @@
         "F01.04": "DONE",
         "F01.05": "DONE",
         "F01.06": "DONE",
-        "F01.07": "NOT_STARTED"
+        "F01.07": "READY_FOR_REVIEW"
       }
     },
     "F02": {

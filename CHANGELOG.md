@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-04 | F01.07 | READY_FOR_REVIEW
+- F01 Güvenlik Testi ve Ana Faz Kapanışı (`docs/reports/F01.07.md`, `docs/reports/F01-PHASE-SUMMARY.md`) tamamlandı.
+- Kapsamlı SSRF savunma matrisi entegrasyon testi (`tests/Integration/Security/SsrfMatrixTest.php`, 10 test, 186 assertion) eklendi; 34 bloklu IP, 6 genel IP, 19 bloklu URL ve 27 atlatma vektörünün tamamı, ayrıca yönlendirmelerde DNS rebinding ve loop ataklarının cURL çalıştırılmadan engellendiği kanıtlandı.
+- Veri ve kiracı izolasyonu entegrasyon testi (`tests/Integration/Security/DataIsolationTest.php`, 6 test, 37 assertion) eklendi; transaction rollback sıfır yetim veri, kiracı/domain izolasyonu, 5 hatalı denemede brute-force IP kilidi, session fixation engeli, cross-session CSRF sızıntısı engeli ve bağımsız hız sınırlama kotaları kanıtlandı.
+- Sağlık kontrolü ve canlılık testi (`tests/Integration/Security/HealthCheckTest.php`, 3 test, 22 assertion) ve `app/Controllers/HealthController.php` güncellemesi yapıldı; liveness (`/health`) ve readiness (`/health?detailed=1`, veritabanı `SELECT 1` kontrolü) uç noktaları HTTP 200 ve HTTP 503 senaryolarıyla doğrulandı.
+- `app/Core/Request.php` ve `app/Core/Response.php` altyapı iyileştirmeleri tamamlandı (query string otomatik ayrıştırma ve `withHeader` metodu).
+- Operasyonel kullanım ve CLI rehberi (`docs/operations/CLI.md`) oluşturuldu; `docs/architecture/OPERATIONS.md` ve `docs/adr/ADR-001-stack.md` referansları güncellendi.
+- Toplam 214 test ve 1456 assertion ile %100 PSR-12, PHPStan Level 8 ve sıfır sır sızıntısı sağlandı.
+- Kullanıcı alt faz teslim kabulü, PR #13 incelemesi ve F01 ana faz kapanış onayı bekleniyor; F02 ana fazına geçilmez (DUR).
+
 ## 2026-11-04 | F01.06 kabulü
 - Kullanıcı “onaylıyorum” ile F01.06 teslimi, PR #12 birleştirmesi ve F01.07 başlangıcını onayladı; kabul kaydı main dalına birleştirildi.
 
