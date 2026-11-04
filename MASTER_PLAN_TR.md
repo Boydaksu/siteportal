@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #22](https://github.com/Boydaksu/siteportal/pull/22) birleştirildi (`e98989378693b8d599d298a6046f801fd55e3af7`).
 - **Aktif alt faz / durum:** F03.02 — Sitemap index ve XML güvenliği / READY_FOR_REVIEW.
 - **Dal:** `phase/F03.02-sitemap-xml`.
-- **Aktif PR / kanıt commit:** PR açılıyor; CI bekleniyor.
+- **Aktif PR / kanıt commit:** [PR #23](https://github.com/Boydaksu/siteportal/pull/23); CI bekleniyor.
 - **Rapor:** [F03.02](docs/reports/F03.02.md).
 - **Yerel sonuç:** PASS; PHP lint (233 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 411 test / 2896 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** `SitemapXmlParser` akışlı `XMLReader`, gzip açma, XXE/DTD engelleme, XML bomb kalkanı, 50k URL / 50MB sınırı, bozuk XML doğrulaması; `SitemapDiscoveryService` robots ve standart yol keşfi, iç içe index derinlik sınırı (`maxIndexDepth = 2`), döngü kalkanı ve `feedFrontier` entegrasyonu.
