@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-04T15:00:00+03:00",
+  "updated_at": "2026-11-04T15:20:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "0.1.0-dev",
   "current_phase": "F02",
   "current_subphase": "F02.04",
   "last_approved_phase": "F01",
-  "last_approved_subphase": "F02.03",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F02.04-on-page-rules",
-  "commit_sha": "5cd0cb003b5f7eb0a1ea3bc0a66d039aa7d3326d",
+  "last_approved_subphase": "F02.04",
+  "status": "DONE",
+  "branch": "main",
+  "commit_sha": "9b3580ac40b8cdecb5e01b61da5e7e643d9ff871",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/17",
   "last_report": "docs/reports/F02.04.md",
   "blockers": [],
-  "next_action": "F02.04 PR #17 incelemeye hazır; CI Run 41827790176 ve kabul kriterleri kontrolleri kullanıcı onayına sunuldu.",
+  "next_action": "F02.04 kabul edildi ve PR #17 main dalına birleştirildi. Sıradaki alt faz F02.05 (Kural kayıt sistemi ve skorlama) başlatılacaktır.",
   "next_subphase": "F02.05",
   "phases": {
     "F00": {
@@ -50,7 +50,7 @@
         "F02.01": "DONE",
         "F02.02": "DONE",
         "F02.03": "DONE",
-        "F02.04": "READY_FOR_REVIEW",
+        "F02.04": "DONE",
         "F02.05": "NOT_STARTED",
         "F02.06": "NOT_STARTED",
         "F02.07": "NOT_STARTED",
@@ -242,21 +242,27 @@
       "approval_reference": "2026-11-04: Kullanıcı F02.03 teslim kabulü + PR #16 merge + F02.04 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-04: Kullanıcı F02.03 teslim kabulü + PR #16 merge + F02.04 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F02.04": {
+      "approved_at": "2026-11-04T15:19:13+03:00",
+      "approval_reference": "2026-11-04: Kullanıcı F02.04 teslim kabulü + PR #17 merge + F02.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-04: Kullanıcı F02.04 teslim kabulü + PR #17 merge + F02.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F02.04",
-    "authorized_at": "2026-11-04T14:42:19+03:00",
-    "reference": "F02.03 teslim kabulü ve F02.04 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F02.05",
+    "authorized_at": "2026-11-04T15:19:13+03:00",
+    "reference": "F02.04 teslim kabulü ve F02.05 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F02.03",
+    "subphase": "F02.04",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/16",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/17",
     "merged": true,
-    "merge_sha": "c2047a3a66b5ea873b1f03ba8277d0f8b830af05",
+    "merge_sha": "9b3580ac40b8cdecb5e01b61da5e7e643d9ff871",
     "approval_commit": null,
-    "approval_commit_ci_run": 41822456616
+    "approval_commit_ci_run": 41827790176
   },
   "open_questions": [
     "Q-004"

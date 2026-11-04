@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-04 | F02.04 kabulü
+- Kullanıcı “onaylıyorum” ile F02.04 teslimi, PR #17 birleştirmesi ve F02.05 başlangıcını onayladı; kabul kaydı main dalına birleştirildi. F02.05 (Kural kayıt sistemi ve skorlama) başlatılacaktır.
+
 ## 2026-11-04 | F02.04 | READY_FOR_REVIEW
 - On-Page SEO Kuralları Motoru (`docs/reports/F02.04.md`) tamamlandı.
 - 13 kritik On-Page SEO kuralı (`app/SeoAnalyzer/Rules/OnPage/`) geliştirildi:
