@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-05T20:55:00+03:00",
+  "updated_at": "2026-11-05T21:05:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.1.0",
@@ -9,13 +9,13 @@
   "current_subphase": "F04.01",
   "last_approved_phase": "F03",
   "last_approved_subphase": "F03.07",
-  "status": "IN_PROGRESS",
-  "branch": "main",
-  "commit_sha": "33cca85b45b8bf4a8c219645fda506453f742aa0",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/28",
-  "last_report": "docs/reports/F03-PHASE-SUMMARY.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F04.01-pagespeed-connector",
+  "commit_sha": "84a1cfccab2127baede59eec4f760bd46256d824",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/29",
+  "last_report": "docs/reports/F04.01.md",
   "blockers": [],
-  "next_action": "F04.01 Çoklu URL/tarama diff modeli geliştirilecektir.",
+  "next_action": "F04.01 PR açılışı, inceleme ve kullanıcı teslim onayı bekleniyor (DUR).",
   "next_subphase": "F04.02",
   "phases": {
     "F00": {
@@ -74,7 +74,7 @@
       "version": "V1.2",
       "status": "IN_PROGRESS",
       "subphases": {
-        "F04.01": "IN_PROGRESS",
+        "F04.01": "READY_FOR_REVIEW",
         "F04.02": "NOT_STARTED",
         "F04.03": "NOT_STARTED",
         "F04.04": "NOT_STARTED",

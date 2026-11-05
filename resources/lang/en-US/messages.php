@@ -167,4 +167,10 @@ return [
     'report.share_title' => 'Report Sharing Link',
     'report.copy_btn' => 'Copy',
     'report.retention_until' => 'Retention policy: valid until :date.',
+
+    // F04.01 — PageSpeed Insights bağlayıcısı
+    'pagespeed.lab_data_disclaimer' => 'These metrics are generated via lab (synthetic device) simulation; they are not real-user field data (CrUX).',
+    'pagespeed.mobile' => 'Mobile',
+    'pagespeed.desktop' => 'Desktop',
+    'pagespeed.performance_score' => 'Performance Score',
 ];

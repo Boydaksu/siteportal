@@ -167,4 +167,10 @@ return [
     'report.share_title' => 'Rapor Paylaşım Bağlantısı',
     'report.copy_btn' => 'Kopyala',
     'report.retention_until' => 'Saklama süresi: :date tarihine kadar geçerlidir.',
+
+    // F04.01 — PageSpeed Insights bağlayıcısı
+    'pagespeed.lab_data_disclaimer' => 'Bu veriler laboratuvar (sentetik cihaz) simülasyonu ile üretilmiştir; gerçek kullanıcı verisi (CrUX) değildir.',
+    'pagespeed.mobile' => 'Mobil',
+    'pagespeed.desktop' => 'Masaüstü',
+    'pagespeed.performance_score' => 'Performans Skoru',
 ];
