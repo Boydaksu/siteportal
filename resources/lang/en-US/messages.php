@@ -173,4 +173,12 @@ return [
     'pagespeed.mobile' => 'Mobile',
     'pagespeed.desktop' => 'Desktop',
     'pagespeed.performance_score' => 'Performance Score',
+
+    // F04.02 — CrUX field data
+    'crux.field_data_label' => 'Real User Field Data (CrUX)',
+    'crux.no_field_data' => 'Insufficient real user field data available',
+    'crux.field_data_disclaimer' => 'These metrics represent real Chrome user field experiences over the rolling 28-day window; they are not synthetic lab simulations.',
+    'crux.collection_window' => '28-Day Window: :window',
+    'crux.cwv_passed' => 'Core Web Vitals Assessment Passed',
+    'crux.cwv_failed' => 'Core Web Vitals Assessment Needs Improvement',
 ];
