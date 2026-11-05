@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-11-06 | F04.03 | READY_FOR_REVIEW
+- Core Web Vitals Rapor Deneyimi (`docs/reports/F04.03.md`) tamamlandı.
+- `CwvThresholds` (`app/Core/Performance/CwvThresholds.php`) geliştirildi:
+  - LCP, INP, CLS, FCP, TTFB ve TBT metrikleri için Google Web Vitals standartlarına tam uyumlu eşik değerlendirmesi.
+  - 3-bölgeli (Yeşil/Sarı/Kırmızı) görsel cetvel için 0-100% aralığında hassas pin pozisyonu hesaplayıcı (`calculatePositionPercent`).
+  - Metrik birim ve formatlayıcı (`formatValue`).
+- `CwvOpportunity` (`app/Core/Performance/CwvOpportunity.php`) geliştirildi:
+  - Metrik anahtarı, başlık, açıklama, tahmini kazanç (`estimated_savings`), önem seviyesi (`severity`) ve çözüm anahtarı taşıyan değer nesnesi.
+- `CwvReportPresenter` (`app/Core/Performance/CwvReportPresenter.php`) geliştirildi:
+  - CrUX saha verileri ve mobil/masaüstü lab simülasyonlarını birleştiren sunucu katmanı (`toViewModel`).
+  - Mobil ve masaüstü delta analizi (`{diff} daha yavaş` / `{diff} daha hızlı`).
+  - Lab vs. field veri kaynağı ayrımı ve fail-safe UNKNOWN güvencesi (veri yokluğunda sahte 0 puan verilmemesi).
+  - Performans iyileştirme fırsatları tespit algoritması.
+- `cwv_card.php` (`resources/views/analysis/partials/cwv_card.php`) geliştirildi:
+  - LCP, INP, CLS kartları, renkli eşik cetvelleri, pin imleci (`▲`), CrUX p75 ve dağılım histogramları.
+  - Mobil ve masaüstü skor rozetleri ve kıyaslama tablosu.
+  - Eyleme dönüştürülebilir fırsatlar (Opportunities) ve zaman damgası.
+  - Katı XSS güvenlik kaçırmaları (`View::escape`).
+- `resources/views/analysis/report.php` içine CWV kartı koşullu entegrasyonu sağlandı.
+- Yerelleştirme dosyaları (`resources/lang/tr-TR/messages.php`, `resources/lang/en-US/messages.php`) tam eşlendi (`cwv.*`).
+- 15 yeni birim ve entegrasyon testi eklendi; toplam test sayısı 522 test, 3580 assertion (%100 PASS).
+- F04.03 alt faz teslimi ve inceleme onayı bekleniyor; kullanıcı onayı olmadan bir sonraki alt faza geçilmez (DUR).
+
 ## 2026-11-06 | F04.02 kabulü ve PR #30 merge
 - Kullanıcı “onaylıyorum” ile F04.02 teslim kabulünü, PR #30 birleştirmesini ve F04.03 başlangıcını onayladı; PR #30 main dalına squash-merge edildi (`a1e68128ced06de792a6c9702cfa208351de032e`).
 - F04.02 alt fazı (CrUX gerçek kullanıcı verisi) resmen DONE durumuna getirildi.
