@@ -171,18 +171,18 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
 - **Tarih / repo:** 2026-11-05, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `main`.
-- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 1.0.0; F03 / V1.1 READY_FOR_REVIEW (F00, F01 ve F02 ana fazları DONE; F03.01 - F03.06 DONE; F03.07 ve F03 ana faz kapanışı READY_FOR_REVIEW).
-- **Son onay:** F03.06 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #27 merge ve F03.07 başlangıcını onayladı.
-- **Önceki teslim:** [PR #27](https://github.com/Boydaksu/siteportal/pull/27) birleştirildi (`89af2b43783c0ad3cbb31ae12de842e323e3d673`).
-- **Aktif alt faz / durum:** F03.07 — V1.1 uçtan uca kapanış / READY_FOR_REVIEW.
-- **Dal:** `phase/F03.07-e2e-v1.1-closure`.
-- **Aktif PR / kanıt commit:** [PR #28](https://github.com/Boydaksu/siteportal/pull/28) / commit `517c308`.
-- **Rapor:** `docs/reports/F03.07.md` ve `docs/reports/F03-PHASE-SUMMARY.md`.
+- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 1.1.0; F04 / V1.2 IN_PROGRESS (F00, F01, F02 ve F03 ana fazları DONE; F04.01 başlatılıyor).
+- **Son onay:** F03 ana faz kapanışı ve F03.07 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #28 merge ve F03 kapanışını onayladı; PR #28 main dalına squash-merge edildi (`33cca85b45b8bf4a8c219645fda506453f742aa0`).
+- **Önceki teslim:** [PR #28](https://github.com/Boydaksu/siteportal/pull/28) birleştirildi (`33cca85b45b8bf4a8c219645fda506453f742aa0`).
+- **Aktif alt faz / durum:** F04.01 — Çoklu URL/tarama diff modeli / IN_PROGRESS.
+- **Dal:** `main` (çalışma dalı `phase/F04.01-multiurl-crawl-diff` açılacak).
+- **Aktif PR / kanıt commit:** Çalışma dalı açılıyor.
+- **Rapor:** `docs/reports/F03-PHASE-SUMMARY.md` tamamlandı; `docs/reports/F04.01.md` hazırlanacak.
 - **Yerel sonuç:** PASS; PHP lint (276 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 476 test / 3198 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
-- **Uygulama testleri:** F03.01 - F03.07 tamamlandı (URL Frontier, XMLReader sitemap parser, iç/dış link grafiği ve BFS derinlik mekanizması, site çapı duplicate metadata, sitemap/canonical çelişkisi, yetim sayfa kalkanı, per-host concurrency=1, Retry-After ve adaptif bütçe nezaketi, çok sayfalı rapor presenter'ı ve CSV dışa aktarımı, 6 kritik uçtan uca senaryo testi: sitemap yok, redirect döngü, robots engel, 2000 URL kuyruk/bellek kalkanı, 10 sayfa kota sınırlaması & yetim koruması, telemetri & temiz durdurma).
+- **Uygulama testleri:** F00, F01, F02 ve F03 eksiksiz tamamlandı. Sıradaki geliştirme: Çoklu URL ve tarama snapshot diff modeli, metrik/skor/kural karşılaştırma matrisi (`F04.01`).
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki alt faz:** F03 Ana Faz Kapanış Onayı & F04.01.
-- **Bir sonraki işlem:** Kullanıcı onayı bekleniyor (DUR). Açık onay sonrası PR #28 squash-merge edilecek ve F04 ana fazına geçilecektir.
+- **Sonraki alt faz:** F04.02 — Regresyon kuralları ve puan sapması.
+- **Bir sonraki işlem:** `phase/F04.01-multiurl-crawl-diff` dalının açılması, diff modeli ve karşılaştırma mantığının kodlanması.
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -1812,12 +1812,12 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F03.07.md` + durum kayıtları.
 
 ## Ana faz kapanış kontrolü
-- [ ] Bütün alt fazlar açık kullanıcı onayı ile DONE.
+- [x] Bütün alt fazlar açık kullanıcı onayı ile DONE.
 - [x] Bütün kabul maddeleri için test kanıtı (komut/çıktı ve commit).
 - [x] Güvenlik, veri gizliliği ve performans riskleri değerlendirildi.
 - [x] README ve sistem mimarisi değişen gerçek durumu yansıtıyor.
 - [x] `docs/reports/F03-PHASE-SUMMARY.md` oluşturuldu; kullanıcıya kapsamlı Türkçe rapor sunuldu.
-- [ ] Kullanıcının açık ana faz onayı bekleniyor; otomatik sonraki faz yok.
+- [x] Kullanıcının açık ana faz onayı alındı; F03 başarıyla kapatıldı.
 
 ## Bitiş raporu şablonu
 Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → riskler/borç → ürün demo bağlantısı → geri alma planı → değişen maliyet → önerilen sonraki faz → **ONAY BEKLENİYOR**.

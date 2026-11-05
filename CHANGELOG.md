@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-05 | F03 ana faz kapanışı ve F03.07 kabulü
+- Kullanıcı “onaylıyorum” ile F03.07 teslimini, PR #28 birleştirmesini ve F03 — V1.1 Ana Faz Kapanışını onayladı; PR #28 main dalına squash-merge edildi (`33cca85b45b8bf4a8c219645fda506453f742aa0`).
+- F03 ana fazı (V1.1: Site Çapında Kontrollü Tarama) resmen DONE durumuna getirildi.
+- Sıradaki ana faz F04 (V1.2: Çoklu Sayfa SEO Karşılaştırma) ve F04.01 (Çoklu URL/tarama diff modeli) başlatılacaktır.
+
 ## 2026-11-05 | F03.07 | READY_FOR_REVIEW
 - V1.1 Uçtan Uca Kapanış (`docs/reports/F03.07.md`) ve F03 Ana Faz Kapanış Özeti (`docs/reports/F03-PHASE-SUMMARY.md`) tamamlandı.
 - `CrawlProgress` (`app/Core/Crawler/CrawlProgress.php`) geliştirildi:

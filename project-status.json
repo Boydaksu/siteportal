@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-05T17:35:00+03:00",
+  "updated_at": "2026-11-05T20:55:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
-  "product_version": "1.0.0",
-  "current_phase": "F03",
-  "current_subphase": "F03.07",
-  "last_approved_phase": "F02",
-  "last_approved_subphase": "F03.06",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F03.07-e2e-v1.1-closure",
-  "commit_sha": "517c308271eacd94df093117f63ce7e14af52d1d",
+  "product_version": "1.1.0",
+  "current_phase": "F04",
+  "current_subphase": "F04.01",
+  "last_approved_phase": "F03",
+  "last_approved_subphase": "F03.07",
+  "status": "IN_PROGRESS",
+  "branch": "main",
+  "commit_sha": "33cca85b45b8bf4a8c219645fda506453f742aa0",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/28",
-  "last_report": "docs/reports/F03.07.md",
+  "last_report": "docs/reports/F03-PHASE-SUMMARY.md",
   "blockers": [],
-  "next_action": "F03.07 PR açılışı, kullanıcı onayı (DUR) ve F03 ana faz kapanışı bekleniyor.",
-  "next_subphase": "F04.01",
+  "next_action": "F04.01 Çoklu URL/tarama diff modeli geliştirilecektir.",
+  "next_subphase": "F04.02",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -59,7 +59,7 @@
     },
     "F03": {
       "version": "V1.1",
-      "status": "READY_FOR_REVIEW",
+      "status": "DONE",
       "subphases": {
         "F03.01": "DONE",
         "F03.02": "DONE",
@@ -67,14 +67,14 @@
         "F03.04": "DONE",
         "F03.05": "DONE",
         "F03.06": "DONE",
-        "F03.07": "READY_FOR_REVIEW"
+        "F03.07": "DONE"
       }
     },
     "F04": {
       "version": "V1.2",
-      "status": "NOT_STARTED",
+      "status": "IN_PROGRESS",
       "subphases": {
-        "F04.01": "NOT_STARTED",
+        "F04.01": "IN_PROGRESS",
         "F04.02": "NOT_STARTED",
         "F04.03": "NOT_STARTED",
         "F04.04": "NOT_STARTED",
@@ -308,19 +308,25 @@
       "approval_reference": "2026-11-05: Kullanıcı F03.06 teslim kabulü + PR #27 merge + F03.07 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-05: Kullanıcı F03.06 teslim kabulü + PR #27 merge + F03.07 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F03.07": {
+      "approved_at": "2026-11-05T20:54:40+03:00",
+      "approval_reference": "2026-11-05: Kullanıcı F03.07 teslim kabulü + PR #28 merge + F03 ana faz kapanışı ve F04.01 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-05: Kullanıcı F03.07 teslim kabulü + PR #28 merge + F03 ana faz kapanışı ve F04.01 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F03.07",
-    "authorized_at": "2026-11-05T17:16:41+03:00",
-    "reference": "F03.06 teslim kabulü ve F03.07 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F04.01",
+    "authorized_at": "2026-11-05T20:54:40+03:00",
+    "reference": "F03 kapanışı ve F04.01 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F03.06",
+    "subphase": "F03.07",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/27",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/28",
     "merged": true,
-    "merge_sha": "89af2b43783c0ad3cbb31ae12de842e323e3d673",
+    "merge_sha": "33cca85b45b8bf4a8c219645fda506453f742aa0",
     "approval_commit": null,
     "approval_commit_ci_run": null
   },
