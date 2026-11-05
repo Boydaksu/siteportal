@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-05 | F03.03 kabulü
+- Kullanıcı “onaylıyorum” ile F03.03 teslimi, PR #24 birleştirmesi ve F03.04 başlangıcını onayladı; PR #24 main dalına birleştirildi (`165de977a3b1783aff97589d3c4d7f2c9d2ee2c3`). F03.04 (Site çapı metadata ve canonical analizleri) başlatılacaktır.
+
 ## 2026-11-04 | F03.03 | READY_FOR_REVIEW
 - İç Link Grafiği ve Derinlik (`docs/reports/F03.03.md`) tamamlandı.
 - `LinkEdge` (`app/Core/Crawler/Graph/LinkEdge.php`) yönlendirilmiş bağlantı modeli geliştirildi (`sourceUrl`, `targetUrl`, `targetUrlHash`, `rawHref`, `anchorText`, `isInternal`, `isNofollow`, `depth`, `httpStatus`, `isBroken`).
