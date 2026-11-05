@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-05 | F03.05 kabulü
+- Kullanıcı “onaylıyorum” ile F03.05 teslimi, PR #26 birleştirmesi ve F03.06 başlangıcını onayladı; PR #26 main dalına birleştirildi (`048f4819fc8433ad8cd9ebfe418e0cf29a882f03`). F03.06 (Çok sayfalı rapor/CSV) başlatılacaktır.
+
 ## 2026-11-05 | F03.05 | READY_FOR_REVIEW
 - Tarama Bütçesi ve Host Nezaketi (`docs/reports/F03.05.md`) tamamlandı.
 - `HostRateLimiter` (`app/Core/Crawler/Politeness/HostRateLimiter.php`) geliştirildi:

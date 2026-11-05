@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-05T16:20:00+03:00",
+  "updated_at": "2026-11-05T16:45:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.0.0",
   "current_phase": "F03",
-  "current_subphase": "F03.05",
+  "current_subphase": "F03.06",
   "last_approved_phase": "F02",
-  "last_approved_subphase": "F03.04",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F03.05-crawl-budget-politeness",
-  "commit_sha": "8924889",
+  "last_approved_subphase": "F03.05",
+  "status": "IN_PROGRESS",
+  "branch": "main",
+  "commit_sha": "048f4819fc8433ad8cd9ebfe418e0cf29a882f03",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/26",
   "last_report": "docs/reports/F03.05.md",
   "blockers": [],
-  "next_action": "Kullanıcı teslim kabulü ve açık onayı bekleniyor (DUR).",
-  "next_subphase": "F03.06",
+  "next_action": "F03.06 çok sayfalı rapor ve CSV dışa aktarımı başlatılacaktır.",
+  "next_subphase": "F03.07",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -65,8 +65,8 @@
         "F03.02": "DONE",
         "F03.03": "DONE",
         "F03.04": "DONE",
-        "F03.05": "READY_FOR_REVIEW",
-        "F03.06": "NOT_STARTED",
+        "F03.05": "DONE",
+        "F03.06": "IN_PROGRESS",
         "F03.07": "NOT_STARTED"
       }
     },
@@ -296,19 +296,25 @@
       "approval_reference": "2026-11-05: Kullanıcı F03.04 teslim kabulü + PR #25 merge + F03.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-05: Kullanıcı F03.04 teslim kabulü + PR #25 merge + F03.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F03.05": {
+      "approved_at": "2026-11-05T16:44:14+03:00",
+      "approval_reference": "2026-11-05: Kullanıcı F03.05 teslim kabulü + PR #26 merge + F03.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-05: Kullanıcı F03.05 teslim kabulü + PR #26 merge + F03.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F03.05",
-    "authorized_at": "2026-11-05T16:03:33+03:00",
-    "reference": "F03.04 teslim kabulü ve F03.05 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F03.06",
+    "authorized_at": "2026-11-05T16:44:14+03:00",
+    "reference": "F03.05 teslim kabulü ve F03.06 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F03.04",
+    "subphase": "F03.05",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/25",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/26",
     "merged": true,
-    "merge_sha": "101a3912a5fb8deb6680dd1e047b7c18d8d8ee88",
+    "merge_sha": "048f4819fc8433ad8cd9ebfe418e0cf29a882f03",
     "approval_commit": null,
     "approval_commit_ci_run": null
   },
