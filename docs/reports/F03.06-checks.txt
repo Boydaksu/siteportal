@@ -1,0 +1,38 @@
+================================================================================
+SitePortal F03.06 Quality Gates & Verification Output
+Date: 2026-11-05
+Branch: phase/F03.06-multipage-report-csv
+================================================================================
+
+1. PHP LINT (273 Files)
+--------------------------------------------------------------------------------
+PASS: 273 proje PHP dosyasi lint kontrolunden gecti; vendor/ignore edilen kopyalar kapsam disi.
+
+2. PHPCS (PSR-12 Compliance)
+--------------------------------------------------------------------------------
+Time: 2.29 secs; Memory: 16MB
+0 errors, 0 warnings
+
+3. PHPSTAN (Level 8 Static Analysis)
+--------------------------------------------------------------------------------
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+[OK] No errors
+
+4. PHPUNIT SUITE (470 Tests, 3164 Assertions)
+--------------------------------------------------------------------------------
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+Runtime: PHP 8.4.20
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+Time: 00:10.625, Memory: 26.00 MB
+OK, but there were issues!
+Tests: 470, Assertions: 3164, PHPUnit Notices: 3, Skipped: 2.
+
+5. NEGATIVE QUALITY GATES
+--------------------------------------------------------------------------------
+test_formatter_rejects_non_psr12_input (__main__.QualityGateTests) ... ok
+test_php_lint_rejects_syntax_error (__main__.QualityGateTests) ... ok
+test_static_analysis_rejects_incorrect_return_type (__main__.QualityGateTests) ... ok
+test_test_runner_rejects_failed_assertion (__main__.QualityGateTests) ... ok
+Ran 4 tests in 1.386s
+OK
+PASS: PHP lint, PSR-12, PHPStan level 8, PHPUnit ve dort olumsuz kalite kapisi TEST'i.

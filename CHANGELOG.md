@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-11-05 | F03.06 | READY_FOR_REVIEW
+- Çok Sayfalı Rapor/CSV (`docs/reports/F03.06.md`) tamamlandı.
+- `SiteWidePageItem` (`app/SeoAnalyzer/Presentation/SiteWidePageItem.php`) geliştirildi:
+  - Taranan her sayfa için kanonik URL, HTTP durum kodu, başlık, meta açıklama, indekslenebilirlik, BFS derinliği, iç/dış bağlantı sayıları, sitemap ve yetim sayfa durumu ile sayfa bazlı bulgu sayıları.
+- `PaginatedResult` (`app/SeoAnalyzer/Presentation/PaginatedResult.php`) tip güvenli sayfalama modeli geliştirildi (`totalPages`, `hasNextPage`, `hasPreviousPage`).
+- `MultiPageReportPresenter` (`app/SeoAnalyzer/Presentation/MultiPageReportPresenter.php`) geliştirildi:
+  - `SiteCrawlContext` ve `SiteWideAuditResult` üzerinden otomatik sayfa listesi ve bulgu ilişkilendirmesi (`fromCrawlContext`).
+  - URL ve sayfa başlığı içinde metin arama (`search`).
+  - HTTP durum kodu (`status_code`, `status_group`), indekslenebilirlik, sorunlu sayfalar, yetim sayfalar, sitemap varlığı ve derinlik filtreleri (`filter`).
+  - Çok alanlı sıralama (`sort`) ve sayfalama (`paginate`).
+- `MultiPageCsvExporter` (`app/SeoAnalyzer/Export/MultiPageCsvExporter.php`) geliştirildi:
+  - **Kritik Güvenlik Kalkanı (OWASP CSV Injection Mitigation):** Hücre başındaki `=, +, -, @, \t, \r` karakterlerinin tek tırnakla nötralize edilmesi (`sanitizeCellValue`).
+  - Türkçe karakterler ve Excel/Numbers uyumu için dosya başında **UTF-8 BOM (`\xEF\xBB\xBF`)** garantisi.
+  - Sayfa listesi CSV'si (`exportPagesCsv`), bulgular CSV'si (`exportFindingsCsv`) ve bellek tasarruflu akış (`exportPagesToStream`) desteği.
+- `PageSnapshot` sınıfına `isIndexable()` metodu eklendi (`app/SeoAnalyzer/Domain/PageSnapshot.php`).
+- `LinkGraph` sınıfına `getNodeDepth()` metodu eklendi (`app/Core/Crawler/Graph/LinkGraph.php`).
+- **Kritik Kabul Kriteri Doğrulaması:** 10 ve 100 sayfalık sentetik veri setleri ile rapor sayfalama, filtreleme, CSV dökümü, streaming ve injection nötralizasyonu %100 doğrulandı (`SyntheticMultiPageAuditTest`).
+- Toplam test sayısı 470 test, 3164 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F03.07'ye geçilmez (DUR).
+
 ## 2026-11-05 | F03.05 kabulü
 - Kullanıcı “onaylıyorum” ile F03.05 teslimi, PR #26 birleştirmesi ve F03.06 başlangıcını onayladı; PR #26 main dalına birleştirildi (`048f4819fc8433ad8cd9ebfe418e0cf29a882f03`). F03.06 (Çok sayfalı rapor/CSV) başlatılacaktır.
 

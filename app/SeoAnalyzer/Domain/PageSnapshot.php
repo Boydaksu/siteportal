@@ -134,4 +134,30 @@ final class PageSnapshot
     {
         return $this->observedAt;
     }
+
+    public function isIndexable(): bool
+    {
+        if (
+            $this->httpResponse !== null
+            && ($this->httpResponse->getStatusCode() < 200 || $this->httpResponse->getStatusCode() >= 300)
+        ) {
+            return false;
+        }
+
+        if ($this->parsedDocument !== null) {
+            $directives = $this->parsedDocument->getRobotsDirectives();
+            if (!empty($directives['noindex'])) {
+                return false;
+            }
+        }
+
+        if ($this->httpResponse !== null) {
+            $xRobots = $this->httpResponse->getHeader('x-robots-tag');
+            if ($xRobots !== null && str_contains(strtolower($xRobots), 'noindex')) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
