@@ -11,7 +11,7 @@
   "last_approved_subphase": "F03.03",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F03.04-site-metadata-canonical",
-  "commit_sha": "c115d36513643c528bb1679c7676ef53f392c7a9",
+  "commit_sha": "d133d575354bdb1b555a501651cfaafba6c35639",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/25",
   "last_report": "docs/reports/F03.04.md",
   "blockers": [],

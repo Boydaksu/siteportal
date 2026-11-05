@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #24](https://github.com/Boydaksu/siteportal/pull/24) birleştirildi (`165de977a3b1783aff97589d3c4d7f2c9d2ee2c3`).
 - **Aktif alt faz / durum:** F03.04 — Site çapı metadata ve canonical analizleri / READY_FOR_REVIEW.
 - **Dal:** `phase/F03.04-site-metadata-canonical`.
-- **Aktif PR / kanıt commit:** [PR #25](https://github.com/Boydaksu/siteportal/pull/25) / `c115d36513643c528bb1679c7676ef53f392c7a9`.
+- **Aktif PR / kanıt commit:** [PR #25](https://github.com/Boydaksu/siteportal/pull/25) / `d133d575354bdb1b555a501651cfaafba6c35639`.
 - **Rapor:** Hazırlandı (`docs/reports/F03.04.md`).
 - **Yerel sonuç:** PASS; PHP lint (253 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 438 test / 2992 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** F03.04 tamamlandı (SiteCrawlContext, SiteWideMetadataAnalyzer ile duplicate title/desc/h1 tespiti, SitemapCanonicalConflictAnalyzer ile noindex/non-self canonical/HTTP hata çelişki tespiti, OrphanPageAnalyzer ile yetim sayfa ve kısmi tarama koruma kalkanı, SiteWideAuditEngine). Eksik taramada yetim sayfanın kesin diye işaretlenmediği ve şüpheli kaldığı fixture testleriyle doğrulandı.
