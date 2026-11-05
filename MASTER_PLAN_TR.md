@@ -171,18 +171,18 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
 - **Tarih / repo:** 2026-11-04, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `main`.
-- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 1.0.0; F03 / V1.1 IN_PROGRESS (F00, F01 ve F02 ana fazları DONE; F03.01 ve F03.02 DONE, F03.03 başlatılıyor).
+- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 1.0.0; F03 / V1.1 IN_PROGRESS (F00, F01 ve F02 ana fazları DONE; F03.01 ve F03.02 DONE, F03.03 READY_FOR_REVIEW).
 - **Son onay:** F03.02 DONE; kullanıcı “onaylıyorum” ile teslim kabulü, PR #23 merge ve F03.03 başlangıcını onayladı.
 - **Önceki teslim:** [PR #23](https://github.com/Boydaksu/siteportal/pull/23) birleştirildi (`54f9bc81fde308ea601711043e534ac566268601`).
-- **Aktif alt faz / durum:** F03.03 — İç link grafiği ve derinlik / IN_PROGRESS.
+- **Aktif alt faz / durum:** F03.03 — İç link grafiği ve derinlik / READY_FOR_REVIEW.
 - **Dal:** `phase/F03.03-link-graph-depth`.
-- **Aktif PR / kanıt commit:** Çalışma dalı açılıyor.
-- **Rapor:** Hazırlanıyor (`docs/reports/F03.03.md`).
-- **Yerel sonuç:** PASS; PHP lint (233 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 411 test / 2896 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
-- **Uygulama testleri:** F03.01 ve F03.02 tamamlandı (frontier, XMLReader sitemap parser, XXE/bomb guards). Sıradaki geliştirme: link grafiği (source -> target), derinlik sayımı, BFS bütçe önceliklendirmesi ve dış domain filtrelemesi.
+- **Aktif PR / kanıt commit:** [PR #24](https://github.com/Boydaksu/siteportal/pull/24) / `ff92b06e3f87530deacfa6d26562dbf252e99ed7`.
+- **Rapor:** Hazırlandı (`docs/reports/F03.03.md`).
+- **Yerel sonuç:** PASS; PHP lint (243 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 424 test / 2930 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
+- **Uygulama testleri:** F03.03 tamamlandı (LinkEdge, LinkGraph in-memory çizge, LinkExtractor bağıl URL ve nofollow çözümleme, BfsCrawlPrioritizer bütçe ve BFS önceliklendirme, DatabaseLinkGraphRepository ve 0007 migrasyonu). Dış domainlerin kuyruğa girmemesi ve kırık link tespiti fixture testleriyle doğrulandı.
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
 - **Sonraki alt faz:** F03.04 — Eşzamanlılık ve nazik tarama.
-- **Bir sonraki işlem:** F03.03 dalının açılması, iç link grafiği ve BFS derinlik mekanizmasının geliştirilmesi.
+- **Bir sonraki işlem:** Kullanıcı teslim kabulü ve açık onayı bekleniyor; F03.04'e geçilmez (DUR).
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -1742,12 +1742,12 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 2. BFS crawl budget prioritization.
 
 **Kabul/kanıt:**
-- [ ] Bozuk link ve derinlik sayımları fixture ile doğru.
-- [ ] dış domain izinsiz taranmıyor.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Bozuk link ve derinlik sayımları fixture ile doğru.
+- [x] dış domain izinsiz taranmıyor.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F03.03.md` + durum kayıtları.
 

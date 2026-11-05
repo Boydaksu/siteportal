@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-11-04 | F03.03 | READY_FOR_REVIEW
+- İç Link Grafiği ve Derinlik (`docs/reports/F03.03.md`) tamamlandı.
+- `LinkEdge` (`app/Core/Crawler/Graph/LinkEdge.php`) yönlendirilmiş bağlantı modeli geliştirildi (`sourceUrl`, `targetUrl`, `targetUrlHash`, `rawHref`, `anchorText`, `isInternal`, `isNofollow`, `depth`, `httpStatus`, `isBroken`).
+- `LinkGraph` (`app/Core/Crawler/Graph/LinkGraph.php`) yönlendirilmiş çizge motoru geliştirildi:
+  - In-memory gelen bağlantılar (`getInlinks`), giden bağlantılar (`getOutlinks`).
+  - Kırık iç ve dış link tespiti (`getBrokenLinks`, `getInternalBrokenLinks`, `getExternalBrokenLinks`).
+  - Tıklama derinliği histogramı (`getDepthDistribution`) ve maksimum derinlik hesabı (`getMaxDepth`).
+  - Yetim sayfa (orphan page) tespiti (`getOrphanPages`).
+- `LinkExtractor` (`app/Core/Crawler/Graph/LinkExtractor.php`) geliştirildi:
+  - Bağıl URL çözümleme ve `UrlNormalizer` ile kanonikleştirme.
+  - Web dışı şemaların (`mailto:`, `tel:`, `javascript:`, `data:`) güvenli elenmesi.
+  - `CrawlScopePolicy` ile iç/dış domain ayrımı ve `rel="nofollow"` tespiti.
+  - Sayfa içi mükerrer bağlantıların tekilleştirilmesi.
+- `BfsCrawlPrioritizer` (`app/Core/Crawler/Graph/BfsCrawlPrioritizer.php`) geliştirildi:
+  - BFS (Breadth-First Search) tıklama derinliği sıralamasıyla tarama kuyruğu (`UrlFrontierInterface`) önceliklendirmesi.
+  - Dış domainlerin kuyruğa girmesinin kesin olarak engellenmesi (`!$edge->isInternal()`).
+  - Bütçe (`maxPages`) ve derinlik (`maxDepth`) sınırlarının katı işletimi.
+- `DatabaseLinkGraphRepository` (`app/Core/Crawler/Graph/DatabaseLinkGraphRepository.php`) ve migrasyon `0007_create_page_links_table.php` geliştirildi.
+- Kapsamlı birim ve entegrasyon testleri (4 yeni test dosyası, 13 test, 34 assertion) eklendi. Toplam test sayısı 424 test, 2930 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F03.04'e geçilmez (DUR).
+
 ## 2026-11-04 | F03.02 kabulü
 - Kullanıcı “onaylıyorum” ile F03.02 teslimi, PR #23 birleştirmesi ve F03.03 başlangıcını onayladı; PR #23 main dalına birleştirildi (`54f9bc81fde308ea601711043e534ac566268601`). F03.03 (İç link grafiği ve derinlik) başlatılacaktır.
 
