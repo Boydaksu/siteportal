@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-06 | F04.02 kabulü ve PR #30 merge
+- Kullanıcı “onaylıyorum” ile F04.02 teslim kabulünü, PR #30 birleştirmesini ve F04.03 başlangıcını onayladı; PR #30 main dalına squash-merge edildi (`a1e68128ced06de792a6c9702cfa208351de032e`).
+- F04.02 alt fazı (CrUX gerçek kullanıcı verisi) resmen DONE durumuna getirildi.
+- Sıradaki alt faz F04.03 (CWV rapor deneyimi) başlatılacaktır.
+
 ## 2026-11-05 | F04.02 | READY_FOR_REVIEW
 - CrUX Gerçek Kullanıcı Verisi Bağlayıcısı (`docs/reports/F04.02.md`) tamamlandı.
 - `config/crux.php` eklendi: CrUX API anahtarı, endpoint, 15s zaman aşımı, 24 saatlik önbellek yaşam süresi ve varsayılan form faktörü yapılandırması.

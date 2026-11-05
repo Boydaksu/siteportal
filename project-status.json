@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-05T21:58:00+03:00",
+  "updated_at": "2026-11-06T00:03:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.1.0",
   "current_phase": "F04",
-  "current_subphase": "F04.02",
+  "current_subphase": "F04.03",
   "last_approved_phase": "F03",
-  "last_approved_subphase": "F04.01",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F04.02-crux-field-data",
-  "commit_sha": "98fb877ab36a7ea52e461a293b749d211f4400cf",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/30",
+  "last_approved_subphase": "F04.02",
+  "status": "IN_PROGRESS",
+  "branch": "phase/F04.03-cwv-report-ux",
+  "commit_sha": null,
+  "pr_url": null,
   "last_report": "docs/reports/F04.02.md",
   "blockers": [],
-  "next_action": "F04.02 PR açılışı, inceleme ve kullanıcı teslim onayı bekleniyor (DUR).",
-  "next_subphase": "F04.03",
+  "next_action": "F04.03 CWV rapor deneyimi geliştirmesi.",
+  "next_subphase": "F04.04",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -75,8 +75,8 @@
       "status": "IN_PROGRESS",
       "subphases": {
         "F04.01": "DONE",
-        "F04.02": "READY_FOR_REVIEW",
-        "F04.03": "NOT_STARTED",
+        "F04.02": "DONE",
+        "F04.03": "IN_PROGRESS",
         "F04.04": "NOT_STARTED",
         "F04.05": "NOT_STARTED",
         "F04.06": "NOT_STARTED",
@@ -320,19 +320,25 @@
       "approval_reference": "2026-11-05: Kullanıcı F04.01 teslim kabulü + PR #29 merge + F04.02 başlangıcı sorusuna “Onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-05: Kullanıcı F04.01 teslim kabulü + PR #29 merge + F04.02 başlangıcı sorusuna “Onaylıyorum” yanıtını verdi."
+    },
+    "F04.02": {
+      "approved_at": "2026-11-06T00:03:00+03:00",
+      "approval_reference": "2026-11-06: Kullanıcı F04.02 teslim kabulü + PR #30 merge + F04.03 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-06: Kullanıcı F04.02 teslim kabulü + PR #30 merge + F04.03 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F04.02",
-    "authorized_at": "2026-11-05T21:40:00+03:00",
-    "reference": "F04.01 teslimi ve F04.02 başlangıcı sorusuna kullanıcı yanıtı: Onaylıyorum"
+    "subphase": "F04.03",
+    "authorized_at": "2026-11-06T00:03:00+03:00",
+    "reference": "F04.02 teslimi ve F04.03 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F04.01",
+    "subphase": "F04.02",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/29",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/30",
     "merged": true,
-    "merge_sha": "390bcd9449e0997bc144ef64fc2b032a3f2e0b8d",
+    "merge_sha": "a1e68128ced06de792a6c9702cfa208351de032e",
     "approval_commit": null,
     "approval_commit_ci_run": null
   },
