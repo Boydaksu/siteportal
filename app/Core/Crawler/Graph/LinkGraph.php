@@ -190,6 +190,12 @@ final class LinkGraph
         return $distribution;
     }
 
+    public function getNodeDepth(string $url): ?int
+    {
+        $hash = $this->normalizer->hash($url);
+        return $this->nodeDepths[$hash] ?? null;
+    }
+
     public function getMaxDepth(): int
     {
         if (empty($this->nodeDepths)) {
