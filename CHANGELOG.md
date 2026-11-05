@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-11-05 | F03.05 | READY_FOR_REVIEW
+- Tarama Bütçesi ve Host Nezaketi (`docs/reports/F03.05.md`) tamamlandı.
+- `HostRateLimiter` (`app/Core/Crawler/Politeness/HostRateLimiter.php`) geliştirildi:
+  - Host başına eşzamanlılık kısıtı (`maxConcurrencyPerHost = 1`) katı kilit mekanizması (`acquireLock`, `releaseLock`, `isLocked`).
+  - HTTP 429 ve 503 yanıtlarında `Retry-After` süresine riayet (`recordRateLimit`); başlık yoksa üstel geri çekilme (`baseBackoff * 2^(attempt-1)`).
+  - Host soğuma (`cooldown`) süresi takibi (`isHostInCooldown`, `getRemainingCooldown`).
+- `AdaptiveDelayManager` (`app/Core/Crawler/Politeness/AdaptiveDelayManager.php`) geliştirildi:
+  - Sunucu yanıt süresi (latency) ve son 10 istek hareketli ortalamasına göre adaptif gecikme ölçeklemesi.
+  - HTTP 429 ve 503 yanıtlarında gecikmeyi 2 katına çıkarma kuralı (`recordResponse`).
+  - Robots.txt `Crawl-delay` direktifinin alt sınır olarak tanınması (`getEffectiveDelay`).
+- `CrawlCircuitBreaker` (`app/Core/Crawler/Politeness/CrawlCircuitBreaker.php`) geliştirildi:
+  - Hedef host için ardışık hata eşiği (varsayılan: 5 ardışık 429/503/timeout hatası) aşıldığında veya kritik hata oranına ulaşıldığında devreyi açma ve taramayı güvenle durdurma (`Crawl stopped`).
+- `CrawlBudgetCoordinator` (`app/Core/Crawler/Budget/CrawlBudgetCoordinator.php`) geliştirildi:
+  - **Kritik Kabul Kriteri:** Dış API bütçesi (`maxApiQuotaUnits`) hiçbir koşulda aşılmadan katı olarak sınırlandırıldı. Kota tükenince istekler güvenle reddedildi (`api_quota_exhausted`).
+  - Maksimum sayfa (`maxPages`), maksimum istek (`maxRequests`) ve maksimum bant genişliği (`maxBytes`) limitlerinin katı takibi.
+- `FairScheduler` (`app/Core/Crawler/Politeness/FairScheduler.php`) geliştirildi:
+  - Çoklu host kuyruklarında round-robin adaletli seçim; soğumadaki veya kilitli host'ları atlayarak hazır host'lara öncelik tanıma.
+- `PoliteCrawlManager` ve `CrawlDecision` (`app/Core/Crawler/Politeness/PoliteCrawlManager.php`) üst seviye orkestrasyonu geliştirildi.
+- Kapsamlı birim testleri (6 yeni test dosyası, 20 test, 68 assertion) eklendi. Toplam test sayısı 458 test, 3060 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F03.06'ya geçilmez (DUR).
+
 ## 2026-11-05 | F03.04 kabulü
 - Kullanıcı “onaylıyorum” ile F03.04 teslimi, PR #25 birleştirmesi ve F03.05 başlangıcını onayladı; PR #25 main dalına birleştirildi (`101a3912a5fb8deb6680dd1e047b7c18d8d8ee88`). F03.05 (Tarama bütçesi ve host nezaketi) başlatılacaktır.
 
