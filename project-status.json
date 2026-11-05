@@ -11,7 +11,7 @@
   "last_approved_subphase": "F04.03",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F04.04-structured-data",
-  "commit_sha": "b2953fe1fe86c412f840b8f1a98f9ef1b6c42673",
+  "commit_sha": "d78ddf2403b42ccb408b11ca66ebe376f75fe499",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/32",
   "last_report": "docs/reports/F04.04.md",
   "blockers": [],
