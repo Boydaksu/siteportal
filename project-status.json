@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-05T12:05:00+03:00",
+  "updated_at": "2026-11-05T14:30:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.0.0",
@@ -9,13 +9,13 @@
   "current_subphase": "F03.04",
   "last_approved_phase": "F02",
   "last_approved_subphase": "F03.03",
-  "status": "IN_PROGRESS",
-  "branch": "main",
-  "commit_sha": "165de977a3b1783aff97589d3c4d7f2c9d2ee2c3",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/24",
-  "last_report": "docs/reports/F03.03.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F03.04-site-metadata-canonical",
+  "commit_sha": "10ddd1d2008f3750eb2f6a73c09f3d997d98ee1b",
+  "pr_url": null,
+  "last_report": "docs/reports/F03.04.md",
   "blockers": [],
-  "next_action": "F03.04 site capi metadata ve canonical analizleri baslatilacaktir.",
+  "next_action": "F03.04 teslim raporu hazirlandi; kullanici teslim onayi ve PR incelemesi bekleniyor.",
   "next_subphase": "F03.05",
   "phases": {
     "F00": {
@@ -64,7 +64,7 @@
         "F03.01": "DONE",
         "F03.02": "DONE",
         "F03.03": "DONE",
-        "F03.04": "IN_PROGRESS",
+        "F03.04": "READY_FOR_REVIEW",
         "F03.05": "NOT_STARTED",
         "F03.06": "NOT_STARTED",
         "F03.07": "NOT_STARTED"

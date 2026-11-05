@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-11-05 | F03.04 | READY_FOR_REVIEW
+- Site Çapı Metadata ve Canonical Analizleri (`docs/reports/F03.04.md`) tamamlandı.
+- `SiteCrawlContext` (`app/SeoAnalyzer/SiteWide/SiteCrawlContext.php`) geliştirildi; snapshot'lar, link grafiği, sitemap URL'leri ve örnekleme/bütçe durumu birleştirildi.
+- `SiteWideMetadataAnalyzer` (`app/SeoAnalyzer/SiteWide/SiteWideMetadataAnalyzer.php`) geliştirildi:
+  - Mükerrer başlık analizi (`ONPAGE_TITLE_DUPLICATE`): Normalize edilmiş başlıklar üzerinden sayfa gruplama ve kanıt sunumu.
+  - Mükerrer meta açıklama analizi (`ONPAGE_META_DESC_DUPLICATE`).
+  - Mükerrer/yakın kopya H1 etiketleri (`CONTENT_NEAR_DUPLICATE`).
+- `SitemapCanonicalConflictAnalyzer` (`app/SeoAnalyzer/SiteWide/SitemapCanonicalConflictAnalyzer.php`) geliştirildi (`TECH_SITEMAP_URL_CONFLICT`):
+  - Sitemap'te yer alıp `noindex` direktifi taşıyan sayfaların tespiti (Hard Failure).
+  - Sitemap'te yer alıp kendisinden farklı bir canonical hedefi gösteren (non-self canonical) sayfaların tespiti (Warning).
+  - Sitemap'te yer alıp HTTP 3xx/4xx/5xx dönen sayfaların tespiti.
+- `OrphanPageAnalyzer` (`app/SeoAnalyzer/SiteWide/OrphanPageAnalyzer.php`) geliştirildi (`LINK_ORPHAN_SUSPECT`):
+  - **Kritik Kabul Kriteri Kalkanı:** Tarama bütçe/derinlik sınırı nedeniyle kısmi/örneklemeli kaldığında (`isPartialCrawl() === true`), gelen bağlantısı olmayan sayfalar **kesin yetim sayfa (`confirmed orphan`) olarak işaretlenmez!**
+  - Şüpheli yetim sayfa (`suspected_orphan`, `Confidence::LOW`) olarak işaretlenir ve kanıtta taranmamış sayfalardan bağlantı alma ihtimali vurgulanır.
+  - Tam taramada (`isPartialCrawl() === false`) kesin yetim sayfa tespiti yapılır. Tohum URL kök giriş noktası olduğu için yetim sayılmaz.
+- `SiteWideAuditEngine` ve `SiteWideAuditResult` orkestrasyonu geliştirildi.
+- Kapsamlı birim testleri (4 yeni test dosyası, 14 test, 62 assertion) eklendi. Toplam test sayısı 438 test, 2992 assertion (%100 PASS).
+- Kullanıcı teslim kabulü ve açık onayı bekleniyor; F03.05'e geçilmez (DUR).
+
 ## 2026-11-05 | F03.03 kabulü
 - Kullanıcı “onaylıyorum” ile F03.03 teslimi, PR #24 birleştirmesi ve F03.04 başlangıcını onayladı; PR #24 main dalına birleştirildi (`165de977a3b1783aff97589d3c4d7f2c9d2ee2c3`). F03.04 (Site çapı metadata ve canonical analizleri) başlatılacaktır.
 
