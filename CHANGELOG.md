@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-05 | F03.04 kabulü
+- Kullanıcı “onaylıyorum” ile F03.04 teslimi, PR #25 birleştirmesi ve F03.05 başlangıcını onayladı; PR #25 main dalına birleştirildi (`101a3912a5fb8deb6680dd1e047b7c18d8d8ee88`). F03.05 (Tarama bütçesi ve host nezaketi) başlatılacaktır.
+
 ## 2026-11-05 | F03.04 | READY_FOR_REVIEW
 - Site Çapı Metadata ve Canonical Analizleri (`docs/reports/F03.04.md`) tamamlandı.
 - `SiteCrawlContext` (`app/SeoAnalyzer/SiteWide/SiteCrawlContext.php`) geliştirildi; snapshot'lar, link grafiği, sitemap URL'leri ve örnekleme/bütçe durumu birleştirildi.
