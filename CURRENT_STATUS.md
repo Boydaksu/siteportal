@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #31](https://github.com/Boydaksu/siteportal/pull/31) birleştirildi (`9fed82041b3892fad3ff67595e601f0463a0bc87`).
 - **Aktif alt faz / durum:** F04.04 — JSON-LD Microdata RDFa / READY_FOR_REVIEW.
 - **Dal:** `phase/F04.04-structured-data`.
-- **Aktif PR / kanıt commit:** PR açılacak (PR #32).
+- **Aktif PR / kanıt commit:** [PR #32](https://github.com/Boydaksu/siteportal/pull/32) (`b2953fe1fe86c412f840b8f1a98f9ef1b6c42673`).
 - **Rapor:** `docs/reports/F04.04.md`.
 - **Yerel sonuç:** PASS; PHP lint (314 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 547 test / 3704 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** F04.04 JSON-LD, Microdata ve RDFa yapılandırılmış veri ayrıştırıcısı, Schema.org doğrulaması, Google Rich Result kuralları ve testleri tamamlandı (%100 PASS).
