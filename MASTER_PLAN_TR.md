@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #26](https://github.com/Boydaksu/siteportal/pull/26) birleştirildi (`048f4819fc8433ad8cd9ebfe418e0cf29a882f03`).
 - **Aktif alt faz / durum:** F03.06 — Çok sayfalı rapor/CSV / READY_FOR_REVIEW.
 - **Dal:** `phase/F03.06-multipage-report-csv`.
-- **Aktif PR / kanıt commit:** PR açılıyor.
+- **Aktif PR / kanıt commit:** [PR #27](https://github.com/Boydaksu/siteportal/pull/27) / commit `89e80ec`.
 - **Rapor:** Hazır (`docs/reports/F03.06.md`).
 - **Yerel sonuç:** PASS; PHP lint (273 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 470 test / 3164 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** F03.06 tamamlandı (SiteWidePageItem, PaginatedResult, MultiPageReportPresenter sayfalama, arama ve filtreleme, OWASP CSV Formula Injection kalkanı, UTF-8 BOM destekli MultiPageCsvExporter, 10 ve 100 sayfalık sentetik veri setleri ile uçtan uca doğrulama). Toplam 470 test, 3164 assertion %100 PASS.
