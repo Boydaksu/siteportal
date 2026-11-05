@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace SitePortal\Core\Parser;
 
+use SitePortal\Core\Parser\StructuredData\StructuredDataResult;
+
 /**
  * ParsedDocument — HTML Ayrıştırma Sonucu Veri Nesnesi (Value Object)
  *
@@ -66,8 +68,14 @@ final class ParsedDocument
         private readonly int $textLength,
         private readonly int $wordCount,
         private readonly float $parseTimeMs,
-        private readonly bool $isMalformed
+        private readonly bool $isMalformed,
+        private readonly ?StructuredDataResult $structuredData = null
     ) {
+    }
+
+    public function getStructuredData(): ?StructuredDataResult
+    {
+        return $this->structuredData;
     }
 
     public function getTitle(): ?string
@@ -362,6 +370,7 @@ final class ParsedDocument
             'word_count' => $this->wordCount,
             'parse_time_ms' => $this->parseTimeMs,
             'is_malformed' => $this->isMalformed,
+            'structured_data' => $this->structuredData?->toArray(),
         ];
     }
 }

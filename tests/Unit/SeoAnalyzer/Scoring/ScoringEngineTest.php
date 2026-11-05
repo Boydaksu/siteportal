@@ -84,7 +84,7 @@ final class ScoringEngineTest extends TestCase
 
     public function testV1RuleRegistryFactoryRegistersAll32Rules(): void
     {
-        $registry = V1RuleRegistryFactory::createRegistry();
+        $registry = V1RuleRegistryFactory::createRegistry(includeV12: false);
 
         self::assertSame(32, $registry->count());
         self::assertCount(32, $registry->all());
@@ -99,9 +99,23 @@ final class ScoringEngineTest extends TestCase
         self::assertTrue($registry->has('A11Y_IMAGE_ALT'));
     }
 
+    public function testV1RuleRegistryFactoryRegistersAll36RulesWithV12(): void
+    {
+        $registry = V1RuleRegistryFactory::createRegistry(includeV12: true);
+
+        self::assertSame(36, $registry->count());
+        self::assertCount(36, $registry->all());
+
+        // Verify schema rules
+        self::assertTrue($registry->has('SCHEMA_INVALID_JSONLD'));
+        self::assertTrue($registry->has('SCHEMA_INVALID_CONTEXT'));
+        self::assertTrue($registry->has('SCHEMA_REQUIRED_FOR_TYPE'));
+        self::assertTrue($registry->has('SCHEMA_NO_RICH_TYPE'));
+    }
+
     public function testAuditEngineExecutesAllRulesDeterministically(): void
     {
-        $registry = V1RuleRegistryFactory::createRegistry();
+        $registry = V1RuleRegistryFactory::createRegistry(includeV12: false);
         $engine = new AuditEngine($registry);
 
         $snapshot = $this->createSampleSnapshot();

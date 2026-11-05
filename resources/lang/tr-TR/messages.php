@@ -118,6 +118,16 @@ return [
     'rules.LINK_REL_NOFOLLOW.fix' => "Site içi bağlantılarda rel=\"nofollow\" yerine doğrudan takip edilebilir bağlantılar kullanarak iç PageRank akışını koruyun.",
     'rules.A11Y_IMAGE_ALT.fix' => "Görsellere içeriğini ve işlevini açıklayan alt metinler ekleyin; yalnızca süsleme amaçlı görsellerde boş alt=\"\" kullanın.",
 
+    // F04.04 — Schema & Structured Data Kuralları
+    'rules.SCHEMA_INVALID_JSONLD.title' => 'JSON-LD Sözdizimi Geçerliliği',
+    'rules.SCHEMA_INVALID_JSONLD.fix' => 'JSON-LD betiğindeki sözdizimi ve ayrıştırma hatalarını giderin; eksik tırnak, bozuk virgül veya kapanmamış parantezleri düzeltin.',
+    'rules.SCHEMA_INVALID_CONTEXT.title' => 'Schema.org Bağlam ve Tür Geçerliliği',
+    'rules.SCHEMA_INVALID_CONTEXT.fix' => 'Yapılandırılmış verilerinizde geçerli bir Schema.org "@context" adresi (https://schema.org) ve geçerli bir "@type" tanımlayın.',
+    'rules.SCHEMA_REQUIRED_FOR_TYPE.title' => 'Google Zengin Sonuç Zorunlu Alanları',
+    'rules.SCHEMA_REQUIRED_FOR_TYPE.fix' => 'Sayfa türüne uygun Google Rich Result zorunlu alanlarını (örn. Product için name, Article için headline) eksiksiz tanımlayın.',
+    'rules.SCHEMA_NO_RICH_TYPE.title' => 'Zengin Sonuç (Rich Result) Tür Uygunluğu',
+    'rules.SCHEMA_NO_RICH_TYPE.fix' => 'Arama sonuçlarında zengin kart görünürlüğü elde etmek için sayfa amacına uygun Article, Product, BreadcrumbList veya FAQPage türleri ekleyin (isteğe bağlıdır).',
+
     // F02.06 — Rapor UI anahtarları
     'report.title' => 'SEO Denetim Raporu',
     'report.summary' => 'Denetim Özeti',
