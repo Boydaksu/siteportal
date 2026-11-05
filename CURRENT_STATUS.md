@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #30](https://github.com/Boydaksu/siteportal/pull/30) birleştirildi (`a1e68128ced06de792a6c9702cfa208351de032e`).
 - **Aktif alt faz / durum:** F04.03 — CWV rapor deneyimi / READY_FOR_REVIEW.
 - **Dal:** `phase/F04.03-cwv-report-ux`.
-- **Aktif PR / kanıt commit:** Commit ve PR açılacak.
+- **Aktif PR / kanıt commit:** [PR #31](https://github.com/Boydaksu/siteportal/pull/31) / `b267b443c1401d46b0d61892cad84ad4903c50b8`.
 - **Rapor:** `docs/reports/F04.03.md`.
 - **Yerel sonuç:** PASS; PHP lint (307 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 522 test / 3580 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** F04.03 Core Web Vitals (LCP, INP, CLS) rapor deneyimi tamamlandı; eşik sınır testleri, fail-safe veri yokluğu kontrolü, 3-renkli görsel cetvel pin hesabı, CrUX histogramı, mobil vs masaüstü karşılaştırması ve eyleme dönüştürülebilir fırsatlar (opportunities) geliştirildi ve doğrulandı.
