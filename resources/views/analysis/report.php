@@ -44,6 +44,7 @@ use SitePortal\SeoAnalyzer\Scoring\AuditScore;
  * @var string $disclaimer
  * @var string $locale
  * @var I18n $i18n
+ * @var array<string, mixed>|null $cwv
  */
 
 $publicId = (string) ($analysis['public_id'] ?? '');
@@ -187,6 +188,10 @@ if ($overall_score !== null) {
             <?php endforeach; ?>
         </div>
     </div>
+
+    <?php if (isset($cwv) && is_array($cwv) && !empty($cwv)): ?>
+        <?php require __DIR__ . '/partials/cwv_card.php'; ?>
+    <?php endif; ?>
 
     <!-- Filtreleme ve Sekmeler -->
     <div style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
