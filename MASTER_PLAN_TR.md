@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #28](https://github.com/Boydaksu/siteportal/pull/28) birleştirildi (`33cca85b45b8bf4a8c219645fda506453f742aa0`).
 - **Aktif alt faz / durum:** F04.01 — PageSpeed Insights bağlayıcısı / READY_FOR_REVIEW.
 - **Dal:** `phase/F04.01-pagespeed-connector`.
-- **Aktif PR / kanıt commit:** PR #29.
+- **Aktif PR / kanıt commit:** [PR #29](https://github.com/Boydaksu/siteportal/pull/29) / commit `84a1cfc`.
 - **Rapor:** `docs/reports/F04.01.md`.
 - **Yerel sonuç:** PASS; PHP lint (287 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 490 test / 3276 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** F04.01 PageSpeed Insights API v5 bağlayıcısı tamamlandı (mobil ve masaüstü Lighthouse lab metrikleri, scored vs raw metrics ayrımı, fail-safe hata izolasyonu, TTL destekli safe cache, lab veri kaynağı etiketlemesi).
