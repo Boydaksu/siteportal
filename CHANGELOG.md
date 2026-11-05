@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-11-05 | F03.07 | READY_FOR_REVIEW
+- V1.1 Uçtan Uca Kapanış (`docs/reports/F03.07.md`) ve F03 Ana Faz Kapanış Özeti (`docs/reports/F03-PHASE-SUMMARY.md`) tamamlandı.
+- `CrawlProgress` (`app/Core/Crawler/CrawlProgress.php`) geliştirildi:
+  - Gerçek zamanlı tarama durumu (`pending`, `running`, `stopped`, `completed`, `failed`), taranan sayfa sayısı, tüketilen bayt, hata sayısı, geçen süre, durma nedeni ve kuyruk boyutu telemetri modeli (`toArray`).
+- `SiteCrawlerCoordinator` (`app/Core/Crawler/SiteCrawlerCoordinator.php`) geliştirildi:
+  - URL Frontier, Link Graph, Crawl Scope Policy, Adaptive Delay, Host Rate Limiter, Circuit Breaker ve Crawl Budget bileşenlerini koordine eden üst seviye orkestratör.
+  - Canlı durdurma mekanizması (`stopCrawl`) ile temiz sonlandırma ve telemetri güncelleme desteği.
+  - Taranan başarılı HTML sayfalarından iç bağlantıları otomatik çıkarma (`LinkExtractor`), grafiğe ekleme (`LinkGraph`) ve BFS sıralı önceliklendirme (`BfsCrawlPrioritizer`).
+- `SiteWideCrawlEndToEndTest` (`tests/Integration/Crawler/SiteWideCrawlEndToEndTest.php`) entegrasyon test paketi yazıldı:
+  - Senaryo 1: Eksik sitemap (404/yok) durumunda crawler'ın iç bağlantılarla taramaya devam etmesi ve sitemap çelişki kuralının `NOT_APPLICABLE` üretmesi.
+  - Senaryo 2: Yönlendirme döngüsünde (Redirect loop) crawler'ın askıda kalmadan döngüyü izole etmesi ve `TECH_REDIRECT_LOOP` FAIL bulgusu üretmesi.
+  - Senaryo 3: Robots.txt engellemesinde fail-closed kalkanının devreye girmesi ve `TECH_ROBOTS_DISALLOW` WARN/HIGH bulgusu üretmesi.
+  - Senaryo 4: 2.000 URL içeren gövdede bellek taşması olmadan BFS önceliklendirmesi ile tam bütçe sınırında durulması.
+  - Senaryo 5: 10 sayfa kota sınırında taramanın durması ve kısmi tarama güvenlik kalkanı ile `OrphanPageAnalyzer`'ın kesin yetim yerine şüpheli (`LINK_ORPHAN_SUSPECT`) üretmesi.
+  - Senaryo 6: Devam eden taramanın temiz durdurulması (`stopped`), süre ve telemetri doğrulaması.
+- Toplam test sayısı 476 test, 3198 assertion (%100 PASS).
+- F03.07 alt faz teslimi ve F03 ana faz kapanış onayı bekleniyor; kullanıcı açık onayı olmadan bir sonraki faza geçilmez (DUR).
+
 ## 2026-11-05 | F03.06 kabulü
 - Kullanıcı “onaylıyorum” ile F03.06 teslimi, PR #27 birleştirmesi ve F03.07 başlangıcını onayladı; PR #27 main dalına birleştirildi (`89af2b43783c0ad3cbb31ae12de842e323e3d673`). F03.07 (V1.1 uçtan uca kapanış) başlatılacaktır.
 
