@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-11-05 | F04.02 | READY_FOR_REVIEW
+- CrUX Gerçek Kullanıcı Verisi Bağlayıcısı (`docs/reports/F04.02.md`) tamamlandı.
+- `config/crux.php` eklendi: CrUX API anahtarı, endpoint, 15s zaman aşımı, 24 saatlik önbellek yaşam süresi ve varsayılan form faktörü yapılandırması.
+- `CruxFormFactor` (`app/Core/Performance/CruxFormFactor.php`) eklendi (`ALL_FORM_FACTORS`, `PHONE`, `DESKTOP`, `TABLET`).
+- `CruxStatus` (`app/Core/Performance/CruxStatus.php`) eklendi (`AVAILABLE`, `NO_DATA`, `UNAVAILABLE`).
+- `CruxCollectionPeriod` (`app/Core/Performance/CruxCollectionPeriod.php`) geliştirildi:
+  - 28 günlük yuvarlanan pencere başlangıç/bitiş tarihleri ve yerelleştirilmiş formatlama desteği.
+- `CruxMetricItem` (`app/Core/Performance/CruxMetricItem.php`) geliştirildi:
+  - 75. yüzdelik dilim (p75) değeri, gösterim metni, dağılım histogramı ve metrik durumu.
+- `CruxFieldMetrics` (`app/Core/Performance/CruxFieldMetrics.php`) geliştirildi:
+  - LCP, INP, CLS, FCP, TTFB, FID metrikleri için 75. yüzdelik dilim eşik değerlendirmesi.
+  - Genel Core Web Vitals değerlendirmesi (`PASSED`, `NEEDS_IMPROVEMENT`, `FAILED`, `UNKNOWN`).
+  - PSI `loadingExperience` adaptörü (`fromPageSpeedMetrics`).
+- `CruxResult` (`app/Core/Performance/CruxResult.php`) geliştirildi:
+  - Sonuç değer nesnesi: URL, form faktörü, durum, saha metrikleri, 28 günlük toplama penceresi, mesaj, veri kaynağı (`data_source: 'chrome_ux_report'`), saha verisi (`is_field_data: true`) ve lab ayrımı (`is_lab_data: false`).
+  - Yetersiz trafikte ve HTTP 404 durumunda `CruxResult::noData()` ile sahte 0 puan verilmemesi ve `UNKNOWN` döndürülmesi.
+  - Kesintilerde `CruxResult::unavailable()` ile fail-safe güvenlik kalkanı.
+- `CruxCacheInterface` ve `MemoryCruxCache` (`app/Core/Performance/MemoryCruxCache.php`) geliştirildi:
+  - TTL destekli bellek önbelleği ile URL/Origin ve form faktörü bazında kota koruması.
+- `CruxClient` (`app/Core/Performance/CruxClient.php`) geliştirildi:
+  - Google Chrome UX Report API POST entegrasyonu (`queryUrl`, `queryOrigin`, `fromPageSpeedLoadingExperience`).
+  - HTTP 404, 429 kota aşımı ve 5xx sunucu kesintilerinde fail-safe hata yönetimi.
+- `SafeHttpClient` (`app/Core/Http/SafeHttpClient.php`) geliştirildi: POST istekleri için `CURLOPT_POSTFIELDS` desteği eklendi.
+- Çeviriler (`resources/lang/tr-TR/messages.php`, `resources/lang/en-US/messages.php`) güncellendi (`crux.field_data_label`, `crux.no_field_data`, vb.).
+- 17 yeni birim ve entegrasyon testi eklendi; toplam test sayısı 507 test, 3406 assertion (%100 PASS).
+- F04.02 alt faz teslimi ve inceleme onayı bekleniyor; kullanıcı onayı olmadan bir sonraki alt faza geçilmez (DUR).
+
 ## 2026-11-05 | F04.01 kabulü ve PR #29 merge
 - Kullanıcı “Onaylıyorum” ile F04.01 teslim kabulünü, PR #29 birleştirmesini ve F04.02 başlangıcını onayladı; PR #29 main dalına squash-merge edildi (`390bcd9449e0997bc144ef64fc2b032a3f2e0b8d`).
 - F04.01 alt fazı (PageSpeed Insights API bağlayıcısı) resmen DONE durumuna getirildi.

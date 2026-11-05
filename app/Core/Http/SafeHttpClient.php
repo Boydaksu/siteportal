@@ -228,8 +228,16 @@ class SafeHttpClient implements HttpClientInterface
         $upperMethod = strtoupper($method);
         if ($upperMethod === 'HEAD') {
             curl_setopt($ch, CURLOPT_NOBODY, true);
+        } elseif ($upperMethod === 'POST') {
+            curl_setopt($ch, CURLOPT_POST, true);
+            if (isset($options['body']) && is_string($options['body'])) {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $options['body']);
+            }
         } elseif ($upperMethod !== 'GET' && $upperMethod !== '') {
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $upperMethod);
+            if (isset($options['body']) && is_string($options['body'])) {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $options['body']);
+            }
         }
 
         // Header parser and early Content-Length guard

@@ -1,0 +1,28 @@
+=== PHP LINT (297 files) ===
+PASS: 297 proje PHP dosyası lint kontrolünden geçti; vendor/ignore edilen kopyalar kapsam dışı.
+
+=== PSR-12 CODING STANDARD (phpcs) ===
+Time: 243ms; Memory: 10MB
+[OK] 0 errors, 0 warnings
+
+=== PHPSTAN STATIC ANALYSIS (Level 8) ===
+Note: Using configuration file phpstan.neon.
+[OK] No errors
+
+=== PHPUNIT TEST SUITE ===
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+Runtime:       PHP 8.4.20
+Configuration: phpunit.xml
+OK, but there were issues!
+Tests: 507, Assertions: 3406, PHPUnit Notices: 3, Skipped: 2.
+
+=== NEGATIVE QUALITY GATES ===
+Ran 4 tests in 1.801s
+OK (4 tests)
+PASS: PHP lint, PSR-12, PHPStan level 8, PHPUnit ve dört olumsuz kalite kapısı TEST'i.
+
+=== VERIFICATION SUITE ===
+PASS: 9 ana faz, 65 alt faz, 84 kural, 97 Markdown dosyası; JSON ve iç bağlantılar geçerli.
+PASS: ADR referansları ve mimari kısıtları tam.
+PASS: Tehdit modeli T01–T15 tam ve bağımlılık envanteri kilitli.
+PASS: Manifest bütün takip edilen dosyaları kapsıyor.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-05T21:48:00+03:00",
+  "updated_at": "2026-11-05T21:58:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.1.0",
@@ -9,13 +9,13 @@
   "current_subphase": "F04.02",
   "last_approved_phase": "F03",
   "last_approved_subphase": "F04.01",
-  "status": "IN_PROGRESS",
+  "status": "READY_FOR_REVIEW",
   "branch": "phase/F04.02-crux-field-data",
   "commit_sha": null,
   "pr_url": null,
-  "last_report": "docs/reports/F04.01.md",
+  "last_report": "docs/reports/F04.02.md",
   "blockers": [],
-  "next_action": "F04.02 CrUX gerçek kullanıcı verisi bağlayıcısı geliştirmesi.",
+  "next_action": "F04.02 PR açılışı, inceleme ve kullanıcı teslim onayı bekleniyor (DUR).",
   "next_subphase": "F04.03",
   "phases": {
     "F00": {
@@ -75,7 +75,7 @@
       "status": "IN_PROGRESS",
       "subphases": {
         "F04.01": "DONE",
-        "F04.02": "IN_PROGRESS",
+        "F04.02": "READY_FOR_REVIEW",
         "F04.03": "NOT_STARTED",
         "F04.04": "NOT_STARTED",
         "F04.05": "NOT_STARTED",

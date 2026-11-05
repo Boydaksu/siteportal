@@ -173,4 +173,12 @@ return [
     'pagespeed.mobile' => 'Mobil',
     'pagespeed.desktop' => 'Masaüstü',
     'pagespeed.performance_score' => 'Performans Skoru',
+
+    // F04.02 — CrUX gerçek kullanıcı verisi
+    'crux.field_data_label' => 'Gerçek Kullanıcı Verisi (CrUX)',
+    'crux.no_field_data' => 'Yeterli gerçek kullanıcı verisi bulunamadı',
+    'crux.field_data_disclaimer' => 'Bu veriler Chrome kullanıcılarının son 28 günlük saha deneyimlerinden derlenmiştir; sentetik laboratuvar simülasyonu değildir.',
+    'crux.collection_window' => '28 Günlük Pencere: :window',
+    'crux.cwv_passed' => 'Core Web Vitals Değerlendirmesini Geçti',
+    'crux.cwv_failed' => 'Core Web Vitals İyileştirme Gerektiriyor',
 ];
