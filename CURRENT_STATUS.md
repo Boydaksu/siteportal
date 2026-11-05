@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #29](https://github.com/Boydaksu/siteportal/pull/29) birleştirildi (`390bcd9449e0997bc144ef64fc2b032a3f2e0b8d`).
 - **Aktif alt faz / durum:** F04.02 — CrUX gerçek kullanıcı verisi / READY_FOR_REVIEW.
 - **Dal:** `phase/F04.02-crux-field-data`.
-- **Aktif PR / kanıt commit:** PR açılışı bekleniyor.
+- **Aktif PR / kanıt commit:** [PR #30](https://github.com/Boydaksu/siteportal/pull/30) / commit `98fb877`.
 - **Rapor:** `docs/reports/F04.02.md`.
 - **Yerel sonuç:** PASS; PHP lint (297 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 507 test / 3406 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** F04.02 CrUX (Chrome UX Report) gerçek kullanıcı verisi bağlayıcısı tamamlandı (75. yüzdelik dilim p75 metrikleri, 28 günlük yuvarlanan pencere, veri yokluğunda UNKNOWN ve sahte 0 verilmemesi, lab vs field ayrımı, TTL destekli safe cache, fail-safe hata kalkanı).
