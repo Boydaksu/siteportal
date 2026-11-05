@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-11-05 | F04.01 | READY_FOR_REVIEW
+- PageSpeed Insights Bağlayıcısı (`docs/reports/F04.01.md`) tamamlandı.
+- `config/pagespeed.php` eklendi: API anahtarı, endpoint, zaman aşımı ve önbellek yaşam süresi yapılandırması.
+- `PageSpeedStrategy` (`app/Core/Performance/PageSpeedStrategy.php`) eklendi (`MOBILE`, `DESKTOP`).
+- `PageSpeedMetricStatus` (`app/Core/Performance/PageSpeedMetricStatus.php`) eklendi (`GOOD`, `NEEDS_IMPROVEMENT`, `POOR`, `UNKNOWN`).
+- `PageSpeedLabMetrics` (`app/Core/Performance/PageSpeedLabMetrics.php`) geliştirildi:
+  - FCP, LCP, TBT, CLS, Speed Index ve TTI için ham metrik (`raw_value`), gösterim değeri (`display_value`), Lighthouse puanı (`score`: 0-100) ve standart Core Web Vitals eşiklerine göre derecelendirme (`status`).
+  - Scored vs raw metrics ayrımı uygulandı.
+- `PageSpeedResult` (`app/Core/Performance/PageSpeedResult.php`) geliştirildi:
+  - Sonuç değer nesnesi: URL, strateji, başarı durumu, Lighthouse performans skoru (0-100), lab metrikleri, hata nedeni ve zaman damgası.
+  - Veri kaynağı şeffaflığı: `data_source: 'google_pagespeed_api'` ve `is_lab_data: true` etiketleri.
+  - API arızalarında `PageSpeedResult::unavailable()` ile fail-safe güvenlik kalkanı.
+- `PageSpeedCacheInterface` ve `MemoryPageSpeedCache` (`app/Core/Performance/MemoryPageSpeedCache.php`) geliştirildi:
+  - TTL destekli bellek önbelleği ile URL ve strateji bazında API kotası koruması.
+- `PageSpeedClient` (`app/Core/Performance/PageSpeedClient.php`) geliştirildi:
+  - Google PageSpeed Insights API v5 bağlantısı, mobil/masaüstü stratejileri, HTTP 429 kota aşımı ve 5xx sunucu hatalarında SEO raporunu bozmama (fail-safe).
+- Çeviriler (`resources/lang/tr-TR/messages.php`, `resources/lang/en-US/messages.php`) güncellendi.
+- 14 yeni birim ve entegrasyon testi eklendi; toplam test sayısı 490 test, 3276 assertion (%100 PASS).
+- F04.01 alt faz teslimi ve inceleme onayı bekleniyor; kullanıcı onayı olmadan bir sonraki alt faza geçilmez (DUR).
+
 ## 2026-11-05 | F03 ana faz kapanışı ve F03.07 kabulü
 - Kullanıcı “onaylıyorum” ile F03.07 teslimini, PR #28 birleştirmesini ve F03 — V1.1 Ana Faz Kapanışını onayladı; PR #28 main dalına squash-merge edildi (`33cca85b45b8bf4a8c219645fda506453f742aa0`).
 - F03 ana fazı (V1.1: Site Çapında Kontrollü Tarama) resmen DONE durumuna getirildi.
