@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-05 | F04.01 kabulü ve PR #29 merge
+- Kullanıcı “Onaylıyorum” ile F04.01 teslim kabulünü, PR #29 birleştirmesini ve F04.02 başlangıcını onayladı; PR #29 main dalına squash-merge edildi (`390bcd9449e0997bc144ef64fc2b032a3f2e0b8d`).
+- F04.01 alt fazı (PageSpeed Insights API bağlayıcısı) resmen DONE durumuna getirildi.
+- Sıradaki alt faz F04.02 (CrUX gerçek kullanıcı verisi) başlatılacaktır.
+
 ## 2026-11-05 | F04.01 | READY_FOR_REVIEW
 - PageSpeed Insights Bağlayıcısı (`docs/reports/F04.01.md`) tamamlandı.
 - `config/pagespeed.php` eklendi: API anahtarı, endpoint, zaman aşımı ve önbellek yaşam süresi yapılandırması.
