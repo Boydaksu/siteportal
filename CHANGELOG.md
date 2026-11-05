@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-05 | F03.06 kabulü
+- Kullanıcı “onaylıyorum” ile F03.06 teslimi, PR #27 birleştirmesi ve F03.07 başlangıcını onayladı; PR #27 main dalına birleştirildi (`89af2b43783c0ad3cbb31ae12de842e323e3d673`). F03.07 (V1.1 uçtan uca kapanış) başlatılacaktır.
+
 ## 2026-11-05 | F03.06 | READY_FOR_REVIEW
 - Çok Sayfalı Rapor/CSV (`docs/reports/F03.06.md`) tamamlandı.
 - `SiteWidePageItem` (`app/SeoAnalyzer/Presentation/SiteWidePageItem.php`) geliştirildi:

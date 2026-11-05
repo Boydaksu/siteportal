@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-05T17:00:00+03:00",
+  "updated_at": "2026-11-05T17:18:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.0.0",
   "current_phase": "F03",
-  "current_subphase": "F03.06",
+  "current_subphase": "F03.07",
   "last_approved_phase": "F02",
-  "last_approved_subphase": "F03.05",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F03.06-multipage-report-csv",
-  "commit_sha": "89e80ec",
+  "last_approved_subphase": "F03.06",
+  "status": "IN_PROGRESS",
+  "branch": "main",
+  "commit_sha": "89af2b43783c0ad3cbb31ae12de842e323e3d673",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/27",
   "last_report": "docs/reports/F03.06.md",
   "blockers": [],
-  "next_action": "Kullanıcı teslim kabulü ve açık onayı bekleniyor (DUR).",
-  "next_subphase": "F03.07",
+  "next_action": "F03.07 V1.1 uçtan uca kapanış ve senaryo testleri başlatılacaktır.",
+  "next_subphase": "F04.01",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -66,8 +66,8 @@
         "F03.03": "DONE",
         "F03.04": "DONE",
         "F03.05": "DONE",
-        "F03.06": "READY_FOR_REVIEW",
-        "F03.07": "NOT_STARTED"
+        "F03.06": "DONE",
+        "F03.07": "IN_PROGRESS"
       }
     },
     "F04": {
@@ -302,19 +302,25 @@
       "approval_reference": "2026-11-05: Kullanıcı F03.05 teslim kabulü + PR #26 merge + F03.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-05: Kullanıcı F03.05 teslim kabulü + PR #26 merge + F03.06 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F03.06": {
+      "approved_at": "2026-11-05T17:16:41+03:00",
+      "approval_reference": "2026-11-05: Kullanıcı F03.06 teslim kabulü + PR #27 merge + F03.07 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-05: Kullanıcı F03.06 teslim kabulü + PR #27 merge + F03.07 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F03.06",
-    "authorized_at": "2026-11-05T16:44:14+03:00",
-    "reference": "F03.05 teslim kabulü ve F03.06 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F03.07",
+    "authorized_at": "2026-11-05T17:16:41+03:00",
+    "reference": "F03.06 teslim kabulü ve F03.07 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F03.05",
+    "subphase": "F03.06",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/26",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/27",
     "merged": true,
-    "merge_sha": "048f4819fc8433ad8cd9ebfe418e0cf29a882f03",
+    "merge_sha": "89af2b43783c0ad3cbb31ae12de842e323e3d673",
     "approval_commit": null,
     "approval_commit_ci_run": null
   },
