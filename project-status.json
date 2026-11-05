@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-06T00:25:00+03:00",
+  "updated_at": "2026-11-06T00:36:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.1.0",
   "current_phase": "F04",
-  "current_subphase": "F04.03",
+  "current_subphase": "F04.04",
   "last_approved_phase": "F03",
-  "last_approved_subphase": "F04.02",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F04.03-cwv-report-ux",
-  "commit_sha": "b267b443c1401d46b0d61892cad84ad4903c50b8",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/31",
+  "last_approved_subphase": "F04.03",
+  "status": "IN_PROGRESS",
+  "branch": "phase/F04.04-structured-data",
+  "commit_sha": null,
+  "pr_url": null,
   "last_report": "docs/reports/F04.03.md",
   "blockers": [],
-  "next_action": "F04.03 kullanıcı incelemesi ve onayı bekleniyor (DUR).",
-  "next_subphase": "F04.04",
+  "next_action": "F04.04 JSON-LD, Microdata ve RDFa parser ve Schema.org denetimi geliştirmesi.",
+  "next_subphase": "F04.05",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -76,8 +76,8 @@
       "subphases": {
         "F04.01": "DONE",
         "F04.02": "DONE",
-        "F04.03": "READY_FOR_REVIEW",
-        "F04.04": "NOT_STARTED",
+        "F04.03": "DONE",
+        "F04.04": "IN_PROGRESS",
         "F04.05": "NOT_STARTED",
         "F04.06": "NOT_STARTED",
         "F04.07": "NOT_STARTED"
@@ -326,19 +326,25 @@
       "approval_reference": "2026-11-06: Kullanıcı F04.02 teslim kabulü + PR #30 merge + F04.03 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-06: Kullanıcı F04.02 teslim kabulü + PR #30 merge + F04.03 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F04.03": {
+      "approved_at": "2026-11-06T00:34:00+03:00",
+      "approval_reference": "2026-11-06: Kullanıcı F04.03 teslim kabulü + PR #31 merge + F04.04 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-06: Kullanıcı F04.03 teslim kabulü + PR #31 merge + F04.04 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F04.03",
-    "authorized_at": "2026-11-06T00:03:00+03:00",
-    "reference": "F04.02 teslimi ve F04.03 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F04.04",
+    "authorized_at": "2026-11-06T00:34:00+03:00",
+    "reference": "F04.03 teslimi ve F04.04 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F04.02",
+    "subphase": "F04.03",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/30",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/31",
     "merged": true,
-    "merge_sha": "a1e68128ced06de792a6c9702cfa208351de032e",
+    "merge_sha": "9fed82041b3892fad3ff67595e601f0463a0bc87",
     "approval_commit": null,
     "approval_commit_ci_run": null
   },

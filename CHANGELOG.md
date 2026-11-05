@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-06 | F04.03 kabulü ve PR #31 merge
+- Kullanıcı “onaylıyorum” ile F04.03 teslim kabulünü, PR #31 birleştirmesini ve F04.04 başlangıcını onayladı; PR #31 main dalına squash-merge edildi (`9fed82041b3892fad3ff67595e601f0463a0bc87`).
+- F04.03 alt fazı (CWV rapor deneyimi) resmen DONE durumuna getirildi.
+- Sıradaki alt faz F04.04 (JSON-LD Microdata RDFa) başlatılacaktır.
+
 ## 2026-11-06 | F04.03 | READY_FOR_REVIEW
 - Core Web Vitals Rapor Deneyimi (`docs/reports/F04.03.md`) tamamlandı.
 - `CwvThresholds` (`app/Core/Performance/CwvThresholds.php`) geliştirildi:
