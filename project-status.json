@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-06T16:25:00+03:00",
+  "updated_at": "2026-11-06T16:30:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.1.0",
   "current_phase": "F04",
-  "current_subphase": "F04.06",
+  "current_subphase": "F04.07",
   "last_approved_phase": "F03",
   "last_approved_subphase": "F04.06",
-  "status": "DONE",
-  "branch": "main",
-  "commit_sha": "ca83fe434b3e19bb829948990253ece4d01256a8",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/34",
-  "last_report": "docs/reports/F04.06.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F04.07-v12-regression-closure",
+  "commit_sha": "b5863ad",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/35",
+  "last_report": "docs/reports/F04.07.md",
   "blockers": [],
-  "next_action": "F04.07 V1.2 regresyon ve ana faz kapanışının başlatılması.",
-  "next_subphase": "F04.07",
+  "next_action": "PR #35 ve F04 ana faz kapanış incelemesi için kullanıcı onayı bekleniyor.",
+  "next_subphase": null,
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -80,7 +80,7 @@
         "F04.04": "DONE",
         "F04.05": "DONE",
         "F04.06": "DONE",
-        "F04.07": "NOT_STARTED"
+        "F04.07": "READY_FOR_REVIEW"
       }
     },
     "F05": {
