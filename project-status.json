@@ -11,7 +11,7 @@
   "last_approved_subphase": "F05.01",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F05.02-domain-verification",
-  "commit_sha": null,
+  "commit_sha": "2a6b6c2",
   "pr_url": null,
   "last_report": "docs/reports/F05.02.md",
   "blockers": [],
