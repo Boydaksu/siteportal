@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-06 | F04.06 kabulü ve PR #34 merge
+- Kullanıcı “onaylıyorum” ile F04.06 teslim kabulünü, PR #34 birleştirmesini ve F04.07 başlangıcını onayladı; PR #34 main dalına squash-merge edildi (`ca83fe434b3e19bb829948990253ece4d01256a8`).
+- F04.06 alt fazı (Selektif JS rendering tasarımı) resmen DONE durumuna getirildi.
+- Sıradaki alt faz F04.07 (V1.2 regresyon ve kapanış) başlatılacaktır.
+
 ## 2026-11-06 | F04.06 | READY_FOR_REVIEW
 - Selektif JavaScript Rendering Tasarımı ve Altyapısı (`docs/reports/F04.06.md`) tamamlandı.
 - İzole browser worker mimarisi ve tip güvenli veri modelleri geliştirildi:
