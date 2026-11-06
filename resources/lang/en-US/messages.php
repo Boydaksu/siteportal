@@ -118,6 +118,16 @@ return [
     'rules.LINK_REL_NOFOLLOW.fix' => 'Avoid using rel="nofollow" on internal navigation links so link equity flows efficiently throughout your site.',
     'rules.A11Y_IMAGE_ALT.fix' => 'Add descriptive alt text to images for accessibility and image search; use empty alt="" only for purely decorative elements.',
 
+    // F04.04 — Schema & Structured Data Rules
+    'rules.SCHEMA_INVALID_JSONLD.title' => 'JSON-LD Syntax Validity',
+    'rules.SCHEMA_INVALID_JSONLD.fix' => 'Resolve JSON syntax errors in your application/ld+json script block, such as missing quotes, unclosed braces, or trailing commas.',
+    'rules.SCHEMA_INVALID_CONTEXT.title' => 'Schema.org Context and Type Validity',
+    'rules.SCHEMA_INVALID_CONTEXT.fix' => 'Specify a valid Schema.org "@context" URL (https://schema.org) and a recognized "@type" for structured data entities.',
+    'rules.SCHEMA_REQUIRED_FOR_TYPE.title' => 'Google Rich Result Required Properties',
+    'rules.SCHEMA_REQUIRED_FOR_TYPE.fix' => 'Provide all mandatory properties required for your schema type by Google Search (e.g., name for Product, headline for Article).',
+    'rules.SCHEMA_NO_RICH_TYPE.title' => 'Rich Result Type Eligibility',
+    'rules.SCHEMA_NO_RICH_TYPE.fix' => 'Consider adding Google Rich Result eligible types such as Article, Product, BreadcrumbList, or FAQPage if applicable to this page (optional).',
+
     // F02.06 — Report UI keys
     'report.title' => 'SEO Audit Report',
     'report.summary' => 'Audit Summary',

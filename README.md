@@ -21,9 +21,9 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 |---|---|---|---|
 | F00 | V0.0 | Proje sözleşmesi, repo ve doğrulama altyapısı | DONE |
 | F01 | V0.1 | Güvenli PHP çekirdek ve tarama kuyruğu | DONE |
-| F02 | V1.0 | Üyeliksiz tek URL SEO analizi | IN_PROGRESS |
-| F03 | V1.1 | Kontrollü çok sayfalı site taraması | BEKLİYOR |
-| F04 | V1.2 | Performans, yapılandırılmış veri, mobil | BEKLİYOR |
+| F02 | V1.0 | Üyeliksiz tek URL SEO analizi | DONE |
+| F03 | V1.1 | Kontrollü çok sayfalı site taraması | DONE |
+| F04 | V1.2 | Performans, yapılandırılmış veri, mobil | IN_PROGRESS (F04.04 READY_FOR_REVIEW) |
 | F05 | V2.0 | Üyelik, domain doğrulama, Search Console | BEKLİYOR |
 | F06 | V2.1 | İçerik, AI hazırlık, sektörel modüller | BEKLİYOR |
 | F07 | V3.0 | Ajans, abonelik, API, white-label | BEKLİYOR |

@@ -9,6 +9,7 @@ use DOMElement;
 use DOMNode;
 use DOMXPath;
 use SitePortal\Core\Parser\Exceptions\HtmlTooLargeException;
+use SitePortal\Core\Parser\StructuredData\StructuredDataExtractor;
 
 /**
  * HtmlParser — Güvenli, UTF-8 uyumlu, tek geçişli HTML ve metadata ayrıştırıcı.
@@ -120,7 +121,10 @@ final class HtmlParser implements HtmlParserInterface
         // 7. Bağlantılar (<a>)
         $links = $this->extractLinks($xpath, $effectiveBaseUrl);
 
-        // 8. Gövde metin uzunluğu ve kelime sayısı (script, style vb. temizlendikten sonra)
+        // 8. Yapılandırılmış Veri (JSON-LD, Microdata, RDFa - script'ler silinmeden önce çıkarılır)
+        $structuredData = StructuredDataExtractor::extract($dom);
+
+        // 9. Gövde metin uzunluğu ve kelime sayısı (script, style vb. temizlendikten sonra)
         [$textLength, $wordCount] = $this->calculateTextAndWords($xpath);
 
         $parseTimeMs = round((microtime(true) - $startTime) * 1000, 2);
@@ -147,7 +151,8 @@ final class HtmlParser implements HtmlParserInterface
             textLength: $textLength,
             wordCount: $wordCount,
             parseTimeMs: $parseTimeMs,
-            isMalformed: $isMalformed
+            isMalformed: $isMalformed,
+            structuredData: $structuredData
         );
     }
 

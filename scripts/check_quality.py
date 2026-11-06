@@ -10,7 +10,7 @@ php = php_command()
 commands = [
     [sys.executable, "scripts/check_php.py"],
     php + ["vendor/bin/phpcs"],
-    php + ["vendor/bin/phpstan", "analyse", "--no-progress", "--memory-limit=512M"],
+    php + ["vendor/bin/phpstan", "analyse", "--no-progress", "--debug", "--memory-limit=1G"],
     php + ["vendor/bin/phpunit"],
     [sys.executable, "scripts/test_quality_gates.py"],
 ]

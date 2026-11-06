@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-11-06 | F04.04 | READY_FOR_REVIEW
+- JSON-LD, Microdata ve RDFa Yapılandırılmış Veri Denetimi (`docs/reports/F04.04.md`) tamamlandı.
+- `StructuredDataExtractor` (`app/Core/Parser/StructuredData/StructuredDataExtractor.php`) geliştirildi:
+  - JSON-LD, Microdata ve RDFa ayrıştırıcısı.
+  - `@graph` konteynerleri, dizi öğeleri ve iç içe (nested) nesneleri rekürsif ayrıştırma.
+  - Schema.org context ve namespace doğrulaması.
+  - Google Rich Result destekli türler için zorunlu ve önerilen alan değerlendirmesi (`evaluateRequirements`).
+  - Görünmeyen elementler temizlenmeden önce tek geçişte DOM'dan çıkarma (`HtmlParser`).
+- `ExtractedItem` ve `StructuredDataResult` değer nesneleri eklendi (`app/Core/Parser/StructuredData/`).
+- `ParsedDocument`: `structuredData` alanı, `getStructuredData()` getter'ı ve `toArray()` serileştirmesi eklendi.
+- 4 yeni SEO denetim kuralı eklendi (`app/SeoAnalyzer/Rules/Schema/`):
+  - `SCHEMA_INVALID_JSONLD` (Severity: MEDIUM): JSON-LD parse ve sözdizimi hata tespiti.
+  - `SCHEMA_INVALID_CONTEXT` (Severity: MEDIUM): Geçersiz/eksik context veya type tespiti.
+  - `SCHEMA_REQUIRED_FOR_TYPE` (Severity: MEDIUM): Google zengin sonuç zorunlu alan eksiklikleri (Product name, Article headline vb.).
+  - `SCHEMA_NO_RICH_TYPE` (Severity: INFO): Bilgilendirici zengin sonuç uygunluk önerisi (asla ceza vermez, syntax hatası ile eligibility ayrımı).
+- `SchemaRuleFactory` ve `V1RuleRegistryFactory` entegrasyonu (V1.0 32 kural korunur, V1.2 ile 36 kural).
+- `StructuredDataFixtures` (`tests/Fixtures/StructuredDataFixtures.php`): Geçerli, geçersiz nested, bozuk context ve eksik alan senaryoları.
+- Çeviriler tamamlandı (`resources/lang/tr-TR/messages.php`, `resources/lang/en-US/messages.php` -> `rules.SCHEMA_*`).
+- 25 yeni birim ve entegrasyon testi eklendi; toplam test sayısı 547 test, 3704 assertion (%100 PASS).
+- F04.04 alt faz teslimi ve inceleme onayı bekleniyor; kullanıcı onayı olmadan bir sonraki alt faza geçilmez (DUR).
+
 ## 2026-11-06 | F04.03 kabulü ve PR #31 merge
 - Kullanıcı “onaylıyorum” ile F04.03 teslim kabulünü, PR #31 birleştirmesini ve F04.04 başlangıcını onayladı; PR #31 main dalına squash-merge edildi (`9fed82041b3892fad3ff67595e601f0463a0bc87`).
 - F04.03 alt fazı (CWV rapor deneyimi) resmen DONE durumuna getirildi.
