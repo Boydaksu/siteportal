@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-06T17:01:25+03:00",
+  "updated_at": "2026-11-06T17:14:51+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.2.0",
-  "current_phase": "F04",
-  "current_subphase": "F04.07",
+  "current_phase": "F05",
+  "current_subphase": "F05.01",
   "last_approved_phase": "F04",
   "last_approved_subphase": "F04.07",
-  "status": "DONE",
-  "branch": "main",
-  "commit_sha": "b390ae5f6bd660d1863c952e7f47e5bd219143b5",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/35",
-  "last_report": "docs/reports/F04-PHASE-SUMMARY.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F05.01-account-rbac",
+  "commit_sha": "43f759d",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/36",
+  "last_report": "docs/reports/F05.01.md",
   "blockers": [],
-  "next_action": "F04 ana fazı tamamlandı. F05 (V2.0) ve F05.01 şartnamesi ve planı hazırlanacak.",
-  "next_subphase": "F05.01",
+  "next_action": "PR #36 incelemesi ve F05.01 teslim kabulü için kullanıcı onayı bekleniyor.",
+  "next_subphase": "F05.02",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -85,9 +85,9 @@
     },
     "F05": {
       "version": "V2.0",
-      "status": "NOT_STARTED",
+      "status": "IN_PROGRESS",
       "subphases": {
-        "F05.01": "NOT_STARTED",
+        "F05.01": "READY_FOR_REVIEW",
         "F05.02": "NOT_STARTED",
         "F05.03": "NOT_STARTED",
         "F05.04": "NOT_STARTED",
@@ -359,9 +359,9 @@
     }
   },
   "start_authorization": {
-    "subphase": "F04.07",
-    "authorized_at": "2026-11-06T16:23:00+03:00",
-    "reference": "F04.06 teslimi ve F04.07 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
+    "subphase": "F05.01",
+    "authorized_at": "2026-11-06T17:14:51+03:00",
+    "reference": "F04 ana faz kapanisi ve F05.01 baslangici sorusuna kullanici yaniti: onayliyorum"
   },
   "previous_delivery": {
     "subphase": "F04.07",
