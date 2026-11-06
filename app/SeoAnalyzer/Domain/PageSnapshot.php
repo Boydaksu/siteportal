@@ -15,6 +15,7 @@ use SitePortal\Core\Parser\ParsedDocument;
  * @phpstan-type SitemapDiscovery array{discovered: bool, urls: list<string>, status_codes?: array<string, int>}
  * @phpstan-type MixedContent array{has_mixed_content: bool, insecure_resources?: list<string>}
  * @phpstan-type RedirectHop array{url: string, status: int}
+ * @phpstan-type AuditItem array{passed?: bool, score?: ?float, details?: array<string, mixed>}
  */
 final class PageSnapshot
 {
@@ -33,12 +34,18 @@ final class PageSnapshot
     private bool $redirectLoopDetected;
     private bool $maxHopsExceeded;
     private string $observedAt;
+    /** @var array<string, AuditItem>|null */
+    private ?array $mobileAudits;
+    /** @var array<string, AuditItem>|null */
+    private ?array $accessibilityAudits;
 
     /**
      * @param RobotsPolicy|null $robotsPolicy
      * @param SitemapDiscovery|null $sitemapDiscovery
      * @param MixedContent|null $mixedContent
      * @param list<RedirectHop> $redirectHistory
+     * @param array<string, AuditItem>|null $mobileAudits
+     * @param array<string, AuditItem>|null $accessibilityAudits
      */
     public function __construct(
         string $requestedUrl,
@@ -51,7 +58,9 @@ final class PageSnapshot
         array $redirectHistory = [],
         bool $redirectLoopDetected = false,
         bool $maxHopsExceeded = false,
-        ?string $observedAt = null
+        ?string $observedAt = null,
+        ?array $mobileAudits = null,
+        ?array $accessibilityAudits = null
     ) {
         $this->requestedUrl = $requestedUrl;
         $this->finalUrl = $finalUrl ?? ($httpResponse?->getEffectiveUrl() ?? $requestedUrl);
@@ -66,6 +75,8 @@ final class PageSnapshot
         $this->redirectLoopDetected = $redirectLoopDetected;
         $this->maxHopsExceeded = $maxHopsExceeded;
         $this->observedAt = $observedAt ?? gmdate('Y-m-d\TH:i:s\Z');
+        $this->mobileAudits = $mobileAudits;
+        $this->accessibilityAudits = $accessibilityAudits;
     }
 
     public function getRequestedUrl(): string
@@ -133,6 +144,22 @@ final class PageSnapshot
     public function getObservedAt(): string
     {
         return $this->observedAt;
+    }
+
+    /**
+     * @return array<string, AuditItem>|null
+     */
+    public function getMobileAudits(): ?array
+    {
+        return $this->mobileAudits;
+    }
+
+    /**
+     * @return array<string, AuditItem>|null
+     */
+    public function getAccessibilityAudits(): ?array
+    {
+        return $this->accessibilityAudits;
     }
 
     public function isIndexable(): bool
