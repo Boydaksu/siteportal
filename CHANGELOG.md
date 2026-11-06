@@ -1,7 +1,9 @@
 # Changelog
 
-## 2026-11-06 | F05.01 | READY_FOR_REVIEW
-- Kullanıcı Hesapları ve Rol Tabanlı Yetkilendirme (RBAC) mimarisi (`docs/reports/F05.01.md`) tamamlandı.
+## 2026-11-06 | F05.01 kabulü ve PR #36 merge
+- Kullanıcı “onaylıyorum” ile F05.01 teslim kabulünü, PR #36 birleştirmesini ve F05.02 başlangıç hazırlığını onayladı; PR #36 main dalına squash-merge edildi (`c95f56e47054b991631f99218097dc8f7420d931`).
+- F05.01 alt fazı (Kullanıcı hesapları ve RBAC) resmen DONE durumuna getirildi.
+- Kullanıcı Hesapları ve Rol Tabanlı Yetkilendirme (RBAC) mimarisi (`docs/reports/F05.01.md`) teslim edildi.
 - Veritabanı Migration (`0008_create_auth_and_rbac_tables.php`):
   - `users` tablosuna MFA (`mfa_secret`, `mfa_enabled`, `mfa_recovery_codes`) ve e-posta doğrulama (`email_verified_at`) alanları eklendi.
   - `email_verifications`, `password_resets` ve `site_members` tabloları ve bileşik indeksleri oluşturuldu.
@@ -16,7 +18,7 @@
   - `assertCan` ve `can` yetki kontrolleri; yetkisiz erişimlerde `ForbiddenException` (HTTP 403) ve `UnauthorizedException` (HTTP 401).
 - İki dilli sözlük: `resources/lang/tr-TR/messages.php` ve `en-US/messages.php` içine 22 yeni auth/rbac anahtarı eklendi (%100 senkronize, 237 anahtar).
 - Testler: 32 yeni birim ve entegrasyon testi eklendi; toplam test sayısı 642 test, 4764 assertion (%100 PASS).
-- F05.01 teslim kabulü için kullanıcı onayı bekleniyor (DUR).
+- Sıradaki alt faz F05.02 (Domain doğrulama) başlatılacaktır.
 
 ## 2026-11-06 | F04.07 kabulü, PR #35 merge ve F04 (V1.2) Ana Faz Kapanışı
 - Kullanıcı “onaylıyorum” ile F04.07 teslim kabulünü, PR #35 birleştirmesini ve F04 (V1.2: Performans, yapılandırılmış veri ve mobil uyumluluk) ana faz kapanışını onayladı; PR #35 main dalına squash-merge edildi (`b390ae5f6bd660d1863c952e7f47e5bd219143b5`).
