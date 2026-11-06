@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-06T16:30:00+03:00",
+  "updated_at": "2026-11-06T17:01:25+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
-  "product_version": "1.1.0",
+  "product_version": "1.2.0",
   "current_phase": "F04",
   "current_subphase": "F04.07",
-  "last_approved_phase": "F03",
-  "last_approved_subphase": "F04.06",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F04.07-v12-regression-closure",
-  "commit_sha": "b5863ad",
+  "last_approved_phase": "F04",
+  "last_approved_subphase": "F04.07",
+  "status": "DONE",
+  "branch": "main",
+  "commit_sha": "b390ae5f6bd660d1863c952e7f47e5bd219143b5",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/35",
-  "last_report": "docs/reports/F04.07.md",
+  "last_report": "docs/reports/F04-PHASE-SUMMARY.md",
   "blockers": [],
-  "next_action": "PR #35 ve F04 ana faz kapanış incelemesi için kullanıcı onayı bekleniyor.",
-  "next_subphase": null,
+  "next_action": "F04 ana fazı tamamlandı. F05 (V2.0) ve F05.01 şartnamesi ve planı hazırlanacak.",
+  "next_subphase": "F05.01",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -72,7 +72,7 @@
     },
     "F04": {
       "version": "V1.2",
-      "status": "IN_PROGRESS",
+      "status": "DONE",
       "subphases": {
         "F04.01": "DONE",
         "F04.02": "DONE",
@@ -80,7 +80,7 @@
         "F04.04": "DONE",
         "F04.05": "DONE",
         "F04.06": "DONE",
-        "F04.07": "READY_FOR_REVIEW"
+        "F04.07": "DONE"
       }
     },
     "F05": {
@@ -350,6 +350,12 @@
       "approval_reference": "2026-11-06: Kullanıcı F04.06 teslim kabulü + PR #34 merge + F04.07 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-06: Kullanıcı F04.06 teslim kabulü + PR #34 merge + F04.07 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F04.07": {
+      "approved_at": "2026-11-06T17:01:25+03:00",
+      "approval_reference": "2026-11-06: Kullanıcı F04.07 teslim kabulü + PR #35 merge + F04 ana faz kapanışı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-06: Kullanıcı F04.07 teslim kabulü + PR #35 merge + F04 ana faz kapanışı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
@@ -358,11 +364,11 @@
     "reference": "F04.06 teslimi ve F04.07 başlangıcı sorusuna kullanıcı yanıtı: onaylıyorum"
   },
   "previous_delivery": {
-    "subphase": "F04.06",
+    "subphase": "F04.07",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/34",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/35",
     "merged": true,
-    "merge_sha": "ca83fe434b3e19bb829948990253ece4d01256a8",
+    "merge_sha": "b390ae5f6bd660d1863c952e7f47e5bd219143b5",
     "approval_commit": null,
     "approval_commit_ci_run": null
   },

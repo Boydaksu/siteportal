@@ -3,7 +3,7 @@
 > **Tarih:** 2026-11-06, Europe/Istanbul  
 > **Repo:** [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal) (özel), varsayılan dal `main`  
 > **Faz:** F04 — V1.2: Performans, Yapılandırılmış Veri ve Mobil Uyumluluk (Hedef sürüm: V1.2)  
-> **Durum:** READY_FOR_REVIEW (Kullanıcı onayı bekleniyor; F04.07 PR #35 ve F04 ana faz kapanışı)
+> **Durum:** DONE (Kullanıcı kabulü ve birleştirme tamamlandı; squash merge `b390ae5f6bd660d1863c952e7f47e5bd219143b5`)
 
 ---
 
@@ -65,7 +65,7 @@ Bu ana fazda teslim edilen 7 alt faz ve temel yetenekler:
 | **F04.04** | Yapılandırılmış veri çıkarımı (Schema) | DONE | [PR #32](https://github.com/Boydaksu/siteportal/pull/32) (`34b14ed`) | 2026-11-06 11:42 | 547 test, 3724 assertion, CI SUCCESS |
 | **F04.05** | Mobil ve a11y temel kontroller | DONE | [PR #33](https://github.com/Boydaksu/siteportal/pull/33) (`160d040`) | 2026-11-06 15:43 | 572 test, 3856 assertion, CI SUCCESS |
 | **F04.06** | Selektif JS rendering tasarımı | DONE | [PR #34](https://github.com/Boydaksu/siteportal/pull/34) (`ca83fe4`) | 2026-11-06 16:23 | 601 test, 3993 assertion, CI SUCCESS |
-| **F04.07** | V1.2 regresyon ve kapanış | READY_FOR_REVIEW | [PR #35](https://github.com/Boydaksu/siteportal/pull/35) (`b5863ad`) | Bekleniyor (DUR) | 610 test, 4592 assertion (%100 PASS) |
+| **F04.07** | V1.2 regresyon ve kapanış | DONE | [PR #35](https://github.com/Boydaksu/siteportal/pull/35) (`b390ae5`) | 2026-11-06 17:01 | 610 test, 4592 assertion (%100 PASS) |
 
 ---
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-06 | F04.07 kabulü, PR #35 merge ve F04 (V1.2) Ana Faz Kapanışı
+- Kullanıcı “onaylıyorum” ile F04.07 teslim kabulünü, PR #35 birleştirmesini ve F04 (V1.2: Performans, yapılandırılmış veri ve mobil uyumluluk) ana faz kapanışını onayladı; PR #35 main dalına squash-merge edildi (`b390ae5f6bd660d1863c952e7f47e5bd219143b5`).
+- F04.07 alt fazı ve F04 ana fazı resmen DONE durumuna getirildi.
+- V1.2.0 sürümü tamamlandı; toplam 42 SEO denetim kuralı, CrUX saha verileri, PageSpeed lab metrikleri, Schema ayrıştırıcı, mobil & WCAG 1.4.4 kontrolleri, izole ve SSRF korumalı headless browser diff analizi ve iki dilli raporlama (%100 test kanıtlarıyla) bağlayıcı sözleşmeye uygun şekilde teslim edildi.
+- Sıradaki ana faz: F05 — V2.0: Üyelik, domain doğrulama, Search Console entegrasyonu ve çoklu sayfa denetimi başlatılacaktır.
+
 ## 2026-11-06 | F04.07 | READY_FOR_REVIEW
 - V1.2 Regresyon ve Faz Kapanışı (`docs/reports/F04.07.md` ve `docs/reports/F04-PHASE-SUMMARY.md`) tamamlandı.
 - Kapsamlı V1.2 Regresyon Test Paketi (`tests/Integration/Analysis/V12EndToEndRegressionTest.php`):

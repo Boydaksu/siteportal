@@ -1,11 +1,11 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F02.03 — DONE; F02.03 teslimi ve PR #16 kabul edildi, F02.04 başlatılacaktır.
-> **Tarih:** 2026-11-04 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F02 / V1.0 (IN_PROGRESS).
-> **Son onaylanan alt faz:** F02.03 — DONE; teslim ve PR #16 merge onaylandı.
+> **Durum:** F04 (V1.2) — DONE; F04.07 teslimi ve PR #35 birleştirildi, F05 (V2.0) başlatılacaktır.
+> **Tarih:** 2026-11-06 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F04 / V1.2 (DONE) → F05 / V2.0 (BEKLİYOR).
+> **Son onaylanan alt faz:** F04.07 — DONE; teslim ve PR #35 merge onaylandı (`b390ae5f6bd660d1863c952e7f47e5bd219143b5`).
 > **Aktif dal:** `main`.
-> **Son kontrol:** PHP lint (170 dosya), PSR-12, PHPStan seviye 8, PHPUnit (279 test / 2020 assertions) PASS.
-> **Rapor:** [F02.03](docs/reports/F02.03.md). **Sonraki:** F02.04 — On-page kuralları; başlatılıyor.
+> **Son kontrol:** PHP lint (329 dosya), PSR-12, PHPStan seviye 8, PHPUnit (610 test / 4592 assertions) PASS.
+> **Rapor:** [F04.07](docs/reports/F04.07.md) ve [F04 Özeti](docs/reports/F04-PHASE-SUMMARY.md). **Sonraki:** F05.01 — Kullanıcı modeli, kayıt ve e-posta doğrulama; hazırlanıyor.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -23,7 +23,7 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 | F01 | V0.1 | Güvenli PHP çekirdek ve tarama kuyruğu | DONE |
 | F02 | V1.0 | Üyeliksiz tek URL SEO analizi | DONE |
 | F03 | V1.1 | Kontrollü çok sayfalı site taraması | DONE |
-| F04 | V1.2 | Performans, yapılandırılmış veri, mobil | IN_PROGRESS (F04.07 READY_FOR_REVIEW) |
+| F04 | V1.2 | Performans, yapılandırılmış veri, mobil | DONE |
 | F05 | V2.0 | Üyelik, domain doğrulama, Search Console | BEKLİYOR |
 | F06 | V2.1 | İçerik, AI hazırlık, sektörel modüller | BEKLİYOR |
 | F07 | V3.0 | Ajans, abonelik, API, white-label | BEKLİYOR |
