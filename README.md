@@ -1,6 +1,6 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F05.02 — READY_FOR_REVIEW; PR açılacak.
+> **Durum:** F05.02 — READY_FOR_REVIEW; PR açıldı (PR #37).
 > **Tarih:** 2026-11-06 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F05 / V2.0 (IN_PROGRESS).
 > **Son onaylanan alt faz:** F05.01 — DONE; teslim ve PR #36 merge onaylandı (`c95f56e47054b991631f99218097dc8f7420d931`).
 > **Aktif dal:** `phase/F05.02-domain-verification`.
