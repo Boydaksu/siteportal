@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-11-06 | F05.06 Geçmiş Taramalar, Diff (Skor Deltaları) ve Regresyon Takibi Teslimi (READY_FOR_REVIEW)
+- F05.06 alt fazı (Geçmiş taramalar, versioned run snapshots, score comparison, issue first_seen/resolved takibi, trendler ve retention politikası) tamamlandı (`docs/reports/F05.06.md`).
+- **Veritabanı Migration (`0013_create_audit_diff_and_history_tables.php`):**
+  - `findings` tablosuna `first_seen_analysis_id`, `first_seen_at`, `resolved_at` yaşam döngüsü alanları eklendi.
+  - `analysis_diffs` tablosu oluşturuldu: `site_id`, `base_analysis_id`, `target_analysis_id`, genel ve kategori skor deltaları (`score_delta_overall`, `score_delta_technical`, `score_delta_onpage`, `score_delta_links`, `score_delta_accessibility`), `ruleset_version_base`, `ruleset_version_target`, `version_mismatch_warning`, `new_issues_count`, `resolved_issues_count`, `persisting_issues_count`, `diff_summary_json`.
+  - `ObservabilityIntegrationTest` 13 migration assertion ile güncellendi ve 6/6 test geçti (55 assertions).
+- **DTO ve Domain Modelleri (`app/Core/History/Models/`):**
+  - `AuditScoreComparison`, `IssueDiffItem`, `AuditDiffReport`, `AuditHistoryTrendPoint`, `AuditHistoryTrend`.
+- **Servis Katmanı (`AuditDiffService`, `AuditHistoryService`):**
+  - `AuditDiffService::compareAnalyses`: İki analiz arasındaki genel ve kategori skor deltalarını hesaplar. Farklı kural kümesi sürümlerinde (`ruleset_version` mismatch) yapılan karşılaştırmaları etiketler (`version_mismatch_warning = 1`, `RULE_VERSION_MISMATCH`) ve kullanıcı uyarısı üretir. Bulguları `NEW`, `RESOLVED`, `PERSISTING` olarak sınıflandırır. Çözülen bulguların `resolved_at` tarihini günceller; yeni ve devam eden bulguların `first_seen_at` bilgilerini taşır. Diff özetini `analysis_diffs` tablosuna UPSERT ederek önbellekler.
+  - `AuditHistoryService::getSiteAuditHistory`: Sitenin geçmiş `COMPLETED` analizlerini bulgu sayılarıyla listeler.
+  - `AuditHistoryService::getScoreTrends`: Kronolojik zaman serisi trendini ve yönünü (`improving`, `declining`, `stable`) belirler.
+  - `AuditHistoryService::applyRetentionPolicy`: Saklama süresini aşan eski analizleri (`analyses`, `analysis_diffs`, `findings`, `pages`) en son `keepCount` adedini koruyarak temizler.
+- **İki Dilli Sözlük:**
+  - `resources/lang/tr-TR/messages.php` ve `en-US/messages.php` içine 12 yeni diff ve trend anahtarı eklendi (%100 senkronize, 306 anahtar).
+- **Testler:** 15 yeni birim ve entegrasyon testi eklendi; toplam test sayısı 755 test, 5376 assertion (%100 PASS, 0 notice, 0 warning, 0 error).
+- F05.06 PR açılışı ve kullanıcı incelemesi için hazır.
+
 ## 2026-11-06 | F05.05 kabulü ve PR #40 merge
 - Kullanıcı “onaylıyorum” ile F05.05 teslim kabulünü, PR #40 birleştirmesini ve F05.06 başlangıç hazırlığını onayladı; PR #40 main dalına squash-merge edildi (`ec784ff9455c245c306a1cbcd047eb68d4e5bfc1`).
 - F05.05 alt fazı (Google Search Console URL Inspection entegrasyonu: indexed status, coverage state, robots.txt, canonical, mobil ve rich results kontrolleri, 24 saat TTL önbellekleme) resmen DONE durumuna getirildi.

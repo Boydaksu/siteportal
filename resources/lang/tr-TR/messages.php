@@ -325,4 +325,18 @@ return [
     'url_inspection.user_canonical' => 'Kullanıcı Tarafından Belirtilen Standart URL',
     'url_inspection.crawled_as' => 'Taramada Kullanılan Kullanıcı Aracısı',
     'url_inspection.cached_notice' => 'Bu denetim verisi {date} tarihinde önbelleğe alınmıştır.',
+
+    // F05.06 — Geçmiş Taramalar, Diff ve Regresyon Takibi
+    'diff.title' => 'Tarama Karşılaştırma ve Regresyon Raporu',
+    'diff.history_title' => 'Geçmiş Taramalar ve Trend',
+    'diff.score_comparison' => 'Skor Değişimleri',
+    'diff.overall_delta' => 'Genel Skor Değişimi',
+    'diff.rule_version_mismatch_warning' => 'Taramalar farklı kural kümesi sürümleriyle ({base} vs {target}) yürütülmüştür. Skor değişimleri kural tanımlarındaki güncellemelerden etkilenmiş olabilir.',
+    'diff.new_issues' => 'Yeni Çıkan Sorunlar (Regresyon)',
+    'diff.resolved_issues' => 'Giderilen Sorunlar',
+    'diff.persisting_issues' => 'Devam Eden Sorunlar',
+    'diff.trend_improving' => 'İyileşiyor',
+    'diff.trend_declining' => 'Kötüleşiyor',
+    'diff.trend_stable' => 'Değişmedi',
+    'diff.retention_cleaned' => 'Veri saklama politikası kapsamında {count} eski tarama kaydı temizlendi.',
 ];
