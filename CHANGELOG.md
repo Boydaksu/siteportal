@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-06 | F04.07 | READY_FOR_REVIEW
+- V1.2 Regresyon ve Faz Kapanışı (`docs/reports/F04.07.md` ve `docs/reports/F04-PHASE-SUMMARY.md`) tamamlandı.
+- Kapsamlı V1.2 Regresyon Test Paketi (`tests/Integration/Analysis/V12EndToEndRegressionTest.php`):
+  - 42 kural içeren V1.2 kural kataloğu tamlığı, tekil kural versiyonları, kategori ve önem seviyesi doğrulaması.
+  - Harici API kota aşımı (429 Rate Limit) ve servis kesintisi (503 Outage) durumunda zarif geri çekilme (graceful fallback); sistemin çökmeden analizi tamamlaması.
+  - Harici API bellek önbelleği (`MemoryCruxCache`, `MemoryPageSpeedCache`) ile harici çağrıların tekilleştirilmesi ve bütçe/maliyet koruması testi.
+  - Yapılandırılmış veri matrisi: Geçerli Product şeması, bozuk JSON-LD sözdizimi, geçersiz şema bağlamı, eksik zorunlu alanlar ve şemasız sayfaların deterministik skorlama testi.
+  - Mobil ve erişilebilirlik matrisi: Uyumlu viewport, WCAG 1.4.4 metin yakınlaştırma kısıtlaması (`user-scalable=no`), 5 katmanlı erişilebilir form etiketleri, dekoratif görsellerin filtrelenmesi ve statik analizde hesaplanmış CSS olmadan ceza kesilmeme güvenliği.
+  - Selektif JS rendering matrisi: SSRF bariyeri (`127.0.0.1`, metadata IP'leri), istemci tarafı yoğun hydration tespiti ve engellenen kritik scriptlerin tespiti.
+  - 42 kuralın `tr-TR` ve `en-US` dillerinde tam başlık, kategori ve öneri yerelleştirme sunumu ve rapor görünüm verisi doğrulaması.
+- Toplam test sayısı 610 test, 4592 assertion (%100 PASS).
+- F04 ana faz kapanış raporu (`docs/reports/F04-PHASE-SUMMARY.md`) hazırlandı.
+- F04.07 alt faz teslimi ve F04 ana faz kapanış onayı bekleniyor; kullanıcı açık onayı olmadan sonraki ana faza (F05) geçilmez (DUR).
+
 ## 2026-11-06 | F04.06 kabulü ve PR #34 merge
 - Kullanıcı “onaylıyorum” ile F04.06 teslim kabulünü, PR #34 birleştirmesini ve F04.07 başlangıcını onayladı; PR #34 main dalına squash-merge edildi (`ca83fe434b3e19bb829948990253ece4d01256a8`).
 - F04.06 alt fazı (Selektif JS rendering tasarımı) resmen DONE durumuna getirildi.
