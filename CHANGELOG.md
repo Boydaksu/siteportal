@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-11-06 | F05.01 | READY_FOR_REVIEW
+- Kullanıcı Hesapları ve Rol Tabanlı Yetkilendirme (RBAC) mimarisi (`docs/reports/F05.01.md`) tamamlandı.
+- Veritabanı Migration (`0008_create_auth_and_rbac_tables.php`):
+  - `users` tablosuna MFA (`mfa_secret`, `mfa_enabled`, `mfa_recovery_codes`) ve e-posta doğrulama (`email_verified_at`) alanları eklendi.
+  - `email_verifications`, `password_resets` ve `site_members` tabloları ve bileşik indeksleri oluşturuldu.
+- Kimlik Doğrulama ve Güvenlik Servisleri:
+  - `TotpMfaService`: RFC 6238 uyumlu dinamik TOTP üretimi/doğrulaması, `otpauth://` QR URI üretimi, 8 adet tek kullanımlık kurtarma kodu yönetimi.
+  - `EmailVerificationService`: 32-byte kriptografik token, SHA-256 hash saklama, 24 saat TTL ve tek kullanımlık doğrulama.
+  - `PasswordResetService`: 1 saat TTL'li güvenli şifre sıfırlama, kullanıcı enumeration koruması ve minimum 8 karakter doğrulama.
+  - `GuestAnalysisMigrationService`: Anonim misafir oturumundaki tekil analizlerin, kullanıcı kayıt olduğunda veya giriş yaptığında kullanıcı hesabına aktarılması.
+  - `AuthenticationService`: Giriş (`attempt`), kayıt (`register`), MFA tamamlama (`verifyMfaAndLogin`), brute-force hız koruması (`RateLimiter` ile 3-5 denemede IP kilitleme) ve session fixation koruması.
+- RBAC Yetkilendirme Matrisi (`RbacManager`):
+  - Platform rolleri (`PlatformRole::ADMIN`, `PlatformRole::USER`) ve Site içi roller (`SiteRole::OWNER`, `SiteRole::MEMBER`).
+  - `assertCan` ve `can` yetki kontrolleri; yetkisiz erişimlerde `ForbiddenException` (HTTP 403) ve `UnauthorizedException` (HTTP 401).
+- İki dilli sözlük: `resources/lang/tr-TR/messages.php` ve `en-US/messages.php` içine 22 yeni auth/rbac anahtarı eklendi (%100 senkronize, 237 anahtar).
+- Testler: 32 yeni birim ve entegrasyon testi eklendi; toplam test sayısı 642 test, 4764 assertion (%100 PASS).
+- F05.01 teslim kabulü için kullanıcı onayı bekleniyor (DUR).
+
 ## 2026-11-06 | F04.07 kabulü, PR #35 merge ve F04 (V1.2) Ana Faz Kapanışı
 - Kullanıcı “onaylıyorum” ile F04.07 teslim kabulünü, PR #35 birleştirmesini ve F04 (V1.2: Performans, yapılandırılmış veri ve mobil uyumluluk) ana faz kapanışını onayladı; PR #35 main dalına squash-merge edildi (`b390ae5f6bd660d1863c952e7f47e5bd219143b5`).
 - F04.07 alt fazı ve F04 ana fazı resmen DONE durumuna getirildi.
