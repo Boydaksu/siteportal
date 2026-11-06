@@ -99,12 +99,12 @@ final class ScoringEngineTest extends TestCase
         self::assertTrue($registry->has('A11Y_IMAGE_ALT'));
     }
 
-    public function testV1RuleRegistryFactoryRegistersAll40RulesWithV12(): void
+    public function testV1RuleRegistryFactoryRegistersAll42RulesWithV12(): void
     {
         $registry = V1RuleRegistryFactory::createRegistry(includeV12: true);
 
-        self::assertSame(40, $registry->count());
-        self::assertCount(40, $registry->all());
+        self::assertSame(42, $registry->count());
+        self::assertCount(42, $registry->all());
 
         // Verify schema rules
         self::assertTrue($registry->has('SCHEMA_INVALID_JSONLD'));
@@ -117,6 +117,10 @@ final class ScoringEngineTest extends TestCase
         self::assertTrue($registry->has('MOBILE_OVERFLOW'));
         self::assertTrue($registry->has('A11Y_FORM_LABEL'));
         self::assertTrue($registry->has('A11Y_CONTRAST'));
+
+        // Verify selective JS rendering rules
+        self::assertTrue($registry->has('TECH_JS_CONTENT_DELTA'));
+        self::assertTrue($registry->has('TECH_JS_BLOCKED_RESOURCES'));
     }
 
     public function testAuditEngineExecutesAllRulesDeterministically(): void

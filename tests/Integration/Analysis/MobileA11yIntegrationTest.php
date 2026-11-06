@@ -33,17 +33,19 @@ final class MobileA11yIntegrationTest extends TestCase
         $this->parser = new HtmlParser();
     }
 
-    public function testRegistryContainsAll40RulesInV12(): void
+    public function testRegistryContainsAll42RulesInV12(): void
     {
         $registry = V1RuleRegistryFactory::createRegistry(includeV12: true);
 
-        self::assertCount(40, $registry->all());
+        self::assertCount(42, $registry->all());
         self::assertTrue($registry->has('MOBILE_VIEWPORT'));
         self::assertTrue($registry->has('MOBILE_OVERFLOW'));
         self::assertTrue($registry->has('A11Y_FORM_LABEL'));
         self::assertTrue($registry->has('A11Y_CONTRAST'));
         self::assertTrue($registry->has('A11Y_IMAGE_ALT'));
         self::assertTrue($registry->has('SCHEMA_INVALID_JSONLD'));
+        self::assertTrue($registry->has('TECH_JS_CONTENT_DELTA'));
+        self::assertTrue($registry->has('TECH_JS_BLOCKED_RESOURCES'));
     }
 
     public function testFullAnalysisWithMobileAndA11yCompliantPage(): void
@@ -65,7 +67,7 @@ final class MobileA11yIntegrationTest extends TestCase
         );
 
         $findings = $this->auditEngine->audit($snapshot);
-        self::assertCount(40, $findings);
+        self::assertCount(42, $findings);
 
         /** @var array<string, Finding> $findingsByRule */
         $findingsByRule = [];

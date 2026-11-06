@@ -7,6 +7,7 @@ namespace SitePortal\SeoAnalyzer\Engine;
 use SitePortal\SeoAnalyzer\Domain\RuleRegistry;
 use SitePortal\SeoAnalyzer\Domain\RuleRegistryInterface;
 use SitePortal\SeoAnalyzer\Rules\AccessibilityRuleFactory;
+use SitePortal\SeoAnalyzer\Rules\JsRenderingRuleFactory;
 use SitePortal\SeoAnalyzer\Rules\MobileRuleFactory;
 use SitePortal\SeoAnalyzer\Rules\OnPageRuleFactory;
 use SitePortal\SeoAnalyzer\Rules\SchemaRuleFactory;
@@ -17,7 +18,7 @@ final class V1RuleRegistryFactory
     /**
      * Creates and populates a unified RuleRegistry with all rules.
      * In V1.0 mode: 32 rules (19 Technical rules + 13 On-Page rules).
-     * In V1.2 mode: 40 rules (19 Technical + 13 On-Page + 4 Schema + 2 Mobile + 2 Accessibility rules).
+     * In V1.2 mode: 42 rules (21 Technical + 13 On-Page + 4 Schema + 2 Mobile + 2 Accessibility rules).
      */
     public static function createRegistry(bool $includeV12 = true): RuleRegistryInterface
     {
@@ -30,7 +31,8 @@ final class V1RuleRegistryFactory
             $schemaRules = SchemaRuleFactory::createRegistry()->all();
             $mobileRules = MobileRuleFactory::createRegistry()->all();
             $a11yRules = AccessibilityRuleFactory::createRegistry()->all();
-            $rules = array_merge($rules, $schemaRules, $mobileRules, $a11yRules);
+            $jsRules = JsRenderingRuleFactory::createRegistry()->all();
+            $rules = array_merge($rules, $schemaRules, $mobileRules, $a11yRules, $jsRules);
         }
 
         return new RuleRegistry(array_values($rules));
