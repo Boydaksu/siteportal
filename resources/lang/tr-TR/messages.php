@@ -140,6 +140,12 @@ return [
     'rules.A11Y_CONTRAST.title' => 'Metin ve Arka Plan Renk Kontrastı',
     'rules.A11Y_CONTRAST.fix' => 'Metinlerin düşük görme yetisine sahip kullanıcılar tarafından rahat okunabilmesi için metin rengi ile arka plan arasındaki kontrast oranını en az 4.5:1 (büyük metinler için 3:1) yapın.',
 
+    // F04.06 — Selektif JS Rendering Kuralları
+    'rules.TECH_JS_CONTENT_DELTA.title' => 'JavaScript Render ve Kaynak HTML İçerik Farkı',
+    'rules.TECH_JS_CONTENT_DELTA.fix' => 'Arama motorlarının ve ekran okuyucuların içeriğe gecikmesiz ulaşabilmesi için önemli başlık, metin ve bağlantıları istemci tarafı JavaScript render\'ı yerine sunucu tarafında (SSR) veya statik HTML olarak sunun.',
+    'rules.TECH_JS_BLOCKED_RESOURCES.title' => 'Engellenen JavaScript ve CSS Kaynakları',
+    'rules.TECH_JS_BLOCKED_RESOURCES.fix' => 'Arama motorlarının sayfayı tam ve doğru şekilde render edebilmesi için robots.txt dosyanızda kritik .js ve .css dosyalarına yönelik disallow engellerini kaldırın.',
+
     // F02.06 — Rapor UI anahtarları
     'report.title' => 'SEO Denetim Raporu',
     'report.summary' => 'Denetim Özeti',

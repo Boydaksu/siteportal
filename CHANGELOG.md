@@ -1,5 +1,41 @@
 # Changelog
 
+## 2026-11-06 | F04.06 | READY_FOR_REVIEW
+- Selektif JavaScript Rendering Tasarımı ve Altyapısı (`docs/reports/F04.06.md`) tamamlandı.
+- İzole browser worker mimarisi ve tip güvenli veri modelleri geliştirildi:
+  - `RenderRequest` (`app/Core/Rendering/RenderRequest.php`): URL, zaman aşımı (1-30s), viewport genişlik/yükseklik, tracker engelleme, User-Agent ve özel HTTP başlıkları.
+  - `BlockedResource` (`app/Core/Rendering/BlockedResource.php`): Engellenen kaynak URL, tip (script, stylesheet, image vb.), sebep (robots_txt_disallow, tracker_blocked, network_error vb.) ve kritiklik bayrağı (`is_critical`).
+  - `RenderResponse` (`app/Core/Rendering/RenderResponse.php`): Durum kodu, render edilmiş tam HTML, yükleme süresi (ms), engellenen kaynaklar, kritik kaynak filtreleme, konsol hataları ve hata durumu.
+  - `RenderWorkerInterface` (`app/Core/Rendering/RenderWorkerInterface.php`): Bağımsız headless browser (Chromium/Puppeteer vb.) worker sözleşmesi (`isAvailable()`, `render()`).
+  - `DomDiffResult` (`app/Core/Rendering/DomDiffResult.php`): Statik kaynak HTML ve render edilmiş DOM arasındaki kelime sayısı, metin uzunluğu, eklenen/silinen bağlantılar, yeni başlıklar, title/description değişimi ve `isHydrationHeavy` bayrağı.
+  - `DomDiffCalculator` (`app/Core/Rendering/DomDiffCalculator.php`): İki ParsedDocument arasındaki yapısal farkı hesaplayan deterministik hesaplayıcı.
+  - `RenderService` (`app/Core/Rendering/RenderService.php`): Opt-in render koordinatörü; SSRF koruması (`UrlValidator` ile localhost, internal subnetler, 127.0.0.1, 169.254.169.254 vb. engellenir); graceful degradation (servis kapalıyken veya worker çevrimdışıyken çökmez, null döner).
+- Sayfa snapshot genişletmesi:
+  - `PageSnapshot` sınıfına `$renderedDocument`, `$domDiff`, `$blockedResources` alanları ve getter'ları eklendi; `hasRenderData()` metodu sağlandı.
+- 2 yeni Teknik SEO Kuralı:
+  - `TECH_JS_CONTENT_DELTA` (`app/SeoAnalyzer/Rules/Technical/TechJsContentDeltaRule.php`, Severity: MEDIUM):
+    - JS rendering kapalı veya verisi yoksa -> NOT_APPLICABLE (asla sahte ceza / 0 puan verilmez, ölçülmedi feragati eklenir).
+    - İstemci tarafı yoğun hydration tespit edilirse (`isHydrationHeavy = true`, içerik veya bağlantılar sadece JS çalışınca geliyorsa) -> WARN (MEDIUM).
+    - Statik ve render edilmiş içerik tutarlıysa -> PASS.
+  - `TECH_JS_BLOCKED_RESOURCES` (`app/SeoAnalyzer/Rules/Technical/TechJsBlockedResourcesRule.php`, Severity: MEDIUM):
+    - JS rendering veya ağ verisi yoksa -> NOT_APPLICABLE.
+    - Kritik JS veya CSS dosyaları engellenmişse (`isCritical = true`, robots.txt disallow vb.) -> FAIL (MEDIUM).
+    - Kritik kaynak engeli yoksa -> PASS.
+- Kural fabrikaları ve V1RuleRegistryFactory entegrasyonu:
+  - `JsRenderingRuleFactory` (`app/SeoAnalyzer/Rules/JsRenderingRuleFactory.php`).
+  - `V1RuleRegistryFactory`: V1.2 registry artık 42 kuralı (21 Teknik + 13 On-Page + 4 Schema + 2 Mobil + 2 a11y) birleşik olarak sunar.
+- `ReportPresenter` entegrasyonu:
+  - `TECH_JS_CONTENT_DELTA` ve `TECH_JS_BLOCKED_RESOURCES` için `tr-TR` ve `en-US` tam dil eşliği.
+  - Robots.txt izin direktifi içeren kod öneri snippet'ı (`code_snippet`).
+- Kapsamlı testler (29 yeni test):
+  - `RenderRequestTest`: Parametre doğrulama, sınırlar ve varsayılanlar.
+  - `DomDiffCalculatorTest`: Eşit dökümanlar, boş iskeletten yoğun hydration (SPA), kelime artış oranı eşiği, silinen linkler.
+  - `RenderServiceTest`: Varsayılan kapalı durum, SSRF engelleme (127.0.0.1, metadata IP), worker hata yakalama, başarılı render ve DOM diff.
+  - `JsRenderingRulesTest`: Her iki kural için NOT_APPLICABLE, PASS, WARN ve FAIL durumları.
+  - `SelectiveRenderingIntegrationTest`: 42 kural doğrulaması, statik analizde NOT_APPLICABLE ve skor koruması, JS render ile uçtan uca akış ve dil sunumu.
+  - Toplam 601 test, 3993 assertion (%100 PASS).
+- F04.06 alt faz teslimi ve inceleme onayı bekleniyor; kullanıcı onayı olmadan bir sonraki alt faza geçilmez (DUR).
+
 ## 2026-11-06 | F04.05 kabulü ve PR #33 merge
 - Kullanıcı “onaylıyorum” ile F04.05 teslim kabulünü, PR #33 birleştirmesini ve F04.06 başlangıcını onayladı; PR #33 main dalına squash-merge edildi (`160d040a3a9f0fadd61360a726ce00efa62312b4`).
 - F04.05 alt fazı (Mobil ve a11y temel kontroller) resmen DONE durumuna getirildi.

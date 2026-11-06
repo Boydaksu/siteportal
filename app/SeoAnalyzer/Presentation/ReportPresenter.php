@@ -284,6 +284,10 @@ final class ReportPresenter
                 . "<input type=\"email\" id=\"email\" name=\"email\">\n\n"
                 . "<!-- aria-label ile -->\n"
                 . '<input type="search" name="q" aria-label="Sitede Ara">',
+            'TECH_JS_BLOCKED_RESOURCES' => "# robots.txt: kritik JS ve CSS dosyalarina izin verin\n"
+                . "User-agent: *\n"
+                . "Allow: /assets/*.js\n"
+                . "Allow: /assets/*.css",
             default => null,
         };
     }

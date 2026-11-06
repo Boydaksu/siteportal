@@ -140,6 +140,12 @@ return [
     'rules.A11Y_CONTRAST.title' => 'Text and Background Color Contrast',
     'rules.A11Y_CONTRAST.fix' => 'Provide a contrast ratio of at least 4.5:1 for standard text (3:1 for large text) between foreground text and background colors.',
 
+    // F04.06 — Selective JS Rendering Rules
+    'rules.TECH_JS_CONTENT_DELTA.title' => 'JavaScript Rendering Content Delta',
+    'rules.TECH_JS_CONTENT_DELTA.fix' => 'Deliver critical page content, headings, and internal links in static HTML or server-side rendering (SSR) so crawlers index them without client-side execution delays.',
+    'rules.TECH_JS_BLOCKED_RESOURCES.title' => 'Blocked JavaScript and CSS Resources',
+    'rules.TECH_JS_BLOCKED_RESOURCES.fix' => 'Ensure robots.txt does not disallow critical JavaScript scripts or CSS stylesheets required by search engines to render the page layout accurately.',
+
     // F02.06 — Report UI keys
     'report.title' => 'SEO Audit Report',
     'report.summary' => 'Audit Summary',

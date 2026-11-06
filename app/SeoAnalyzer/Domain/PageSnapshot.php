@@ -6,6 +6,8 @@ namespace SitePortal\SeoAnalyzer\Domain;
 
 use SitePortal\Core\Http\HttpResponse;
 use SitePortal\Core\Parser\ParsedDocument;
+use SitePortal\Core\Rendering\BlockedResource;
+use SitePortal\Core\Rendering\DomDiffResult;
 
 /**
  * Immutable snapshot of observed data for a crawled URL.
@@ -38,6 +40,10 @@ final class PageSnapshot
     private ?array $mobileAudits;
     /** @var array<string, AuditItem>|null */
     private ?array $accessibilityAudits;
+    private ?ParsedDocument $renderedDocument;
+    private ?DomDiffResult $domDiff;
+    /** @var list<BlockedResource>|null */
+    private ?array $blockedResources;
 
     /**
      * @param RobotsPolicy|null $robotsPolicy
@@ -46,6 +52,7 @@ final class PageSnapshot
      * @param list<RedirectHop> $redirectHistory
      * @param array<string, AuditItem>|null $mobileAudits
      * @param array<string, AuditItem>|null $accessibilityAudits
+     * @param list<BlockedResource>|null $blockedResources
      */
     public function __construct(
         string $requestedUrl,
@@ -60,7 +67,10 @@ final class PageSnapshot
         bool $maxHopsExceeded = false,
         ?string $observedAt = null,
         ?array $mobileAudits = null,
-        ?array $accessibilityAudits = null
+        ?array $accessibilityAudits = null,
+        ?ParsedDocument $renderedDocument = null,
+        ?DomDiffResult $domDiff = null,
+        ?array $blockedResources = null
     ) {
         $this->requestedUrl = $requestedUrl;
         $this->finalUrl = $finalUrl ?? ($httpResponse?->getEffectiveUrl() ?? $requestedUrl);
@@ -77,6 +87,9 @@ final class PageSnapshot
         $this->observedAt = $observedAt ?? gmdate('Y-m-d\TH:i:s\Z');
         $this->mobileAudits = $mobileAudits;
         $this->accessibilityAudits = $accessibilityAudits;
+        $this->renderedDocument = $renderedDocument;
+        $this->domDiff = $domDiff;
+        $this->blockedResources = $blockedResources;
     }
 
     public function getRequestedUrl(): string
@@ -160,6 +173,29 @@ final class PageSnapshot
     public function getAccessibilityAudits(): ?array
     {
         return $this->accessibilityAudits;
+    }
+
+    public function getRenderedDocument(): ?ParsedDocument
+    {
+        return $this->renderedDocument;
+    }
+
+    public function getDomDiff(): ?DomDiffResult
+    {
+        return $this->domDiff;
+    }
+
+    /**
+     * @return list<BlockedResource>|null
+     */
+    public function getBlockedResources(): ?array
+    {
+        return $this->blockedResources;
+    }
+
+    public function hasRenderData(): bool
+    {
+        return $this->renderedDocument !== null || $this->domDiff !== null;
     }
 
     public function isIndexable(): bool
