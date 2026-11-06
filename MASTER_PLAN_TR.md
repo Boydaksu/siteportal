@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #33](https://github.com/Boydaksu/siteportal/pull/33) birleştirildi (`160d040a3a9f0fadd61360a726ce00efa62312b4`).
 - **Aktif alt faz / durum:** F04.06 — Selektif JS rendering tasarımı / READY_FOR_REVIEW.
 - **Dal:** `phase/F04.06-selective-js-rendering`.
-- **Aktif PR / kanıt commit:** PR açılacak (PR #34).
+- **Aktif PR / kanıt commit:** [PR #34](https://github.com/Boydaksu/siteportal/pull/34) (`d15a618`).
 - **Rapor:** `docs/reports/F04.06.md`.
 - **Yerel sonuç:** PASS; PHP lint (328 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 601 test / 3993 assertion PASS (%100), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** F04.06 Selektif JS rendering mimarisi (`RenderRequest`, `RenderResponse`, `BlockedResource`, `RenderWorkerInterface`, `DomDiffResult`, `DomDiffCalculator`, `RenderService`), SSRF koruması (`UrlValidator`), graceful degradation (worker yokken statik analiz çalışır, sahte ceza yok), 2 yeni kural (`TECH_JS_CONTENT_DELTA`, `TECH_JS_BLOCKED_RESOURCES`), V1.2 registry (42 kural), TR/EN çeviriler ve 29 yeni test (%100 PASS) tamamlandı.
