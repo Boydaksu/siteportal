@@ -293,4 +293,20 @@ return [
     'oauth.status_active' => 'Bağlı ve Aktif',
     'oauth.status_revoked' => 'Bağlantı Kesildi',
     'oauth.status_expired' => 'Süresi Doldu',
+
+    // F05.04 — Search Analytics Entegrasyonu
+    'search_analytics.title' => 'Arama Performansı ve Analitik',
+    'search_analytics.metrics_summary' => 'Performans Özeti',
+    'search_analytics.clicks' => 'Toplam Tıklama',
+    'search_analytics.impressions' => 'Toplam Gösterim',
+    'search_analytics.ctr' => 'Ortalama TO (CTR)',
+    'search_analytics.position' => 'Ortalama Sıra (Pozisyon)',
+    'search_analytics.breakdown_date' => 'Tarihsel Dağılım',
+    'search_analytics.breakdown_country' => 'Ülke Dağılımı',
+    'search_analytics.breakdown_device' => 'Cihaz Dağılımı',
+    'search_analytics.breakdown_query' => 'En Çok Tıklanan Sorgular',
+    'search_analytics.breakdown_page' => 'En Çok Tıklanan Sayfalar',
+    'search_analytics.no_data' => 'Seçilen tarih aralığı için arama verisi bulunamadı.',
+    'search_analytics.quota_exceeded' => 'Google Search Console API istek kotası aşıldı. Lütfen daha sonra tekrar deneyin.',
+    'search_analytics.cached_notice' => 'Bu veriler {date} tarihinde önbelleğe alınmıştır.',
 ];

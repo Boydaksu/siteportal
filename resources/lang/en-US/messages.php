@@ -293,4 +293,20 @@ return [
     'oauth.status_active' => 'Connected & Active',
     'oauth.status_revoked' => 'Disconnected',
     'oauth.status_expired' => 'Expired',
+
+    // F05.04 — Search Analytics Entegrasyonu
+    'search_analytics.title' => 'Search Performance and Analytics',
+    'search_analytics.metrics_summary' => 'Performance Summary',
+    'search_analytics.clicks' => 'Total Clicks',
+    'search_analytics.impressions' => 'Total Impressions',
+    'search_analytics.ctr' => 'Average CTR',
+    'search_analytics.position' => 'Average Position',
+    'search_analytics.breakdown_date' => 'Date Breakdown',
+    'search_analytics.breakdown_country' => 'Country Breakdown',
+    'search_analytics.breakdown_device' => 'Device Breakdown',
+    'search_analytics.breakdown_query' => 'Top Search Queries',
+    'search_analytics.breakdown_page' => 'Top Landing Pages',
+    'search_analytics.no_data' => 'No search performance data found for the selected date range.',
+    'search_analytics.quota_exceeded' => 'Google Search Console API request quota exceeded. Please try again later.',
+    'search_analytics.cached_notice' => 'This data was cached on {date}.',
 ];

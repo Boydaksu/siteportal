@@ -12,12 +12,12 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F05.03 — DONE; PR #38 merge edildi. F05.04 hazırlığı.
+> **Durum:** F05.04 — READY_FOR_REVIEW; [PR #39](https://github.com/Boydaksu/siteportal/pull/39) açıldı, kullanıcı onayı bekleniyor.
 > **Tarih:** 2026-11-06 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F05 / V2.0 (IN_PROGRESS).
 > **Son onaylanan alt faz:** F05.03 — DONE; teslim ve PR #38 merge onaylandı (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
-> **Aktif dal:** `main`.
-> **Son kontrol:** PHP lint (382 dosya), PSR-12, PHPStan seviye 8, PHPUnit (697 test / 5005 assertions) PASS (%100).
-> **Rapor:** [F05.03](docs/reports/F05.03.md). **Sonraki:** F05.04 — Search Analytics entegrasyonu.
+> **Aktif dal:** `phase/F05.04-search-analytics`.
+> **Son kontrol:** PHP lint (395 dosya), PSR-12, PHPStan seviye 8, PHPUnit (719 test / 5148 assertions) PASS (%100).
+> **Rapor:** [F05.04](docs/reports/F05.04.md). **Sonraki:** F05.05 — URL Inspection entegrasyonu.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).
@@ -170,19 +170,19 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
-- **Tarih / repo:** 2026-11-06, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `main`.
-- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 1.2.0; F05 / V2.0 IN_PROGRESS (F00, F01, F02, F03 ve F04 ana fazları DONE; F05.01, F05.02 ve F05.03 DONE).
+- **Tarih / repo:** 2026-11-06, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `phase/F05.04-search-analytics`.
+- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 1.2.0; F05 / V2.0 IN_PROGRESS (F00, F01, F02, F03 ve F04 ana fazları DONE; F05.01, F05.02 ve F05.03 DONE; F05.04 READY_FOR_REVIEW).
 - **Son onay:** F05.03 DONE; kullanıcı “onaylıyorum” ile teslim kabulünü, PR #38 merge ve F05.04 başlangıç hazırlığını onayladı; PR #38 main dalına squash-merge edildi (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
 - **Önceki teslim:** [PR #38](https://github.com/Boydaksu/siteportal/pull/38) birleştirildi (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
-- **Aktif alt faz / durum:** F05.03 — OAuth güvenliği / DONE (F05.04 hazırlığı).
-- **Dal:** `main`.
-- **Aktif PR / kanıt commit:** [PR #38](https://github.com/Boydaksu/siteportal/pull/38) merge commit: `6a0195bb80f0ee3916523b9e235c5de5c31e5127`.
-- **Rapor:** `docs/reports/F05.03.md` ve kontrol özeti `docs/reports/F05.03-checks.txt`.
-- **Yerel sonuç:** PASS; PHP lint (382 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 697 test / 5005 assertion PASS (%100, 0 notice, 0 warning), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
-- **Uygulama testleri:** RFC 7636 PKCE S256 test vektörü uyumluluğu, state CSRF & replay kalkanı, cross-tenant state hijacking engeli, veritabanında AES-256-GCM ile authenticated at-rest şifreleme, süresi dolan tokenların otomatik refresh_token ile yenilenmesi, minimum read-only scope zorunluluğu, Google revoke endpoint çağrısı ve yerel tokenların sıfırlanması ile 266 anahtarlı TR/EN dil eşliği (%100 PASS).
+- **Aktif alt faz / durum:** F05.04 — Search Analytics entegrasyonu / READY_FOR_REVIEW (PR ve kullanıcı onayı bekleniyor).
+- **Dal:** `phase/F05.04-search-analytics`.
+- **Aktif PR / kanıt commit:** [PR #39](https://github.com/Boydaksu/siteportal/pull/39) / `863f1fd57b3ca6083cab1a282f4770a482a661af`.
+- **Rapor:** `docs/reports/F05.04.md` ve kontrol özeti `docs/reports/F05.04-checks.txt`.
+- **Yerel sonuç:** PASS; PHP lint (395 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 719 test / 5148 assertion PASS (%100, 0 notice, 0 warning), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
+- **Uygulama testleri:** GSC Search Analytics Clicks, Impressions, CTR, Average Position metrikleri, 5 boyut kırılımı (tarih, ülke, cihaz, sorgu, sayfa), veritabanı önbelleği ile kota koruması (`search_analytics_caches`), token yenileme, eksik veri durumu (`NO_DATA`), yetkisiz erişim engeli ve GSC trafiğinin crawler SEO teknik skoruyla kesinlikle karıştırılmaması güvencesi ile 280 anahtarlı TR/EN dil eşliği (%100 PASS).
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
-- **Sonraki alt faz:** F05.04 — Search Analytics entegrasyonu.
-- **Bir sonraki işlem:** F05.04 şartname analizi, plan ve kullanıcı onayıyla `phase/F05.04-search-analytics` dalına geçiş.
+- **Sonraki alt faz:** F05.05 — URL Inspection entegrasyonu.
+- **Bir sonraki işlem:** PR #39 incelemesi, CI kontrolü ve kullanıcının açık onayı bekleniyor.
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
@@ -2035,12 +2035,12 @@ Amaç → yapılan alt fazlar → dosyalar/PR/SHA → testler → bulgular → r
 1. Clicks impressions CTR avg position breakdown tarih/ülke/cihaz ve API kota/caching.
 
 **Kabul/kanıt:**
-- [ ] Eksik veri durumu açık.
-- [ ] GSC web traffic ile crawler skoru karışmıyor.
-- [ ] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
-- [ ] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
-- [ ] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
-- [ ] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
+- [x] Eksik veri durumu açık.
+- [x] GSC web traffic ile crawler skoru karışmıyor.
+- [x] İlgili birim/entegrasyon/güvenlik/regresyon test çıktıları rapora eklendi.
+- [x] Kod/doküman Türkçe öncelikli ve i18n disiplininde.
+- [x] `README`, `CURRENT_STATUS`, `project-status.json`, `CHANGELOG`, rapor ve PR/commit güncellendi.
+- [x] Kullanıcıya alt faz raporu gönderildi ve **DUR** kuralı uygulandı.
 
 **Teslim dosyaları:** Uygulama kodu/fixture/test + `docs/reports/F05.04.md` + durum kayıtları.
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-06 | F05.04 | READY_FOR_REVIEW
+- F05.04 alt fazı (Search Analytics Entegrasyonu: clicks, impressions, ctr, position; date/country/device/query/page kırılımları ve önbellekleme) tamamlandı; PR açılması ve kullanıcı incelemesine sunuldu.
+- Google Search Console API v3 Search Analytics entegrasyonu (`docs/reports/F05.04.md`):
+  - Veritabanı Migration (`0011_create_search_analytics_tables.php`): `search_analytics_caches` (6 saat TTL önbellekleme) ve `gsc_site_mappings` tabloları.
+  - İstemci ve Servis Katmanı (`GoogleSearchAnalyticsClient`, `SearchAnalyticsService`): GSC API v3 `/searchAnalytics/query` ve `/sites` endpoint'leri, 401/403/429 hata yönetimi, süresi dolan token'ların otomatik yenilenmesi (`refreshAccessToken`), site mülkiyet kontrolü ve URL çözümleme (`sc-domain:...`).
+  - DTO ve Domain Modelleri (`SearchAnalyticsMetricSummary`, `SearchAnalyticsRow`, `SearchAnalyticsBreakdown`, `SearchAnalyticsReport`, `SearchConsoleSite`): Tip güvenli metrik ve boyut çözümleme.
+  - **Sözleşme Kuralı:** GSC web trafiği verisinin crawler teknik SEO skorundan (`analyses.score_overall`) kesinlikle bağımsız tutulması güvenceye alındı.
+  - İki dilli sözlük: `resources/lang/tr-TR/messages.php` ve `en-US/messages.php` içine 14 yeni Search Analytics anahtarı eklendi (%100 senkronize, 280 anahtar).
+  - Testler: 22 yeni test eklendi; toplam test sayısı 719 test, 5148 assertion (%100 PASS, 0 notice, 0 warning, 0 error).
+
 ## 2026-11-06 | F05.03 kabulü ve PR #38 merge
 - Kullanıcı “onaylıyorum” ile F05.03 teslim kabulünü, PR #38 birleştirmesini ve F05.04 başlangıç hazırlığını onayladı; PR #38 main dalına squash-merge edildi (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
 - F05.03 alt fazı (OAuth güvenliği: PKCE, state, encrypted refresh tokens, revocation) resmen DONE durumuna getirildi.
