@@ -1,9 +1,9 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F05.05 — READY_FOR_REVIEW; [PR #40](https://github.com/Boydaksu/siteportal/pull/40) açıldı, kullanıcı onayı bekleniyor.
+> **Durum:** F05.05 — DONE; PR #40 merge edildi. F05.06 hazırlığı.
 > **Tarih:** 2026-11-06 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F05 / V2.0 (IN_PROGRESS).
-> **Son onaylanan alt faz:** F05.04 — DONE; teslim ve PR #39 merge onaylandı (`9308f1147522e5e7756cfa810c24d5a643f47d28`).
-> **Aktif dal:** `phase/F05.05-url-inspection`.
+> **Son onaylanan alt faz:** F05.05 — DONE; teslim ve PR #40 merge onaylandı (`ec784ff9455c245c306a1cbcd047eb68d4e5bfc1`).
+> **Aktif dal:** `main`.
 > **Son kontrol:** PHP lint (430 dosya), PSR-12, PHPStan seviye 8, PHPUnit (740 test / 5278 assertions) PASS (%100).
 > **Rapor:** [F05.05](docs/reports/F05.05.md). **Sonraki:** F05.06 — Multi-page + GSC harmanlanmış rapor sunumu.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
@@ -24,7 +24,7 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 | F02 | V1.0 | Üyeliksiz tek URL SEO analizi | DONE |
 | F03 | V1.1 | Kontrollü çok sayfalı site taraması | DONE |
 | F04 | V1.2 | Performans, yapılandırılmış veri, mobil | DONE |
-| F05 | V2.0 | Üyelik, domain doğrulama, Search Console | IN_PROGRESS (F05.04 DONE) |
+| F05 | V2.0 | Üyelik, domain doğrulama, Search Console | IN_PROGRESS (F05.05 DONE) |
 | F06 | V2.1 | İçerik, AI hazırlık, sektörel modüller | BEKLİYOR |
 | F07 | V3.0 | Ajans, abonelik, API, white-label | BEKLİYOR |
 | F08 | V4.0 | Ölçeklenebilirlik, yaygın çoklu dil ve olgunluk | BEKLİYOR |
