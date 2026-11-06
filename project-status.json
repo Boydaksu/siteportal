@@ -11,11 +11,11 @@
   "last_approved_subphase": "F05.03",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F05.04-search-analytics",
-  "commit_sha": "calisma-dali",
-  "pr_url": null,
+  "commit_sha": "863f1fd57b3ca6083cab1a282f4770a482a661af",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/39",
   "last_report": "docs/reports/F05.04.md",
   "blockers": [],
-  "next_action": "F05.04 PR açılması ve kullanıcı açık onayı bekleniyor.",
+  "next_action": "F05.04 PR #39 incelemesi ve kullanıcı açık onayı bekleniyor.",
   "next_subphase": "F05.05",
   "phases": {
     "F00": {

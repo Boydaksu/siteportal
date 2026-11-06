@@ -12,7 +12,7 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F05.04 — READY_FOR_REVIEW; PR açılması ve kullanıcı onayı bekleniyor.
+> **Durum:** F05.04 — READY_FOR_REVIEW; [PR #39](https://github.com/Boydaksu/siteportal/pull/39) açıldı, kullanıcı onayı bekleniyor.
 > **Tarih:** 2026-11-06 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F05 / V2.0 (IN_PROGRESS).
 > **Son onaylanan alt faz:** F05.03 — DONE; teslim ve PR #38 merge onaylandı (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
 > **Aktif dal:** `phase/F05.04-search-analytics`.
@@ -176,13 +176,13 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #38](https://github.com/Boydaksu/siteportal/pull/38) birleştirildi (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
 - **Aktif alt faz / durum:** F05.04 — Search Analytics entegrasyonu / READY_FOR_REVIEW (PR ve kullanıcı onayı bekleniyor).
 - **Dal:** `phase/F05.04-search-analytics`.
-- **Aktif PR / kanıt commit:** PR açılacak (çalışma dalı commit edilecek).
+- **Aktif PR / kanıt commit:** [PR #39](https://github.com/Boydaksu/siteportal/pull/39) / `863f1fd57b3ca6083cab1a282f4770a482a661af`.
 - **Rapor:** `docs/reports/F05.04.md` ve kontrol özeti `docs/reports/F05.04-checks.txt`.
 - **Yerel sonuç:** PASS; PHP lint (395 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 719 test / 5148 assertion PASS (%100, 0 notice, 0 warning), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** GSC Search Analytics Clicks, Impressions, CTR, Average Position metrikleri, 5 boyut kırılımı (tarih, ülke, cihaz, sorgu, sayfa), veritabanı önbelleği ile kota koruması (`search_analytics_caches`), token yenileme, eksik veri durumu (`NO_DATA`), yetkisiz erişim engeli ve GSC trafiğinin crawler SEO teknik skoruyla kesinlikle karıştırılmaması güvencesi ile 280 anahtarlı TR/EN dil eşliği (%100 PASS).
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
 - **Sonraki alt faz:** F05.05 — URL Inspection entegrasyonu.
-- **Bir sonraki işlem:** PR açılması, CI kontrolü ve kullanıcının açık onayı bekleniyor.
+- **Bir sonraki işlem:** PR #39 incelemesi, CI kontrolü ve kullanıcının açık onayı bekleniyor.
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 

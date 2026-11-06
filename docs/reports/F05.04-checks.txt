@@ -2,7 +2,8 @@
 SitePortal F05.04 Kontrol ve Dogrulama Ozeti
 Tarih: 2026-11-06T19:40:00+03:00
 Dal: phase/F05.04-search-analytics
-Commit: Calisma Dali
+PR: #39 (https://github.com/Boydaksu/siteportal/pull/39)
+Commit: 863f1fd57b3ca6083cab1a282f4770a482a661af
 ================================================================================
 
 1. PHP SOZDIZIMI (LINT)
