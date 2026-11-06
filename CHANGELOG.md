@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-06 | F04.04 kabulü ve PR #32 merge
+- Kullanıcı “onaylıyorum” ile F04.04 teslim kabulünü, PR #32 birleştirmesini ve F04.05 başlangıcını onayladı; PR #32 main dalına squash-merge edildi (`34b14ed73fbb800bfd61080b30a0da67dcd37064`).
+- F04.04 alt fazı (JSON-LD Microdata RDFa) resmen DONE durumuna getirildi.
+- Sıradaki alt faz F04.05 (Mobil/a11y temel kontroller) başlatılacaktır.
+
 ## 2026-11-06 | F04.04 | READY_FOR_REVIEW
 - JSON-LD, Microdata ve RDFa Yapılandırılmış Veri Denetimi (`docs/reports/F04.04.md`) tamamlandı.
 - `StructuredDataExtractor` (`app/Core/Parser/StructuredData/StructuredDataExtractor.php`) geliştirildi:
