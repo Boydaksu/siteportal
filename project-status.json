@@ -11,11 +11,11 @@
   "last_approved_subphase": "F05.04",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F05.05-url-inspection",
-  "commit_sha": "calisma-dali",
-  "pr_url": null,
+  "commit_sha": "75142c4fe90646afdc93ca116aa2c661f5e4b22a",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/40",
   "last_report": "docs/reports/F05.05.md",
   "blockers": [],
-  "next_action": "F05.05 PR açılması ve kullanıcı açık onayı bekleniyor.",
+  "next_action": "F05.05 PR #40 incelemesi ve kullanıcı açık onayı bekleniyor.",
   "next_subphase": "F05.06",
   "phases": {
     "F00": {

@@ -1,6 +1,6 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F05.05 — READY_FOR_REVIEW; PR açılması ve kullanıcı onayı bekleniyor.
+> **Durum:** F05.05 — READY_FOR_REVIEW; [PR #40](https://github.com/Boydaksu/siteportal/pull/40) açıldı, kullanıcı onayı bekleniyor.
 > **Tarih:** 2026-11-06 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F05 / V2.0 (IN_PROGRESS).
 > **Son onaylanan alt faz:** F05.04 — DONE; teslim ve PR #39 merge onaylandı (`9308f1147522e5e7756cfa810c24d5a643f47d28`).
 > **Aktif dal:** `phase/F05.05-url-inspection`.

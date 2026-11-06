@@ -2,8 +2,8 @@
 SitePortal F05.05 Kontrol ve Dogrulama Ozeti
 Tarih: 2026-11-06T20:55:00+03:00
 Dal: phase/F05.05-url-inspection
-PR: Bekleniyor
-Commit: Calisma Dali
+PR: #40 (https://github.com/Boydaksu/siteportal/pull/40)
+Commit: 75142c4fe90646afdc93ca116aa2c661f5e4b22a
 ================================================================================
 
 1. PHP SOZDIZIMI (LINT)
