@@ -6,7 +6,7 @@
 - **Önceki teslim:** [PR #40](https://github.com/Boydaksu/siteportal/pull/40) birleştirildi (`ec784ff9455c245c306a1cbcd047eb68d4e5bfc1`).
 - **Aktif alt faz / durum:** F05.06 — READY_FOR_REVIEW; Geçmiş taramalar, skor diff ve regresyon takibi tamamlandı, PR açılıyor.
 - **Dal:** `phase/F05.06-crawl-history-diff`.
-- **Aktif PR / kanıt commit:** PR açılacak (F05.06).
+- **Aktif PR / kanıt commit:** [PR #41](https://github.com/Boydaksu/siteportal/pull/41) (`861b3d1d0111e0f5a7b5a97219e263f2a3dc74b4`).
 - **Rapor:** `docs/reports/F05.06.md` ve kontrol özeti `docs/reports/F05.06-checks.txt`.
 - **Yerel sonuç:** PASS; PHP lint, PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 755 test / 5376 assertion PASS (%100, 0 notice, 0 warning), 13 güvenlik testi, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** Geçmiş taramaların listelenmesi, iki tarama arasındaki genel ve kategori bazlı skor deltaları, kural kümesi uyuşmazlığı tespiti (`RULE_VERSION_MISMATCH`), bulguların `NEW`, `RESOLVED`, `PERSISTING` olarak sınıflandırılması ve yaşam döngüsü takibi (`first_seen_at`, `resolved_at`), zaman serisi trendi (`improving`, `declining`, `stable`), `analysis_diffs` önbelleklemesi, koruma adedini (`keepCount`) gözeten veri saklama (retention) temizliği ve 306 anahtarlı TR/EN dil eşliği (%100 PASS).
