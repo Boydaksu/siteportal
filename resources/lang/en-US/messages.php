@@ -309,4 +309,20 @@ return [
     'search_analytics.no_data' => 'No search performance data found for the selected date range.',
     'search_analytics.quota_exceeded' => 'Google Search Console API request quota exceeded. Please try again later.',
     'search_analytics.cached_notice' => 'This data was cached on {date}.',
+
+    // F05.05 — URL Inspection Entegrasyonu
+    'url_inspection.title' => 'Google URL Inspection',
+    'url_inspection.desc' => 'Last known Google index status, coverage, and mobile usability for this page.',
+    'url_inspection.not_live_test_notice' => 'This report reflects the last known status in the Google index; it is not a live Googlebot test.',
+    'url_inspection.index_verdict_pass' => 'URL is indexed in Google.',
+    'url_inspection.index_verdict_neutral' => 'URL is not indexed, but no explicit error was reported.',
+    'url_inspection.index_verdict_fail' => 'URL is not indexed or encountered errors.',
+    'url_inspection.coverage_state' => 'Index Coverage Status',
+    'url_inspection.robots_txt_state' => 'Robots.txt State',
+    'url_inspection.indexing_state' => 'Indexing State',
+    'url_inspection.last_crawl_time' => 'Last Crawl Time',
+    'url_inspection.google_canonical' => 'Google-selected Canonical',
+    'url_inspection.user_canonical' => 'User-declared Canonical',
+    'url_inspection.crawled_as' => 'Crawled As User Agent',
+    'url_inspection.cached_notice' => 'This inspection data was cached on {date}.',
 ];
