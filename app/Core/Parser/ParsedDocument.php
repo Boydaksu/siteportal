@@ -20,7 +20,19 @@ use SitePortal\Core\Parser\StructuredData\StructuredDataResult;
  *     title: ?string,
  *     width: ?string,
  *     height: ?string,
- *     loading: ?string
+ *     loading: ?string,
+ *     role?: ?string,
+ *     aria_hidden?: bool
+ * }
+ * @phpstan-type FormInputItem array{
+ *     tag: string,
+ *     id: ?string,
+ *     name: ?string,
+ *     type: string,
+ *     has_label: bool,
+ *     label_text: ?string,
+ *     label_source: ?string,
+ *     is_excluded: bool
  * }
  * @phpstan-type LinkItem array{
  *     href: string,
@@ -45,6 +57,7 @@ final class ParsedDocument
      * @param array<string, string> $twitterCards
      * @param list<ImageItem> $images
      * @param list<LinkItem> $links
+     * @param list<FormInputItem> $formInputs
      */
     public function __construct(
         private readonly ?string $title,
@@ -69,8 +82,38 @@ final class ParsedDocument
         private readonly int $wordCount,
         private readonly float $parseTimeMs,
         private readonly bool $isMalformed,
-        private readonly ?StructuredDataResult $structuredData = null
+        private readonly ?StructuredDataResult $structuredData = null,
+        private readonly ?string $viewport = null,
+        private readonly array $formInputs = []
     ) {
+    }
+
+    public function getViewport(): ?string
+    {
+        return $this->viewport;
+    }
+
+    /**
+     * @return list<FormInputItem>
+     */
+    public function getFormInputs(): array
+    {
+        return $this->formInputs;
+    }
+
+    /**
+     * @return list<FormInputItem>
+     */
+    public function getFormInputsMissingLabels(): array
+    {
+        $missing = [];
+        foreach ($this->formInputs as $input) {
+            if (!$input['is_excluded'] && !$input['has_label']) {
+                $missing[] = $input;
+            }
+        }
+
+        return $missing;
     }
 
     public function getStructuredData(): ?StructuredDataResult
@@ -253,7 +296,11 @@ final class ParsedDocument
     {
         $missing = [];
         foreach ($this->images as $img) {
-            if ($img['alt'] === null) {
+            $isExplicitlyDecorative = ($img['role'] ?? null) === 'presentation'
+                || ($img['role'] ?? null) === 'none'
+                || ($img['aria_hidden'] ?? false) === true;
+
+            if ($img['alt'] === null && !$isExplicitlyDecorative) {
                 $missing[] = $img;
             }
         }
@@ -371,6 +418,9 @@ final class ParsedDocument
             'parse_time_ms' => $this->parseTimeMs,
             'is_malformed' => $this->isMalformed,
             'structured_data' => $this->structuredData?->toArray(),
+            'viewport' => $this->viewport,
+            'form_inputs_count' => count($this->formInputs),
+            'form_inputs_missing_labels_count' => count($this->getFormInputsMissingLabels()),
         ];
     }
 }

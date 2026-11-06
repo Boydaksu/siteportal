@@ -128,6 +128,18 @@ return [
     'rules.SCHEMA_NO_RICH_TYPE.title' => 'Zengin Sonuç (Rich Result) Tür Uygunluğu',
     'rules.SCHEMA_NO_RICH_TYPE.fix' => 'Arama sonuçlarında zengin kart görünürlüğü elde etmek için sayfa amacına uygun Article, Product, BreadcrumbList veya FAQPage türleri ekleyin (isteğe bağlıdır).',
 
+    // F04.05 — Mobil ve Erişilebilirlik (a11y) Kuralları
+    'rules.MOBILE_VIEWPORT.title' => 'Mobil Viewport Meta Etiketi',
+    'rules.MOBILE_VIEWPORT.fix_missing' => 'Mobil cihazlara uyumlu ölçekleme için <head> bölümüne <meta name="viewport" content="width=device-width, initial-scale=1.0"> etiketini ekleyin.',
+    'rules.MOBILE_VIEWPORT.fix_scalable' => 'WCAG 1.4.4 metin ölçekleme standardına uyum sağlamak için viewport etiketinden "user-scalable=no" veya "maximum-scale=1" gibi yakınlaştırma engellerini kaldırın.',
+    'rules.MOBILE_VIEWPORT.fix_invalid' => 'Viewport etiketinde sayfa genişliğinin cihaz ekranına uymasını sağlamak için "width=device-width" veya "initial-scale=1" parametresini tanımlayın.',
+    'rules.MOBILE_OVERFLOW.title' => 'Mobil Ekran Yatay Taşma Denetimi',
+    'rules.MOBILE_OVERFLOW.fix' => 'Sayfa içeriğinin mobil görünümde yatay kaydırma çubuğu oluşturmaması için taşan sabit genişlikli öğeleri responsive (max-width: 100%) yapın.',
+    'rules.A11Y_FORM_LABEL.title' => 'Form Girdilerinde Erişilebilir Etiket',
+    'rules.A11Y_FORM_LABEL.fix' => 'Ekran okuyucu kullanıcıları ve erişilebilirlik için tüm form kontrollerine (<input>, <select>, <textarea>) ilişkili bir <label for="...">, aria-label veya sarmalayan <label> tanımlayın.',
+    'rules.A11Y_CONTRAST.title' => 'Metin ve Arka Plan Renk Kontrastı',
+    'rules.A11Y_CONTRAST.fix' => 'Metinlerin düşük görme yetisine sahip kullanıcılar tarafından rahat okunabilmesi için metin rengi ile arka plan arasındaki kontrast oranını en az 4.5:1 (büyük metinler için 3:1) yapın.',
+
     // F02.06 — Rapor UI anahtarları
     'report.title' => 'SEO Denetim Raporu',
     'report.summary' => 'Denetim Özeti',

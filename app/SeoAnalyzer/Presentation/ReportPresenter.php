@@ -156,6 +156,12 @@ final class ReportPresenter
         if (str_starts_with($ruleId, 'A11Y_')) {
             return 'accessibility';
         }
+        if (str_starts_with($ruleId, 'MOBILE_')) {
+            return 'mobile';
+        }
+        if (str_starts_with($ruleId, 'SCHEMA_')) {
+            return 'schema';
+        }
 
         return 'technical';
     }
@@ -167,6 +173,8 @@ final class ReportPresenter
             'onpage' => $locale === 'tr-TR' ? 'On-Page SEO' : 'On-Page SEO',
             'links' => $locale === 'tr-TR' ? 'Bağlantılar' : 'Links',
             'accessibility' => $locale === 'tr-TR' ? 'Erişilebilirlik' : 'Accessibility',
+            'mobile' => $locale === 'tr-TR' ? 'Mobil Uyumluluk' : 'Mobile Friendliness',
+            'schema' => $locale === 'tr-TR' ? 'Yapılandırılmış Veri' : 'Structured Data',
             default => ucfirst($category),
         };
     }
@@ -270,6 +278,12 @@ final class ReportPresenter
                 . '<a href="/hakkimizda">Hakkımızda</a>',
             'A11Y_IMAGE_ALT' => '<!-- Anlamlı görsel için -->\n<img src="/logo.png" alt="Şirket Logosu">\n'
                 . '<!-- Süsleme amaçlı görsel için -->\n<img src="/decor.png" alt="">',
+            'MOBILE_VIEWPORT' => '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+            'A11Y_FORM_LABEL' => "<!-- label for ile -->\n"
+                . "<label for=\"email\">E-posta Adresi</label>\n"
+                . "<input type=\"email\" id=\"email\" name=\"email\">\n\n"
+                . "<!-- aria-label ile -->\n"
+                . '<input type="search" name="q" aria-label="Sitede Ara">',
             default => null,
         };
     }

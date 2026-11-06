@@ -1,5 +1,45 @@
 # Changelog
 
+## 2026-11-06 | F04.05 | READY_FOR_REVIEW
+- Mobil ve Erişilebilirlik (a11y) Temel Kontrolleri (`docs/reports/F04.05.md`) tamamlandı.
+- `ParsedDocument` ve `HtmlParser` mobil ve a11y yetenekleriyle güçlendirildi:
+  - `viewport` meta etiketi çıkarımı (`getViewport()`).
+  - Görseller için `role` (`role="presentation"`, `role="none"`) ve `aria-hidden="true"` nitelikleri ayrıştırılarak dekoratif görseller eksik alt listesinden hariç tutuldu (`getImagesMissingAlt()`).
+  - Form giriş kontrolleri (`<input>`, `<select>`, `<textarea>`) ayrıştırıldı (`getFormInputs()`, `getFormInputsMissingLabels()`).
+  - Erişilebilir etiketleme (`has_label`, `label_text`, `label_source`) 5 katmanda doğrulandı: `<label for="...">`, sarmalayan `<label>`, `aria-label`, `aria-labelledby` ve `title`.
+  - Etiket gerektirmeyen input kontrolleri (`type="hidden"`, `submit`, `button`, `reset`, `image`) form field etiketi kuralından hariç tutuldu (`is_excluded`).
+- 4 yeni/güncellenmiş Mobil ve Erişilebilirlik kuralı:
+  - `MOBILE_VIEWPORT` (`app/SeoAnalyzer/Rules/Mobile/MobileViewportRule.php`, Severity: MEDIUM):
+    - Viewport yok veya boş -> FAIL.
+    - Metin yakınlaştırmayı engelleyen kısıtlamalar (`user-scalable=no`, `maximum-scale < 2.0`) -> WARN (WCAG 1.4.4 Metin Boyutlandırma ihlali).
+    - `width=device-width` veya `initial-scale` içermeyen sözdizimi -> WARN.
+    - Responsive mobil viewport -> PASS.
+  - `MOBILE_OVERFLOW` (`app/SeoAnalyzer/Rules/Mobile/MobileOverflowRule.php`, Severity: MEDIUM):
+    - Statik HTML analizinde render motoru/PageSpeed lab verisi yoksa asla sahte ceza/0 puan verilmez -> NOT_APPLICABLE.
+    - Lab/PageSpeed audits varsa değerlendirilir (PASS/FAIL).
+  - `A11Y_FORM_LABEL` (`app/SeoAnalyzer/Rules/Accessibility/A11yFormLabelRule.php`, Severity: MEDIUM):
+    - Form kontrolü yoksa -> NOT_APPLICABLE.
+    - Etiketleri eksik form kontrolleri varsa -> FAIL (delilde eksik input ID/name listelenir, feragatname içerir).
+    - Tüm form kontrolleri etiketliyse -> PASS.
+  - `A11Y_CONTRAST` (`app/SeoAnalyzer/Rules/Accessibility/A11yContrastRule.php`, Severity: LOW):
+    - Statik analizde computed styles olmadan ceza uygulanmaz -> NOT_APPLICABLE.
+    - Lab/Lighthouse `color_contrast` verisi varsa değerlendirilir (PASS/FAIL).
+  - Şartname şartı uygulandı: "Erişilebilirlik tam sertifika diye iddia edilmez. Uyumsuz sinyaller kanıtla." feragati tüm a11y kurallarına ve raporlara eklendi.
+- Kural fabrikaları ve V1RuleRegistryFactory entegrasyonu:
+  - `MobileRuleFactory` (`app/SeoAnalyzer/Rules/MobileRuleFactory.php`).
+  - `AccessibilityRuleFactory` (`app/SeoAnalyzer/Rules/AccessibilityRuleFactory.php`).
+  - `V1RuleRegistryFactory`: V1.2 registry artık 40 kuralı (19 Teknik + 13 On-Page + 4 Schema + 2 Mobil + 2 a11y) birleşik olarak sunar.
+- `ReportPresenter` entegrasyonu:
+  - `mobile` ve `accessibility` kategori etiketleri (`tr-TR` ve `en-US`).
+  - Viewport ve accessible form etiketleme için HTML kod örnekleri (`code_snippet`).
+- `MobileA11yFixtures` (`tests/Fixtures/MobileA11yFixtures.php`):
+  - Geçerli viewport, eksik viewport, kısıtlayıcı viewport (`user-scalable=no`), geçersiz viewport.
+  - Erişilebilir form (5 etiket türü + hariç tutulanlar), eksik etiketli form, formsuz sayfa.
+  - Dekoratif görseller (`role="presentation"`, `role="none"`, `aria-hidden="true"`, `alt=""`).
+- `tr-TR` ve `en-US` çevirileri tamamlandı.
+- 25 yeni birim ve entegrasyon testi; toplam test sayısı 572 test, 3856 assertion (%100 PASS).
+- F04.05 alt faz teslimi ve inceleme onayı bekleniyor; kullanıcı onayı olmadan bir sonraki alt faza geçilmez (DUR).
+
 ## 2026-11-06 | F04.04 kabulü ve PR #32 merge
 - Kullanıcı “onaylıyorum” ile F04.04 teslim kabulünü, PR #32 birleştirmesini ve F04.05 başlangıcını onayladı; PR #32 main dalına squash-merge edildi (`34b14ed73fbb800bfd61080b30a0da67dcd37064`).
 - F04.04 alt fazı (JSON-LD Microdata RDFa) resmen DONE durumuna getirildi.

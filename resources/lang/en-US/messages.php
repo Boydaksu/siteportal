@@ -128,6 +128,18 @@ return [
     'rules.SCHEMA_NO_RICH_TYPE.title' => 'Rich Result Type Eligibility',
     'rules.SCHEMA_NO_RICH_TYPE.fix' => 'Consider adding Google Rich Result eligible types such as Article, Product, BreadcrumbList, or FAQPage if applicable to this page (optional).',
 
+    // F04.05 — Mobile and Accessibility (a11y) Rules
+    'rules.MOBILE_VIEWPORT.title' => 'Mobile Viewport Meta Tag',
+    'rules.MOBILE_VIEWPORT.fix_missing' => 'Add <meta name="viewport" content="width=device-width, initial-scale=1.0"> to your document <head> to enable responsive mobile scaling.',
+    'rules.MOBILE_VIEWPORT.fix_scalable' => 'Comply with WCAG 1.4.4 text resizing by removing restrictive zoom attributes like "user-scalable=no" or "maximum-scale=1" from your viewport meta tag.',
+    'rules.MOBILE_VIEWPORT.fix_invalid' => 'Configure your viewport meta tag with "width=device-width" or "initial-scale=1" to ensure proper rendering across mobile devices.',
+    'rules.MOBILE_OVERFLOW.title' => 'Mobile Horizontal Layout Overflow',
+    'rules.MOBILE_OVERFLOW.fix' => 'Ensure all page content fits horizontally within the viewport (e.g. use max-width: 100%) to prevent unintended horizontal scrolling on mobile.',
+    'rules.A11Y_FORM_LABEL.title' => 'Accessible Labels on Form Controls',
+    'rules.A11Y_FORM_LABEL.fix' => 'Ensure every interactive form input (<input>, <select>, <textarea>) has an associated <label for="...">, aria-label, or wrapping <label>.',
+    'rules.A11Y_CONTRAST.title' => 'Text and Background Color Contrast',
+    'rules.A11Y_CONTRAST.fix' => 'Provide a contrast ratio of at least 4.5:1 for standard text (3:1 for large text) between foreground text and background colors.',
+
     // F02.06 — Report UI keys
     'report.title' => 'SEO Audit Report',
     'report.summary' => 'Audit Summary',

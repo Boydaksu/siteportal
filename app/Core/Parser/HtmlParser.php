@@ -24,6 +24,7 @@ use SitePortal\Core\Parser\StructuredData\StructuredDataExtractor;
  * @phpstan-import-type HeadingItem from ParsedDocument
  * @phpstan-import-type ImageItem from ParsedDocument
  * @phpstan-import-type LinkItem from ParsedDocument
+ * @phpstan-import-type FormInputItem from ParsedDocument
  */
 final class HtmlParser implements HtmlParserInterface
 {
@@ -94,7 +95,7 @@ final class HtmlParser implements HtmlParserInterface
         $titleCount = count($allTitles);
         $title = $titleCount > 0 ? $allTitles[0] : null;
 
-        // 2. Meta etiketleri (tek geçişte: description, robots, og, twitter, charset)
+        // 2. Meta etiketleri (tek geçişte: description, robots, og, twitter, charset, viewport)
         $metaData = $this->extractMetaTags($xpath);
         $allMetaDescriptions = $metaData['descriptions'];
         $metaDescriptionCount = count($allMetaDescriptions);
@@ -103,6 +104,7 @@ final class HtmlParser implements HtmlParserInterface
         $openGraph = $metaData['og'];
         $twitterCards = $metaData['twitter'];
         $documentCharset = $detectedCharset ?? $metaData['charset'] ?? 'UTF-8';
+        $viewport = $metaData['viewport'];
 
         // 3. Dil (<html lang="..."> veya xml:lang)
         $lang = $this->extractLanguage($xpath);
@@ -121,10 +123,13 @@ final class HtmlParser implements HtmlParserInterface
         // 7. Bağlantılar (<a>)
         $links = $this->extractLinks($xpath, $effectiveBaseUrl);
 
-        // 8. Yapılandırılmış Veri (JSON-LD, Microdata, RDFa - script'ler silinmeden önce çıkarılır)
+        // 8. Form giriş öğeleri ve erişilebilir etiketleri (<input>, <select>, <textarea>)
+        $formInputs = $this->extractFormInputs($xpath);
+
+        // 9. Yapılandırılmış Veri (JSON-LD, Microdata, RDFa - script'ler silinmeden önce çıkarılır)
         $structuredData = StructuredDataExtractor::extract($dom);
 
-        // 9. Gövde metin uzunluğu ve kelime sayısı (script, style vb. temizlendikten sonra)
+        // 10. Gövde metin uzunluğu ve kelime sayısı (script, style vb. temizlendikten sonra)
         [$textLength, $wordCount] = $this->calculateTextAndWords($xpath);
 
         $parseTimeMs = round((microtime(true) - $startTime) * 1000, 2);
@@ -152,7 +157,9 @@ final class HtmlParser implements HtmlParserInterface
             wordCount: $wordCount,
             parseTimeMs: $parseTimeMs,
             isMalformed: $isMalformed,
-            structuredData: $structuredData
+            structuredData: $structuredData,
+            viewport: $viewport,
+            formInputs: $formInputs
         );
     }
 
@@ -254,7 +261,8 @@ final class HtmlParser implements HtmlParserInterface
      *     robots: array<string, bool|string|int>,
      *     og: array<string, string>,
      *     twitter: array<string, string>,
-     *     charset: ?string
+     *     charset: ?string,
+     *     viewport: ?string
      * }
      */
     private function extractMetaTags(DOMXPath $xpath): array
@@ -264,6 +272,7 @@ final class HtmlParser implements HtmlParserInterface
         $og = [];
         $twitter = [];
         $charset = null;
+        $viewport = null;
 
         $nodes = $xpath->query('//meta');
         if ($nodes !== false) {
@@ -298,6 +307,8 @@ final class HtmlParser implements HtmlParserInterface
 
                     if ($name === 'description') {
                         $descriptions[] = $this->normalizeWhitespace($content);
+                    } elseif ($name === 'viewport') {
+                        $viewport = $content !== '' ? $content : null;
                     } elseif ($name === 'robots' || $name === 'googlebot') {
                         $this->parseRobotsDirectives($content, $robots);
                     } elseif (str_starts_with($name, 'twitter:')) {
@@ -334,6 +345,7 @@ final class HtmlParser implements HtmlParserInterface
             'og' => $og,
             'twitter' => $twitter,
             'charset' => $charset,
+            'viewport' => $viewport,
         ];
     }
 
@@ -453,6 +465,7 @@ final class HtmlParser implements HtmlParserInterface
 
     /**
      * <img> etiketlerini ayıklar; eksik alt ile boş alt="" ayrımını korur.
+     * role="presentation", role="none" ve aria-hidden niteliklerini de ayıklar.
      *
      * @return list<ImageItem>
      */
@@ -471,6 +484,11 @@ final class HtmlParser implements HtmlParserInterface
                 $width = $node->hasAttribute('width') ? $node->getAttribute('width') : null;
                 $height = $node->hasAttribute('height') ? $node->getAttribute('height') : null;
                 $loading = $node->hasAttribute('loading') ? strtolower($node->getAttribute('loading')) : null;
+                $role = $node->hasAttribute('role') ? strtolower(trim($node->getAttribute('role'))) : null;
+                $ariaHiddenAttr = $node->hasAttribute('aria-hidden')
+                    ? strtolower(trim($node->getAttribute('aria-hidden')))
+                    : null;
+                $ariaHidden = ($ariaHiddenAttr === 'true' || $ariaHiddenAttr === '1');
 
                 $images[] = [
                     'src' => $src,
@@ -479,11 +497,142 @@ final class HtmlParser implements HtmlParserInterface
                     'width' => $width,
                     'height' => $height,
                     'loading' => $loading,
+                    'role' => $role,
+                    'aria_hidden' => $ariaHidden,
                 ];
             }
         }
 
         return $images;
+    }
+
+    /**
+     * Form giriş öğelerini (<input>, <select>, <textarea>) ve erişilebilir etiketlerini ayıklar.
+     *
+     * @return list<FormInputItem>
+     */
+    private function extractFormInputs(DOMXPath $xpath): array
+    {
+        // 1. Sayfadaki tüm <label for="..."> etiketlerini indeksle
+        $labelsByFor = [];
+        $labelNodes = $xpath->query('//label[@for]');
+        if ($labelNodes !== false) {
+            foreach ($labelNodes as $lbl) {
+                if ($lbl instanceof DOMElement) {
+                    $for = trim($lbl->getAttribute('for'));
+                    if ($for !== '') {
+                        $labelsByFor[$for] = $this->normalizeWhitespace($lbl->textContent);
+                    }
+                }
+            }
+        }
+
+        // 2. <input>, <select>, <textarea> öğelerini bul
+        $inputs = [];
+        $formElements = $xpath->query('//input | //select | //textarea');
+        if ($formElements !== false) {
+            foreach ($formElements as $node) {
+                if (!$node instanceof DOMElement) {
+                    continue;
+                }
+
+                $tag = strtolower($node->nodeName);
+                $id = $node->hasAttribute('id') ? trim($node->getAttribute('id')) : null;
+                $name = $node->hasAttribute('name') ? trim($node->getAttribute('name')) : null;
+                $type = $tag === 'input'
+                    ? strtolower(trim($node->getAttribute('type') ?: 'text'))
+                    : $tag;
+
+                $isExcluded = ($tag === 'input'
+                    && in_array($type, ['hidden', 'submit', 'button', 'reset', 'image'], true));
+
+                $hasLabel = false;
+                $labelText = null;
+                $labelSource = null;
+
+                if (!$isExcluded) {
+                    // a) label[for="id"]
+                    if ($id !== null && isset($labelsByFor[$id]) && $labelsByFor[$id] !== '') {
+                        $hasLabel = true;
+                        $labelText = $labelsByFor[$id];
+                        $labelSource = 'label_for';
+                    }
+
+                    // b) sarmalayan <label> (ancestor::label)
+                    if (!$hasLabel) {
+                        $ancestorLabels = $xpath->query('ancestor::label', $node);
+                        if ($ancestorLabels !== false && $ancestorLabels->length > 0) {
+                            $parentLabel = $ancestorLabels->item(0);
+                            if ($parentLabel instanceof DOMElement) {
+                                $text = $this->normalizeWhitespace($parentLabel->textContent);
+                                if ($text !== '') {
+                                    $hasLabel = true;
+                                    $labelText = $text;
+                                    $labelSource = 'wrapped_label';
+                                }
+                            }
+                        }
+                    }
+
+                    // c) aria-label
+                    if (!$hasLabel && $node->hasAttribute('aria-label')) {
+                        $ariaLabel = $this->normalizeWhitespace($node->getAttribute('aria-label'));
+                        if ($ariaLabel !== '') {
+                            $hasLabel = true;
+                            $labelText = $ariaLabel;
+                            $labelSource = 'aria-label';
+                        }
+                    }
+
+                    // d) aria-labelledby
+                    if (!$hasLabel && $node->hasAttribute('aria-labelledby')) {
+                        $labelledbyId = trim($node->getAttribute('aria-labelledby'));
+                        if ($labelledbyId !== '') {
+                            $labelledNodes = $xpath->query('//*[@id="' . addslashes($labelledbyId) . '"]');
+                            if ($labelledNodes !== false && $labelledNodes->length > 0) {
+                                $targetNode = $labelledNodes->item(0);
+                                if ($targetNode instanceof DOMNode) {
+                                    $lblText = $this->normalizeWhitespace($targetNode->textContent);
+                                    if ($lblText !== '') {
+                                        $hasLabel = true;
+                                        $labelText = $lblText;
+                                        $labelSource = 'aria-labelledby';
+                                    }
+                                }
+                            }
+                            if (!$hasLabel) {
+                                $hasLabel = true;
+                                $labelText = $labelledbyId;
+                                $labelSource = 'aria-labelledby';
+                            }
+                        }
+                    }
+
+                    // e) title
+                    if (!$hasLabel && $node->hasAttribute('title')) {
+                        $titleAttr = $this->normalizeWhitespace($node->getAttribute('title'));
+                        if ($titleAttr !== '') {
+                            $hasLabel = true;
+                            $labelText = $titleAttr;
+                            $labelSource = 'title';
+                        }
+                    }
+                }
+
+                $inputs[] = [
+                    'tag' => $tag,
+                    'id' => $id,
+                    'name' => $name,
+                    'type' => $type,
+                    'has_label' => $hasLabel,
+                    'label_text' => $labelText,
+                    'label_source' => $labelSource,
+                    'is_excluded' => $isExcluded,
+                ];
+            }
+        }
+
+        return $inputs;
     }
 
     /**

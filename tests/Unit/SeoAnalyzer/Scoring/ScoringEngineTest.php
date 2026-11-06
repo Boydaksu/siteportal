@@ -99,18 +99,24 @@ final class ScoringEngineTest extends TestCase
         self::assertTrue($registry->has('A11Y_IMAGE_ALT'));
     }
 
-    public function testV1RuleRegistryFactoryRegistersAll36RulesWithV12(): void
+    public function testV1RuleRegistryFactoryRegistersAll40RulesWithV12(): void
     {
         $registry = V1RuleRegistryFactory::createRegistry(includeV12: true);
 
-        self::assertSame(36, $registry->count());
-        self::assertCount(36, $registry->all());
+        self::assertSame(40, $registry->count());
+        self::assertCount(40, $registry->all());
 
         // Verify schema rules
         self::assertTrue($registry->has('SCHEMA_INVALID_JSONLD'));
         self::assertTrue($registry->has('SCHEMA_INVALID_CONTEXT'));
         self::assertTrue($registry->has('SCHEMA_REQUIRED_FOR_TYPE'));
         self::assertTrue($registry->has('SCHEMA_NO_RICH_TYPE'));
+
+        // Verify mobile and a11y rules
+        self::assertTrue($registry->has('MOBILE_VIEWPORT'));
+        self::assertTrue($registry->has('MOBILE_OVERFLOW'));
+        self::assertTrue($registry->has('A11Y_FORM_LABEL'));
+        self::assertTrue($registry->has('A11Y_CONTRAST'));
     }
 
     public function testAuditEngineExecutesAllRulesDeterministically(): void

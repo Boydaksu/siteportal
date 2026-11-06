@@ -46,7 +46,7 @@ final class StructuredDataIntegrationTest extends TestCase
         );
 
         $findings = $this->auditEngine->audit($snapshot);
-        self::assertCount(36, $findings);
+        self::assertCount(40, $findings);
 
         // Find schema findings
         $schemaFindings = array_filter(
