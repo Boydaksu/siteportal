@@ -19,7 +19,7 @@ final class SitemapDiscoveryServiceTest extends TestCase
 {
     public function testDiscoversCandidateSitemapsFromRobotsAndDefaultPaths(): void
     {
-        $httpClient = $this->createMock(HttpClientInterface::class);
+        $httpClient = $this->createStub(HttpClientInterface::class);
         $service = new SitemapDiscoveryService(
             httpClient: $httpClient,
             scopePolicy: new CrawlScopePolicy(ScopeMode::EXACT_HOST)
@@ -93,7 +93,7 @@ XML;
 
     public function testPreventsInfiniteRecursionOrDepthExceededInSitemapIndex(): void
     {
-        $httpClient = $this->createMock(HttpClientInterface::class);
+        $httpClient = $this->createStub(HttpClientInterface::class);
 
         // Child points back to parent or another index beyond depth 2
         $index1 = <<<XML
@@ -130,7 +130,7 @@ XML;
 
     public function testFeedsFrontierWithDiscoveredSitemapUrls(): void
     {
-        $httpClient = $this->createMock(HttpClientInterface::class);
+        $httpClient = $this->createStub(HttpClientInterface::class);
         $service = new SitemapDiscoveryService(httpClient: $httpClient);
 
         $frontier = new MemoryUrlFrontier(

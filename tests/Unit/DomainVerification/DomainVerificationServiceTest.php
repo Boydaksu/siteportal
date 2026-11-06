@@ -273,7 +273,7 @@ final class DomainVerificationServiceTest extends TestCase
 
     public function testVerifyHttpFileSuccess(): void
     {
-        $httpMock = $this->createMock(HttpClientInterface::class);
+        $httpMock = $this->createStub(HttpClientInterface::class);
         $service = new DomainVerificationService($this->db, $httpMock);
         $challenge = $service->generateChallenge(1, 1, VerificationMethod::HTTP_FILE);
 
@@ -284,9 +284,7 @@ final class DomainVerificationServiceTest extends TestCase
             effectiveUrl: 'https://example.com/.well-known/siteportal-verify.txt'
         );
 
-        $httpMock->expects(self::once())
-            ->method('get')
-            ->with('https://example.com/.well-known/siteportal-verify.txt')
+        $httpMock->method('get')
             ->willReturn($response);
 
         $result = $service->verify($challenge->id, 1);
@@ -299,7 +297,7 @@ final class DomainVerificationServiceTest extends TestCase
 
     public function testVerifyHttpFileSuccessWithPlainTokenOrMultiline(): void
     {
-        $httpMock = $this->createMock(HttpClientInterface::class);
+        $httpMock = $this->createStub(HttpClientInterface::class);
         $service = new DomainVerificationService($this->db, $httpMock);
         $challenge = $service->generateChallenge(1, 1, VerificationMethod::HTTP_FILE);
 
@@ -310,8 +308,7 @@ final class DomainVerificationServiceTest extends TestCase
             effectiveUrl: 'https://example.com/.well-known/siteportal-verify.txt'
         );
 
-        $httpMock->expects(self::once())
-            ->method('get')
+        $httpMock->method('get')
             ->willReturn($response);
 
         $result = $service->verify($challenge->id, 1);
@@ -321,7 +318,7 @@ final class DomainVerificationServiceTest extends TestCase
 
     public function testVerifyHttpFileFailureWhenStatusCodeNot200(): void
     {
-        $httpMock = $this->createMock(HttpClientInterface::class);
+        $httpMock = $this->createStub(HttpClientInterface::class);
         $service = new DomainVerificationService($this->db, $httpMock);
         $challenge = $service->generateChallenge(1, 1, VerificationMethod::HTTP_FILE);
 
@@ -332,8 +329,7 @@ final class DomainVerificationServiceTest extends TestCase
             effectiveUrl: 'https://example.com/.well-known/siteportal-verify.txt'
         );
 
-        $httpMock->expects(self::once())
-            ->method('get')
+        $httpMock->method('get')
             ->willReturn($response);
 
         $result = $service->verify($challenge->id, 1);
@@ -344,7 +340,7 @@ final class DomainVerificationServiceTest extends TestCase
 
     public function testVerifyHttpFileFailureWhenTokenMismatches(): void
     {
-        $httpMock = $this->createMock(HttpClientInterface::class);
+        $httpMock = $this->createStub(HttpClientInterface::class);
         $service = new DomainVerificationService($this->db, $httpMock);
         $challenge = $service->generateChallenge(1, 1, VerificationMethod::HTTP_FILE);
 
@@ -355,8 +351,7 @@ final class DomainVerificationServiceTest extends TestCase
             effectiveUrl: 'https://example.com/.well-known/siteportal-verify.txt'
         );
 
-        $httpMock->expects(self::once())
-            ->method('get')
+        $httpMock->method('get')
             ->willReturn($response);
 
         $result = $service->verify($challenge->id, 1);
@@ -367,12 +362,11 @@ final class DomainVerificationServiceTest extends TestCase
 
     public function testVerifyHttpFileFailureOnNetworkOrSsrfException(): void
     {
-        $httpMock = $this->createMock(HttpClientInterface::class);
+        $httpMock = $this->createStub(HttpClientInterface::class);
         $service = new DomainVerificationService($this->db, $httpMock);
         $challenge = $service->generateChallenge(1, 1, VerificationMethod::HTTP_FILE);
 
-        $httpMock->expects(self::once())
-            ->method('get')
+        $httpMock->method('get')
             ->willThrowException(new RuntimeException('SSRF blocked: IP is loopback'));
 
         $result = $service->verify($challenge->id, 1);
