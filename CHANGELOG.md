@@ -1,7 +1,9 @@
 # Changelog
 
-## 2026-11-06 | F05.02 | READY_FOR_REVIEW
-- Domain Doğrulama (DNS TXT ve HTTP Dosya) mimarisi (`docs/reports/F05.02.md`) tamamlandı.
+## 2026-11-06 | F05.02 kabulü ve PR #37 merge
+- Kullanıcı “onaylıyorum” ile F05.02 teslim kabulünü, PR #37 birleştirmesini ve F05.03 başlangıç hazırlığını onayladı; PR #37 main dalına squash-merge edildi (`bada501868bf2da8530d8813f7a0ff7ed2c8521b`).
+- F05.02 alt fazı (Domain doğrulama) resmen DONE durumuna getirildi.
+- Domain Doğrulama (DNS TXT ve HTTP Dosya) mimarisi (`docs/reports/F05.02.md`) teslim edildi.
 - Veritabanı Migration (`0009_create_domain_verifications_table.php`):
   - `sites` tablosuna `verification_method` kolonu eklendi.
   - `domain_verifications` tablosu (`id`, `site_id`, `user_id`, `method`, `token`, `status`, `expires_at`, `last_checked_at`, `verified_at`, `failure_reason`) ve arama indeksleri oluşturuldu.
@@ -15,7 +17,7 @@
   - Doğrulama başarıyla tamamlandığında `site_members` tablosunda kullanıcıya otomatik `SiteRole::OWNER` yetkisinin atanması.
 - İki dilli sözlük: `resources/lang/tr-TR/messages.php` ve `en-US/messages.php` içine 16 yeni domain doğrulama anahtarı eklendi (%100 senkronize, 253 anahtar).
 - Testler: 29 yeni birim ve entegrasyon testi eklendi; toplam test sayısı 671 test, 4892 assertion (%100 PASS).
-- F05.02 teslim kabulü için kullanıcı onayı bekleniyor (DUR).
+- Sıradaki alt faz F05.03 (OAuth güvenliği) başlatılacaktır.
 
 ## 2026-11-06 | F05.01 kabulü ve PR #36 merge
 - Kullanıcı “onaylıyorum” ile F05.01 teslim kabulünü, PR #36 birleştirmesini ve F05.02 başlangıç hazırlığını onayladı; PR #36 main dalına squash-merge edildi (`c95f56e47054b991631f99218097dc8f7420d931`).
