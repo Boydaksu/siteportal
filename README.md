@@ -1,11 +1,11 @@
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F05.03 — DONE; PR #38 merge edildi. F05.04 hazırlığı.
+> **Durum:** F05.04 — READY_FOR_REVIEW; PR açılması ve kullanıcı onayı bekleniyor.
 > **Tarih:** 2026-11-06 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F05 / V2.0 (IN_PROGRESS).
 > **Son onaylanan alt faz:** F05.03 — DONE; teslim ve PR #38 merge onaylandı (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
-> **Aktif dal:** `main`.
-> **Son kontrol:** PHP lint (382 dosya), PSR-12, PHPStan seviye 8, PHPUnit (697 test / 5005 assertions) PASS (%100).
-> **Rapor:** [F05.03](docs/reports/F05.03.md). **Sonraki:** F05.04 — Search Analytics entegrasyonu.
+> **Aktif dal:** `phase/F05.04-search-analytics`.
+> **Son kontrol:** PHP lint (395 dosya), PSR-12, PHPStan seviye 8, PHPUnit (719 test / 5148 assertions) PASS (%100).
+> **Rapor:** [F05.04](docs/reports/F05.04.md). **Sonraki:** F05.05 — URL Inspection entegrasyonu.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
 > **Test rehberi:** [TESTING](docs/process/TESTING.md). [Q-004 lisansı](docs/process/OPEN_QUESTIONS.md) açık.
 > **Başlangıç:** [START_HERE](START_HERE.md) → [belge haritası](docs/README.md).

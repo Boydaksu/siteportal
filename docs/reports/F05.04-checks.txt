@@ -1,0 +1,51 @@
+================================================================================
+SitePortal F05.04 Kontrol ve Dogrulama Ozeti
+Tarih: 2026-11-06T19:40:00+03:00
+Dal: phase/F05.04-search-analytics
+Commit: Calisma Dali
+================================================================================
+
+1. PHP SOZDIZIMI (LINT)
+--------------------------------------------------------------------------------
+Komut: find app config database public tests -name "*.php" -exec php -l {} +
+Sonuc: 395 dosya kontrol edildi, 0 hata, 0 uyari. [PASS]
+
+2. PSR-12 KOD STANDARDI
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpcs --standard=PSR12 app tests
+Sonuc: 0 hata, 0 uyarı. [PASS]
+
+3. PHPSTAN STATIK TIP ANALIZI (SEVIYE 8)
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpstan analyse --level=8 --debug --memory-limit 512M app tests
+Sonuc: 373 dosya incelendi. [OK] No errors. [PASS]
+
+4. BIRIM VE ENTEGRASYON TESTLERI (PHPUNIT)
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpunit
+Sonuc: Tests: 719, Assertions: 5148, Skipped: 2, PHPUnit Notices: 0, Failures: 0, Errors: 0.
+Basari orani: %100 PASS.
+
+5. NEGATIF KALITE KAPILARI (NEGATIVE QUALITY GATES)
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpunit tests/Unit/FixtureContractTest.php tests/Unit/Observability/LogMaskerTest.php tests/Unit/Security/UrlValidatorTest.php tests/Unit/Security/RateLimiterTest.php
+Sonuc: 26 test, 241 assertions. [PASS]
+
+6. I18N SOZLUK ESLESMESI (TR / EN)
+--------------------------------------------------------------------------------
+TR anahtar sayisi: 280
+EN anahtar sayisi: 280
+Fark: 0 eksik, 0 uyumsuzluk (%100 eslesme). [PASS]
+
+7. SEARCH ANALYTICS VE GSC GUVENLIK KONTROLLERI
+--------------------------------------------------------------------------------
+- GSC Clicks, Impressions, CTR, Average Position metrik donusumu [PASS]
+- Date, Country, Device, Query, Page boyut (breakdown) ayrismasi [PASS]
+- GSC API 401, 403, 429 kota asimi ve hata yonetimi [PASS]
+- Veritabani destekli search_analytics_caches tablosu ile API kota korumasi ve TTL onbellegi [PASS]
+- Force refresh destegi ile onbellegi atlayarak taze veri cekebilme [PASS]
+- Suresi dolmus tokenlarin GoogleOAuthService tarafindan otomatik yenilenmesi (refreshAccessToken) [PASS]
+- Eksik veya bos veri durumlarinda NO_DATA etiketlemesi ve guvenli fallback [PASS]
+- Capraz kullanici / tenant veri izolasyonu (yetkisiz erisim engeli) [PASS]
+- SOZLESME GUVENCESI: GSC web trafigi metriklerinin crawler teknik SEO skoruyla KESINLIKLE karistirilmamasi (ayrik sunum) [PASS]
+================================================================================

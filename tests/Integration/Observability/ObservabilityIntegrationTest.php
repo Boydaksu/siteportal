@@ -41,7 +41,7 @@ final class ObservabilityIntegrationTest extends TestCase
         $runner = new MigrationRunner($this->db);
         $status = $runner->status();
 
-        self::assertCount(10, $status);
+        self::assertCount(11, $status);
         self::assertTrue($status[0]['applied']);
         self::assertTrue($status[1]['applied']);
         self::assertTrue($status[2]['applied']);
@@ -52,6 +52,7 @@ final class ObservabilityIntegrationTest extends TestCase
         self::assertTrue($status[7]['applied']);
         self::assertTrue($status[8]['applied']);
         self::assertTrue($status[9]['applied']);
+        self::assertTrue($status[10]['applied']);
         self::assertSame('0003_add_user_role', $status[2]['migration']);
         self::assertSame('0004_enhance_analyses_table', $status[3]['migration']);
         self::assertSame('0005_add_scores_to_analyses', $status[4]['migration']);
@@ -60,6 +61,7 @@ final class ObservabilityIntegrationTest extends TestCase
         self::assertSame('0008_create_auth_and_rbac_tables', $status[7]['migration']);
         self::assertSame('0009_create_domain_verifications_table', $status[8]['migration']);
         self::assertSame('0010_create_oauth_tables', $status[9]['migration']);
+        self::assertSame('0011_create_search_analytics_tables', $status[10]['migration']);
 
         // Check users table has role column
         $admin = $this->db->fetch('SELECT email, role FROM users WHERE email = :email', [
