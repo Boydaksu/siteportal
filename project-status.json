@@ -9,13 +9,13 @@
   "current_subphase": "F05.01",
   "last_approved_phase": "F04",
   "last_approved_subphase": "F04.07",
-  "status": "IN_PROGRESS",
+  "status": "READY_FOR_REVIEW",
   "branch": "phase/F05.01-account-rbac",
-  "commit_sha": null,
-  "pr_url": null,
+  "commit_sha": "1fa07f2",
+  "pr_url": "https://github.com/Boydaksu/siteportal/pull/36",
   "last_report": "docs/reports/F05.01.md",
   "blockers": [],
-  "next_action": "F05.01 hesap ve RBAC mimarisinin geliştirilmesi ve test edilmesi.",
+  "next_action": "PR #36 incelemesi ve F05.01 teslim kabulü için kullanıcı onayı bekleniyor.",
   "next_subphase": "F05.02",
   "phases": {
     "F00": {
@@ -87,7 +87,7 @@
       "version": "V2.0",
       "status": "IN_PROGRESS",
       "subphases": {
-        "F05.01": "IN_PROGRESS",
+        "F05.01": "READY_FOR_REVIEW",
         "F05.02": "NOT_STARTED",
         "F05.03": "NOT_STARTED",
         "F05.04": "NOT_STARTED",
