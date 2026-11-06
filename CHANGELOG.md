@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-06 | F05.05 | READY_FOR_REVIEW
+- F05.05 alt fazı (Google Search Console URL Inspection entegrasyonu: indexed status, coverage state, robots.txt, canonical, mobil ve rich results kontrolleri, 24 saat TTL önbellekleme) tamamlandı; PR açılması ve kullanıcı incelemesine sunuldu.
+- Google Search Console URL Inspection API v1 entegrasyonu (`docs/reports/F05.05.md`):
+  - Veritabanı Migration (`0012_create_url_inspection_tables.php`): `url_inspection_caches` tablosu ve arama indeksleri.
+  - İstemci ve Servis Katmanı (`GoogleUrlInspectionClient`, `UrlInspectionService`): GSC API v1 `/urlInspection/index:inspect` endpoint'i, 401/403/429 hata yönetimi, süresi dolan token'ların otomatik yenilenmesi (`refreshAccessToken`), origin doğrulaması (`validateInspectionUrl`).
+  - DTO ve Domain Modelleri (`UrlInspectionIndexStatus`, `UrlInspectionMobileUsability`, `UrlInspectionRichResults`, `UrlInspectionResult`): Tip güvenli indeksleme ve dizin kapsam verisi.
+  - **Sözleşme Kuralları Güvencesi:** Canlı URL testi iddiasının bulunmaması (`isLiveTest = false`), verinin yalnız Google dizinindeki bilinen durum olması ve crawler teknik SEO skorundan (`analyses.score_overall`) kesinlikle bağımsız tutulması sağlandı.
+  - İki dilli sözlük: `resources/lang/tr-TR/messages.php` ve `en-US/messages.php` içine 14 yeni URL Inspection anahtarı eklendi (%100 senkronize, 294 anahtar).
+  - Testler: 21 yeni test eklendi; toplam test sayısı 740 test, 5278 assertion (%100 PASS, 0 notice, 0 warning, 0 error).
+
 ## 2026-11-06 | F05.04 kabulü ve PR #39 merge
 - Kullanıcı “onaylıyorum” ile F05.04 teslim kabulünü, PR #39 birleştirmesini ve F05.05 başlangıç hazırlığını onayladı; PR #39 main dalına squash-merge edildi (`9308f1147522e5e7756cfa810c24d5a643f47d28`).
 - F05.04 alt fazı (Search Analytics Entegrasyonu: clicks, impressions, ctr, position; date/country/device/query/page kırılımları ve önbellekleme) resmen DONE durumuna getirildi.

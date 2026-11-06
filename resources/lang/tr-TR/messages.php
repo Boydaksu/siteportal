@@ -309,4 +309,20 @@ return [
     'search_analytics.no_data' => 'Seçilen tarih aralığı için arama verisi bulunamadı.',
     'search_analytics.quota_exceeded' => 'Google Search Console API istek kotası aşıldı. Lütfen daha sonra tekrar deneyin.',
     'search_analytics.cached_notice' => 'Bu veriler {date} tarihinde önbelleğe alınmıştır.',
+
+    // F05.05 — URL Inspection Entegrasyonu
+    'url_inspection.title' => 'Google URL Denetimi (URL Inspection)',
+    'url_inspection.desc' => 'Sayfanın Google dizinindeki son bilinen durumu, indeksleme ve mobil uygunluk verileri.',
+    'url_inspection.not_live_test_notice' => 'Bu rapor Google dizinindeki son bilinen durumu gösterir; canlı bir Googlebot testi değildir.',
+    'url_inspection.index_verdict_pass' => 'URL Google\'da dizine eklenmiş durumda.',
+    'url_inspection.index_verdict_neutral' => 'URL dizine eklenmemiş ancak herhangi bir açık hata bildirilmemiş.',
+    'url_inspection.index_verdict_fail' => 'URL dizine eklenememiş veya hata içeriyor.',
+    'url_inspection.coverage_state' => 'Dizin Kapsam Durumu',
+    'url_inspection.robots_txt_state' => 'Robots.txt Durumu',
+    'url_inspection.indexing_state' => 'İndeksleme İzni',
+    'url_inspection.last_crawl_time' => 'Son Tarama Tarihi',
+    'url_inspection.google_canonical' => 'Google Tarafından Seçilen Standart URL',
+    'url_inspection.user_canonical' => 'Kullanıcı Tarafından Belirtilen Standart URL',
+    'url_inspection.crawled_as' => 'Taramada Kullanılan Kullanıcı Aracısı',
+    'url_inspection.cached_notice' => 'Bu denetim verisi {date} tarihinde önbelleğe alınmıştır.',
 ];
