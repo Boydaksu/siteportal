@@ -11,7 +11,7 @@
   "last_approved_subphase": "F04.07",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F05.01-account-rbac",
-  "commit_sha": "1fa07f2",
+  "commit_sha": "43f759d",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/36",
   "last_report": "docs/reports/F05.01.md",
   "blockers": [],
