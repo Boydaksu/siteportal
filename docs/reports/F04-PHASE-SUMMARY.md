@@ -151,7 +151,7 @@ flowchart TD
 ## 5. Teknik Borç, Açık Sorular ve Risk Değerlendirmesi
 
 - **Teknik Borç:** Sıfır. PHPStan Seviye 8 sıfır hata toleransı korunmuştur. PHPCS PSR-12 standardında 0 hata ve 0 uyarı bulunmaktadır.
-- **Açık Kararlar:** [Q-004](docs/process/OPEN_QUESTIONS.md) (Genişletilmiş açık kaynak dağıtım lisansı) açık kalmaya devam etmektedir; mevcut özel depo durumunda engel teşkil etmemektedir.
+- **Açık Kararlar:** [Q-004](../process/OPEN_QUESTIONS.md) (Genişletilmiş açık kaynak dağıtım lisansı) açık kalmaya devam etmektedir; mevcut özel depo durumunda engel teşkil etmemektedir.
 - **Performans Riski:** Büyük DOM boyutlarında XPath ve DOMDocument bellek kullanımı `LIBXML_PARSEHUGE` sınırlarıyla korunmaktadır.
 
 ---
