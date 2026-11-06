@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-11-06 | F05.03 | READY_FOR_REVIEW
+- Google OAuth Güvenliği (PKCE, State, Encrypted Refresh Tokens ve Revocation) mimarisi (`docs/reports/F05.03.md`) tamamlandı.
+- Veritabanı Migration (`0010_create_oauth_tables.php`):
+  - `oauth_connections` tablosu (`id`, `user_id`, `site_id`, `provider`, `provider_user_id`, `provider_email`, `access_token_encrypted`, `refresh_token_encrypted`, `token_type`, `scopes`, `expires_at`, `status`, `revoked_at`, `created_at`, `updated_at`) ve bileşik arama indeksleri eklendi.
+  - `oauth_states` tablosu (`id`, `state`, `user_id`, `site_id`, `provider`, `code_verifier`, `scopes`, `used_at`, `expires_at`, `created_at`) ve süre aşımı indeksleri oluşturuldu.
+- Güvenlik ve Kriptografi Servisleri (`app/Core/OAuth/Security/`):
+  - `TokenEncryptionService`: OpenSSL AES-256-GCM authenticated encryption, 12-byte rastgele IV, 16-byte MAC tag ile kurcalama koruması, `APP_KEY` üzerinden SHA-256 anahtar türetimi.
+  - `PkceService`: RFC 7636 Appendix B test vektörü (`dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk` -> `E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM`) ile tam uyumlu PKCE verifier/challenge üretimi ve 32-byte kriptografik state üretimi.
+- Google OAuth Servisi (`GoogleOAuthService`):
+  - `createAuthorizationUrl`: Minimum yetki kuralı (least privilege, sadece `webmasters.readonly` ve openid/email), PKCE challenge ve 10 dakika TTL'li state üretimi.
+  - `handleCallback`: State geçerlilik süresi (TTL), tek kullanımlık replay koruması ve çapraz kullanıcı/tenant state hijacking engeli; PKCE code verifier ile Google token takası; ID token (JWT) ayrıştırma; veritabanında AES-256-GCM authenticated at-rest şifreli saklama.
+  - `getValidAccessToken`: Süresi dolan tokenların `refresh_token` kullanılarak Google'dan otomatik yenilenmesi (`refreshAccessToken`).
+  - `revokeAccess`: Google iptal endpoint'ine (`https://oauth2.googleapis.com/revoke`) çağrı yapılması, yerel DB'deki şifreli token alanlarının tamamen sıfırlanması ve `status = revoked` yapılması.
+  - Hata sınıfları: `OAuthException`, `TokenDecryptionException`, `InvalidStateException`, `OAuthTokenExpiredException`, `OAuthRevocationException`, `OAuthScopeException`.
+- İki dilli sözlük: `resources/lang/tr-TR/messages.php` ve `en-US/messages.php` içine 13 yeni OAuth ve consent anahtarı eklendi (%100 senkronize, 266 anahtar).
+- Testler: 26 yeni test ve 113 yeni assertion eklendi; toplam test sayısı 697 test, 5005 assertion (%100 PASS, 0 notice, 0 warning, 0 error).
+- F05.03 alt faz teslimi için PR açılması ve kullanıcı açık onayı bekleniyor (DUR).
+
 ## 2026-11-06 | F05.02 kabulü ve PR #37 merge
 - Kullanıcı “onaylıyorum” ile F05.02 teslim kabulünü, PR #37 birleştirmesini ve F05.03 başlangıç hazırlığını onayladı; PR #37 main dalına squash-merge edildi (`bada501868bf2da8530d8813f7a0ff7ed2c8521b`).
 - F05.02 alt fazı (Domain doğrulama) resmen DONE durumuna getirildi.

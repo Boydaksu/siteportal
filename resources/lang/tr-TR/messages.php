@@ -278,4 +278,19 @@ return [
     'domain_verification.status_verified' => 'Doğrulandı',
     'domain_verification.status_failed' => 'Doğrulama Başarısız',
     'domain_verification.status_revoked' => 'Doğrulama İptal Edildi',
+
+    // F05.03 — OAuth Güvenliği ve Search Console İzinleri
+    'oauth.connect_google' => 'Google ile Bağlan',
+    'oauth.connected_success' => 'Google Search Console bağlantısı başarıyla kuruldu.',
+    'oauth.disconnected_success' => 'Google bağlantısı ve erişim izinleri başarıyla kaldırıldı.',
+    'oauth.revocation_failed' => 'Sağlayıcı tarafında erişim izni kaldırılamadı.',
+    'oauth.invalid_state' => 'Geçersiz veya süresi dolmuş OAuth güvenlik doğrulaması.',
+    'oauth.token_expired' => 'OAuth erişim izninizin süresi dolmuş veya kaldırılmış. Lütfen tekrar bağlanın.',
+    'oauth.scope_gsc_readonly' => 'Google Search Console Salt-Okunur İzni',
+    'oauth.consent_title' => 'Google Search Console Veri İzinleri ve Aydınlatma',
+    'oauth.consent_description' => 'SitePortal, sitenizin organik arama performansını (tıklama, gösterim, ortalama sıra ve arama sorguları) analiz etmek için Google Search Console hesabınıza salt-okunur erişim talep eder. Verileriniz asla üçüncü taraflarla paylaşılmaz ve erişim iznini dilediğiniz an tek tıkla iptal edebilirsiniz.',
+    'oauth.consent_scope_explanation' => 'Yalnızca salt-okunur analiz verisi okunur; sitenizde, sitemaplerinizde veya Search Console ayarlarınızda hiçbir değişiklik yapılamaz.',
+    'oauth.status_active' => 'Bağlı ve Aktif',
+    'oauth.status_revoked' => 'Bağlantı Kesildi',
+    'oauth.status_expired' => 'Süresi Doldu',
 ];

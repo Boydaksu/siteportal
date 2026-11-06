@@ -1,0 +1,53 @@
+================================================================================
+SitePortal F05.03 Kontrol ve Dogrulama Ozeti
+Tarih: 2026-11-06T19:05:00+03:00
+Dal: phase/F05.03-oauth-security
+Commit: Calisma Dali
+================================================================================
+
+1. PHP SOZDIZIMI (LINT)
+--------------------------------------------------------------------------------
+Komut: find app config database public tests -name "*.php" -exec php -l {} +
+Sonuc: 382 dosya kontrol edildi, 0 hata, 0 uyari. [PASS]
+
+2. PSR-12 KOD STANDARDI
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpcs --standard=PSR12 app tests
+Sonuc: 0 hata, 0 uyarı. [PASS]
+
+3. PHPSTAN STATIK TIP ANALIZI (SEVIYE 8)
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpstan analyse --level=8 app tests --no-progress
+Sonuc: 360 dosya incelendi. [OK] No errors. [PASS]
+
+4. BIRIM VE ENTEGRASYON TESTLERI (PHPUNIT)
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpunit
+Sonuc: Tests: 697, Assertions: 5005, Skipped: 2, PHPUnit Notices: 0, Failures: 0, Errors: 0.
+Basari orani: %100 PASS.
+
+5. NEGATIF KALITE KAPILARI (NEGATIVE QUALITY GATES)
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpunit tests/Unit/FixtureContractTest.php tests/Unit/Observability/LogMaskerTest.php tests/Unit/Security/UrlValidatorTest.php tests/Unit/Security/RateLimiterTest.php
+Sonuc: 26 test, 241 assertions. [PASS]
+
+6. I18N SOZLUK ESLESMESI (TR / EN)
+--------------------------------------------------------------------------------
+TR anahtar sayisi: 266
+EN anahtar sayisi: 266
+Fark: 0 eksik, 0 uyumsuzluk (%100 eslesme). [PASS]
+
+7. GUVENLIK VE OAUTH KONTROLLERI
+--------------------------------------------------------------------------------
+- PKCE RFC 7636 Appendix B test vektoru dogrulamasi (S256 code challenge) [PASS]
+- State parametresi ile CSRF ve replay attack onleme [PASS]
+- Capraz kullanici/tenant state hijacking onleme [PASS]
+- Dinlenmis/kullanilmis state parametresinin tekrar tuketimini engelleme (replay guard) [PASS]
+- Google OAuth auth URL uretimi ve PKCE code verifier kaydi [PASS]
+- Google OAuth token takasi (code exchange with PKCE verifier) [PASS]
+- ID token (JWT) payload ayrirma ve kullanici eslestirme [PASS]
+- Veritabaninda AES-256-GCM ile authenticated at-rest sifreleme (plain token DB'de yer almaz) [PASS]
+- Suresi dolmus tokenlarin refresh_token ile otomatik yenilenmesi (refreshAccessToken) [PASS]
+- Google revoke endpoint cagrisi ve yerel tokenlarin tamamen sifirlanmasi (Revocation) [PASS]
+- Minimum yetki ilkesi: Izin verilmeyen yazma yetkisi (write scope) taleplerinin reddedilmesi (OAuthScopeException) [PASS]
+================================================================================

@@ -278,4 +278,19 @@ return [
     'domain_verification.status_verified' => 'Verified',
     'domain_verification.status_failed' => 'Verification Failed',
     'domain_verification.status_revoked' => 'Verification Revoked',
+
+    // F05.03 — OAuth Güvenliği ve Search Console İzinleri
+    'oauth.connect_google' => 'Connect with Google',
+    'oauth.connected_success' => 'Google Search Console connected successfully.',
+    'oauth.disconnected_success' => 'Google connection and access permissions successfully revoked.',
+    'oauth.revocation_failed' => 'Failed to revoke access on provider.',
+    'oauth.invalid_state' => 'Invalid or expired OAuth security verification.',
+    'oauth.token_expired' => 'OAuth access has expired or been revoked. Please reconnect.',
+    'oauth.scope_gsc_readonly' => 'Google Search Console Read-Only Permission',
+    'oauth.consent_title' => 'Google Search Console Data Permissions & Consent',
+    'oauth.consent_description' => 'SitePortal requests read-only access to your Google Search Console account to analyze your site organic search performance (clicks, impressions, average position, and search queries). Your data is never shared with third parties, and you can revoke access at any time.',
+    'oauth.consent_scope_explanation' => 'Only read-only analytics data is read; no modifications can be made to your site, sitemaps, or Search Console settings.',
+    'oauth.status_active' => 'Connected & Active',
+    'oauth.status_revoked' => 'Disconnected',
+    'oauth.status_expired' => 'Expired',
 ];
