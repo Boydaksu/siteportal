@@ -12,7 +12,7 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F05.03 — READY_FOR_REVIEW; PR açılması ve kullanıcı onayı bekleniyor.
+> **Durum:** F05.03 — READY_FOR_REVIEW; [PR #38](https://github.com/Boydaksu/siteportal/pull/38) açıldı, kullanıcı onayı bekleniyor.
 > **Tarih:** 2026-11-06 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F05 / V2.0 (IN_PROGRESS).
 > **Son onaylanan alt faz:** F05.02 — DONE; teslim ve PR #37 merge onaylandı (`bada501868bf2da8530d8813f7a0ff7ed2c8521b`).
 > **Aktif dal:** `phase/F05.03-oauth-security`.
@@ -176,7 +176,7 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 - **Önceki teslim:** [PR #37](https://github.com/Boydaksu/siteportal/pull/37) birleştirildi (`bada501868bf2da8530d8813f7a0ff7ed2c8521b`).
 - **Aktif alt faz / durum:** F05.03 — OAuth güvenliği / READY_FOR_REVIEW (PR ve kullanıcı onayı bekleniyor).
 - **Dal:** `phase/F05.03-oauth-security`.
-- **Aktif PR / kanıt commit:** PR açılacak (çalışma dalı commit edilecek).
+- **Aktif PR / kanıt commit:** [PR #38](https://github.com/Boydaksu/siteportal/pull/38); commit: `14642400c0bebd1c50046c45413262b7cc5d4662`.
 - **Rapor:** `docs/reports/F05.03.md` ve kontrol özeti `docs/reports/F05.03-checks.txt`.
 - **Yerel sonuç:** PASS; PHP lint (382 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 697 test / 5005 assertion PASS (%100, 0 notice, 0 warning), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** RFC 7636 PKCE S256 test vektörü uyumluluğu, state CSRF & replay kalkanı, cross-tenant state hijacking engeli, veritabanında AES-256-GCM ile authenticated at-rest şifreleme, süresi dolan tokenların otomatik refresh_token ile yenilenmesi, minimum read-only scope zorunluluğu, Google revoke endpoint çağrısı ve yerel tokenların sıfırlanması ile 266 anahtarlı TR/EN dil eşliği (%100 PASS).
