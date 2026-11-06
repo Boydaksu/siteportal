@@ -325,4 +325,18 @@ return [
     'url_inspection.user_canonical' => 'User-declared Canonical',
     'url_inspection.crawled_as' => 'Crawled As User Agent',
     'url_inspection.cached_notice' => 'This inspection data was cached on {date}.',
+
+    // F05.06 — Crawl History, Diff & Regression Tracking
+    'diff.title' => 'Crawl Diff & Regression Report',
+    'diff.history_title' => 'Crawl History & Trend',
+    'diff.score_comparison' => 'Score Comparison',
+    'diff.overall_delta' => 'Overall Score Delta',
+    'diff.rule_version_mismatch_warning' => 'Analyses were run with different ruleset versions ({base} vs {target}). Score changes may be affected by rule definition updates.',
+    'diff.new_issues' => 'New Issues (Regressions)',
+    'diff.resolved_issues' => 'Resolved Issues',
+    'diff.persisting_issues' => 'Persisting Issues',
+    'diff.trend_improving' => 'Improving',
+    'diff.trend_declining' => 'Declining',
+    'diff.trend_stable' => 'Stable',
+    'diff.retention_cleaned' => '{count} old crawl records were cleaned up by the retention policy.',
 ];

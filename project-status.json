@@ -6,17 +6,17 @@
   "default_branch": "main",
   "product_version": "1.2.0",
   "current_phase": "F05",
-  "current_subphase": "F05.05",
+  "current_subphase": "F05.06",
   "last_approved_phase": "F04",
   "last_approved_subphase": "F05.05",
-  "status": "DONE",
-  "branch": "main",
-  "commit_sha": "ec784ff9455c245c306a1cbcd047eb68d4e5bfc1",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/40",
-  "last_report": "docs/reports/F05.05.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F05.06-crawl-history-diff",
+  "commit_sha": null,
+  "pr_url": null,
+  "last_report": "docs/reports/F05.06.md",
   "blockers": [],
-  "next_action": "F05.05 tamamlandı. F05.06 Multi-page + GSC harmanlanmış rapor sunumu şartnamesi ve planı hazırlanacak.",
-  "next_subphase": "F05.06",
+  "next_action": "F05.06 PR açılacak, CI ve kullanıcı onayı sonrası F05.07 PDF ve rapor paylaşımına geçilecek.",
+  "next_subphase": "F05.07",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -92,7 +92,7 @@
         "F05.03": "DONE",
         "F05.04": "DONE",
         "F05.05": "DONE",
-        "F05.06": "NOT_STARTED",
+        "F05.06": "READY_FOR_REVIEW",
         "F05.07": "NOT_STARTED",
         "F05.08": "NOT_STARTED"
       }
@@ -389,9 +389,9 @@
     }
   },
   "start_authorization": {
-    "subphase": "F05.05",
-    "authorized_at": "2026-11-06T20:43:21+03:00",
-    "reference": "F05.04 merge ve F05.05 baslangici sorusuna kullanici yaniti: onayliyorum"
+    "subphase": "F05.06",
+    "authorized_at": "2026-11-06T21:06:19+03:00",
+    "reference": "F05.05 merge ve F05.06 baslangici sorusuna kullanici yaniti: onayliyorum"
   },
   "previous_delivery": {
     "subphase": "F05.05",

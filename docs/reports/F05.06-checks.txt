@@ -1,0 +1,66 @@
+=== GIT STATUS ===
+On branch phase/F05.06-crawl-history-diff
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   resources/lang/en-US/messages.php
+	modified:   resources/lang/tr-TR/messages.php
+	modified:   tests/Integration/Observability/ObservabilityIntegrationTest.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app/Core/History/
+	database/migrations/0013_create_audit_diff_and_history_tables.php
+	docs/reports/F05.06-checks.txt
+	tests/Integration/History/
+	tests/Unit/History/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+=== PHP LINT ===
+No syntax errors detected in app/Core/History/Services/AuditHistoryService.php
+No syntax errors detected in app/Core/History/Services/AuditDiffService.php
+No syntax errors detected in app/Core/History/Models/AuditDiffReport.php
+No syntax errors detected in app/Core/History/Models/AuditHistoryTrend.php
+No syntax errors detected in app/Core/History/Models/AuditHistoryTrendPoint.php
+No syntax errors detected in app/Core/History/Models/AuditScoreComparison.php
+No syntax errors detected in app/Core/History/Models/IssueDiffItem.php
+
+=== PSR-12 CHECK ===
+Time: 137ms; Memory: 10MB
+
+=== PHPSTAN LEVEL 8 ===
+Note: Using configuration file /Users/dbasgan/Desktop/siteportal/phpstan.neon.
+/Users/dbasgan/Desktop/siteportal/app/Core/History/Models/AuditDiffReport.php
+/Users/dbasgan/Desktop/siteportal/app/Core/History/Models/AuditHistoryTrend.php
+/Users/dbasgan/Desktop/siteportal/app/Core/History/Models/AuditHistoryTrendPoint.php
+/Users/dbasgan/Desktop/siteportal/app/Core/History/Models/AuditScoreComparison.php
+/Users/dbasgan/Desktop/siteportal/app/Core/History/Models/IssueDiffItem.php
+/Users/dbasgan/Desktop/siteportal/app/Core/History/Services/AuditDiffService.php
+/Users/dbasgan/Desktop/siteportal/app/Core/History/Services/AuditHistoryService.php
+/Users/dbasgan/Desktop/siteportal/tests/Integration/History/AuditDiffIntegrationTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/History/AuditDiffServiceTest.php
+/Users/dbasgan/Desktop/siteportal/tests/Unit/History/AuditHistoryServiceTest.php
+Running PHPStan\Rules\Comparison\ConstantConditionInTraitRule on the collected data
+Running PHPStan\Rules\Comparison\FunctionCallConstantConditionRule on the collected data
+Running PHPStan\Rules\Traits\NotAnalysedTraitRule on the collected data
+Running PHPStan\Rules\DeadCode\CallToConstructorStatementWithoutImpurePointsRule on the collected data
+Running PHPStan\Rules\DeadCode\CallToFunctionStatementWithoutImpurePointsRule on the collected data
+Running PHPStan\Rules\DeadCode\CallToMethodStatementWithoutImpurePointsRule on the collected data
+Running PHPStan\Rules\DeadCode\CallToStaticMethodStatementWithoutImpurePointsRule on the collected data
+Running PHPStan\Rules\Methods\MethodCallWithPossiblyRenamedNamedArgumentRule on the collected data
+
+ [OK] No errors                                                                 
+
+
+=== PHPUNIT TESTS (F05.06 Specific) ===
+PHPUnit 12.5.43 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.4.20
+Configuration: /Users/dbasgan/Desktop/siteportal/phpunit.xml
+
+...............                                                   15 / 15 (100%)
+
+Time: 00:00.073, Memory: 16.00 MB
+
+[30;42mOK (15 tests, 85 assertions)[0m
