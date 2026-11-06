@@ -260,4 +260,22 @@ return [
     'rbac.role_member' => 'Site Üyesi',
     'rbac.unauthorized_site_access' => 'Bu siteye erişim yetkiniz yok.',
     'rbac.unauthorized_analysis_access' => 'Bu analiz raporuna erişim yetkiniz yok.',
+
+    // F05.02 — Domain Doğrulama
+    'domain_verification.title' => 'Domain Doğrulama',
+    'domain_verification.method_dns_txt' => 'DNS TXT Kaydı',
+    'domain_verification.method_http_file' => 'HTTP Doğrulama Dosyası',
+    'domain_verification.verified_successfully' => 'Domain sahipliği başarıyla doğrulandı.',
+    'domain_verification.dns_record_not_found' => 'DNS TXT kayıtlarında beklenen doğrulama tokenı bulunamadı.',
+    'domain_verification.http_request_failed' => 'HTTP doğrulama dosyasına erişilemedi.',
+    'domain_verification.http_file_token_mismatch' => 'HTTP doğrulama dosyasındaki içerik beklenen token ile eşleşmiyor.',
+    'domain_verification.token_expired' => 'Doğrulama tokenının süresi dolmuştur. Lütfen yeni bir istek oluşturun.',
+    'domain_verification.token_invalid' => 'Geçersiz veya daha önce kullanılmış doğrulama tokenı.',
+    'domain_verification.already_owned' => 'Bu domain başka bir kullanıcı tarafından doğrulanmış ve sahiplenilmiştir.',
+    'domain_verification.unauthorized_action' => 'Bu domain üzerinde doğrulama işlemi yapma yetkiniz bulunmamaktadır.',
+    'domain_verification.revoked_successfully' => 'Domain doğrulama ve mülkiyet durumu başarıyla iptal edildi.',
+    'domain_verification.status_pending' => 'Doğrulama Bekleniyor',
+    'domain_verification.status_verified' => 'Doğrulandı',
+    'domain_verification.status_failed' => 'Doğrulama Başarısız',
+    'domain_verification.status_revoked' => 'Doğrulama İptal Edildi',
 ];

@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-06T17:58:04+03:00",
+  "updated_at": "2026-11-06T18:19:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.2.0",
   "current_phase": "F05",
-  "current_subphase": "F05.01",
+  "current_subphase": "F05.02",
   "last_approved_phase": "F04",
   "last_approved_subphase": "F05.01",
-  "status": "DONE",
-  "branch": "main",
-  "commit_sha": "c95f56e47054b991631f99218097dc8f7420d931",
-  "pr_url": "https://github.com/Boydaksu/siteportal/pull/36",
-  "last_report": "docs/reports/F05.01.md",
+  "status": "READY_FOR_REVIEW",
+  "branch": "phase/F05.02-domain-verification",
+  "commit_sha": null,
+  "pr_url": null,
+  "last_report": "docs/reports/F05.02.md",
   "blockers": [],
-  "next_action": "F05.01 tamamlandı. F05.02 domain doğrulama şartnamesi ve planı hazırlanacak.",
-  "next_subphase": "F05.02",
+  "next_action": "PR açılması ve F05.02 teslim kabulü için kullanıcı onayı bekleniyor.",
+  "next_subphase": "F05.03",
   "phases": {
     "F00": {
       "version": "V0.0",
@@ -88,7 +88,7 @@
       "status": "IN_PROGRESS",
       "subphases": {
         "F05.01": "DONE",
-        "F05.02": "NOT_STARTED",
+        "F05.02": "READY_FOR_REVIEW",
         "F05.03": "NOT_STARTED",
         "F05.04": "NOT_STARTED",
         "F05.05": "NOT_STARTED",
@@ -365,9 +365,9 @@
     }
   },
   "start_authorization": {
-    "subphase": "F05.01",
-    "authorized_at": "2026-11-06T17:14:51+03:00",
-    "reference": "F04 ana faz kapanisi ve F05.01 baslangici sorusuna kullanici yaniti: onayliyorum"
+    "subphase": "F05.02",
+    "authorized_at": "2026-11-06T18:04:33+03:00",
+    "reference": "F05.01 merge ve F05.02 baslangici sorusuna kullanici yaniti: onayliyorum"
   },
   "previous_delivery": {
     "subphase": "F05.01",
