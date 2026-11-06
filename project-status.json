@@ -11,7 +11,7 @@
   "last_approved_subphase": "F04.06",
   "status": "READY_FOR_REVIEW",
   "branch": "phase/F04.07-v12-regression-closure",
-  "commit_sha": "93cb4b9",
+  "commit_sha": "b5863ad",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/35",
   "last_report": "docs/reports/F04.07.md",
   "blockers": [],

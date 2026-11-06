@@ -65,7 +65,7 @@ Bu ana fazda teslim edilen 7 alt faz ve temel yetenekler:
 | **F04.04** | Yapılandırılmış veri çıkarımı (Schema) | DONE | [PR #32](https://github.com/Boydaksu/siteportal/pull/32) (`34b14ed`) | 2026-11-06 11:42 | 547 test, 3724 assertion, CI SUCCESS |
 | **F04.05** | Mobil ve a11y temel kontroller | DONE | [PR #33](https://github.com/Boydaksu/siteportal/pull/33) (`160d040`) | 2026-11-06 15:43 | 572 test, 3856 assertion, CI SUCCESS |
 | **F04.06** | Selektif JS rendering tasarımı | DONE | [PR #34](https://github.com/Boydaksu/siteportal/pull/34) (`ca83fe4`) | 2026-11-06 16:23 | 601 test, 3993 assertion, CI SUCCESS |
-| **F04.07** | V1.2 regresyon ve kapanış | READY_FOR_REVIEW | [PR #35](https://github.com/Boydaksu/siteportal/pull/35) | Bekleniyor (DUR) | 610 test, 4592 assertion (%100 PASS) |
+| **F04.07** | V1.2 regresyon ve kapanış | READY_FOR_REVIEW | [PR #35](https://github.com/Boydaksu/siteportal/pull/35) (`b5863ad`) | Bekleniyor (DUR) | 610 test, 4592 assertion (%100 PASS) |
 
 ---
 
