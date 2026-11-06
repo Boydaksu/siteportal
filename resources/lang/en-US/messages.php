@@ -260,4 +260,22 @@ return [
     'rbac.role_member' => 'Site Member',
     'rbac.unauthorized_site_access' => 'You are not authorized to access this site.',
     'rbac.unauthorized_analysis_access' => 'You are not authorized to access this audit report.',
+
+    // F05.02 — Domain Doğrulama
+    'domain_verification.title' => 'Domain Verification',
+    'domain_verification.method_dns_txt' => 'DNS TXT Record',
+    'domain_verification.method_http_file' => 'HTTP Verification File',
+    'domain_verification.verified_successfully' => 'Domain ownership successfully verified.',
+    'domain_verification.dns_record_not_found' => 'Expected verification token not found in DNS TXT records.',
+    'domain_verification.http_request_failed' => 'HTTP verification file could not be accessed.',
+    'domain_verification.http_file_token_mismatch' => 'Content in HTTP verification file does not match expected token.',
+    'domain_verification.token_expired' => 'Verification token has expired. Please initiate a new request.',
+    'domain_verification.token_invalid' => 'Invalid or previously used verification token.',
+    'domain_verification.already_owned' => 'This domain is already verified and owned by another user.',
+    'domain_verification.unauthorized_action' => 'You are not authorized to perform domain verification for this site.',
+    'domain_verification.revoked_successfully' => 'Domain verification and ownership status successfully revoked.',
+    'domain_verification.status_pending' => 'Pending Verification',
+    'domain_verification.status_verified' => 'Verified',
+    'domain_verification.status_failed' => 'Verification Failed',
+    'domain_verification.status_revoked' => 'Verification Revoked',
 ];

@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-11-06 | F05.02 | READY_FOR_REVIEW
+- Domain Doğrulama (DNS TXT ve HTTP Dosya) mimarisi (`docs/reports/F05.02.md`) tamamlandı.
+- Veritabanı Migration (`0009_create_domain_verifications_table.php`):
+  - `sites` tablosuna `verification_method` kolonu eklendi.
+  - `domain_verifications` tablosu (`id`, `site_id`, `user_id`, `method`, `token`, `status`, `expires_at`, `last_checked_at`, `verified_at`, `failure_reason`) ve arama indeksleri oluşturuldu.
+- Domain Doğrulama Modelleri ve Servisleri (`DomainVerificationService`):
+  - `VerificationMethod` (`dns_txt`, `http_file`) ve `VerificationStatus` (`pending`, `verified`, `failed`, `revoked`) durum yönetimi.
+  - 32-byte kriptografik güvenli token üretimi, 7 gün TTL ve replay guard koruması.
+  - DNS TXT kaydı doğrulama (apex host ve `_siteportal-challenge` subdomain desteği).
+  - HTTP dosya doğrulama (`.well-known/siteportal-verify.txt`) ve `SafeHttpClient` SSRF koruma kalkanı.
+  - Mülkiyet gasbı engeli (Cross-tenant hijacking guard): Doğrulanmış sitelere başka kullanıcıların challenge üretmesi veya başkasının challenge'ını onaylatması engellendi.
+  - Periyodik yeniden doğrulama (`recheckVerification`): Doğrulama kanıtı silindiğinde veya geçersizleştiğinde sitenin doğrulanmış durumunun otomatik olarak iptal edilmesi (`REVOKED`).
+  - Doğrulama başarıyla tamamlandığında `site_members` tablosunda kullanıcıya otomatik `SiteRole::OWNER` yetkisinin atanması.
+- İki dilli sözlük: `resources/lang/tr-TR/messages.php` ve `en-US/messages.php` içine 16 yeni domain doğrulama anahtarı eklendi (%100 senkronize, 253 anahtar).
+- Testler: 29 yeni birim ve entegrasyon testi eklendi; toplam test sayısı 671 test, 4892 assertion (%100 PASS).
+- F05.02 teslim kabulü için kullanıcı onayı bekleniyor (DUR).
+
 ## 2026-11-06 | F05.01 kabulü ve PR #36 merge
 - Kullanıcı “onaylıyorum” ile F05.01 teslim kabulünü, PR #36 birleştirmesini ve F05.02 başlangıç hazırlığını onayladı; PR #36 main dalına squash-merge edildi (`c95f56e47054b991631f99218097dc8f7420d931`).
 - F05.01 alt fazı (Kullanıcı hesapları ve RBAC) resmen DONE durumuna getirildi.

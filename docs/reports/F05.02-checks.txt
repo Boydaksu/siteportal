@@ -1,0 +1,49 @@
+================================================================================
+SitePortal F05.02 Kontrol ve Dogrulama Ozeti
+Tarih: 2026-11-06T18:18:00+03:00
+Dal: phase/F05.02-domain-verification
+Commit: Calisma Dali
+================================================================================
+
+1. PHP SOZDIZIMI (LINT)
+--------------------------------------------------------------------------------
+Komut: find app config database public tests -name "*.php" -exec php -l {} +
+Sonuc: 373 dosya kontrol edildi, 0 hata, 0 uyari. [PASS]
+
+2. PSR-12 KOD STANDARDI
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpcs --standard=PSR12 app tests
+Sonuc: 0 hata, 0 uyari. [PASS]
+
+3. PHPSTAN STATIK TIP ANALIZI (SEVIYE 8)
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpstan analyse --level=8 --debug --memory-limit 512M app tests
+Sonuc: 351 dosya incelendi. [OK] No errors. [PASS]
+
+4. BIRIM VE ENTEGRASYON TESTLERI (PHPUNIT)
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpunit
+Sonuc: Tests: 671, Assertions: 4892, Skipped: 2, PHPUnit Notices: 3 (onceki testlerden).
+Basari orani: %100 PASS.
+
+5. NEGATIF KALITE KAPILARI (NEGATIVE QUALITY GATES)
+--------------------------------------------------------------------------------
+Komut: vendor/bin/phpunit tests/Unit/FixtureContractTest.php tests/Unit/Observability/LogMaskerTest.php tests/Unit/Security/UrlValidatorTest.php tests/Unit/Security/RateLimiterTest.php
+Sonuc: 26 test, 241 assertions. [PASS]
+
+6. I18N SOZLUK ESLESMESI (TR / EN)
+--------------------------------------------------------------------------------
+TR anahtar sayisi: 253
+EN anahtar sayisi: 253
+Fark: 0 eksik, 0 uyumsuzluk. [PASS]
+
+7. GUVENLIK VE ALAN ADI DOGRULAMA KONTROLLERI
+--------------------------------------------------------------------------------
+- DNS TXT Token dogrulama (apex ve _siteportal-challenge) [PASS]
+- HTTP dosya dogrulama (.well-known/siteportal-verify.txt) [PASS]
+- SafeHttpClient SSRF bariyeri ve IP dogrulama [PASS]
+- Token sure asimi (7 gun TTL) ve gecersiz token engeli [PASS]
+- Replay guard (mukerrer kullanim engeli) [PASS]
+- Baska kullanici adina sahiplenme engeli (Hijacking guard) [PASS]
+- Periyodik yeniden dogrulama ve token silindiginde sahiplik iptali (Revocation) [PASS]
+================================================================================
