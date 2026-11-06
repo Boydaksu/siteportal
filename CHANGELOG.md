@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-06 | F04.05 kabulü ve PR #33 merge
+- Kullanıcı “onaylıyorum” ile F04.05 teslim kabulünü, PR #33 birleştirmesini ve F04.06 başlangıcını onayladı; PR #33 main dalına squash-merge edildi (`160d040a3a9f0fadd61360a726ce00efa62312b4`).
+- F04.05 alt fazı (Mobil ve a11y temel kontroller) resmen DONE durumuna getirildi.
+- Sıradaki alt faz F04.06 (Selektif JS rendering tasarımı) başlatılacaktır.
+
 ## 2026-11-06 | F04.05 | READY_FOR_REVIEW
 - Mobil ve Erişilebilirlik (a11y) Temel Kontrolleri (`docs/reports/F04.05.md`) tamamlandı.
 - `ParsedDocument` ve `HtmlParser` mobil ve a11y yetenekleriyle güçlendirildi:
