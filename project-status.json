@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
   "blueprint_version": "0.1.0",
-  "updated_at": "2026-11-06T19:40:00+03:00",
+  "updated_at": "2026-11-06T20:45:00+03:00",
   "repository": "Boydaksu/siteportal",
   "default_branch": "main",
   "product_version": "1.2.0",
   "current_phase": "F05",
   "current_subphase": "F05.04",
   "last_approved_phase": "F04",
-  "last_approved_subphase": "F05.03",
-  "status": "READY_FOR_REVIEW",
-  "branch": "phase/F05.04-search-analytics",
-  "commit_sha": "863f1fd57b3ca6083cab1a282f4770a482a661af",
+  "last_approved_subphase": "F05.04",
+  "status": "DONE",
+  "branch": "main",
+  "commit_sha": "9308f1147522e5e7756cfa810c24d5a643f47d28",
   "pr_url": "https://github.com/Boydaksu/siteportal/pull/39",
   "last_report": "docs/reports/F05.04.md",
   "blockers": [],
-  "next_action": "F05.04 PR #39 incelemesi ve kullanıcı açık onayı bekleniyor.",
+  "next_action": "F05.04 tamamlandı. F05.05 URL Inspection entegrasyonu şartnamesi ve planı hazırlanacak.",
   "next_subphase": "F05.05",
   "phases": {
     "F00": {
@@ -90,7 +90,7 @@
         "F05.01": "DONE",
         "F05.02": "DONE",
         "F05.03": "DONE",
-        "F05.04": "READY_FOR_REVIEW",
+        "F05.04": "DONE",
         "F05.05": "NOT_STARTED",
         "F05.06": "NOT_STARTED",
         "F05.07": "NOT_STARTED",
@@ -374,19 +374,25 @@
       "approval_reference": "2026-11-06: Kullanıcı F05.03 teslim kabulü + PR #38 merge + F05.04 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
       "merge_approved": true,
       "merge_approval_reference": "2026-11-06: Kullanıcı F05.03 teslim kabulü + PR #38 merge + F05.04 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
+    },
+    "F05.04": {
+      "approved_at": "2026-11-06T20:43:21+03:00",
+      "approval_reference": "2026-11-06: Kullanıcı F05.04 teslim kabulü + PR #39 merge + F05.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi.",
+      "merge_approved": true,
+      "merge_approval_reference": "2026-11-06: Kullanıcı F05.04 teslim kabulü + PR #39 merge + F05.05 başlangıcı sorusuna “onaylıyorum” yanıtını verdi."
     }
   },
   "start_authorization": {
-    "subphase": "F05.03",
-    "authorized_at": "2026-11-06T18:40:00+03:00",
-    "reference": "F05.02 merge ve F05.03 baslangici sorusuna kullanici yaniti: onayliyorum"
+    "subphase": "F05.04",
+    "authorized_at": "2026-11-06T19:22:39+03:00",
+    "reference": "F05.03 merge ve F05.04 baslangici sorusuna kullanici yaniti: onayliyorum"
   },
   "previous_delivery": {
-    "subphase": "F05.03",
+    "subphase": "F05.04",
     "status": "DONE",
-    "pr_url": "https://github.com/Boydaksu/siteportal/pull/38",
+    "pr_url": "https://github.com/Boydaksu/siteportal/pull/39",
     "merged": true,
-    "merge_sha": "6a0195bb80f0ee3916523b9e235c5de5c31e5127",
+    "merge_sha": "9308f1147522e5e7756cfa810c24d5a643f47d28",
     "approval_commit": null,
     "approval_commit_ci_run": null
   },
@@ -419,9 +425,9 @@
     "proposal": "docs/operations/main-protection.proposal.json"
   },
   "ci": {
-    "run_id": 42250035049,
-    "url": "https://github.com/Boydaksu/siteportal/actions/runs/42250035049",
-    "commit_sha": "fc509af",
+    "run_id": 42256960636,
+    "url": "https://github.com/Boydaksu/siteportal/actions/runs/42256960636",
+    "commit_sha": "4fb8444",
     "status": "completed",
     "conclusion": "success"
   }

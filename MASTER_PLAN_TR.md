@@ -12,10 +12,10 @@
 
 # SitePortal — SEO Analiz Platformu | Ana Geliştirme Dosyası
 
-> **Durum:** F05.04 — READY_FOR_REVIEW; [PR #39](https://github.com/Boydaksu/siteportal/pull/39) açıldı, kullanıcı onayı bekleniyor.
+> **Durum:** F05.04 — DONE; PR #39 merge edildi. F05.05 hazırlığı.
 > **Tarih:** 2026-11-06 (Europe/Istanbul). **Plan:** blueprint-0.1.0. **Aktif faz/sürüm:** F05 / V2.0 (IN_PROGRESS).
-> **Son onaylanan alt faz:** F05.03 — DONE; teslim ve PR #38 merge onaylandı (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
-> **Aktif dal:** `phase/F05.04-search-analytics`.
+> **Son onaylanan alt faz:** F05.04 — DONE; teslim ve PR #39 merge onaylandı (`9308f1147522e5e7756cfa810c24d5a643f47d28`).
+> **Aktif dal:** `main`.
 > **Son kontrol:** PHP lint (395 dosya), PSR-12, PHPStan seviye 8, PHPUnit (719 test / 5148 assertions) PASS (%100).
 > **Rapor:** [F05.04](docs/reports/F05.04.md). **Sonraki:** F05.05 — URL Inspection entegrasyonu.
 > **Risk:** Main koruması önerildi, uygulanmadı; yönetim erişimi yok. [Politika](docs/operations/GITHUB.md).
@@ -36,7 +36,7 @@ SitePortal genel, düşük bakım gerektiren web araçları platformudur. **SEO 
 | F02 | V1.0 | Üyeliksiz tek URL SEO analizi | DONE |
 | F03 | V1.1 | Kontrollü çok sayfalı site taraması | DONE |
 | F04 | V1.2 | Performans, yapılandırılmış veri, mobil | DONE |
-| F05 | V2.0 | Üyelik, domain doğrulama, Search Console | IN_PROGRESS (F05.03 DONE) |
+| F05 | V2.0 | Üyelik, domain doğrulama, Search Console | IN_PROGRESS (F05.04 DONE) |
 | F06 | V2.1 | İçerik, AI hazırlık, sektörel modüller | BEKLİYOR |
 | F07 | V3.0 | Ajans, abonelik, API, white-label | BEKLİYOR |
 | F08 | V4.0 | Ölçeklenebilirlik, yaygın çoklu dil ve olgunluk | BEKLİYOR |
@@ -170,19 +170,19 @@ Tek alt faz: kapsamı oku → planı bildir → değiştir → doğrula → duru
 
 # CURRENT_STATUS — Tek Bakışta Devir Panosu
 
-- **Tarih / repo:** 2026-11-06, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `phase/F05.04-search-analytics`.
-- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 1.2.0; F05 / V2.0 IN_PROGRESS (F00, F01, F02, F03 ve F04 ana fazları DONE; F05.01, F05.02 ve F05.03 DONE; F05.04 READY_FOR_REVIEW).
-- **Son onay:** F05.03 DONE; kullanıcı “onaylıyorum” ile teslim kabulünü, PR #38 merge ve F05.04 başlangıç hazırlığını onayladı; PR #38 main dalına squash-merge edildi (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
-- **Önceki teslim:** [PR #38](https://github.com/Boydaksu/siteportal/pull/38) birleştirildi (`6a0195bb80f0ee3916523b9e235c5de5c31e5127`).
-- **Aktif alt faz / durum:** F05.04 — Search Analytics entegrasyonu / READY_FOR_REVIEW (PR ve kullanıcı onayı bekleniyor).
-- **Dal:** `phase/F05.04-search-analytics`.
-- **Aktif PR / kanıt commit:** [PR #39](https://github.com/Boydaksu/siteportal/pull/39) / `863f1fd57b3ca6083cab1a282f4770a482a661af`.
+- **Tarih / repo:** 2026-11-06, Europe/Istanbul; özel [Boydaksu/siteportal](https://github.com/Boydaksu/siteportal), `main`.
+- **Plan / ürün / ana faz:** blueprint-0.1.0; ürün 1.2.0; F05 / V2.0 IN_PROGRESS (F00, F01, F02, F03 ve F04 ana fazları DONE; F05.01, F05.02, F05.03 ve F05.04 DONE; F05.05 hazırlığı).
+- **Son onay:** F05.04 DONE; kullanıcı “onaylıyorum” ile teslim kabulünü, PR #39 merge ve F05.05 başlangıç hazırlığını onayladı; PR #39 main dalına squash-merge edildi (`9308f1147522e5e7756cfa810c24d5a643f47d28`).
+- **Önceki teslim:** [PR #39](https://github.com/Boydaksu/siteportal/pull/39) birleştirildi (`9308f1147522e5e7756cfa810c24d5a643f47d28`).
+- **Aktif alt faz / durum:** F05.04 — DONE; PR #39 merge edildi. F05.05 — URL Inspection entegrasyonu hazırlığı.
+- **Dal:** `main`.
+- **Aktif PR / kanıt commit:** PR #39 merge edildi (`9308f1147522e5e7756cfa810c24d5a643f47d28`).
 - **Rapor:** `docs/reports/F05.04.md` ve kontrol özeti `docs/reports/F05.04-checks.txt`.
 - **Yerel sonuç:** PASS; PHP lint (395 dosya), PSR-12 (0 hata, 0 uyarı), PHPStan seviye 8 ([OK] No errors), PHPUnit 719 test / 5148 assertion PASS (%100, 0 notice, 0 warning), 4 olumsuz kapı, blueprint/mimari/envanter kontrolleri PASS.
 - **Uygulama testleri:** GSC Search Analytics Clicks, Impressions, CTR, Average Position metrikleri, 5 boyut kırılımı (tarih, ülke, cihaz, sorgu, sayfa), veritabanı önbelleği ile kota koruması (`search_analytics_caches`), token yenileme, eksik veri durumu (`NO_DATA`), yetkisiz erişim engeli ve GSC trafiğinin crawler SEO teknik skoruyla kesinlikle karıştırılmaması güvencesi ile 280 anahtarlı TR/EN dil eşliği (%100 PASS).
 - **Açık karar:** [Q-004](docs/process/OPEN_QUESTIONS.md) dağıtım lisansı; mevcut özel repo tesliminde yayın yapılmıyor.
 - **Sonraki alt faz:** F05.05 — URL Inspection entegrasyonu.
-- **Bir sonraki işlem:** PR #39 incelemesi, CI kontrolü ve kullanıcının açık onayı bekleniyor.
+- **Bir sonraki işlem:** F05.05 çalışma dalının (`phase/F05.05-url-inspection`) açılması ve geliştirmenin başlatılması.
 
 Eski raporlar tarihsel snapshot'tır. Bu pano/JSON/aktif PR güncel durumu gösterir.
 
